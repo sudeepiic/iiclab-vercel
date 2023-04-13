@@ -1,0 +1,180 @@
+---
+import footerDiamond from "../images/footerDiamond.png";
+import contactUs from "../images/contactUs.png";
+import subscribe from "../images/subscribe.png";
+---
+
+<section style="background-color: #1a1a1a;  padding-left: 9%; padding-top: 3%;">
+  <div class="div1">
+    <img class="diamond" src={footerDiamond} alt="" />
+    <span class="footerFont"
+      >&nbsp; READY TO ACTIVATE STRATEGIC GROWTH? &nbsp;</span
+    >
+    <img class="diamond" src={footerDiamond} alt="" />
+  </div>
+
+  <div class="div2 row">
+    <div class="col-6">
+      <p class="content">Our Drones don't bite.</p>
+      <p class="content">
+        Share an idea for a new project, apply for your dream job, or join us
+        for a foosball match.
+      </p>
+    </div>
+    <div class="col-6">
+      <button class="btn"
+        ><img
+          style="width:18vw;  margin-top: 3.5%;"
+          src={contactUs}
+          alt=""
+        /></button
+      >
+    </div>
+  </div>
+
+  <div class="div3 row">
+    <div class="col-3">
+      <p class="headings">Location</p>
+      <p
+        style="color:grey; width:70%; line-height: 200%; font-size: calc(7px + 0.390625vw); min-width:160px"
+      >
+        Lotus Corporate Park, E-Wing 802 Ram Mandir Lane, Jay Coach Junction,
+        off Western Express Highway Goregaon, Mumbai, 400063
+      </p>
+      <a
+        style="color: rgba(255, 255, 255, 1); font-size: calc(7px + 0.390625vw);"
+        >+91- 83033 85888</a
+      ><br />
+
+      <a
+        style="color: rgba(255, 255, 255, 1); font-size: calc(7px + 0.390625vw);"
+        >help@iiclab.com</a
+      >
+    </div>
+    <div class="col-2">
+      <p class="headings">Quick Links</p>
+      <div class="spacings">
+        <p style="color:grey;  ">Home</p>
+        <p style="color:grey">Solutions</p>
+        <p style="color:grey">Our Work</p>
+        <p style="color:grey">Connect</p>
+        <p style="color:grey">Career</p>
+      </div>
+    </div>
+    <div class="col-2">
+      <p class="headings" style="color: rgba(255, 255, 255, 1);
+        ">
+        Our IPs
+      </p>
+      <div class="spacings">
+        <p style="color:grey">V-Verse</p>
+        <p style="color:grey">V-Tour</p>
+        <p style="color:grey">V-Retail</p>
+        <p style="color:grey">V-Stages</p>
+        <p style="color:grey">V-Conference</p>
+      </div>
+    </div>
+    <div class="col-5">
+      <p class="headings">Become An IIC Insider</p>
+      <input class="inputCss" type="text" placeholder="Your Name" />
+      <input
+        class="inputCss"
+        style="margin-left: 10px;"
+        type="text"
+        placeholder="Your Email"
+      />
+      <br />
+      <br />
+      <img style="width: 13.5vw;" src={subscribe} alt="" />
+    </div>
+  </div>
+</section>
+<section
+  style="border-top: 1.15px solid  grey; background-color: #1a1a1a; border-radius:0 0 60px 60px;"
+>
+  <div class="row" style="margin: 0 10% 0 10%; ">
+    <div class="col-6 row" style="justify-content:space-evenly;">
+      <span class="collab col-3">Performance</span>
+      <span class="collab col-3">Passion</span>
+      <span class="collab col-3">Collaboration</span>
+    </div>
+    <div class="col-6">world</div>
+  </div>
+</section>
+
+<style>
+  .footerFont {
+    color: white;
+    font-family: "Deutschlander";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 7.5vw;
+    src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
+  }
+
+  .div1 {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    width: 90%;
+  }
+
+  .div2 {
+    /* border: 1px solid rgba(255, 255, 255, 0.35); */
+    margin-top: 3%;
+    border-radius: 20px;
+    padding: 4% 0 1% 4%;
+    background: rgba(229, 255, 83, 1);
+
+    width: 90%;
+  }
+
+  .div3 {
+    margin-top: 3%;
+    margin-left: 3%;
+    padding-bottom: 2%;
+  }
+
+  .diamond {
+    width: 3vw;
+    height: 0%;
+    margin-bottom: 4.3%;
+  }
+
+  .content {
+    font-family: Anek Devanagari;
+    font-size: 1.8vw;
+    font-weight: 500;
+    line-height: 2.35vw;
+    letter-spacing: 0px;
+
+    color: black;
+  }
+
+  .inputCss {
+    background-color: #1a1a1a;
+    height: 3vw;
+    border-radius: 0 10px 0 10px;
+    border: 0 !importantS;
+    color: rgba(255, 255, 255, 1);
+    font-size: calc(7px + 0.390625vw);
+  }
+
+  .headings {
+    color: rgba(255, 255, 255, 1);
+    font-size: calc(10px + 0.390625vw);
+  }
+  .spacings {
+    line-height: 115%;
+    font-size: calc(7px + 0.390625vw);
+  }
+
+  .collab {
+    color: white;
+    font-family: "Deutschlander";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5vw;
+  }
+</style>
