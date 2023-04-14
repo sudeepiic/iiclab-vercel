@@ -9,15 +9,15 @@ import calllogo from "../images/calllogo.png";
   <div class="d margins">
     <nav class="main d-inline-flex">
       <div class="logo">
-        <a href="">
+        <a href="/">
           <img src={logo} alt="" />
         </a>
       </div>
       <div class="list">
         <ul class="d-inline-flex">
-          <li><a class="navTabs" href="">Our Work</a></li>
+          <li class="paddingsLi"><a class="navTabs" href="">Our Work</a></li>
           <li><a class="navTabs" href="">Solutions</a></li>
-          <li><a class="navTabs" href="">Life at IIC</a></li>
+          <li><a class="navTabs" href="/about-us/">Life at IIC</a></li>
           <li><a class="navTabs" href="">Career</a></li>
           <li><a class="navTabs" href="">Articles</a></li>
         </ul>
@@ -82,16 +82,15 @@ import calllogo from "../images/calllogo.png";
     opacity: 50%;
   }
 
-  @media screen and (max-width: 992px) {
-    .list ul li {
-      padding-right: 0%;
-      padding-left: 0%;
-      margin-right: 4% !important;
-    }
-    .main ul {
-      width: 1.5rem !important;
-    }
+ 
+@media screen and (max-width:992px){
+  .list ul li{
+    padding-left:8px !important;
+    padding-right:8px !important;
   }
+}
+
+
 
   .contact-div {
     position: relative;

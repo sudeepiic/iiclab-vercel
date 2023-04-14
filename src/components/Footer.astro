@@ -2,6 +2,12 @@
 import footerDiamond from "../images/footerDiamond.png";
 import contactUs from "../images/contactUs.png";
 import subscribe from "../images/subscribe.png";
+import goArrow from "../images/goArrow.png";
+import instaLogo from "../images/instaLogo.png";
+import linkedinlogo from "../images/linkedinLogo.png";
+import twitterLogo from "../images/twitterLogo.png";
+import fbLogo from "../images/fbLogo.png";
+import whatsappLogo from "../images/whatsappLogo.png";
 ---
 
 <section style="background-color: #1a1a1a;  padding-left: 9%; padding-top: 3%;">
@@ -90,16 +96,40 @@ import subscribe from "../images/subscribe.png";
   </div>
 </section>
 <section
-  style="border-top: 1.15px solid  grey; background-color: #1a1a1a; border-radius:0 0 60px 60px;"
+  style="border-top: 1.15px solid  grey;   background-color: #1a1a1a; "
 >
   <div class="row" style="margin: 0 10% 0 10%; ">
-    <div class="col-6 row" style="justify-content:space-evenly;">
-      <span class="collab col-3">Performance</span>
-      <span class="collab col-3">Passion</span>
-      <span class="collab col-3">Collaboration</span>
+    <div class="col-8 row" style="justify-content:space-evenly;">
+      
+      <span class="collab col-3 d-flex">Performance &nbsp; <button class="btn" style="
+      
+        height: 0%;  margin-top: 3%;">  <img style="width: 2.25vw;" src={goArrow} alt=""></button> </span> 
+      <span class="collab col-3 d-flex"> &nbsp;Passion &nbsp; <button class="btn" style="
+      
+        height: 0%;  margin-top: 3%;">  <img style="width: 2.25vw;" src={goArrow} alt=""></button>    </span>
+      <span class="collab col-3 d-flex">Collaboration &nbsp; <button class="btn" style="
+      
+        height: 0%;  margin-top: 3%;">  <img style="width: 2.25vw;" src={goArrow} alt=""></button> </span>
     </div>
-    <div class="col-6">world</div>
+    <div class="col-4 " style="text-align: center; padding-top: 1.5%;">
+      
+       <button class="btn"><img class="icons" src={instaLogo} alt=""></button>
+       <button class="btn"> <img class="icons" src={linkedinlogo} alt=""></button>
+        <button class="btn"><img class="icons" src={twitterLogo} alt=""> </button>
+       <button class="btn"> <img class="icons" src={fbLogo} alt=""></button>
+        <button class="btn"> <img class="icons" src={whatsappLogo} alt=""></button>
+
+    </div>
   </div>
+</section>
+
+<section style="border-top: 1.15px solid  grey;   background-color: #1a1a1a;padding:2% 0 2% 0">
+  <div style="text-align: center;">
+
+    <span class="bottomDiv" style=" opacity:70%"> copyright 2022</span>
+    <span class="bottomDiv" > &nbsp; Ink In Caps</span>
+  </div>
+  
 </section>
 
 <style>
@@ -175,6 +205,45 @@ import subscribe from "../images/subscribe.png";
     font-family: "Deutschlander";
     font-style: normal;
     font-weight: 400;
-    font-size: 2.5vw;
+    font-size: 2.6rem;
+    margin: 2% 0 2% 0;
+  }
+
+  .bottomDiv {
+
+    color: white;
+    font-family: Anek Devanagari;
+    font-size: 1.4rem;
+
+  }
+  .icons{
+    width: 3vw;
+   
+  }
+  .btn{
+    padding: 0.2rem;
+  }
+  @media (max-width:1435px){
+    .btn{
+    padding: 0.2rem;
+  }
+  }
+
+  @media (max-width:1320px){
+   .collab{
+    font-size: 2rem;
+   }
+  }
+  @media (max-width:1175px){
+  
+    .collab{
+    font-size: 1.8rem;
+   }
+  
+  .btn{
+    padding: 0.1rem;
+  }
   }
 </style>
+
+
