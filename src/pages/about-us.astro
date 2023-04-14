@@ -1,23 +1,29 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import downArrow from "../images/downArrow.png";
+import officeImg from "../images/officeImg.png";
 ---
 <Layout title="Ink In Caps - About Us">
     <section class="margins">
-        <div style="padding-top: 5%;">
-          <div id="main" class="d-flex">
+        <div style="padding-top: 3%;">
+          <div id="main">
             <div id="div1">
               <span>DEDUCE ENGAGE ENABLE</span>
-            </div>
-            
+              
+            </div>     
           </div>
-          <div class="d-flex" id="main2">
+          <div  id="main2">
             <div id="div1" class="paraDiv">
               <span class="para"
-                >Ink In Caps is an award-winning <strong class="strong">
-                  Tech+Design+Experience</strong
-                > Agency that capacitates Visionary Brands to unlock Augmented Growth and
-                boost conversations with their audiences. Intrigue Rush?</span
+                >INK IN CAPS is a creative technology company that produces digital interactions
+                 for brands to create maximum engagement with the target audience. Our focus is on
+                 creating new and dynamic solutions for our client’s challenges across multiple platforms.</span
               >
+            </div>
+            <div style="margin-bottom: 3.5%; margin-top: 2%;">
+            <button type="button"  class="btn btn-dark"> <span>Our Services</span></button>
+              <span class="knowMore"> Slide To Know More &nbsp;<img style="width: 0.75rem;" src={downArrow} alt=""> </span>
+
             </div>
            
           </div>
@@ -25,7 +31,28 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </section>
 
+      <section style="margin-top:3%;">
+        <img src={officeImg} alt="" style="height:100%;width:100%; " />
+        <div  style="background-color: #1a1a1a; border-radius: 0 0 60px 60px;">
+          <div class="row col-12  "></div>
+            <div class="col-6 btmImg margins ">
+              <p>WE'RE AN</p>
+              <p>EXPERIMENTAL</p>
+              <p>DESIGN & TECH</p>
+              <p>COMPANY</p>
+              
+            </div>
+            <div class="col-6"></div>
+
+        </div>
+      </section>
+      
+
    <style>
+
+#main {
+  line-height: 1 !important;
+}
 
 
 #main #div1 span {
@@ -36,28 +63,57 @@ import Layout from "../layouts/Layout.astro";
     font-style: normal;
     /* padding-top: 2%; */
   }
- =
+ 
   #main #div2 {
     padding-left: 3%;
   }
  
   #main2 #div1 span {
-    font-size: 1.25rem;
+    font-size: 1.5vw;
     font-family: "Anek Devanagari";
     text-align: justify;
   }
+  
 
 
 
 
 
   .para {
+    display: block;
     opacity: 75%;
+    width: 83%;
   }
 
   .margins {
     margin-left: 7%;
     margin-right: 7%;
+  }
+
+  .btn-dark{
+    border-radius: 24px;
+    font-family: "Anek Devanagari";
+    font-size:larger ;
+    margin-right: 1.5%;
+  }
+  .btn-dark span{
+    font-size: 0.8rem;
+    margin: 0 15px 0 15px;
+  }
+
+  .knowMore{
+    font-family: 'anek devanagari';
+    font-weight:550;
+  }
+
+  .btmImg{
+   
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    color: white;
+    font-size: 7vw;
+    line-height: 0.8 !important;
+
   }
    </style>
   </Layout>
