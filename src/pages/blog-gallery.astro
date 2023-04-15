@@ -1,0 +1,373 @@
+---
+import Layout from "../layouts/Layout.astro"
+import blogButton from "../images/blogButton.png";
+import editorImg1 from "../images/editorImg1.png";
+import editorImg2 from "../images/editorImg2.png";
+import  exploreimg1 from "../images/exploreimg1.png";
+
+import  yellowGo from "../images/yellowGo.png";
+---
+
+<Layout title="Ink In Caps - Blog Gallery">
+
+    <section  style="background-color: #1a1a1a; border-radius: 0 0 60px 60px; padding-bottom: 4%;">
+
+        <div class="row margins">
+
+            <div class="col-6 heading">
+                <span>thinking out loud</span>
+                <img class="btn blogbtn" src={blogButton} alt="">
+            </div>
+        
+            <div class="col-6 topText" >
+                    <span >Newly minted Articles that you can read if you are not abducted by the Aliens</span>
+            </div>
+        </div>
+
+        <div style="text-align: center;padding:10% 0 10% 0;">
+            <h2 style="color:white">Carousel Coming Sooon!</h2>
+            <p style="color:white">ruko zara sabar karo</p>
+
+          </div>
+
+          <div class="editors margins">
+            <span>editor's pick</span>  
+        </div>
+
+        <div style="margin-top: 1%;" class="margins row">
+
+            <div class="col-6">
+                <img class="editorImgs" src={editorImg1} alt="">
+                <span class="imgText">How Are People Coping With Mind Blocking In The Current Situation?</span>
+                
+                <img class="btn goBtn" src={yellowGo} alt="">
+                <div style="margin-top: 3.4%;">
+                  <div class="border-box"> <span>Design & Technology</span></div>
+                  <span class="authorName">By Pallavi.Jain</span>
+                  <span class="dot"></span>
+                  <span class="readTime">5 min read</span>
+
+                </div>
+                
+            </div>
+            <div class="col-6">
+                <img class="editorImgs" src={editorImg2} alt=""> <br>
+                <span class="imgText">The cycle of Analysis Paralysis</span>
+                <img class="btn goBtn" src={yellowGo} alt="">
+
+                <div style="margin-top: 3.4%;">
+                  <div class="border-box"> <span>Design & Technology</span></div>
+                  <span class="authorName">By Pallavi.Jain</span>
+                  <span class="dot"></span>
+                  <span class="readTime">5 min read</span>
+
+                </div>
+            </div>
+        </div>
+        
+
+    </section>
+    <section style="margin-top: 4%; margin-bottom: 4%;">
+      
+      <div class="margins row">
+        <div class="col-5">
+        <span class="whiteHeading" >Explore</span> <br>
+        <span  class="whiteHeading" >more</span> 
+        <div style="margin-top:3%">
+          <button  class="btn exploreBtn"  style="margin-left: 0;" >All</button>
+          <button  class="btn exploreBtn">Design</button>
+          <button  class="btn exploreBtn">Technology</button> <br>
+          <button  class="btn exploreBtn" style="margin-left: 0;" >Marketing</button>
+          <button  class="btn exploreBtn">Virtuality</button>
+        </div>
+       
+      </div>
+
+      <div  style="scroll-behavior: smooth; overflow:scroll;  height: 70vh;" class="col-6">
+          
+        <div class="row list" >
+          <div class="col-9" >
+          <span class="listGenre">DESIGN</span> <br>
+          <span class="listText">But I must explain to you h
+            At vero eos et  that we </span>
+          </div>
+
+            <div class="col-3" >
+              <img style="width:90%" src={exploreimg1} alt="">
+            </div>
+            
+        </div>
+
+        <div class="row list">
+          <div class="col-9">
+          <span class="listGenre">TECHNOLOGY</span> <br>
+          <span class="listText">consectetur, adipisci velit sed quia non numquam </span>
+          </div>
+
+            <div class="col-3" >
+              <img style="width:90%" src={exploreimg1} alt="">
+            </div>
+            
+        </div>
+
+        <div class="row list">
+          <div class="col-9">
+          <span class="listGenre">MARKETING</span> <br>
+          <span class="listText">Lorem ipsum dolor sit amet consectetur adipiscing  elit </span>
+          </div>
+
+            <div class="col-3" >
+              <img style="width:90%" src={exploreimg1} alt="">
+            </div>
+            
+        </div>
+
+        <div class="row list">
+          <div class="col-9">
+          <span class="listGenre">VIRTUAL REALITY</span> <br>
+          <span class="listText">sed diam nonummy nibh euismod tincidunt ut laoreet</span>
+          </div>
+
+            <div class="col-3" >
+              <img style="width:90%" src={exploreimg1} alt="">
+            </div>
+            
+        </div>
+
+        <div class="row list">
+          <div class="col-9">
+          <span class="listGenre">DESIGN</span> <br>
+          <span class="listText">But I must explain to you h
+            At vero eos et  that we </span>
+          </div>
+
+            <div class="col-3" >
+              <img style="width:90%" src={exploreimg1} alt="">
+            </div>
+            
+        </div>
+
+        <div class="row list">
+          <div class="col-9">
+          <span class="listGenre">TECHNOLOGY</span> <br>
+          <span class="listText">But I must explain to you h
+            At vero eos et  that we </span>
+          </div>
+
+            <div class="col-3" >
+              <img style="width:90%" src={exploreimg1} alt="">
+            </div>
+            
+        </div>
+      </div >
+      </div>
+
+    </section>
+
+   
+    
+   
+
+    <style>
+
+
+.heading{
+    margin-top: 4%;
+}
+        .heading span{
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 13vw;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    line-height: 0.85;
+    /* padding-top: 2%; */
+        }
+
+        .margins {
+    margin-left: 7%;
+    margin-right: 7%;
+  }
+
+  .blogbtn{
+    vertical-align: top !important;
+    width: 26%;
+  }
+
+  .topText{
+    margin-top: 6%;
+    padding-top: 6%;
+  }
+  .topText span{
+    font-family: 'anek devanagari';
+    opacity: 50%;
+    color: white;
+    font-size: 2.3vw;
+    
+    
+
+  }
+
+
+  .editors{
+    margin-top: 4%;
+  }
+
+  .editors span{
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 10vw;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    line-height: 0.85;
+  }
+
+  .editorImgs{
+    width: 100%;
+    margin-left: -9%;
+    margin-bottom: 3%;
+  }
+
+  .imgText{
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 4vw;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    line-height: 0.85;
+    
+  }
+
+  .goBtn{
+    width:14%;
+    vertical-align: top;
+  }
+
+  .border-box{
+    background-color: #e5ff53;
+    text-align: center;
+    padding: 0.18vw;
+    width: 8vw;
+    border-radius: 1.5px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.65;
+      
+    }
+    .border-box span{
+      font-family: 'anek devanagari';
+      font-size: 0.7vw;
+
+      font-weight: 500;
+
+      vertical-align: middle;
+    }
+
+    .authorName{
+      font-family: 'anek devanagari';
+      font-size: 0.7vw;
+
+      font-weight: 400;
+      color: white;
+      margin-left: 1%;
+    }
+    .dot{
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: white;
+      display: inline-block;
+      margin-bottom: 0.2%;
+    }
+    .readTime{
+      font-family: 'anek devanagari';
+      font-size: 0.7vw;
+
+      font-weight: 400;
+      color: white;
+     
+      opacity: 50%;
+    }
+
+    .whiteHeading{
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 10vw;
+    font-weight: 400;
+    font-style: normal;
+    /* color: white; */
+    line-height: 0.85;
+    
+    }
+
+
+    .exploreBtn{
+      background-color: #f6f7f0;
+      color: black;
+      font-weight: 500;
+      font-size: 1vw;
+      border-radius: 30px;
+      width: 20%;
+      /* height:35px; */
+      border: 1.15px solid rgb(182, 181, 181);
+      font-family: 'anek devanagari';
+      margin: 1.35%;
+      padding: 2%;
+      
+    }
+
+    .exploreBtn.clicked{
+      background-color: black;
+      color: white;
+    }
+
+    .list{
+      padding-bottom: 2%; 
+      padding-top: 2%;
+      border-bottom: 1.45px solid rgb(204, 202, 202);
+     
+    }
+ 
+    .listGenre{
+    font-size: 0.7vw;
+    opacity: 50%;
+    font-family: 'anek devanagari';
+    font-weight: 500;
+  }
+
+  .listText{
+    width: 75%;
+    font-family: 'anek devanagari';
+    font-weight: 600;
+    font-size: 1.2vw;
+  }
+    
+  
+
+    </style>
+
+   <script>
+    const myButton = document.querySelectorAll(".exploreBtn");
+
+    for(let i=0; i<myButton.length; i++){
+
+      myButton[i].addEventListener("click", function(){
+        if(myButton[i].classList.contains("clicked")){
+          myButton[i].classList.remove("clicked");
+      } else {
+        myButton[i].classList.add("clicked");
+      }
+
+    });
+  }
+
+  // document.querySelector(".turnBlack")?.classList.add("black");
+
+
+   </script>
+
+
+</Layout>
