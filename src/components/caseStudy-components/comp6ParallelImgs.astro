@@ -1,0 +1,57 @@
+---
+import parallelImg1 from "../src/images/parallelImg1.png";
+import parallelImg2 from "../src/images/parallelImg2.png";
+import { contentfulClient } from "../../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import type { Document } from "@contentful/rich-text-types";
+
+const props = Astro.props;
+---
+
+<section style="padding-top: 4%; background-color: #1a1a1a;">
+  
+  
+         
+            <div class="margins imgs">
+                <img
+                class="img1"
+                src={props.parallelImg1}
+                alt=""
+                />
+                <img
+                class="img2"
+                src={props.parallelImg2}
+                alt=""
+                />
+                </div>
+       
+  
+</section>
+
+<style>
+  .margins {
+    margin-left: 7%;
+    margin-right: 7%;
+  }
+
+  .imgs img {
+    width: 40%;
+  }
+  .imgs {
+    display: flex;
+    justify-content: center;
+  }
+  .img1 {
+    margin-right: 3%;
+    border-radius: 0 4vw 0 4vw;
+    padding: 1%;
+    border: 1.15px solid rgb(120, 119, 119);
+    margin-bottom: 4%;
+  }
+  .img2 {
+    border-radius: 0 4vw 0 4vw;
+    padding: 1%;
+    border: 1.15px solid rgb(120, 119, 119);
+    margin-top: 4%;
+  }
+</style>

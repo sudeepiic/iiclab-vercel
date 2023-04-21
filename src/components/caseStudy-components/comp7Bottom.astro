@@ -1,0 +1,77 @@
+---
+import blackDiamond from "../src/images/blackDiamond.png";
+
+
+import caseStudyImg from "../src/images/caseStudyImg.png";
+
+import { contentfulClient } from "../../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import type { Document } from "@contentful/rich-text-types";
+
+
+
+const props = Astro.props;
+---
+
+
+
+
+<section style="background-color: #1a1a1a; padding-top:4%"  >
+
+  
+    <div style="background-color:#e5ff53;">
+    <div class="margins row">
+            <div class="col-4 "  >
+                <img src={blackDiamond} alt="">
+                <span set:html={ props.yellowCompTitle}></span>
+            </div>
+
+            <div class="col-8" style=" font-family: 'anek devanagari';" set:html={ props.yellowCompText}>
+
+
+            </div>
+    </div>
+</div>
+
+</section>
+
+<style>
+
+.margins {
+    margin-left: 7%;
+    margin-right: 7%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+  }
+  .col-4 span{
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 6vw;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 0.85;
+    color: black;
+    display: inline-block;
+  }
+  .col-4 img{
+    margin-bottom:15%;
+    width: 2vw;
+  }
+  .col-8{
+  
+    
+    display: flex;
+    justify-content: center;
+  }
+  .col-8{
+   
+    width: 60%;
+    
+    text-align: justify;
+    
+    font-family: 'anek devanagari';
+    font-size: 1.2vw;
+    word-spacing: 0.6ch;
+   
+  }
+</style>

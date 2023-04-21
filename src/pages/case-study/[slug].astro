@@ -1,0 +1,117 @@
+---
+import { isHTMLBytes } from "astro/dist/runtime/server/escape";
+import CaseStudy1 from "../case-study1.astro";
+import { contentfulClient } from "../../lib/contentful";
+import type { CaseStudy } from "../../lib/contentful";
+import { log } from "astro/dist/core/logger/core";
+import Title1 from "../../components/caseStudy-components/Title1.astro";
+import Comp2 from "../../components/caseStudy-components/comp2.astro";
+import Comp3 from "../../components/caseStudy-components/comp3.astro";
+import Comp4 from "../../components/caseStudy-components/comp4.astro";
+import Comp5CenterText from "../../components/caseStudy-components/comp5CenterText.astro";
+import Comp6ParallelImgs from "../../components/caseStudy-components/comp6ParallelImgs.astro";
+import Comp6b_belowParallel from "../../components/caseStudy-components/Comp6b_belowParallel.astro";
+
+import Comp7Bottom from "../../components/caseStudy-components/comp7Bottom.astro";
+
+
+import  { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import Layout from "../../layouts/Layout.astro";
+export async function getStaticPaths() {
+
+  const entries = await contentfulClient.getEntries<any>({
+    content_type: "caseStudy",
+  });
+  console.log("paramssssssss", entries);
+  
+   
+  const pages = entries.items.map((item) => {
+    
+    console.log(item.fields.heroTitle, 'oooooooooooooooooooooooooooo')
+   return ({
+      params: { slug: item.fields.heroTitle  },
+      props: {
+        caseStudyData: item,
+      },
+    });
+  });
+ return pages
+}
+
+const { caseStudyData } = Astro.props;
+---
+<Layout title="case study">
+<Title1
+   heroTitle={documentToHtmlString(caseStudyData.fields.heroTitleMain)}
+   herobanner={caseStudyData.fields?.heroBanner?.fields?.file.url}
+   herobanner2={caseStudyData.fields?.heroBanner2?.fields?.file.url}
+   heroContent={documentToHtmlString(caseStudyData.fields.heroContent)}
+   clientInfo={documentToHtmlString(caseStudyData.fields.clientInfo)}
+   solutionInfo={documentToHtmlString(caseStudyData.fields.solutionInfo)}
+   >
+</Title1>
+
+
+
+<Comp2
+  belowCarousalTitle={documentToHtmlString(caseStudyData.fields.belowCarousalTitle)}
+  belowCarousalText={documentToHtmlString(caseStudyData.fields.belowCarousalText)}
+  fullSizeImg={caseStudyData?.fields?.fullSizeImg?.fields?.file.url}
+
+> 
+</Comp2>  
+   
+
+<Comp3
+midContentTitle={documentToHtmlString(caseStudyData?.fields?.midContentTitle)}
+   midContentImg={ caseStudyData?.fields?.midContentImg[0]?.fields?.file.url}
+   midImgCaption={documentToHtmlString(caseStudyData.fields.midImgCaption)}
+   midContentText={documentToHtmlString(caseStudyData.fields.midContentText)}
+
+>
+</Comp3>
+
+
+<Comp4
+  tiltImagesTitle={documentToHtmlString(caseStudyData.fields.tiltImagesTitle)}
+  tiltImagesText={documentToHtmlString(caseStudyData.fields.tiltImagesText)}
+  tiltImage1={caseStudyData?.fields?.tiltImages && caseStudyData?.fields?.tiltImages[0]?.fields?.file.url}
+  tiltImage2={caseStudyData?.fields?.tiltImages && caseStudyData?.fields?.tiltImages[1]?.fields?.file.url}
+  tiltImage3={caseStudyData?.fields?.tiltImages && caseStudyData?.fields?.tiltImages[2]?.fields?.file.url}
+
+
+>
+</Comp4>
+
+
+<Comp5CenterText
+  bottomCompTitle={documentToHtmlString(caseStudyData.fields.bottomCompTitle)}
+  bottomCompText={documentToHtmlString(caseStudyData.fields.bottomCompText)}
+
+>
+</Comp5CenterText>
+{caseStudyData?.fields?.bottomCompImgs && 
+  <Comp6ParallelImgs
+  parallelImg1={caseStudyData?.fields?.bottomCompImgs && caseStudyData?.fields?.bottomCompImgs[0]?.fields?.file.url}
+  parallelImg2={caseStudyData?.fields?.bottomCompImgs && caseStudyData?.fields?.bottomCompImgs[1]?.fields?.file.url}
+  
+  >
+  </Comp6ParallelImgs>
+}
+
+{caseStudyData?.fields?.belowParallelImgTitle &&
+  <Comp6b_belowParallel
+  belowParallelImgTitle={documentToHtmlString(caseStudyData.fields.belowParallelImgTitle)}
+  belowParallelImgText={documentToHtmlString(caseStudyData.fields.belowParallelImgText)}
+>
+  
+ </Comp6b_belowParallel>
+
+}
+
+<Comp7Bottom
+ yellowCompTitle={documentToHtmlString(caseStudyData.fields.yellowCompTitle)}
+ yellowCompText={documentToHtmlString(caseStudyData.fields.yellowCompText)}
+>
+</Comp7Bottom>
+</Layout>

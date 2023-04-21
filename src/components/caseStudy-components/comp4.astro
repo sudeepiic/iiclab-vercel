@@ -1,0 +1,104 @@
+---
+import yellowDiamond from "../src/images/yellowDiamond.png";
+import caseCard1 from "../src/images/caseCard1.png";
+import caseCard2 from "../src/images/caseCard2.png";
+import caseStudyImg from "../src/images/caseStudyImg.png";
+
+import { contentfulClient } from "../../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import type { Document } from "@contentful/rich-text-types";
+
+
+const props = Astro.props;
+
+---
+
+
+<section style="padding-top: 4%; background-color: #1a1a1a;">
+
+  
+    <div class="margins row" >
+
+        <div class="col-5 heading" >
+            <img src={yellowDiamond} alt="" style="width: 7%;">
+            <span style="display: inline-block;" set:html={props.tiltImagesTitle}></span>
+        </div>
+
+        <div class="col-6 para" set:html={ props.tiltImagesText}>
+           
+            
+        </div>
+      
+
+    </div>
+
+    <div class="margins images" style="margin-top: 4%; text-align: center;">
+       
+            <img class="img1" src={props.tiltImage1} alt="">
+            <img class="img2" src={props.tiltImage2} alt="">
+            <img class="img3" src={props.tiltImage3} alt="">
+        
+
+
+        
+
+    </div>
+   
+</section>
+
+<style>
+ 
+.margins {
+    margin-left: 7%;
+    margin-right: 7%;
+  }
+
+  .heading{
+     font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 6.8vw;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 0.85;
+    color: white;
+    
+    }
+ 
+    .para{
+        color: white;
+    text-align: justify;
+    margin-left: 3%;
+    font-family: 'anek devanagari';
+    font-size: 1.2vw;
+    word-spacing: 0.6ch;
+   
+  
+    }
+
+    .para u, .para span{
+        color:#e5ff53
+        text-decoration: underline
+    }
+
+    .images img{
+        border: 2px solid white;
+    }
+    .img1{
+        width: 30%;
+        border-radius: 7vw 0 0 0;
+        rotate: 354deg;
+    }
+    .img2{
+        width: 30%;
+        border-radius:0 0 7vw  0;
+        rotate: 10deg;
+        margin-top: 5%;
+       
+    }
+    .img3{
+        width: 27%;
+        border-radius: 0 7vw 0 0;
+        rotate: 350deg;
+       
+    }
+</style>
