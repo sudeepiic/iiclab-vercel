@@ -4,6 +4,7 @@ import caseStudyImg from "../src/images/caseStudyImg.png";
 import caseStudy2 from "../src/images/caseStudy2.png";
 import paraDiamond from "../src/images/paraDiamond.png";
 import blackDiamond from "../src/images/blackDiamond.png";
+import heroImg from "../src/images/heroImg.png";
 
 import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
@@ -14,10 +15,49 @@ const props = Astro.props;
 
 
 ---
+ <section>
+   <img src={heroImg} style="width: 100%;" alt="">
+
+   <div style="background-color: #1a1a1a; display:flex; justify-content: center; padding-bottom: 16%;">
+     
+     
+     <div class="midDiv " >
+     <div class="border-box"> <span>Technology</span>
+     </div>
+     <div class="border-box"> <span>Gesture Recognition</span>
+     </div>
+      <div class="heading" >
+       
+        Experience the <u>joy of water</u>
+     </div>
+     </div>
+    
+  
+      
+   </div>
+
+   <div class="row">
+    <div class="col-6 client" >
+      <div class="smDiv" >
+        <p>client</p>
+        <span>myntra & Nautica</span>
+      </div>
+    
+    </div>
+    <div class="col-6 solution" >
+      <div class="smDiv">
+        <p >solution</p>
+      <span>Real time Gesture Recognition</span>
+      </div>
+      
+    </div>
+   </div>
 
 
+ </section>
 
-<section style="background-color: #1a1a1a; padding-top:4%">
+
+<!-- <section style="background-color: #1a1a1a; padding-top:4%">
  
         <div >
         <div class="d-flex margins ">
@@ -71,11 +111,11 @@ const props = Astro.props;
  
   
 
-</section>
+</section> -->
 
 <style>
     
-  .margins {
+  /* .margins {
     margin-left: 7%;
     margin-right: 7%;
   }
@@ -167,7 +207,95 @@ const props = Astro.props;
 
   .yellowDiamond{
     width: 3% !important;
+  } */
+  .heading{
+    
+    color: white;
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 10.5vw;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 0.85;
+    text-align: center;
+   
+    background-color: #1a1a1a;
+   
+   
   }
+  .border-box{
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 0.3vw;
+    margin-top: 6%;
+    margin-bottom: 4%;
+    width: 9vw;
+    border-radius: 3.5px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.65;
+    border: 1px solid grey;
+
+    }
+    .border-box span{
+      font-family: 'anek devanagari';
+      font-size: 0.75vw;
+
+      font-weight: 300;
+      color: white;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+
+    .midDiv{
+      position: absolute;
+       top:35vw;
+       background-color: #1a1a1a;
+        
+    padding-left:8%;
+    padding-right:8%;
+    width: 50%;
+    text-align: center;
+    border-radius: 5px;
+    padding-bottom: 3%;
+    }
+
+    .client, .solution{
+      text-align: center;
+      border: 1px solid grey;
+      background-color: #282727;
+     
+    }
+
+    .client p, .solution p{
+      font-family: 'anek devanagari';
+      color: grey;
+      text-transform: uppercase;
+      
+    }
+
+    .client span, .solution span{
+    color: white;
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 4.5vw;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 0.35;
+   
+    }
+
+    .smDiv{
+      text-align: left;
+      margin-left: 20% !important;
+      margin: 5%;
+    }
+
+}
+
 
 
 </style>
+
+
+

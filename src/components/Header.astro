@@ -13,7 +13,7 @@ import calllogo from "../images/calllogo.png";
           <img src={logo} alt="" />
         </a>
       </div>
-      <div class="list">
+      <div class="list onlyDesk">
         <ul class="d-inline-flex">
           <li class="paddingsLi"><a class="navTabs" href="">Our Work</a></li>
           <li><a class="navTabs" href="">Solutions</a></li>
@@ -81,6 +81,7 @@ import calllogo from "../images/calllogo.png";
   .navTabs {
     opacity: 50%;
   }
+
 
  
 @media screen and (max-width:992px){
@@ -167,5 +168,23 @@ import calllogo from "../images/calllogo.png";
   .black{
     background-color: #1a1a1a;
     color: white;
+  }
+  @media screen and (max-width:768px){
+    .onlyDesk{
+      display: none;
+    }
+    .contact-div{
+      display: none;
+    }
+    .menu{
+     position: absolute;
+     right: 7%;
+    }
+  }
+
+  .turnBlack{
+    background: transparent;
+    position: absolute;
+    width: 100%;
   }
 </style>
