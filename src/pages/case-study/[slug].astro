@@ -43,11 +43,20 @@ const { caseStudyData } = Astro.props;
 <Layout title="case study">
 <Title1
    heroTitle={documentToHtmlString(caseStudyData.fields.heroTitleMain)}
+   heroVideo={caseStudyData.fields?.heroVideo?.fields?.file.url}
    herobanner={caseStudyData.fields?.heroBanner?.fields?.file.url}
+   whichTechnology={documentToHtmlString(caseStudyData.fields?.whichTechnology)}
    herobanner2={caseStudyData.fields?.heroBanner2?.fields?.file.url}
    heroContent={documentToHtmlString(caseStudyData.fields.heroContent)}
+   contentPointers1 = {documentToHtmlString(caseStudyData.fields.contentPointers1)}
+   contentPointers2 = {documentToHtmlString(caseStudyData.fields.contentPointers2)}
+
    clientInfo={documentToHtmlString(caseStudyData.fields.clientInfo)}
    solutionInfo={documentToHtmlString(caseStudyData.fields.solutionInfo)}
+
+   brandLogo1={caseStudyData?.fields?.brandLogos && caseStudyData?.fields?.brandLogos[0]?.fields?.file.url}
+   brandLogo2={caseStudyData?.fields?.brandLogos && caseStudyData?.fields?.brandLogos[1]?.fields?.file.url}
+
    >
 </Title1>
 
@@ -61,18 +70,22 @@ const { caseStudyData } = Astro.props;
 > 
 </Comp2>  
    
-
-<Comp3
+{
+  caseStudyData?.fields?.midContentImg && 
+  <Comp3
 midContentTitle={documentToHtmlString(caseStudyData?.fields?.midContentTitle)}
-   midContentImg={ caseStudyData?.fields?.midContentImg[0]?.fields?.file.url}
+   midContentImg={caseStudyData?.fields?.midContentImg && caseStudyData?.fields?.midContentImg[0]?.fields?.file.url}
    midImgCaption={documentToHtmlString(caseStudyData.fields.midImgCaption)}
    midContentText={documentToHtmlString(caseStudyData.fields.midContentText)}
 
 >
 </Comp3>
+}
 
 
-<Comp4
+{
+  caseStudyData.fields.tiltImagesTitle &&
+  <Comp4
   tiltImagesTitle={documentToHtmlString(caseStudyData.fields.tiltImagesTitle)}
   tiltImagesText={documentToHtmlString(caseStudyData.fields.tiltImagesText)}
   tiltImage1={caseStudyData?.fields?.tiltImages && caseStudyData?.fields?.tiltImages[0]?.fields?.file.url}
@@ -82,6 +95,8 @@ midContentTitle={documentToHtmlString(caseStudyData?.fields?.midContentTitle)}
 
 >
 </Comp4>
+
+}
 
 
 <Comp5CenterText
@@ -109,10 +124,14 @@ midContentTitle={documentToHtmlString(caseStudyData?.fields?.midContentTitle)}
 
 }
 
-<Comp7Bottom
+
+{ caseStudyData.fields.yellowCompTitle &&
+ <Comp7Bottom
  yellowCompTitle={documentToHtmlString(caseStudyData.fields.yellowCompTitle)}
  yellowCompText={documentToHtmlString(caseStudyData.fields.yellowCompText)}
 >
 </Comp7Bottom>
+}
+
 </Layout>
 
