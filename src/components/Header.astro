@@ -3,6 +3,7 @@ import logo from "../images/logo.png";
 import blackCircle from "../images/blackcircle.png";
 import whiteCircle from "../images/whitecircle.png";
 import calllogo from "../images/calllogo.png";
+import logoSvg from "../images/logoSvg.svg"
 ---
 
 <header class="turnBlack">
@@ -10,7 +11,13 @@ import calllogo from "../images/calllogo.png";
     <nav class="main d-inline-flex">
       <div class="logo">
         <a href="/">
-          <img src={logo} alt="" />
+          <!-- <img  src={logoSvg} alt="" /> -->
+          <svg width="44" height="48" viewBox="0 0 44 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M27.8125 47.4504C27.8125 31.7498 27.8125 16.0492 27.8125 0.348633C33.1525 0.348633 38.4469 0.348633 43.8326 0.348633C43.8326 4.04558 43.8326 7.74252 43.8326 11.4851C42.2351 11.4851 40.6833 11.4851 39.0403 11.4851C39.0403 19.7462 39.0403 27.9616 39.0403 36.2683C40.6377 36.2683 42.1895 36.2683 43.8326 36.2683C43.8326 40.0109 43.8326 43.7078 43.8326 47.4504C38.4926 47.4504 33.1982 47.4504 27.8125 47.4504Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.8828 47.4504C13.8828 31.7498 13.8828 16.0492 13.8828 0.348633C17.5798 0.348633 21.3223 0.348633 25.0649 0.348633C25.0649 16.0492 25.0649 31.7498 25.0649 47.4504C21.3223 47.4504 17.6254 47.4504 13.8828 47.4504Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1365 47.4508C7.43953 47.4508 3.74258 47.4508 0 47.4508C0 37.5466 0 27.6424 0 17.7383C3.69694 17.7383 7.39389 17.7383 11.1365 17.7383C11.1365 27.6424 11.1365 37.5466 11.1365 47.4508Z" fill="black"/>
+            </svg>
+
         </a>
       </div>
       <div class="list onlyDesk">
@@ -47,6 +54,7 @@ import calllogo from "../images/calllogo.png";
   :root {
     --mainfont-font-family: "Anek Devanagari";
     --maincolor-color: #1a1a1a;
+    
   }
 
   .main {
@@ -182,9 +190,5 @@ import calllogo from "../images/calllogo.png";
     }
   }
 
-  .turnBlack{
-    background: transparent;
-    position: absolute;
-    width: 100%;
-  }
+ 
 </style>

@@ -48,7 +48,11 @@ const { caseStudyData } = Astro.props;
    whichTechnology={documentToHtmlString(caseStudyData.fields?.whichTechnology)}
    herobanner2={caseStudyData.fields?.heroBanner2?.fields?.file.url}
    heroContent={documentToHtmlString(caseStudyData.fields.heroContent)}
+  pointerHead1={documentToHtmlString(caseStudyData.fields.pointerHead1)}
+
    contentPointers1 = {documentToHtmlString(caseStudyData.fields.contentPointers1)}
+  pointerHead2={documentToHtmlString(caseStudyData.fields.pointerHead2)}
+
    contentPointers2 = {documentToHtmlString(caseStudyData.fields.contentPointers2)}
 
    clientInfo={documentToHtmlString(caseStudyData.fields.clientInfo)}
@@ -135,3 +139,18 @@ midContentTitle={documentToHtmlString(caseStudyData?.fields?.midContentTitle)}
 
 </Layout>
 
+
+<style is:global>
+  .turnBlack{
+    background: transparent;
+    position: absolute;
+    width: 100%;
+  }
+ 
+  .list ul li a {
+ 
+    color: white;
+    opacity: 100%;
+  }
+ 
+</style>
