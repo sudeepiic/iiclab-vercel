@@ -1,0 +1,149 @@
+---
+import creative1 from "../../images/creative1.png";
+import yellowGo from "../../images/yellowGo.png";
+import creative2 from "../../images/creative2.png";
+
+
+---
+
+
+<section style="background-color: #1a1a1a; padding: 5% 9% 2% 9%; border-radius: 60px 60px 0 0 ;">
+  
+    <div class="row">
+
+        
+        <div class="col-4">
+            <span class="creative">More From Our Creative Mind</span> <br>
+            <div class="viewAll btn">View All</div>
+        </div>
+        
+        <div class="col-4">
+            <img src={creative1} style="width: 95%; margin-bottom: 5%;" alt="">
+
+            <span class="imgText">Get Everyone's Attention With These Amazing Experiences</span>
+                
+               <a href="/blog-details/"> <img class="btn goBtn"  src={yellowGo} alt=""></a>
+                <div style="margin-top: 3.4%;">
+                  <div class="border-box"> <span>Design & Technology</span></div>
+                  <span class="authorName">By Pallavi.Jain</span>
+                  <span class="dot"></span>
+                  <span class="readTime">5 min read</span>
+
+                </div>
+        </div>
+        
+        <div class="col-4">
+            <img src={creative2} style="width: 95%; margin-bottom: 5%;" alt="">
+
+            <span class="imgText">Is 3D Projection Mapping The Future Or The Present?</span>
+                
+            <a href="/blog-details/"> <img class="btn goBtn"  src={yellowGo} alt=""></a>
+             <div style="margin-top: 3.4%;">
+               <div class="border-box"> <span>Design & Technology</span></div>
+               <span class="authorName">By Pallavi.Jain</span>
+               <span class="dot"></span>
+               <span class="readTime">5 min read</span>
+
+             </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .creative {
+        font-family: "Deutschlander";
+        text-transform: uppercase;
+        font-size: 9.5vw;
+        font-weight: 400;
+        font-style: normal;
+        color: white;
+        line-height: 0.85;
+        padding-right: 5%;
+       
+    }
+
+
+
+    .imgText{
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 3.7vw;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    line-height: 0.85;
+    letter-spacing: 0.8px
+    
+  }
+
+  .goBtn{
+    width:18%;
+    vertical-align: top;
+  }
+
+  .border-box{
+    background-color: #e5ff53;
+    text-align: center;
+    padding: 0.18vw;
+    width: 8vw;
+    border-radius: 1.5px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.65;
+      
+    }
+    .border-box span{
+      font-family: 'anek devanagari';
+      font-size: 0.7vw;
+
+      font-weight: 500;
+
+      vertical-align: middle;
+    }
+
+    .authorName{
+      font-family: 'anek devanagari';
+      font-size: 0.7vw;
+
+      font-weight: 400;
+      color: white;
+      margin-left: 1%;
+    }
+    .dot{
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: white;
+      display: inline-block;
+      margin-bottom: 0.2%;
+    }
+    .readTime{
+      font-family: 'anek devanagari';
+      font-size: 0.7vw;
+
+      font-weight: 400;
+      color: white;
+     
+      opacity: 50%;
+    }
+
+    .viewAll{
+    border:1.5px solid rgb(111, 111, 110) ;
+    font-family: 'anek devanagari';
+    border-radius: 5rem;
+    width: fit-content;
+    padding: 2.3%;
+    padding-right: 8%;
+    padding-left: 8%;
+
+    margin-top: 3%;
+    font-weight: 400;
+    font-size: 0.7vw;
+    color: white;
+    }
+
+    .viewAll:hover{
+        color: white;
+        font-weight: 500;
+    }
+</style>
