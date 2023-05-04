@@ -7,18 +7,18 @@ import creative2 from "../../images/creative2.png";
 ---
 
 
-<section style="background-color: #1a1a1a; padding: 5% 9% 2% 9%; border-radius: 60px 60px 0 0 ;">
+<section style="background-color: #1a1a1a; padding: 5% 9% 2% 9%; border-radius: 3.8vw 3.8vw 0 0 ;">
   
     <div class="row">
 
         
-        <div class="col-4">
+        <div class="col-md-4 col-lg-4 col-sm-12">
             <span class="creative">More From Our Creative Mind</span> <br>
             <div class="viewAll btn">View All</div>
         </div>
         
-        <div class="col-4">
-            <img src={creative1} style="width: 95%; margin-bottom: 5%;" alt="">
+        <div class="col-md-4 col-lg-4 col-sm-12">
+            <img class="creative1" src={creative1} style="width: 95%; margin-bottom: 5%;" alt="">
 
             <span class="imgText">Get Everyone's Attention With These Amazing Experiences</span>
                 
@@ -32,8 +32,8 @@ import creative2 from "../../images/creative2.png";
                 </div>
         </div>
         
-        <div class="col-4">
-            <img src={creative2} style="width: 95%; margin-bottom: 5%;" alt="">
+        <div class="col-md-4 col-lg-4 col-sm-12">
+            <img class="creative2" src={creative2} style="width: 95%; margin-bottom: 5%;" alt="">
 
             <span class="imgText">Is 3D Projection Mapping The Future Or The Present?</span>
                 
@@ -145,5 +145,30 @@ import creative2 from "../../images/creative2.png";
     .viewAll:hover{
         color: white;
         font-weight: 500;
+    }
+
+    @media screen and (max-width:768px){
+
+      .viewAll{
+        display: none;
+      }
+      .creative{
+        font-size: 18vw;
+       
+      }
+      .creative1, .creative2{
+        width: 100% !important;
+        margin-top: 4%;
+      }
+      .imgText{
+        font-size: 10vw;
+      }
+      .border-box{
+        width: 20vw;
+      }
+      .border-box span, .authorName, .readTime{
+        font-size: 2vw;
+      }
+      
     }
 </style>

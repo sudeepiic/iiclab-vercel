@@ -1,6 +1,9 @@
 ---
 
 import blogDetails from "../../images/blogDetails.png"
+
+const props = Astro.props;
+
 ---
 
 
@@ -8,18 +11,18 @@ import blogDetails from "../../images/blogDetails.png"
 
     <div class="margins" style="text-align: center; padding-top: 4%;">
 
-        <span class="blogHeadline">Exploring a better version of yourself ft. The Metaverse</span>
+        <span class="blogHeadline" set:html={props.blogTitle}></span>
 
     </div>
     <div class="margins" style="margin-top: 1.4%; margin-bottom: 3.5%; text-align: center;">
-        <div class="border-box"> <span>Design & Technology</span></div>
-        <span class="authorName">By Pallavi.Jain</span>
+        <div class="border-box"> <span set:html={props.genre}></span></div>
+        <span class="authorName" set:html={props.author}></span>
         <span class="dot"></span>
-        <span class="readTime">5 min read</span>
+        <span class="readTime" set:html={props.readTime}></span>
     </div>
 
     <div class="margins">
-        <img src={blogDetails} alt="" style="width: 100%;">
+        <img src={props.heroImage} alt="" style="width: 100%;">
     </div>
 
  </section>
@@ -46,7 +49,7 @@ import blogDetails from "../../images/blogDetails.png"
       .border-box{
         background-color: #e5ff53;
         text-align: center;
-        padding: 0.18vw;
+        padding: 0.15vw;
         width: 8vw;
         border-radius: 1.5px;
         display: inline-block;
@@ -57,9 +60,9 @@ import blogDetails from "../../images/blogDetails.png"
     
         .border-box span{
           font-family: 'anek devanagari';
-          font-size: 0.7vw;
+          font-size: 0.77vw;
     
-          font-weight: 500;
+          font-weight: 550;
     
           vertical-align: middle;
         }
@@ -67,11 +70,12 @@ import blogDetails from "../../images/blogDetails.png"
     
       .authorName{
           font-family: 'anek devanagari';
-          font-size: 0.7vw;
+          font-size: 0.8vw;
     
           font-weight: 400;
           color: white;
           margin-left: 1%;
+          display:inline-block ;
         }
         .dot{
           width: 4px;
@@ -83,16 +87,33 @@ import blogDetails from "../../images/blogDetails.png"
         }
         .readTime{
           font-family: 'anek devanagari';
-          font-size: 0.7vw;
+          font-size: 0.8vw;
     
           font-weight: 400;
           color: white;
+          display:inline-block ;
          
           opacity: 50%;
         }
+     
         .bgColor{
             background: linear-gradient( #1a1a1a 60%, #f6f7f0 40%);
             padding-top: 9vh;
+        }
+        @media screen and  (max-width:768px){
+
+          .blogHeadline{
+            font-size: 11vw;
+          }
+          .border-box{
+        width: 20vw;
+        }
+        .border-box span, .authorName, .readTime{
+        font-size: 2vw;
+         }
+         .bgColor{
+          background: linear-gradient(#1a1a1a 75% , #f6f7f0 25%);
+         }
         }
     </style>
     
@@ -129,6 +150,7 @@ import blogDetails from "../../images/blogDetails.png"
         border: 1px solid white;
        }
     
+       
     
      
     </style>
