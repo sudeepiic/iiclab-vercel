@@ -22,7 +22,8 @@ const pages = entries.items.map((item) => {
  return ({
     params: { slug: item.fields.params  },
     props: {
-      blogsData: item,
+      blogsData: item
+    
     },
   });
 });
