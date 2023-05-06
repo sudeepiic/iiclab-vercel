@@ -11,7 +11,7 @@ import whatsappLogo from "../images/whatsappLogo.png";
 ---
 
 <section style="background-color: #1a1a1a;  padding-left: 9%; padding-top: 3%;">
-  <div class="div1">
+  <div class="div1 footerReady">
     <img class="diamond" src={footerDiamond} alt="" />
     <span class="footerFont"
       >&nbsp; READY TO ACTIVATE STRATEGIC GROWTH? &nbsp;</span
@@ -19,7 +19,7 @@ import whatsappLogo from "../images/whatsappLogo.png";
     <img class="diamond" src={footerDiamond} alt="" />
   </div>
 
-  <div class="div2 row">
+  <div class="div2 row footerYellow">
     <div class="col-6">
       <p class="content">Our Drones don't bite.</p>
       <p class="content">
@@ -95,41 +95,63 @@ import whatsappLogo from "../images/whatsappLogo.png";
     </div>
   </div>
 </section>
-<section
-  style="border-top: 1.15px solid  grey;   background-color: #1a1a1a; "
->
+<section style="border-top: 1.15px solid  grey;   background-color: #1a1a1a; ">
   <div class="row" style="margin: 0 10% 0 10%; ">
     <div class="col-8 row" style="justify-content:space-evenly;">
+      <span class="collab col-3 d-flex"
+        >Performance &nbsp; <button
+          class="btn"
+          style="
       
-      <span class="collab col-3 d-flex">Performance &nbsp; <button class="btn" style="
+        height: 0%;  margin-top: 3%;"
+        >
+          <img style="width: 2.25vw;" src={goArrow} alt="" /></button
+        >
+      </span>
+      <span class="collab col-3 d-flex">
+        &nbsp;Passion &nbsp; <button
+          class="btn"
+          style="
       
-        height: 0%;  margin-top: 3%;">  <img style="width: 2.25vw;" src={goArrow} alt=""></button> </span> 
-      <span class="collab col-3 d-flex"> &nbsp;Passion &nbsp; <button class="btn" style="
+        height: 0%;  margin-top: 3%;"
+        >
+          <img style="width: 2.25vw;" src={goArrow} alt="" /></button
+        >
+      </span>
+      <span class="collab col-3 d-flex"
+        >Collaboration &nbsp; <button
+          class="btn"
+          style="
       
-        height: 0%;  margin-top: 3%;">  <img style="width: 2.25vw;" src={goArrow} alt=""></button>    </span>
-      <span class="collab col-3 d-flex">Collaboration &nbsp; <button class="btn" style="
-      
-        height: 0%;  margin-top: 3%;">  <img style="width: 2.25vw;" src={goArrow} alt=""></button> </span>
+        height: 0%;  margin-top: 3%;"
+        >
+          <img style="width: 2.25vw;" src={goArrow} alt="" /></button
+        >
+      </span>
     </div>
-    <div class="col-4 " style="text-align: center; padding-top: 1.5%;">
-      
-       <button class="btn"><img class="icons" src={instaLogo} alt=""></button>
-       <button class="btn"> <img class="icons" src={linkedinlogo} alt=""></button>
-        <button class="btn"><img class="icons" src={twitterLogo} alt=""> </button>
-       <button class="btn"> <img class="icons" src={fbLogo} alt=""></button>
-        <button class="btn"> <img class="icons" src={whatsappLogo} alt=""></button>
-
+    <div class="col-4" style="text-align: center; padding-top: 1.5%;">
+      <button class="btn"><img class="icons" src={instaLogo} alt="" /></button>
+      <button class="btn">
+        <img class="icons" src={linkedinlogo} alt="" /></button
+      >
+      <button class="btn"
+        ><img class="icons" src={twitterLogo} alt="" />
+      </button>
+      <button class="btn"> <img class="icons" src={fbLogo} alt="" /></button>
+      <button class="btn">
+        <img class="icons" src={whatsappLogo} alt="" /></button
+      >
     </div>
   </div>
 </section>
 
-<section style="border-top: 1.15px solid  grey;   background-color: #1a1a1a;padding:2% 0 2% 0">
+<section
+  style="border-top: 1.15px solid  grey;   background-color: #1a1a1a;padding:2% 0 2% 0"
+>
   <div style="text-align: center;">
-
     <span class="bottomDiv" style=" opacity:70%"> copyright 2022</span>
-    <span class="bottomDiv" > &nbsp; Ink In Caps</span>
+    <span class="bottomDiv"> &nbsp; Ink In Caps</span>
   </div>
-  
 </section>
 
 <style>
@@ -210,40 +232,34 @@ import whatsappLogo from "../images/whatsappLogo.png";
   }
 
   .bottomDiv {
-
     color: white;
     font-family: Anek Devanagari;
     font-size: 1.4rem;
-
   }
-  .icons{
+  .icons {
     width: 3vw;
-   
   }
-  .btn{
+  .btn {
     padding: 0.2rem;
   }
-  @media (max-width:1435px){
-    .btn{
-    padding: 0.2rem;
-  }
+  @media (max-width: 1435px) {
+    .btn {
+      padding: 0.2rem;
+    }
   }
 
-  @media (max-width:1320px){
-   .collab{
-    font-size: 2rem;
-   }
+  @media (max-width: 1320px) {
+    .collab {
+      font-size: 2rem;
+    }
   }
-  @media (max-width:1175px){
-  
-    .collab{
-    font-size: 1.8rem;
-   }
-  
-  .btn{
-    padding: 0.1rem;
-  }
+  @media (max-width: 1175px) {
+    .collab {
+      font-size: 1.8rem;
+    }
+
+    .btn {
+      padding: 0.1rem;
+    }
   }
 </style>
-
-

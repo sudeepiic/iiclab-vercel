@@ -1,0 +1,331 @@
+---
+import Layout from "../layouts/Layout.astro";
+import hiringBG2 from "../images/hiringBG2.png";
+import applyNow from "../images/applyNow.png";
+import ps from "../images/ps.png";
+---
+
+<Layout title="hiring-app">
+  <section>
+    <div class="gradient">
+      <div class="bgImage">
+        <div class="title">
+          <span>user interface (UI) designer</span><br />
+          <img
+            class="btn"
+            style="width: 32%; margin-bottom: 5%;"
+            src={applyNow}
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="margins">
+    <p class="heading">About the job</p>
+    <span class="text">
+      User interface design or user interface engineering is the design of user
+      interfaces for machines and software, such as computers, home appliances,
+      mobile devices, and other electronic devices, with the focus on maximizing
+      usability and the user experience.
+    </span>
+
+    <p class="heading">Responsibilities</p>
+    <span class="text">
+      <ul>
+        A UI designer is responsible for creating interactive programs that
+        enhance a customer's experience
+      </ul>
+      <ul>
+        Brand and facilitate an enjoyable experience on the business's website
+      </ul>
+      <ul>
+        UI designers also need to have a working understanding of graphic design
+        Brand's strength through the interface of a product.
+      </ul>
+      <ul>Brand's strength through the interface of a product.</ul>
+      <ul>
+        UI designer requires specialized training in all areas to deliver
+        quality products and services
+      </ul>
+    </span>
+
+    <p class="heading">job requirements</p>
+    <span class="text" style="margin-bottom: 2%;">
+      User interface design or user interface engineering is the design of user
+      interfaces for machines and software, such as computers, home appliances,
+      mobile devices, and other electronic devices, with the focus on maximizing
+      usability and the user experience.
+    </span>
+    <br />
+    <img style="width: 3%; margin-right: 2%;" src={ps} alt="" />
+    <img style="width: 3%; margin-right: 2%;" src={ps} alt="" />
+    <img style="width: 3%; margin-right: 2%;" src={ps} alt="" />
+  </section>
+
+  <section class="formSec">
+    <div class="row">
+      <div class="col-5">
+        <p class="formTitle">Interested?</p>
+        <p class="formTitle" style="color:#e5ff53">Apply Now!</p>
+      </div>
+      <div class="col-7">
+        <form action="">
+          <div class="input-group mb-3 input-group-lg">
+            <div class="input-group-prepend" style="margin-bottom: 2.5%;">
+              <span class="inp-title input-group-text">Your Name:</span>
+            </div>
+            <input
+              type="text"
+              style="margin-bottom: 2.5%;"
+              placeholder="write your full name"
+              class="input form-control"
+            />
+          </div>
+
+          <div
+            style="margin-bottom: 3%;"
+            class="input-group mb-3 input-group-lg"
+          >
+            <div class="input-group-prepend" style="margin-bottom: 2.5%;">
+              <span class="inp-title input-group-text">Your Email:</span>
+            </div>
+            <input
+              type="text"
+              style="margin-bottom: 2.5%;"
+              placeholder="Enter Your email address"
+              class="input form-control"
+            />
+          </div>
+
+          <div
+            style="margin-bottom: 3%;"
+            class="input-group mb-3 input-group-lg"
+          >
+            <div class="input-group-prepend" style="margin-bottom: 2.5%;">
+              <span class="inp-title input-group-text">Phone:</span>
+            </div>
+            <input
+              type="text"
+              style="margin-bottom: 2.5%;"
+              placeholder="123 456 7890"
+              class="input form-control"
+            />
+          </div>
+
+          <div
+            style="margin-bottom: 3%;"
+            class="input-group mb-3 input-group-lg"
+          >
+            <div class="input-group-prepend" style="margin-bottom: 2.5%;">
+              <span class="inp-title input-group-text">Link to resume:</span>
+            </div>
+            <input
+              type="text"
+              style="margin-bottom: 2.5%;"
+              placeholder="Enter link to your CV/Resume"
+              class="input form-control"
+            />
+          </div>
+
+          <div
+            style="margin-bottom: 3%;"
+            class="input-group mb-3 input-group-lg"
+          >
+            <div class="input-group-prepend" style="margin-bottom: 2.5%;">
+              <span class="inp-title input-group-text">Portfolio Link:</span>
+            </div>
+            <input
+              type="text"
+              style="margin-bottom: 2.5%;"
+              placeholder="Enter Your Portfolio Link"
+              class="input form-control"
+            />
+          </div>
+
+          <div
+            style="margin-bottom: 3%;"
+            class="input-group mb-3 input-group-lg"
+          >
+            <div class="input-group-prepend" style="margin-bottom: 2.5%;">
+              <span class="inp-title input-group-text"
+                >Linkedin (optional):</span
+              >
+            </div>
+            <input
+              type="text"
+              style="margin-bottom: 2.5%;"
+              placeholder="LinkedIn Username"
+              class="input form-control"
+            />
+          </div>
+
+          <textarea
+            class="textArea"
+            rows="7"
+            cols="50"
+            name="comment"
+            form="usrform"
+          >
+            About you</textarea
+          >
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .title {
+    color: white;
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 13vw;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 0.85;
+
+    width: 65%;
+    margin-top: 9%;
+  }
+
+  .bgImage {
+    background-image: url(../images/hiringBG2.png);
+    background-size: cover;
+
+    object-fit: cover;
+    padding-left: 10%;
+    padding-top: 10%;
+  }
+
+  .gradient {
+    background-image: linear-gradient(black 100%, #1a1a1a 0%);
+  }
+
+  .margins {
+    margin: 5% 8% 4% 8%;
+  }
+
+  .heading {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 6.5vw;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 0.85;
+  }
+  .text {
+    width: 70%;
+    font-family: "anek devanagari";
+    opacity: 70%;
+    font-weight: 500;
+    font-size: 1.3vw;
+    display: inline-block;
+    line-height: 2;
+    margin-bottom: 4%;
+  }
+  .formSec {
+    background-color: #1a1a1a;
+    padding-top: 7%;
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+  .inputCss {
+    background-color: #1a1a1a;
+    height: 3vw;
+    border-radius: 0 10px 0 10px;
+    border-left: 0 !important;
+    color: rgba(255, 255, 255, 1);
+    font-size: calc(7px + 0.390625vw);
+  }
+
+  .formTitle {
+    color: white;
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 11.5vw;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 0.85;
+  }
+
+  /* form css */
+
+  .inp-title,
+  .input {
+    background-color: #1a1a1a;
+  }
+  .input-group-text {
+    padding: 2.55rem 2.75rem;
+    color: white;
+    font-family: "anek devanagari";
+    text-transform: uppercase;
+    font-size: 1.2vw;
+    /* border-right: 0 !important; */
+    border-radius: 0 0 0 0.7vw !important;
+    border: 1px solid #838586 !important;
+  }
+  .form-control {
+    color: #e5ff53 !important;
+    font-weight: 500;
+    font-family: "anek devanagari";
+    font-size: 1.35vw !important;
+    background-color: #1a1a1a !important;
+    border-radius: 0 0.7vw 0 0 !important;
+    border: 1px solid #838586 !important;
+  }
+
+  .textArea {
+    background-color: #1a1a1a;
+    width: 100%;
+    color: white;
+    font-size: 1.2vw;
+    font-family: anek devanagari;
+    padding-top: 4%;
+    text-transform: uppercase;
+    border-radius: 0 0.7vw 0.7vw 0.7vw !important;
+  }
+</style>
+
+<style is:global>
+  .turnBlack {
+    background: transparent;
+    position: absolute;
+    width: 100%;
+  }
+
+  .list ul li a {
+    color: white;
+    opacity: 100%;
+  }
+  path {
+    fill: white;
+  }
+
+  /* connect button css */
+
+  .connect,
+  .circles {
+    fill: #1a1a1a;
+  }
+  .oval {
+    fill: white;
+  }
+
+  .tele {
+    fill: white;
+  }
+  .menu p {
+    color: white;
+  }
+  .menu .s1,
+  .menu .s2 {
+    border: 1px solid white;
+  }
+
+  .footerYellow,
+  .footerReady {
+    display: none;
+  }
+</style>
