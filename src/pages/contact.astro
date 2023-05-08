@@ -1,0 +1,310 @@
+---
+import Layout from "../layouts/Layout.astro";
+import officeImg from "../images/officeImg.png";
+import submitArrow from "../images/submitArrow.png";
+import contactHand from "../images/contactHand.png";
+import positionBtn from "../images/positionBtn.png";
+---
+
+<Layout title="contact-us">
+  <section class="topSec">
+    <div
+      class="row"
+      style="padding-top: 4%; margin-left: 8%; margin-bottom: 3%;"
+    >
+      <div class="col-5">
+        <span class="title"> Ready for a Head Start?</span><br />
+        <span class="text"
+          >We can help you with all your questions except, how much calories
+          does Mario burn in a day.</span
+        >
+      </div>
+      <div class="col-7" style="padding-left: 4%;">
+        <img class="heroImg" src={officeImg} alt="" />
+      </div>
+    </div>
+
+    <form action="" class="margins">
+      <div class="input-group mb-3 input-group-lg">
+        <div class="input-group-prepend" style="margin-bottom:  1.5%;">
+          <span class="inp-title input-group-text">Your Name:</span>
+        </div>
+        <input
+          type="text"
+          style="margin-bottom:  1.5%;"
+          placeholder="Enter Your Name Here"
+          class="input form-control"
+        />
+      </div>
+
+      <div style="margin-bottom: 3%;" class="input-group mb-3 input-group-lg">
+        <div class="input-group-prepend" style="margin-bottom: 1.5%;">
+          <span class="inp-title input-group-text">Your Email:</span>
+        </div>
+        <input
+          type="text"
+          style="margin-bottom:  1.5%;"
+          placeholder="Enter Your Email Address"
+          class="input form-control"
+        />
+      </div>
+
+      <textarea
+        class="textArea"
+        rows="7"
+        cols="50"
+        name="comment"
+        form="usrform"
+      >
+        Message</textarea
+      >
+      <div class="submitBtn btn">
+        <img src={submitArrow} alt="" /> submit
+      </div>
+    </form>
+  </section>
+
+  <section style="margin-top: 3%; margin-bottom: 3%;">
+    <div class="row table margins">
+      <div class="col-2 col1">ADDRESS</div>
+      <div class="col-10 col2" style="text-align: end;">
+        Lotus corporate park, E 802, Western Express Hwy, Geetanjali Railway
+        Colony, Laxmi Nagar, Goregaon, Mumbai, Maharashtra 400063
+      </div>
+    </div>
+
+    <div class="row table margins">
+      <div class="col-2 col1">CONTACT</div>
+      <div
+        class="col-10 col2 d-flex"
+        style="text-align: end; justify-content: end;"
+      >
+        <div
+          class="innerDivs"
+          style="border-right: 1.2px solid rgb(202, 199, 199)"
+        >
+          <span>help@iiclab.com</span>
+        </div>
+
+        <div style="padding-left: 1.5%;">
+          <span>+91-83033 85888</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row table margins">
+      <div class="col-2 col1">TIMING</div>
+      <div class="col-10 col2" style="text-align: end;">
+        Mon-Sat : 10:00 - 18:30 IST
+      </div>
+    </div>
+
+    <div class="row table margins" style="border-bottom: 0;">
+      <div class="col-2 col1">SOCIAL</div>
+      <div
+        class="col-10 col2 d-flex"
+        style="text-align: end; justify-content: end;"
+      >
+        <div class="innerDivs">
+          <span>LinkedIn</span>
+        </div>
+        <div class="innerDivs">
+          <span>Instagram</span>
+        </div>
+
+        <div class="innerDivs">
+          <span>Youtube</span>
+        </div>
+
+        <div class="innerDivs">
+          <span>Twitter</span>
+        </div>
+
+        <div style="padding-left: 1.5%;">
+          <span>Facebook</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottomSec">
+    <div class="joinClan row">
+      <div class="col-8">
+        <span>want to</span><br />
+        <span> join our clan?</span>
+        <img class="btn posBtn" src={positionBtn} alt="" />
+      </div>
+      <div class="col-4">
+        <img style="width: 80%;" src={contactHand} alt="" />
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .topSec {
+    background-color: #1a1a1a;
+    padding-top: 9vh;
+    padding-bottom: 5%;
+    border-radius: 0 0 4vw 4vw;
+  }
+
+  .bottomSec {
+    background-color: #1a1a1a;
+    padding-top: 9vh;
+    padding-bottom: 5%;
+    border-radius: 4vw 4vw 0 0;
+  }
+  .margins {
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+  .title {
+    font-family: "Deutschlander";
+    color: white;
+    font-size: 14.5vw;
+    text-transform: uppercase;
+    line-height: 0.85;
+  }
+  .heroImg {
+    width: 100%;
+    border-radius: 4.5vw 0 4.5vw 0;
+  }
+
+  .text {
+    font-family: "anek devanagari";
+    font-size: 1.2vw;
+    opacity: 60%;
+    color: white;
+    font-weight: 300;
+  }
+
+  .table {
+    border-bottom: 1.15px solid hsl(60, 1%, 84%);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 83%;
+  }
+  .col1,
+  .col2 {
+    font-family: "Anek Devanagari";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.1vw;
+    line-height: 300%;
+
+    text-transform: capitalize;
+
+    color: #252525;
+
+    opacity: 0.9;
+  }
+
+  .joinClan {
+    margin-left: 10%;
+    margin-right: 12%;
+    margin-top: 4%;
+  }
+
+  .col-8 span {
+    font-family: "Deutschlander";
+    color: white;
+    font-size: 14.5vw;
+    text-transform: uppercase;
+    line-height: 0.85;
+    padding-right: 8%;
+  }
+
+  .posBtn {
+    width: 40%;
+    margin-top: 3%;
+  }
+
+  .innerDivs {
+    border-right: 1.2px solid rgb(202, 199, 199);
+    padding-right: 1.5%;
+    padding-left: 1.5%;
+  }
+
+  /* form css */
+
+  .inp-title,
+  .input {
+    background-color: #1a1a1a;
+  }
+  .input-group-text {
+    padding: 2.55rem 2.75rem;
+    color: white;
+    font-family: "anek devanagari";
+    text-transform: uppercase;
+    font-size: 1.2vw;
+    /* border-right: 0 !important; */
+    border-radius: 0 0 0 0.7vw !important;
+    border: 1.3px solid #575859 !important;
+  }
+  .form-control {
+    color: #e5ff53 !important;
+    font-weight: 500;
+    font-family: "anek devanagari";
+    font-size: 1.35vw !important;
+    background-color: #1a1a1a !important;
+    border-radius: 0 0.7vw 0 0 !important;
+    border: 1.3px solid #575859 !important;
+  }
+
+  .textArea {
+    background-color: #1a1a1a;
+    width: 100%;
+    color: white;
+    font-size: 1.2vw;
+    font-family: anek devanagari;
+    padding-top: 4%;
+    text-transform: uppercase;
+    border-radius: 0 0.7vw 0.7vw 0.7vw !important;
+  }
+  .submitBtn {
+    width: 100%;
+    background-color: #e5ff53;
+    text-align: center;
+    padding: 3%;
+    font-family: "anek devanagari";
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.2vw;
+    border-radius: 0 0 0.7vw 0.7vw;
+  }
+</style>
+<style is:global>
+  .turnBlack {
+    background: transparent;
+    position: absolute;
+    width: 100%;
+  }
+
+  .list ul li a {
+    color: white;
+    opacity: 50%;
+  }
+  path {
+    fill: white;
+  }
+
+  .connect,
+  .circles {
+    fill: #1a1a1a;
+  }
+  .oval {
+    fill: white;
+  }
+
+  .tele {
+    fill: white;
+  }
+  .menu p {
+    color: white;
+  }
+  .menu .s1,
+  .menu .s2 {
+    border: 1px solid white;
+  }
+</style>

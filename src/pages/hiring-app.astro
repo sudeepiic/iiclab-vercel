@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import hiringBG2 from "../images/hiringBG2.png";
 import applyNow from "../images/applyNow.png";
 import ps from "../images/ps.png";
+import submitArrow from "../images/submitArrow.png";
 ---
 
 <Layout title="hiring-app">
@@ -170,6 +171,9 @@ import ps from "../images/ps.png";
           >
             About you</textarea
           >
+          <div class="submitBtn btn">
+            <img src={submitArrow} alt="" /> submit application
+          </div>
         </form>
       </div>
     </div>
@@ -264,7 +268,7 @@ import ps from "../images/ps.png";
     font-size: 1.2vw;
     /* border-right: 0 !important; */
     border-radius: 0 0 0 0.7vw !important;
-    border: 1px solid #838586 !important;
+    border: 1.3px solid #575859 !important;
   }
   .form-control {
     color: #e5ff53 !important;
@@ -273,7 +277,7 @@ import ps from "../images/ps.png";
     font-size: 1.35vw !important;
     background-color: #1a1a1a !important;
     border-radius: 0 0.7vw 0 0 !important;
-    border: 1px solid #838586 !important;
+    border: 1.3px solid #575859 !important;
   }
 
   .textArea {
@@ -285,6 +289,17 @@ import ps from "../images/ps.png";
     padding-top: 4%;
     text-transform: uppercase;
     border-radius: 0 0.7vw 0.7vw 0.7vw !important;
+  }
+  .submitBtn {
+    width: 100%;
+    background-color: #e5ff53;
+    text-align: center;
+    padding: 3%;
+    font-family: "anek devanagari";
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.2vw;
+    border-radius: 0 0 0.7vw 0.7vw;
   }
 </style>
 

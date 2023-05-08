@@ -4,155 +4,139 @@ import { contentfulClient } from "../../lib/contentful";
 import TitleComp from "../../components/blogs_components/titleComp.astro";
 import Comp2Content from "../../components/blogs_components/comp2_content.astro";
 import Comp3Black from "../../components/blogs_components/comp3_black.astro";
+
 import Layout from "../../layouts/Layout.astro";
 
-import  { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 export async function getStaticPaths() {
-
-const entries = await contentfulClient.getEntries<any>({
-  content_type: "blogs",
-});
-console.log("paramssssssss", entries);
-
- 
-const pages = entries.items.map((item) => {
-  
-  console.log(item.fields.params, 'oooooooooooooooooooooooooooo')
- return ({
-    params: { slug: item.fields.params  },
-    props: {
-      blogsData: item
-    
-    },
+  const entries = await contentfulClient.getEntries<any>({
+    content_type: "blogs",
   });
-});
-return pages
+  console.log("paramssssssss", entries);
+
+  const pages = entries.items.map((item) => {
+    console.log(item.fields.params, "oooooooooooooooooooooooooooo");
+    return {
+      params: { slug: item.fields.params },
+      props: {
+        blogsData: item,
+      },
+    };
+  });
+  return pages;
 }
 
 const { blogsData } = Astro.props;
 ---
 
-
 <Layout title="Blogs">
-
-
-    <TitleComp
-    blogTitle = {documentToHtmlString(blogsData.fields.blogTitle)}
-    genre = {blogsData.fields.genreNew}
-    author = {documentToHtmlString(blogsData.fields.author)}
-    readTime = {documentToHtmlString(blogsData.fields.readTime)}
+  <TitleComp
+    blogTitle={documentToHtmlString(blogsData.fields.blogTitle)}
+    genre={blogsData.fields.genreNew}
+    author={documentToHtmlString(blogsData.fields.author)}
+    readTime={documentToHtmlString(blogsData.fields.readTime)}
     heroImage={blogsData.fields?.heroImage?.fields?.file.url}
- 
-    >
-       
-    </TitleComp>
+  />
 
   <Comp2Content
-    quote = {documentToHtmlString(blogsData.fields.quote)}
-    quoter = {documentToHtmlString(blogsData.fields.quoter)}
-    content1Heading = {blogsData.fields.content1heading && documentToHtmlString(blogsData.fields.content1heading)}
+    quote={documentToHtmlString(blogsData.fields.quote)}
+    quoter={documentToHtmlString(blogsData.fields.quoter)}
+    content1Heading={blogsData.fields.content1heading &&
+      documentToHtmlString(blogsData.fields.content1heading)}
     content1Text={documentToHtmlString(blogsData.fields.content1text)}
-    content2Heading = {documentToHtmlString(blogsData.fields.content2heading)}
+    content2Heading={documentToHtmlString(blogsData.fields.content2heading)}
     content2Text={documentToHtmlString(blogsData.fields.content2text)}
-    content2Img={blogsData.fields?.content2img && blogsData.fields?.content2img?.fields?.file.url}
-
-    content2bHeading = {blogsData.fields.content2bHeading}
+    content2Img={blogsData.fields?.content2img &&
+      blogsData.fields?.content2img?.fields?.file.url}
+    content2bHeading={blogsData.fields.content2bHeading}
     content2bText={documentToHtmlString(blogsData.fields.content2bText)}
-    content2bImg={blogsData.fields?.content2bImage && blogsData.fields?.content2bImage?.fields?.file.url}
-    content2cHeading = {documentToHtmlString(blogsData.fields.content2cHeading)}
+    content2bImg={blogsData.fields?.content2bImage &&
+      blogsData.fields?.content2bImage?.fields?.file.url}
+    content2cHeading={documentToHtmlString(blogsData.fields.content2cHeading)}
     content2cText={documentToHtmlString(blogsData.fields.content2cText)}
-    content2cImg={blogsData.fields?.content2cImg && blogsData.fields?.content2cImg?.fields?.file.url}
-
-    content2dHeading = {documentToHtmlString(blogsData.fields.content2dHeading)}
+    content2cImg={blogsData.fields?.content2cImg &&
+      blogsData.fields?.content2cImg?.fields?.file.url}
+    content2dHeading={documentToHtmlString(blogsData.fields.content2dHeading)}
     content2dText={documentToHtmlString(blogsData.fields.content2dText)}
-    content2dImg={blogsData.fields?.content2dImg && blogsData.fields?.content2dImg?.fields?.file.url}
-    content3Heading = {documentToHtmlString(blogsData.fields.content3heading)}
+    content2dImg={blogsData.fields?.content2dImg &&
+      blogsData.fields?.content2dImg?.fields?.file.url}
+    content3Heading={documentToHtmlString(blogsData.fields.content3heading)}
     content3Text={documentToHtmlString(blogsData.fields.content3text)}
-    content3bHeading = {documentToHtmlString(blogsData.fields.content3bHeading)}
+    content3bHeading={documentToHtmlString(blogsData.fields.content3bHeading)}
     content3btext={documentToHtmlString(blogsData.fields.content3bText)}
-    content3bImg={blogsData.fields?.content3bImg && blogsData.fields?.content3bImg?.fields?.file.url}
-    content3cHeading = {documentToHtmlString(blogsData.fields.content3cHeading)}
+    content3bImg={blogsData.fields?.content3bImg &&
+      blogsData.fields?.content3bImg?.fields?.file.url}
+    content3cHeading={documentToHtmlString(blogsData.fields.content3cHeading)}
     content3cText={documentToHtmlString(blogsData.fields.content3cText)}
-
     index1={documentToHtmlString(blogsData.fields.index1)}
     index2={documentToHtmlString(blogsData.fields.index2)}
     index3={documentToHtmlString(blogsData.fields.index3)}
     index4={documentToHtmlString(blogsData.fields.index4)}
     index5={documentToHtmlString(blogsData.fields.index5)}
-
     aboutAuthorName={blogsData.fields.aboutAuthorName}
-    aboutAuthorDsgn={blogsData.fields.aboutAuthorDsgn}    
-   >
-
-  </Comp2Content>
-
+    aboutAuthorDsgn={blogsData.fields.aboutAuthorDsgn}
+  />
 
   <Comp3Black
-    creative1Img={blogsData.fields?.creative1Img && blogsData.fields?.creative1Img?.fields?.file.url}
+    creative1Img={blogsData.fields?.creative1Img &&
+      blogsData.fields?.creative1Img?.fields?.file.url}
     creative1Title={documentToHtmlString(blogsData.fields.creative1Title)}
     creative1Genre={documentToHtmlString(blogsData.fields.creative1Genre)}
     creative1Author={documentToHtmlString(blogsData.fields.creative1Author)}
     creative1Time={documentToHtmlString(blogsData.fields.creative1Time)}
-
-    creative2Img={blogsData.fields?.creative2Img && blogsData.fields?.creative2Img?.fields?.file.url}
+    creative2Img={blogsData.fields?.creative2Img &&
+      blogsData.fields?.creative2Img?.fields?.file.url}
     creative2Title={documentToHtmlString(blogsData.fields.creative2Title)}
     creative2Genre={documentToHtmlString(blogsData.fields.creative2Genre)}
     creative2Author={documentToHtmlString(blogsData.fields.creative2Author)}
     creative2Time={documentToHtmlString(blogsData.fields.creative2Time)}
-  >
-
-  </Comp3Black>
-
-
-
+  />
 </Layout>
 
-
 <style is:global>
-    .turnBlack{
-      background: transparent;
-      position: absolute;
-      width: 100%;
-    }
-   
-    .list ul li a {
-   
-      color: white;
-      opacity: 50%;
-    }
-    path{
-      fill: white;
-    }
-  
-    .connect, .circles{
-      fill: #1a1a1a;
-    }
-     .oval{
-      fill: white;
-     }
-  
-     .tele{
-      fill: white;
-     }
-     .menu p{
-      color: white;
-     }
-     .menu .s1, .menu .s2{
-      border: 1px solid white;
-     }
-  
-     u{
-        font-family: "Deutschlander";
-        text-transform: uppercase;
-        font-size: 2.6vw;
-        font-weight: 400;
-        font-style: normal;
-        /* color: white; */
-        line-height: 0.85;
-        
-        color: black;
-     }
-  
-   
-  </style>
+  .turnBlack {
+    background: transparent;
+    position: absolute;
+    width: 100%;
+  }
+
+  .list ul li a {
+    color: white;
+    opacity: 50%;
+  }
+  path {
+    fill: white;
+  }
+
+  .connect,
+  .circles {
+    fill: #1a1a1a;
+  }
+  .oval {
+    fill: white;
+  }
+
+  .tele {
+    fill: white;
+  }
+  .menu p {
+    color: white;
+  }
+  .menu .s1,
+  .menu .s2 {
+    border: 1px solid white;
+  }
+
+  u {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 2.6vw;
+    font-weight: 400;
+    font-style: normal;
+    /* color: white; */
+    line-height: 0.85;
+
+    color: black;
+  }
+</style>
