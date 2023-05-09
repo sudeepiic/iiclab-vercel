@@ -1,0 +1,168 @@
+---
+import Layout from "../layouts/Layout.astro";
+import awards from "../images/awards.png";
+import hiringImg1 from "../images/hiringImg1.jpg";
+import viewAwardsBtn from "../images/viewAwardsBtn.png";
+---
+
+<Layout title="Awards">
+  <section style="padding-top: 3.5%;">
+    <div class="row margins">
+      <div class="col-8">
+        <span class="title">Awards &</span>
+        <div>
+          <img class="titleImg" src={hiringImg1} alt="" />
+          <span class="title">Recognition</span>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <img src={viewAwardsBtn} class="viewAwardsBtn" alt="" />
+      </div>
+    </div>
+    <img class="" style="width:100%;" src={awards} alt="" />
+  </section>
+
+  <section class="bottomDiv">
+    <div style="margin-bottom: 2%; ">
+      <span class="list">list of awards</span>
+    </div>
+
+    <div>
+      <table style=" width: 100%;">
+        <tbody>
+          <tr class="awardsTable">
+            <td class="awardCtg"
+              >2022 - Promotion of the Year for Brand Awareness Digital (Gold)
+            </td>
+
+            <td style=" text-align: end;" class="awardName">WOW Awards Asia</td>
+          </tr>
+          <tr class="awardsTable">
+            <td class="awardCtg"
+              >2022 - Audience Enagagement Techonology (Gold)</td
+            >
+            <td style=" text-align: end;" class="awardName">WOW Awards Asia</td>
+          </tr>
+          <tr class="awardsTable">
+            <td class="awardCtg"
+              >2022 - Innovation In Interactive Techonology (Bronze)</td
+            >
+            <td style=" text-align: end;" class="awardName">WOW Awards Asia</td>
+          </tr>
+          <tr class="awardsTable">
+            <td class="awardCtg">2022 - best content marketing launch (Gold)</td
+            >
+            <td style=" text-align: end;" class="awardName"
+              >Marketers’ Excellence Awards</td
+            >
+          </tr>
+          <tr class="awardsTable">
+            <td class="awardCtg">2022 - best brand activation (Gold)</td>
+            <td style="text-align: end;" class="awardName"
+              >Marketers’ Excellence Awards</td
+            >
+          </tr>
+          <tr class="awardsTable">
+            <td class="awardCtg">2022 - Best Use Of VR (Silver)</td>
+            <td style=" text-align: end;" class="awardName"
+              >Marketers’ Excellence Awards</td
+            >
+          </tr>
+          <tr class="awardsTable">
+            <td class="awardCtg">2022 - best use of technology (Bronze)</td>
+            <td style=" text-align: end;" class="awardName"
+              >Marketers’ Excellence Awards</td
+            >
+          </tr>
+          <tr class="awardsTable">
+            <td class="awardCtg">2022 - best use of technology (Gold)</td>
+            <td style=" text-align: end;" class="awardName"
+              >Afaqs Digies Awards</td
+            >
+          </tr>
+          <tr class="awardsTable">
+            <td class="awardCtg">2023- Best Use Of Technology (Silver)</td>
+            <td style=" text-align: end;" class="awardName"
+              >Afaqs Digies Awards</td
+            >
+          </tr>
+          <tr class="awardsTable" style="border: none;">
+            <td class="awardCtg">2023- Media & Entertainment (Bronze)</td>
+            <td style="text-align: end;" class="awardName">DG+ Awards</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .title {
+    font-family: "Deutschlander";
+    font-size: 14.5vw;
+    text-transform: uppercase;
+    line-height: 0.8;
+  }
+
+  .titleImg {
+    vertical-align: baseline;
+    width: 28%;
+
+    border-radius: 12vw;
+    margin-right: 3%;
+  }
+
+  .margins {
+    margin: 0 8% 0 8%;
+    margin-bottom: 6.8%;
+  }
+
+  .viewAwardsBtn {
+    width: 40%;
+    position: relative;
+    top: 65%;
+    left: 55%;
+  }
+
+  .bottomDiv {
+    background-color: #1a1a1a;
+    border-radius: 4vw 4vw 0 0;
+    padding-top: 5%;
+  }
+
+  .list {
+    font-family: "Deutschlander";
+    font-size: 14.5vw;
+    text-transform: uppercase;
+    line-height: 0.8;
+    color: white;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+
+  .awardsTable {
+  }
+  .awardCtg,
+  .awardName {
+    border-bottom: 1.15px solid hsl(60, 1%, 25%);
+    font-family: "Anek Devanagari";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2vw;
+    line-height: 300%;
+
+    text-transform: capitalize;
+    padding: 1.5%;
+    padding-left: 8%;
+    padding-right: 8%;
+    color: #ffffff;
+  }
+
+  tr:hover,
+  tr td:hover {
+    color: #1a1a1a;
+    background-color: #e5ff35;
+    font-weight: 600;
+  }
+</style>

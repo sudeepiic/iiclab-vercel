@@ -1,142 +1,137 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import portfolio1 from "../images/portfolio1.jpg"
-import featuredWorksbtn from "../images/featuredWorksbtn.jpg"; 
-import Hand_Holding_Smartphone from "../images/Hand_Holding_Smartphone.png"; 
+import portfolio1 from "../images/portfolio1.jpg";
+import featuredWorksbtn from "../images/featuredWorksbtn.jpg";
+import Hand_Holding_Smartphone from "../images/Hand_Holding_Smartphone.png";
 import portfolioLaptop from "../images/portfolioLaptop.jpg";
 
+import { contentfulClient } from "../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+const entries = await contentfulClient.getEntries<any>({
+  content_type: "caseStudy",
+});
 ---
 
-
 <Layout title="Portfolio Gallery">
+  <section style="padding-top: 4.5%;">
+    <div class="wrapper">
+      <div id="main4" class="moving-text">
+        <span>Our Works</span><img src={portfolio1} class="movingImg" alt="" />
+        <span>our works</span>
+      </div>
+    </div>
 
+    <!-- <img src={featuredWorksbtn} alt=""> -->
+  </section>
 
-    <section style="padding-top: 4.5%;">
-        <div class="wrapper">
-          <div id="main4" class="moving-text">
-            <span>Our Works</span><img src={portfolio1} class="movingImg" alt="">
-           <span>our works</span> 
+  <section>
+    {
+      entries.items.map((caseStudy, index) => (
+        <a href={"/case-study/" + caseStudy.fields.heroTitle}>
+          <div class="titles">
+            <span class="index">{(index = index + 1)}</span>
+            <span
+              class="name"
+              set:html={documentToHtmlString(caseStudy.fields.clientInfo)}
+            />
           </div>
-        </div>
-
-        <!-- <img src={featuredWorksbtn} alt=""> -->
-
-
-      </section>
-        <div class="titles">
-                <span class="index">01</span>
-                <span class="name">Neom Tiles App UIX</span>
-        </div>
-        <img src={Hand_Holding_Smartphone} style="width: 100%;" alt="">
-        <div class="row info">
-           <div class="col-6">
-            <span>Creating App Design UI/UX for Hindware</span>
-           </div>
-           <div class="col-6">
-                <div>UI/UX Design</div>
-                <div>UX Researching</div>
-                <div style="border-right: none;">Prototyping</div>
-
-           </div>
-        </div>
-
-     <div class="titles">
-            <span class="index">02</span>
-            <span class="name">V-tour website</span>
-    </div>
-    <img src={portfolioLaptop} style="width: 100%;" alt="">
-    <div class="row info">
-       <div class="col-6">
-        <span>Website and landing page redesign</span>
-       </div>
-       <div class="col-6">
-            <div>UI/UX Design</div>
-            <div>Website Redesign</div>
-            <div style="border-right: none;">Prototyping</div>
-
-       </div>
-    </div>
-      <section>
-
-
-      </section>
-
-
-      <style>
-
-#main4 span {
-    font-family: "Deutschlander";
-    padding: 30px;
-    font-size: 16.5vw;
-    text-transform: uppercase;
-  }
-
-  .moving-text {
-    animation: move-text 10s linear infinite;
-  }
-  .wrapper {
-    overflow-x: hidden;
-  }
-
-  @keyframes move-text {
-    0% {
-      transform: translateX(100%);
+          <img
+            src={caseStudy.fields?.heroBanner?.fields?.file.url}
+            style="width: 100%;"
+            alt=""
+          />
+          <div class="row info">
+            <div class="col-6">
+              <span
+                set:html={documentToHtmlString(caseStudy.fields.heroTitleMain)}
+              />
+            </div>
+            <div class="col-6" style="text-align: center;">
+              <div
+                set:html={documentToHtmlString(
+                  caseStudy.fields?.whichTechnology
+                )}
+              />
+            </div>
+          </div>
+        </a>
+      ))
     }
-    100% {
-      transform: translateX(-100%);
+  </section>
+
+  <style>
+    a {
+      text-decoration: none;
     }
-  }
+    #main4 span {
+      font-family: "Deutschlander";
+      padding: 30px;
+      font-size: 16.5vw;
+      text-transform: uppercase;
+    }
 
-  .movingImg{
-    width:13%;
-    vertical-align: super;
-  }
+    .moving-text {
+      animation: move-text 10s linear infinite;
+    }
+    .wrapper {
+      overflow-x: hidden;
+    }
 
-  .titles{
-    background-color: #1a1a1a;
-   
-    
-    padding: 2% 2% 2% 10%;
+    @keyframes move-text {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
 
-  }
-  .index, .name{
-    font-family: "Deutschlander";
-    text-transform: uppercase;
-    color: white;
-    
-  }
+    .movingImg {
+      width: 13%;
+      vertical-align: super;
+    }
 
-  .index{
-    font-size: 4.2vw;
-    line-height: 0.8 !important;
-    opacity: 50%;
-    vertical-align: top;
-    margin-right: 2%;
-  }
-  .name{
-    font-size: 9.5vw;
-    line-height: 0.8 !important;
-  }
+    .titles {
+      background-color: #1a1a1a;
 
-  .info{
-    background-color: #1a1a1a;
-    padding: 2.5% 10% 2.5% 10%;
-    border-bottom: 1px solid rgb(108, 106, 106) ;
+      padding: 2% 2% 2% 10%;
+    }
+    .index,
+    .name {
+      font-family: "Deutschlander";
+      text-transform: uppercase;
+      color: white;
+      display: inline-block;
+    }
 
-  }
-  .col-6{
-    font-family: 'anek devanagari';
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.5vw;
-  }
-  .col-6 div{
-    display: inline-block;
-    border-right: 1px solid rgb(119, 116, 116);
-    padding-right: 7.5%;
-  }
+    .index {
+      font-size: 4.2vw;
+      line-height: 0.8 !important;
+      opacity: 50%;
+      vertical-align: top;
+      margin-right: 2%;
+    }
+    .name {
+      font-size: 9.5vw;
+      line-height: 0.8 !important;
+    }
 
-      </style>
+    .info {
+      background-color: #1a1a1a;
+      padding: 2.5% 10% 2.5% 10%;
+      border-bottom: 1px solid rgb(108, 106, 106);
+      margin-right: 0.025%;
+    }
+    .col-6 {
+      font-family: "anek devanagari";
+      color: white;
 
+      font-size: 1.5vw;
+    }
+    .col-6 div {
+      display: inline-block;
+
+      padding-right: 7.5%;
+    }
+  </style>
 </Layout>
