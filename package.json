@@ -12,6 +12,10 @@
 	"dependencies": {
 		"@contentful/rich-text-html-renderer": "^16.0.3",
 		"astro": "^2.0.8",
-		"contentful": "^10.1.0"
+		"contentful": "^10.1.0",
+		"gsap": "^3.11.5"
+	},
+	"devDependencies": {
+		"@types/jquery": "^3.5.16"
 	}
 }

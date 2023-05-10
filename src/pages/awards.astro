@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import awards from "../images/awards.png";
 import hiringImg1 from "../images/hiringImg1.jpg";
 import viewAwardsBtn from "../images/viewAwardsBtn.png";
+import { gsap } from "gsap";
 ---
 
 <Layout title="Awards">
@@ -32,63 +33,88 @@ import viewAwardsBtn from "../images/viewAwardsBtn.png";
       <table style=" width: 100%;">
         <tbody>
           <tr class="awardsTable">
-            <td class="awardCtg"
-              >2022 - Promotion of the Year for Brand Awareness Digital (Gold)
+            <td class="awardCtg trial">
+              <img src={hiringImg1} class="trial2" alt="" />
+              2022 - Promotion of the Year for Brand Awareness Digital (Gold)
             </td>
 
-            <td style=" text-align: end;" class="awardName">WOW Awards Asia</td>
+            <td style=" text-align: end;" class="awardName">
+              <span> WOW Awards Asia</span>
+            </td>
           </tr>
           <tr class="awardsTable">
-            <td class="awardCtg"
-              >2022 - Audience Enagagement Techonology (Gold)</td
+            <td class="awardCtg trial">
+              <img src={hiringImg1} class="trial2" alt="" />
+              2022 - Audience Enagagement Techonology (Gold)</td
             >
             <td style=" text-align: end;" class="awardName">WOW Awards Asia</td>
           </tr>
           <tr class="awardsTable">
-            <td class="awardCtg"
-              >2022 - Innovation In Interactive Techonology (Bronze)</td
+            <td class="awardCtg trial"
+              ><img src={hiringImg1} class="trial2" alt="" />
+              2022 - Innovation In Interactive Techonology (Bronze)</td
             >
             <td style=" text-align: end;" class="awardName">WOW Awards Asia</td>
           </tr>
           <tr class="awardsTable">
-            <td class="awardCtg">2022 - best content marketing launch (Gold)</td
+            <td class="awardCtg trial"
+              ><img src={hiringImg1} class="trial2" alt="" />
+              2022 - best content marketing launch (Gold)</td
             >
             <td style=" text-align: end;" class="awardName"
               >Marketers’ Excellence Awards</td
             >
           </tr>
           <tr class="awardsTable">
-            <td class="awardCtg">2022 - best brand activation (Gold)</td>
+            <td class="awardCtg trial">
+              <img src={hiringImg1} class="trial2" alt="" />
+              2022 - best brand activation (Gold)</td
+            >
             <td style="text-align: end;" class="awardName"
               >Marketers’ Excellence Awards</td
             >
           </tr>
           <tr class="awardsTable">
-            <td class="awardCtg">2022 - Best Use Of VR (Silver)</td>
+            <td class="awardCtg trial">
+              <img src={hiringImg1} class="trial2" alt="" />
+              2022 - Best Use Of VR (Silver)</td
+            >
             <td style=" text-align: end;" class="awardName"
               >Marketers’ Excellence Awards</td
             >
           </tr>
           <tr class="awardsTable">
-            <td class="awardCtg">2022 - best use of technology (Bronze)</td>
+            <td class="awardCtg trial">
+              <img src={hiringImg1} class="trial2" alt="" />
+              2022 - best use of technology (Bronze)</td
+            >
             <td style=" text-align: end;" class="awardName"
               >Marketers’ Excellence Awards</td
             >
           </tr>
           <tr class="awardsTable">
-            <td class="awardCtg">2022 - best use of technology (Gold)</td>
+            <td class="awardCtg trial">
+              <img src={hiringImg1} class="trial2" alt="" />
+              2022 - best use of technology (Gold)</td
+            >
             <td style=" text-align: end;" class="awardName"
               >Afaqs Digies Awards</td
             >
           </tr>
           <tr class="awardsTable">
-            <td class="awardCtg">2023- Best Use Of Technology (Silver)</td>
+            <td class="awardCtg trial">
+              <img src={hiringImg1} class="trial2" alt="" />
+              2023- Best Use Of Technology (Silver)</td
+            >
             <td style=" text-align: end;" class="awardName"
               >Afaqs Digies Awards</td
             >
           </tr>
           <tr class="awardsTable" style="border: none;">
-            <td class="awardCtg">2023- Media & Entertainment (Bronze)</td>
+            <td class="awardCtg trial">
+              <img src={hiringImg1} class="trial2" alt="" />
+              2023- Media & Entertainment (Bronze)</td
+            >
             <td style="text-align: end;" class="awardName">DG+ Awards</td>
           </tr>
         </tbody>
@@ -98,6 +124,25 @@ import viewAwardsBtn from "../images/viewAwardsBtn.png";
 </Layout>
 
 <style>
+  /* hover image effect css */
+  .trial {
+    position: relative;
+
+    z-index: 1;
+  }
+  .trial2 {
+    position: absolute;
+    object-fit: cover;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    left: 50%;
+    z-index: -10;
+    opacity: 0;
+    visibily: hidden;
+    pointer-events: none;
+  }
+
+  /*  */
   .title {
     font-family: "Deutschlander";
     font-size: 14.5vw;
@@ -166,3 +211,25 @@ import viewAwardsBtn from "../images/viewAwardsBtn.png";
     font-weight: 600;
   }
 </style>
+
+<script>
+  import { gsap } from "gsap";
+  console.log("i m here", gsap.context());
+  const items = document.querySelectorAll(".trial");
+
+  items.forEach((el) => {
+    const image = el.querySelector(".trial2");
+
+    el.addEventListener("mouseenter", (e) => {
+      gsap.to(image, { autoAlpha: 1 });
+    });
+
+    el.addEventListener("mouseleave", (e) => {
+      gsap.to(image, { autoAlpha: 0 });
+    });
+
+    el.addEventListener("mousemove", (e) => {
+      gsap.to(image, { x: e.offsetX - 300 });
+    });
+  });
+</script>
