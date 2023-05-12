@@ -38,8 +38,49 @@ import whatsappLogo from "../images/whatsappLogo.png";
     </div>
   </div>
 
+  <div class="col-md-12 MobileNoneTop">
+    <p class="headings IICInsider">Become An IIC Insider</p>
+    <div class="row allTopInputs">
+      <div class="col-12">
+        <input type="text" class="topInput" placeholder="Your Name" />
+      </div>
+      <div class="col-12 mt-3">
+        <input type="text" class="topInput" placeholder="Your Email" />
+      </div>
+    </div>
+
+    <div class="button mt-3 text-center">
+      <button class="btn">
+        <img
+          class="btn"
+          style="width: 17.5vw;"
+          src={subscribe}
+          alt=""
+        /></button
+      >
+    </div>
+  </div>
+
+  <div class="col-12 TopSocialIcons">
+    <button class="btn"
+      ><img class="socialIcons" src={instaLogo} alt="" /></button
+    >
+    <button class="btn">
+      <img class="socialIcons" src={linkedinlogo} alt="" /></button
+    >
+    <button class="btn"
+      ><img class="socialIcons" src={twitterLogo} alt="" /></button
+    >
+    <button class="btn">
+      <img class="socialIcons" src={fbLogo} alt="" /></button
+    >
+    <button class="btn">
+      <img class="socialIcons" src={whatsappLogo} alt="" /></button
+    >
+  </div>
+
   <div class="div3 row">
-    <div class="col-3">
+    <div class="col-md-3 Footercontact">
       <p class="headings">Location</p>
       <p
         style="color:grey; width:70%; line-height: 200%; font-size: calc(7px + 0.390625vw); min-width:160px"
@@ -57,7 +98,7 @@ import whatsappLogo from "../images/whatsappLogo.png";
         >help@iiclab.com</a
       >
     </div>
-    <div class="col-2">
+    <div class="col-md-2 col-6">
       <p class="headings">Quick Links</p>
       <div class="spacings">
         <p style="color:grey;  ">Home</p>
@@ -67,7 +108,7 @@ import whatsappLogo from "../images/whatsappLogo.png";
         <p style="color:grey">Career</p>
       </div>
     </div>
-    <div class="col-2">
+    <div class="col-md-2 col-6">
       <p class="headings" style="color: rgba(255, 255, 255, 1);
         ">
         Our IPs
@@ -80,7 +121,7 @@ import whatsappLogo from "../images/whatsappLogo.png";
         <p style="color:grey">V-Conference</p>
       </div>
     </div>
-    <div class="col-5">
+    <div class="col-md-5 MobileNone">
       <p class="headings">Become An IIC Insider</p>
       <input class="inputCss" type="text" placeholder="Your Name" />
       <input
@@ -96,7 +137,7 @@ import whatsappLogo from "../images/whatsappLogo.png";
   </div>
 </section>
 <section style="border-top: 1.15px solid  grey;   background-color: #1a1a1a; ">
-  <div class="row" style="margin: 0 10% 0 10%; ">
+  <div class="row ParentSocial" style="margin: 0 10% 0 10%; ">
     <div class="col-8 row" style="justify-content:space-evenly;">
       <span class="collab col-3 d-flex"
         >Performance &nbsp; <button
@@ -188,6 +229,43 @@ import whatsappLogo from "../images/whatsappLogo.png";
     padding-bottom: 2%;
   }
 
+  @media only screen and (max-width: 768px) {
+    .MobileNone {
+      display: none;
+    }
+    .socialIcons {
+      margin-top: 30px;
+      width: 40px !important;
+    }
+
+    .topInput {
+      background-color: #1a1a1a;
+      height: 9vw;
+      border-radius: 0 10px 0 10px;
+      color: rgba(255, 255, 255, 1);
+      font-size: calc(7px + 0.390625vw);
+      width: 88%;
+      border: 0.5px solid #a9a9a987;
+    }
+    .allTopInputs {
+    }
+    .IICInsider {
+      margin-top: 40px;
+    }
+    .Footercontact {
+      margin-bottom: 50px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .MobileNoneTop {
+      display: none;
+    }
+    .TopSocialIcons {
+      display: none;
+    }
+  }
+
   .diamond {
     width: 3vw;
     height: 0%;
@@ -208,7 +286,6 @@ import whatsappLogo from "../images/whatsappLogo.png";
     background-color: #1a1a1a;
     height: 3vw;
     border-radius: 0 10px 0 10px;
-    border: 0 !importantS;
     color: rgba(255, 255, 255, 1);
     font-size: calc(7px + 0.390625vw);
   }
@@ -239,6 +316,7 @@ import whatsappLogo from "../images/whatsappLogo.png";
   .icons {
     width: 3vw;
   }
+
   .btn {
     padding: 0.2rem;
   }
