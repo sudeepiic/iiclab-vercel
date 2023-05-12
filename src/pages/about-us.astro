@@ -12,286 +12,400 @@ import signBrand from "../src/images/signBrand.png";
 import hindware from "../src/images/hindware.png";
 import Header from "../components/Header.astro";
 ---
+
 <Layout title="Ink In Caps - About Us">
-  
-  
-    <section class="margins">
-        <div style="padding-top: 3%;">
-          <div id="main">
-            <div id="div1">
-              <span>DEDUCE ENGAGE ENABLE</span>
-              
-            </div>     
-          </div>
-          <div  id="main2">
-            <div id="div1" class="paraDiv">
-              <span class="para"
-                >INK IN CAPS is a creative technology company that produces digital interactions
-                 for brands to create maximum engagement with the target audience. Our focus is on
-                 creating new and dynamic solutions for our client’s challenges across multiple platforms.</span
-              >
-            </div>
-            <div style="margin-bottom: 3.5%; margin-top: 2%;">
-            <button type="button"  class="btn btn-dark"> <span>Our Services</span></button>
-              <span class="knowMore"> Slide To Know More &nbsp;<img style="width: 0.75rem;" src={downArrow} alt=""> </span>
-
-            </div>
-           
-          </div>
-        
+  <section class="margins">
+    <div style="padding-top: 3%;">
+      <div id="main">
+        <div id="div1">
+          <span>DEDUCE ENGAGE ENABLE</span>
         </div>
-      </section>
+      </div>
+      <div id="main2">
+        <div id="div1" class="paraDiv">
+          <span class="para"
+            >INK IN CAPS is a creative technology company that produces digital
+            interactions for brands to create maximum engagement with the target
+            audience. Our focus is on creating new and dynamic solutions for our
+            client’s challenges across multiple platforms.</span
+          >
+        </div>
+        <div style="margin-bottom: 3.5%; margin-top: 2%;">
+          <button type="button" class="btn btn-dark">
+            <span>Our Services</span></button
+          >
+          <span class="knowMore">
+            Slide To Know More &nbsp;<img
+              style="width: 0.75rem;"
+              src={downArrow}
+              alt=""
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <section style="margin-top:3%;">
-        <img src={officeImg} alt="" style="height:100%;width:100%; " />
-        <div  style="background-color: #1a1a1a; border-radius: 0 0 60px 60px;">
-          <div class="row ">
-            <div class="col-5 btmImg margins " style="padding-left: 3%;">
-              <p>WE'RE AN</p>
-              <p style="color:#e5ff53">EXPERIMENTAL</p>
-              <p style="color:#e5ff53">DESIGN & TECH</p>
-              <p>COMPANY</p>
-              
-            </div>
-            <div class="col-5 data">
-              <div class="d-flex ">
-                <div class="content-box numbers " >50+</div>
-                <span class="numbersText">team members</span>
-              
-              </div>
-               <br>
-              <div class="d-flex ">
-                <div class="content-box numbers " >10+</div>
-                <span class="numbersText">years in the market</span>
-              
-              </div>
-              <br>
-              <div class="d-flex ">
-                <div class="content-box numbers " >100+</div>
-                <span class="numbersText">projects delivered</span>
-              
-              </div>
-              <br>
-              <div class="d-flex ">
-                <div class="content-box numbers " >12</div>
-                <span class="numbersText">awards won</span>
-              
-              </div>
-          </div>
+  <section style="margin-top:3%;">
+    <img src={officeImg} alt="" style="height:100%;width:100%; " />
+    <div style="background-color: #1a1a1a; border-radius: 0 0 6vw 6vw;">
+      <div class="row margins">
+        <div
+          class="col-lg-5 col-md-5 col-sm-12 btmImg margins"
+          style="padding-left: 3%;"
+        >
+          <div class="btmImgHead">
+            <span
+              >WE'RE AN
+              <span style="color:#e5ff53">EXPERIMENTAL</span>
+              <span style="color:#e5ff53">DESIGN & TECH</span>
+              COMPANY</span
+            >
           </div>
         </div>
-      </section>
-
-
-      <section  style="margin-top: 3%; margin-bottom: 3%;">
-       
-        <div style="margin-left: 8%;">
-          <div id="main">
-            <div id="div1">
-              <span style="margin-left: 1%;">BRANDS WE'VE WORKED WITH</span>
-              
-            </div>     
+        <div class="col-lg-5 col-md-5 col-sm-0 data">
+          <div class="d-flex">
+            <div class="content-box numbers">50+</div>
+            <span class="numbersText">team members</span>
           </div>
-          <tr>
-            <td class="img"> <img class="imgs" src={Reliance} alt="" /></td>
-            <td class="img"> <img class="imgs" src={Capgemini} alt="" /></td>
-            <td class="img"> <img class="imgs" src={Vodafone} alt="" /></td>
-            <td class="img"> <img class="imgs" src={bestseller} alt="" /></td>
-            <td class="img"> <img class="imgs" src={signBrand} alt="" /></td>
-          </tr>
           <br />
-      
-          <tr>
-            <td class="img"> <img class="imgs" src={cocacola} alt="" /></td>
-            <td class="img"> <img class="imgs" src={hindware} alt="" /></td>
-            <td class="img"> <img class="imgs" src={bestseller} alt="" /></td>
-            <td class="img"> <img class="imgs" src={Capgemini} alt="" /></td>
-            <td class="img"> <img class="imgs" src={Reliance} alt="" /></td>
-          </tr>
+          <div class="d-flex">
+            <div class="content-box numbers">10+</div>
+            <span class="numbersText">years in the market</span>
+          </div>
           <br />
-          <tr>
-            <td class="img"> <img class="imgs" src={signBrand} alt="" /></td>
-            <td class="img"> <img class="imgs" src={Capgemini} alt="" /></td>
-            <td class="img"> <img class="imgs" src={RealianceB} alt="" /></td>
-            <td class="img"> <img class="imgs" src={Vodafone} alt="" /></td>
-            <td class="img"> <img class="imgs" src={hindware} alt="" /></td>
-          </tr>
-          <br>
-          <tr>
-            <td class="img"> <img class="imgs" src={Reliance} alt="" /></td>
-            <td class="img"> <img class="imgs" src={Capgemini} alt="" /></td>
-            <td class="img"> <img class="imgs" src={Vodafone} alt="" /></td>
-            <td class="img"> <img class="imgs" src={bestseller} alt="" /></td>
-            <td class="img"> <img class="imgs" src={signBrand} alt="" /></td>
-          </tr>
+          <div class="d-flex">
+            <div class="content-box numbers">100+</div>
+            <span class="numbersText">projects delivered</span>
+          </div>
+          <br />
+          <div class="d-flex">
+            <div class="content-box numbers">12</div>
+            <span class="numbersText">awards won</span>
+          </div>
         </div>
-      </section>
-
-      <section  style="border-radius: 60px 60px 0 0; background-color:#1a1a1a ; padding-top: 1.5%; padding-bottom: 4%;"> 
-
-          <div class="margins " style="margin-left: 9%">
-            <span class="meet">MEET&nbsp;</span>
-            <span class="theTeam"> THE TEAM.</span>        
-            
+      </div>
+      <div class="margins onlyMob" style="padding-bottom: 5% !important;">
+        <div class="row">
+          <div class="col-6">
+            <div class="content-box numbers">50+</div>
+            <span class="numbersText">team members</span>
           </div>
-          <div style="text-align: center;padding:10% 0 10% 0;">
-            <h2 style="color:white">Carousel Coming sooon!</h2>
-            <p style="color:white">ruko zara sabar karo</p>
+          <br />
+          <div class="col-6">
+            <div class="content-box numbers">10+</div>
+            <span class="numbersText">years in the market</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="content-box numbers">100+</div>
+            <span class="numbersText">projects delivered</span>
           </div>
 
-          <div class="margins row" >
-            <div class="col-6 d-flex" style="justify-content: end;" >
-              <div class="content-box missions vision">OUR VISION <span style="color:white; opacity:50%; font-size: 1rem; font-family: 'anek devanagari'; display:block">Hover here to see our visions</span></div>
-              
-             
-            </div>
-            <div class="col-6">
-              <div class="content-box missions mission" >OUR MISSON <span style="color:white; opacity:50%; font-size: 1rem; font-family: 'anek devanagari'; display:block">Hover here to see our missions</span></div>
-              
-            </div>
+          <div class="col-6">
+            <div class="content-box numbers">12</div>
+            <span class="numbersText">awards won</span>
           </div>
-         
-      </section>
-      
+        </div>
+      </div>
+    </div>
+  </section>
 
-   <style>
+  <section style="margin-top: 3%; margin-bottom: 3%;">
+    <div style="margin-left: 8%;">
+      <div id="main">
+        <div id="div1">
+          <span style="margin-left: 1%;">BRANDS WE'VE WORKED WITH</span>
+        </div>
+      </div>
+      <tr>
+        <td class="img"> <img class="imgs" src={Reliance} alt="" /></td>
+        <td class="img"> <img class="imgs" src={Capgemini} alt="" /></td>
+        <td class="img"> <img class="imgs" src={Vodafone} alt="" /></td>
+        <td class="img"> <img class="imgs" src={bestseller} alt="" /></td>
+        <td class="img"> <img class="imgs" src={signBrand} alt="" /></td>
+      </tr>
+      <br />
 
-#main {
-  line-height: 1 !important;
-}
+      <tr>
+        <td class="img"> <img class="imgs" src={cocacola} alt="" /></td>
+        <td class="img"> <img class="imgs" src={hindware} alt="" /></td>
+        <td class="img"> <img class="imgs" src={bestseller} alt="" /></td>
+        <td class="img"> <img class="imgs" src={Capgemini} alt="" /></td>
+        <td class="img"> <img class="imgs" src={Reliance} alt="" /></td>
+      </tr>
+      <br />
+      <tr>
+        <td class="img"> <img class="imgs" src={signBrand} alt="" /></td>
+        <td class="img"> <img class="imgs" src={Capgemini} alt="" /></td>
+        <td class="img"> <img class="imgs" src={RealianceB} alt="" /></td>
+        <td class="img"> <img class="imgs" src={Vodafone} alt="" /></td>
+        <td class="img"> <img class="imgs" src={hindware} alt="" /></td>
+      </tr>
+      <br />
+      <tr>
+        <td class="img"> <img class="imgs" src={Reliance} alt="" /></td>
+        <td class="img"> <img class="imgs" src={Capgemini} alt="" /></td>
+        <td class="img"> <img class="imgs" src={Vodafone} alt="" /></td>
+        <td class="img"> <img class="imgs" src={bestseller} alt="" /></td>
+        <td class="img"> <img class="imgs" src={signBrand} alt="" /></td>
+      </tr>
+    </div>
+  </section>
 
+  <section
+    style="border-radius: 6vw 6vw 0 0; background-color:#1a1a1a ; padding-top: 1.5%; padding-bottom: 4%;"
+  >
+    <div class="margins" style="margin-left: 9%">
+      <span class="meet">MEET&nbsp;</span>
+      <span class="theTeam"> THE TEAM.</span>
+    </div>
+    <div style="text-align: center;padding:10% 0 10% 0;">
+      <h2 style="color:white">Carousel Coming sooon!</h2>
+      <p style="color:white">ruko zara sabar karo</p>
+    </div>
 
-#main #div1 span {
-    font-family: "Deutschlander";
-    text-transform: uppercase;
-    font-size: 13vw;
-    font-weight: 400;
-    font-style: normal;
-    /* padding-top: 2%; */
-  }
- 
-  #main #div2 {
-    padding-left: 3%;
-  }
- 
-  #main2 #div1 span {
-    font-size: 1.5vw;
-    font-family: "Anek Devanagari";
-    text-align: justify;
-  }
-  
+    <div class="margins onlyDeskMission row">
+      <div class="col-6 d-flex" style="justify-content: end;">
+        <div class="content-box missions vision">
+          OUR VISION <span
+            style="color:white; opacity:50%; font-size: 1rem; font-family: 'anek devanagari'; display:block"
+            >Hover here to see our visions</span
+          >
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="content-box missions mission">
+          OUR MISSON <span
+            style="color:white; opacity:50%; font-size: 1rem; font-family: 'anek devanagari'; display:block"
+            >Hover here to see our missions</span
+          >
+        </div>
+      </div>
+    </div>
 
+    <div class="mobMission margins">
+      <span>Our</span>
+      <span class="yellow-text">vision</span>
 
+      <li>Lorem ipsum dolor sit amet, consectetuer</li>
+      <li>Lorem ipsum dolor sit amet, consectetuer</li>
+      <li>Lorem ipsum dolor sit amet, consectetuer</li>
+      <li>Lorem ipsum dolor sit amet, consectetuer</li>
+    </div>
+    <div class="mobMission margins" style="border:none">
+      <span>Our</span>
+      <span class="yellow-text">Misiion</span>
 
+      <li>Lorem ipsum dolor sit amet, consectetuer</li>
+      <li>Lorem ipsum dolor sit amet, consectetuer</li>
+      <li>Lorem ipsum dolor sit amet, consectetuer</li>
+      <li>Lorem ipsum dolor sit amet, consectetuer</li>
+    </div>
+  </section>
 
+  <style>
+    /* mob view css */
+    @media screen and (min-width: 768px) {
+      .onlyMob {
+        display: none !important;
+      }
+      .mobMission {
+        display: none !important;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .data {
+        display: none;
+      }
+      .btmImg {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+      }
+      .numbersText {
+        margin-left: 0 !important;
+        font-size: 9vw !important;
+      }
+      .numbers {
+        width: 14vw !important;
+        font-size: 8vw !important;
+        border-radius: 0 1.5vw 0 1.5vw !important;
+      }
+      .btmImgHead {
+        width: 80% !important;
+        font-size: 16vw !important;
+      }
+      #main #div1 span {
+        font-size: 16vw !important ;
+      }
+      #main2 #div1 span {
+        font-size: 3vw !important;
+      }
 
-  .para {
-    display: block;
-    opacity: 75%;
-    width: 83%;
-  }
+      .onlyDeskMission {
+        display: none !important;
+      }
+      .mobMission span {
+        font-family: "Deutschlander";
+        text-transform: uppercase;
+        font-size: 15vw;
+        font-weight: 400;
+        font-style: normal;
+        color: white;
+      }
+      .meet,
+      .theTeam {
+        font-size: 15vw !important;
+      }
+      .yellow-text {
+        color: #e5ff53 !important;
+      }
+      .mobMission li {
+        font-size: 3.5vw;
+        font-family: "Anek Devanagari";
+        color: white;
+        opacity: 60%;
+        line-height: 2.2;
+        font-weight: 300;
+      }
+      .mobMission {
+        border-bottom: 1px solid rgb(144, 142, 142);
+        padding-bottom: 3%;
+      }
+    }
+    .data {
+    }
 
-  .margins {
-    margin-left: 7%;
-    margin-right: 7%;
-  }
+    .btmImgHead {
+      width: 90%;
+      line-height: 1;
+    }
+    #main {
+      line-height: 1 !important;
+    }
 
-  .btn-dark{
-    border-radius: 24px;
-    font-family: "Anek Devanagari";
-    font-size:larger ;
-    margin-right: 1.5%;
-  }
-  .btn-dark span{
-    font-size: 0.8rem;
-    margin: 0 15px 0 15px;
-  }
+    #main #div1 span {
+      font-family: "Deutschlander";
+      text-transform: uppercase;
+      font-size: 13vw;
+      font-weight: 400;
+      font-style: normal;
+      /* padding-top: 2%; */
+    }
 
-  .knowMore{
-    font-family: 'anek devanagari';
-    font-weight:550;
-  }
+    #main #div2 {
+      padding-left: 3%;
+    }
 
-  .btmImg{
-   
-    font-family: "Deutschlander";
-    text-transform: uppercase;
-    color: white;
-    font-size: 9.5vw;
-    line-height: 0.8 !important;
-    margin-top: 7%;
-    padding-bottom: 5%;
+    #main2 #div1 span {
+      font-size: 1.5vw;
+      font-family: "Anek Devanagari";
+      text-align: justify;
+    }
 
-  }
- 
-  .data{
-    margin-top: 7.5%;
-  }
-  .numbers{
-    background-color: #e5ff53;
-    border-radius:0 1vw 0 1vw ;
-     width:15.8%;
-     
-     text-align: center;
-     font-family: Deutschlander;
-     font-size: 4.6vw;
-     
-  }
+    .para {
+      display: block;
+      opacity: 75%;
+      width: 83%;
+    }
 
-  .numbersText{
-    color: aliceblue;
-    
+    .margins {
+      margin-left: 7%;
+      margin-right: 7%;
+    }
+
+    .btn-dark {
+      border-radius: 24px;
+      font-family: "Anek Devanagari";
+      font-size: larger;
+      margin-right: 1.5%;
+    }
+    .btn-dark span {
+      font-size: 0.8rem;
+      margin: 0 15px 0 15px;
+    }
+
+    .knowMore {
+      font-family: "anek devanagari";
+      font-weight: 550;
+    }
+
+    .btmImg {
+      font-family: "Deutschlander";
+      text-transform: uppercase;
+      color: white;
+      font-size: 9.5vw;
+      line-height: 0.8 !important;
+      margin-top: 7%;
+      padding-bottom: 5%;
+    }
+
+    .data {
+      margin-top: 7.5%;
+    }
+    .numbers {
+      background-color: #e5ff53;
+      border-radius: 0 1vw 0 1vw;
+      width: 15.8%;
+
+      text-align: center;
+      font-family: Deutschlander;
+      font-size: 4.6vw;
+    }
+
+    .numbersText {
+      color: aliceblue;
+
       margin-left: 3%;
       font-family: Deutschlander;
-     font-size: 4.6vw;
-     text-transform: uppercase;
-  }
+      font-size: 4.6vw;
+      text-transform: uppercase;
+    }
 
+    .img {
+      margin: 10%;
+    }
+    .imgs {
+      width: 14.5%;
+      margin: 1.2%;
+    }
 
-  .img {
-    margin: 10%;
-  }
-  .imgs {
-    width: 14.5%;
-    margin: 1.2%;
-  }
+    .meet {
+      color: white;
+      font-family: "Deutschlander";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12.5vw;
+      src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
+    }
+    .theTeam {
+      color: #e5ff53;
+      font-family: "Deutschlander";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12.5vw;
+      src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
+    }
 
+    .missions {
+      background-color: #1a1a1a;
 
-  .meet {
-    color: white;
-    font-family: "Deutschlander";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12.5vw;
-    src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
-  }
-  .theTeam {
-    color: #e5ff53;
-    font-family: "Deutschlander";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12.5vw;
-    src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
-  }
-
-  .missions{
-    background-color: #1a1a1a;
-    
-    width:60.8%;
-     color: white;
-     text-align: center;
-     font-family: Deutschlander;
-     font-size: 6.6vw;
-     border: 1px solid white;
-     line-height: 1 !important;
-     padding: 7% 0 7% 0;
-     
-  }
-  .vision{
-    border-radius:0 2vw 2vw 2vw ;
-  }
-  .mission{
-    border-radius:2vw 2vw 0 2vw ;
-  }
-   </style>
-  </Layout>
+      width: 60.8%;
+      color: white;
+      text-align: center;
+      font-family: Deutschlander;
+      font-size: 6.6vw;
+      border: 1px solid white;
+      line-height: 1 !important;
+      padding: 7% 0 7% 0;
+    }
+    .vision {
+      border-radius: 0 2vw 2vw 2vw;
+    }
+    .mission {
+      border-radius: 2vw 2vw 0 2vw;
+    }
+  </style>
+</Layout>
