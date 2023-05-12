@@ -83,14 +83,19 @@ const entries = await contentfulClient.getEntries<any>({
   <section style="margin-top: 4%; margin-bottom: 4%;">
     <div class="margins row">
       <div class="col-lg-5 col-md-5 col-sm-12">
-        <span class="whiteHeading">Explore</span>
-        <br />
-        <span class="whiteHeading">more</span>
-        <div style="margin-top:3%">
-          <button class="btn exploreBtn" style="margin-left: 0;">All</button>
-          <button class="btn exploreBtn">Design</button>
-          <button class="btn exploreBtn">Technology</button>
-          <br />
+        <div class="titleDiv">
+          <span class="whiteHeading">Explore</span>
+
+          <span class="whiteHeading">more</span>
+        </div>
+
+        <div class="exploreBtns">
+          <div class="makeInline">
+            <button class="btn exploreBtn" style="margin-left: 0;">All</button>
+            <button class="btn exploreBtn">Design</button>
+            <button class="btn exploreBtn">Technology</button>
+          </div>
+
           <button class="btn exploreBtn" style="margin-left: 0;"
             >Marketing</button
           >
@@ -209,8 +214,39 @@ const entries = await contentfulClient.getEntries<any>({
       .picks {
         margin-bottom: 7%;
       }
+      .titleDiv {
+        width: 100%;
+        margin-top: 3%;
+      }
+      .titleDiv span {
+        font-size: 15vw;
+      }
+      .makeInline {
+        display: inline;
+      }
+      .exploreBtn {
+        width: 16% !important;
+        font-size: 2vw !important;
+      }
+      .listText {
+        font-size: 3.3vw !important;
+      }
+      .listGenre {
+        font-size: 2.3vw !important;
+      }
+      .blogImg {
+        width: 110% !important;
+        margin-right: 3%;
+      }
     }
 
+    .titleDiv {
+      width: 60%;
+    }
+    .exploreBtns {
+      margin-top: 3%;
+      margin-bottom: 3%;
+    }
     .info {
       margin-top: 3.4%;
     }

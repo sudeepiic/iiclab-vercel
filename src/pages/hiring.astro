@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 
 import hiringImg1 from "../images/hiringImg1.jpg";
-import hiringHeroImg from "../images/hiringHeroImg.jpg"
+import hiringHeroImg from "../images/hiringHeroImg.jpg";
 import team from "../images/team.jpg";
 import funLoving from "../images/funLoving.jpg";
 import closeEye from "../images/closeEye.png";
@@ -11,583 +11,565 @@ import clock from "../images/clock.png";
 import ps from "../images/ps.png";
 ---
 
-
 <Layout title="Hiring">
-
-    <section style="padding-top: 3.5%;">
-        <div class="row margins">
-
-            <div class="col-8">
-    
-                <span class="title">Join Our Team</span>
-                <div >
-                    <img class="titleImg" src={hiringImg1} alt="">
-                    <span class="title">Now Hiring</span>
-                </div>
-            </div>
-    
-            <div class="col-4">
-    
-                <span>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.
-                </span>
-            </div>
+  <section style="padding-top: 3.5%;">
+    <div class="row margins">
+      <div class="col-8">
+        <span class="title">Join Our Team</span>
+        <div>
+          <img class="titleImg" src={hiringImg1} alt="" />
+          <span class="title">Now Hiring</span>
         </div>
-        <img class="" style="width:100%;" src={hiringHeroImg} alt="">
-    </section>
+      </div>
 
-    <section class="blackSec">
+      <div class="col-4">
+        <span>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet.
+        </span>
+      </div>
+    </div>
+    <img class="" style="width:100%;" src={hiringHeroImg} alt="" />
+  </section>
 
-        <div class="row">
-
-            <div class="col-4 blackTitle">
-                <span>Benefits of being an</span>
-                <span style="color:#e5ff53">IIC</span><span style="color:#f5ffbb">IAN</span>
-            </div>
-            <div class="col-8 row" style=" padding-top: 2.5%;">
-                <div class="col-6" style="padding-left: 10%;">
-                        <img src={team} class="benefitsImg" alt="">
-                        <p class="benefitsText" style="margin-bottom: 15%;">Working with a highly experienced team.</p>
-                        <img src={team} class="benefitsImg" alt="">
-                        <p class="benefitsText">Get opportunities to
-                            work with major brands.</p>
-                </div>
-                <div class="col-6" style="padding-left: 10%;">
-                    <img src={funLoving} class="benefitsImg" alt="">
-                        <p class="benefitsText" style="margin-bottom: 15%;">A fun-loving and creative environment.</p>
-                        <img src={team} class="benefitsImg" alt="">
-                        <p class="benefitsText">Creative & Fun activities every week.</p>
-                </div>
-            </div>
+  <section class="blackSec">
+    <div class="row">
+      <div class="col-4 blackTitle">
+        <span>Benefits of being an</span>
+        <span style="color:#e5ff53">IIC</span><span style="color:#f5ffbb"
+          >IAN</span
+        >
+      </div>
+      <div class="col-8 row" style=" padding-top: 2.5%;">
+        <div class="col-6" style="padding-left: 10%;">
+          <img src={team} class="benefitsImg" alt="" />
+          <p class="benefitsText" style="margin-bottom: 15%;">
+            Working with a highly experienced team.
+          </p>
+          <img src={team} class="benefitsImg" alt="" />
+          <p class="benefitsText">
+            Get opportunities to work with major brands.
+          </p>
         </div>
-
-    </section>
-
-    <section style="padding-top: 4.5%;" class="margins"> 
-
-        <div style="margin-bottom: 2%;">
-            <span class="positionsTitle">Open Positions</span>
-            <span class="positionsTitle" style="opacity:40%">(06)</span>
+        <div class="col-6" style="padding-left: 10%;">
+          <img src={funLoving} class="benefitsImg" alt="" />
+          <p class="benefitsText" style="margin-bottom: 15%;">
+            A fun-loving and creative environment.
+          </p>
+          <img src={team} class="benefitsImg" alt="" />
+          <p class="benefitsText">Creative & Fun activities every week.</p>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="row" style="margin-bottom: 3%;">
-            <div class="col-4">
-                <span class="inputTitle">Search for a title...</span>
-                <input class="inputCss" type="text" placeholder="Search for a job title..." />
+  <section style="padding-top: 4.5%;" class="margins">
+    <div style="margin-bottom: 2%;">
+      <span class="positionsTitle">Open Positions</span>
+      <span class="positionsTitle" style="opacity:40%">(06)</span>
+    </div>
 
+    <div class="row" style="margin-bottom: 3%;">
+      <div class="col-4">
+        <span class="inputTitle">Search for a title...</span>
+        <input
+          class="inputCss"
+          type="text"
+          placeholder="Search for a job title..."
+        />
+      </div>
+      <div class="col-4">
+        <span class="inputTitle">Location:</span>
+        <br />
+        <button class="btn exploreBtn" style="margin-left: 0;">Any</button>
+        <button class="btn exploreBtn">Mumbai</button>
+        <button class="btn exploreBtn">Lucknow</button>
+      </div>
+      <div class="col-4" style="padding-left: 1.7%;">
+        <span class="inputTitle">Category:</span>
+        <br />
+        <input
+          style="width:80%"
+          class="inputCss"
+          type="text"
+          placeholder="Design & Development"
+        />
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 4%;">
+      <div class="col-4 flip-card">
+        <div class="flip-card-inner">
+          <div class="card">
+            <div class="eyeDiv btn">
+              <img src={closeEye} class="eye" alt="" />
             </div>
-            <div class="col-4">
-                <span class="inputTitle">Location:</span> <br>
-                <button  class="btn exploreBtn"  style="margin-left: 0;" >Any</button>
-                <button  class="btn exploreBtn">Mumbai</button>
-                <button  class="btn exploreBtn">Lucknow</button>
-                
+
+            <div class="cardContent">
+              <span>User interface (ui) designer</span>
             </div>
-            <div class="col-4" style="padding-left: 1.7%;">
-                <span class="inputTitle">Category:</span> <br>
-                <input style="width:80%" class="inputCss" type="text" placeholder="Design & Development" />
+            <div class="bottomDiv">
+              <span>02 years experience</span>
             </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="backContent">
+              <h3>Senior Graphic Design & Illustrator - 3Y Experience</h3>
+              <span
+                >Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                aliquam erat volutpat.</span
+              >
+            </div>
+            <div class="location">
+              <img src={locIcon} alt="" />
+              <span style="margin-right: 10%;">Lucknow</span>
+              <img style="width: 8%;" src={clock} alt="" />
+              <span>Full-Time</span>
+            </div>
+            <div class="bottomDivBack row">
+              <div class="col-7"><img src={ps} alt="" /></div>
+              <div class="col-5 btn"><span>Apply Now</span></div>
+            </div>
+          </div>
         </div>
-
-        
-        <div class="row" style="margin-bottom: 4%;">
-            <div class="col-4 flip-card">
-              
-                <div class="flip-card-inner">
-                <div class="card" >
-                   
-                    <div class="eyeDiv btn">
-                        <img src={closeEye} class="eye"  alt="">
-                    </div>
-
-                    <div class="cardContent"> 
-                        <span>User interface (ui) designer</span>
-                    </div>
-                    <div class="bottomDiv">
-                        <span>02 years experience</span>
-                    </div>
-                </div>
-                <div class="flip-card-back">
-                    <div class="backContent">
-                        <h3 >Senior Graphic Design &  Illustrator - 3Y Experience</h3> 
-                    <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
-                    </div>
-                    <div class="location"> 
-                        <img src={locIcon} alt=""> <span style="margin-right: 10%;">Lucknow</span>
-                        <img style="width: 8%;" src={clock} alt=""> <span>Full-Time</span>
-                    </div>
-                    <div class="bottomDivBack row">
-                        <div class="col-7"> <img src={ps} alt=""></div>
-                        <div class="col-5 btn"><span>Apply Now</span></div>
-                        
-                    </div>
-                    
-                </div>
-               
-              </div>
+      </div>
+      <div class="col-4 flip-card">
+        <div class="flip-card-inner">
+          <div class="card">
+            <div class="eyeDiv btn">
+              <img src={closeEye} class="eye" alt="" />
             </div>
-            <div class="col-4 flip-card">
-              
-                <div class="flip-card-inner">
-                <div class="card" >
-                   
-                    <div class="eyeDiv btn">
-                        <img src={closeEye} class="eye"  alt="">
-                    </div>
 
-                    <div class="cardContent"> 
-                        <span>User interface (ui) designer</span>
-                    </div>
-                    <div class="bottomDiv">
-                        <span>02 years experience</span>
-                    </div>
-                </div>
-                <div class="flip-card-back">
-                    <div class="backContent">
-                        <h3 >Senior Graphic Design &  Illustrator - 3Y Experience</h3> 
-                    <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
-                    </div>
-                    <div class="location"> 
-                        <img src={locIcon} alt=""> <span style="margin-right: 10%;">Lucknow</span>
-                        <img style="width: 8%;" src={clock} alt=""> <span>Full-Time</span>
-                    </div>
-                    <div class="bottomDivBack row">
-                        <div class="col-7"> <img src={ps} alt=""></div>
-                        <div class="col-5 btn"><span>Apply Now</span></div>
-                        
-                    </div>
-                    
-                </div>
-               
-              </div>
+            <div class="cardContent">
+              <span>User interface (ui) designer</span>
             </div>
-            <div class="col-4 flip-card">
-              
-                <div class="flip-card-inner">
-                <div class="card" >
-                   
-                    <div class="eyeDiv btn">
-                        <img src={closeEye} class="eye"  alt="">
-                    </div>
-
-                    <div class="cardContent"> 
-                        <span>User interface (ui) designer</span>
-                    </div>
-                    <div class="bottomDiv">
-                        <span>02 years experience</span>
-                    </div>
-                </div>
-                <div class="flip-card-back">
-                    <div class="backContent">
-                        <h3 >Senior Graphic Design &  Illustrator - 3Y Experience</h3> 
-                    <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
-                    </div>
-                    <div class="location"> 
-                        <img src={locIcon} alt=""> <span style="margin-right: 10%;">Lucknow</span>
-                        <img style="width: 8%;" src={clock} alt=""> <span>Full-Time</span>
-                    </div>
-                    <div class="bottomDivBack row">
-                        <div class="col-7"> <img src={ps} alt=""></div>
-                        <div class="col-5 btn"><span>Apply Now</span></div>
-                        
-                    </div>
-                    
-                </div>
-               
-              </div>
+            <div class="bottomDiv">
+              <span>02 years experience</span>
             </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="backContent">
+              <h3>Senior Graphic Design & Illustrator - 3Y Experience</h3>
+              <span
+                >Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                aliquam erat volutpat.</span
+              >
+            </div>
+            <div class="location">
+              <img src={locIcon} alt="" />
+              <span style="margin-right: 10%;">Lucknow</span>
+              <img style="width: 8%;" src={clock} alt="" />
+              <span>Full-Time</span>
+            </div>
+            <div class="bottomDivBack row">
+              <div class="col-7"><img src={ps} alt="" /></div>
+              <div class="col-5 btn"><span>Apply Now</span></div>
+            </div>
+          </div>
         </div>
-
-
-        <div class="row">
-            <div class="col-4 flip-card">
-              
-                <div class="flip-card-inner">
-                <div class="card" >
-                   
-                    <div class="eyeDiv btn">
-                        <img src={closeEye} class="eye"  alt="">
-                    </div>
-
-                    <div class="cardContent"> 
-                        <span>User interface (ui) designer</span>
-                    </div>
-                    <div class="bottomDiv">
-                        <span>02 years experience</span>
-                    </div>
-                </div>
-                <div class="flip-card-back">
-                    <div class="backContent">
-                        <h3 >Senior Graphic Design &  Illustrator - 3Y Experience</h3> 
-                    <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
-                    </div>
-                    <div class="location"> 
-                        <img src={locIcon} alt=""> <span style="margin-right: 10%;">Lucknow</span>
-                        <img style="width: 8%;" src={clock} alt=""> <span>Full-Time</span>
-                    </div>
-                    <div class="bottomDivBack row">
-                        <div class="col-7"> <img src={ps} alt=""></div>
-                        <div class="col-5 btn"><span>Apply Now</span></div>
-                        
-                    </div>
-                    
-                </div>
-               
-              </div>
+      </div>
+      <div class="col-4 flip-card">
+        <div class="flip-card-inner">
+          <div class="card">
+            <div class="eyeDiv btn">
+              <img src={closeEye} class="eye" alt="" />
             </div>
-            <div class="col-4 flip-card">
-              
-                <div class="flip-card-inner">
-                <div class="card" >
-                   
-                    <div class="eyeDiv btn">
-                        <img src={closeEye} class="eye"  alt="">
-                    </div>
 
-                    <div class="cardContent"> 
-                        <span>User interface (ui) designer</span>
-                    </div>
-                    <div class="bottomDiv">
-                        <span>02 years experience</span>
-                    </div>
-                </div>
-                <div class="flip-card-back">
-                    <div class="backContent">
-                        <h3 >Senior Graphic Design &  Illustrator - 3Y Experience</h3> 
-                    <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
-                    </div>
-                    <div class="location"> 
-                        <img src={locIcon} alt=""> <span style="margin-right: 10%;">Lucknow</span>
-                        <img style="width: 8%;" src={clock} alt=""> <span>Full-Time</span>
-                    </div>
-                    <div class="bottomDivBack row">
-                        <div class="col-7"> <img src={ps} alt=""></div>
-                        <div class="col-5 btn"><span>Apply Now</span></div>
-                        
-                    </div>
-                    
-                </div>
-               
-              </div>
+            <div class="cardContent">
+              <span>User interface (ui) designer</span>
             </div>
-             <div class="col-4 flip-card">
-              
-                <div class="flip-card-inner">
-                <div class="card" >
-                   
-                    <div class="eyeDiv btn">
-                        <img src={closeEye} class="eye"  alt="">
-                    </div>
-
-                    <div class="cardContent"> 
-                        <span>User interface (ui) designer</span>
-                    </div>
-                    <div class="bottomDiv">
-                        <span>02 years experience</span>
-                    </div>
-                </div>
-                <div class="flip-card-back">
-                    <div class="backContent">
-                        <h3 >Senior Graphic Design &  Illustrator - 3Y Experience</h3> 
-                    <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
-                    </div>
-                    <div class="location"> 
-                        <img src={locIcon} alt=""> <span style="margin-right: 10%;">Lucknow</span>
-                        <img style="width: 8%;" src={clock} alt=""> <span>Full-Time</span>
-                    </div>
-                    <div class="bottomDivBack row">
-                        <div class="col-7"> <img src={ps} alt=""></div>
-                        <div class="col-5 btn"><span>Apply Now</span></div>
-                        
-                    </div>
-                    
-                </div>
-               
-              </div>
+            <div class="bottomDiv">
+              <span>02 years experience</span>
             </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="backContent">
+              <h3>Senior Graphic Design & Illustrator - 3Y Experience</h3>
+              <span
+                >Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                aliquam erat volutpat.</span
+              >
+            </div>
+            <div class="location">
+              <img src={locIcon} alt="" />
+              <span style="margin-right: 10%;">Lucknow</span>
+              <img style="width: 8%;" src={clock} alt="" />
+              <span>Full-Time</span>
+            </div>
+            <div class="bottomDivBack row">
+              <div class="col-7"><img src={ps} alt="" /></div>
+              <div class="col-5 btn"><span>Apply Now</span></div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="col-4 flip-card">
+        <div class="flip-card-inner">
+          <div class="card">
+            <div class="eyeDiv btn">
+              <img src={closeEye} class="eye" alt="" />
+            </div>
 
-    </section>
-   
-    <style>
+            <div class="cardContent">
+              <span>User interface (ui) designer</span>
+            </div>
+            <div class="bottomDiv">
+              <span>02 years experience</span>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="backContent">
+              <h3>Senior Graphic Design & Illustrator - 3Y Experience</h3>
+              <span
+                >Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                aliquam erat volutpat.</span
+              >
+            </div>
+            <div class="location">
+              <img src={locIcon} alt="" />
+              <span style="margin-right: 10%;">Lucknow</span>
+              <img style="width: 8%;" src={clock} alt="" />
+              <span>Full-Time</span>
+            </div>
+            <div class="bottomDivBack row">
+              <div class="col-7"><img src={ps} alt="" /></div>
+              <div class="col-5 btn"><span>Apply Now</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 flip-card">
+        <div class="flip-card-inner">
+          <div class="card">
+            <div class="eyeDiv btn">
+              <img src={closeEye} class="eye" alt="" />
+            </div>
 
+            <div class="cardContent">
+              <span>User interface (ui) designer</span>
+            </div>
+            <div class="bottomDiv">
+              <span>02 years experience</span>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="backContent">
+              <h3>Senior Graphic Design & Illustrator - 3Y Experience</h3>
+              <span
+                >Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                aliquam erat volutpat.</span
+              >
+            </div>
+            <div class="location">
+              <img src={locIcon} alt="" />
+              <span style="margin-right: 10%;">Lucknow</span>
+              <img style="width: 8%;" src={clock} alt="" />
+              <span>Full-Time</span>
+            </div>
+            <div class="bottomDivBack row">
+              <div class="col-7"><img src={ps} alt="" /></div>
+              <div class="col-5 btn"><span>Apply Now</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 flip-card">
+        <div class="flip-card-inner">
+          <div class="card">
+            <div class="eyeDiv btn">
+              <img src={closeEye} class="eye" alt="" />
+            </div>
 
+            <div class="cardContent">
+              <span>User interface (ui) designer</span>
+            </div>
+            <div class="bottomDiv">
+              <span>02 years experience</span>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="backContent">
+              <h3>Senior Graphic Design & Illustrator - 3Y Experience</h3>
+              <span
+                >Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                aliquam erat volutpat.</span
+              >
+            </div>
+            <div class="location">
+              <img src={locIcon} alt="" />
+              <span style="margin-right: 10%;">Lucknow</span>
+              <img style="width: 8%;" src={clock} alt="" />
+              <span>Full-Time</span>
+            </div>
+            <div class="bottomDivBack row">
+              <div class="col-7"><img src={ps} alt="" /></div>
+              <div class="col-5 btn"><span>Apply Now</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        .title{
-            font-family: "Deutschlander";
-            font-size: 14.5vw;
-            text-transform: uppercase;
-            line-height: 0.8;
-        }
+  <style>
+    .title {
+      font-family: "Deutschlander";
+      font-size: 14.5vw;
+      text-transform: uppercase;
+      line-height: 0.8;
+    }
 
-        .titleImg{
-            vertical-align: baseline;
-            width: 32%;
-           
-            border-radius: 12vw;
-            margin-right: 3%;
-        }
+    .titleImg {
+      vertical-align: baseline;
+      width: 32%;
 
-        .margins{
-            margin: 0 8% 0 8%;
-            margin-bottom: 4%;
-        }
+      border-radius: 12vw;
+      margin-right: 3%;
+    }
 
-        .col-4 span{
-            font-family: 'anek devanagari';
-            opacity: 60%;
-            font-size: 1.5vw;
-            line-height: 1.9;
-        }
+    .margins {
+      margin: 0 8% 0 8%;
+      margin-bottom: 4%;
+    }
 
-        .blackSec{
-            background-color: #1a1a1a;
-            padding: 11% 8% 8% 8%;
-            border-radius: 0 0 5vw 5vw;
-        }
-        .blackTitle span{
-            font-family: "Deutschlander";
-            font-size: 12.5vw;
-            text-transform: uppercase;
-            line-height: 0.8;
-            color: white;
-            opacity: 100%;
-        }
+    .col-4 span {
+      font-family: "anek devanagari";
+      opacity: 60%;
+      font-size: 1.5vw;
+      line-height: 1.9;
+    }
 
-        .benefitsImg{
-            border-radius: 0 0.8vw 0 0.8vw;
-            width: 21%;
-            margin-bottom: 4%;
-        }
-        .benefitsText{
-            font-family: 'anek devanagari';
-            color: white;
-            font-size: 2vw;
-            
-        }
+    .blackSec {
+      background-color: #1a1a1a;
+      padding: 11% 8% 8% 8%;
+      border-radius: 0 0 5vw 5vw;
+    }
+    .blackTitle span {
+      font-family: "Deutschlander";
+      font-size: 12.5vw;
+      text-transform: uppercase;
+      line-height: 0.8;
+      color: white;
+      opacity: 100%;
+    }
 
-        .positionsTitle{
-            font-family: "Deutschlander";
-            font-size: 12.5vw;
-            text-transform: uppercase;
-            line-height: 0.8;
+    .benefitsImg {
+      border-radius: 0 0.8vw 0 0.8vw;
+      width: 21%;
+      margin-bottom: 4%;
+    }
+    .benefitsText {
+      font-family: "anek devanagari";
+      color: white;
+      font-size: 2vw;
+    }
 
-        }
+    .positionsTitle {
+      font-family: "Deutschlander";
+      font-size: 12.5vw;
+      text-transform: uppercase;
+      line-height: 0.8;
+    }
 
-        .inputCss {
-    
-    height: 3vw;
-    border-radius: 0 10px 0 10px;
-    border:1.25px solid rgba(26, 26, 26, 0.25);;
-    background: rgba(255, 255, 255, 0.7);
-    font-size: calc(8px + 0.390625vw);
-    width: 90%;
-    padding-left: 3%;
-    font-family: 'anek devanagari';
-    font-weight: 500;
-    opacity: 80%;
+    .inputCss {
+      height: 3vw;
+      border-radius: 0 10px 0 10px;
+      border: 1.25px solid rgba(26, 26, 26, 0.25);
+      background: rgba(255, 255, 255, 0.7);
+      font-size: calc(8px + 0.390625vw);
+      width: 90%;
+      padding-left: 3%;
+      font-family: "anek devanagari";
+      font-weight: 500;
+      opacity: 80%;
+    }
 
-  }
+    .inputTitle {
+      opacity: 60%;
+      font-size: 1.2vw !important;
+    }
 
-  .inputTitle{
-    opacity: 60%;
-    font-size: 1.2vw !important;
-  }
-
-  .exploreBtn{
-    background: rgba(255, 255, 255, 0.7);
-    opacity: 60%;
+    .exploreBtn {
+      background: rgba(255, 255, 255, 0.7);
+      opacity: 60%;
       font-weight: 500;
       font-size: 1vw;
       border-radius: 0 0.7vw 0 0.7vw;
       width: 7.7vw;
       /* height:35px; */
       border: 1.25px solid rgba(26, 26, 26, 0.25);
-      font-family: 'anek devanagari';
+      font-family: "anek devanagari";
       margin: 1.35%;
       padding: 2.35%;
       margin-top: 0 !important;
-      
     }
-    .exploreBtn.clicked{
+    .exploreBtn.clicked {
       background-color: black;
       color: white;
       opacity: 100%;
     }
 
-    .eyeDiv{
-        background-color:#e5ff53 ;
-        width: 30%;
-        padding: 10%;
-        align-self: end;
-        border-radius: 0 0 0 6vw;
-        border-radius: ;
-     
+    .eyeDiv {
+      background-color: #e5ff53;
+      width: 30%;
+      padding: 10%;
+      align-self: end;
+      border-radius: 0 0 0 6vw;
+      border-radius: ;
     }
-    .card{
-        background-color: #fefff9;
-        border: 1.43px solid #1a1a1a;
-        border-radius: 0.65vw;
-        margin-right: 8%;
-       
-        
+    .card {
+      background-color: #fefff9;
+      border: 1.43px solid #1a1a1a;
+      border-radius: 0.65vw;
+      margin-right: 8%;
     }
-    .eye{
-        width: 90%;
+    .eye {
+      width: 90%;
     }
-    .cardContent span{
-            font-family: "Deutschlander";
-            font-size: 5.5vw;
-            text-transform: uppercase;
-            line-height: 0.8;
-            opacity: 100%;
+    .cardContent span {
+      font-family: "Deutschlander";
+      font-size: 5.5vw;
+      text-transform: uppercase;
+      line-height: 0.8;
+      opacity: 100%;
     }
-    .cardContent{
-        margin: 15% 10% 33% 10%;
-        text-align: center;
+    .cardContent {
+      margin: 15% 10% 33% 10%;
+      text-align: center;
     }
-    .bottomDiv{
-        background-color: #1a1a1a;
-        text-align: center;
-        align-self: baseline;
-        padding: 3%;
-        margin-left: 1%;
-        margin-right: 2%;
-        margin-bottom: 1%;
-        width: 98%;
+    .bottomDiv {
+      background-color: #1a1a1a;
+      text-align: center;
+      align-self: baseline;
+      padding: 3%;
+      margin-left: 1%;
+      margin-right: 2%;
+      margin-bottom: 1%;
+      width: 98%;
 
-        border-radius: 0 0 0.5vw 0.5vw;
+      border-radius: 0 0 0.5vw 0.5vw;
     }
 
-    .bottomDiv span{
-        font-family: "Deutschlander";
-            font-size: 2.5vw;
-            text-transform: uppercase;
-            line-height: 0.8;
-            opacity: 100%;
-            color: white;
+    .bottomDiv span {
+      font-family: "Deutschlander";
+      font-size: 2.5vw;
+      text-transform: uppercase;
+      line-height: 0.8;
+      opacity: 100%;
+      color: white;
     }
- /* card css */
+    /* card css */
 
+    .flip-card {
+      perspective: 1000px;
+      position: relative;
+      width: 33%;
+      height: 32vw;
+    }
 
- .flip-card{
-    perspective: 1000px;
-   position: relative;
-   width: 33%;
-   height:32vw;
- }
+    .flip-card-inner {
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .card,
+    .flip-card-back {
+      position: absolute;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
 
- .flip-card-inner{ transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  position: relative;
- 
-  
-}
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-.card, .flip-card-back {
- 
+    .flip-card-back {
+      background-color: #1a1a1a;
+      padding: 24% 7% 0 7%;
+      color: white;
+      transform: rotateY(180deg);
+      width: 90%;
+      margin-left: 10%;
 
+      border-radius: 0.65vw;
+    }
+    .flip-card-back h3 {
+      font-family: "anek devanagari";
+      font-weight: 500;
+      font-size: 1.6vw;
+      margin-bottom: 7%;
+    }
+    .flip-card-back span {
+      font-family: "anek devanagari";
+      opacity: 50%;
+      line-height: 1.5;
+      font-size: 1vw;
+      letter-spacing: 1px;
+    }
+    .location span {
+      font-family: "anek devanagari";
+      opacity: 50%;
+    }
+    .backContent {
+      margin-bottom: 20%;
+    }
+    .location {
+      margin-bottom: 10%;
+    }
 
-position: absolute;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
+    .bottomDivBack {
+      /* text-align: center; */
+      align-self: baseline;
 
-.flip-card-back {
-  background-color:#1a1a1a;
-  padding: 24% 7% 0 7%;
-  color: white;
-  transform: rotateY(180deg);
-  width: 90%;
-  margin-left: 10%;
+      margin-bottom: 2%;
 
- border-radius: 0.65vw;
+      border-radius: 0 0 0.5vw 0.5vw;
+    }
+    .col-5 {
+      background-color: #e5ff53;
+      padding: 5%;
+      text-align: center;
+    }
 
-}
-.flip-card-back h3{
-    font-family: 'anek devanagari';
-    font-weight: 500;
-    font-size: 1.6vw;
-    margin-bottom: 7%;
-}
-.flip-card-back span{
-    font-family: 'anek devanagari';
-    opacity: 50%;
-    line-height: 1.5;
-    font-size: 1vw;
-    letter-spacing: 1px;
-}
-.location span{
-    font-family: 'anek devanagari';
-    opacity: 50%;
-}
-.backContent{
-    margin-bottom: 20%;
-}
-.location{
-    margin-bottom: 10%;
-}
+    .col-5 span {
+      font-family: "Deutschlander";
+      font-size: 2.3vw;
+      text-transform: uppercase;
+      line-height: 0.8;
+      opacity: 100%;
+      color: black;
+    }
+    .col-7 {
+      background-color: white;
+      padding: 5%;
+      padding-bottom: 4%;
+    }
+    .col-7 img {
+      width: 20%;
+    }
+  </style>
 
-.bottomDivBack{
-   
-        /* text-align: center; */
-        align-self: baseline;
-        
-       margin-bottom: 2%;
-
-        border-radius: 0 0 0.5vw 0.5vw;
-}
-.col-5 {
-    background-color:#e5ff53;
-   padding: 5%;
-    text-align: center;
-    
-}
-
-.col-5 span{
-    font-family: "Deutschlander";
-            font-size: 2.3vw;
-            text-transform: uppercase;
-            line-height: 0.8;
-            opacity: 100%;
-            color: black;
-}
-.col-7{
-    background-color: white;
-    padding: 5%;
-    padding-bottom: 4%;
-
-
-}
-.col-7 img{
-    width: 20%;
-}
-
-
-    </style>
-
-<script>
+  <script>
     const myButton = document.querySelectorAll(".exploreBtn");
 
-    for(let i=0; i<myButton.length; i++){
-       console.log(myButton.length, 'lennnnnnnnngth')
-      myButton[i].addEventListener("click", function(){
-        if(myButton[i].classList.contains("clicked")){
+    for (let i = 0; i < myButton.length; i++) {
+      console.log(myButton.length, "lennnnnnnnngth");
+      myButton[i].addEventListener("click", function () {
+        if (myButton[i].classList.contains("clicked")) {
           myButton[i].classList.remove("clicked");
-      } else {
-        myButton[i].classList.add("clicked");
-      }
-
-    });
-  }
-
-  
-
-
-   </script>
-
+        } else {
+          myButton[i].classList.add("clicked");
+        }
+      });
+    }
+  </script>
 </Layout>

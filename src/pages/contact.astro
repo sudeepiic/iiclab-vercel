@@ -12,30 +12,33 @@ import positionBtn from "../images/positionBtn.png";
       class="row"
       style="padding-top: 4%; margin-left: 8%; margin-bottom: 3%;"
     >
-      <div class="col-5">
+      <div class="col-lg-5 col-md-5 col-sm-12 imgText">
         <span class="title"> Ready for a Head Start?</span><br />
         <span class="text"
           >We can help you with all your questions except, how much calories
           does Mario burn in a day.</span
         >
       </div>
-      <div class="col-7" style="padding-left: 4%;">
+      <div class="col-lg-7 col-md-7 col-sm-12 imgDiv">
         <img class="heroImg" src={officeImg} alt="" />
       </div>
     </div>
 
     <form action="" class="margins">
+      <span class="mobTitles">Your Name:</span>
       <div class="input-group mb-3 input-group-lg">
         <div class="input-group-prepend" style="margin-bottom:  1.5%;">
           <span class="inp-title input-group-text">Your Name:</span>
         </div>
         <input
           type="text"
-          style="margin-bottom:  1.5%;"
+          style="margin-bottom:  1.5%; "
           placeholder="Enter Your Name Here"
           class="input form-control"
         />
       </div>
+
+      <span class="mobTitles">Your Email:</span>
 
       <div style="margin-bottom: 3%;" class="input-group mb-3 input-group-lg">
         <div class="input-group-prepend" style="margin-bottom: 1.5%;">
@@ -43,11 +46,12 @@ import positionBtn from "../images/positionBtn.png";
         </div>
         <input
           type="text"
-          style="margin-bottom:  1.5%;"
+          style="margin-bottom:  1.5%; "
           placeholder="Enter Your Email Address"
           class="input form-control"
         />
       </div>
+      <span class="mobTitles">Message:</span>
 
       <textarea
         class="textArea"
@@ -66,19 +70,16 @@ import positionBtn from "../images/positionBtn.png";
 
   <section style="margin-top: 3%; margin-bottom: 3%;">
     <div class="row table margins">
-      <div class="col-2 col1">ADDRESS</div>
-      <div class="col-10 col2" style="text-align: end;">
+      <div class="col-lg-2 col-md-2 col-sm-12 col1">ADDRESS</div>
+      <div class="col-lg-10 col-md-10 col-sm-12 col2">
         Lotus corporate park, E 802, Western Express Hwy, Geetanjali Railway
         Colony, Laxmi Nagar, Goregaon, Mumbai, Maharashtra 400063
       </div>
     </div>
 
     <div class="row table margins">
-      <div class="col-2 col1">CONTACT</div>
-      <div
-        class="col-10 col2 d-flex"
-        style="text-align: end; justify-content: end;"
-      >
+      <div class="col-lg-2 col-md-2 col-sm-12 col1">CONTACT</div>
+      <div class="col-lg-10 col-md-10 col-sm-12 col2 d-flex justifyEnd">
         <div
           class="innerDivs"
           style="border-right: 1.2px solid rgb(202, 199, 199)"
@@ -93,18 +94,15 @@ import positionBtn from "../images/positionBtn.png";
     </div>
 
     <div class="row table margins">
-      <div class="col-2 col1">TIMING</div>
-      <div class="col-10 col2" style="text-align: end;">
+      <div class="col-lg-2 col-md-2 col-sm-12 col1">TIMING</div>
+      <div class="col-lg-10 col-md-10 col-sm-12 col2">
         Mon-Sat : 10:00 - 18:30 IST
       </div>
     </div>
 
     <div class="row table margins" style="border-bottom: 0;">
-      <div class="col-2 col1">SOCIAL</div>
-      <div
-        class="col-10 col2 d-flex"
-        style="text-align: end; justify-content: end;"
-      >
+      <div class="col-lg-2 col-md-2 col-sm-12 col1">SOCIAL</div>
+      <div class="col-lg-10 col-md-10 col-sm-12 col2 d-flex justifyEnd">
         <div class="innerDivs">
           <span>LinkedIn</span>
         </div>
@@ -142,6 +140,82 @@ import positionBtn from "../images/positionBtn.png";
 </Layout>
 
 <style>
+  @media screen and (min-width: 768px) {
+    .mobTitles {
+      display: none;
+    }
+    .input-group input {
+      border-left: 0 solid white !important;
+    }
+    .col2 {
+      text-align: end;
+    }
+
+    .justifyEnd {
+      text-align: end;
+      justify-content: end;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .imgDiv {
+      padding-left: 0 !important;
+    }
+    .text {
+      font-size: 3vw !important;
+      line-height: 1.8 !important;
+    }
+    .imgText {
+      padding-right: 5% !important;
+      margin-bottom: 4%;
+    }
+    .input-group-prepend {
+      display: none !important;
+    }
+    .mobTitles {
+      font-family: "anek devanagari";
+      color: white;
+      font-size: 3vw;
+    }
+    .input-group-lg,
+    textarea {
+      margin-top: 1.8%;
+    }
+    .input-group-lg > .btn,
+    .input-group-lg > .form-control,
+    .input-group-lg > .form-select,
+    .input-group-lg > .input-group-text {
+      padding: 1.5rem;
+    }
+    input::placeholder {
+      font-size: 2.5vw !important;
+    }
+    input {
+      border-left: 1px solid white !important;
+    }
+
+    .col1,
+    .col2 {
+      font-size: 3vw !important;
+      line-height: 2 !important;
+    }
+    .innerDivs {
+      padding-left: 0 !important;
+    }
+    .table {
+      padding-bottom: 2% !important;
+    }
+
+    .posBtn {
+      width: 80% !important;
+    }
+    .col-4 img {
+      width: 90% !important;
+    }
+  }
+
+  .imgDiv {
+    padding-left: 4%;
+  }
   .topSec {
     background-color: #1a1a1a;
     padding-top: 9vh;
@@ -151,7 +225,7 @@ import positionBtn from "../images/positionBtn.png";
 
   .bottomSec {
     background-color: #1a1a1a;
-    padding-top: 9vh;
+    padding-top: 9vw;
     padding-bottom: 5%;
     border-radius: 4vw 4vw 0 0;
   }
@@ -228,6 +302,12 @@ import positionBtn from "../images/positionBtn.png";
 
   /* form css */
 
+  .input-group-prepend span {
+    border-right: 0 solid white !important;
+  }
+  input {
+    border-left: 0px solid white !important;
+  }
   .inp-title,
   .input {
     background-color: #1a1a1a;
@@ -270,7 +350,7 @@ import positionBtn from "../images/positionBtn.png";
     font-family: "anek devanagari";
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 1.2vw;
+    font-size: 1.2rem;
     border-radius: 0 0 0.7vw 0.7vw;
   }
 </style>

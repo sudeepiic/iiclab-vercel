@@ -8,16 +8,16 @@ import { gsap } from "gsap";
 
 <Layout title="Awards">
   <section style="padding-top: 3.5%;">
-    <div class="row margins">
-      <div class="col-8">
+    <div class="row margins mob">
+      <div class="col-lg-8 col-md-8 col-sm-12">
         <span class="title">Awards &</span>
-        <div>
+        <div class="makeInline">
           <img class="titleImg" src={hiringImg1} alt="" />
           <span class="title">Recognition</span>
         </div>
       </div>
 
-      <div class="col-4">
+      <div class="col-lg-4 col-md-4 col-sm-12">
         <img src={viewAwardsBtn} class="viewAwardsBtn" alt="" />
       </div>
     </div>
@@ -29,102 +29,367 @@ import { gsap } from "gsap";
       <span class="list">list of awards</span>
     </div>
 
-    <div>
-      <table style=" width: 100%;">
-        <tbody>
-          <tr class="awardsTable">
-            <td class="awardCtg trial">
-              <img src={hiringImg1} class="trial2" alt="" />
-              2022 - Promotion of the Year for Brand Awareness Digital (Gold)
-            </td>
+    <div class="margins2">
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2023 - Media
+            & Entertainment Category</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>India DigiPlus Awards</span>
+        </div>
+      </div>
 
-            <td style=" text-align: end;" class="awardName">
-              <span> WOW Awards Asia</span>
-            </td>
-          </tr>
-          <tr class="awardsTable">
-            <td class="awardCtg trial">
-              <img src={hiringImg1} class="trial2" alt="" />
-              2022 - Audience Enagagement Techonology (Gold)</td
-            >
-            <td style=" text-align: end;" class="awardName">WOW Awards Asia</td>
-          </tr>
-          <tr class="awardsTable">
-            <td class="awardCtg trial"
-              ><img src={hiringImg1} class="trial2" alt="" />
-              2022 - Innovation In Interactive Techonology (Bronze)</td
-            >
-            <td style=" text-align: end;" class="awardName">WOW Awards Asia</td>
-          </tr>
-          <tr class="awardsTable">
-            <td class="awardCtg trial"
-              ><img src={hiringImg1} class="trial2" alt="" />
-              2022 - best content marketing launch (Gold)</td
-            >
-            <td style=" text-align: end;" class="awardName"
-              >Marketers’ Excellence Awards</td
-            >
-          </tr>
-          <tr class="awardsTable">
-            <td class="awardCtg trial">
-              <img src={hiringImg1} class="trial2" alt="" />
-              2022 - best brand activation (Gold)</td
-            >
-            <td style="text-align: end;" class="awardName"
-              >Marketers’ Excellence Awards</td
-            >
-          </tr>
-          <tr class="awardsTable">
-            <td class="awardCtg trial">
-              <img src={hiringImg1} class="trial2" alt="" />
-              2022 - Best Use Of VR (Silver)</td
-            >
-            <td style=" text-align: end;" class="awardName"
-              >Marketers’ Excellence Awards</td
-            >
-          </tr>
-          <tr class="awardsTable">
-            <td class="awardCtg trial">
-              <img src={hiringImg1} class="trial2" alt="" />
-              2022 - best use of technology (Bronze)</td
-            >
-            <td style=" text-align: end;" class="awardName"
-              >Marketers’ Excellence Awards</td
-            >
-          </tr>
-          <tr class="awardsTable">
-            <td class="awardCtg trial">
-              <img src={hiringImg1} class="trial2" alt="" />
-              2022 - best use of technology (Gold)</td
-            >
-            <td style=" text-align: end;" class="awardName"
-              >Afaqs Digies Awards</td
-            >
-          </tr>
-          <tr class="awardsTable">
-            <td class="awardCtg trial">
-              <img src={hiringImg1} class="trial2" alt="" />
-              2023- Best Use Of Technology (Silver)</td
-            >
-            <td style=" text-align: end;" class="awardName"
-              >Afaqs Digies Awards</td
-            >
-          </tr>
-          <tr class="awardsTable" style="border: none;">
-            <td class="awardCtg trial">
-              <img src={hiringImg1} class="trial2" alt="" />
-              2023- Media & Entertainment (Bronze)</td
-            >
-            <td style="text-align: end;" class="awardName">DG+ Awards</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2023 - Retail
+            & E-Commerce Category</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>Kaleido Awards</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2023 - Best
+            Visual Content- Special Events</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>EDCA Awards</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2023 - Best
+            technology engagement/interactivity</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>EDCA Awards</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2023 - EDCA
+            Tech Provider of the Year
+          </span>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>EDCA Awards</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2023 - Best
+            Standalone Experience at a Brand Activation</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>EDCA Awards</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2023 - Best
+            Event Technology created for an event</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>EDCA Awards</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2023 - Most
+            Creative On Ground Marketing Campaign</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>EDCA Awards</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2022 - Best
+            Use of AR/VR (Silver)</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>FuTech Awards</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2022 - Best
+            Content Marketing Launch (Gold)</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>Marketers' Excellence Awards</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2022 - Best
+            Content Marketing Launch (Gold)</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>Marketers' Excellence Awards</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2022 - Best
+            Brand Activation (Gold)</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>Marketers' Excellence Awards</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2022 - Best
+            Use of VR (Silver)</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>Marketers' Excellence Awards</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2022 - Best
+            Use of Technology (Bronze)</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>Marketers' Excellence Awards</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2022 - Best
+            Use of Technology (Gold)</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>Afaqs Digies Awards</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2022 - Best
+            Use of Technology (Silver)</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>Afaqs Digies Awards</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2022 -
+            Promotion of the Year for Brand Awareness - Digital (Gold)</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>WOW Awards asia</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2022 -
+            Audience Engagement Technology & Event App for the Year by Agencies
+            (Gold)</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>WOW Awards asia</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2022 -
+            Innovation in Interactive Technology (Bronze)</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>WOW Awards asia</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2022 - Best
+            Online Promotion (Silver)</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>Foxglove Awards</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2022 - Best
+            Online Promotion (Bronze)</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>Foxglove Awards</span>
+        </div>
+      </div>
+
+      <div class="row mobAward">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2022- Best
+            Innovation in Digital (Bronze)</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>Foxglove Awards</span>
+        </div>
+      </div>
+
+      <div class="row mobAward" style="border-bottom: 0;">
+        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
+          <span>
+            <img src={hiringImg1} class="trial2 hoverImg" alt="" />2022 - Best
+            Brand Activation (bronze)</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+          <span class="hifen">~</span>
+          <span>Foxglove Awards</span>
+        </div>
+      </div>
     </div>
   </section>
 </Layout>
 
 <style>
+  @media screen and (max-width: 768px) {
+    .mob {
+      margin-top: 4% !important;
+    }
+    .viewAwardsBtn,
+    .titleImg {
+      display: none;
+    }
+    .makeInline {
+      display: inline;
+    }
+    .titleText {
+      font-size: 3.5vw !important;
+      display: inline-block !important;
+      margin-top: 3%;
+    }
+    .title {
+      margin-top: 3% !important;
+      font-size: 17vw !important;
+    }
+
+    .mobAward {
+      padding-bottom: 3.3%;
+      border-bottom: 1.5px solid hsl(60, 1%, 25%);
+      padding-top: 5%;
+    }
+    .mbAwardCat,
+    .mbAwardName {
+      font-family: "anek devanagari";
+      font-size: 3.4vw;
+      font-weight: 500;
+      padding-right: 5%;
+    }
+    .mbAwardName {
+      opacity: 50%;
+    }
+    .mbAwardName span,
+    .mbAwardCat span {
+      text-transform: capitalize;
+      color: white !important;
+    }
+    .mobAward:hover,
+    .mobAward:hover span {
+      color: #1a1a1a !important;
+      background-color: #e5ff35;
+      font-weight: 600;
+    }
+  }
   /* hover image effect css */
+
+  .titleText {
+    font-size: 1.5vw;
+    font-family: "anek devanagari";
+    opacity: 60%;
+    display: none;
+  }
   .trial {
     position: relative;
 
@@ -162,6 +427,9 @@ import { gsap } from "gsap";
     margin: 0 8% 0 8%;
     margin-bottom: 6.8%;
   }
+  .margins2 {
+    margin: 0 8% 0 8%;
+  }
 
   .viewAwardsBtn {
     width: 40%;
@@ -186,29 +454,45 @@ import { gsap } from "gsap";
     margin-right: 8%;
   }
 
-  .awardsTable {
-  }
-  .awardCtg,
-  .awardName {
-    border-bottom: 1.15px solid hsl(60, 1%, 25%);
-    font-family: "Anek Devanagari";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1.2vw;
-    line-height: 300%;
-
-    text-transform: capitalize;
-    padding: 1.5%;
-    padding-left: 8%;
-    padding-right: 8%;
-    color: #ffffff;
+  .hoverImg {
+    width: 40%;
   }
 
-  tr:hover,
-  tr td:hover {
+  .mobAward:hover,
+  .mobAward:hover span {
     color: #1a1a1a;
     background-color: #e5ff35;
     font-weight: 600;
+  }
+
+  /* award table css */
+
+  @media screen and (min-width: 768px) {
+    .mbAwardName {
+      text-align: end;
+    }
+    .mobAward {
+      padding-bottom: 2%;
+      border-bottom: 1.5px solid hsl(60, 1%, 25%);
+      padding-top: 2%;
+      margin-right: 3%;
+      margin-left: 0.5%;
+    }
+    .mbAwardCat,
+    .mbAwardName {
+      font-family: "anek devanagari";
+      font-size: 1.2vw;
+      font-weight: 500;
+    }
+
+    .mbAwardName span,
+    .mbAwardCat span {
+      text-transform: capitalize;
+      color: white;
+    }
+    .hifen {
+      display: none;
+    }
   }
 </style>
 
