@@ -97,7 +97,7 @@ import whatsappLogo from "../images/whatsappLogo.png";
 </section>
 <section style="border-top: 1.15px solid  grey;   background-color: #1a1a1a; ">
   <div class="row" style="margin: 0 10% 0 10%; ">
-    <div class="col-8 row" style="justify-content:space-evenly;">
+    <div class="col-lg-8 col-md-8 row" style="justify-content:space-evenly;">
       <span class="collab col-3 d-flex"
         >Performance &nbsp; <button
           class="btn"
@@ -129,7 +129,10 @@ import whatsappLogo from "../images/whatsappLogo.png";
         >
       </span>
     </div>
-    <div class="col-4" style="text-align: center; padding-top: 1.5%;">
+    <div
+      class="col-lg-4 col-md-4 desktopOnly"
+      style="text-align: center; padding-top: 1.5%;"
+    >
       <button class="btn"><img class="icons" src={instaLogo} alt="" /></button>
       <button class="btn">
         <img class="icons" src={linkedinlogo} alt="" /></button
@@ -208,7 +211,7 @@ import whatsappLogo from "../images/whatsappLogo.png";
     background-color: #1a1a1a;
     height: 3vw;
     border-radius: 0 10px 0 10px;
-    border: 0 !importantS;
+
     color: rgba(255, 255, 255, 1);
     font-size: calc(7px + 0.390625vw);
   }
@@ -241,6 +244,12 @@ import whatsappLogo from "../images/whatsappLogo.png";
   }
   .btn {
     padding: 0.2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .desktopOnly {
+      display: none !important;
+    }
   }
   @media (max-width: 1435px) {
     .btn {
