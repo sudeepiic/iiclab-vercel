@@ -8,10 +8,7 @@ import positionBtn from "../images/positionBtn.png";
 
 <Layout title="contact-us">
   <section class="topSec">
-    <div
-      class="row"
-      style="padding-top: 4%; margin-left: 8%; margin-bottom: 3%;"
-    >
+    <div class="row topSecDiv">
       <div class="col-lg-5 col-md-5 col-sm-12 imgText">
         <span class="title"> Ready for a Head Start?</span><br />
         <span class="text"
@@ -211,6 +208,9 @@ import positionBtn from "../images/positionBtn.png";
     .col-4 img {
       width: 90% !important;
     }
+    .topSecDiv {
+      padding-top: 7% !important;
+    }
   }
 
   .imgDiv {
@@ -218,9 +218,61 @@ import positionBtn from "../images/positionBtn.png";
   }
   .topSec {
     background-color: #1a1a1a;
-    padding-top: 9vh;
+    padding-top: 7vw;
     padding-bottom: 5%;
     border-radius: 0 0 4vw 4vw;
+  }
+  .topSecDiv {
+    margin-top: 1%;
+    margin-left: 8%;
+    margin-bottom: 3%;
+  }
+  @media screen and (max-width: 1400px) {
+    .topSecDiv {
+      margin-top: 2.5%;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .topSecDiv {
+      margin-top: 4.5%;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .topSecDiv {
+      margin-top: 5.5%;
+    }
+  }
+  @media screen and (max-width: 870px) {
+    .topSecDiv {
+      margin-top: 7.5%;
+    }
+  }
+  @media screen and (max-width: 560px) {
+    .topSecDiv {
+      padding-top: 8% !important;
+    }
+    .topSec {
+      padding-top: 12vw !important;
+    }
+  }
+  @media screen and (max-width: 384px) {
+    .topSecDiv {
+      padding-top: 10.5% !important;
+    }
+    .topSec {
+      padding-top: 15vw !important;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .topSecDiv {
+      padding-top: 12% !important;
+    }
+    .topSec {
+      padding-top: 17vw !important;
+    }
   }
 
   .bottomSec {

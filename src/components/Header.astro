@@ -18,8 +18,8 @@ import whatsappLogo from "../images/whatsappLogo.png";
     <nav class="main d-inline-flex">
       <div class="logo">
         <a href="/">
-          <!-- <img  src={logoSvg} alt="" /> -->
           <svg
+            class="logoSizing"
             width="44"
             height="48"
             viewBox="0 0 44 48"
@@ -46,11 +46,12 @@ import whatsappLogo from "../images/whatsappLogo.png";
       </div>
       <div class="list onlyDesk">
         <ul class="d-inline-flex">
-          <li class="paddingsLi"><a class="navTabs" href="">Our Work</a></li>
+          <li class="paddingsLi"><a class="navTabs" href="/">Home</a></li>
+          <li class="paddingsLi">
+            <a class="navTabs" href="/portfolio/">Our Work</a>
+          </li>
           <li><a class="navTabs" href="">Solutions</a></li>
-          <li><a class="navTabs" href="/about-us/">Life at IIC</a></li>
-          <li><a class="navTabs" href="">Career</a></li>
-          <li><a class="navTabs" href="/blog-gallery/">Articles</a></li>
+          <li><a class="navTabs" href="/hiring/">Career</a></li>
         </ul>
       </div>
       <div class="contact-div btn">
@@ -122,57 +123,111 @@ import whatsappLogo from "../images/whatsappLogo.png";
   >
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
-        <span class="cloze">Close</span>
-        <button
-          type="button"
-          class="close btn"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        >
-          <img style="width: 67%;" src={modalCross} alt="" />
-        </button>
+        <a href="/">
+          <svg
+            class="onlyMob headerLogo"
+            width="44"
+            height="48"
+            viewBox="0 0 44 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M27.8125 47.4504C27.8125 31.7498 27.8125 16.0492 27.8125 0.348633C33.1525 0.348633 38.4469 0.348633 43.8326 0.348633C43.8326 4.04558 43.8326 7.74252 43.8326 11.4851C42.2351 11.4851 40.6833 11.4851 39.0403 11.4851C39.0403 19.7462 39.0403 27.9616 39.0403 36.2683C40.6377 36.2683 42.1895 36.2683 43.8326 36.2683C43.8326 40.0109 43.8326 43.7078 43.8326 47.4504C38.4926 47.4504 33.1982 47.4504 27.8125 47.4504Z"
+              fill="currentColor"></path>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M13.8828 47.4504C13.8828 31.7498 13.8828 16.0492 13.8828 0.348633C17.5798 0.348633 21.3223 0.348633 25.0649 0.348633C25.0649 16.0492 25.0649 31.7498 25.0649 47.4504C21.3223 47.4504 17.6254 47.4504 13.8828 47.4504Z"
+              fill="currentColor"></path>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M11.1365 47.4508C7.43953 47.4508 3.74258 47.4508 0 47.4508C0 37.5466 0 27.6424 0 17.7383C3.69694 17.7383 7.39389 17.7383 11.1365 17.7383C11.1365 27.6424 11.1365 37.5466 11.1365 47.4508Z"
+              fill="currentColor"></path>
+          </svg>
+        </a>
+        <div>
+          <span class="cloze">Close</span>
+          <button
+            type="button"
+            class="close btn"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <img class="crossImg" src={modalCross} alt="" />
+          </button>
+        </div>
       </div>
       <div class="modal-body">
         <div class="modalContent">
-          <div class="row" style="margin-bottom: 3.2%;">
-            <div class="col-4">
-              <a href="">
+          <div class="row margBtm">
+            <div class="col-lg-4 col-md-4 col-sm-12 mobView">
+              <a href="/">
                 <span class="index">01</span>
-                <span class="titles">solutions</span>
+                <span class="titles">Home</span>
               </a>
             </div>
-            <div class="col-4">
-              <a href="">
+            <div class="col-lg-4 col-md-4 col-sm-12 mobView">
+              <a href="/about-us/">
                 <span class="index">02</span>
-                <span class="titles">our products</span>
+                <span class="titles">About us</span>
               </a>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-4 col-sm-12 mobView">
               <a href="/portfolio/">
                 <span class="index">03</span>
-                <span class="titles">our work</span>
+                <span class="titles">Solutions</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="row margBtm">
+            <div class="col-lg-4 col-md-4 col-sm-12 mobView">
+              <a href="">
+                <span class="index">04</span>
+                <span class="titles">products</span>
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mobView">
+              <a href="/portfolio/">
+                <span class="index">05</span>
+                <span class="titles">Our work</span>
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mobView">
+              <a href="/awards/">
+                <span class="index">06</span>
+                <span class="titles">awards</span>
               </a>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-4">
+            <div class="col-lg-4 col-md-4 col-sm-12 mobView">
               <a href="/blog-gallery/">
-                <span class="index">04</span>
+                <span class="index">07</span>
                 <span class="titles">articles</span>
               </a>
             </div>
-            <div class="col-4">
-              <a href="/awards/">
-                <span class="index">05</span>
-                <span class="titles">Awards</span>
+            <div class="col-lg-4 col-md-4 col-sm-12 mobView">
+              <a href="">
+                <span class="index">08</span>
+                <span class="titles">Life at iic</span>
               </a>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-4 col-sm-12 mobView">
               <a href="/hiring/">
-                <span class="index">06</span>
+                <span class="index">09</span>
                 <span class="titles">Career</span>
+              </a>
+            </div>
+            <div class="mobView onlyMob" style="border-bottom: 0 ">
+              <a href="">
+                <span class="index">10</span>
+                <span class="titles">Connect</span>
               </a>
             </div>
           </div>
@@ -235,21 +290,11 @@ import whatsappLogo from "../images/whatsappLogo.png";
     }
 
     .modalContent {
-      margin-right: 10%;
-      margin-left: 8%;
-      position: relative;
-      top: 20%;
-    }
-
-    @media screen and (max-width: 2300px) {
-      .modalContent {
-        top: 25%;
-      }
-    }
-    @media screen and (max-width: 1700px) {
-      .modalContent {
-        top: 30%;
-      }
+      position: absolute !important;
+      transform: translate(0, -73%);
+      top: 50%;
+      left: 15%;
+      width: 80%;
     }
 
     .cloze {
@@ -257,10 +302,7 @@ import whatsappLogo from "../images/whatsappLogo.png";
       font-family: "anek devanagari";
       font-size: 0.9vw;
       position: relative;
-      left: 47%;
-    }
-    .col-4 {
-      text-align: center;
+      left: 8%;
     }
 
     .index {
@@ -291,6 +333,19 @@ import whatsappLogo from "../images/whatsappLogo.png";
       font-size: 0.9vw;
       font-weight: 300;
     }
+    .crossImg {
+      width: 2.3vw;
+    }
+
+    @media screen and (max-width: 1150px) {
+      .btmHeading {
+        font-size: 1.2vw !important;
+      }
+      .btmContent {
+        font-size: 1.1vw !important;
+      }
+    }
+
     .footer {
       position: absolute;
       bottom: 3%;
@@ -299,6 +354,22 @@ import whatsappLogo from "../images/whatsappLogo.png";
     }
     .icons {
       width: 2.5vw;
+    }
+    @media screen and (max-width: 1080px) {
+      .icons {
+        width: 2.2vw !important;
+      }
+      .iconbtn {
+        padding: 0.18rem !important;
+      }
+    }
+    @media screen and (max-width: 880px) {
+      .icons {
+        width: 2.2vw !important;
+      }
+      .iconbtn {
+        padding: 0.1rem !important;
+      }
     }
     .iconbtn {
       padding: 0.2rem;
@@ -393,6 +464,16 @@ import whatsappLogo from "../images/whatsappLogo.png";
       }
     }
     @media screen and (max-width: 768px) {
+      .logoSizing {
+        width: 7vw !important;
+      }
+      .menu p {
+        font-size: 3vw !important;
+      }
+      .menu .s1,
+      .menu .s2 {
+        margin-top: 1.8vw !important;
+      }
       .onlyDesk {
         display: none;
       }
@@ -402,6 +483,59 @@ import whatsappLogo from "../images/whatsappLogo.png";
       .menu {
         position: absolute;
         right: 7%;
+      }
+      /* mobile view of modal */
+      .mobView {
+        padding-left: 6% !important;
+        padding: 3%;
+        border-bottom: 1px solid #464343;
+      }
+      .mobView:hover,
+      .mobView:hover span {
+        background-color: #e5ff53;
+        color: black !important;
+      }
+      .modalContent {
+        position: initial !important;
+        transform: initial !important;
+        width: 100% !important;
+      }
+      .titles {
+        font-size: 14vw !important;
+      }
+      .index {
+        font-size: 4vw !important;
+        margin-right: 4.5%;
+        opacity: 35% !important;
+      }
+      .footer {
+        display: none !important;
+      }
+      .cloze {
+        display: none !important;
+      }
+      .modal-footer {
+        display: none !important;
+      }
+      .crossImg {
+        width: 5.5vw;
+      }
+      .modal-header {
+        padding-left: 6% !important;
+        padding-top: 8% !important;
+        padding-bottom: 3% !important;
+      }
+      .headerLogo {
+        width: 7vw !important;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      .margBtm {
+        margin-bottom: 3.2%;
+      }
+      .onlyMob {
+        display: none !important;
       }
     }
     a {
