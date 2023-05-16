@@ -1,49 +1,40 @@
 ---
 import blackDiamond from "../src/images/blackDiamond.png";
 
-
 import caseStudyImg from "../src/images/caseStudyImg.png";
 
 import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import type { Document } from "@contentful/rich-text-types";
 
-
-
 const props = Astro.props;
 ---
 
-
-
-
-<section style="background-color: #1a1a1a; padding-top:4%"  >
-
-  
-    <div style="background-color:#e5ff53;">
+<section style="background-color: #1a1a1a; padding-top:4%">
+  <div style="background-color:#e5ff53;">
     <div class="margins row">
-            <div class="col-4 "  >
-                <img src={blackDiamond} alt="">
-                <span set:html={ props.yellowCompTitle}></span>
-            </div>
+      <div class="col-lg-4 col-md-4 col-sm-12 col4">
+        <img src={blackDiamond} alt="" />
+        <span set:html={props.yellowCompTitle} />
+      </div>
 
-            <div class="col-8" style=" font-family: 'anek devanagari';" set:html={ props.yellowCompText}>
-
-
-            </div>
+      <div
+        class="col-lg-8 col-md-8 col-sm-12 col8"
+        style=" font-family: 'anek devanagari';"
+        set:html={props.yellowCompText}
+      />
     </div>
-</div>
-
+  </div>
 </section>
 
 <style>
-
-.margins {
+  .margins {
     margin-left: 7%;
     margin-right: 7%;
     padding-top: 4%;
     padding-bottom: 4%;
   }
-  .col-4 span{
+  .col4 span {
     font-family: "Deutschlander";
     text-transform: uppercase;
     font-size: 6vw;
@@ -53,25 +44,31 @@ const props = Astro.props;
     color: black;
     display: inline-block;
   }
-  .col-4 img{
-    margin-bottom:15%;
+  .col4 img {
+    margin-bottom: 15%;
     width: 2vw;
   }
-  .col-8{
-  
-    
+  .col8 {
     display: flex;
     justify-content: center;
   }
-  .col-8{
-   
+  .col8 {
     width: 60%;
-    
+
     text-align: justify;
-    
-    font-family: 'anek devanagari';
+
+    font-family: "anek devanagari";
     font-size: 1.2vw;
     word-spacing: 0.6ch;
-   
+  }
+
+  @media screen and (max-width: 768px) {
+    .col8 {
+      font-size: 3vw;
+      width: 100% !important;
+    }
+    .col4 span {
+      font-size: 12vw;
+    }
   }
 </style>

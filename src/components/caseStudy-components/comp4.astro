@@ -19,12 +19,12 @@ const props = Astro.props;
   
     <div class="margins row" >
 
-        <div class="col-5 heading" >
+        <div class="col-lg-5 col-md-5 col-sm-12 heading" >
             <img src={yellowDiamond} alt="" style="width: 7%;">
             <span style="display: inline-block;" set:html={props.tiltImagesTitle}></span>
         </div>
 
-        <div class="col-6 para" set:html={ props.tiltImagesText}>
+        <div class="col-lg-6 col-md-6 col-sm-12 para" set:html={ props.tiltImagesText}>
            
             
         </div>
@@ -101,4 +101,13 @@ const props = Astro.props;
         rotate: 350deg;
        
     }
+
+    @media screen and (max-width: 768px) {
+    .heading {
+      font-size: 12vw;
+    }
+    .para {
+      font-size: 3vw;
+    }
+  }
 </style>

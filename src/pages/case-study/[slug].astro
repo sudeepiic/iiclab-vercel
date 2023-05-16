@@ -14,166 +14,185 @@ import Comp6b_belowParallel from "../../components/caseStudy-components/Comp6b_b
 
 import Comp7Bottom from "../../components/caseStudy-components/comp7Bottom.astro";
 
-
-import  { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import Layout from "../../layouts/Layout.astro";
 export async function getStaticPaths() {
-
   const entries = await contentfulClient.getEntries<any>({
     content_type: "caseStudy",
   });
   console.log("paramssssssss", entries);
-  
-   
+
   const pages = entries.items.map((item) => {
-    
-    console.log(item.fields.heroTitle, 'oooooooooooooooooooooooooooo')
-   return ({
-      params: { slug: item.fields.heroTitle  },
+    console.log(item.fields.heroTitle, "oooooooooooooooooooooooooooo");
+    return {
+      params: { slug: item.fields.heroTitle },
       props: {
         caseStudyData: item,
       },
-    });
+    };
   });
- return pages
+  return pages;
 }
 
 const { caseStudyData } = Astro.props;
 ---
+
 <Layout title="case study">
-<Title1
-   heroTitle={documentToHtmlString(caseStudyData.fields.heroTitleMain)}
-   heroVideo={caseStudyData.fields?.heroVideo?.fields?.file.url}
-   herobanner={caseStudyData.fields?.heroBanner?.fields?.file.url}
-   whichTechnology={documentToHtmlString(caseStudyData.fields?.whichTechnology)}
-   herobanner2={caseStudyData.fields?.heroBanner2?.fields?.file.url}
-   heroContent={documentToHtmlString(caseStudyData.fields.heroContent)}
-  pointerHead1={documentToHtmlString(caseStudyData.fields.pointerHead1)}
+  <Title1
+    heroTitle={documentToHtmlString(caseStudyData.fields.heroTitleMain)}
+    heroVideo={caseStudyData.fields?.heroVideo?.fields?.file.url}
+    herobanner={caseStudyData.fields?.heroBanner?.fields?.file.url}
+    whichTechnology={caseStudyData.fields?.whichTechnology}
+    herobanner2={caseStudyData.fields?.heroBanner2?.fields?.file.url}
+    heroContent={documentToHtmlString(caseStudyData.fields.heroContent)}
+    pointerHead1={documentToHtmlString(caseStudyData.fields.pointerHead1)}
+    contentPointers1={documentToHtmlString(
+      caseStudyData.fields.contentPointers1
+    )}
+    pointerHead2={documentToHtmlString(caseStudyData.fields.pointerHead2)}
+    contentPointers2={documentToHtmlString(
+      caseStudyData.fields.contentPointers2
+    )}
+    clientInfo={documentToHtmlString(caseStudyData.fields.clientInfo)}
+    solutionInfo={documentToHtmlString(caseStudyData.fields.solutionInfo)}
+    brandLogo1={caseStudyData?.fields?.brandLogos &&
+      caseStudyData?.fields?.brandLogos[0]?.fields?.file.url}
+    brandLogo2={caseStudyData?.fields?.brandLogos &&
+      caseStudyData?.fields?.brandLogos[1]?.fields?.file.url}
+  />
 
-   contentPointers1 = {documentToHtmlString(caseStudyData.fields.contentPointers1)}
-  pointerHead2={documentToHtmlString(caseStudyData.fields.pointerHead2)}
+  <Comp2
+    belowCarousalTitle={documentToHtmlString(
+      caseStudyData.fields.belowCarousalTitle
+    )}
+    belowCarousalText={documentToHtmlString(
+      caseStudyData.fields.belowCarousalText
+    )}
+    fullSizeImg={caseStudyData?.fields?.fullSizeImg?.fields?.file.url}
+  />
 
-   contentPointers2 = {documentToHtmlString(caseStudyData.fields.contentPointers2)}
+  {
+    caseStudyData?.fields?.midContentImg && (
+      <Comp3
+        midContentTitle={documentToHtmlString(
+          caseStudyData?.fields?.midContentTitle
+        )}
+        midContentImg={
+          caseStudyData?.fields?.midContentImg &&
+          caseStudyData?.fields?.midContentImg[0]?.fields?.file.url
+        }
+        midImgCaption={documentToHtmlString(caseStudyData.fields.midImgCaption)}
+        midContentText={documentToHtmlString(
+          caseStudyData.fields.midContentText
+        )}
+      ></Comp3>
+    )
+  }
 
-   clientInfo={documentToHtmlString(caseStudyData.fields.clientInfo)}
-   solutionInfo={documentToHtmlString(caseStudyData.fields.solutionInfo)}
+  {
+    caseStudyData.fields.tiltImagesTitle && (
+      <Comp4
+        tiltImagesTitle={documentToHtmlString(
+          caseStudyData.fields.tiltImagesTitle
+        )}
+        tiltImagesText={documentToHtmlString(
+          caseStudyData.fields.tiltImagesText
+        )}
+        tiltImage1={
+          caseStudyData?.fields?.tiltImages &&
+          caseStudyData?.fields?.tiltImages[0]?.fields?.file.url
+        }
+        tiltImage2={
+          caseStudyData?.fields?.tiltImages &&
+          caseStudyData?.fields?.tiltImages[1]?.fields?.file.url
+        }
+        tiltImage3={
+          caseStudyData?.fields?.tiltImages &&
+          caseStudyData?.fields?.tiltImages[2]?.fields?.file.url
+        }
+      ></Comp4>
+    )
+  }
 
-   brandLogo1={caseStudyData?.fields?.brandLogos && caseStudyData?.fields?.brandLogos[0]?.fields?.file.url}
-   brandLogo2={caseStudyData?.fields?.brandLogos && caseStudyData?.fields?.brandLogos[1]?.fields?.file.url}
+  <Comp5CenterText
+    bottomCompTitle={documentToHtmlString(caseStudyData.fields.bottomCompTitle)}
+    bottomCompText={documentToHtmlString(caseStudyData.fields.bottomCompText)}
+  />
+  {
+    caseStudyData?.fields?.bottomCompImgs && (
+      <Comp6ParallelImgs
+        parallelImg1={
+          caseStudyData?.fields?.bottomCompImgs &&
+          caseStudyData?.fields?.bottomCompImgs[0]?.fields?.file.url
+        }
+        parallelImg2={
+          caseStudyData?.fields?.bottomCompImgs &&
+          caseStudyData?.fields?.bottomCompImgs[1]?.fields?.file.url
+        }
+      ></Comp6ParallelImgs>
+    )
+  }
 
-   >
-</Title1>
+  {
+    caseStudyData?.fields?.belowParallelImgTitle && (
+      <Comp6b_belowParallel
+        belowParallelImgTitle={documentToHtmlString(
+          caseStudyData.fields.belowParallelImgTitle
+        )}
+        belowParallelImgText={documentToHtmlString(
+          caseStudyData.fields.belowParallelImgText
+        )}
+      ></Comp6b_belowParallel>
+    )
+  }
 
-
-
-<Comp2
-  belowCarousalTitle={documentToHtmlString(caseStudyData.fields.belowCarousalTitle)}
-  belowCarousalText={documentToHtmlString(caseStudyData.fields.belowCarousalText)}
-  fullSizeImg={caseStudyData?.fields?.fullSizeImg?.fields?.file.url}
-
-> 
-</Comp2>  
-   
-{
-  caseStudyData?.fields?.midContentImg && 
-  <Comp3
-midContentTitle={documentToHtmlString(caseStudyData?.fields?.midContentTitle)}
-   midContentImg={caseStudyData?.fields?.midContentImg && caseStudyData?.fields?.midContentImg[0]?.fields?.file.url}
-   midImgCaption={documentToHtmlString(caseStudyData.fields.midImgCaption)}
-   midContentText={documentToHtmlString(caseStudyData.fields.midContentText)}
-
->
-</Comp3>
-}
-
-
-{
-  caseStudyData.fields.tiltImagesTitle &&
-  <Comp4
-  tiltImagesTitle={documentToHtmlString(caseStudyData.fields.tiltImagesTitle)}
-  tiltImagesText={documentToHtmlString(caseStudyData.fields.tiltImagesText)}
-  tiltImage1={caseStudyData?.fields?.tiltImages && caseStudyData?.fields?.tiltImages[0]?.fields?.file.url}
-  tiltImage2={caseStudyData?.fields?.tiltImages && caseStudyData?.fields?.tiltImages[1]?.fields?.file.url}
-  tiltImage3={caseStudyData?.fields?.tiltImages && caseStudyData?.fields?.tiltImages[2]?.fields?.file.url}
-
-
->
-</Comp4>
-
-}
-
-
-<Comp5CenterText
-  bottomCompTitle={documentToHtmlString(caseStudyData.fields.bottomCompTitle)}
-  bottomCompText={documentToHtmlString(caseStudyData.fields.bottomCompText)}
-
->
-</Comp5CenterText>
-{caseStudyData?.fields?.bottomCompImgs && 
-  <Comp6ParallelImgs
-  parallelImg1={caseStudyData?.fields?.bottomCompImgs && caseStudyData?.fields?.bottomCompImgs[0]?.fields?.file.url}
-  parallelImg2={caseStudyData?.fields?.bottomCompImgs && caseStudyData?.fields?.bottomCompImgs[1]?.fields?.file.url}
-  
-  >
-  </Comp6ParallelImgs>
-}
-
-{caseStudyData?.fields?.belowParallelImgTitle &&
-  <Comp6b_belowParallel
-  belowParallelImgTitle={documentToHtmlString(caseStudyData.fields.belowParallelImgTitle)}
-  belowParallelImgText={documentToHtmlString(caseStudyData.fields.belowParallelImgText)}
->
-  
- </Comp6b_belowParallel>
-
-}
-
-
-{ caseStudyData.fields.yellowCompTitle &&
- <Comp7Bottom
- yellowCompTitle={documentToHtmlString(caseStudyData.fields.yellowCompTitle)}
- yellowCompText={documentToHtmlString(caseStudyData.fields.yellowCompText)}
->
-</Comp7Bottom>
-}
-
+  {
+    caseStudyData.fields.yellowCompTitle && (
+      <Comp7Bottom
+        yellowCompTitle={documentToHtmlString(
+          caseStudyData.fields.yellowCompTitle
+        )}
+        yellowCompText={documentToHtmlString(
+          caseStudyData.fields.yellowCompText
+        )}
+      ></Comp7Bottom>
+    )
+  }
 </Layout>
 
-
 <style is:global>
-  .turnBlack{
+  .turnBlack {
     background: transparent;
     position: absolute;
     width: 100%;
   }
- 
+
   .list ul li a {
- 
     color: white;
     opacity: 100%;
   }
-  path{
+  path {
     fill: white;
   }
- 
 
   /* connect button css */
 
-  .connect, .circles{
+  .connect,
+  .circles {
     fill: #1a1a1a;
   }
-   .oval{
+  .oval {
     fill: white;
-   }
+  }
 
-   .tele{
+  .tele {
     fill: white;
-   }
-   .menu p{
+  }
+  .menu p {
     color: white;
-   }
-   .menu .s1, .menu .s2{
+  }
+  .menu .s1,
+  .menu .s2 {
     border: 1px solid white;
-   }
- 
+  }
 </style>
