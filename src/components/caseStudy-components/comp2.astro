@@ -17,7 +17,7 @@ const props = Astro.props;
       class="col-lg-6 col-md-6 col-sm-12 heading"
       set:html={props.belowCarousalTitle}
     >
-      <!-- <img src={paraDiamond} alt=""> -->
+      <!-- <img style="width: 7%;" src={paraDiamond} alt="" /> -->
     </div>
 
     <div
@@ -73,7 +73,11 @@ const props = Astro.props;
       font-size: 12vw;
     }
     .para {
-      font-size: 3vw;
+      font-size: 2.7vw;
+    }
+    .img img {
+      width: 100%;
+      border-radius: 0 8vw 0 8vw;
     }
   }
 </style>

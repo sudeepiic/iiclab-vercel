@@ -46,10 +46,12 @@ const { caseStudyData } = Astro.props;
     herobanner2={caseStudyData.fields?.heroBanner2?.fields?.file.url}
     heroContent={documentToHtmlString(caseStudyData.fields.heroContent)}
     pointerHead1={documentToHtmlString(caseStudyData.fields.pointerHead1)}
+    pointerHeading1={caseStudyData.fields?.pointerHeading1}
     contentPointers1={documentToHtmlString(
       caseStudyData.fields.contentPointers1
     )}
     pointerHead2={documentToHtmlString(caseStudyData.fields.pointerHead2)}
+    pointerHeading2={caseStudyData.fields?.pointerHeading2}
     contentPointers2={documentToHtmlString(
       caseStudyData.fields.contentPointers2
     )}
@@ -85,7 +87,7 @@ const { caseStudyData } = Astro.props;
         midContentText={documentToHtmlString(
           caseStudyData.fields.midContentText
         )}
-      ></Comp3>
+      />
     )
   }
 
@@ -110,7 +112,7 @@ const { caseStudyData } = Astro.props;
           caseStudyData?.fields?.tiltImages &&
           caseStudyData?.fields?.tiltImages[2]?.fields?.file.url
         }
-      ></Comp4>
+      />
     )
   }
 
@@ -129,7 +131,7 @@ const { caseStudyData } = Astro.props;
           caseStudyData?.fields?.bottomCompImgs &&
           caseStudyData?.fields?.bottomCompImgs[1]?.fields?.file.url
         }
-      ></Comp6ParallelImgs>
+      />
     )
   }
 
@@ -142,7 +144,7 @@ const { caseStudyData } = Astro.props;
         belowParallelImgText={documentToHtmlString(
           caseStudyData.fields.belowParallelImgText
         )}
-      ></Comp6b_belowParallel>
+      />
     )
   }
 
@@ -155,7 +157,7 @@ const { caseStudyData } = Astro.props;
         yellowCompText={documentToHtmlString(
           caseStudyData.fields.yellowCompText
         )}
-      ></Comp7Bottom>
+      />
     )
   }
 </Layout>

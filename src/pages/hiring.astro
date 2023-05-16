@@ -122,14 +122,14 @@ import ps from "../images/ps.png";
               >
             </div>
             <div class="location">
-              <img src={locIcon} alt="" />
+              <img class="locIcon" src={locIcon} alt="" />
               <span style="margin-right: 10%;">Lucknow</span>
               <img style="width: 8%;" src={clock} alt="" />
               <span>Full-Time</span>
             </div>
             <div class="bottomDivBack row">
-              <div class="col-7"><img src={ps} alt="" /></div>
-              <div class="col-5 btn"><span>Apply Now</span></div>
+              <div class="col-6 blackBottom"><img src={ps} alt="" /></div>
+              <div class="col-5 btn">Apply Now</div>
             </div>
           </div>
         </div>
@@ -158,14 +158,14 @@ import ps from "../images/ps.png";
               >
             </div>
             <div class="location">
-              <img src={locIcon} alt="" />
+              <img class="locIcon" src={locIcon} alt="" />
               <span style="margin-right: 10%;">Lucknow</span>
               <img style="width: 8%;" src={clock} alt="" />
               <span>Full-Time</span>
             </div>
             <div class="bottomDivBack row">
-              <div class="col-7"><img src={ps} alt="" /></div>
-              <div class="col-5 btn"><span>Apply Now</span></div>
+              <div class="col-6 blackBottom"><img src={ps} alt="" /></div>
+              <div class="col-5 btn">Apply Now</div>
             </div>
           </div>
         </div>
@@ -194,14 +194,14 @@ import ps from "../images/ps.png";
               >
             </div>
             <div class="location">
-              <img src={locIcon} alt="" />
+              <img class="locIcon" src={locIcon} alt="" />
               <span style="margin-right: 10%;">Lucknow</span>
               <img style="width: 8%;" src={clock} alt="" />
               <span>Full-Time</span>
             </div>
             <div class="bottomDivBack row">
-              <div class="col-7"><img src={ps} alt="" /></div>
-              <div class="col-5 btn"><span>Apply Now</span></div>
+              <div class="col-6 blackBottom"><img src={ps} alt="" /></div>
+              <div class="col-5 btn">Apply Now</div>
             </div>
           </div>
         </div>
@@ -209,7 +209,7 @@ import ps from "../images/ps.png";
     </div>
 
     <div class="row">
-      <div class="col-4 flip-card">
+      <div class="col-lg-4 col-md-4 col-sm-12 flip-card">
         <div class="flip-card-inner">
           <div class="card">
             <div class="eyeDiv btn">
@@ -233,19 +233,19 @@ import ps from "../images/ps.png";
               >
             </div>
             <div class="location">
-              <img src={locIcon} alt="" />
+              <img class="locIcon" src={locIcon} alt="" />
               <span style="margin-right: 10%;">Lucknow</span>
               <img style="width: 8%;" src={clock} alt="" />
               <span>Full-Time</span>
             </div>
             <div class="bottomDivBack row">
-              <div class="col-7"><img src={ps} alt="" /></div>
-              <div class="col-5 btn"><span>Apply Now</span></div>
+              <div class="col-6 blackBottom"><img src={ps} alt="" /></div>
+              <div class="col-5 btn">Apply Now</div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-4 flip-card">
+      <div class="col-lg-4 col-md-4 col-sm-12 flip-card">
         <div class="flip-card-inner">
           <div class="card">
             <div class="eyeDiv btn">
@@ -269,19 +269,19 @@ import ps from "../images/ps.png";
               >
             </div>
             <div class="location">
-              <img src={locIcon} alt="" />
+              <img class="locIcon" src={locIcon} alt="" />
               <span style="margin-right: 10%;">Lucknow</span>
               <img style="width: 8%;" src={clock} alt="" />
               <span>Full-Time</span>
             </div>
             <div class="bottomDivBack row">
-              <div class="col-7"><img src={ps} alt="" /></div>
-              <div class="col-5 btn"><span>Apply Now</span></div>
+              <div class="col-6 blackBottom"><img src={ps} alt="" /></div>
+              <div class="col-5 btn">Apply Now</div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-4 flip-card">
+      <div class="col-lg-4 col-md-4 col-sm-12 flip-card">
         <div class="flip-card-inner">
           <div class="card">
             <div class="eyeDiv btn">
@@ -305,14 +305,14 @@ import ps from "../images/ps.png";
               >
             </div>
             <div class="location">
-              <img src={locIcon} alt="" />
+              <img class="locIcon" src={locIcon} alt="" />
               <span style="margin-right: 10%;">Lucknow</span>
               <img style="width: 8%;" src={clock} alt="" />
               <span>Full-Time</span>
             </div>
             <div class="bottomDivBack row">
-              <div class="col-7"><img src={ps} alt="" /></div>
-              <div class="col-5 btn"><span>Apply Now</span></div>
+              <div class="col-6 blackBottom"><img src={ps} alt="" /></div>
+              <div class="col-5 btn">Apply Now</div>
             </div>
           </div>
         </div>
@@ -321,6 +321,16 @@ import ps from "../images/ps.png";
   </section>
 
   <style>
+    @media screen and (max-width: 768px) {
+      .flip-card {
+        width: 100% !important;
+        height: 77vw !important ;
+      }
+      .card {
+        width: 100% !important;
+        margin-bottom: 5% !important;
+      }
+    }
     .title {
       font-family: "Deutschlander";
       font-size: 14.5vw;
@@ -360,6 +370,7 @@ import ps from "../images/ps.png";
       line-height: 0.8;
       color: white;
       opacity: 100%;
+      display: block;
     }
 
     .benefitsImg {
@@ -441,6 +452,7 @@ import ps from "../images/ps.png";
       text-transform: uppercase;
       line-height: 0.8;
       opacity: 100%;
+      display: block;
     }
     .cardContent {
       margin: 15% 10% 33% 10%;
@@ -466,6 +478,7 @@ import ps from "../images/ps.png";
       line-height: 0.8;
       opacity: 100%;
       color: white;
+      display: block;
     }
     /* card css */
 
@@ -494,7 +507,7 @@ import ps from "../images/ps.png";
 
     .flip-card-back {
       background-color: #1a1a1a;
-      padding: 24% 7% 0 7%;
+      padding: 15% 7% 0 7%;
       color: white;
       transform: rotateY(180deg);
       width: 90%;
@@ -515,9 +528,13 @@ import ps from "../images/ps.png";
       font-size: 1vw;
       letter-spacing: 1px;
     }
+    .backContent span {
+      display: block;
+    }
     .location span {
       font-family: "anek devanagari";
       opacity: 50%;
+      display: inline-block;
     }
     .backContent {
       margin-bottom: 20%;
@@ -537,24 +554,37 @@ import ps from "../images/ps.png";
     .col-5 {
       background-color: #e5ff53;
       padding: 5%;
+      padding-bottom: 0% !important;
       text-align: center;
-    }
-
-    .col-5 span {
       font-family: "Deutschlander";
       font-size: 2.3vw;
       text-transform: uppercase;
       line-height: 0.8;
       opacity: 100%;
       color: black;
+      display: block;
     }
-    .col-7 {
+
+    /* .col-5 span {
+      font-family: "Deutschlander";
+      font-size: 2.3vw;
+      text-transform: uppercase;
+      line-height: 0.8;
+      opacity: 100%;
+      color: black;
+      display: block;
+    } */
+    .blackBottom {
       background-color: white;
-      padding: 5%;
+      padding: 3%;
       padding-bottom: 4%;
+      margin-left: 3%;
     }
-    .col-7 img {
+    .col-6 img {
       width: 20%;
+    }
+    .locIcon {
+      width: 9%;
     }
   </style>
 

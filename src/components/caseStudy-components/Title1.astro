@@ -40,7 +40,7 @@ const props = Astro.props;
       
    </div>
 
-   <div class="row">
+   <div class="row" style="margin-right: 0.05%;">
     <div class="col-lg-6 col-md-6 col-sm-12 client" >
       <div class="smDiv" >
         <span class="smSpan">client</span>
@@ -66,28 +66,28 @@ const props = Astro.props;
 <div style="background-color: #1a1a1a;">
 
 
-<div class="d-flex margins " >
+<div class="d-flex margins lastDiv"  >
     <div class="heroContent " >
       <span class="para" set:html={props.heroContent} >
        
       </span>
      
-      <div class="row " style="margin-bottom: 2%; margin-top: 2%;">
+      <div class="row leftmg " style="margin-bottom: 2%; margin-top: 2%;">
         <div class="content-box numbers col-2" ><span>01</span>
         </div>
         <div class="col-10">
-          <span class="pointerHead" set:html={props.pointerHead1}  ></span>
+          <span class="pointerHead" set:html={props.pointerHeading1}  ></span>
           <span class="numbersText " set:html={props.contentPointers1}></span>
         </div>
         
       
       </div>
 
-      { props.contentPointers2  && 
-         <div class="row ">
+      { (props.contentPointers2 && props.pointerHeading2)  && 
+         <div class="row leftmg ">
         <div class="content-box numbers col-2" >02</div>
         <div class="col-10">
-          <span class="pointerHead" set:html={props.pointerHead2} ></span>
+          <span class="pointerHead" set:html={props.pointerHeading2} ></span>
           <span class="numbersText " set:html={props.contentPointers2}></span>
         </div>
         
@@ -101,13 +101,13 @@ const props = Astro.props;
     </div>
     
 
-  <div  style="width: 90%;  flex-direction: column;" >
-    <div style="display:flex; justify-content: end;" >
-    <img style="width: 60%;  border-radius: 14vw 0 0 0 ;" src={props.herobanner2} alt="">
+  <div class="bannerParent"  style="width: 90%;  flex-direction: column;" >
+    <div class="bannerDiv" >
+    <img class="bannerImg" src={props.herobanner2} alt="">
 
     </div>
     
-    <div style="display:flex; justify-content:center; margin-left: 35%; margin-top:3%">
+    <div class="brandsDiv">
       <img class="brands b1" src={props.brandLogo1} alt="">
       {
         props.brandLogo2 && <img class="brands b2" src={props.brandLogo2} alt="">
@@ -145,6 +145,51 @@ const props = Astro.props;
     .lgSpan{
       font-size: 7vw !important;
     }
+    .border-box{
+      max-width: 16vw !important;
+    }
+
+    .lastDiv{
+      flex-direction: column !important;
+    }
+    .heroContent{
+      
+      width: 100% !important;
+    }
+    .para{
+      font-size: 2.7vw !important;
+      height: fit-content !important;
+    }
+    .numbers{
+      font-size: 6vw !important;
+      width: 10% !important;
+      margin-top: 3% !important;
+    }
+    .pointerHead{
+      font-size: 2vw !important;
+    }
+    .numbersText{
+      font-size: 7vw !important;
+    }
+    .bannerParent{
+      width: 98% !important;
+    }
+    .bannerDiv{
+      justify-content: center !important;
+    }
+    .bannerImg{
+      width: 70% !important;
+      border-radius: 30vw 0 0 0 !important;
+    }
+    .brandsDiv{
+      justify-content: left !important;
+      margin-left: 31% !important;
+      
+    }
+    .leftmg{
+      margin-left: 0% !important;
+    }
+
   }
  
   .heading{
@@ -239,7 +284,16 @@ const props = Astro.props;
     
       margin: 3% 5% 5% 20%;
     }
-
+ 
+    .bannerDiv{
+    display:flex; justify-content: end;
+    }
+    .bannerImg{
+     width: 60%;  border-radius: 14vw 0 0 0 ;
+    }
+    .brandsDiv{
+      display:flex; justify-content:center; margin-left: 35%; margin-top:3%;
+    }
     .img img{
         width:100%;
         border-radius:0 6vw 0 6vw

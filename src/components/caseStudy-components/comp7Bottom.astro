@@ -48,6 +48,7 @@ const props = Astro.props;
     margin-bottom: 15%;
     width: 2vw;
   }
+
   .col8 {
     display: flex;
     justify-content: center;
@@ -64,11 +65,15 @@ const props = Astro.props;
 
   @media screen and (max-width: 768px) {
     .col8 {
-      font-size: 3vw;
+      font-size: 2.7vw;
       width: 100% !important;
     }
     .col4 span {
       font-size: 12vw;
+    }
+    .col4 img {
+      margin-bottom: 7%;
+      width: 3.5vw;
     }
   }
 </style>

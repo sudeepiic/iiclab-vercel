@@ -30,10 +30,7 @@ const entries = await contentfulClient.getEntries<any>({
         <a href={"/case-study/" + caseStudy.fields.heroTitle}>
           <div class="titles">
             <span class="index">{(index = index + 1)}</span>
-            <span
-              class="name"
-              set:html={documentToHtmlString(caseStudy.fields.clientInfo)}
-            />
+            <span class="name" set:html={caseStudy.fields.singleClient} />
           </div>
           <img
             src={caseStudy.fields?.heroBanner?.fields?.file.url}
@@ -100,7 +97,6 @@ const entries = await contentfulClient.getEntries<any>({
       font-family: "Deutschlander";
       text-transform: uppercase;
       color: white;
-      display: inline-block;
     }
 
     .index {
