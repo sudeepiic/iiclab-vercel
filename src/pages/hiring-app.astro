@@ -11,58 +11,132 @@ import submitArrow from "../images/submitArrow.png";
     <div class="gradient">
       <div class="bgImage">
         <div class="title">
-          <span>user interface (UI) designer</span><br />
-          <img
-            class="btn"
-            style="width: 32%; margin-bottom: 5%;"
-            src={applyNow}
-            alt=""
-          />
+          <span>Business Development Manager</span><br />
+          <a href="#apply">
+            <img
+              class="btn"
+              style="width: 32%; margin-bottom: 5%;"
+              src={applyNow}
+              alt=""
+            />
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="margins">
+  <section class="margins" id="apply">
     <p class="heading">About the job</p>
     <span class="text">
-      User interface design or user interface engineering is the design of user
-      interfaces for machines and software, such as computers, home appliances,
-      mobile devices, and other electronic devices, with the focus on maximizing
-      usability and the user experience.
+      We are looking for a BD Manager who is passionate about technology and has
+      the prowess to build strong relationships. The candidate should have prior
+      experience in selling high-end custom tech solutions to Industry
+      Stalwarts. The pride in being a true HUNTER backed by proven success in
+      identifying, pursuing, and converting opportunities leading to driving
+      top-line revenue to the organization over a complex sales cycle, is what
+      the candidate must possess to be the right fit. If you have the zeal to
+      network and collaborate with the industry’s leading professionals to bring
+      about revolutionary tech innovations, then Ink In Caps is the place for
+      you. Sound knowledge of software and consultative selling would be a plus.
+      P.S. The candidate will also get the opportunity to travel occasionally
+      for work.
     </span>
 
     <p class="heading">Responsibilities</p>
     <span class="text">
-      <ul>
-        A UI designer is responsible for creating interactive programs that
-        enhance a customer's experience
-      </ul>
-      <ul>
-        Brand and facilitate an enjoyable experience on the business's website
-      </ul>
-      <ul>
-        UI designers also need to have a working understanding of graphic design
-        Brand's strength through the interface of a product.
-      </ul>
-      <ul>Brand's strength through the interface of a product.</ul>
-      <ul>
-        UI designer requires specialized training in all areas to deliver
-        quality products and services
+      <ul class="a">
+        <li>
+          Fill and manage the pipeline, deliver revenue, find new business and
+          maintain/grow existing accounts.
+        </li>
+        <li>
+          Research prospective accounts in targeted markets, pursue leads and
+          follow through to a successful agreement.
+        </li>
+        <li>
+          Understand the target markets, including industry, company, project,
+          company contacts and which market strategies can be used to attract
+          clients.
+        </li>
+        <li>
+          Maintain relationships with current clients and identify new
+          prospects.
+        </li>
+        <li>
+          Possess a strong understanding of our services, our competition in the
+          industry and positioning.
+        </li>
+        <li>
+          Follow the latest industry developments and stay up-to-date on
+          corporate competitors.
+        </li>
       </ul>
     </span>
 
     <p class="heading">job requirements</p>
     <span class="text" style="margin-bottom: 2%;">
-      User interface design or user interface engineering is the design of user
-      interfaces for machines and software, such as computers, home appliances,
-      mobile devices, and other electronic devices, with the focus on maximizing
-      usability and the user experience.
+      <ul class="a">
+        <li>Strategic thinking and problem solving skills.</li>
+        <li>
+          Exhibits sound and broad business, technical, industry and market
+          knowledge.
+        </li>
+        <li>
+          Ability to collaborate with different teams and exercise quick
+          decision-making.
+        </li>
+
+        <li>
+          Influences conflict resolution in a manner that is beneficial to the
+          individuals concerned and the organization.
+        </li>
+
+        <li>
+          Functions in a team leadership role and represents the Growth
+          Technology organization in business teams to produce a value-added
+          outcome.
+        </li>
+
+        <li>
+          Actively seeks ways to build and improve team spirit through engaging
+          others and demonstrating integrity, active listening, enthusiasm and
+          rewarding high performance.
+        </li>
+        <li>
+          Must have the desire and courage to accept responsibility and
+          accountability to make the right things happen.
+        </li>
+
+        <li>Seeks and embraces change by challenging the status quo.</li>
+
+        <li>
+          Seeks and accepts new assignments and development opportunities.
+        </li>
+        <li>Exhibits perseverance and focus in the face of adversity.</li>
+
+        <li>
+          Prior success in significantly increasing revenue in a highly
+          competitive market.
+        </li>
+
+        <li>
+          Must demonstrate a strong work ethic, be a team player, and work well
+          under pressure and in challenging situations.
+        </li>
+
+        <li>Direct client interaction experience is required.</li>
+
+        <li>
+          Excellent communication and computer skills, consultative selling
+          skills.
+        </li>
+        <li>Understanding of general software concepts.</li>
+      </ul>
     </span>
     <br />
+    <!-- <img style="width: 3%; margin-right: 2%;" src={ps} alt="" />
     <img style="width: 3%; margin-right: 2%;" src={ps} alt="" />
-    <img style="width: 3%; margin-right: 2%;" src={ps} alt="" />
-    <img style="width: 3%; margin-right: 2%;" src={ps} alt="" />
+    <img style="width: 3%; margin-right: 2%;" src={ps} alt="" /> -->
   </section>
 
   <section class="formSec">
@@ -181,6 +255,10 @@ import submitArrow from "../images/submitArrow.png";
 </Layout>
 
 <style>
+  ul.a {
+    list-style-type: disc;
+    line-height: 2.1 !important;
+  }
   .title {
     color: white;
     font-family: "Deutschlander";
@@ -255,13 +333,15 @@ import submitArrow from "../images/submitArrow.png";
   }
 
   /* form css */
-
+  .form-control {
+    border-left: 0 !important;
+  }
   .inp-title,
   .input {
     background-color: #1a1a1a;
   }
   .input-group-text {
-    padding: 2.55rem 2.75rem;
+    padding: 2.25rem 2.75rem;
     color: white;
     font-family: "anek devanagari";
     text-transform: uppercase;
@@ -277,7 +357,9 @@ import submitArrow from "../images/submitArrow.png";
     font-size: 1.35vw !important;
     background-color: #1a1a1a !important;
     border-radius: 0 0.7vw 0 0 !important;
-    border: 1.3px solid #575859 !important;
+    border-top: 1.3px solid #575859 !important;
+    border-right: 1.3px solid #575859 !important;
+    border-bottom: 1.3px solid #575859 !important;
   }
 
   .textArea {

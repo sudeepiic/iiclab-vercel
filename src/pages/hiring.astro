@@ -15,7 +15,7 @@ import viewOpenPositions from "../images/ViewOpenPosition.png";
 <Layout title="Hiring">
   <section style="padding-top: 3.5%;">
     <div class="row margins">
-      <div class="col-8">
+      <div class="col-lg-8 col-md-8 col-sm-12">
         <span class="title">Join Our Team</span>
         <div>
           <img class="titleImg" src={hiringImg1} alt="" />
@@ -23,7 +23,7 @@ import viewOpenPositions from "../images/ViewOpenPosition.png";
         </div>
       </div>
 
-      <div class="col-4">
+      <div class="col-lg-4 col-md-4 col-sm-12 titleText">
         <span>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
           nonummy nibh euismod tincidunt ut laoreet.
@@ -35,14 +35,17 @@ import viewOpenPositions from "../images/ViewOpenPosition.png";
 
   <section class="blackSec">
     <div class="row">
-      <div class="col-4 blackTitle">
+      <div class="col-lg-4 col-md-4 col-sm-12 blackTitle">
         <span>Benefits of being an</span>
         <span style="color:#e5ff53">IIC</span><span style="color:#f5ffbb"
           >IAN</span
         >
       </div>
-      <div class="col-8 row" style=" padding-top: 2.5%;">
-        <div class="col-6" style="padding-left: 10%;">
+      <div
+        class="col-lg-8 col-md-8 col-sm-12 row pointerDiv"
+        style=" padding-top: 2.5%;"
+      >
+        <div class="col-6 pointersMob" style="padding-left: 10%;">
           <img src={team} class="benefitsImg" alt="" />
           <p class="benefitsText" style="margin-bottom: 15%;">
             Working with a highly experienced team.
@@ -52,7 +55,7 @@ import viewOpenPositions from "../images/ViewOpenPosition.png";
             Get opportunities to work with major brands.
           </p>
         </div>
-        <div class="col-6" style="padding-left: 10%;">
+        <div class="col-6 pointersMob" style="padding-left: 10%;">
           <img src={funLoving} class="benefitsImg" alt="" />
           <p class="benefitsText" style="margin-bottom: 15%;">
             A fun-loving and creative environment.
@@ -71,7 +74,7 @@ import viewOpenPositions from "../images/ViewOpenPosition.png";
     </div>
 
     <div class="row" style="margin-bottom: 3%;">
-      <div class="col-4">
+      <div class="col-lg-4 col-md-4 col-sm-12">
         <span class="inputTitle">Search for a title...</span>
         <input
           class="inputCss"
@@ -79,14 +82,14 @@ import viewOpenPositions from "../images/ViewOpenPosition.png";
           placeholder="Search for a job title..."
         />
       </div>
-      <div class="col-4">
+      <div class="col-4 onlyDesk">
         <span class="inputTitle">Location:</span>
         <br />
         <button class="btn exploreBtn" style="margin-left: 0;">Any</button>
         <button class="btn exploreBtn">Mumbai</button>
         <button class="btn exploreBtn">Lucknow</button>
       </div>
-      <div class="col-4" style="padding-left: 1.7%;">
+      <div class="col-4 onlyDesk" style="padding-left: 1.7%;">
         <span class="inputTitle">Category:</span>
         <br />
         <input
@@ -98,6 +101,32 @@ import viewOpenPositions from "../images/ViewOpenPosition.png";
       </div>
     </div>
 
+    <div class="row onlyMob">
+      <label class="select" for="slct">
+        <select id="slct" required="required">
+          <option value="" disabled="disabled" selected="selected"
+            >Location :any</option
+          >
+          <option value="#">Mumbai</option>
+          <option value="#">Lucknow</option>
+          <!-- <option value="#">Three</option> -->
+        </select>
+      </label>
+    </div>
+
+    <div class="row onlyMob" style="margin-bottom: 4%;">
+      <label class="select" for="slct">
+        <select id="slct2" required="required">
+          <option value="" disabled="disabled" selected="selected"
+            >Category:Design and Development</option
+          >
+          <option value="#">Business Development</option>
+          <option value="#">Content Writer</option>
+          <option value="#">Graphic Designer</option>
+        </select>
+      </label>
+    </div>
+
     <div class="row" style="margin-bottom: 4%;">
       <div class="col-4 flip-card">
         <div class="flip-card-inner">
@@ -107,7 +136,7 @@ import viewOpenPositions from "../images/ViewOpenPosition.png";
             </div>
 
             <div class="cardContent">
-              <span>User interface (ui) designer</span>
+              <span>Business development manager</span>
             </div>
             <div class="bottomDiv">
               <span>02 years experience</span>
@@ -115,22 +144,22 @@ import viewOpenPositions from "../images/ViewOpenPosition.png";
           </div>
           <div class="flip-card-back">
             <div class="backContent">
-              <h3>Senior Graphic Design & Illustrator - 3Y Experience</h3>
+              <h3>Business development manager - 2Y Experience</h3>
               <span
-                >Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                aliquam erat volutpat.</span
+                >We are looking for a BD Manager who is passionate about
+                technology and has the prowess to build strong relationships</span
               >
             </div>
             <div class="location">
               <img class="locIcon" src={locIcon} alt="" />
-              <span style="margin-right: 10%;">Lucknow</span>
+              <span style="margin-right: 10%;">Mumbai</span>
               <img style="width: 8%;" src={clock} alt="" />
               <span>Full-Time</span>
             </div>
             <div class="bottomDivBack row">
               <div class="col-6 blackBottom"><img src={ps} alt="" /></div>
-              <div class="col-5 btn">Apply Now</div>
+
+              <div class="col-5 btn"><a href="/hiring-app/">Apply Now</a></div>
             </div>
           </div>
         </div>
@@ -312,8 +341,8 @@ import viewOpenPositions from "../images/ViewOpenPosition.png";
               <span>Full-Time</span>
             </div>
             <div class="bottomDivBack row">
-              <div class="col-7"><img src={ps} alt="" /></div>
-              <div class="col-5 btn"><span>Apply Now</span></div>
+              <div class="col-6 blackBottom"><img src={ps} alt="" /></div>
+              <div class="col-5 btn">Apply Now</div>
             </div>
           </div>
         </div>
@@ -331,7 +360,7 @@ import viewOpenPositions from "../images/ViewOpenPosition.png";
       <div class="location">
         <img class="locIcon" src={locIcon} alt="" />
         <span style="margin-right: 10%;">Lucknow</span>
-        <img style="width: 8%;" src={clock} alt="" />
+        <img class="clock" src={clock} alt="" />
         <span>Full-Time</span>
       </div>
       <div class="bottomDivBack row">
@@ -342,16 +371,125 @@ import viewOpenPositions from "../images/ViewOpenPosition.png";
   </section>
 
   <style>
-    @media screen and (max-width: 768px) {
+    a {
+      text-decoration: none;
+    }
+    @media screen and (max-width: 767px) {
+      select {
+        padding: 2% 10% 2% 3% !important;
+        margin-bottom: 3% !important;
+        width: 100% !important;
+        border: 1.25px solid rgba(26, 26, 26, 0.25) !important;
+        font-family: "anek devanagari";
+        background: rgba(255, 255, 255, 0.7);
+        opacity: 60%;
+        border-radius: 0.6vw !important;
+        font-size: 2.3vw;
+      }
+      .titleText {
+        font-size: 3vw !important;
+        /* display: block !important; */
+        margin-top: 2%;
+      }
+      .title {
+        font-size: 18vw !important;
+      }
+      .titleImg {
+        width: 31% !important;
+        margin-top: 2%;
+      }
+      .blackTitle span {
+        font-size: 18vw !important;
+      }
+      .pointersMob {
+        padding-left: 1.5% !important;
+      }
+      .benefitsText {
+        font-size: 3vw !important;
+        width: 80% !important;
+      }
+      .positionsTitle {
+        font-size: 18vw !important;
+      }
+      .pointerDiv {
+        margin-left: 0 !important;
+        margin-top: 3% !important;
+      }
+      .onlyDesk {
+        display: none !important;
+      }
+      .inputCss {
+        border-radius: 0.6vw !important;
+        padding: 4.5%;
+        font-size: 2.3vw !important;
+        width: 100% !important;
+      }
+      .inputTitle {
+        display: none !important;
+      }
+
+      /* Cards CSS */
       .flip-card {
         width: 100% !important;
-        height: 77vw !important ;
+        height: 100vw !important ;
       }
       .card {
         width: 100% !important;
         margin-bottom: 5% !important;
       }
+
+      .cardContent span {
+        font-size: 14.5vw !important;
+      }
+      .bottomDiv span {
+        font-size: 8vw !important;
+      }
+      .eyeDiv {
+        border-radius: 0 0 0 16vw !important;
+      }
+      .backContent h3 {
+        font-size: 5vw !important;
+      }
+      .flip-card-back span {
+        font-size: 3vw !important;
+      }
+      .locIcon {
+        width: auto !important;
+      }
+      .clock {
+        width: 6% !important;
+      }
+      .bottomDivBack .col-5 {
+        font-size: 6vw !important;
+      }
+      .backContent,
+      .location {
+        padding: 0 7% !important;
+      }
+      .flip-card-back {
+        padding: 19% 0 0 0 !important;
+      }
+
+      /* cards css ends */
     }
+
+    @media screen and (min-width: 768px) {
+      .onlyMob {
+        display: none !important;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .flip-card {
+        height: 105vw !important;
+      }
+    }
+
+    @media screen and (max-width: 820px) {
+      .exploreBtn {
+        width: 6.7vw !important;
+      }
+    }
+
     .title {
       font-family: "Deutschlander";
       font-size: 14.5vw;
@@ -372,7 +510,7 @@ import viewOpenPositions from "../images/ViewOpenPosition.png";
       margin-bottom: 4%;
     }
 
-    .col-4 span {
+    .titleText {
       font-family: "anek devanagari";
       opacity: 60%;
       font-size: 1.5vw;
@@ -391,7 +529,6 @@ import viewOpenPositions from "../images/ViewOpenPosition.png";
       line-height: 0.8;
       color: white;
       opacity: 100%;
-      display: block;
     }
 
     .benefitsImg {
@@ -428,6 +565,7 @@ import viewOpenPositions from "../images/ViewOpenPosition.png";
     .inputTitle {
       opacity: 60%;
       font-size: 1.2vw !important;
+      font-family: "anek devanagari";
     }
 
     .exploreBtn {
@@ -478,6 +616,12 @@ import viewOpenPositions from "../images/ViewOpenPosition.png";
     .cardContent {
       margin: 15% 10% 33% 10%;
       text-align: center;
+    }
+    @media screen and (min-width: 768px) {
+      .cardContent {
+        height: 18vw !important;
+        margin-bottom: 0 !important ;
+      }
     }
     .bottomDiv {
       background-color: #1a1a1a;
@@ -606,6 +750,9 @@ import viewOpenPositions from "../images/ViewOpenPosition.png";
     }
     .locIcon {
       width: 9%;
+    }
+    .clock {
+      width: 8%;
     }
   </style>
 

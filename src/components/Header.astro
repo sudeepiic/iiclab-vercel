@@ -133,20 +133,23 @@ import whatsappLogo from "../images/whatsappLogo.png";
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
+              class="modalLogo"
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M27.8125 47.4504C27.8125 31.7498 27.8125 16.0492 27.8125 0.348633C33.1525 0.348633 38.4469 0.348633 43.8326 0.348633C43.8326 4.04558 43.8326 7.74252 43.8326 11.4851C42.2351 11.4851 40.6833 11.4851 39.0403 11.4851C39.0403 19.7462 39.0403 27.9616 39.0403 36.2683C40.6377 36.2683 42.1895 36.2683 43.8326 36.2683C43.8326 40.0109 43.8326 43.7078 43.8326 47.4504C38.4926 47.4504 33.1982 47.4504 27.8125 47.4504Z"
-              fill="currentColor"></path>
+              fill="white"></path>
             <path
+              class="modalLogo"
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M13.8828 47.4504C13.8828 31.7498 13.8828 16.0492 13.8828 0.348633C17.5798 0.348633 21.3223 0.348633 25.0649 0.348633C25.0649 16.0492 25.0649 31.7498 25.0649 47.4504C21.3223 47.4504 17.6254 47.4504 13.8828 47.4504Z"
-              fill="currentColor"></path>
+              fill="white"></path>
             <path
+              class="modalLogo"
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M11.1365 47.4508C7.43953 47.4508 3.74258 47.4508 0 47.4508C0 37.5466 0 27.6424 0 17.7383C3.69694 17.7383 7.39389 17.7383 11.1365 17.7383C11.1365 27.6424 11.1365 37.5466 11.1365 47.4508Z"
-              fill="currentColor"></path>
+              fill="white"></path>
           </svg>
         </a>
         <div>
@@ -274,6 +277,9 @@ import whatsappLogo from "../images/whatsappLogo.png";
 
   <style>
     /* modal css */
+    .modalLogo {
+      fill: #fff !important;
+    }
 
     .modal-body,
     .modal-header,
@@ -335,6 +341,11 @@ import whatsappLogo from "../images/whatsappLogo.png";
     }
     .crossImg {
       width: 2.3vw;
+    }
+
+    .btn:focus {
+      outline: none !important;
+      box-shadow: none !important;
     }
 
     @media screen and (max-width: 1150px) {
@@ -463,7 +474,7 @@ import whatsappLogo from "../images/whatsappLogo.png";
         font-size: 1.7vw !important;
       }
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       .logoSizing {
         width: 7vw !important;
       }
@@ -530,7 +541,7 @@ import whatsappLogo from "../images/whatsappLogo.png";
       }
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 767px) {
       .margBtm {
         margin-bottom: 3.2%;
       }

@@ -18,13 +18,15 @@ import { gsap } from "gsap";
       </div>
 
       <div class="col-lg-4 col-md-4 col-sm-12">
-        <img src={viewAwardsBtn} class="viewAwardsBtn" alt="" />
+        <a href="#awardsList"
+          ><img src={viewAwardsBtn} class="viewAwardsBtn" alt="" /></a
+        >
       </div>
     </div>
     <img class="" style="width:100%;" src={awards} alt="" />
   </section>
 
-  <section class="bottomDiv">
+  <section class="bottomDiv" id="awardsList">
     <div style="margin-bottom: 2%; ">
       <span class="list">list of awards</span>
     </div>
@@ -334,7 +336,7 @@ import { gsap } from "gsap";
 </Layout>
 
 <style>
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     .mob {
       margin-top: 4% !important;
     }
