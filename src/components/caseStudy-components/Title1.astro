@@ -2,198 +2,175 @@
 import yellowDiamond from "../src/images/yellowDiamond.png";
 import caseStudyImg from "../src/images/caseStudyImg.png";
 import caseStudy2 from "../src/images/caseStudy2.png";
+import caraousal1 from "../src/images/caraousal1.png";
+import caraousal2 from "../src/images/caraousal2.png";
+
 import paraDiamond from "../src/images/paraDiamond.png";
 import blackDiamond from "../src/images/blackDiamond.png";
 import heroImg from "../src/images/heroImg.png";
 import videoHolder from "../src/images/videoHolder.png";
 import myntra from "../src/images/myntra.png";
-import nautica  from "../src/images/nautica.png";
+import nautica from "../src/images/nautica.png";
+import { Swiper, Navigation, Pagination, EffectCoverflow } from "swiper";
+import "swiper/css";
+import "swiper/css/bundle";
 
 import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import type { Document } from "@contentful/rich-text-types";
 
-
-
 const props = Astro.props;
-
-
 ---
- <section style="background-color: #1a1a1a;" >
-   <img src={props.herobanner} style="width: 100%;" alt="">
 
-   <div class="blankDiv">
-     
-     
-     <div class="midDiv " >
-     <div class="border-box"> <span>Technology</span>
-     </div>
-     <div class="border-box" > <span   set:html={props.whichTechnology}></span>
-     </div>
-      <div class="heading" set:html={props.heroTitle} >
-       
-        
-     </div>
-     </div>
-    
-  
-      
-   </div>
+<section style="background-color: #1a1a1a;">
+  <img src={props.herobanner} style="width: 100%;" alt="" />
 
-   <div class="row" style="margin-right: 0.05%;">
-    <div class="col-lg-6 col-md-6 col-sm-12 client" >
-      <div class="smDiv" >
-        <span class="smSpan">client</span>
-        <span class="lgSpan" set:html={props.clientInfo}></span>
-      </div>
-    
+  <div class="blankDiv">
+    <div class="midDiv">
+      <div class="border-box"><span>Technology</span></div>
+      <div class="border-box"><span set:html={props.whichTechnology} /></div>
+      <div class="heading" set:html={props.heroTitle} />
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 solution" >
+  </div>
+
+  <div class="row" style="margin-right: 0.05%;">
+    <div class="col-lg-6 col-md-6 col-sm-12 client">
+      <div class="smDiv">
+        <span class="smSpan">client</span>
+        <span class="lgSpan" set:html={props.clientInfo} />
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 solution">
       <div class="smDiv">
         <span class="smSpan">solution</span>
-      <span class="lgSpan" set:html={props.solutionInfo}></span>
+        <span class="lgSpan" set:html={props.solutionInfo} />
       </div>
-      
     </div>
-   </div>
+  </div>
 
-   <div style="background-color: #1a1a1a;">
-    <div class="margins img" >
-      <img  src={props.heroVideo} alt="">
-      </div>
-   </div>
+  <div style="background-color: #1a1a1a;">
+    <div class="margins img">
+      <img src={props.heroVideo} alt="" />
+    </div>
+  </div>
 
-<div style="background-color: #1a1a1a;">
+  <div style="background-color: #1a1a1a;">
+    <div class="d-flex margins lastDiv">
+      <div class="heroContent">
+        <span class="para" set:html={props.heroContent} />
 
-
-<div class="d-flex margins lastDiv"  >
-    <div class="heroContent " >
-      <span class="para" set:html={props.heroContent} >
-       
-      </span>
-     
-      <div class="row leftmg " style="margin-bottom: 2%; margin-top: 2%;">
-        <div class="content-box numbers col-2" ><span>01</span>
+        <div class="row leftmg" style="margin-bottom: 2%; margin-top: 2%;">
+          <div class="content-box numbers col-2"><span>01</span></div>
+          <div class="col-10">
+            <span class="pointerHead" set:html={props.pointerHeading1} />
+            <span class="numbersText" set:html={props.contentPointers1} />
+          </div>
         </div>
-        <div class="col-10">
-          <span class="pointerHead" set:html={props.pointerHeading1}  ></span>
-          <span class="numbersText " set:html={props.contentPointers1}></span>
-        </div>
-        
-      
+
+        {
+          props.contentPointers2 && props.pointerHeading2 && (
+            <div class="row leftmg ">
+              <div class="content-box numbers col-2">02</div>
+              <div class="col-10">
+                <span class="pointerHead" set:html={props.pointerHeading2} />
+                <span class="numbersText " set:html={props.contentPointers2} />
+              </div>
+            </div>
+          )
+        }
       </div>
 
-      { (props.contentPointers2 && props.pointerHeading2)  && 
-         <div class="row leftmg ">
-        <div class="content-box numbers col-2" >02</div>
-        <div class="col-10">
-          <span class="pointerHead" set:html={props.pointerHeading2} ></span>
-          <span class="numbersText " set:html={props.contentPointers2}></span>
+      <div class="bannerParent" style="width: 90%;  flex-direction: column;">
+        <div class="bannerDiv">
+          <img class="bannerImg" src={props.herobanner2} alt="" />
         </div>
-        
-      
+
+        <div class="brandsDiv">
+          <img class="brands b1" src={props.brandLogo1} alt="" />
+          {
+            props.brandLogo2 && (
+              <img class="brands b2" src={props.brandLogo2} alt="" />
+            )
+          }
+        </div>
       </div>
-
-      }
-     
-
-        
     </div>
-    
+  </div>
 
-  <div class="bannerParent"  style="width: 90%;  flex-direction: column;" >
-    <div class="bannerDiv" >
-    <img class="bannerImg" src={props.herobanner2} alt="">
-
+  <!-- carousel -->
+  <div style="padding:7% 0 ; " class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src={caseStudyImg} alt="" /></div>
+      <div class="swiper-slide"><img src={caraousal1} alt="" /></div>
+      <div class="swiper-slide"><img src={caraousal2} alt="" /></div>
+      <div class="swiper-slide"><img src={caseStudyImg} alt="" /></div>
+      <div class="swiper-slide"><img src={caraousal1} alt="" /></div>
+      <div class="swiper-slide"><img src={caraousal2} alt="" /></div>
+      <div class="swiper-slide"><img src={caseStudyImg} alt="" /></div>
+      <div class="swiper-slide"><img src={caraousal1} alt="" /></div>
+      <div class="swiper-slide"><img src={caraousal2} alt="" /></div>
     </div>
-    
-    <div class="brandsDiv">
-      <img class="brands b1" src={props.brandLogo1} alt="">
-      {
-        props.brandLogo2 && <img class="brands b2" src={props.brandLogo2} alt="">
-      }
-      
-    </div>
-      
-   
-
-</div>
-   
-</div>
-
-</div>
-
-  
-
-
- </section>
-
-
-
+    <div class="swiper-pagination"></div>
+  </div>
+  <!--  -->
+</section>
 
 <style>
-    
-
-  @media screen and (max-width:767px){
-    .smDiv{
+  @media screen and (max-width: 767px) {
+    .smDiv {
       margin-left: 8% !important;
     }
-    .smSpan{
+    .smSpan {
       font-size: 2vw !important;
-
     }
-    .lgSpan{
+    .lgSpan {
       font-size: 7vw !important;
     }
-    .border-box{
+    .border-box {
       max-width: 16vw !important;
     }
 
-    .lastDiv{
+    .lastDiv {
       flex-direction: column !important;
     }
-    .heroContent{
-      
+    .heroContent {
       width: 100% !important;
     }
-    .para{
+    .para {
       font-size: 2.7vw !important;
       height: fit-content !important;
     }
-    .numbers{
+    .numbers {
       font-size: 6vw !important;
       width: 10% !important;
       margin-top: 3% !important;
     }
-    .pointerHead{
+    .pointerHead {
       font-size: 2vw !important;
     }
-    .numbersText{
+    .numbersText {
       font-size: 7vw !important;
     }
-    .bannerParent{
+    .bannerParent {
       width: 98% !important;
     }
-    .bannerDiv{
+    .bannerDiv {
       justify-content: center !important;
     }
-    .bannerImg{
+    .bannerImg {
       width: 70% !important;
       border-radius: 30vw 0 0 0 !important;
     }
-    .brandsDiv{
+    .brandsDiv {
       justify-content: left !important;
       margin-left: 31% !important;
-      
     }
-    .leftmg{
+    .leftmg {
       margin-left: 0% !important;
     }
-
   }
- 
-  .heading{
-    
+
+  .heading {
     color: white;
     font-family: "Deutschlander";
     text-transform: uppercase;
@@ -202,12 +179,10 @@ const props = Astro.props;
     font-style: normal;
     line-height: 0.85;
     text-align: center;
-   
+
     background-color: #1a1a1a;
-   
-   
   }
-  .border-box{
+  .border-box {
     background-color: #1a1a1a;
     text-align: center;
     padding: 0.3vw;
@@ -216,7 +191,6 @@ const props = Astro.props;
     min-width: 9vw;
     max-width: 12vw;
 
-
     border-radius: 3.5px;
     display: inline-block;
     vertical-align: middle;
@@ -224,51 +198,50 @@ const props = Astro.props;
     border: 1px solid grey;
     text-decoration: none;
     padding: 0.8%;
+  }
 
-    }
+  .border-box span {
+    font-family: "anek devanagari";
+    font-size: 0.75vw;
 
-    .border-box span{
-      font-family: 'anek devanagari';
-      font-size: 0.75vw;
+    font-weight: 300;
+    color: white;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+  .blankDiv {
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 16%;
+  }
 
-      font-weight: 300;
-      color: white;
-      text-transform: uppercase;
-      vertical-align: middle;
-      
-      
-    }
-    .blankDiv{
-    background-color: #1a1a1a; display:flex; justify-content: center; padding-bottom: 16%;
-    }
+  .midDiv {
+    position: absolute;
+    top: 35vw;
+    background-color: #1a1a1a;
 
-    .midDiv{
-      position: absolute;
-       top:35vw;
-       background-color: #1a1a1a;
-   
     width: 65%;
     text-align: center;
     border-radius: 5px;
     padding-bottom: 2%;
-    }
+  }
 
-    .client, .solution{
-      text-align: center;
-      border: 1px solid grey;
-      background-color: #282727;
-     
-    }
+  .client,
+  .solution {
+    text-align: center;
+    border: 1px solid grey;
+    background-color: #282727;
+  }
 
-    .smSpan{
-      font-family: 'anek devanagari';
-      color: grey;
-      text-transform: uppercase;
-      font-size: 1.25vw;
-      
-    }
+  .smSpan {
+    font-family: "anek devanagari";
+    color: grey;
+    text-transform: uppercase;
+    font-size: 1.25vw;
+  }
 
-    .lgSpan{
+  .lgSpan {
     color: white;
     font-family: "Deutschlander";
     text-transform: uppercase;
@@ -276,44 +249,47 @@ const props = Astro.props;
     font-weight: 400;
     font-style: normal;
     line-height: 0.85;
-   
-    }
+  }
 
-    .smDiv{
-      text-align: left;
-    
-      margin: 3% 5% 5% 20%;
-    }
- 
-    .bannerDiv{
-    display:flex; justify-content: end;
-    }
-    .bannerImg{
-     width: 60%;  border-radius: 14vw 0 0 0 ;
-    }
-    .brandsDiv{
-      display:flex; justify-content:center; margin-left: 35%; margin-top:3%;
-    }
-    .img img{
-        width:100%;
-        border-radius:0 6vw 0 6vw
-    }
+  .smDiv {
+    text-align: left;
 
-    .margins {
+    margin: 3% 5% 5% 20%;
+  }
+
+  .bannerDiv {
+    display: flex;
+    justify-content: end;
+  }
+  .bannerImg {
+    width: 60%;
+    border-radius: 14vw 0 0 0;
+  }
+  .brandsDiv {
+    display: flex;
+    justify-content: center;
+    margin-left: 35%;
+    margin-top: 3%;
+  }
+  .img img {
+    width: 100%;
+    border-radius: 0 6vw 0 6vw;
+  }
+
+  .margins {
     margin-left: 7%;
     margin-right: 7%;
     padding-top: 5%;
   }
-  .heroContent{
-    
+  .heroContent {
     text-align: justify;
-    width: 65%; 
-   
+    width: 65%;
+
     padding-top: 6%;
     padding-bottom: 5%;
   }
-.para{
-  font-family: 'anek devanagari';
+  .para {
+    font-family: "anek devanagari";
     font-size: 1.3vw;
     line-height: 1.8;
     letter-spacing: 0.05vw;
@@ -321,124 +297,176 @@ const props = Astro.props;
     max-height: 20rem;
     overflow: scroll;
     display: inline-block;
-}
-@media screen and (max-width:1475px){
-  .para{
-    height: 15rem;
   }
-}
-@media screen and (max-width:1275px){
-  .para{
-    height: 12rem;
+  @media screen and (max-width: 1475px) {
+    .para {
+      height: 15rem;
+    }
   }
-  .blankDiv{
-    padding-bottom: 18% ;
+  @media screen and (max-width: 1275px) {
+    .para {
+      height: 12rem;
+    }
+    .blankDiv {
+      padding-bottom: 18%;
+    }
+    .border-box span {
+      font-size: 1vw !important;
+    }
   }
-  .border-box span{
-    font-size: 1vw !important;
+  @media screen and (max-width: 920px) {
+    .para {
+      height: 9rem;
+    }
+    .blankDiv {
+      padding-bottom: 19%;
+    }
+    .border-box span {
+      font-size: 1.05vw !important;
+    }
   }
 
-}
-@media screen and (max-width:920px){
-  .para{
-    height: 9rem;
+  @media screen and (max-width: 670px) {
+    .para {
+      height: 7rem;
+    }
+    .blankDiv {
+      padding-bottom: 21%;
+    }
+    .border-box span {
+      font-size: 1.25vw !important;
+    }
   }
-  .blankDiv{
-    padding-bottom: 19% ;
-  }
-  .border-box span{
-    font-size: 1.05vw !important;
-  }
-}
 
+  @media screen and (max-width: 510px) {
+    .para {
+      height: 6rem;
+    }
+    .blankDiv {
+      padding-bottom: 23%;
+    }
+    .border-box span {
+      font-size: 1.45vw !important;
+    }
+  }
 
-@media screen and (max-width:670px){
-  .para{
-    height: 7rem;
+  @media screen and (max-width: 430px) {
+    .para {
+      height: 5rem;
+    }
+    .blankDiv {
+      padding-bottom: 25%;
+    }
   }
-  .blankDiv{
-    padding-bottom: 21% ;
+  @media screen and (max-width: 345px) {
+    .para {
+      height: 4rem;
+    }
+    .blankDiv {
+      padding-bottom: 28%;
+    }
   }
-  .border-box span{
-    font-size: 1.25vw !important;
-  }
-}
-
-@media screen and (max-width:510px){
-  .para{
-    height: 6rem;
-  }
-  .blankDiv{
-    padding-bottom: 23% ;
-  }
-  .border-box span{
-    font-size: 1.45vw !important;
-  }
-}
-
-@media screen and (max-width:430px){
-  .para{
-    height: 5rem;
-  }
-  .blankDiv{
-    padding-bottom: 25% ;
-  }
-}
-@media screen and (max-width:345px){
-  .para{
-    height: 4rem;
-  }
-  .blankDiv{
-    padding-bottom: 28% ;
-  }
-}
-  .numbers{
+  .numbers {
     background-color: #e5ff53;
-    border-radius: 0.5vw ;
-     width:15.8%;
-     
-     text-align: center;
-     font-family: Deutschlander;
-     font-size: 4vw;
-     height: fit-content;
-     margin-top: 5%;
-     
+    border-radius: 0.5vw;
+    width: 15.8%;
+    text-align: center;
+    font-family: Deutschlander;
+    font-size: 4vw;
+    height: fit-content;
+    margin-top: 5%;
   }
 
-  .numbersText{
+  .numbersText {
     color: aliceblue;
-    
-      margin-left: 3%;
-      font-family: Deutschlander;
-     font-size: 3.8vw;
-     text-transform: uppercase;
-     line-height: 0.9;
-     
-     
+
+    margin-left: 3%;
+    font-family: Deutschlander;
+    font-size: 3.8vw;
+    text-transform: uppercase;
+    line-height: 0.9;
   }
 
-
-  .brands{
+  .brands {
     width: 23%;
   }
-  .b1{
+  .b1 {
     margin-right: 6%;
   }
 
- .pointerHead{
-   color: #bac0c5;
-   font-family: 'anek devanagari';
-   text-transform: uppercase;
-   letter-spacing: 1px;
-   font-size: 1.25vw;
-   display: inline-block;
- }
+  .pointerHead {
+    color: #bac0c5;
+    font-family: "anek devanagari";
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.25vw;
+    display: inline-block;
+  }
 
-}
+  /*  */
 
+  .swiper {
+    width: 100%;
+  }
 
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 </style>
+<!-- swiper js cdn -->
 
+<script>
+  import {
+    Swiper,
+    Navigation,
+    Pagination,
+    EffectCoverflow,
+    Autoplay,
+    EffectCreative,
+  } from "swiper";
+  let x = 3;
+  var swiper = new Swiper(".mySwiper", {
+    modules: [Navigation, Autoplay, EffectCreative],
+    effect: "creative",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 3,
+    spaceBetween: 40,
+    loop: true,
+    creativeEffect: {
+      prev: {
+        // will set `translateZ(-400px)` on previous slides
+        rotate: [0, 0, -8],
+        translate: ["-120%", "10%", 0],
+        scale: 0.9,
+      },
+      next: {
+        // will set `translateX(100%)` on next slides
+        rotate: [0, 0, 8],
+        translate: ["120%", "10%", 0],
+        scale: 0.9,
+      },
+    },
 
+    autoplay: {
+      delay: 2000,
+    },
 
+    // pagination: {
+    //   el: ".swiper-pagination",
+    //   clickable: true,
+    // },
+  });
+</script>

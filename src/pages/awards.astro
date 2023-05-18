@@ -514,7 +514,7 @@ import { gsap } from "gsap";
       gsap.to(image, { autoAlpha: 0 });
     });
 
-    el.addEventListener("mousemove", (e) => {
+    el.addEventListener("mousemove", (e: PointerEvent) => {
       gsap.to(image, { x: e.offsetX - 300 });
     });
   });
