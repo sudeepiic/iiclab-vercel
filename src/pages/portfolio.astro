@@ -7,6 +7,9 @@ import portfolioLaptop from "../images/portfolioLaptop.jpg";
 
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import caraousal1 from "../src/images/caraousal1.png";
+import caraousal2 from "../src/images/caraousal2.png";
+import caseStudyImg from "../src/images/caseStudyImg.png";
 const entries = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
 });
@@ -20,6 +23,35 @@ const entries = await contentfulClient.getEntries<any>({
         <span>our works</span>
       </div>
     </div>
+
+    <!-- carousel -->
+    <div style="padding:7% 0 ; " class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        {
+          entries.items.map((caseStudy, index) => (
+            <div class="swiper-slide">
+              <div>
+                <img
+                  src={caseStudy.fields?.heroBanner?.fields?.file.url}
+                  alt=""
+                />
+                <div class="imgCaptionDiv">
+                  <span
+                    class="caption1"
+                    set:html={caseStudy.fields.singleClient}
+                  />
+                  <p
+                    class="caption2"
+                    set:html={caseStudy.fields?.whichTechnology}
+                  />
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <!--  -->
 
     <!-- <img src={featuredWorksbtn} alt=""> -->
   </section>
@@ -179,5 +211,97 @@ const entries = await contentfulClient.getEntries<any>({
         width: 9%;
       }
     }
+
+    /* carousel css */
+
+    .swiper {
+      width: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #f6f7f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-slide-active .imgCaptionDiv {
+      display: block !important;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 90%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4/5;
+    }
+
+    .imgCaptionDiv {
+      margin-top: 5%;
+      display: none;
+    }
+
+    .caption1 {
+      text-transform: uppercase;
+      color: black;
+      font-size: 1.8vw;
+      font-family: "anek devanagari";
+      font-weight: 500;
+      letter-spacing: 0.7px;
+    }
+    .caption2 {
+      text-transform: uppercase;
+      font-family: "anek devanagari";
+      font-size: 1.75vw;
+      opacity: 0.4;
+      font-weight: 500;
+      letter-spacing: 0.7px;
+    }
   </style>
+
+  <script>
+    import {
+      Swiper,
+      Navigation,
+      Pagination,
+      EffectCoverflow,
+      Autoplay,
+      EffectCreative,
+    } from "swiper";
+    let x = 3;
+    var swiper = new Swiper(".mySwiper", {
+      modules: [Navigation, Autoplay, EffectCreative],
+      effect: "creative",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 3,
+      spaceBetween: 30,
+      loop: true,
+      creativeEffect: {
+        prev: {
+          // will set `translateZ(-400px)` on previous slides
+          rotate: [0, 0, -8],
+          translate: ["-120%", "8%", 0],
+          scale: 0.98,
+        },
+        next: {
+          // will set `translateX(100%)` on next slides
+          rotate: [0, 0, 8],
+          translate: ["120%", "8%", 0],
+          scale: 0.98,
+        },
+      },
+
+      autoplay: {
+        delay: 2000,
+      },
+
+      // pagination: {
+      //   el: ".swiper-pagination",
+      //   clickable: true,
+      // },
+    });
+  </script>
 </Layout>

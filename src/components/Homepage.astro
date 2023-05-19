@@ -37,6 +37,10 @@ import solnImg4 from "../src/images/solnImg4.png";
 import solnImg5 from "../src/images/solnImg5.png";
 import solnImg6 from "../src/images/solnImg6.png";
 import fwViewAll from "../images/fwViewAll.png";
+import authorImg from "../images/authorImg.jpg";
+import testimonialImg from "../images/testimonialImg.png";
+import carousalNext from "../images/carousalNext.png";
+import carousalPrev from "../images/carousalPrev.png";
 ---
 
 <section class="margins">
@@ -660,7 +664,7 @@ import fwViewAll from "../images/fwViewAll.png";
 
 <section
   class="wrapper"
-  style="background-color: #1a1a1a; border-radius: 5vw 5vw 0 0; padding-left: 9%; padding-top: 1.5%; margin-top:7%"
+  style="background-color: #1a1a1a; border-radius: 5vw 5vw 0 0;  padding-top: 1.5%; margin-top:7%"
 >
   <!-- <div class="d-flex">
     <span class="our">TESTIMONIALS</span>
@@ -671,13 +675,13 @@ import fwViewAll from "../images/fwViewAll.png";
     >
     
   </div> -->
-  <div class="row">
-    <div class="col-md-5 col-lg-5 col-sm-12">
-      <span class="our testimHead">TESTIMONIALS</span>
-      <span class="solutions">.</span>
+  <div class="row" style="margin-left: 9%;">
+    <div class="col-md-7 col-lg-7 col-sm-12">
+      <span class="our testimHead">CLIENT &nbsp;</span>
+      <span class="solutions">TESTIMONIALS</span>
     </div>
 
-    <div class="col-md-7 col-lg-7 col-sm-12">
+    <div class="col-md-5 col-lg-5 col-sm-12">
       <span class="blackPara2"
         >The best motivation is carving acclaimed success stories for our
         forevisioned clients</span
@@ -686,144 +690,245 @@ import fwViewAll from "../images/fwViewAll.png";
   </div>
 
   <div>
-    <table>
-      <tbody>
-        <tr class="hover" style="border-top: 1.15px solid rgb(63, 63, 63);">
-          <td class="index">01.</td>
-          <td class="tech">Immersive Technology</td>
-          <td>
-            <ul>
-              <li class="list">Metaverse</li>
-              <li class="list">Virtual reality</li>
-              <li class="list">Augmented reality</li>
-              <li class="list">Projection mapping</li>
-            </ul>
-          </td>
-          <td
-            ><img
-              class="table"
-              style="width:1.3rem; height:1.3rem; "
-              src={vector}
-              alt=""
-            /></td
-          >
-          <!-- <td>Data 4</td> -->
-        </tr>
-        <tr class="hover">
-          <td class="index">02.</td>
-          <td class="tech">Interactive Solution</td>
-          <td
-            ><ul>
-              <li class="list">Interactive Wall/Screen</li>
-              <li class="list">Interactive Table/Interactive Book</li>
-              <li class="list">Engagement Experts</li>
-              <li class="list">Object Recognition Table</li>
-            </ul></td
-          >
-          <td
-            ><img
-              class="table"
-              style="width:1.3rem; height:1.3rem;  "
-              src={vector}
-              alt=""
-            /></td
-          >
-        </tr>
-        <tr class="hover">
-          <td class="index">03.</td>
-          <td class="tech">Mobile & Web</td>
-          <td
-            ><ul>
-              <li class="list">Web Development</li>
-              <li class="list">App Development</li>
-              <li class="list">Gaming Solutions</li>
-            </ul></td
-          >
-          <td
-            ><img
-              class="table"
-              style="width:1.3rem; height:1.3rem; "
-              src={vector}
-              alt=""
-            /></td
-          >
-        </tr>
+    <div style="padding:1.5% 0 5% 0 ; " class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="card-parent">
+            <div class="card-header" style="align-self: center;">
+              <img src={testimonialImg} style="width: 50%;" alt="" />
+            </div>
 
-        <tr class="hover">
-          <td class="index">04.</td>
-          <td class="tech">Content Development</td>
-          <td
-            ><ul>
-              <li class="list">3D/2D Animations</li>
-              <li class="list">Motion Graphics</li>
-              <li class="list">Architectural Visualization</li>
-              <li class="list">Expainer Videos</li>
-            </ul></td
-          >
-          <td
-            ><img
-              class="table"
-              style="width:1.3rem; height:1.3rem; "
-              src={vector}
-              alt=""
-            /></td
-          >
-        </tr>
+            <div class="card">
+              <div class="card-body">
+                <div class="card-text">
+                  “ IIC had the right capability and experience in the AR
+                  domain, and I was comfortable awarding them the project to
+                  create a B2B visualizer app for my sales and Experience Center
+                  The team did an amazing job in understanding our needs, we are
+                  delighted with the outcome and are already in talks for the
+                  next phase of the solution.”
+                </div>
+                <div class="d-flex cardFooter">
+                  <img class="authorImg" src={authorImg} alt="" />
+                  <div style="margin:auto; margin-left:6%">
+                    <span class="authName"> Aninda Gupta</span>
+                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card-parent">
+            <div class="card-header">
+              <img src={testimonialImg} style="width: 50%;" alt="" />
+            </div>
 
-        <tr class="hover">
-          <td class="index">05.</td>
-          <td class="tech">Experimental Marketing</td>
-          <td
-            ><ul>
-              <li class="list">Motion Gesture</li>
-              <li class="list">Interactive Campaign</li>
-              <li class="list">Photobooth</li>
-              <li class="list">Kiosk/Vending Machine</li>
-            </ul></td
-          >
-          <td
-            ><img
-              class="table"
-              style="width:1.3rem; height:1.3rem; "
-              src={vector}
-              alt=""
-            /></td
-          >
-        </tr>
+            <div class="card">
+              <div class="card-body">
+                <div class="card-text">
+                  “ IIC had the right capability and experience in the AR
+                  domain, and I was comfortable awarding them the project to
+                  create a B2B visualizer app for my sales and Experience Center
+                  The team did an amazing job in understanding our needs, we are
+                  delighted with the outcome and are already in talks for the
+                  next phase of the solution.”
+                </div>
+                <div class="d-flex cardFooter">
+                  <img class="authorImg" src={authorImg} alt="" />
+                  <div style="margin:auto; margin-left:6%">
+                    <span class="authName"> Aninda Gupta</span>
+                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card-parent">
+            <div class="card-header">
+              <img src={testimonialImg} style="width: 50%;" alt="" />
+            </div>
 
-        <tr class="hover">
-          <td class="index">06.</td>
-          <td class="tech">Strategy & Design</td>
-          <td class=""
-            ><ul>
-              <li class="list">Scenario Mapping Brand Audits</li>
-              <li class="list">Brand Identity</li>
-              <li class="list">Competitor Mapping</li>
-              <li class="list">Graphic Design & Prototype</li>
-            </ul></td
-          >
-          <td
-            ><img
-              class="table"
-              style="width:1.3rem; height:1.3rem; "
-              src={vector}
-              alt=""
-            /></td
-          >
-        </tr>
-      </tbody>
-    </table>
+            <div class="card">
+              <div class="card-body">
+                <div class="card-text">
+                  “ IIC had the right capability and experience in the AR
+                  domain, and I was comfortable awarding them the project to
+                  create a B2B visualizer app for my sales and Experience Center
+                  The team did an amazing job in understanding our needs, we are
+                  delighted with the outcome and are already in talks for the
+                  next phase of the solution.”
+                </div>
+                <div class="d-flex cardFooter">
+                  <img class="authorImg" src={authorImg} alt="" />
+                  <div style="margin:auto; margin-left:6%">
+                    <span class="authName"> Aninda Gupta</span>
+                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card-parent">
+            <div class="card-header">
+              <img src={testimonialImg} style="width: 50%;" alt="" />
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="card-text">
+                  “ IIC had the right capability and experience in the AR
+                  domain, and I was comfortable awarding them the project to
+                  create a B2B visualizer app for my sales and Experience Center
+                  The team did an amazing job in understanding our needs, we are
+                  delighted with the outcome and are already in talks for the
+                  next phase of the solution.”
+                </div>
+                <div class="d-flex cardFooter">
+                  <img class="authorImg" src={authorImg} alt="" />
+                  <div style="margin:auto; margin-left:6%">
+                    <span class="authName"> Aninda Gupta</span>
+                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card-parent">
+            <div class="card-header">
+              <img src={testimonialImg} style="width: 50%;" alt="" />
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="card-text">
+                  “ IIC had the right capability and experience in the AR
+                  domain, and I was comfortable awarding them the project to
+                  create a B2B visualizer app for my sales and Experience Center
+                  The team did an amazing job in understanding our needs, we are
+                  delighted with the outcome and are already in talks for the
+                  next phase of the solution.”
+                </div>
+                <div class="d-flex cardFooter">
+                  <img class="authorImg" src={authorImg} alt="" />
+                  <div style="margin:auto; margin-left:6%">
+                    <span class="authName"> Aninda Gupta</span>
+                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card-parent">
+            <div class="card-header">
+              <img src={testimonialImg} style="width: 50%;" alt="" />
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="card-text">
+                  “ IIC had the right capability and experience in the AR
+                  domain, and I was comfortable awarding them the project to
+                  create a B2B visualizer app for my sales and Experience Center
+                  The team did an amazing job in understanding our needs, we are
+                  delighted with the outcome and are already in talks for the
+                  next phase of the solution.”
+                </div>
+                <div class="d-flex cardFooter">
+                  <img class="authorImg" src={authorImg} alt="" />
+                  <div style="margin:auto; margin-left:6%">
+                    <span class="authName"> Aninda Gupta</span>
+                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card-parent">
+            <div class="card-header">
+              <img src={testimonialImg} style="width: 50%;" alt="" />
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="card-text">
+                  “ IIC had the right capability and experience in the AR
+                  domain, and I was comfortable awarding them the project to
+                  create a B2B visualizer app for my sales and Experience Center
+                  The team did an amazing job in understanding our needs, we are
+                  delighted with the outcome and are already in talks for the
+                  next phase of the solution.”
+                </div>
+                <div class="d-flex cardFooter">
+                  <img class="authorImg" src={authorImg} alt="" />
+                  <div style="margin:auto; margin-left:6%">
+                    <span class="authName"> Aninda Gupta</span>
+                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card-parent">
+            <div class="card-header">
+              <img src={testimonialImg} style="width: 50%;" alt="" />
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="card-text">
+                  “ IIC had the right capability and experience in the AR
+                  domain, and I was comfortable awarding them the project to
+                  create a B2B visualizer app for my sales and Experience Center
+                  The team did an amazing job in understanding our needs, we are
+                  delighted with the outcome and are already in talks for the
+                  next phase of the solution.”
+                </div>
+                <div class="d-flex cardFooter">
+                  <img class="authorImg" src={authorImg} alt="" />
+                  <div style="margin:auto; margin-left:6%">
+                    <span class="authName"> Aninda Gupta</span>
+                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex controls">
+        <img class="swiper-prev" src={carousalPrev} alt="" />
+        <img class="swiper-next" src={carousalNext} alt="" />
+      </div>
+
+      <div class="swiper-pagination"></div>
+    </div>
   </div>
 
-  <div class="d-flex">
+  <div class="d-flex" style="margin-left: 9%;">
     <p class="our prod1">OUR &nbsp;</p>
 
     <img class="prodImg" src={hefty} alt="" />
   </div>
 
-  <p class="solutions prod2" style="margin-top: -10.5%;">PRODUCTS</p>
+  <p class="solutions prod2" style="margin-top: -10.5%; margin-left: 9%;">
+    PRODUCTS
+  </p>
 
-  <div>
+  <div style="margin-left: 9%;">
     <table style="width: 90%;">
       <tbody>
         <tr>
@@ -1031,7 +1136,7 @@ import fwViewAll from "../images/fwViewAll.png";
     font-weight: 300;
     line-height: 2.35vw;
     letter-spacing: 0px;
-    width: 60%;
+    width: 80%;
     color: white;
     opacity: 75%;
     margin-top: 13%;
@@ -1282,7 +1387,157 @@ import fwViewAll from "../images/fwViewAll.png";
     pointer-events: none;
   }
 
-  /* mobile  view  css */
+  /* cards css */
+
+  .card-parent {
+    width: 26rem;
+  }
+
+  .card-body {
+    margin-top: 10%;
+    padding-left: 6% !important;
+  }
+
+  .card-header {
+    background-color: #e5ff53;
+    width: 75%;
+    text-align: center;
+    position: relative;
+    padding: 4% 0%;
+  }
+
+  .card {
+    background-color: white;
+    border-radius: 0%;
+  }
+  .card-text {
+    font-family: "anek devanagari";
+    /* margin-bottom: 12%; */
+    height: 16vw;
+    font-size: 0.95vw;
+  }
+
+  .authorImg {
+    width: 17%;
+    height: 17%;
+    border-radius: 50%;
+    margin: 0;
+  }
+
+  .authName,
+  .authDesign {
+    display: block;
+    font-family: "anek devanagari";
+  }
+  .authName {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  .authDesign {
+    opacity: 50%;
+    font-size: 0.95rem;
+  }
+
+  @media screen and (max-width: 1120px) {
+    .authName {
+      font-size: 0.9rem;
+    }
+    .authDesign {
+      font-size: 0.8rem;
+    }
+    .cardFooter {
+      margin-top: 5%;
+    }
+  }
+
+  @media screen and (max-width: 1010px) {
+    .authName {
+      font-size: 0.8rem;
+    }
+    .authDesign {
+      font-size: 0.7rem;
+    }
+    .cardFooter {
+      margin-top: 8%;
+    }
+  }
+  @media screen and (max-width: 910px) {
+    .authName {
+      font-size: 0.65rem;
+    }
+    .authDesign {
+      font-size: 0.55rem;
+    }
+    .cardFooter {
+      margin-top: 9%;
+    }
+    .card-body {
+      padding: 0.8rem 0.8rem 0.2rem 0.8rem !important;
+    }
+  }
+
+  @media screen and (max-width: 775px) {
+    .authName {
+      font-size: 1vw;
+    }
+    .authDesign {
+      font-size: 0.9vw;
+    }
+    .card-body {
+      padding-bottom: 5% !important;
+    }
+  }
+
+  @media screen and (max-width: 675px) {
+    .cardFooter {
+      margin-top: 13%;
+    }
+  }
+
+  @media screen and (max-width: 625px) {
+    .cardFooter {
+      margin-top: 20%;
+    }
+  }
+  @media screen and (max-width: 560px) {
+    .cardFooter {
+      margin-top: 23%;
+    }
+    .card-body {
+      padding: 0.5rem 0.5rem 0.2rem 0.5rem !important;
+    }
+  }
+  .swiper {
+    width: 100%;
+  }
+
+  .swiper-slide {
+    /* text-align: center; */
+    /* font-size: 18px; */
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  } */
+  .swiper-next,
+  .swiper-prev {
+    width: 6%;
+  }
+  .swiper-prev {
+    margin-right: 4%;
+  }
+  .controls {
+    transform: translate(42%, 75%);
+  }
+
+  /* mobile view css */
   @media screen and (min-width: 768px) {
     .head1 {
       margin-top: auto;
@@ -1611,8 +1866,50 @@ import fwViewAll from "../images/fwViewAll.png";
       gsap.to(image, { autoAlpha: 0 });
     });
 
-    el.addEventListener("mousemove", (e) => {
+    el.addEventListener("mousemove", (e: PointerEvent) => {
       gsap.to(image, { x: e.offsetX - 200 });
     });
+  });
+
+  import {
+    Swiper,
+    Navigation,
+    Pagination,
+    EffectCoverflow,
+    Autoplay,
+    EffectCreative,
+  } from "swiper";
+  let x = 3;
+  var swiper = new Swiper(".mySwiper", {
+    modules: [Navigation, EffectCreative],
+    effect: "creative",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 5,
+    spaceBetween: 0,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-next",
+      prevEl: ".swiper-prev",
+    },
+    creativeEffect: {
+      prev: {
+        // will set `translateZ(-400px)` on previous slides
+        rotate: [0, 0, -8],
+        translate: ["-120%", "10%", 0],
+        scale: 0.9,
+      },
+      next: {
+        // will set `translateX(100%)` on next slides
+        rotate: [0, 0, 8],
+        translate: ["120%", "10%", 0],
+        scale: 0.9,
+      },
+      limitProgress: 2,
+    },
+
+    autoplay: {
+      delay: 2000,
+    },
   });
 </script>
