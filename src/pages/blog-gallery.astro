@@ -4,11 +4,15 @@ import blogButton from "../images/blogButton.png";
 import editorImg1 from "../images/editorImg1.png";
 import editorImg2 from "../images/editorImg2.png";
 import exploreimg1 from "../images/exploreimg1.png";
-
+import blogsCarousel1 from "../images/blogsCarousel1.png";
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import type { Document } from "@contentful/rich-text-types";
 import yellowGo from "../images/yellowGo.png";
+import blogsLeft from "../images/blogsLeft.png";
+import blogsRight from "../images/blogsRight.png";
+import readMore from "../images/readMore.png";
+
 import { log } from "astro/dist/core/logger/core";
 
 const entries = await contentfulClient.getEntries<any>({
@@ -25,7 +29,9 @@ const entries = await contentfulClient.getEntries<any>({
     <div class="row margins mobView">
       <div class="col-lg-6 col-md-6 col-sm-12 heading">
         <span>thinking out loud</span>
-        <img class="btn blogbtn" src={blogButton} alt="" />
+        <a href="#blogsList">
+          <img class="btn blogbtn" src={blogButton} alt="" />
+        </a>
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-12 topText">
@@ -36,9 +42,56 @@ const entries = await contentfulClient.getEntries<any>({
       </div>
     </div>
 
-    <div style="text-align: center;padding:10% 0 10% 0;">
-      <h2 style="color:white">Carousel Coming Sooon!</h2>
-      <!-- <p style="color:white">ruko zara sabar karo</p> -->
+    <div style="text-align: center;padding:2% 0 0% 0;">
+      <div class="swiper mySwiper" style="padding:1.5% 0 5% 0 ;">
+        <div class="swiper-wrapper">
+          {
+            entries.items.map((blogs) => (
+              <div class="swiper-slide">
+                <div class="card">
+                  <div class="card-innerDiv">
+                    <div class="card-header">
+                      <div>
+                        <span
+                          set:html={documentToHtmlString(
+                            blogs.fields.blogTitle
+                          )}
+                        />
+                      </div>
+                    </div>
+
+                    <div class="card-body">
+                      <div class="card-text wrapper">
+                        <div class="moving-text">
+                          <span set:html={blogs.fields.genreNew} />
+                        </div>
+                      </div>
+                      <img
+                        class="carouselImg"
+                        src={blogs.fields?.heroImage?.fields?.file.url}
+                        alt=""
+                      />
+                    </div>
+                    <div class="card-footer">
+                      <a href={"/blogs/" + blogs.fields.params}>
+                        <div>
+                          <span> Read more</span>
+                          <img class="readMoreArrow" src={readMore} alt="" />
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="d-flex controls">
+          <img class="swiper-prev" src={blogsLeft} alt="" />
+          <img class="swiper-next" src={blogsRight} alt="" />
+        </div>
+      </div>
     </div>
 
     <div class="editors margins">
@@ -80,7 +133,8 @@ const entries = await contentfulClient.getEntries<any>({
       </div>
     </div>
   </section>
-  <section style="margin-top: 4%; margin-bottom: 4%;">
+
+  <section style="margin-top: 4%; margin-bottom: 4%;" id="blogsList">
     <div class="margins row">
       <div class="col-lg-5 col-md-5 col-sm-12">
         <div class="titleDiv">
@@ -137,6 +191,113 @@ const entries = await contentfulClient.getEntries<any>({
   </section>
 
   <style>
+    /* cards css */
+    p {
+      margin-bottom: 0 !important;
+    }
+    .card {
+      width: 35rem;
+      padding: 1.4%;
+      border-radius: 0.65vw;
+    }
+    .card-innerDiv {
+      border: 2px solid #1a1a1a;
+      border-radius: 0.5vw;
+    }
+    .card-body {
+      padding: 0 !important;
+    }
+    .card-text {
+      background-color: #e5ff53;
+    }
+    .card-text span {
+      font-family: "Deutschlander";
+      text-transform: uppercase;
+      font-size: 2vw;
+      display: block;
+    }
+    .card-header {
+      padding: 2.5%;
+    }
+    .card-header div {
+      border: 2px solid #1a1a1a;
+      border-radius: 0.3vw 0.3vw 0 0;
+    }
+    .card-header div span {
+      font-family: "Deutschlander";
+      text-transform: uppercase;
+      font-size: 2.5vw;
+      display: block;
+    }
+
+    .card-footer {
+      padding: 2.5%;
+    }
+    .card-footer div {
+      background-color: #1a1a1a;
+      border-radius: 0 0 0.3vw 0.3vw;
+    }
+    .card-footer div span {
+      font-family: "Deutschlander";
+      text-transform: uppercase;
+      font-size: 2.5vw;
+      color: #e5ff53;
+      /* display: block; */
+    }
+    .readMoreArrow {
+      vertical-align: baseline;
+      width: 5%;
+      margin-bottom: 1%;
+    }
+    .wrapper {
+      overflow-x: hidden;
+    }
+    .swiper-slide-active .moving-text {
+      animation: move-text 10s linear infinite;
+    }
+    @keyframes move-text {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .carouselImg {
+      object-fit: cover;
+      aspect-ratio: 15/14;
+      width: 100%;
+    }
+
+    /* Caraousel css */
+
+    .swiper {
+      width: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      /* font-size: 18px; */
+      background: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-next,
+    .swiper-prev {
+      width: 4%;
+    }
+    .swiper-prev {
+      margin-right: 3.5%;
+    }
+    .controls {
+      transform: translate(44%, 100%);
+    }
+    p {
+      margin-bottom: 0 !important;
+    }
     @media screen and (max-width: 767px) {
       .blogbtn {
         display: none !important;
@@ -474,5 +635,45 @@ const entries = await contentfulClient.getEntries<any>({
         }
       });
     }
+
+    import {
+      Swiper,
+      Navigation,
+      Pagination,
+      EffectCoverflow,
+      Autoplay,
+      EffectCreative,
+    } from "swiper";
+    let x = 3;
+    var swiper = new Swiper(".mySwiper", {
+      modules: [Navigation, EffectCreative],
+      effect: "creative",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 4,
+      spaceBetween: 0,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-next",
+        prevEl: ".swiper-prev",
+      },
+      creativeEffect: {
+        prev: {
+          rotate: [0, 0, -15],
+          translate: ["-85%", "9%", 0],
+          scale: 0.85,
+        },
+        next: {
+          rotate: [0, 0, 15],
+          translate: ["85%", "9%", 0],
+          scale: 0.85,
+        },
+        limitProgress: 2,
+      },
+
+      autoplay: {
+        delay: 2000,
+      },
+    });
   </script>
 </Layout>

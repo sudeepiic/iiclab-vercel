@@ -10,7 +10,11 @@ import Capgemini from "../src/images/Capgemini.png";
 import bestseller from "../src/images/bestseller.png";
 import signBrand from "../src/images/signBrand.png";
 import hindware from "../src/images/hindware.png";
+import imgTags from "../src/images/imgTags.png";
+import members1 from "../src/images/members1.png";
 import Header from "../components/Header.astro";
+import carousalNext from "../images/carousalNext.png";
+import carousalPrev from "../images/carousalPrev.png";
 ---
 
 <Layout title="Ink In Caps - About Us">
@@ -34,13 +38,15 @@ import Header from "../components/Header.astro";
           <button type="button" class="btn btn-dark">
             <span>Our Services</span></button
           >
-          <span class="knowMore">
-            Slide To Know More &nbsp;<img
-              style="width: 0.75rem;"
-              src={downArrow}
-              alt=""
-            />
-          </span>
+          <a href="#teamInfo">
+            <span class="knowMore">
+              Slide To Know More &nbsp;<img
+                style="width: 0.75rem;"
+                src={downArrow}
+                alt=""
+              />
+            </span>
+          </a>
         </div>
       </div>
     </div>
@@ -48,7 +54,10 @@ import Header from "../components/Header.astro";
 
   <section style="margin-top:3%;">
     <img src={officeImg} alt="" style="height:100%;width:100%; " />
-    <div style="background-color: #1a1a1a; border-radius: 0 0 6vw 6vw;">
+    <div
+      style="background-color: #1a1a1a; border-radius: 0 0 6vw 6vw;"
+      id="teamInfo"
+    >
       <div class="row margins">
         <div
           class="col-lg-5 col-md-5 col-sm-12 btmImg margins"
@@ -162,12 +171,46 @@ import Header from "../components/Header.astro";
       <span class="meet">MEET&nbsp;</span>
       <span class="theTeam"> THE TEAM.</span>
     </div>
-    <div style="text-align: center;padding:10% 0 10% 0;">
-      <h2 style="color:white">Carousel Coming sooon!</h2>
-      <p style="color:white">ruko zara sabar karo</p>
+    <div style="text-align: center;">
+      <div style="padding:7% 0 ; " class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div>
+              <img class="members" src={members1} alt="" />
+              <div class="imgCaptionDiv">
+                <span class="memberName"> Manish Tiwari</span>
+                <p class="memberDsgn">Senior Graphic Designer</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div>
+              <img class="members" src={members1} alt="" />
+              <div class="imgCaptionDiv">
+                <span class="memberName"> Manish Tiwari</span>
+                <p class="memberDsgn">Senior Graphic Designer</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div>
+              <img class="members" src={members1} alt="" />
+              <div class="imgCaptionDiv">
+                <span class="memberName"> Manish Tiwari</span>
+                <p class="memberDsgn">Senior Graphic Designer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img class="swiper-prev" src={carousalPrev} alt="" />
+
+        <img class="swiper-next" src={carousalNext} alt="" />
+      </div>
     </div>
 
-    <div class="margins onlyDeskMission row">
+    <!-- <div class="margins onlyDeskMission row">
       <div class="col-6 d-flex" style="justify-content: end;">
         <div class="content-box missions vision">
           OUR VISION <span
@@ -203,10 +246,75 @@ import Header from "../components/Header.astro";
       <li>Lorem ipsum dolor sit amet, consectetuer</li>
       <li>Lorem ipsum dolor sit amet, consectetuer</li>
       <li>Lorem ipsum dolor sit amet, consectetuer</li>
-    </div>
+    </div> -->
   </section>
 
   <style>
+    /*  caroousal css */
+    .members {
+      border: 10px solid white;
+      width: 70%;
+    }
+    .members::before {
+      content: url("../src/images/imgTags.png");
+    }
+
+    .imgCaptionDiv {
+      margin-top: 7%;
+      display: none;
+    }
+    .memberName {
+      font-family: "Deutschlander";
+      text-transform: uppercase;
+      color: white;
+      font-size: 8vw;
+      line-height: 1;
+    }
+    .memberDsgn {
+      font-family: "Anek Devanagari";
+      text-transform: capitalize;
+      font-size: 2vw;
+      color: white;
+      opacity: 70%;
+    }
+
+    .swiper {
+      width: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      /* font-size: 18px; */
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-slide-active .imgCaptionDiv {
+      display: block !important;
+    }
+
+    /* .swiper-slide img {
+      display: block;
+      width: 90%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4/5;
+    } */
+
+    .swiper-next,
+    .swiper-prev {
+      width: 6%;
+    }
+    .swiper-prev {
+      transform: translate(-243%, -512%);
+    }
+    .swiper-next {
+      transform: translate(243%, -512%);
+      z-index: 999 !important;
+      position: inherit;
+    }
+
     /* mob view css */
     @media screen and (min-width: 768px) {
       .onlyMob {
@@ -407,5 +515,56 @@ import Header from "../components/Header.astro";
     .mission {
       border-radius: 2vw 2vw 0 2vw;
     }
+    a {
+      text-decoration: none;
+    }
   </style>
+
+  <script>
+    import {
+      Swiper,
+      Navigation,
+      Pagination,
+      EffectCoverflow,
+      Autoplay,
+      EffectCreative,
+    } from "swiper";
+    let x = 3;
+    var swiper = new Swiper(".mySwiper", {
+      modules: [Navigation, Autoplay, EffectCreative],
+      effect: "creative",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 3,
+      spaceBetween: 20,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-next",
+        prevEl: ".swiper-prev",
+      },
+      creativeEffect: {
+        prev: {
+          // will set `translateZ(-400px)` on previous slides
+          rotate: [0, 0, -12],
+          translate: ["-105%", "15%", 0],
+          scale: 0.85,
+        },
+        next: {
+          // will set `translateX(100%)` on next slides
+          rotate: [0, 0, -12],
+          translate: ["105%", "-6%", 0],
+          scale: 0.85,
+        },
+      },
+
+      autoplay: {
+        delay: 2000,
+      },
+
+      // pagination: {
+      //   el: ".swiper-pagination",
+      //   clickable: true,
+      // },
+    });
+  </script>
 </Layout>

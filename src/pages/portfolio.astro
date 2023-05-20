@@ -2,14 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import portfolio1 from "../images/portfolio1.jpg";
 import featuredWorksbtn from "../images/featuredWorksbtn.jpg";
-import Hand_Holding_Smartphone from "../images/Hand_Holding_Smartphone.png";
-import portfolioLaptop from "../images/portfolioLaptop.jpg";
-
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import caraousal1 from "../src/images/caraousal1.png";
-import caraousal2 from "../src/images/caraousal2.png";
-import caseStudyImg from "../src/images/caseStudyImg.png";
+
 const entries = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
 });
