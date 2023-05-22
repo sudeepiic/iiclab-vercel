@@ -3,6 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import awards from "../images/awards.png";
 import hiringImg1 from "../images/hiringImg1.jpg";
 import viewAwardsBtn from "../images/viewAwardsBtn.png";
+import viewProjectBtn from "../images/viewProjectBtn.png";
+import momento from "../images/momento.png";
+import momentoIcon2 from "../images/momentoIcon2.png";
+import awardsPrev from "../images/awardsPrev.png";
+import awardsNext from "../images/awardsNext.png";
+
 import { gsap } from "gsap";
 ---
 
@@ -24,6 +30,86 @@ import { gsap } from "gsap";
       </div>
     </div>
     <img class="" style="width:100%;" src={awards} alt="" />
+  </section>
+
+  <section style="padding: 5% 2%;">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="row">
+            <div class="col-7 leftSide">
+              <div class="award-name">
+                <span> Marketer's excellence</span>
+              </div>
+              <div class="award-category">
+                <span class="category-name">best brand activation</span>
+                <span class="year">(gold) - 2022</span>
+              </div>
+
+              <div class="project">
+                <div class="row">
+                  <div class="col-1 projectNum">
+                    <span class="index">01</span>
+                    <span class="length">/22</span>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-5 projectName">
+                    <p>PROJECT:</p>
+                    <span>pro kabaddi league</span>
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-3">
+                    <img class="viewProject" src={viewProjectBtn} alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 awardImgDiv">
+              <div class="awardImg">
+                <img class="momento" src={momento} alt="" /><br />
+                <img class="momentoIcon" src={momentoIcon2} alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="row">
+            <div class="col-7 leftSide">
+              <div class="award-name">
+                <span> Marketer's excellence</span>
+              </div>
+              <div class="award-category">
+                <span class="category-name">best brand activation</span>
+                <span class="year">(gold) - 2022</span>
+              </div>
+
+              <div class="project">
+                <div class="row">
+                  <div class="col-1 projectNum">
+                    <span class="index">01</span>
+                    <span class="length">/22</span>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-5 projectName">
+                    <p>PROJECT:</p>
+                    <span>pro kabaddi league</span>
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-3">
+                    <img class="viewProject" src={viewProjectBtn} alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 awardImgDiv">
+              <div class="awardImg">
+                <img class="momento" src={momento} alt="" /><br />
+                <img class="momentoIcon" src={momentoIcon2} alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img class="swiper-button-prev" src={awardsPrev} alt="" />
+      <img class="swiper-button-next" src={awardsNext} alt="" />
+    </div>
   </section>
 
   <section class="bottomDiv" id="awardsList">
@@ -333,189 +419,320 @@ import { gsap } from "gsap";
       </div>
     </div>
   </section>
-</Layout>
 
-<style>
-  @media screen and (max-width: 767px) {
-    .mob {
-      margin-top: 4% !important;
+  <style>
+    /* carousel css */
+
+    .award-name span {
+      font-family: "Deutschlander";
+      font-size: 9.5vw;
+      text-transform: uppercase;
+      line-height: 1;
+      text-shadow: 0.2vw 0.2vw 0px #e5ff35;
     }
-    .viewAwardsBtn,
-    .titleImg {
+    .award-category {
+      background-color: #1a1a1a;
+      font-family: "Deutschlander";
+      font-size: 8vw;
+      text-transform: uppercase;
+      padding: 7% 5%;
+      border-radius: 0 3rem 0 3rem;
+    }
+
+    .category-name {
+      color: white;
+      line-height: 0.9;
+      display: block;
+    }
+    .year {
+      color: #e5ff35;
+      display: block;
+      line-height: 0.9 !important;
+    }
+    .project {
+      background-color: white;
+      padding: 3% 4%;
+      margin-top: 3%;
+      border-radius: 0 3rem 0 3rem;
+    }
+
+    .index {
+      font-family: "anek devanagari";
+      font-size: 1.5vw;
+      font-weight: 600;
+      margin-top: 5%;
+    }
+    .length {
+      font-family: "anek devanagari";
+      font-size: 1.5vw;
+      font-weight: 600;
+      opacity: 60%;
+    }
+    .projectName p {
+      font-family: "anek devanagari";
+      text-transform: uppercase;
+      font-size: 1.4vw;
+      opacity: 60%;
+      margin-bottom: 0 !important;
+    }
+
+    .projectName span {
+      font-family: "anek devanagari";
+      text-transform: uppercase;
+      font-size: 1.8vw;
+      font-weight: 600;
+    }
+    .viewProject {
+      width: 100%;
+    }
+
+    .awardImg {
+      background: linear-gradient(#f6f7f0 20%, #fff 80%) !important;
+      border-radius: 2rem 0 2rem 0;
+      text-align: center;
+      padding-bottom: 9%;
+    }
+    .momento {
+      width: 76%;
+      margin-bottom: 3%;
+    }
+    .momentoIcon {
+      width: 40%;
+    }
+
+    /*  */
+
+    .swiper {
+      width: 97%;
+    }
+
+    .swiper-slide {
+      /* text-align: center; */
+      /* font-size: 18px; */
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 1.5%;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 3%;
+      height: 8%;
+    }
+
+    @media screen and (max-width: 767px) {
+      .viewProject {
+        width: 80%;
+      }
+      .mob {
+        margin-top: 4% !important;
+      }
+      .viewAwardsBtn,
+      .titleImg {
+        display: none;
+      }
+      .makeInline {
+        display: inline;
+      }
+      .titleText {
+        font-size: 3.5vw !important;
+        display: inline-block !important;
+        margin-top: 3%;
+      }
+      .title {
+        margin-top: 3% !important;
+        font-size: 17vw !important;
+      }
+
+      .mobAward {
+        padding-bottom: 3.3%;
+        border-bottom: 1.5px solid hsl(60, 1%, 25%);
+        padding-top: 5%;
+      }
+      .mbAwardCat,
+      .mbAwardName {
+        font-family: "anek devanagari";
+        font-size: 3.4vw;
+        font-weight: 500;
+        padding-right: 5%;
+      }
+      .mbAwardName {
+        opacity: 50%;
+      }
+      .mbAwardName span,
+      .mbAwardCat span {
+        text-transform: capitalize;
+        color: white !important;
+      }
+      .mobAward:hover,
+      .mobAward:hover span {
+        color: #1a1a1a !important;
+        background-color: #e5ff35;
+        font-weight: 600;
+      }
+    }
+    /* hover image effect css */
+
+    .titleText {
+      font-size: 1.5vw;
+      font-family: "anek devanagari";
+      opacity: 60%;
       display: none;
     }
-    .makeInline {
-      display: inline;
+    .trial {
+      position: relative;
+
+      z-index: 1;
     }
-    .titleText {
-      font-size: 3.5vw !important;
-      display: inline-block !important;
-      margin-top: 3%;
-    }
-    .title {
-      margin-top: 3% !important;
-      font-size: 17vw !important;
+    .trial2 {
+      position: absolute;
+      object-fit: cover;
+      transform: translateX(-50%) translateY(-50%);
+      top: 50%;
+      left: 50%;
+      z-index: -10;
+      opacity: 0;
+
+      visibily: hidden;
+      pointer-events: none;
     }
 
-    .mobAward {
-      padding-bottom: 3.3%;
-      border-bottom: 1.5px solid hsl(60, 1%, 25%);
+    /*  */
+    .title {
+      font-family: "Deutschlander";
+      font-size: 14.5vw;
+      text-transform: uppercase;
+      line-height: 0.8;
+    }
+
+    .titleImg {
+      vertical-align: baseline;
+      width: 28%;
+
+      border-radius: 12vw;
+      margin-right: 3%;
+    }
+
+    .margins {
+      margin: 0 8% 0 8%;
+      margin-bottom: 6.8%;
+    }
+    .margins2 {
+      margin: 0 8% 0 8%;
+    }
+
+    .viewAwardsBtn {
+      width: 40%;
+      position: relative;
+      top: 65%;
+      left: 55%;
+    }
+
+    .bottomDiv {
+      background-color: #1a1a1a;
+      border-radius: 4vw 4vw 0 0;
       padding-top: 5%;
     }
-    .mbAwardCat,
-    .mbAwardName {
-      font-family: "anek devanagari";
-      font-size: 3.4vw;
-      font-weight: 500;
-      padding-right: 5%;
+
+    .list {
+      font-family: "Deutschlander";
+      font-size: 14.5vw;
+      text-transform: uppercase;
+      line-height: 0.8;
+      color: white;
+      margin-left: 8%;
+      margin-right: 8%;
     }
-    .mbAwardName {
-      opacity: 50%;
+
+    .hoverImg {
+      width: 40%;
     }
-    .mbAwardName span,
-    .mbAwardCat span {
-      text-transform: capitalize;
-      color: white !important;
-    }
+
     .mobAward:hover,
     .mobAward:hover span {
-      color: #1a1a1a !important;
+      color: #1a1a1a;
       background-color: #e5ff35;
       font-weight: 600;
     }
-  }
-  /* hover image effect css */
 
-  .titleText {
-    font-size: 1.5vw;
-    font-family: "anek devanagari";
-    opacity: 60%;
-    display: none;
-  }
-  .trial {
-    position: relative;
+    /* award table css */
 
-    z-index: 1;
-  }
-  .trial2 {
-    position: absolute;
-    object-fit: cover;
-    transform: translateX(-50%) translateY(-50%);
-    top: 50%;
-    left: 50%;
-    z-index: -10;
-    opacity: 0;
-    visibily: hidden;
-    pointer-events: none;
-  }
+    @media screen and (min-width: 768px) {
+      .mbAwardName {
+        text-align: end;
+      }
+      .mobAward {
+        padding-bottom: 2%;
+        border-bottom: 1.5px solid hsl(60, 1%, 25%);
+        padding-top: 2%;
+        margin-right: 3%;
+        margin-left: 0.5%;
+      }
+      .mbAwardCat,
+      .mbAwardName {
+        font-family: "anek devanagari";
+        font-size: 1.2vw;
+        font-weight: 500;
+      }
 
-  /*  */
-  .title {
-    font-family: "Deutschlander";
-    font-size: 14.5vw;
-    text-transform: uppercase;
-    line-height: 0.8;
-  }
-
-  .titleImg {
-    vertical-align: baseline;
-    width: 28%;
-
-    border-radius: 12vw;
-    margin-right: 3%;
-  }
-
-  .margins {
-    margin: 0 8% 0 8%;
-    margin-bottom: 6.8%;
-  }
-  .margins2 {
-    margin: 0 8% 0 8%;
-  }
-
-  .viewAwardsBtn {
-    width: 40%;
-    position: relative;
-    top: 65%;
-    left: 55%;
-  }
-
-  .bottomDiv {
-    background-color: #1a1a1a;
-    border-radius: 4vw 4vw 0 0;
-    padding-top: 5%;
-  }
-
-  .list {
-    font-family: "Deutschlander";
-    font-size: 14.5vw;
-    text-transform: uppercase;
-    line-height: 0.8;
-    color: white;
-    margin-left: 8%;
-    margin-right: 8%;
-  }
-
-  .hoverImg {
-    width: 40%;
-  }
-
-  .mobAward:hover,
-  .mobAward:hover span {
-    color: #1a1a1a;
-    background-color: #e5ff35;
-    font-weight: 600;
-  }
-
-  /* award table css */
-
-  @media screen and (min-width: 768px) {
-    .mbAwardName {
-      text-align: end;
+      .mbAwardName span,
+      .mbAwardCat span {
+        text-transform: capitalize;
+        color: white;
+      }
+      .hifen {
+        display: none;
+      }
     }
-    .mobAward {
-      padding-bottom: 2%;
-      border-bottom: 1.5px solid hsl(60, 1%, 25%);
-      padding-top: 2%;
-      margin-right: 3%;
-      margin-left: 0.5%;
-    }
-    .mbAwardCat,
-    .mbAwardName {
-      font-family: "anek devanagari";
-      font-size: 1.2vw;
-      font-weight: 500;
-    }
+  </style>
 
-    .mbAwardName span,
-    .mbAwardCat span {
-      text-transform: capitalize;
-      color: white;
-    }
-    .hifen {
-      display: none;
-    }
-  }
-</style>
+  <script>
+    import { gsap } from "gsap";
+    console.log("i m here", gsap.context());
+    const items = document.querySelectorAll(".trial");
 
-<script>
-  import { gsap } from "gsap";
-  console.log("i m here", gsap.context());
-  const items = document.querySelectorAll(".trial");
+    items.forEach((el) => {
+      const image = el.querySelector(".trial2");
 
-  items.forEach((el) => {
-    const image = el.querySelector(".trial2");
+      el.addEventListener("mouseenter", (e) => {
+        gsap.to(image, { autoAlpha: 1 });
+      });
 
-    el.addEventListener("mouseenter", (e) => {
-      gsap.to(image, { autoAlpha: 1 });
+      el.addEventListener("mouseleave", (e) => {
+        gsap.to(image, { autoAlpha: 0 });
+      });
+
+      el.addEventListener("mousemove", (e: PointerEvent) => {
+        gsap.to(image, { x: e.offsetX - 300 });
+      });
     });
 
-    el.addEventListener("mouseleave", (e) => {
-      gsap.to(image, { autoAlpha: 0 });
-    });
+    import {
+      Swiper,
+      Navigation,
+      Pagination,
+      EffectCoverflow,
+      Autoplay,
+      EffectCreative,
+    } from "swiper";
+    let x = 3;
+    var swiper = new Swiper(".swiper", {
+      modules: [Navigation, EffectCreative],
+      // effect: "creative",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
 
-    el.addEventListener("mousemove", (e: PointerEvent) => {
-      gsap.to(image, { x: e.offsetX - 300 });
+      autoplay: {
+        delay: 2000,
+      },
     });
-  });
-</script>
+  </script>
+</Layout>
