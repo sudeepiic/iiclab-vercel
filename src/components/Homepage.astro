@@ -41,6 +41,12 @@ import authorImg from "../images/authorImg.jpg";
 import testimonialImg from "../images/testimonialImg.png";
 import carousalNext from "../images/carousalNext.png";
 import carousalPrev from "../images/carousalPrev.png";
+import { contentfulClient } from "../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+
+const entries = await contentfulClient.getEntries<any>({
+  content_type: "caseStudy",
+});
 ---
 
 <section class="margins">
@@ -525,15 +531,31 @@ import carousalPrev from "../images/carousalPrev.png";
 
     <img class="fwViewAll" src={fwViewAll} alt="" />
 
-    <!-- <div class="yellowCircle"> <p class="view">VIEW ALL</p></div>  -->
+    <!-- <div c
+      lass="yellowCircle"> <p class="view">VIEW ALL</p></div>  -->
   </div>
 
-  <div class="d-flex moving-text2" style="width:100%; margin-bottom: 7%;">
-    <img src={metaverse} class="movingImgs" alt="" />
-    <img src={heftyverse} alt="" class="movingImgs" />
-    <img src={visualize} alt="" class="movingImgs" />
-    <img src={metaverse} alt="" class="movingImgs" />
-    <!-- <img src={heftyverse} alt="" style="width:25%; height:19%; margin-right: 3%;" /> -->
+  <div class="d-flex" style="width:100%; margin-bottom: 7%;">
+    {
+      entries.items.map((caseStudy, index) => (
+        <div class="hoverImg moving-text2 ">
+          <a href={"/case-study/" + caseStudy.fields.heroTitle}>
+            <img
+              src={caseStudy.fields?.heroBanner?.fields?.file.url}
+              class="movingImgs"
+              alt=""
+            />
+            <div class="image-overlay">
+              <span class="workName" set:html={caseStudy.fields.singleClient} />
+              <span
+                class="workTech"
+                set:html={caseStudy.fields?.whichTechnology}
+              />
+            </div>
+          </a>
+        </div>
+      ))
+    }
   </div>
 </section>
 
@@ -1033,6 +1055,39 @@ import carousalPrev from "../images/carousalPrev.png";
   <!-- <div class="yellowCircle"> <p class="view">VIEW ALL</p></div>  -->
 </section>
 <style>
+  a {
+    text-decoration: none;
+  }
+  .image-overlay {
+    position: relative;
+    top: -19%;
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
+    width: 75%;
+    left: 5%;
+    padding-left: 2%;
+    opacity: 0;
+    border-radius: 0 0 0 2vw;
+  }
+  .hoverImg:hover .image-overlay {
+    opacity: 1;
+  }
+  .hoverImg {
+    margin-right: 2%;
+  }
+  .workName {
+    font-family: "anek devanagari";
+    font-size: 2.2vw;
+    font-weight: 500;
+    display: block;
+    text-transform: capitalize;
+  }
+  .workTech {
+    font-family: "anek devanagari";
+    font-size: 2vw;
+    display: block;
+    text-transform: capitalize;
+  }
   .margins {
     margin-left: 7%;
     margin-right: 7%;
@@ -1112,9 +1167,12 @@ import carousalPrev from "../images/carousalPrev.png";
     src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
   }
   .movingImgs {
-    width: 25%;
-    height: 19%;
-    margin-right: 3%;
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    width: 25vw;
+    border-radius: 0 4vw 4vw 4vw;
   }
 
   .blackPara {
@@ -1282,7 +1340,7 @@ import carousalPrev from "../images/carousalPrev.png";
   }
 
   .moving-text2 {
-    animation: move-text 10s linear infinite;
+    animation: move-text 35s linear infinite;
   }
   .wrapper {
     overflow-x: hidden;
@@ -1327,7 +1385,7 @@ import carousalPrev from "../images/carousalPrev.png";
       transform: translateX(100%);
     }
     100% {
-      transform: translateX(-100%);
+      transform: translateX(-2000%);
     }
   }
 
@@ -1764,12 +1822,14 @@ import carousalPrev from "../images/carousalPrev.png";
       margin-top: 25.5%;
     }
     .movingImgs {
-      width: 51%;
-      height: 19%;
+      aspect-ratio: 4/5;
+      width: 30vw;
+      border-radius: 0 4vw 4vw 4vw;
       margin-right: 5%;
+      object-fit: cover;
     }
     .moving-text2 {
-      animation: move-text 15s linear infinite;
+      animation: move-text 30s linear infinite;
     }
 
     .wallHonor {

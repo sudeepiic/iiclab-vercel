@@ -36,7 +36,7 @@ import { gsap } from "gsap";
     <div class="swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <div class="row">
+          <div class="row desktopSlider">
             <div class="col-7 leftSide">
               <div class="award-name">
                 <span> Marketer's excellence</span>
@@ -69,10 +69,50 @@ import { gsap } from "gsap";
               </div>
             </div>
           </div>
+
+          <div class="onlyMob">
+            <div class="mb-award-name">
+              <span> Marketer's excellence</span>
+            </div>
+            <div class="d-flex">
+              <div style="width: 45%;">
+                <div class="mb-award-category">
+                  <span class="category-name">best brand activation</span>
+                  <span class="year">(gold) - 2022</span>
+                </div>
+              </div>
+              <div style="width:50%">
+                <div class="mb-awardImg">
+                  <img class="mb-momento" src={momento} alt="" /><br />
+                  <img class="mb-momentoIcon" src={momentoIcon2} alt="" />
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="mb-project">
+                <div class="d-flex">
+                  <div style="width: 20%;">
+                    <span class="mb-index">01</span>
+                    <span class="mb-length">/22</span>
+                  </div>
+                  <div class="mb-projectName" style="width: 50%;">
+                    <p>PROJECT:</p>
+                    <span>pro kabaddi league</span>
+                  </div>
+                  <div style="width: 30%;">
+                    <a href="">
+                      <img class="mb-viewProject" src={viewProjectBtn} alt="" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="swiper-slide">
-          <div class="row">
+          <div class="row desktopSlider">
             <div class="col-7 leftSide">
               <div class="award-name">
                 <span> Marketer's excellence</span>
@@ -93,7 +133,9 @@ import { gsap } from "gsap";
                     <span>pro kabaddi league</span>
                   </div>
                   <div class="col-lg-3 col-md-3 col-sm-3">
-                    <img class="viewProject" src={viewProjectBtn} alt="" />
+                    <a href="">
+                      <img class="viewProject" src={viewProjectBtn} alt="" />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -102,6 +144,46 @@ import { gsap } from "gsap";
               <div class="awardImg">
                 <img class="momento" src={momento} alt="" /><br />
                 <img class="momentoIcon" src={momentoIcon2} alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="onlyMob">
+            <div class="mb-award-name">
+              <span> Marketer's excellence</span>
+            </div>
+            <div class="d-flex">
+              <div style="width: 45%;">
+                <div class="mb-award-category">
+                  <span class="category-name">best brand activation</span>
+                  <span class="year">(gold) - 2022</span>
+                </div>
+              </div>
+              <div style="width:50%">
+                <div class="mb-awardImg">
+                  <img class="mb-momento" src={momento} alt="" /><br />
+                  <img class="mb-momentoIcon" src={momentoIcon2} alt="" />
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="mb-project">
+                <div class="d-flex">
+                  <div style="width: 20%;">
+                    <span class="mb-index">01</span>
+                    <span class="mb-length">/22</span>
+                  </div>
+                  <div class="mb-projectName" style="width: 50%;">
+                    <p>PROJECT:</p>
+                    <span>pro kabaddi league</span>
+                  </div>
+                  <div style="width: 30%;">
+                    <a href="">
+                      <img class="mb-viewProject" src={viewProjectBtn} alt="" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -502,6 +584,95 @@ import { gsap } from "gsap";
 
     /*  */
 
+    /* mobile view carousal */
+    .mb-award-name {
+      margin-left: 8%;
+      margin-bottom: 1%;
+    }
+    .mb-award-name span {
+      font-family: "Deutschlander";
+      font-size: 12.5vw;
+      text-transform: uppercase;
+      line-height: 1;
+      text-shadow: 0.2vw 0.2vw 0px #e5ff35;
+    }
+    .mb-award-category {
+      background-color: #1a1a1a;
+      font-family: "Deutschlander";
+      font-size: 7vw;
+      text-transform: uppercase;
+      padding: 12% 7%;
+      border-radius: 3vw 0 3vw 0;
+      rotate: -90deg;
+      transform: scale(1.3) translate(-32%, 5%);
+    }
+
+    .mb-category-name {
+      color: white;
+      line-height: 0.9;
+      display: block;
+    }
+    .mb-year {
+      color: #e5ff35;
+      display: block;
+      line-height: 0.9 !important;
+    }
+    .mb-project {
+      background-color: white;
+      padding: 3% 4%;
+      margin-top: 3%;
+      border-radius: 0 3vw 0 3vw;
+      width: 78%;
+      margin-left: 8%;
+    }
+
+    .mb-index {
+      font-family: "anek devanagari";
+      font-size: 2vw;
+      font-weight: 600;
+      margin-top: 5%;
+    }
+    .mb-length {
+      font-family: "anek devanagari";
+      font-size: 2vw;
+      font-weight: 600;
+      opacity: 60%;
+    }
+    .mb-projectName p {
+      font-family: "anek devanagari";
+      text-transform: uppercase;
+      font-size: 2.2vw;
+      opacity: 60%;
+      margin-bottom: 0 !important;
+    }
+
+    .mb-projectName span {
+      font-family: "anek devanagari";
+      text-transform: uppercase;
+      font-size: 2.4vw;
+      font-weight: 600;
+      display: block;
+    }
+    .mb-viewProject {
+      width: 100%;
+    }
+
+    .mb-awardImg {
+      background: linear-gradient(#f6f7f0 20%, #fff 80%) !important;
+      border-radius: 2rem 0 2rem 0;
+      text-align: center;
+      padding-bottom: 9%;
+    }
+    .mb-momento {
+      width: 70%;
+      margin-bottom: 3%;
+    }
+    .mb-momentoIcon {
+      width: 30%;
+    }
+
+    /*  */
+
     .swiper {
       width: 97%;
     }
@@ -522,6 +693,21 @@ import { gsap } from "gsap";
     }
 
     @media screen and (max-width: 767px) {
+      /* carousal css */
+
+      .swiper-slide {
+        margin-left: 0 !important;
+      }
+      .desktopSlider {
+        display: none;
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        width: 4%;
+        height: 5%;
+      }
+
+      /*  */
       .viewProject {
         width: 80%;
       }
@@ -659,6 +845,9 @@ import { gsap } from "gsap";
     /* award table css */
 
     @media screen and (min-width: 768px) {
+      .onlyMob {
+        display: none !important;
+      }
       .mbAwardName {
         text-align: end;
       }
