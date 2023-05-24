@@ -1,0 +1,294 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hand_Holding_Smartphone2 from "../images/Hand_Holding_Smartphone2.jpg";
+import ourSolutionsBtn from "../images/ourSolutionsBtn.png";
+import solutionImg1 from "../images/solutionImg1.png";
+import yellowGo from "../images/yellowGo2.png";
+---
+
+<Layout title="Solutions">
+  <section>
+    <div class="gradient">
+      <div class="bgImage">
+        <div class="title">
+          <span>What are we good at</span>
+          <a href="#apply">
+            <img
+              class="btn"
+              style="width: 13%; margin-bottom: 3%; margin-left: 20%;"
+              src={ourSolutionsBtn}
+              alt=""
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 5% 1% 0 1%; background-color: #1a1a1a;">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div style="position: relative; text-align: center;">
+            <img class="carousalImg" src={solutionImg1} alt="" />
+            <div class="techList">
+              <ul class="a">
+                <li>metaverse</li>
+                <li>virtual Reality</li>
+                <li>Augmented Reality</li>
+                <li>Projection Mapping</li>
+              </ul>
+            </div>
+            <div class="overlapDiv">
+              <span class="overlapTitle">Immersive Technology</span>
+
+              <a href=""><img src={yellowGo} alt="" /></a>
+            </div>
+            <div>
+              <span class="captionIndex">07</span>
+              <span class="captionTitle">strategy & design</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div style="position: relative; text-align: center;">
+            <img class="carousalImg" src={solutionImg1} alt="" />
+            <div class="techList">
+              <ul class="a">
+                <li>metaverse</li>
+                <li>virtual Reality</li>
+                <li>Augmented Reality</li>
+                <li>Projection Mapping</li>
+              </ul>
+            </div>
+            <div class="overlapDiv">
+              <span class="overlapTitle">Immersive Technology</span>
+
+              <a href=""><img src={yellowGo} alt="" /></a>
+            </div>
+            <div>
+              <span class="captionIndex">07</span>
+              <span class="captionTitle">strategy & design</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div style="position: relative; text-align: center;">
+            <img class="carousalImg" src={solutionImg1} alt="" />
+            <div class="techList">
+              <ul class="a">
+                <li>metaverse</li>
+                <li>virtual Reality</li>
+                <li>Augmented Reality</li>
+                <li>Projection Mapping</li>
+              </ul>
+            </div>
+            <div class="overlapDiv">
+              <span class="overlapTitle">Immersive Technology</span>
+
+              <a href=""><img src={yellowGo} alt="" /></a>
+            </div>
+            <div class="captionDiv">
+              <span class="captionIndex">07</span>
+              <span class="captionTitle">strategy & design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* carousal css */
+  ul.a {
+    list-style-type: disc;
+    color: white;
+    font-family: "anek devanagari";
+    line-height: 1.7;
+  }
+
+  .carousalImg {
+    width: 20%;
+  }
+
+  .overlapDiv {
+    position: absolute;
+    top: 37%;
+    left: -5%;
+    display: none;
+  }
+  .overlapDiv img {
+    width: 17%;
+  }
+  .overlapTitle {
+    color: white;
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 6.8vw;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.2;
+    display: block;
+  }
+  .captionDiv {
+    display: none;
+  }
+  .captionIndex,
+  .captionTitle {
+    color: white;
+    font-family: "Deutschlander";
+    text-transform: capitalize;
+    font-size: 4.5vw;
+    font-weight: 400;
+  }
+
+  .captionIndex {
+    opacity: 60%;
+  }
+
+  .techList {
+    width: 50%;
+    position: absolute;
+    left: 91%;
+    bottom: -15%;
+    font-size: 1vw;
+    text-align: initial;
+    display: none;
+  }
+
+  /*  */
+
+  /* swiper css */
+  .swiper {
+    width: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    /* font-size: 18px; */
+    /* background: #f6f7f0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .swiper-slide .carousalImg {
+    display: block;
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4/5;
+  }
+  .swiper-slide-active .overlapDiv,
+  .swiper-slide-active .techList {
+    display: block !important;
+  }
+  .swiper-slide-next .captionDiv,
+  .swiper-slide-prev .captionDiv {
+    display: block !important;
+  }
+  .swiper-slide-next .carousalImg,
+  .swiper-slide-prev .carousalImg {
+    aspect-ratio: 3/2;
+  }
+  .swiper-slide-next,
+  .swiper-slide-prev {
+    scale: 0.5;
+  }
+  /*  */
+
+  /* .gradient {
+    background-image: linear-gradient(180deg, red, yellow) !important;
+  } */
+  .bgImage {
+    background-image: url(../images/Hand_Holding_Smartphone2.jpg);
+
+    background-size: cover;
+
+    object-fit: cover;
+    padding-left: 10%;
+    padding-top: 33%;
+  }
+
+  .title {
+    color: white;
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 13vw;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 0.85;
+
+    width: 90%;
+    margin-top: 9%;
+  }
+</style>
+
+<style is:global>
+  .turnBlack {
+    background: transparent;
+    position: absolute;
+    width: 100%;
+  }
+
+  .list ul li a {
+    color: white;
+    opacity: 100%;
+  }
+  path {
+    fill: white;
+  }
+
+  /* connect button css */
+
+  .connect,
+  .circles {
+    fill: #1a1a1a;
+  }
+  .oval {
+    fill: white;
+  }
+
+  .tele {
+    fill: white;
+  }
+  .menu p {
+    color: white;
+  }
+  .menu .s1,
+  .menu .s2 {
+    border: 1px solid white;
+  }
+</style>
+
+<script>
+  import {
+    Swiper,
+    Navigation,
+    Pagination,
+    EffectCoverflow,
+    Autoplay,
+    EffectCreative,
+  } from "swiper";
+  let x = 3;
+  var swiper = new Swiper(".mySwiper", {
+    modules: [Navigation, EffectCreative],
+
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+
+    autoplay: {
+      delay: 2000,
+    },
+
+    // pagination: {
+    //   el: ".swiper-pagination",
+    //   clickable: true,
+    // },
+  });
+</script>

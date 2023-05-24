@@ -1340,7 +1340,7 @@ const entries = await contentfulClient.getEntries<any>({
   }
 
   .moving-text2 {
-    animation: move-text 35s linear infinite;
+    animation: move-text2 45s linear infinite;
   }
   .wrapper {
     overflow-x: hidden;
@@ -1381,6 +1381,14 @@ const entries = await contentfulClient.getEntries<any>({
   }
 
   @keyframes move-text {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes move-text2 {
     0% {
       transform: translateX(100%);
     }
@@ -1829,7 +1837,7 @@ const entries = await contentfulClient.getEntries<any>({
       object-fit: cover;
     }
     .moving-text2 {
-      animation: move-text 30s linear infinite;
+      animation: move-text2 40s linear infinite;
     }
 
     .wallHonor {
