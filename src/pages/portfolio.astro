@@ -187,6 +187,15 @@ const entries = await contentfulClient.getEntries<any>({
       #main4 span {
         font-size: 14vw;
       }
+      .swiper-slide img {
+        width: 100% !important;
+      }
+      .caption1 {
+        font-size: 4.8vw !important;
+      }
+      .caption2 {
+        font-size: 2.75vw !important;
+      }
     }
     @media screen and (max-width: 480px) {
       #main4 span {
@@ -286,6 +295,16 @@ const entries = await contentfulClient.getEntries<any>({
           rotate: [0, 0, 8],
           translate: ["120%", "8%", 0],
           scale: 0.98,
+        },
+      },
+      breakpoints: {
+        767: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        250: {
+          slidesPerView: 1.65,
+          spaceBetween: 30,
         },
       },
 

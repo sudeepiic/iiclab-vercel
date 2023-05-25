@@ -325,6 +325,22 @@ import carousalPrev from "../images/carousalPrev.png";
       }
     }
     @media screen and (max-width: 767px) {
+      .swiper-prev {
+        transform: translate(-357%, -690%);
+        width: 8% !important;
+      }
+      .swiper-next {
+        transform: translate(357%, -690%);
+        z-index: 999 !important;
+        position: inherit;
+        width: 8% !important;
+      }
+      .memberName {
+        font-size: 14vw;
+      }
+      .memberDsgn {
+        font-size: 3.2vw;
+      }
       .data {
         display: none;
       }
@@ -531,7 +547,7 @@ import carousalPrev from "../images/carousalPrev.png";
     } from "swiper";
     let x = 3;
     var swiper = new Swiper(".mySwiper", {
-      modules: [Navigation, Autoplay, EffectCreative],
+      modules: [Navigation, EffectCreative],
       effect: "creative",
       grabCursor: true,
       centeredSlides: true,
@@ -559,6 +575,16 @@ import carousalPrev from "../images/carousalPrev.png";
 
       autoplay: {
         delay: 2000,
+      },
+      breakpoints: {
+        767: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        220: {
+          slidesPerView: 1.6,
+          spaceBetween: 25,
+        },
       },
 
       // pagination: {

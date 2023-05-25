@@ -399,6 +399,15 @@ const entries = await contentfulClient.getEntries<any>({
         width: 110% !important;
         margin-right: 3%;
       }
+      .card-header div span {
+        font-size: 4.7vw !important;
+      }
+      .card-text span {
+        font-size: 4.2vw;
+      }
+      .card-footer div span {
+        font-size: 5.5vw;
+      }
     }
 
     .titleDiv {
@@ -668,7 +677,19 @@ const entries = await contentfulClient.getEntries<any>({
           translate: ["85%", "9%", 0],
           scale: 0.85,
         },
+
         limitProgress: 2,
+      },
+
+      breakpoints: {
+        767: {
+          slidesPerView: 4,
+          spaceBetween: 0,
+        },
+        250: {
+          slidesPerView: 1.7,
+          spaceBetween: 10,
+        },
       },
 
       autoplay: {

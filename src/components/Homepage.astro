@@ -1542,12 +1542,12 @@ const entries = await contentfulClient.getEntries<any>({
     }
   }
 
-  @media screen and (max-width: 775px) {
+  @media screen and (max-width: 767px) {
     .authName {
-      font-size: 1vw;
+      font-size: 1.7vw;
     }
     .authDesign {
-      font-size: 0.9vw;
+      font-size: 1.2vw;
     }
     .card-body {
       padding-bottom: 5% !important;
@@ -1645,6 +1645,10 @@ const entries = await contentfulClient.getEntries<any>({
     }
   }
   @media screen and (max-width: 767px) {
+    .card-text {
+      font-size: 1.7vw !important;
+      height: 26vw;
+    }
     .paraDiv {
       display: none;
     }
@@ -1974,6 +1978,16 @@ const entries = await contentfulClient.getEntries<any>({
         scale: 0.9,
       },
       limitProgress: 2,
+    },
+    breakpoints: {
+      767: {
+        slidesPerView: 5,
+        spaceBetween: 30,
+      },
+      250: {
+        slidesPerView: 2.5,
+        spaceBetween: 50,
+      },
     },
 
     autoplay: {
