@@ -1,25 +1,12 @@
 ---
-import hand1 from "../images/Hand-1.png";
-import heroHand from "../images/herHand.svg";
 import puase from "../images/pauselogo.png";
 import arrow from "../images/arrow.png";
 import home from "../images/home-1.png";
 import hand2 from "../images/hand-2.png";
 import ovalArrow from "../images/ovalArrow.png";
-import Reliance from "../images/Reliance.png";
-import RealianceB from "../images/RealianceB.png";
-import cocacola from "../images/cocacola.png";
-import Vodafone from "../images/Vodafone.png";
-import Capgemini from "../images/Capgemini.png";
-import bestseller from "../images/bestseller.png";
-import signBrand from "../images/signBrand.png";
-import hindware from "../images/hindware.png";
 import vector from "../images/Vector.png";
 import hefty from "../images/hefty.png";
 import circleHand from "../images/circleHand.png";
-import heftyverse from "../images/heftyverse.png";
-import metaverse from "../images/metaverse.png";
-import visualize from "../images/visualize.png";
 import diamond from "../images/diamond.png";
 import iicAwards from "../images/iicAwards.png";
 import viewAllAwards from "../images/viewAllAwards.png";
@@ -29,7 +16,6 @@ import vRetail from "../images/vRetail.png";
 import vStages from "../images/vStages.png";
 import vConference from "../images/vConference.png";
 import toolsArrow from "../images/toolsArrow.png";
-import hiringImg1 from "../images/hiringImg1.jpg";
 import solnImg1 from "../images/solnImg1.png";
 import solnImg2 from "../images/solnImg2.png";
 import solnImg3 from "../images/solnImg3.png";
@@ -50,7 +36,6 @@ const entries: any = await contentfulClient.getEntries<any>({
 const clientsEntries = await contentfulClient.getEntries<any>({
   content_type: "clients",
 });
-console.log("client entries", clientsEntries.items[0].fields.clientIcons);
 ---
 
 <section class="margins">
@@ -1826,6 +1811,7 @@ console.log("client entries", clientsEntries.items[0].fields.clientIcons);
       left: 19%;
       margin-top: 25.5%;
     }
+
     .movingImgs {
       aspect-ratio: 4/5;
       width: 30vw;

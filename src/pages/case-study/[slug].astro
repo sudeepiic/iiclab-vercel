@@ -20,10 +20,8 @@ export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries<any>({
     content_type: "caseStudy",
   });
-  console.log("paramssssssss", entries);
 
   const pages = entries.items.map((item) => {
-    console.log(item.fields.heroTitle, "oooooooooooooooooooooooooooo");
     return {
       params: { slug: item.fields.heroTitle },
       props: {
