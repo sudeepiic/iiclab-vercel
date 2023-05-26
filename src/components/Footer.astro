@@ -29,8 +29,8 @@ import subscribeBtn from "../images/subscribeBtn.png";
       </p>
     </div>
     <div class="col-6">
-      <button class="btn"
-        ><img class="contactUsImg" src={contactUs} alt="" /></button
+      <a href="/contact">
+        <img class="contactUsImg" src={contactUs} alt="" /></a
       >
     </div>
   </div>
@@ -60,21 +60,19 @@ import subscribeBtn from "../images/subscribeBtn.png";
   </div>
 
   <div class="col-12 TopSocialIcons">
-    <button class="btn"
-      ><img class="socialIcons" src={instaLogo} alt="" /></button
+    <a href="https://www.instagram.com/inkincaps/?hl=en"
+      ><img class="socialIcons" src={instaLogo} alt="" /></a
     >
-    <button class="btn">
-      <img class="socialIcons" src={linkedinlogo} alt="" /></button
+    <a href="https://in.linkedin.com/company/ink-in-caps"
+      ><img class="socialIcons" src={linkedinlogo} alt="" /></a
     >
-    <button class="btn"
-      ><img class="socialIcons" src={twitterLogo} alt="" /></button
+    <a href="https://twitter.com/inkincaps?lang=en"
+      ><img class="socialIcons" src={twitterLogo} alt="" /></a
     >
-    <button class="btn">
-      <img class="socialIcons" src={fbLogo} alt="" /></button
+    <a href="https://www.facebook.com/inkincaps/"
+      ><img class="socialIcons" src={fbLogo} alt="" /></a
     >
-    <button class="btn">
-      <img class="socialIcons" src={whatsappLogo} alt="" /></button
-    >
+    <a href=""><img class="socialIcons" src={whatsappLogo} alt="" /></a>
   </div>
 
   <div class="div3 row">
@@ -90,6 +88,7 @@ import subscribeBtn from "../images/subscribeBtn.png";
       ><br />
 
       <a
+        href="mailto:help@iiclab.com"
         style="color: rgba(255, 255, 255, 1); font-size: calc(7px + 0.390625vw);"
         >help@iiclab.com</a
       >
@@ -97,11 +96,11 @@ import subscribeBtn from "../images/subscribeBtn.png";
     <div class="col-md-2 col-6">
       <p class="headings">Quick Links</p>
       <div class="spacings">
-        <p style="color:grey;  ">Home</p>
-        <p style="color:grey">Solutions</p>
-        <p style="color:grey">Our Work</p>
-        <p style="color:grey">Connect</p>
-        <p style="color:grey">Career</p>
+        <a href="/"><p style="color:grey;  ">Home</p></a>
+        <a href="/solutions"><p style="color:grey">Solutions</p></a>
+        <a href="/portfolio"><p style="color:grey">Our Work</p></a>
+        <a href="/contact"><p style="color:grey">Connect</p></a>
+        <a href="/hiring"><p style="color:grey">Career</p></a>
       </div>
     </div>
     <div class="col-md-2 col-6">
@@ -173,17 +172,19 @@ import subscribeBtn from "../images/subscribeBtn.png";
       class="col-lg-4 col-md-4 desktopOnly"
       style="text-align: center; padding-top: 1.5%;"
     >
-      <button class="btn"><img class="icons" src={instaLogo} alt="" /></button>
-      <button class="btn">
-        <img class="icons" src={linkedinlogo} alt="" /></button
+      <a href="https://www.instagram.com/inkincaps/?hl=en"
+        ><img class="icons" src={instaLogo} alt="" /></a
       >
-      <button class="btn"
-        ><img class="icons" src={twitterLogo} alt="" />
-      </button>
-      <button class="btn"> <img class="icons" src={fbLogo} alt="" /></button>
-      <button class="btn">
-        <img class="icons" src={whatsappLogo} alt="" /></button
+      <a href="https://in.linkedin.com/company/ink-in-caps"
+        ><img class="icons" src={linkedinlogo} alt="" /></a
       >
+      <a href="https://twitter.com/inkincaps?lang=en"
+        ><img class="icons" src={twitterLogo} alt="" /></a
+      >
+      <a href="https://www.facebook.com/inkincaps/"
+        ><img class="icons" src={fbLogo} alt="" /></a
+      >
+      <a href=""><img class="icons" src={whatsappLogo} alt="" /></a>
     </div>
   </div>
 </section>
@@ -198,6 +199,9 @@ import subscribeBtn from "../images/subscribeBtn.png";
 </section>
 
 <style>
+  a {
+    text-decoration: none;
+  }
   .footerFont {
     color: white;
     font-family: "Deutschlander";
@@ -256,8 +260,10 @@ import subscribeBtn from "../images/subscribeBtn.png";
       display: none;
     }
     .socialIcons {
-      margin-top: 30px;
-      width: 40px !important;
+      margin-top: 6%;
+      margin-bottom: 3%;
+      width: 7vw !important;
+      margin-right: 1%;
     }
 
     .topInput {
@@ -385,7 +391,8 @@ import subscribeBtn from "../images/subscribeBtn.png";
     font-size: 1.4rem;
   }
   .icons {
-    width: 3vw;
+    width: 2.7vw;
+    margin-right: 1.1%;
   }
 
   .btn {

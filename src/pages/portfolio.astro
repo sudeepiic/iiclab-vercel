@@ -5,7 +5,7 @@ import featuredWorksbtn from "../images/featuredWorksbtn.jpg";
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
-const entries = await contentfulClient.getEntries<any>({
+const entries: any = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
 });
 ---

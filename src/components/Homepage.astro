@@ -1,41 +1,41 @@
 ---
-import hand1 from "../src/images/Hand-1.png";
-import heroHand from "../src/images/herHand.svg";
-import puase from "../src/images/pauselogo.png";
-import arrow from "../src/images/arrow.png";
-import home from "../src/images/home-1.png";
-import hand2 from "../src/images/hand-2.png";
-import ovalArrow from "../src/images/ovalArrow.png";
-import Reliance from "../src/images/Reliance.png";
-import RealianceB from "../src/images/RealianceB.png";
-import cocacola from "../src/images/cocacola.png";
-import Vodafone from "../src/images/Vodafone.png";
-import Capgemini from "../src/images/Capgemini.png";
-import bestseller from "../src/images/bestseller.png";
-import signBrand from "../src/images/signBrand.png";
-import hindware from "../src/images/hindware.png";
-import vector from "../src/images/vector.png";
-import hefty from "../src/images/hefty.png";
-import circleHand from "../src/images/circleHand.png";
-import heftyverse from "../src/images/heftyverse.png";
-import metaverse from "../src/images/metaverse.png";
-import visualize from "../src/images/visualize.png";
-import diamond from "../src/images/diamond.png";
-import iicAwards from "../src/images/iicAwards.png";
-import viewAllAwards from "../src/images/viewAllAwards.png";
-import vVerse from "../src/images/vVerse.png";
-import vTour from "../src/images/vTour.png";
-import vRetail from "../src/images/vRetail.png";
-import vStages from "../src/images/vStages.png";
-import vConference from "../src/images/vConference.png";
-import toolsArrow from "../src/images/toolsArrow.png";
-import hiringImg1 from "../src/images/hiringImg1.jpg";
-import solnImg1 from "../src/images/solnImg1.png";
-import solnImg2 from "../src/images/solnImg2.png";
-import solnImg3 from "../src/images/solnImg3.png";
-import solnImg4 from "../src/images/solnImg4.png";
-import solnImg5 from "../src/images/solnImg5.png";
-import solnImg6 from "../src/images/solnImg6.png";
+import hand1 from "../images/Hand-1.png";
+import heroHand from "../images/herHand.svg";
+import puase from "../images/pauselogo.png";
+import arrow from "../images/arrow.png";
+import home from "../images/home-1.png";
+import hand2 from "../images/hand-2.png";
+import ovalArrow from "../images/ovalArrow.png";
+import Reliance from "../images/Reliance.png";
+import RealianceB from "../images/RealianceB.png";
+import cocacola from "../images/cocacola.png";
+import Vodafone from "../images/Vodafone.png";
+import Capgemini from "../images/Capgemini.png";
+import bestseller from "../images/bestseller.png";
+import signBrand from "../images/signBrand.png";
+import hindware from "../images/hindware.png";
+import vector from "../images/Vector.png";
+import hefty from "../images/hefty.png";
+import circleHand from "../images/circleHand.png";
+import heftyverse from "../images/heftyverse.png";
+import metaverse from "../images/metaverse.png";
+import visualize from "../images/visualize.png";
+import diamond from "../images/diamond.png";
+import iicAwards from "../images/iicAwards.png";
+import viewAllAwards from "../images/viewAllAwards.png";
+import vVerse from "../images/vVerse.png";
+import vTour from "../images/vTour.png";
+import vRetail from "../images/vRetail.png";
+import vStages from "../images/vStages.png";
+import vConference from "../images/vConference.png";
+import toolsArrow from "../images/toolsArrow.png";
+import hiringImg1 from "../images/hiringImg1.jpg";
+import solnImg1 from "../images/solnImg1.png";
+import solnImg2 from "../images/solnImg2.png";
+import solnImg3 from "../images/solnImg3.png";
+import solnImg4 from "../images/solnImg4.png";
+import solnImg5 from "../images/solnImg5.png";
+import solnImg6 from "../images/solnImg6.png";
 import fwViewAll from "../images/fwViewAll.png";
 import authorImg from "../images/authorImg.jpg";
 import testimonialImg from "../images/testimonialImg.png";
@@ -44,9 +44,13 @@ import carousalPrev from "../images/carousalPrev.png";
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
-const entries = await contentfulClient.getEntries<any>({
+const entries: any = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
 });
+const clientsEntries = await contentfulClient.getEntries<any>({
+  content_type: "clients",
+});
+console.log("client entries", clientsEntries.items[0].fields.clientIcons);
 ---
 
 <section class="margins">
@@ -155,33 +159,20 @@ const entries = await contentfulClient.getEntries<any>({
 </section>
 
 <section class="wrapper">
-  <div class="giants moving-text3" style="margin-left: 210px;">
+  <div class="giants moving-text3" style="margin-left: 16%;">
     <tr>
-      <td class="img"> <img class="imgs" src={Reliance} alt="" /></td>
-      <td class="img"> <img class="imgs" src={Capgemini} alt="" /></td>
-      <td class="img"> <img class="imgs" src={Vodafone} alt="" /></td>
-      <td class="img"> <img class="imgs" src={bestseller} alt="" /></td>
-      <td class="img"> <img class="imgs" src={signBrand} alt="" /></td>
+      {
+        (clientsEntries.items[0].fields.clientIcons as any).map(
+          (clients, index) => (
+            <td class="img">
+              <img class="imgs" src={clients.fields?.file.url} alt="" />
+            </td>
+          )
+        )
+      }
     </tr>
-    <br />
 
-    <tr>
-      <td class="img"> <img class="imgs" src={cocacola} alt="" /></td>
-      <td class="img"> <img class="imgs" src={hindware} alt="" /></td>
-      <td class="img"> <img class="imgs" src={bestseller} alt="" /></td>
-      <td class="img"> <img class="imgs" src={Capgemini} alt="" /></td>
-      <td class="img"> <img class="imgs" src={Reliance} alt="" /></td>
-    </tr>
     <br />
-    <tr>
-      <td class="img"> <img class="imgs mobGiant" src={signBrand} alt="" /></td>
-      <td class="img"> <img class="imgs mobGiant" src={Capgemini} alt="" /></td>
-      <td class="img">
-        <img class="imgs mobGiant" src={RealianceB} alt="" /></td
-      >
-      <td class="img"> <img class="imgs mobGiant" src={Vodafone} alt="" /></td>
-      <td class="img"> <img class="imgs mobGiant" src={hindware} alt="" /></td>
-    </tr>
   </div>
 </section>
 
@@ -541,7 +532,7 @@ const entries = await contentfulClient.getEntries<any>({
         <div class="hoverImg moving-text2 ">
           <a href={"/case-study/" + caseStudy.fields.heroTitle}>
             <img
-              src={caseStudy.fields?.heroBanner?.fields?.file.url}
+              src={caseStudy.fields?.heroBanner.fields?.file.url}
               class="movingImgs"
               alt=""
             />
@@ -1313,7 +1304,7 @@ const entries = await contentfulClient.getEntries<any>({
     display: inline-flex;
   }
   #main5 #div1 img {
-    height: 150px;
+    height: 11vw;
   }
   #main5 #div2 {
     position: relative;

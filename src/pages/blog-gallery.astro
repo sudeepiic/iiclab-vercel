@@ -15,7 +15,7 @@ import readMore from "../images/readMore.png";
 
 import { log } from "astro/dist/core/logger/core";
 
-const entries = await contentfulClient.getEntries<any>({
+const entries: any = await contentfulClient.getEntries<any>({
   content_type: "blogs",
 });
 

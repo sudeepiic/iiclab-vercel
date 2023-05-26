@@ -81,7 +81,7 @@ import positionBtn from "../images/positionBtn.png";
           class="innerDivs"
           style="border-right: 1.2px solid rgb(202, 199, 199)"
         >
-          <span>help@iiclab.com</span>
+          <a href="mailto:help@iiclab.com"><span>help@iiclab.com</span></a>
         </div>
 
         <div style="padding-left: 1.5%;">
@@ -101,22 +101,29 @@ import positionBtn from "../images/positionBtn.png";
       <div class="col-lg-2 col-md-2 col-sm-12 col1">SOCIAL</div>
       <div class="col-lg-10 col-md-10 col-sm-12 col2 d-flex justifyEnd">
         <div class="innerDivs">
-          <span>LinkedIn</span>
+          <a href="https://in.linkedin.com/company/ink-in-caps"
+            ><span>LinkedIn</span></a
+          >
         </div>
         <div class="innerDivs">
-          <span>Instagram</span>
+          <a href="https://www.instagram.com/inkincaps/?hl=en"
+            ><span>Instagram</span></a
+          >
         </div>
 
         <div class="innerDivs">
-          <span>Youtube</span>
+          <a href="https://www.youtube.com/@InkInCaps"><span>Youtube</span></a>
         </div>
 
         <div class="innerDivs">
-          <span>Twitter</span>
+          <a href="https://twitter.com/inkincaps?lang=en"
+            ><span>Twitter</span></a
+          >
         </div>
 
         <div style="padding-left: 1.5%;">
-          <span>Facebook</span>
+          <a href="https://www.facebook.com/inkincaps/"><span>Facebook</span></a
+          >
         </div>
       </div>
     </div>
@@ -127,7 +134,8 @@ import positionBtn from "../images/positionBtn.png";
       <div class="col-8">
         <span>want to</span><br />
         <span> join our clan?</span>
-        <img class="btn posBtn" src={positionBtn} alt="" />
+        <a href="/hiring"><img class="btn posBtn" src={positionBtn} alt="" /></a
+        >
       </div>
       <div class="col-4">
         <img style="width: 80%;" src={contactHand} alt="" />
@@ -137,6 +145,14 @@ import positionBtn from "../images/positionBtn.png";
 </Layout>
 
 <style>
+  .input:focus,
+  .textArea:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  a {
+    text-decoration: none;
+  }
   @media screen and (min-width: 768px) {
     .mobTitles {
       display: none;
