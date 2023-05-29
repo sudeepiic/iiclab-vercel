@@ -1,59 +1,47 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import blogDetails from "../images/blogDetails.png"
+import Layout from "../layouts/Layout.astro";
 import TitleComp from "../components/blogs_components/titleComp.astro";
 import Comp2Content from "../components/blogs_components/comp2_content.astro";
 import Comp3Black from "../components/blogs_components/comp3_black.astro";
 ---
 
-
-
 <Layout title="Ink In Caps - Blog Details">
-
-  <TitleComp></TitleComp>
-  <Comp2Content></Comp2Content>
-  <Comp3Black></Comp3Black>
-
+  <TitleComp />
+  <Comp2Content />
+  <Comp3Black />
 </Layout>
 
-
-
-
-
-
 <style is:global>
-  .turnBlack{
+  .turnBlack {
     background: transparent;
     position: absolute;
     width: 100%;
   }
- 
+
   .list ul li a {
- 
     color: white;
     opacity: 50%;
   }
-  path{
+  path {
     fill: white;
   }
 
-  .connect, .circles{
+  .connect,
+  .circles {
     fill: #1a1a1a;
   }
-   .oval{
+  .oval {
     fill: white;
-   }
+  }
 
-   .tele{
+  .tele {
     fill: white;
-   }
-   .menu p{
+  }
+  .menu p {
     color: white;
-   }
-   .menu .s1, .menu .s2{
+  }
+  .menu .s1,
+  .menu .s2 {
     border: 1px solid white;
-   }
-
-
- 
+  }
 </style>

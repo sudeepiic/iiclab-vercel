@@ -132,12 +132,17 @@ const clientsEntries = await contentfulClient.getEntries<any>({
 <section>
   <div id="main5" class="d-flex">
     <div id="div1">
-      <img src={hand2} alt="" />
+      <img src={hand2} alt="" loading="lazy" />
     </div>
     <div id="div2">
       <div>
         <span>Giants Trust Us.</span>
-        <img src={ovalArrow} alt="" style="width:18%; margin-bottom: 9%;" />
+        <img
+          src={ovalArrow}
+          alt=""
+          loading="lazy"
+          style="width:18%; margin-bottom: 9%;"
+        />
       </div>
     </div>
   </div>
@@ -150,7 +155,12 @@ const clientsEntries = await contentfulClient.getEntries<any>({
         (clientsEntries.items[0].fields.clientIcons as any).map(
           (clients, index) => (
             <td class="img">
-              <img class="imgs" src={clients.fields?.file.url} alt="" />
+              <img
+                class="imgs"
+                src={clients.fields?.file.url}
+                alt=""
+                loading="lazy"
+              />
             </td>
           )
         )
@@ -190,7 +200,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
 
           <td>
             <ul class="trial">
-              <img src={solnImg1} class="trial2" alt="" />
+              <img src={solnImg1} class="trial2" alt="" loading="lazy" />
               <li class="list">Metaverse</li>
               <li class="list">Virtual reality</li>
               <li class="list">Augmented reality</li>
@@ -203,6 +213,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
               style="width:1.3rem; height:1.3rem; "
               src={vector}
               alt=""
+              loading="lazy"
             /></td
           >
           <!-- <td>Data 4</td> -->
@@ -212,7 +223,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
           <td class="tech">Interactive Solution</td>
           <td>
             <ul class="trial">
-              <img src={solnImg2} class="trial2" alt="" />
+              <img src={solnImg2} class="trial2" alt="" loading="lazy" />
               <li class="list">Interactive Wall/Screen</li>
               <li class="list">Interactive Table/Interactive Book</li>
               <li class="list">Engagement Experts</li>
@@ -225,6 +236,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
               style="width:1.3rem; height:1.3rem;  "
               src={vector}
               alt=""
+              loading="lazy"
             /></td
           >
         </tr>
@@ -233,7 +245,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
           <td class="tech">Mobile & Web</td>
           <td>
             <ul class="trial">
-              <img src={solnImg3} class="trial2" alt="" />
+              <img src={solnImg3} class="trial2" alt="" loading="lazy" />
               <li class="list">Web Development</li>
               <li class="list">App Development</li>
               <li class="list">Gaming Solutions</li>
@@ -245,6 +257,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
               style="width:1.3rem; height:1.3rem; "
               src={vector}
               alt=""
+              loading="lazy"
             /></td
           >
         </tr>
@@ -254,7 +267,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
           <td class="tech">Content Development</td>
           <td>
             <ul class="trial">
-              <img src={solnImg4} class="trial2" alt="" />
+              <img src={solnImg4} class="trial2" alt="" loading="lazy" />
               <li class="list">3D/2D Animations</li>
               <li class="list">Motion Graphics</li>
               <li class="list">Architectural Visualization</li>
@@ -267,6 +280,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
               style="width:1.3rem; height:1.3rem; "
               src={vector}
               alt=""
+              loading="lazy"
             /></td
           >
         </tr>
@@ -276,7 +290,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
           <td class="tech">Experimental Marketing</td>
           <td>
             <ul class="trial">
-              <img src={solnImg5} class="trial2" alt="" />
+              <img src={solnImg5} class="trial2" alt="" loading="lazy" />
               <li class="list">Motion Gesture</li>
               <li class="list">Interactive Campaign</li>
               <li class="list">Photobooth</li>
@@ -289,6 +303,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
               style="width:1.3rem; height:1.3rem; "
               src={vector}
               alt=""
+              loading="lazy"
             /></td
           >
         </tr>
@@ -298,7 +313,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
           <td class="tech">Strategy & Design</td>
           <td class="">
             <ul class="trial">
-              <img src={solnImg6} class="trial2" alt="" />
+              <img src={solnImg6} class="trial2" alt="" loading="lazy" />
               <li class="list">Scenario Mapping Brand Audits</li>
               <li class="list">Brand Identity</li>
               <li class="list">Competitor Mapping</li>
@@ -311,6 +326,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
               style="width:1.3rem; height:1.3rem; "
               src={vector}
               alt=""
+              loading="lazy"
             /></td
           >
         </tr>
@@ -331,12 +347,13 @@ const clientsEntries = await contentfulClient.getEntries<any>({
             style="width:1.3rem; height:1.3rem; "
             src={vector}
             alt=""
+            loading="lazy"
           />
         </div>
       </div>
       <div class="row">
         <div class="col-5">
-          <img class="mobImg" src={solnImg1} alt="" />
+          <img class="mobImg" src={solnImg1} alt="" loading="lazy" />
         </div>
         <div class="col-7 mobList">
           <li>Metaverse</li>
@@ -359,12 +376,13 @@ const clientsEntries = await contentfulClient.getEntries<any>({
             style="width:1.3rem; height:1.3rem; "
             src={vector}
             alt=""
+            loading="lazy"
           />
         </div>
       </div>
       <div class="row">
         <div class="col-5">
-          <img class="mobImg" src={solnImg2} alt="" />
+          <img class="mobImg" src={solnImg2} alt="" loading="lazy" />
         </div>
         <div class="col-7 mobList">
           <li>Interactive Wall/Screen</li>
@@ -387,12 +405,13 @@ const clientsEntries = await contentfulClient.getEntries<any>({
             style="width:1.3rem; height:1.3rem; "
             src={vector}
             alt=""
+            loading="lazy"
           />
         </div>
       </div>
       <div class="row">
         <div class="col-5">
-          <img class="mobImg" src={solnImg3} alt="" />
+          <img class="mobImg" src={solnImg3} alt="" loading="lazy" />
         </div>
         <div class="col-7 mobList">
           <li>Web Development</li>
@@ -414,12 +433,13 @@ const clientsEntries = await contentfulClient.getEntries<any>({
             style="width:1.3rem; height:1.3rem; "
             src={vector}
             alt=""
+            loading="lazy"
           />
         </div>
       </div>
       <div class="row">
         <div class="col-5">
-          <img class="mobImg" src={solnImg4} alt="" />
+          <img class="mobImg" src={solnImg4} alt="" loading="lazy" />
         </div>
         <div class="col-7 mobList">
           <li>3D/2D Animation</li>
@@ -442,12 +462,13 @@ const clientsEntries = await contentfulClient.getEntries<any>({
             style="width:1.3rem; height:1.3rem; "
             src={vector}
             alt=""
+            loading="lazy"
           />
         </div>
       </div>
       <div class="row">
         <div class="col-5">
-          <img class="mobImg" src={solnImg5} alt="" />
+          <img class="mobImg" src={solnImg5} alt="" loading="lazy" />
         </div>
         <div class="col-7 mobList">
           <li>Motion Gesture</li>
@@ -469,12 +490,13 @@ const clientsEntries = await contentfulClient.getEntries<any>({
             style="width:1.3rem; height:1.3rem; "
             src={vector}
             alt=""
+            loading="lazy"
           />
         </div>
       </div>
       <div class="row">
         <div class="col-5">
-          <img class="mobImg" src={solnImg6} alt="" />
+          <img class="mobImg" src={solnImg6} alt="" loading="lazy" />
         </div>
         <div class="col-7 mobList">
           <li>Scenario Mapping Brand Audits</li>
@@ -489,7 +511,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
   <div class="d-flex">
     <p class="our feature">FEATURED</p>
 
-    <img class="featureImg" src={hefty} alt="" />
+    <img class="featureImg" src={hefty} alt="" loading="lazy" />
 
     <p class="solutions work" style="margin-top: 11%;">&nbsp; WORK.</p>
 
@@ -502,10 +524,11 @@ const clientsEntries = await contentfulClient.getEntries<any>({
         style="width:13vw; height:8vw; "
         src={circleHand}
         alt=""
+        loading="lazy"
       />
     </a>
 
-    <img class="fwViewAll" src={fwViewAll} alt="" />
+    <img class="fwViewAll" src={fwViewAll} alt="" loading="lazy" />
 
     <!-- <div c
       lass="yellowCircle"> <p class="view">VIEW ALL</p></div>  -->
@@ -520,6 +543,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
               src={caseStudy.fields?.heroBanner.fields?.file.url}
               class="movingImgs"
               alt=""
+              loading="lazy"
             />
             <div class="image-overlay">
               <span class="workName" set:html={caseStudy.fields.singleClient} />
@@ -539,19 +563,19 @@ const clientsEntries = await contentfulClient.getEntries<any>({
   <div class="moving-text" style="display: flex; overflow:hidden;">
     <span class="wallHonor">WALL OF HONOR</span>
     <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-      <img style="width:3.5vw" src={diamond} alt="" />
+      <img style="width:3.5vw" src={diamond} alt="" loading="lazy" />
     </div>
     <span class="wallHonor">WALL OF HONOR</span>
     <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-      <img style="width:3.5vw" src={diamond} alt="" />
+      <img style="width:3.5vw" src={diamond} alt="" loading="lazy" />
     </div>
   </div>
 </section>
 
 <section style="margin-top:4%;">
-  <img src={iicAwards} alt="" style="height:100%;width:100%; " />
+  <img src={iicAwards} alt="" loading="lazy" style="height:100%;width:100%; " />
   <a href="/awards/">
-    <img src={viewAllAwards} alt="" class="viewAllAwards" />
+    <img src={viewAllAwards} alt="" loading="lazy" class="viewAllAwards" />
   </a>
 </section>
 <section class="margins" style="margin-top:4%;">
@@ -693,7 +717,123 @@ const clientsEntries = await contentfulClient.getEntries<any>({
         <div class="swiper-slide">
           <div class="card-parent">
             <div class="card-header" style="align-self: center;">
-              <img src={testimonialImg} style="width: 50%;" alt="" />
+              <img
+                src={testimonialImg}
+                style="width: 50%;"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="card-text">
+                  “ IIC had the right capability and experience in the AR
+                  domain, and I was comfortable awarding them the project to
+                  create a B2B visualizer app for my sales and Experience Center
+                  The team did an amazing job in understanding our needs, we are
+                  delighted with the outcome and are already in talks for the
+                  next phase of the solution.”
+                </div>
+                <div class="d-flex cardFooter">
+                  <img
+                    class="authorImg"
+                    src={authorImg}
+                    alt=""
+                    loading="lazy"
+                  />
+                  <div style="margin:auto; margin-left:6%">
+                    <span class="authName"> Aninda Gupta</span>
+                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card-parent">
+            <div class="card-header">
+              <img
+                src={testimonialImg}
+                style="width: 50%;"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="card-text">
+                  “ IIC had the right capability and experience in the AR
+                  domain, and I was comfortable awarding them the project to
+                  create a B2B visualizer app for my sales and Experience Center
+                  The team did an amazing job in understanding our needs, we are
+                  delighted with the outcome and are already in talks for the
+                  next phase of the solution.”
+                </div>
+                <div class="d-flex cardFooter">
+                  <img
+                    class="authorImg"
+                    src={authorImg}
+                    alt=""
+                    loading="lazy"
+                  />
+                  <div style="margin:auto; margin-left:6%">
+                    <span class="authName"> Aninda Gupta</span>
+                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card-parent">
+            <div class="card-header">
+              <img
+                src={testimonialImg}
+                style="width: 50%;"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="card-text">
+                  “ IIC had the right capability and experience in the AR
+                  domain, and I was comfortable awarding them the project to
+                  create a B2B visualizer app for my sales and Experience Center
+                  The team did an amazing job in understanding our needs, we are
+                  delighted with the outcome and are already in talks for the
+                  next phase of the solution.”
+                </div>
+                <div class="d-flex cardFooter">
+                  <img
+                    class="authorImg"
+                    src={authorImg}
+                    alt=""
+                    loading="lazy"
+                  />
+                  <div style="margin:auto; margin-left:6%">
+                    <span class="authName"> Aninda Gupta</span>
+                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card-parent">
+            <div class="card-header">
+              <img
+                src={testimonialImg}
+                style="width: 50%;"
+                alt=""
+                loading="lazy"
+              />
             </div>
 
             <div class="card">
@@ -747,7 +887,12 @@ const clientsEntries = await contentfulClient.getEntries<any>({
         <div class="swiper-slide">
           <div class="card-parent">
             <div class="card-header">
-              <img src={testimonialImg} style="width: 50%;" alt="" />
+              <img
+                src={testimonialImg}
+                style="width: 50%;"
+                alt=""
+                loading="lazy"
+              />
             </div>
 
             <div class="card">
@@ -788,88 +933,12 @@ const clientsEntries = await contentfulClient.getEntries<any>({
                   next phase of the solution.”
                 </div>
                 <div class="d-flex cardFooter">
-                  <img class="authorImg" src={authorImg} alt="" />
-                  <div style="margin:auto; margin-left:6%">
-                    <span class="authName"> Aninda Gupta</span>
-                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card-parent">
-            <div class="card-header">
-              <img src={testimonialImg} style="width: 50%;" alt="" />
-            </div>
-
-            <div class="card">
-              <div class="card-body">
-                <div class="card-text">
-                  “ IIC had the right capability and experience in the AR
-                  domain, and I was comfortable awarding them the project to
-                  create a B2B visualizer app for my sales and Experience Center
-                  The team did an amazing job in understanding our needs, we are
-                  delighted with the outcome and are already in talks for the
-                  next phase of the solution.”
-                </div>
-                <div class="d-flex cardFooter">
-                  <img class="authorImg" src={authorImg} alt="" />
-                  <div style="margin:auto; margin-left:6%">
-                    <span class="authName"> Aninda Gupta</span>
-                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card-parent">
-            <div class="card-header">
-              <img src={testimonialImg} style="width: 50%;" alt="" />
-            </div>
-
-            <div class="card">
-              <div class="card-body">
-                <div class="card-text">
-                  “ IIC had the right capability and experience in the AR
-                  domain, and I was comfortable awarding them the project to
-                  create a B2B visualizer app for my sales and Experience Center
-                  The team did an amazing job in understanding our needs, we are
-                  delighted with the outcome and are already in talks for the
-                  next phase of the solution.”
-                </div>
-                <div class="d-flex cardFooter">
-                  <img class="authorImg" src={authorImg} alt="" />
-                  <div style="margin:auto; margin-left:6%">
-                    <span class="authName"> Aninda Gupta</span>
-                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card-parent">
-            <div class="card-header">
-              <img src={testimonialImg} style="width: 50%;" alt="" />
-            </div>
-
-            <div class="card">
-              <div class="card-body">
-                <div class="card-text">
-                  “ IIC had the right capability and experience in the AR
-                  domain, and I was comfortable awarding them the project to
-                  create a B2B visualizer app for my sales and Experience Center
-                  The team did an amazing job in understanding our needs, we are
-                  delighted with the outcome and are already in talks for the
-                  next phase of the solution.”
-                </div>
-                <div class="d-flex cardFooter">
-                  <img class="authorImg" src={authorImg} alt="" />
+                  <img
+                    class="authorImg"
+                    src={authorImg}
+                    alt=""
+                    loading="lazy"
+                  />
                   <div style="margin:auto; margin-left:6%">
                     <span class="authName"> Aninda Gupta</span>
                     <span class="authDesign"> CMO Gyproc Saint Gobain</span>
@@ -935,7 +1004,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
             >V-Verse : revolutionary metaverse platform by ink in caps</td
           >
           <td style="color:#252525; text-align: end;" class="awardName">
-            <img style="width: 7vw;" src={vVerse} alt="" /></td
+            <img style="width: 7vw;" src={vVerse} alt="" loading="lazy" /></td
           >
           <td
             ><button class="btn"
@@ -944,6 +1013,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
                 class="table"
                 src={toolsArrow}
                 alt=""
+                loading="lazy"
               /></button
             ></td
           >
@@ -954,7 +1024,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
             >V-tour : India's Leading Virtual Events Platform</td
           >
           <td style="color:#252525; text-align: end;" class="awardName">
-            <img style="width: 9vw;" src={vTour} alt="" /></td
+            <img style="width: 9vw;" src={vTour} alt="" loading="lazy" /></td
           >
           <td
             ><button class="btn"
@@ -963,6 +1033,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
                 class="table"
                 src={toolsArrow}
                 alt=""
+                loading="lazy"
               /></button
             ></td
           >
@@ -973,7 +1044,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
             >V-Retail : Get your business virtualized the right way</td
           >
           <td style="color:#252525; text-align: end;" class="awardName">
-            <img style="width: 7vw;" src={vRetail} alt="" /></td
+            <img style="width: 7vw;" src={vRetail} alt="" loading="lazy" /></td
           >
           <td
             ><button class="btn"
@@ -982,6 +1053,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
                 class="table"
                 src={toolsArrow}
                 alt=""
+                loading="lazy"
               /></button
             ></td
           >
@@ -992,7 +1064,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
             >V-stages : stunning Virtual stages for your next virtual event</td
           >
           <td style="color:#252525; text-align: end;" class="awardName">
-            <img style="width: 9vw;" src={vStages} alt="" /></td
+            <img style="width: 9vw;" src={vStages} alt="" loading="lazy" /></td
           >
           <td
             ><button class="btn"
@@ -1001,6 +1073,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
                 class="table"
                 src={toolsArrow}
                 alt=""
+                loading="lazy"
               /></button
             ></td
           >
@@ -1011,7 +1084,12 @@ const clientsEntries = await contentfulClient.getEntries<any>({
             >V-Conference : Virtual Conferencing Solutions for your business</td
           >
           <td style="color:#252525; text-align: end;" class="awardName">
-            <img style="width: 11vw;" src={vConference} alt="" /></td
+            <img
+              style="width: 11vw;"
+              src={vConference}
+              alt=""
+              loading="lazy"
+            /></td
           >
           <td
             ><button class="btn"
@@ -1020,6 +1098,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
                 class="table"
                 src={toolsArrow}
                 alt=""
+                loading="lazy"
               /></button
             ></td
           >

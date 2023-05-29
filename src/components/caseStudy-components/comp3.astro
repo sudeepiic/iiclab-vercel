@@ -1,10 +1,7 @@
 ---
-import caseStudy2 from "../../images/caseStudy2.png";
-
 import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import type { Document } from "@contentful/rich-text-types";
-
 import Slug from "../../pages/case-study/[slug].astro";
 
 const props = Astro.props;
@@ -15,7 +12,7 @@ const props = Astro.props;
     <div class="col-lg-5 col-md-5 col-sm-12 heading">
       <span set:html={props.midContentTitle} />
 
-      <img src={props.midContentImg} alt="" />
+      <img src={props.midContentImg} alt="" loading="lazy" />
       <br />
       <span class="caption" set:html={props.midImgCaption} />
     </div>

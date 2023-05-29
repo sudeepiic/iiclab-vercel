@@ -63,6 +63,7 @@ const entries: any = await contentfulClient.getEntries<any>({
             src={caseStudy.fields?.heroBanner?.fields?.file.url}
             style="width: 100%;"
             alt=""
+            loading="lazy"
           />
           <div class="row info">
             <div class="csName col-lg-6 col-md-6 col-sm-12">

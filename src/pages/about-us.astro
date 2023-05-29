@@ -2,19 +2,16 @@
 import Layout from "../layouts/Layout.astro";
 import downArrow from "../images/downArrow.png";
 import officeImg from "../images/officeImg.png";
-import Reliance from "../images/Reliance.png";
-import RealianceB from "../images/RealianceB.png";
-import cocacola from "../images/cocacola.png";
-import Vodafone from "../images/Vodafone.png";
-import Capgemini from "../images/Capgemini.png";
-import bestseller from "../images/bestseller.png";
-import signBrand from "../images/signBrand.png";
-import hindware from "../images/hindware.png";
 import imgTags from "../images/imgTags.png";
 import members1 from "../images/members1.png";
 import Header from "../components/Header.astro";
 import carousalNext from "../images/carousalNext.png";
 import carousalPrev from "../images/carousalPrev.png";
+import { contentfulClient } from "../lib/contentful";
+
+const clientsEntries = await contentfulClient.getEntries<any>({
+  content_type: "clients",
+});
 ---
 
 <Layout title="Ink In Caps - About Us">
@@ -130,37 +127,22 @@ import carousalPrev from "../images/carousalPrev.png";
         </div>
       </div>
       <tr>
-        <td class="img"> <img class="imgs" src={Reliance} alt="" /></td>
-        <td class="img"> <img class="imgs" src={Capgemini} alt="" /></td>
-        <td class="img"> <img class="imgs" src={Vodafone} alt="" /></td>
-        <td class="img"> <img class="imgs" src={bestseller} alt="" /></td>
-        <td class="img"> <img class="imgs" src={signBrand} alt="" /></td>
+        {
+          (clientsEntries.items[0].fields.clientIcons as any).map(
+            (clients, index) => (
+              <td class="img">
+                <img
+                  class="imgs"
+                  src={clients.fields?.file.url}
+                  alt=""
+                  loading="lazy"
+                />
+              </td>
+            )
+          )
+        }
       </tr>
       <br />
-
-      <tr>
-        <td class="img"> <img class="imgs" src={cocacola} alt="" /></td>
-        <td class="img"> <img class="imgs" src={hindware} alt="" /></td>
-        <td class="img"> <img class="imgs" src={bestseller} alt="" /></td>
-        <td class="img"> <img class="imgs" src={Capgemini} alt="" /></td>
-        <td class="img"> <img class="imgs" src={Reliance} alt="" /></td>
-      </tr>
-      <br />
-      <tr>
-        <td class="img"> <img class="imgs" src={signBrand} alt="" /></td>
-        <td class="img"> <img class="imgs" src={Capgemini} alt="" /></td>
-        <td class="img"> <img class="imgs" src={RealianceB} alt="" /></td>
-        <td class="img"> <img class="imgs" src={Vodafone} alt="" /></td>
-        <td class="img"> <img class="imgs" src={hindware} alt="" /></td>
-      </tr>
-      <br />
-      <tr>
-        <td class="img"> <img class="imgs" src={Reliance} alt="" /></td>
-        <td class="img"> <img class="imgs" src={Capgemini} alt="" /></td>
-        <td class="img"> <img class="imgs" src={Vodafone} alt="" /></td>
-        <td class="img"> <img class="imgs" src={bestseller} alt="" /></td>
-        <td class="img"> <img class="imgs" src={signBrand} alt="" /></td>
-      </tr>
     </div>
   </section>
 
@@ -176,7 +158,7 @@ import carousalPrev from "../images/carousalPrev.png";
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div>
-              <img class="members" src={members1} alt="" />
+              <img class="members" src={members1} alt="" loading="lazy" />
               <div class="imgCaptionDiv">
                 <span class="memberName"> Manish Tiwari</span>
                 <p class="memberDsgn">Senior Graphic Designer</p>
@@ -186,7 +168,7 @@ import carousalPrev from "../images/carousalPrev.png";
 
           <div class="swiper-slide">
             <div>
-              <img class="members" src={members1} alt="" />
+              <img class="members" src={members1} alt="" loading="lazy" />
               <div class="imgCaptionDiv">
                 <span class="memberName"> Manish Tiwari</span>
                 <p class="memberDsgn">Senior Graphic Designer</p>
@@ -196,7 +178,7 @@ import carousalPrev from "../images/carousalPrev.png";
 
           <div class="swiper-slide">
             <div>
-              <img class="members" src={members1} alt="" />
+              <img class="members" src={members1} alt="" loading="lazy" />
               <div class="imgCaptionDiv">
                 <span class="memberName"> Manish Tiwari</span>
                 <p class="memberDsgn">Senior Graphic Designer</p>
@@ -204,49 +186,11 @@ import carousalPrev from "../images/carousalPrev.png";
             </div>
           </div>
         </div>
-        <img class="swiper-prev" src={carousalPrev} alt="" />
+        <img class="swiper-prev" src={carousalPrev} alt="" loading="lazy" />
 
-        <img class="swiper-next" src={carousalNext} alt="" />
+        <img class="swiper-next" src={carousalNext} alt="" loading="lazy" />
       </div>
     </div>
-
-    <!-- <div class="margins onlyDeskMission row">
-      <div class="col-6 d-flex" style="justify-content: end;">
-        <div class="content-box missions vision">
-          OUR VISION <span
-            style="color:white; opacity:50%; font-size: 1rem; font-family: 'anek devanagari'; display:block"
-            >Hover here to see our visions</span
-          >
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="content-box missions mission">
-          OUR MISSON <span
-            style="color:white; opacity:50%; font-size: 1rem; font-family: 'anek devanagari'; display:block"
-            >Hover here to see our missions</span
-          >
-        </div>
-      </div>
-    </div>
-
-    <div class="mobMission margins">
-      <span>Our</span>
-      <span class="yellow-text">vision</span>
-
-      <li>Lorem ipsum dolor sit amet, consectetuer</li>
-      <li>Lorem ipsum dolor sit amet, consectetuer</li>
-      <li>Lorem ipsum dolor sit amet, consectetuer</li>
-      <li>Lorem ipsum dolor sit amet, consectetuer</li>
-    </div>
-    <div class="mobMission margins" style="border:none">
-      <span>Our</span>
-      <span class="yellow-text">Misiion</span>
-
-      <li>Lorem ipsum dolor sit amet, consectetuer</li>
-      <li>Lorem ipsum dolor sit amet, consectetuer</li>
-      <li>Lorem ipsum dolor sit amet, consectetuer</li>
-      <li>Lorem ipsum dolor sit amet, consectetuer</li>
-    </div> -->
   </section>
 
   <style>
@@ -525,12 +469,7 @@ import carousalPrev from "../images/carousalPrev.png";
       line-height: 1 !important;
       padding: 7% 0 7% 0;
     }
-    .vision {
-      border-radius: 0 2vw 2vw 2vw;
-    }
-    .mission {
-      border-radius: 2vw 2vw 0 2vw;
-    }
+
     a {
       text-decoration: none;
     }

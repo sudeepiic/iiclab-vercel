@@ -10,7 +10,7 @@ const props = Astro.props;
 <div class="margins row" >
 
     <div class="col-5 heading" >
-        <img src={yellowDiamond} alt="" style="width: 7%;">
+        <img src={yellowDiamond} alt="" loading="lazy" style="width: 7%;" >
         <span style="display: inline-block;" set:html={props.belowParallelImgTitle}></span>
     </div>
 

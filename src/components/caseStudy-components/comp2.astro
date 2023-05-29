@@ -1,5 +1,4 @@
 ---
-import centerimgCS from "../../images/centerimgCS.png";
 import paraDiamond from "../../images/paraDiamond.png";
 
 import { contentfulClient } from "../../lib/contentful";
@@ -27,7 +26,7 @@ const props = Astro.props;
   </div>
 
   <div class="margins img">
-    <img src={props.fullSizeImg} alt="" />
+    <img src={props.fullSizeImg} alt="" loading="lazy" />
   </div>
 </section>
 
