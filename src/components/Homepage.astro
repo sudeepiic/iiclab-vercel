@@ -36,6 +36,9 @@ const entries: any = await contentfulClient.getEntries<any>({
 const clientsEntries = await contentfulClient.getEntries<any>({
   content_type: "clients",
 });
+const testimonials: any = await contentfulClient.getEntries<any>({
+  content_type: "clientsTestimonials",
+});
 ---
 
 <section class="margins">
@@ -528,7 +531,12 @@ const clientsEntries = await contentfulClient.getEntries<any>({
       />
     </a>
 
-    <img class="fwViewAll" src={fwViewAll} alt="" loading="lazy" />
+    <a
+      href="/portfolio/"
+      style="position: relative;  margin-top: 26.5%; left: 19%;"
+    >
+      <img class="fwViewAll" src={fwViewAll} alt="" loading="lazy" /></a
+    >
 
     <!-- <div c
       lass="yellowCircle"> <p class="view">VIEW ALL</p></div>  -->
@@ -582,73 +590,41 @@ const clientsEntries = await contentfulClient.getEntries<any>({
   <div>
     <div class="row mobAward">
       <div class="col-sm-12 col-md-8 col-lg-8 mbAwardCat">
-        <span
-          >2022 - Promotion of the Year for Brand Awareness Digital (Gold)</span
-        >
+        <span>2023 - Media & Entertainment Category</span>
       </div>
       <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
         <span class="hifen">~</span>
-        <span>WOW Awards Asia</span>
+        <span>India DigiPlus Awards</span>
       </div>
     </div>
 
     <div class="row mobAward">
       <div class="col-sm-12 col-md-8 col-lg-8 mbAwardCat">
-        <span>2022 - Audience Enagagement Techonology (Gold)</span>
+        <span>2023 - Retail & E-Commerce Category</span>
       </div>
       <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
         <span class="hifen">~</span>
-        <span>WOW Awards Asia</span>
+        <span>Kaleido Awards</span>
       </div>
     </div>
 
     <div class="row mobAward">
       <div class="col-sm-12 col-md-8 col-lg-8 mbAwardCat">
-        <span>2022 - Innovation In Interactive Techonology (Bronze)</span>
+        <span>2023 - EDCA Tech Provider of the Year</span>
       </div>
       <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
         <span class="hifen">~</span>
-        <span>WOW Awards Asia</span>
+        <span>EDCA Awards</span>
       </div>
     </div>
 
     <div class="row mobAward">
       <div class="col-sm-12 col-md-8 col-lg-8 mbAwardCat">
-        <span>2022 - best content marketing launch (Gold)</span>
+        <span>2022 - Best Use of AR/VR (Silver)</span>
       </div>
       <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
         <span class="hifen">~</span>
-        <span> market excellence Awards</span>
-      </div>
-    </div>
-
-    <div class="row mobAward">
-      <div class="col-sm-12 col-md-8 col-lg-8 mbAwardCat">
-        <span>2022 - best brand activation (Gold)</span>
-      </div>
-      <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
-        <span class="hifen">~</span>
-        <span>market excellence Awards</span>
-      </div>
-    </div>
-
-    <div class="row mobAward">
-      <div class="col-sm-12 col-md-8 col-lg-8 mbAwardCat">
-        <span>2022 - best use of vR (Silver)</span>
-      </div>
-      <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
-        <span class="hifen">~</span>
-        <span>market excellence Awards</span>
-      </div>
-    </div>
-
-    <div class="row mobAward">
-      <div class="col-sm-12 col-md-8 col-lg-8 mbAwardCat">
-        <span>2022 - best use of technology (Bronze)</span>
-      </div>
-      <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
-        <span class="hifen">~</span>
-        <span>market excellence Awards</span>
+        <span>FuTech Awards</span>
       </div>
     </div>
 
@@ -664,21 +640,33 @@ const clientsEntries = await contentfulClient.getEntries<any>({
 
     <div class="row mobAward">
       <div class="col-sm-12 col-md-8 col-lg-8 mbAwardCat">
-        <span>2023 - best use of technology (Silver)</span>
+        <span>2022 - Best Brand Activation (Gold)</span>
       </div>
       <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
         <span class="hifen">~</span>
-        <span>Afaqs Digies Awards</span>
+        <span>Marketer's Excellence Awards</span>
+      </div>
+    </div>
+
+    <div class="row mobAward">
+      <div class="col-sm-12 col-md-8 col-lg-8 mbAwardCat">
+        <span
+          >2022 - Promotion of the Year for Brand Awareness - Digital (Gold)</span
+        >
+      </div>
+      <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
+        <span class="hifen">~</span>
+        <span>WOW Awards asia</span>
       </div>
     </div>
 
     <div class="row mobAward" style="border-bottom: 0;">
       <div class="col-sm-12 col-md-8 col-lg-8 mbAwardCat">
-        <span>2023 - Media & Entertainment (Bronze)</span>
+        <span>2022 - Best Online Promotion (Silver)</span>
       </div>
       <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
         <span class="hifen">~</span>
-        <span>DG+ Awards</span>
+        <span>Foxglove Awards</span>
       </div>
     </div>
   </div>
@@ -686,7 +674,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
 
 <section
   class="wrapper"
-  style="background-color: #1a1a1a; border-radius: 5vw 5vw 0 0;  padding-top: 1.5%; margin-top:7%"
+  style="background-color: #1a1a1a; border-radius: 5vw 5vw 0 0;  padding-top: 1.5%; margin-top:4%"
 >
   <!-- <div class="d-flex">
     <span class="our">TESTIMONIALS</span>
@@ -714,43 +702,52 @@ const clientsEntries = await contentfulClient.getEntries<any>({
   <div>
     <div style="padding:1.5% 0 5% 0 ; " class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="card-parent">
-            <div class="card-header" style="align-self: center;">
-              <img
-                src={testimonialImg}
-                style="width: 50%;"
-                alt=""
-                loading="lazy"
-              />
-            </div>
-
-            <div class="card">
-              <div class="card-body">
-                <div class="card-text">
-                  “ IIC had the right capability and experience in the AR
-                  domain, and I was comfortable awarding them the project to
-                  create a B2B visualizer app for my sales and Experience Center
-                  The team did an amazing job in understanding our needs, we are
-                  delighted with the outcome and are already in talks for the
-                  next phase of the solution.”
-                </div>
-                <div class="d-flex cardFooter">
+        {
+          testimonials.items.map((clientsTestimonials, index) => (
+            <div class="swiper-slide">
+              <div class="card-parent">
+                <div class="card-header" style="align-self: center;">
                   <img
-                    class="authorImg"
-                    src={authorImg}
+                    src={
+                      clientsTestimonials.fields?.companyLogo.fields?.file.url
+                    }
+                    style="width: 50%;"
                     alt=""
                     loading="lazy"
                   />
-                  <div style="margin:auto; margin-left:6%">
-                    <span class="authName"> Aninda Gupta</span>
-                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
+                </div>
+
+                <div class="card">
+                  <div class="card-body">
+                    <div
+                      class="card-text"
+                      set:html={clientsTestimonials.fields?.testimonialText}
+                    />
+                    <div class="d-flex cardFooter">
+                      <img
+                        class="authorImg"
+                        src={authorImg}
+                        alt=""
+                        loading="lazy"
+                      />
+                      <div style="margin:auto; margin-left:6%">
+                        <span
+                          class="authName"
+                          set:html={clientsTestimonials.fields?.clientName}
+                        />
+                        <span
+                          class="authDesign"
+                          set:html={clientsTestimonials.fields?.clientInfo}
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          ))
+        }
+
         <div class="swiper-slide">
           <div class="card-parent">
             <div class="card-header">
@@ -884,7 +881,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
             </div>
           </div>
         </div>
-        <div class="swiper-slide">
+        <!-- <div class="swiper-slide">
           <div class="card-parent">
             <div class="card-header">
               <img
@@ -974,7 +971,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="d-flex controls">
         <img class="swiper-prev" src={carousalPrev} alt="" />
@@ -1578,7 +1575,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
       font-size: 0.8rem;
     }
     .authDesign {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
     }
     .cardFooter {
       margin-top: 8%;
@@ -1586,7 +1583,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
   }
   @media screen and (max-width: 910px) {
     .authName {
-      font-size: 0.65rem;
+      font-size: 0.6rem;
     }
     .authDesign {
       font-size: 0.55rem;
@@ -1884,11 +1881,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
     }
 
     .fwViewAll {
-      width: 22%;
-      height: 0%;
-      position: relative;
-      left: 19%;
-      margin-top: 25.5%;
+      width: 18vw;
     }
 
     .movingImgs {
