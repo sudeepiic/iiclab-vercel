@@ -21,47 +21,54 @@ import positionBtn from "../images/positionBtn.png";
       </div>
     </div>
 
-    <form action="" class="margins">
-      <span class="mobTitles">Your Name:</span>
+    <form action="" class="margins" id="connect">
+      <span class="mobTitles">Your Name :</span>
       <div class="input-group mb-3 input-group-lg">
         <div class="input-group-prepend" style="margin-bottom:  1.5%;">
-          <span class="inp-title input-group-text">Your Name:</span>
+          <span class="inp-title input-group-text">Your Name :</span>
         </div>
         <input
           type="text"
           style="margin-bottom:  1.5%; "
           placeholder="Enter Your Name Here"
           class="input form-control"
+          id="name2"
+          name="name2"
+          required
         />
       </div>
 
-      <span class="mobTitles">Your Email:</span>
+      <span class="mobTitles">Your Email :</span>
 
       <div style="margin-bottom: 3%;" class="input-group mb-3 input-group-lg">
         <div class="input-group-prepend" style="margin-bottom: 1.5%;">
-          <span class="inp-title input-group-text">Your Email:</span>
+          <span class="inp-title input-group-text">Your Email :</span>
         </div>
         <input
           type="text"
           style="margin-bottom:  1.5%; "
           placeholder="Enter Your Email Address"
           class="input form-control"
+          id="email2"
+          name="email2"
+          required
         />
       </div>
-      <span class="mobTitles">Message:</span>
+      <span class="mobTitles">Message :</span>
 
       <textarea
         class="textArea"
         rows="7"
         cols="50"
-        name="comment"
-        form="usrform"
+        id="message"
+        name="message"
+        required
       >
         Message</textarea
       >
-      <div class="submitBtn btn">
+      <button class="submitBtn btn" type="submit" id="submitBtn">
         <img src={submitArrow} alt="" loading="lazy" /> submit
-      </div>
+      </button>
     </form>
   </section>
 
@@ -143,6 +150,93 @@ import positionBtn from "../images/positionBtn.png";
     </div>
   </section>
 </Layout>
+
+<script>
+  document
+    .getElementById("connect")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      var formData = new FormData(event.target as HTMLFormElement);
+
+      var name = formData.get("name2");
+      var email = formData.get("email2");
+      var message = formData.get("message");
+
+      const connectFormData = `
+    <style>
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #customers td,
+    #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #customers tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #customers tr:hover {
+        background-color: #ddd;
+    }
+
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+
+<body>
+    <table id="customers">
+
+        <tr>
+            <td style="font-weight:bold;">Name</td>
+            <td >${name}</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold;">Email</td>
+          <td >${email}</td>
+        </tr>
+        <tr>
+      <td style="font-weight:bold;">Message</td>
+      <td >${message}</td>
+      </tr>
+    </table>
+</body>
+    `;
+
+      const formData2 = new FormData();
+      formData2.append("type", "contact-us");
+      formData2.append("body", connectFormData);
+
+      fetch("https://iiclab-backend.vtour.tech/mail", {
+        method: "POST",
+        body: formData2,
+        redirect: "follow",
+      })
+        .then(function (response) {
+          if (response.ok) {
+            return response.text();
+          }
+          throw new Error("ERROR:" + response.status);
+        })
+        .then(function (data) {
+          console.log(data);
+        })
+        .catch(function (error) {
+          console.error("error:", error);
+        });
+      (event.target as HTMLFormElement).reset();
+    });
+</script>
 
 <style>
   .input:focus,
