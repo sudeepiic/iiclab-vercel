@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import hiringBG2 from "../images/hiringBG2.png";
+
 import applyNow from "../images/applyNow.png";
 import ps from "../images/ps.png";
 import submitArrow from "../images/submitArrow.png";
@@ -145,6 +145,7 @@ import submitArrow from "../images/submitArrow.png";
         <p class="formTitle">Interested?</p>
         <p class="formTitle" style="color:#e5ff53">Apply Now!</p>
       </div>
+
       <div class="col-7">
         <form action="">
           <div class="input-group mb-3 input-group-lg">
@@ -255,6 +256,11 @@ import submitArrow from "../images/submitArrow.png";
 </Layout>
 
 <style>
+  .input:focus,
+  .textArea:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
   ul.a {
     list-style-type: disc;
     line-height: 2.1 !important;
