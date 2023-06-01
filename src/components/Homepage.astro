@@ -107,13 +107,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     </div>
     <div class="d-flex" id="main3">
       <div
-        class="pause d-none"
+        class="pause"
         style="width:40px;height:40px; border:1px solid black; border-radius: 50%; background:black;"
       >
         <img src={puase} alt="" style="margin-left: 15px; margin-top:10px" />
       </div>
       <div id="div2">
-        <a class="d-none">
+        <a>
           <span id="s1">Watch Showreel</span>
           <span id="s2"></span>
         </a>
@@ -1317,7 +1317,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
   #main3 #div2 #s3 {
     font-family: "Anek Devanagari";
     font-size: 1.4rem;
-
+    margin-left: 15px;
     text-transform: uppercase;
   }
   #main4 span {
