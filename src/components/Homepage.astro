@@ -86,13 +86,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         </defs>
       </svg>
     </div>
-    <div class="d-flex" id="main2">
+    <div class="d-flex" id="main2" style="margin-bottom: 2%;">
       <div id="div1" class="paraDiv">
         <span class="para para1"
-          >Ink In Caps is an award-winning <strong class="strong">
-            Tech+Design+Experience</strong
-          > Agency that capacitates Visionary Brands to unlock Augmented Growth and
-          boost conversations with their audiences. Intrigue Rush?</span
+          >Ink In Caps is a full-service MarTech Agency that helps brands create
+          immersive customer experiences by harnessing Interactive Technology,
+          XR, Metaverse, Experiential Marketing, and Content Development
+          solutions.</span
         >
       </div>
       <div id="div2">
@@ -107,14 +107,17 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     </div>
     <div class="d-flex" id="main3">
       <div
-        class="pause"
+        class="pause d-none"
         style="width:40px;height:40px; border:1px solid black; border-radius: 50%; background:black;"
       >
         <img src={puase} alt="" style="margin-left: 15px; margin-top:10px" />
       </div>
       <div id="div2">
-        <span id="s1">Watch Showreel</span>
-        <span id="s2"></span>
+        <a class="d-none">
+          <span id="s1">Watch Showreel</span>
+          <span id="s2"></span>
+        </a>
+
         <a href="#knowMore">
           <span id="s3">Know More <img src={arrow} alt="" /></span>
         </a>
@@ -185,7 +188,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     <span class="our our1">OUR &nbsp;</span>
     <span class="solutions solutions1"> SOLUTIONS.</span>
     <span class="blackPara"
-      >Flaring storied growth through customized solutions to match individual
+      >Creating storied growth through customized solutions to match individual
       Brand needs</span
     >
     <a href="/solutions/" class="solutionAnchor"
@@ -806,6 +809,34 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             </div>
           </div>
         </div>
+        <div class="swiper-slide">
+          <div class="card-parent">
+            <div class="card-header">
+              <img src={f1Logo} style="width: 50%;" alt="" />
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="card-text">
+                  "We've worked with Ink In Caps on some innovative tech
+                  projects, in particular the hybrid tour of the Tech Centre of
+                  F1 in which they produced a fantastic result that was
+                  ultimately approved by F1 as a leading app and solution for
+                  them to provide a virtual experience to all of their VIP
+                  clients."
+                </div>
+                <div class="d-flex cardFooter">
+                  <div style="margin:auto; margin-left:1%">
+                    <span class="authName">Nick Moore</span>
+                    <span class="authDesign"
+                      >Executive Director and Founder of Lionpoint Group</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <!-- <div class="swiper-slide">
           <div class="card-parent">
@@ -1286,7 +1317,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
   #main3 #div2 #s3 {
     font-family: "Anek Devanagari";
     font-size: 1.4rem;
-    margin-left: 15px;
+
     text-transform: uppercase;
   }
   #main4 span {
@@ -1716,6 +1747,9 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     }
     #main5 #div2 span {
       font-size: 17vw;
+    }
+    #main5 #div2 {
+      right: -10%;
     }
     .giants {
       margin-left: 9% !important;
