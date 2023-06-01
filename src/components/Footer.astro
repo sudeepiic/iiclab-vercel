@@ -38,25 +38,30 @@ import subscribeBtn from "../images/subscribeBtn.png";
   <div class="col-md-12 MobileNoneTop">
     <p class="headings IICInsider">Become An IIC Insider</p>
     <div class="row allTopInputs">
-      <div class="col-12">
-        <input type="text" class="topInput" placeholder="Your Name" />
-      </div>
-      <div class="col-12 mt-3">
-        <input type="text" class="topInput" placeholder="Your Email" />
-      </div>
-    </div>
+      <form action="" id="subscribeForm2">
+        <div class="col-12">
+          <input
+            type="text"
+            class="topInput"
+            placeholder="Your Name"
+            name="name"
+          />
+        </div>
+        <div class="col-12 mt-3">
+          <input
+            type="email"
+            class="topInput"
+            placeholder="Your Email"
+            name="email"
+          />
+        </div>
+      </form>
 
-    <div class="button mt-3 text-center">
-      <button class="btn">
-        <img
-          class="btn newsletter"
-          style="width: 17.5vw;"
-          src={subscribe}
-          alt=""
-          loading="lazy"
-        />
-        <img class="mobSubscribe" src={subscribeBtn} alt="" loading="lazy" />
-      </button>
+      <div class="button mt-3 text-center">
+        <button class="btn" type="submit">
+          <img class="mobSubscribe" src={subscribeBtn} alt="" loading="lazy" />
+        </button>
+      </div>
     </div>
   </div>
 
@@ -121,20 +126,48 @@ import subscribeBtn from "../images/subscribeBtn.png";
     </div>
     <div class="col-md-5 MobileNone">
       <p class="headings">Become An IIC Insider</p>
-      <input class="inputCss" type="text" placeholder="Your Name" />
-      <input
-        class="inputCss"
-        style="margin-left: 10px;"
-        type="text"
-        placeholder="Your Email"
-      />
-      <br />
-      <br />
-      <img class="btn" style="width: 13.5vw;" src={subscribe} alt="" />
+      <form action="" id="subscribeForm">
+        <input
+          class="inputCss"
+          type="text"
+          placeholder="Your Name"
+          name="name"
+        />
+        <input
+          class="inputCss"
+          style="margin-left: 10px;"
+          type="email"
+          placeholder="Your Email"
+          name="email"
+        />
+        <br />
+        <br />
+        <button class="btn" type="submit">
+          <img style="width: 13.5vw;" src={subscribe} alt="" />
+        </button>
+      </form>
+      <div class="desktopOnly" style="margin-top: 8%; padding-top: 1.5%;">
+        <a href="https://www.instagram.com/inkincaps/?hl=en"
+          ><img class="icons" src={instaLogo} alt="" loading="lazy" /></a
+        >
+        <a href="https://in.linkedin.com/company/ink-in-caps"
+          ><img class="icons" src={linkedinlogo} alt="" loading="lazy" /></a
+        >
+        <a href="https://twitter.com/inkincaps?lang=en"
+          ><img class="icons" src={twitterLogo} alt="" loading="lazy" /></a
+        >
+        <a href="https://www.facebook.com/inkincaps/"
+          ><img class="icons" src={fbLogo} alt="" loading="lazy" /></a
+        >
+        <a href=""><img class="icons" src={whatsappLogo} alt="" /></a>
+      </div>
     </div>
   </div>
 </section>
-<section style="border-top: 1.15px solid  grey;   background-color: #1a1a1a; ">
+<section
+  class="d-none"
+  style="border-top: 1.15px solid  grey;   background-color: #1a1a1a; "
+>
   <div class="row ParentSocial" style="margin: 0 10% 0 10%; ">
     <div
       class="col-lg-8 col-md-8 col-sm-12 row"
@@ -171,7 +204,7 @@ import subscribeBtn from "../images/subscribeBtn.png";
         >
       </span>
     </div>
-    <div
+    <!-- <div
       class="col-lg-4 col-md-4 desktopOnly"
       style="text-align: center; padding-top: 1.5%;"
     >
@@ -188,7 +221,7 @@ import subscribeBtn from "../images/subscribeBtn.png";
         ><img class="icons" src={fbLogo} alt="" loading="lazy" /></a
       >
       <a href=""><img class="icons" src={whatsappLogo} alt="" /></a>
-    </div>
+    </div> -->
   </div>
 </section>
 
@@ -200,6 +233,93 @@ import subscribeBtn from "../images/subscribeBtn.png";
     <span class="bottomDiv"> &nbsp; Ink In Caps</span>
   </div>
 </section>
+
+<script>
+  document
+    .getElementById("subscribeForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      var formData = new FormData(event.target as HTMLFormElement);
+
+      var name = formData.get("name");
+      var email = formData.get("email");
+
+      console.log("Name", name);
+      console.log("email", email);
+
+      const connectFormData = `
+    <style>
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #customers td,
+    #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #customers tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #customers tr:hover {
+        background-color: #ddd;
+    }
+
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+
+<body>
+    <table id="customers">
+
+        <tr>
+            <td style="font-weight:bold;">Name</td>
+            <td >${name}</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold;">Email</td>
+          <td >${email}</td>
+        </tr>
+        <tr>
+      </tr>
+    </table>
+</body>
+    `;
+
+      const formData2 = new FormData();
+      formData2.append("type", "subscribe-newsletter");
+      formData2.append("body", connectFormData);
+
+      fetch("https://iiclab-backend.vtour.tech/subscribe", {
+        method: "POST",
+        body: formData2,
+        redirect: "follow",
+      })
+        .then(function (response) {
+          if (response.ok) {
+            return response.text();
+          }
+          throw new Error("ERROR:" + response.status);
+        })
+        .then(function (data) {
+          console.log(data);
+        })
+        .catch(function (error) {
+          console.error("error:", error);
+        });
+      (event.target as HTMLFormElement).reset();
+    });
+</script>
 
 <style>
   a {
@@ -277,6 +397,7 @@ import subscribeBtn from "../images/subscribeBtn.png";
       font-size: calc(10px + 0.390625vw);
       width: 88%;
       border: 0.5px solid #a9a9a987;
+      padding-left: 4%;
     }
     .allTopInputs {
     }
@@ -325,12 +446,16 @@ import subscribeBtn from "../images/subscribeBtn.png";
     }
     .button {
       margin-right: 6%;
+      width: 90%;
     }
     .newsletter {
       display: none;
     }
     .mobSubscribe {
       width: 27vw;
+    }
+    .bottomDiv {
+      font-size: 2.5vw !important;
     }
   }
 
@@ -368,6 +493,12 @@ import subscribeBtn from "../images/subscribeBtn.png";
     border-radius: 0 10px 0 10px;
     color: rgba(255, 255, 255, 1);
     font-size: calc(7px + 0.390625vw);
+    padding-left: 1.5%;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1060px) {
+    .inputCss {
+      width: 14vw;
+    }
   }
 
   .headings {
@@ -394,7 +525,7 @@ import subscribeBtn from "../images/subscribeBtn.png";
     font-size: 1.4rem;
   }
   .icons {
-    width: 2.7vw;
+    width: 2.5vw;
     margin-right: 1.1%;
   }
 

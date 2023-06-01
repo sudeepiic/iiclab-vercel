@@ -14,8 +14,8 @@ const entries: any = await contentfulClient.getEntries<any>({
   <section style="padding-top: 4.5%;">
     <div class="wrapper">
       <div id="main4" class="moving-text">
-        <span>Our Works</span><img src={portfolio1} class="movingImg" alt="" />
-        <span>our works</span>
+        <span>Our Work</span><img src={portfolio1} class="movingImg" alt="" />
+        <span>our work</span>
       </div>
     </div>
 
@@ -26,10 +26,12 @@ const entries: any = await contentfulClient.getEntries<any>({
           entries.items.map((caseStudy, index) => (
             <div class="swiper-slide">
               <div>
-                <img
-                  src={caseStudy.fields?.heroBanner?.fields?.file.url}
-                  alt=""
-                />
+                <a href={"/case-study/" + caseStudy.fields.heroTitle}>
+                  <img
+                    src={caseStudy.fields?.heroBanner?.fields?.file.url}
+                    alt=""
+                  />
+                </a>
                 <div class="imgCaptionDiv">
                   <span
                     class="caption1"

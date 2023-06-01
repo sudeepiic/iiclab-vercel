@@ -23,7 +23,8 @@ import solnImg4 from "../images/solnImg4.png";
 import solnImg5 from "../images/solnImg5.png";
 import solnImg6 from "../images/solnImg6.png";
 import fwViewAll from "../images/fwViewAll.png";
-import authorImg from "../images/authorImg.jpg";
+import f1Logo from "../images/f1Logo.png";
+
 import testimonialImg from "../images/testimonialImg.png";
 import carousalNext from "../images/carousalNext.png";
 import carousalPrev from "../images/carousalPrev.png";
@@ -114,7 +115,9 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       <div id="div2">
         <span id="s1">Watch Showreel</span>
         <span id="s2"></span>
-        <span id="s3">Know More <img src={arrow} alt="" /></span>
+        <a href="#knowMore">
+          <span id="s3">Know More <img src={arrow} alt="" /></span>
+        </a>
       </div>
     </div>
   </div>
@@ -126,13 +129,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
 <section>
   <div class="wrapper">
-    <div id="main4" class="moving-text">
+    <div id="main4" class="moving-text" style="width:max-content">
       <span>Deduce</span><span>Engage</span><span>Enable</span>
     </div>
   </div>
 </section>
 
-<section>
+<section id="knowMore">
   <div id="main5" class="d-flex">
     <div id="div1">
       <img src={hand2} alt="" loading="lazy" />
@@ -144,7 +147,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           src={ovalArrow}
           alt=""
           loading="lazy"
-          style="width:18%; margin-bottom: 9%;"
+          style="width:18%; margin-bottom: 9%; display:none"
         />
       </div>
     </div>
@@ -152,7 +155,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 </section>
 
 <section class="wrapper">
-  <div class="giants moving-text3" style="margin-left: 12%;">
+  <div class="giants" style="margin-left: 12%;">
     <tr>
       {
         (clientsEntries.items[0].fields.clientIcons as any).map(
@@ -185,7 +188,9 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       >Flaring storied growth through customized solutions to match individual
       Brand needs</span
     >
-    <div class="yellowCircle"><span class="view">VIEW ALL</span></div>
+    <a href="/solutions/" class="solutionAnchor"
+      ><div class="yellowCircle"><span class="view">VIEW ALL</span></div></a
+    >
   </div>
   <div class="mobBlackPara">
     <p>
@@ -290,7 +295,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
         <tr class="hover">
           <td class="index">05.</td>
-          <td class="tech">Experimental Marketing</td>
+          <td class="tech">Experiential Marketing</td>
           <td>
             <ul class="trial">
               <img src={solnImg5} class="trial2" alt="" loading="lazy" />
@@ -337,7 +342,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     </table>
   </div>
 
-  <div style="margin-bottom: 6%">
+  <div class="mobSolutionsDiv" style="margin-bottom: 6%">
     <div class="mobSolutions">
       <div class="row">
         <div style="margin-bottom: 4.3%;" class="col-10 d-flex">
@@ -542,7 +547,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       lass="yellowCircle"> <p class="view">VIEW ALL</p></div>  -->
   </div>
 
-  <div class="d-flex" style="width:100%; margin-bottom: 7%;">
+  <div class="d-flex" style="width:100%; ">
     {
       entries.items.map((caseStudy, index) => (
         <div class="hoverImg moving-text2 ">
@@ -590,7 +595,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
   <div>
     <div class="row mobAward">
       <div class="col-sm-12 col-md-8 col-lg-8 mbAwardCat">
-        <span>2023 - Media & Entertainment Category</span>
+        <span>2023 - Media & Entertainment</span>
       </div>
       <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
         <span class="hifen">~</span>
@@ -600,7 +605,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
     <div class="row mobAward">
       <div class="col-sm-12 col-md-8 col-lg-8 mbAwardCat">
-        <span>2023 - Retail & E-Commerce Category</span>
+        <span>2023 - Retail & E-Commerce</span>
       </div>
       <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
         <span class="hifen">~</span>
@@ -724,13 +729,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
                       set:html={clientsTestimonials.fields?.testimonialText}
                     />
                     <div class="d-flex cardFooter">
-                      <img
-                        class="authorImg"
-                        src={authorImg}
-                        alt=""
-                        loading="lazy"
-                      />
-                      <div style="margin:auto; margin-left:6%">
+                      <div style="margin:auto; margin-left:1%">
                         <span
                           class="authName"
                           set:html={clientsTestimonials.fields?.clientName}
@@ -747,6 +746,34 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             </div>
           ))
         }
+        <div class="swiper-slide">
+          <div class="card-parent">
+            <div class="card-header">
+              <img src={f1Logo} style="width: 50%;" alt="" />
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="card-text">
+                  "We've worked with Ink In Caps on some innovative tech
+                  projects, in particular the hybrid tour of the Tech Centre of
+                  F1 in which they produced a fantastic result that was
+                  ultimately approved by F1 as a leading app and solution for
+                  them to provide a virtual experience to all of their VIP
+                  clients."
+                </div>
+                <div class="d-flex cardFooter">
+                  <div style="margin:auto; margin-left:1%">
+                    <span class="authName">Nick Moore</span>
+                    <span class="authDesign"
+                      >Executive Director and Founder of Lionpoint Group</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="swiper-slide">
           <div class="card-parent">
@@ -770,13 +797,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
                   next phase of the solution.”
                 </div>
                 <div class="d-flex cardFooter">
-                  <img
-                    class="authorImg"
-                    src={authorImg}
-                    alt=""
-                    loading="lazy"
-                  />
-                  <div style="margin:auto; margin-left:6%">
+                  <div style="margin:auto; margin-left:1%">
                     <span class="authName"> Aninda Gupta</span>
                     <span class="authDesign"> CMO Gyproc Saint Gobain</span>
                   </div>
@@ -785,102 +806,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             </div>
           </div>
         </div>
-        <div class="swiper-slide">
-          <div class="card-parent">
-            <div class="card-header">
-              <img
-                src={testimonialImg}
-                style="width: 50%;"
-                alt=""
-                loading="lazy"
-              />
-            </div>
 
-            <div class="card">
-              <div class="card-body">
-                <div class="card-text">
-                  “ IIC had the right capability and experience in the AR
-                  domain, and I was comfortable awarding them the project to
-                  create a B2B visualizer app for my sales and Experience Center
-                  The team did an amazing job in understanding our needs, we are
-                  delighted with the outcome and are already in talks for the
-                  next phase of the solution.”
-                </div>
-                <div class="d-flex cardFooter">
-                  <img
-                    class="authorImg"
-                    src={authorImg}
-                    alt=""
-                    loading="lazy"
-                  />
-                  <div style="margin:auto; margin-left:6%">
-                    <span class="authName"> Aninda Gupta</span>
-                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card-parent">
-            <div class="card-header">
-              <img
-                src={testimonialImg}
-                style="width: 50%;"
-                alt=""
-                loading="lazy"
-              />
-            </div>
-
-            <div class="card">
-              <div class="card-body">
-                <div class="card-text">
-                  “ IIC had the right capability and experience in the AR
-                  domain, and I was comfortable awarding them the project to
-                  create a B2B visualizer app for my sales and Experience Center
-                  The team did an amazing job in understanding our needs, we are
-                  delighted with the outcome and are already in talks for the
-                  next phase of the solution.”
-                </div>
-                <div class="d-flex cardFooter">
-                  <img class="authorImg" src={authorImg} alt="" />
-                  <div style="margin:auto; margin-left:6%">
-                    <span class="authName"> Aninda Gupta</span>
-                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card-parent">
-            <div class="card-header">
-              <img src={testimonialImg} style="width: 50%;" alt="" />
-            </div>
-
-            <div class="card">
-              <div class="card-body">
-                <div class="card-text">
-                  “ IIC had the right capability and experience in the AR
-                  domain, and I was comfortable awarding them the project to
-                  create a B2B visualizer app for my sales and Experience Center
-                  The team did an amazing job in understanding our needs, we are
-                  delighted with the outcome and are already in talks for the
-                  next phase of the solution.”
-                </div>
-                <div class="d-flex cardFooter">
-                  <img class="authorImg" src={authorImg} alt="" />
-                  <div style="margin:auto; margin-left:6%">
-                    <span class="authName"> Aninda Gupta</span>
-                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- <div class="swiper-slide">
           <div class="card-parent">
             <div class="card-header">
@@ -1110,6 +1036,11 @@ const testimonials: any = await contentfulClient.getEntries<any>({
   a {
     text-decoration: none;
   }
+  .taglineImg {
+    width: 3.5vw;
+    margin-bottom: 4.4%;
+    vertical-align: sub;
+  }
   .image-overlay {
     position: relative;
     top: -19%;
@@ -1126,6 +1057,11 @@ const testimonials: any = await contentfulClient.getEntries<any>({
   }
   .hoverImg {
     margin-right: 2%;
+  }
+  .solutionAnchor {
+    position: relative;
+    left: 13%;
+    margin-top: 7%;
   }
   .workName {
     font-family: "anek devanagari";
@@ -1249,7 +1185,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     width: 80%;
     color: white;
     opacity: 75%;
-    margin-top: 13%;
+    margin-top: 19%;
     display: inline-block;
 
     /* text-align: left; */
@@ -1260,8 +1196,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     height: 6.75vw;
     width: 6.75vw;
     background-color: #e5ff53;
-    margin-top: 8%;
-    margin-left: 3%;
+
     padding: 2.4vw 1vw 0% 1.39vw;
   }
   .yellowCircle2 {
@@ -1390,7 +1325,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
   }
 
   .moving-text {
-    animation: move-text 10s linear infinite;
+    animation: move-text 15s linear infinite;
   }
 
   .moving-text2 {
@@ -1505,6 +1440,16 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     opacity: 0;
     visibily: hidden;
     pointer-events: none;
+  }
+  @media screen and (min-width: 1300px) {
+    .trial2 {
+      scale: 1.35 !important;
+    }
+  }
+  @media screen and (min-width: 1100px) {
+    .trial2 {
+      scale: 1.2 !important;
+    }
   }
 
   /* cards css */
@@ -1669,6 +1614,9 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     .mobSolutions {
       display: none;
     }
+    .mobSolutionsDiv {
+      margin-bottom: 1% !important;
+    }
     .fwViewAll {
       display: none;
     }
@@ -1699,6 +1647,9 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     }
   }
   @media screen and (max-width: 767px) {
+    #main4 span {
+      font-size: 14rem;
+    }
     .card-text {
       font-size: 1.7vw !important;
       height: 26vw;
@@ -1724,6 +1675,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     }
     .head1 {
       margin-top: 6%;
+    }
+
+    .solutionAnchor {
+      margin-top: 5%;
     }
 
     .mobPara {
@@ -1763,7 +1718,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       font-size: 17vw;
     }
     .giants {
-      margin-left: 0 !important;
+      margin-left: 9% !important;
+      margin-right: 2% !important;
     }
     .mobGiant {
       display: none !important;
@@ -1926,6 +1882,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       font-size: 3vw;
       line-height: 1.5;
       width: 75%;
+      margin-bottom: 5%;
     }
 
     .prod1,
@@ -1969,6 +1926,12 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     }
     .yellowCircle {
       padding-top: 3.5vw;
+    }
+  }
+
+  @media screen and (max-width: 900px) and (min-width: 767px) {
+    .yellowCircle {
+      padding-top: 1.7vw !important;
     }
   }
 </style>
