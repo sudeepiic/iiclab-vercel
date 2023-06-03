@@ -24,11 +24,11 @@ import solnImg5 from "../images/solnImg5.png";
 import solnImg6 from "../images/solnImg6.png";
 import fwViewAll from "../images/fwViewAll.png";
 import f1Logo from "../images/f1Logo.png";
-
 import testimonialImg from "../images/testimonialImg.png";
 import carousalNext from "../images/carousalNext.png";
 import carousalPrev from "../images/carousalPrev.png";
 import { contentfulClient } from "../lib/contentful";
+import close from "../images/close.png";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 const entries: any = await contentfulClient.getEntries<any>({
@@ -106,18 +106,28 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       </div>
     </div>
     <div class="d-flex" id="main3">
-      <div
+      <a
+      href="#myModal"
+      data-bs-target="#myModal"
+      data-bs-toggle="modal"
+      data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
         class="pause"
         style="width:40px;height:40px; border:1px solid black; border-radius: 50%; background:black;"
       >
         <img src={puase} alt="" style="margin-left: 15px; margin-top:10px" />
-      </div>
-      <div id="div2">
-        <a>
-          <span id="s1">Watch Showreel</span>
-          <span id="s2"></span>
-        </a>
+      </a>
+      <a
+        href="#myModal"
+        data-bs-target="#myModal"
+        data-bs-toggle="modal"
+        data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
+        style="margin-top: auto;"
+      >
+        <span id="s1">Watch Showreel</span>
+        <span id="s2"></span>
+      </a>
 
+      <div id="div2">
         <a href="#knowMore">
           <span id="s3">Know More <img src={arrow} alt="" /></span>
         </a>
@@ -1063,710 +1073,395 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
   <!-- <div class="yellowCircle"> <p class="view">VIEW ALL</p></div>  -->
 </section>
-<style>
-  a {
-    text-decoration: none;
-  }
-  .taglineImg {
-    width: 3.5vw;
-    margin-bottom: 4.4%;
-    vertical-align: sub;
-  }
-  .image-overlay {
-    position: relative;
-    top: -19%;
-    color: white;
-    background: rgba(0, 0, 0, 0.3);
-    width: 75%;
-    left: 5%;
-    padding-left: 2%;
-    opacity: 0;
-    border-radius: 0 0 0 2vw;
-  }
-  .hoverImg:hover .image-overlay {
-    opacity: 1;
-  }
-  .hoverImg {
-    margin-right: 2%;
-  }
-  .solutionAnchor {
-    position: relative;
-    left: 13%;
-    margin-top: 7%;
-  }
-  .workName {
-    font-family: "anek devanagari";
-    font-size: 2.2vw;
-    font-weight: 500;
-    display: block;
-    text-transform: capitalize;
-  }
-  .workTech {
-    font-family: "anek devanagari";
-    font-size: 2vw;
-    display: block;
-    text-transform: capitalize;
-  }
-  .margins {
-    margin-left: 7%;
-    margin-right: 7%;
-  }
-  body {
-    overflow-x: hidden;
-  }
-  svg {
-    margin-top: 6vw;
-    width: 16vw;
-  }
-  .para1 {
-    font-size: 1.25vw !important;
-    line-height: 2;
-  }
+<!-- Video Modal -->
 
-  /* .table{
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="close btn"
+          data-bs-dismiss="modal"
+          aria-hidden="true"><img class="crossImg" src={close} alt="" /></button
+        >
+        <h4 class="modal-title">Showreel</h4>
+      </div>
+      <div class="modal-body">
+        <iframe
+          width="560"
+          height="315"
+          id="videoFrame"
+          src="https://www.youtube.com/embed/wd0eBI7eXrI"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share "
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  <!-- video modal ends -->
+  <style>
+    /* modal css */
+    .bs-example {
+      margin: 20px;
+    }
+
+    .modal-content iframe {
+      margin: 0 auto;
+      display: block;
+    }
+
+    .modal.show .modal-dialog {
+      transform: translate(0%, 36%) !important;
+    }
+    .modal-content {
+      width: 100% !important;
+    }
+    iframe {
+      width: 100%;
+    }
+    .crossImg {
+      width: 1vw;
+    }
+    /*  */
+    a {
+      text-decoration: none;
+    }
+    .taglineImg {
+      width: 3.5vw;
+      margin-bottom: 4.4%;
+      vertical-align: sub;
+    }
+    .image-overlay {
+      position: relative;
+      top: -19%;
+      color: white;
+      background: rgba(0, 0, 0, 0.3);
+      width: 75%;
+      left: 5%;
+      padding-left: 2%;
+      opacity: 0;
+      border-radius: 0 0 0 2vw;
+    }
+    .hoverImg:hover .image-overlay {
+      opacity: 1;
+    }
+    .hoverImg {
+      margin-right: 2%;
+    }
+    .solutionAnchor {
+      position: relative;
+      left: 13%;
+      margin-top: 7%;
+    }
+    .workName {
+      font-family: "anek devanagari";
+      font-size: 2.2vw;
+      font-weight: 500;
+      display: block;
+      text-transform: capitalize;
+    }
+    .workTech {
+      font-family: "anek devanagari";
+      font-size: 2vw;
+      display: block;
+      text-transform: capitalize;
+    }
+    .margins {
+      margin-left: 7%;
+      margin-right: 7%;
+    }
+    body {
+      overflow-x: hidden;
+    }
+    svg {
+      margin-top: 6vw;
+      width: 16vw;
+    }
+    .para1 {
+      font-size: 1.25vw !important;
+      line-height: 2;
+    }
+
+    /* .table{
     margin: 40px;
   } */
 
-  /* table css */
+    /* table css */
 
-  table {
-    width: 95%;
+    table {
+      width: 95%;
 
-    /* margin-right: 20%; */
-    border-collapse: collapse;
-  }
+      /* margin-right: 20%; */
+      border-collapse: collapse;
+    }
 
-  .tech {
-    color: white;
-    font-family: "Deutschlander";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 2.5vw;
-    src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
-    padding-right: 0 !important;
-  }
+    .tech {
+      color: white;
+      font-family: "Deutschlander";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 2.5vw;
+      src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
+      padding-right: 0 !important;
+      word-spacing: 0.2rem;
+    }
 
-  table td {
-    padding: 10px;
-    text-align: left;
-    color: white;
-    /* border: 1px solid black; */
-  }
+    table td {
+      padding: 10px;
+      text-align: left;
+      color: white;
+      /* border: 1px solid black; */
+    }
 
-  table tr {
-    border-bottom: 1.15px solid rgb(63, 63, 63);
-  }
+    table tr {
+      border-bottom: 1.15px solid rgb(63, 63, 63);
+    }
 
-  table .hover:hover {
-    background-color: rgb(62, 61, 61);
-  }
+    table .hover:hover {
+      background-color: rgb(62, 61, 61);
+    }
 
-  .img {
-    margin: 10%;
-  }
-  .imgs {
-    width: 14.5%;
-    margin: 1.2%;
-  }
+    .img {
+      margin: 10%;
+    }
+    .imgs {
+      width: 14.5%;
+      margin: 1.2%;
+    }
 
-  .our {
-    color: white;
-    font-family: "Deutschlander";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12.5vw;
-    src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
-  }
-  .solutions {
-    color: #e5ff53;
-    font-family: "Deutschlander";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12.5vw;
-    src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
-  }
-  .movingImgs {
-    display: block;
-    width: 100%;
-    aspect-ratio: 4/5;
-    object-fit: cover;
-    width: 25vw;
-    border-radius: 0 4vw 4vw 4vw;
-  }
+    .our {
+      color: white;
+      font-family: "Deutschlander";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12.5vw;
+      src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
+    }
+    .solutions {
+      color: #e5ff53;
+      font-family: "Deutschlander";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12.5vw;
+      src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
+    }
+    .movingImgs {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      width: 25vw;
+      border-radius: 0 4vw 4vw 4vw;
+    }
 
-  .blackPara {
-    font-family: Anek Devanagari;
-    font-size: 1.3vw;
-    font-weight: 300;
-    line-height: 2.35vw;
-    letter-spacing: 0px;
-    width: 24%;
-    color: white;
-    opacity: 75%;
-    margin-left: 5.8%;
-    margin-top: 8%;
-    /* text-align: left; */
-  }
-  .blackPara2 {
-    font-family: Anek Devanagari;
-    font-size: 1.5vw;
-    font-weight: 300;
-    line-height: 2.35vw;
-    letter-spacing: 0px;
-    width: 80%;
-    color: white;
-    opacity: 75%;
-    margin-top: 19%;
-    display: inline-block;
+    .blackPara {
+      font-family: Anek Devanagari;
+      font-size: 1.3vw;
+      font-weight: 300;
+      line-height: 2.35vw;
+      letter-spacing: 0px;
+      width: 24%;
+      color: white;
+      opacity: 75%;
+      margin-left: 5.8%;
+      margin-top: 8%;
+      /* text-align: left; */
+    }
+    .blackPara2 {
+      font-family: Anek Devanagari;
+      font-size: 1.5vw;
+      font-weight: 300;
+      line-height: 2.35vw;
+      letter-spacing: 0px;
+      width: 80%;
+      color: white;
+      opacity: 75%;
+      margin-top: 19%;
+      display: inline-block;
 
-    /* text-align: left; */
-  }
+      /* text-align: left; */
+    }
 
-  .yellowCircle {
-    border-radius: 100%;
-    height: 6.75vw;
-    width: 6.75vw;
-    background-color: #e5ff53;
+    .yellowCircle {
+      border-radius: 100%;
+      height: 6.75vw;
+      width: 6.75vw;
+      background-color: #e5ff53;
 
-    padding: 2.4vw 1vw 0% 1.39vw;
-  }
-  .yellowCircle2 {
-    border-radius: 100%;
-    height: 6.75vw;
-    width: 6.75vw;
-    background-color: #e5ff53;
-    /* margin-top: 8%; */
-    margin-left: 3%;
-    padding: 2.4vw 1vw 0% 1.39vw;
-    position: absolute;
-    right: 12vw;
-  }
-  .view {
-    font-family: Deutschlander;
-    font-size: 2.2vw;
-    font-weight: 400;
-    line-height: 30px;
-    letter-spacing: 0em;
-    text-align: center;
-    /* position: fixed; */
-  }
-  .view2 {
-    font-family: Deutschlander;
-    font-size: 2.2vw;
-    font-weight: 400;
-    line-height: 30px;
-    letter-spacing: 0em;
-    text-align: center;
-  }
+      padding: 2.4vw 1vw 0% 1.39vw;
+    }
+    .yellowCircle2 {
+      border-radius: 100%;
+      height: 6.75vw;
+      width: 6.75vw;
+      background-color: #e5ff53;
+      /* margin-top: 8%; */
+      margin-left: 3%;
+      padding: 2.4vw 1vw 0% 1.39vw;
+      position: absolute;
+      right: 12vw;
+    }
+    .view {
+      font-family: Deutschlander;
+      font-size: 2.2vw;
+      font-weight: 400;
+      line-height: 30px;
+      letter-spacing: 0em;
+      text-align: center;
+      /* position: fixed; */
+    }
+    .view2 {
+      font-family: Deutschlander;
+      font-size: 2.2vw;
+      font-weight: 400;
+      line-height: 30px;
+      letter-spacing: 0em;
+      text-align: center;
+    }
 
-  .list {
-    font-size: 0.8vw;
-    opacity: 50%;
-    margin-bottom: 3px;
-    font-family: anek devanagari;
-  }
-  .index {
-    font-family: Anek Devanagari;
-    font-size: 0.9vw;
-  }
-  #main #div1 span {
-    font-family: "Deutschlander";
-    text-transform: uppercase;
-    font-size: 13vw;
-    font-weight: 400;
-    font-style: normal;
-    /* padding-top: 2%; */
-  }
-  #main #div2 img {
-    width: 20vw;
-  }
-  #main #div2 {
-    padding-left: 3%;
-  }
-  #main2 #div1 {
-    width: 37vw;
-  }
-  #main2 #div1 span {
-    font-size: 1.25rem;
-    font-family: "Anek Devanagari";
-    text-align: justify;
-  }
-  #main2 #div2 {
-    margin-left: 20px;
-  }
-  #main2 #div2 span,
-  .wallHonor {
-    font-family: "Deutschlander";
-    font-size: 13vw;
-    text-transform: uppercase;
-    line-height: 11vw;
-  }
-  #main3 #div2 {
-    margin-top: auto;
-  }
-  #main3 #div2 #s1 {
-    font-family: "Anek Devanagari";
-    font-size: 1.4rem;
-    margin-left: 15px;
-    text-transform: uppercase;
-  }
-  #main3 #div2 #s2 {
-    border-right: 1px solid black;
-    margin-left: 15px;
-  }
-  #main3 #div2 #s3 {
-    font-family: "Anek Devanagari";
-    font-size: 1.4rem;
-    margin-left: 15px;
-    text-transform: uppercase;
-  }
-  #main4 span {
-    font-family: "Deutschlander";
-    padding: 30px;
-    font-size: 18rem;
-    text-transform: uppercase;
-  }
-  #main5 {
-    position: relative;
-    display: inline-flex;
-  }
-  #main5 #div1 img {
-    height: 11vw;
-  }
-  #main5 #div2 {
-    position: relative;
-    margin-top: 2%;
-    right: 3.6%;
-  }
-  #main5 #div2 span {
-    font-family: "Deutschlander";
-    text-transform: uppercase;
-    font-size: 11vw;
-  }
-
-  .para {
-    opacity: 75%;
-  }
-  .strong {
-    opacity: 100% !important;
-  }
-
-  .paraDiv {
-    padding-top: 1%;
-  }
-
-  .moving-text {
-    animation: move-text 15s linear infinite;
-  }
-
-  .moving-text2 {
-    animation: move-text2 45s linear infinite;
-  }
-  .wrapper {
-    overflow-x: hidden;
-  }
-  .featureImg {
-    width: 13vw;
-    height: 8vw;
-    margin-top: 17.3%;
-    margin-left: -24%;
-  }
-  .prodImg {
-    width: 13vw;
-    height: 8vw;
-    margin-top: 5%;
-  }
-
-  @media screen and (max-width: 1300px) {
+    .list {
+      font-size: 0.95vw;
+      opacity: 50%;
+      margin-bottom: 3px;
+      font-family: anek devanagari;
+    }
+    .index {
+      font-family: Anek Devanagari;
+      font-size: 0.9vw;
+    }
+    #main #div1 span {
+      font-family: "Deutschlander";
+      text-transform: uppercase;
+      font-size: 13vw;
+      font-weight: 400;
+      font-style: normal;
+      /* padding-top: 2%; */
+    }
+    #main #div2 img {
+      width: 20vw;
+    }
+    #main #div2 {
+      padding-left: 3%;
+    }
+    #main2 #div1 {
+      width: 37vw;
+    }
     #main2 #div1 span {
-      font-size: 1.05rem;
+      font-size: 1.25rem;
       font-family: "Anek Devanagari";
       text-align: justify;
     }
-    svg {
-      margin-top: 4vw;
+    #main2 #div2 {
+      margin-left: 20px;
     }
-  }
-
-  @media screen and (max-width: 1000px) {
-    svg {
-      margin-top: 2vw;
+    #main2 #div2 span,
+    .wallHonor {
+      font-family: "Deutschlander";
+      font-size: 13vw;
+      text-transform: uppercase;
+      line-height: 11vw;
     }
-  }
-
-  @media screen and (max-width: 860px) {
-    svg {
-      margin-top: 0vw;
-    }
-  }
-
-  @keyframes move-text {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  @keyframes move-text2 {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-2000%);
-    }
-  }
-
-  /* Award Table css */
-
-  .awardsTable {
-    border-bottom: 1.15px solid hsl(60, 1%, 84%);
-  }
-  .awardCtg,
-  .awardName {
-    font-family: "Anek Devanagari";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1vw;
-    line-height: 300%;
-
-    text-transform: capitalize;
-
-    color: #252525;
-
-    opacity: 0.9;
-  }
-  .tools {
-    font-family: "Anek Devanagari";
-    font-style: normal;
-    font-weight: 500;
-    font-size: calc(13px + 0.390625vw);
-
-    text-transform: capitalize;
-
-    color: #252525;
-
-    opacity: 0.9;
-  }
-
-  .viewAllAwards {
-    width: 10.5vw;
-    position: absolute;
-    z-index: 1000;
-    right: 10%;
-    margin-top: 23%;
-  }
-  .trial {
-    position: relative;
-
-    z-index: 1;
-  }
-  .trial2 {
-    position: absolute;
-    object-fit: cover;
-    transform: translateX(-50%) translateY(-50%);
-    top: 50%;
-    left: 50%;
-    z-index: -10;
-    opacity: 0;
-    visibily: hidden;
-    pointer-events: none;
-  }
-  @media screen and (min-width: 1300px) {
-    .trial2 {
-      scale: 1.35 !important;
-    }
-  }
-  @media screen and (min-width: 1100px) {
-    .trial2 {
-      scale: 1.2 !important;
-    }
-  }
-
-  /* cards css */
-
-  .card-parent {
-    width: 26rem;
-  }
-
-  .card-body {
-    margin-top: 10%;
-    padding-left: 6% !important;
-  }
-
-  .card-header {
-    background-color: #e5ff53;
-    width: 75%;
-    text-align: center;
-    position: relative;
-    padding: 4% 0%;
-  }
-
-  .card {
-    background-color: white;
-    border-radius: 0%;
-  }
-  .card-text {
-    font-family: "anek devanagari";
-    /* margin-bottom: 12%; */
-    height: 16vw;
-    font-size: 0.95vw;
-  }
-
-  .authorImg {
-    width: 17%;
-    height: 17%;
-    border-radius: 50%;
-    margin: 0;
-  }
-
-  .authName,
-  .authDesign {
-    display: block;
-    font-family: "anek devanagari";
-  }
-  .authName {
-    font-size: 1.05rem;
-    font-weight: 600;
-  }
-  .authDesign {
-    opacity: 50%;
-    font-size: 0.95rem;
-  }
-
-  @media screen and (max-width: 1120px) {
-    .authName {
-      font-size: 0.9rem;
-    }
-    .authDesign {
-      font-size: 0.8rem;
-    }
-    .cardFooter {
-      margin-top: 5%;
-    }
-  }
-
-  @media screen and (max-width: 1010px) {
-    .authName {
-      font-size: 0.8rem;
-    }
-    .authDesign {
-      font-size: 0.65rem;
-    }
-    .cardFooter {
-      margin-top: 8%;
-    }
-  }
-  @media screen and (max-width: 910px) {
-    .authName {
-      font-size: 0.6rem;
-    }
-    .authDesign {
-      font-size: 0.55rem;
-    }
-    .cardFooter {
-      margin-top: 9%;
-    }
-    .card-body {
-      padding: 0.8rem 0.8rem 0.2rem 0.8rem !important;
-    }
-  }
-
-  @media screen and (max-width: 767px) {
-    .authName {
-      font-size: 1.7vw;
-    }
-    .authDesign {
-      font-size: 1.2vw;
-    }
-    .card-body {
-      padding-bottom: 5% !important;
-    }
-  }
-
-  @media screen and (max-width: 675px) {
-    .cardFooter {
-      margin-top: 13%;
-    }
-  }
-
-  @media screen and (max-width: 625px) {
-    .cardFooter {
-      margin-top: 20%;
-    }
-  }
-  @media screen and (max-width: 560px) {
-    .cardFooter {
-      margin-top: 23%;
-    }
-    .card-body {
-      padding: 0.5rem 0.5rem 0.2rem 0.5rem !important;
-    }
-  }
-  .swiper {
-    width: 100%;
-  }
-
-  .swiper-slide {
-    /* text-align: center; */
-    /* font-size: 18px; */
-    background: #1a1a1a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  } */
-  .swiper-next,
-  .swiper-prev {
-    width: 6%;
-  }
-  .swiper-prev {
-    margin-right: 4%;
-  }
-  .controls {
-    transform: translate(42%, 75%);
-  }
-
-  /* mobile view css */
-  @media screen and (min-width: 768px) {
-    .head1 {
+    #main3 #div2 {
       margin-top: auto;
     }
-    .mobPara,
-    .mobBlackPara {
-      display: none;
+    #s1 {
+      font-family: "Anek Devanagari";
+      font-size: 1.4rem;
+      margin-left: 15px;
+      text-transform: uppercase;
     }
-    .mobSolutions {
-      display: none;
-    }
-    .mobSolutionsDiv {
-      margin-bottom: 1% !important;
-    }
-    .fwViewAll {
-      display: none;
-    }
-    .mbAwardName {
-      text-align: end;
-    }
-    .mobAward {
-      padding-bottom: 2%;
-      border-bottom: 1.5px solid #c6c4c4;
-      padding-top: 2%;
-      margin-right: 3%;
-      margin-left: 0.5%;
-    }
-    .mbAwardCat,
-    .mbAwardName {
-      font-family: "anek devanagari";
-      font-size: 1.2vw;
-      font-weight: 600;
-    }
-
-    .mbAwardName span,
-    .mbAwardCat span {
-      text-transform: capitalize;
-      color: #252525;
-    }
-    .hifen {
-      display: none;
-    }
-  }
-  @media screen and (max-width: 767px) {
-    #main4 span {
-      font-size: 14rem;
-    }
-    .card-text {
-      font-size: 1.7vw !important;
-      height: 26vw;
-    }
-    .paraDiv {
-      display: none;
-    }
-    #main2 #div2 {
-      margin-left: 0;
-    }
-    .topDiv {
-      padding-top: 0 !important;
-    }
-    #main #div1 span {
-      font-size: 20vw;
-      line-height: normal;
-    }
-    #main2 #div2 span {
-      font-size: 20vw;
-    }
-    svg {
-      display: none;
-    }
-    .head1 {
-      margin-top: 6%;
-    }
-
-    .solutionAnchor {
-      margin-top: 5%;
-    }
-
-    .mobPara {
-      font-family: "anek devanagari";
-      margin-top: 4%;
-      font-size: 3.4vw;
-      opacity: 80%;
-      line-height: 1.9;
-    }
-    #main3 #div2 #s1 {
-      font-size: 1.2rem;
-    }
-    #main3 #div2 #s2 {
-      margin-left: 2px;
+    #s2 {
+      border-right: 1px solid black;
+      margin-left: 15px;
     }
     #main3 #div2 #s3 {
-      font-size: 1.2rem;
-      margin-left: 7px;
+      font-family: "Anek Devanagari";
+      font-size: 1.4rem;
+      margin-left: 15px;
+      text-transform: uppercase;
     }
-    .pause {
-      width: 25px !important;
-      height: 25px !important;
-    }
-    .pause img {
-      margin-left: 8px !important;
-      margin-top: -2px !important;
-      width: 8px !important;
-    }
-
-    #main5 #div1 img {
-      display: none !important;
+    #main4 span {
+      font-family: "Deutschlander";
+      padding: 30px;
+      font-size: 18rem;
+      text-transform: uppercase;
     }
     #main5 {
-      text-align: center;
+      position: relative;
+      display: inline-flex;
     }
-    #main5 #div2 span {
-      font-size: 17vw;
+    #main5 #div1 img {
+      height: 11vw;
     }
     #main5 #div2 {
-      right: -10%;
+      position: relative;
+      margin-top: 2%;
+      right: 3.6%;
     }
-    .giants {
-      margin-left: 9% !important;
-      margin-right: 2% !important;
+    #main5 #div2 span {
+      font-family: "Deutschlander";
+      text-transform: uppercase;
+      font-size: 11vw;
     }
-    .mobGiant {
-      display: none !important;
+
+    .para {
+      opacity: 75%;
     }
-    .imgs {
-      width: 16%;
+    .strong {
+      opacity: 100% !important;
     }
-    .moving-text3 {
-      animation: move-text 10s linear infinite;
+
+    .paraDiv {
+      padding-top: 1%;
+    }
+
+    .moving-text {
+      animation: move-text 15s linear infinite;
+    }
+
+    .moving-text2 {
+      animation: move-text2 45s linear infinite;
     }
     .wrapper {
       overflow-x: hidden;
     }
+    .featureImg {
+      width: 13vw;
+      height: 8vw;
+      margin-top: 17.3%;
+      margin-left: -24%;
+    }
+    .prodImg {
+      width: 13vw;
+      height: 8vw;
+      margin-top: 5%;
+    }
+
+    @media screen and (max-width: 1300px) {
+      #main2 #div1 span {
+        font-size: 1.05rem;
+        font-family: "Anek Devanagari";
+        text-align: justify;
+      }
+      svg {
+        margin-top: 4vw;
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      svg {
+        margin-top: 2vw;
+      }
+    }
+
+    @media screen and (max-width: 860px) {
+      svg {
+        margin-top: 0vw;
+      }
+    }
+
     @keyframes move-text {
       0% {
         transform: translateX(100%);
@@ -1775,271 +1470,653 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         transform: translateX(-100%);
       }
     }
-    .blackPara {
-      display: none;
-    }
-    .yellowCircle {
-      padding-top: 5.5vw;
-      position: relative;
-      left: 10%;
-      margin-top: 5%;
-      width: 15vw;
-      height: 15vw;
-      padding-left: 4vw;
-    }
-    .view {
-      font-size: 4vw;
-    }
-    .our1,
-    .solutions1 {
-      font-size: 20vw;
-      line-height: 1.25;
-    }
-    .mobBlackPara {
-      font-family: Anek Devanagari;
-      font-size: 3.8vw;
-      font-weight: 300;
-      margin-right: 5%;
-      letter-spacing: 0px;
-
-      color: white;
-      opacity: 75%;
-      line-height: 1.7;
+    @keyframes move-text2 {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-2000%);
+      }
     }
 
-    .onlyDesktop {
-      display: none;
-    }
+    /* Award Table css */
 
-    .mobTech {
-      color: white;
-      font-family: "Deutschlander";
+    .awardsTable {
+      border-bottom: 1.15px solid hsl(60, 1%, 84%);
+    }
+    .awardCtg,
+    .awardName {
+      font-family: "Anek Devanagari";
       font-style: normal;
-      font-weight: 400;
-      font-size: 10.5vw;
-      line-height: 1;
-      padding-right: 0 !important;
-    }
-    .mobIndex {
-      font-family: "anek devanagari";
-      font-size: 4vw;
-      vertical-align: top;
-      margin-right: 7%;
-      color: white;
-      font-weight: 300;
-    }
-    .table1 {
-      width: 4.5vw !important;
-      height: 4.5vw !important;
-      margin-top: 25%;
-    }
-    .mobSolutions {
-      margin-right: 5%;
-      border-top: 2px solid rgb(95, 92, 92);
-      padding-top: 4%;
-      padding-bottom: 4%;
-    }
-    .mobImg {
-      border-radius: 0 3vw 0 3vw;
-      width: 105%;
-    }
-    .mobList {
-      font-family: "anek Devanagari";
-      color: white;
-      opacity: 60%;
-      padding-top: 3%;
-      line-height: 2;
-      font-size: 2.7vw;
-      padding-left: 4%;
-    }
-    .circleHand {
-      display: none;
-    }
-
-    .feature,
-    .work {
-      font-size: 21.5vw;
-    }
-    .work {
-      margin-top: 19.5% !important;
-    }
-    .featureImg {
-      width: 19vw;
-      height: 12vw;
-      margin-top: 30.3%;
-      margin-left: -34%;
-    }
-
-    .fwViewAll {
-      width: 18vw;
-    }
-
-    .movingImgs {
-      aspect-ratio: 4/5;
-      width: 30vw;
-      border-radius: 0 4vw 4vw 4vw;
-      margin-right: 5%;
-      object-fit: cover;
-    }
-    .moving-text2 {
-      animation: move-text2 40s linear infinite;
-    }
-
-    .wallHonor {
-      font-size: 14vw;
-    }
-    .deskAwards {
-      display: none;
-    }
-
-    .mobAward {
-      padding-bottom: 3.3%;
-      border-bottom: 1.5px solid #c6c4c4;
-      padding-top: 5%;
-    }
-    .mbAwardCat,
-    .mbAwardName {
-      font-family: "anek devanagari";
-      font-size: 3.4vw;
       font-weight: 600;
-      padding-right: 5%;
-    }
-    .mbAwardName {
-      opacity: 50%;
-    }
-    .mbAwardName span,
-    .mbAwardCat span {
+      font-size: 1vw;
+      line-height: 300%;
+
       text-transform: capitalize;
-    }
-    .blackPara2 {
-      margin-top: 0;
-      font-size: 3vw;
-      line-height: 1.5;
-      width: 75%;
-      margin-bottom: 5%;
-    }
 
-    .prod1,
-    .prod2 {
-      font-size: 20vw;
-    }
-    .prod2 {
-      line-height: 1;
-    }
-    .prodImg {
-      width: 16vw;
-      height: 10vw;
-      margin-top: 11%;
-    }
-  }
+      color: #252525;
 
-  @media screen and (max-width: 500px) {
-    #main3 #div2 #s1 {
-      font-size: 1rem;
-    }
-    #main3 #div2 #s3 {
-      font-size: 1rem;
-    }
-    .yellowCircle {
-      padding-top: 4.5vw;
-    }
-    .testimHead {
-      font-size: 11.5vw;
+      opacity: 0.9;
     }
     .tools {
-      font-size: calc(10px + 0.390625vw);
-    }
-  }
+      font-family: "Anek Devanagari";
+      font-style: normal;
+      font-weight: 500;
+      font-size: calc(13px + 0.390625vw);
 
-  @media screen and (max-width: 315px) {
-    #main3 #div2 #s1 {
-      font-size: 0.85rem;
-    }
-    #main3 #div2 #s3 {
-      font-size: 0.85rem;
-    }
-    .yellowCircle {
-      padding-top: 3.5vw;
-    }
-  }
+      text-transform: capitalize;
 
-  @media screen and (max-width: 900px) and (min-width: 767px) {
-    .yellowCircle {
-      padding-top: 1.7vw !important;
+      color: #252525;
+      word-spacing: 0.2rem;
+      opacity: 0.9;
     }
-  }
-</style>
 
-<script>
-  import { gsap } from "gsap";
-  console.log("i m here", gsap.context());
-  const items = document.querySelectorAll(".trial");
+    .viewAllAwards {
+      width: 10.5vw;
+      position: absolute;
+      z-index: 1000;
+      right: 10%;
+      margin-top: 23%;
+    }
+    .trial {
+      position: relative;
 
-  items.forEach((el) => {
-    const image = el.querySelector(".trial2");
+      z-index: 1;
+    }
+    .trial2 {
+      position: absolute;
+      object-fit: cover;
+      transform: translateX(-50%) translateY(-50%);
+      top: 50%;
+      left: 50%;
+      z-index: -10;
+      opacity: 0;
+      visibily: hidden;
+      pointer-events: none;
+    }
+    @media screen and (min-width: 1300px) {
+      .trial2 {
+        scale: 1.35 !important;
+      }
+    }
+    @media screen and (min-width: 1100px) {
+      .trial2 {
+        scale: 1.2 !important;
+      }
+    }
 
-    el.addEventListener("mouseenter", (e) => {
-      gsap.to(image, { autoAlpha: 1 });
+    /* cards css */
+
+    .card-parent {
+      width: 26rem;
+    }
+
+    .card-body {
+      margin-top: 10%;
+      padding-left: 6% !important;
+    }
+
+    .card-header {
+      background-color: #e5ff53;
+      width: 75%;
+      text-align: center;
+      position: relative;
+      padding: 4% 0%;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 0%;
+    }
+    .card-text {
+      font-family: "anek devanagari";
+      /* margin-bottom: 12%; */
+      height: 16vw;
+      font-size: 0.95vw;
+    }
+
+    .authorImg {
+      width: 17%;
+      height: 17%;
+      border-radius: 50%;
+      margin: 0;
+    }
+
+    .authName,
+    .authDesign {
+      display: block;
+      font-family: "anek devanagari";
+    }
+    .authName {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+    .authDesign {
+      opacity: 50%;
+      font-size: 0.95rem;
+    }
+
+    @media screen and (max-width: 1120px) {
+      .authName {
+        font-size: 0.9rem;
+      }
+      .authDesign {
+        font-size: 0.8rem;
+      }
+      .cardFooter {
+        margin-top: 5%;
+      }
+    }
+
+    @media screen and (max-width: 1010px) {
+      .authName {
+        font-size: 0.8rem;
+      }
+      .authDesign {
+        font-size: 0.65rem;
+      }
+      .cardFooter {
+        margin-top: 8%;
+      }
+    }
+    @media screen and (max-width: 910px) {
+      .authName {
+        font-size: 0.6rem;
+      }
+      .authDesign {
+        font-size: 0.55rem;
+      }
+      .cardFooter {
+        margin-top: 9%;
+      }
+      .card-body {
+        padding: 0.8rem 0.8rem 0.2rem 0.8rem !important;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      .authName {
+        font-size: 1.7vw;
+      }
+      .authDesign {
+        font-size: 1.2vw;
+      }
+      .card-body {
+        padding-bottom: 5% !important;
+      }
+    }
+
+    @media screen and (max-width: 675px) {
+      .cardFooter {
+        margin-top: 13%;
+      }
+    }
+
+    @media screen and (max-width: 625px) {
+      .cardFooter {
+        margin-top: 20%;
+      }
+    }
+    @media screen and (max-width: 560px) {
+      .cardFooter {
+        margin-top: 23%;
+      }
+      .card-body {
+        padding: 0.5rem 0.5rem 0.2rem 0.5rem !important;
+      }
+    }
+    .swiper {
+      width: 100%;
+    }
+
+    .swiper-slide {
+      /* text-align: center; */
+      /* font-size: 18px; */
+      background: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  } */
+    .swiper-next,
+    .swiper-prev {
+      width: 6%;
+    }
+    .swiper-prev {
+      margin-right: 4%;
+    }
+    .controls {
+      transform: translate(42%, 75%);
+    }
+
+    /* mobile view css */
+    @media screen and (min-width: 768px) {
+      .head1 {
+        margin-top: auto;
+      }
+      .mobPara,
+      .mobBlackPara {
+        display: none;
+      }
+      .mobSolutions {
+        display: none;
+      }
+      .mobSolutionsDiv {
+        margin-bottom: 1% !important;
+      }
+      .fwViewAll {
+        display: none;
+      }
+      .mbAwardName {
+        text-align: end;
+      }
+      .mobAward {
+        padding-bottom: 2%;
+        border-bottom: 1.5px solid #c6c4c4;
+        padding-top: 2%;
+        margin-right: 3%;
+        margin-left: 0.5%;
+      }
+      .mbAwardCat,
+      .mbAwardName {
+        font-family: "anek devanagari";
+        font-size: 1.2vw;
+        font-weight: 600;
+      }
+
+      .mbAwardName span,
+      .mbAwardCat span {
+        text-transform: capitalize;
+        color: #252525;
+      }
+      .hifen {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 767px) {
+      .crossImg {
+        width: 2.5vw;
+      }
+      #main4 span {
+        font-size: 14rem;
+      }
+      .card-text {
+        font-size: 1.7vw !important;
+        height: 26vw;
+      }
+      .paraDiv {
+        display: none;
+      }
+      #main2 #div2 {
+        margin-left: 0;
+      }
+      .topDiv {
+        padding-top: 0 !important;
+      }
+      #main #div1 span {
+        font-size: 20vw;
+        line-height: normal;
+      }
+      #main2 #div2 span {
+        font-size: 20vw;
+      }
+      svg {
+        display: none;
+      }
+      .head1 {
+        margin-top: 6%;
+      }
+
+      .solutionAnchor {
+        margin-top: 5%;
+      }
+
+      .mobPara {
+        font-family: "anek devanagari";
+        margin-top: 4%;
+        font-size: 3.4vw;
+        opacity: 80%;
+        line-height: 1.9;
+      }
+      #s1 {
+        font-size: 1.2rem;
+      }
+      #main3 #div2 #s2 {
+        margin-left: 2px;
+      }
+      #main3 #div2 #s3 {
+        font-size: 1.2rem;
+        margin-left: 7px;
+      }
+      .pause {
+        width: 25px !important;
+        height: 25px !important;
+      }
+      .pause img {
+        margin-left: 8px !important;
+        margin-top: -2px !important;
+        width: 8px !important;
+      }
+
+      #main5 #div1 img {
+        display: none !important;
+      }
+      #main5 {
+        text-align: center;
+      }
+      #main5 #div2 span {
+        font-size: 17vw;
+      }
+      #main5 #div2 {
+        right: -10%;
+      }
+      .giants {
+        margin-left: 9% !important;
+        margin-right: 2% !important;
+      }
+      .mobGiant {
+        display: none !important;
+      }
+      .imgs {
+        width: 16%;
+      }
+      .moving-text3 {
+        animation: move-text 10s linear infinite;
+      }
+      .wrapper {
+        overflow-x: hidden;
+      }
+      @keyframes move-text {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      .blackPara {
+        display: none;
+      }
+      .yellowCircle {
+        padding-top: 5.5vw;
+        position: relative;
+        left: 10%;
+        margin-top: 5%;
+        width: 15vw;
+        height: 15vw;
+        padding-left: 4vw;
+      }
+      .view {
+        font-size: 4vw;
+      }
+      .our1,
+      .solutions1 {
+        font-size: 20vw;
+        line-height: 1.25;
+      }
+      .mobBlackPara {
+        font-family: Anek Devanagari;
+        font-size: 3.8vw;
+        font-weight: 300;
+        margin-right: 5%;
+        letter-spacing: 0px;
+
+        color: white;
+        opacity: 75%;
+        line-height: 1.7;
+      }
+
+      .onlyDesktop {
+        display: none;
+      }
+
+      .mobTech {
+        color: white;
+        font-family: "Deutschlander";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10.5vw;
+        line-height: 1;
+        padding-right: 0 !important;
+      }
+      .mobIndex {
+        font-family: "anek devanagari";
+        font-size: 4vw;
+        vertical-align: top;
+        margin-right: 7%;
+        color: white;
+        font-weight: 300;
+      }
+      .table1 {
+        width: 4.5vw !important;
+        height: 4.5vw !important;
+        margin-top: 25%;
+      }
+      .mobSolutions {
+        margin-right: 5%;
+        border-top: 2px solid rgb(95, 92, 92);
+        padding-top: 4%;
+        padding-bottom: 4%;
+      }
+      .mobImg {
+        border-radius: 0 3vw 0 3vw;
+        width: 105%;
+      }
+      .mobList {
+        font-family: "anek Devanagari";
+        color: white;
+        opacity: 60%;
+        padding-top: 3%;
+        line-height: 2;
+        font-size: 2.7vw;
+        padding-left: 4%;
+      }
+      .circleHand {
+        display: none;
+      }
+
+      .feature,
+      .work {
+        font-size: 21.5vw;
+      }
+      .work {
+        margin-top: 19.5% !important;
+      }
+      .featureImg {
+        width: 19vw;
+        height: 12vw;
+        margin-top: 30.3%;
+        margin-left: -34%;
+      }
+
+      .fwViewAll {
+        width: 18vw;
+      }
+
+      .movingImgs {
+        aspect-ratio: 4/5;
+        width: 30vw;
+        border-radius: 0 4vw 4vw 4vw;
+        margin-right: 5%;
+        object-fit: cover;
+      }
+      .moving-text2 {
+        animation: move-text2 40s linear infinite;
+      }
+
+      .wallHonor {
+        font-size: 14vw;
+      }
+      .deskAwards {
+        display: none;
+      }
+
+      .mobAward {
+        padding-bottom: 3.3%;
+        border-bottom: 1.5px solid #c6c4c4;
+        padding-top: 5%;
+      }
+      .mbAwardCat,
+      .mbAwardName {
+        font-family: "anek devanagari";
+        font-size: 3.4vw;
+        font-weight: 600;
+        padding-right: 5%;
+      }
+      .mbAwardName {
+        opacity: 50%;
+      }
+      .mbAwardName span,
+      .mbAwardCat span {
+        text-transform: capitalize;
+      }
+      .blackPara2 {
+        margin-top: 0;
+        font-size: 3vw;
+        line-height: 1.5;
+        width: 75%;
+        margin-bottom: 5%;
+      }
+
+      .prod1,
+      .prod2 {
+        font-size: 20vw;
+      }
+      .prod2 {
+        line-height: 1;
+      }
+      .prodImg {
+        width: 16vw;
+        height: 10vw;
+        margin-top: 11%;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      #s1 {
+        font-size: 1rem;
+      }
+      #main3 #div2 #s3 {
+        font-size: 1rem;
+      }
+      .yellowCircle {
+        padding-top: 4.5vw;
+      }
+      .testimHead {
+        font-size: 11.5vw;
+      }
+      .tools {
+        font-size: calc(10px + 0.390625vw);
+        word-spacing: 0.15rem;
+      }
+    }
+
+    @media screen and (max-width: 315px) {
+      #s1 {
+        font-size: 0.85rem;
+      }
+      #main3 #div2 #s3 {
+        font-size: 0.85rem;
+      }
+      .yellowCircle {
+        padding-top: 3.5vw;
+      }
+    }
+
+    @media screen and (max-width: 900px) and (min-width: 767px) {
+      .yellowCircle {
+        padding-top: 1.7vw !important;
+      }
+    }
+  </style>
+
+  <script>
+    import { gsap } from "gsap";
+    console.log("i m here", gsap.context());
+    const items = document.querySelectorAll(".trial");
+
+    items.forEach((el) => {
+      const image = el.querySelector(".trial2");
+
+      el.addEventListener("mouseenter", (e) => {
+        gsap.to(image, { autoAlpha: 1 });
+      });
+
+      el.addEventListener("mouseleave", (e) => {
+        gsap.to(image, { autoAlpha: 0 });
+      });
+
+      el.addEventListener("mousemove", (e: PointerEvent) => {
+        gsap.to(image, { x: e.offsetX - 200 });
+      });
     });
 
-    el.addEventListener("mouseleave", (e) => {
-      gsap.to(image, { autoAlpha: 0 });
+    import {
+      Swiper,
+      Navigation,
+      Pagination,
+      EffectCoverflow,
+      Autoplay,
+      EffectCreative,
+    } from "swiper";
+    let x = 3;
+    var swiper = new Swiper(".mySwiper", {
+      modules: [Navigation, EffectCreative],
+      effect: "creative",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 5,
+      spaceBetween: 0,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-next",
+        prevEl: ".swiper-prev",
+      },
+      creativeEffect: {
+        prev: {
+          // will set `translateZ(-400px)` on previous slides
+          rotate: [0, 0, -8],
+          translate: ["-120%", "10%", 0],
+          scale: 0.9,
+        },
+        next: {
+          // will set `translateX(100%)` on next slides
+          rotate: [0, 0, 8],
+          translate: ["120%", "10%", 0],
+          scale: 0.9,
+        },
+        limitProgress: 2,
+      },
+      breakpoints: {
+        767: {
+          slidesPerView: 5,
+          spaceBetween: 30,
+        },
+        250: {
+          slidesPerView: 2.5,
+          spaceBetween: 50,
+        },
+      },
+
+      autoplay: {
+        delay: 2000,
+      },
     });
 
-    el.addEventListener("mousemove", (e: PointerEvent) => {
-      gsap.to(image, { x: e.offsetX - 200 });
+    $(document).ready(function () {
+      var url = $("#videoFrame").attr("src");
+      $("#myModal").on("hide.bs.modal", function () {
+        $("#videoFrame").attr("src", "");
+      });
+      $("#myModal").on("show.bs.modal", function () {
+        $("#videoFrame").attr("src", url);
+      });
     });
-  });
-
-  import {
-    Swiper,
-    Navigation,
-    Pagination,
-    EffectCoverflow,
-    Autoplay,
-    EffectCreative,
-  } from "swiper";
-  let x = 3;
-  var swiper = new Swiper(".mySwiper", {
-    modules: [Navigation, EffectCreative],
-    effect: "creative",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: 5,
-    spaceBetween: 0,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-next",
-      prevEl: ".swiper-prev",
-    },
-    creativeEffect: {
-      prev: {
-        // will set `translateZ(-400px)` on previous slides
-        rotate: [0, 0, -8],
-        translate: ["-120%", "10%", 0],
-        scale: 0.9,
-      },
-      next: {
-        // will set `translateX(100%)` on next slides
-        rotate: [0, 0, 8],
-        translate: ["120%", "10%", 0],
-        scale: 0.9,
-      },
-      limitProgress: 2,
-    },
-    breakpoints: {
-      767: {
-        slidesPerView: 5,
-        spaceBetween: 30,
-      },
-      250: {
-        slidesPerView: 2.5,
-        spaceBetween: 50,
-      },
-    },
-
-    autoplay: {
-      delay: 2000,
-    },
-  });
-</script>
+  </script>
+</div>

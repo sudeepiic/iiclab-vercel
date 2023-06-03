@@ -4,6 +4,10 @@ import Layout from "../layouts/Layout.astro";
 import applyNow from "../images/applyNow.png";
 import ps from "../images/ps.png";
 import submitArrow from "../images/submitArrow.png";
+import { log } from "astro/dist/core/logger/core";
+const props = Astro.props;
+
+console.log(props.jobProfile);
 ---
 
 <Layout title="hiring-app">
@@ -11,7 +15,7 @@ import submitArrow from "../images/submitArrow.png";
     <div class="gradient">
       <div class="bgImage">
         <div class="title">
-          <span>Business Development Manager</span><br />
+          <span set:html={props.jobProfile} /><br />
           <a href="#apply">
             <img
               class="btn"
@@ -27,112 +31,30 @@ import submitArrow from "../images/submitArrow.png";
 
   <section class="margins" id="apply">
     <p class="heading">About the job</p>
-    <span class="text">
-      We are looking for a BD Manager who is passionate about technology and has
-      the prowess to build strong relationships. The candidate should have prior
-      experience in selling high-end custom tech solutions to Industry
-      Stalwarts. The pride in being a true HUNTER backed by proven success in
-      identifying, pursuing, and converting opportunities leading to driving
-      top-line revenue to the organization over a complex sales cycle, is what
-      the candidate must possess to be the right fit. If you have the zeal to
-      network and collaborate with the industry’s leading professionals to bring
-      about revolutionary tech innovations, then Ink In Caps is the place for
-      you. Sound knowledge of software and consultative selling would be a plus.
-      P.S. The candidate will also get the opportunity to travel occasionally
-      for work.
-    </span>
+    <span class="text" set:html={props.aboutJob} />
 
     <p class="heading">Responsibilities</p>
-    <span class="text">
-      <ul class="a">
-        <li>
-          Fill and manage the pipeline, deliver revenue, find new business and
-          maintain/grow existing accounts.
-        </li>
-        <li>
-          Research prospective accounts in targeted markets, pursue leads and
-          follow through to a successful agreement.
-        </li>
-        <li>
-          Understand the target markets, including industry, company, project,
-          company contacts and which market strategies can be used to attract
-          clients.
-        </li>
-        <li>
-          Maintain relationships with current clients and identify new
-          prospects.
-        </li>
-        <li>
-          Possess a strong understanding of our services, our competition in the
-          industry and positioning.
-        </li>
-        <li>
-          Follow the latest industry developments and stay up-to-date on
-          corporate competitors.
-        </li>
-      </ul>
-    </span>
+    <span class="text" set:html={props.responsibilities} />
 
     <p class="heading">job requirements</p>
-    <span class="text" style="margin-bottom: 2%;">
-      <ul class="a">
-        <li>Strategic thinking and problem solving skills.</li>
-        <li>
-          Exhibits sound and broad business, technical, industry and market
-          knowledge.
-        </li>
-        <li>
-          Ability to collaborate with different teams and exercise quick
-          decision-making.
-        </li>
+    <span
+      class="text"
+      style="margin-bottom: 2%;"
+      set:html={props.jobRequirements}
+    />
+    {
+      props.qualifications && (
+        <>
+          <p class="heading">Qualifications</p>
+          <span
+            class="text"
+            style="margin-bottom: 2%;"
+            set:html={props.qualifications}
+          />
+        </>
+      )
+    }
 
-        <li>
-          Influences conflict resolution in a manner that is beneficial to the
-          individuals concerned and the organization.
-        </li>
-
-        <li>
-          Functions in a team leadership role and represents the Growth
-          Technology organization in business teams to produce a value-added
-          outcome.
-        </li>
-
-        <li>
-          Actively seeks ways to build and improve team spirit through engaging
-          others and demonstrating integrity, active listening, enthusiasm and
-          rewarding high performance.
-        </li>
-        <li>
-          Must have the desire and courage to accept responsibility and
-          accountability to make the right things happen.
-        </li>
-
-        <li>Seeks and embraces change by challenging the status quo.</li>
-
-        <li>
-          Seeks and accepts new assignments and development opportunities.
-        </li>
-        <li>Exhibits perseverance and focus in the face of adversity.</li>
-
-        <li>
-          Prior success in significantly increasing revenue in a highly
-          competitive market.
-        </li>
-
-        <li>
-          Must demonstrate a strong work ethic, be a team player, and work well
-          under pressure and in challenging situations.
-        </li>
-
-        <li>Direct client interaction experience is required.</li>
-
-        <li>
-          Excellent communication and computer skills, consultative selling
-          skills.
-        </li>
-        <li>Understanding of general software concepts.</li>
-      </ul>
-    </span>
     <br />
     <!-- <img style="width: 3%; margin-right: 2%;" src={ps} alt="" />
     <img style="width: 3%; margin-right: 2%;" src={ps} alt="" />
@@ -610,47 +532,5 @@ import submitArrow from "../images/submitArrow.png";
     font-weight: 600;
     font-size: 1.2vw;
     border-radius: 0 0 0.7vw 0.7vw;
-  }
-</style>
-
-<style is:global>
-  .turnBlack {
-    background: transparent;
-    position: absolute;
-    width: 100%;
-  }
-
-  .list ul li a {
-    color: white;
-    opacity: 100%;
-  }
-  path {
-    fill: white;
-  }
-
-  /* connect button css */
-
-  .connect,
-  .circles {
-    fill: #1a1a1a;
-  }
-  .oval {
-    fill: white;
-  }
-
-  .tele {
-    fill: white;
-  }
-  .menu p {
-    color: white;
-  }
-  .menu .s1,
-  .menu .s2 {
-    border: 1px solid white;
-  }
-
-  .footerYellow,
-  .footerReady {
-    display: none;
   }
 </style>

@@ -231,7 +231,7 @@ import subscribeBtn from "../images/subscribeBtn.png";
   style="border-top: 1.15px solid  grey;   background-color: #1a1a1a;padding:2% 0 2% 0"
 >
   <div style="text-align: center;">
-    <span class="bottomDiv" style=" opacity:70%"> copyright 2022</span>
+    <span class="bottomDiv" style=" opacity:70%"> @copyright 2022</span>
     <span class="bottomDiv"> &nbsp; Ink In Caps</span>
   </div>
 </section>
@@ -333,6 +333,7 @@ import subscribeBtn from "../images/subscribeBtn.png";
     font-style: normal;
     font-weight: 400;
     font-size: 7.5vw;
+    word-spacing: 0.3rem;
     src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
   }
 
@@ -378,6 +379,9 @@ import subscribeBtn from "../images/subscribeBtn.png";
   }
 
   @media only screen and (max-width: 767px) {
+    .footerFont {
+      word-spacing: 0.2rem;
+    }
     .div1 {
       border-radius: 1.3vw !important;
     }
@@ -402,6 +406,7 @@ import subscribeBtn from "../images/subscribeBtn.png";
       padding-left: 4%;
     }
     .allTopInputs {
+      width: 100% !important;
     }
     .IICInsider {
       margin-top: 40px;
@@ -429,6 +434,9 @@ import subscribeBtn from "../images/subscribeBtn.png";
     .div3,
     .div2 {
       margin-left: 0 !important;
+    }
+    .div3 {
+      width: 100% !important;
     }
     .address {
       color: grey;
@@ -471,6 +479,10 @@ import subscribeBtn from "../images/subscribeBtn.png";
     .mobSubscribe {
       display: none;
     }
+    .div3 {
+      width: 98% !important;
+      margin-left: 2% !important;
+    }
   }
 
   .diamond {
@@ -497,6 +509,7 @@ import subscribeBtn from "../images/subscribeBtn.png";
     font-size: calc(7px + 0.390625vw);
     padding-left: 1.5%;
   }
+
   @media screen and (min-width: 768px) and (max-width: 1060px) {
     .inputCss {
       width: 14vw;

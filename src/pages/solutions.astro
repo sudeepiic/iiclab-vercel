@@ -65,7 +65,7 @@ import diamond from "../images/whiteDiamond.png";
             </div>
             <div class="captionDiv">
               <span class="captionIndex">01</span>
-              <span class="captionTitle">Immersive Technology</span>
+              <span class="captionTitle">&nbsp; Immersive Technology</span>
             </div>
           </div>
         </div>
@@ -106,7 +106,7 @@ import diamond from "../images/whiteDiamond.png";
             </div>
             <div class="captionDiv">
               <span class="captionIndex">02</span>
-              <span class="captionTitle">Interactive Solution</span>
+              <span class="captionTitle"> &nbsp;Interactive Solution</span>
             </div>
           </div>
         </div>
@@ -140,7 +140,7 @@ import diamond from "../images/whiteDiamond.png";
             </div>
             <div class="captionDiv">
               <span class="captionIndex">03</span>
-              <span class="captionTitle">Mobile & Web</span>
+              <span class="captionTitle"> &nbsp; Mobile & Web</span>
             </div>
           </div>
         </div>
@@ -175,7 +175,7 @@ import diamond from "../images/whiteDiamond.png";
             </div>
             <div class="captionDiv">
               <span class="captionIndex">04</span>
-              <span class="captionTitle">Content Development</span>
+              <span class="captionTitle">&nbsp; Content Development</span>
             </div>
           </div>
         </div>
@@ -211,7 +211,7 @@ import diamond from "../images/whiteDiamond.png";
             </div>
             <div class="captionDiv">
               <span class="captionIndex">05</span>
-              <span class="captionTitle">Experiential Marketing</span>
+              <span class="captionTitle">&nbsp; Experiential Marketing</span>
             </div>
           </div>
         </div>
@@ -248,7 +248,7 @@ import diamond from "../images/whiteDiamond.png";
             </div>
             <div class="captionDiv">
               <span class="captionIndex">06</span>
-              <span class="captionTitle">strategy & design</span>
+              <span class="captionTitle">&nbsp; strategy & design</span>
             </div>
           </div>
         </div>
@@ -270,6 +270,18 @@ import diamond from "../images/whiteDiamond.png";
         </div>
 
         <span class="wallHonor">Augmented Reality</span>
+        <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
+          <img style="width:3.5vw" src={diamond} alt="" loading="lazy" />
+        </div>
+        <span class="wallHonor">XR</span>
+        <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
+          <img style="width:3.5vw" src={diamond} alt="" loading="lazy" />
+        </div>
+        <span class="wallHonor">Interactive Technology</span>
+        <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
+          <img style="width:3.5vw" src={diamond} alt="" loading="lazy" />
+        </div>
+        <span class="wallHonor">Experiential Marketing</span>
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
           <img style="width:3.5vw" src={diamond} alt="" loading="lazy" />
         </div>
@@ -309,6 +321,7 @@ import diamond from "../images/whiteDiamond.png";
     font-style: normal;
     line-height: 1.2;
     display: block;
+    word-spacing: 0.25rem;
   }
   .captionDiv {
     display: none;
@@ -320,6 +333,7 @@ import diamond from "../images/whiteDiamond.png";
     text-transform: capitalize;
     font-size: 4.5vw;
     font-weight: 400;
+    word-spacing: 0.25rem;
   }
 
   .captionIndex {
@@ -490,7 +504,7 @@ import diamond from "../images/whiteDiamond.png";
   /* moving text css */
 
   .moving-text {
-    animation: move-text 15s linear infinite;
+    animation: move-text 30s linear infinite;
     overflow: hidden;
   }
 
@@ -504,10 +518,10 @@ import diamond from "../images/whiteDiamond.png";
   }
   @keyframes move-text {
     0% {
-      transform: translateX(100%);
+      transform: translateX(32%);
     }
     100% {
-      transform: translateX(-90%);
+      transform: translateX(-100%);
     }
   }
 

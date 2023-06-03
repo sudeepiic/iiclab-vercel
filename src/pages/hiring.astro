@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
 import hiringImg1 from "../images/hiringImg1.jpg";
 import hiringHeroImg from "../images/hiringHeroImg.jpg";
 import team from "../images/team.jpg";
@@ -9,51 +8,13 @@ import closeEye from "../images/closeEye.png";
 import locIcon from "../images/locIcon.png";
 import clock from "../images/clock.png";
 import ps from "../images/ps.png";
+import { contentfulClient } from "../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 // import jobProfiles from "../components/jobProfiles";
 import viewOpenPositions from "../images/ViewOpenPosition.png";
-const jobProfiles = {
-  designation: "",
-  experience: "",
-  jobTitle: "",
-  description: "",
-  location: "",
-  jobType: "",
-  category: "",
-};
-
-const bdm = Object.create(jobProfiles);
-bdm.designation = "business development manager";
-bdm.experience = "02 years experience";
-bdm.jobTitle = "business development manager - 2Y experience";
-bdm.description =
-  "We are looking for a BD Manager who is passionate about technology and has the prowess to build strong relationships";
-bdm.location = "Mumbai";
-bdm.jobType = "Full-Time";
-bdm.category = "Business Development";
-
-const unityDeveloper = Object.create(jobProfiles);
-unityDeveloper.designation = "Unity Developer";
-unityDeveloper.experience = "01 years experience";
-unityDeveloper.jobTitle = "Unity Developer - 1Y experience";
-unityDeveloper.description =
-  "We are looking for a talented unity developer to join our design team.";
-unityDeveloper.location = "Mumbai";
-unityDeveloper.jobType = "Full-Time";
-unityDeveloper.category = "Design and Development";
-
-const webDevIntern = Object.create(jobProfiles);
-webDevIntern.designation = "Web Developer Intern";
-webDevIntern.experience = "Fresher";
-webDevIntern.jobTitle = "Web Developer Intern - Fresher";
-webDevIntern.description =
-  "We are seeking a talented Web Developer Intern to join our team. ";
-webDevIntern.location = "Mumbai";
-webDevIntern.jobType = "Intern";
-webDevIntern.category = "Design and Development";
-
-const jobProfilesArray = [];
-
-jobProfilesArray.push(bdm, unityDeveloper, webDevIntern);
+const entries: any = await contentfulClient.getEntries<any>({
+  content_type: "jobProfiles",
+});
 ---
 
 <Layout title="Hiring">
@@ -115,7 +76,7 @@ jobProfilesArray.push(bdm, unityDeveloper, webDevIntern);
   <section style="padding-top: 4.5%;" class="margins">
     <div style="margin-bottom: 2%;">
       <span class="positionsTitle">Explore Positions</span>
-      <span class="positionsTitle" style="opacity:40%">(03)</span>
+      <!-- <span class="positionsTitle" style="opacity:40%">(03)</span> -->
     </div>
 
     <div class="row" style="margin-bottom: 3%;">
@@ -180,7 +141,7 @@ jobProfilesArray.push(bdm, unityDeveloper, webDevIntern);
     </div>
     <div class="row">
       {
-        jobProfilesArray.map((jobProfiles) => (
+        entries.items.map((jobProfiles, index) => (
           <div class="col-4 flip-card">
             <div class="flip-card-inner">
               <div class="card">
@@ -189,22 +150,24 @@ jobProfilesArray.push(bdm, unityDeveloper, webDevIntern);
                 </div>
 
                 <div class="cardContent">
-                  <span>{jobProfiles.designation}</span>
+                  <span>{jobProfiles.fields.jobProfile}</span>
                 </div>
                 <div class="bottomDiv">
-                  <span>{jobProfiles.experience}</span>
+                  <span>{jobProfiles.fields.experience}</span>
                 </div>
               </div>
               <div class="flip-card-back">
                 <div class="backContent">
-                  <h3>{jobProfiles.jobTitle}</h3>
-                  <span>{jobProfiles.description}</span>
+                  <h3>{jobProfiles.fields.profileAndExperience}</h3>
+                  <span>{jobProfiles.fields.shortDescription}</span>
                 </div>
                 <div class="location">
                   <img class="locIcon" src={locIcon} alt="" />
-                  <span style="margin-right: 10%;">{jobProfiles.location}</span>
+                  <span style="margin-right: 10%;">
+                    {jobProfiles.fields.location}
+                  </span>
                   <img style="width: 8%;" src={clock} alt="" loading="lazy" />
-                  <span>{jobProfiles.jobType}</span>
+                  <span>{jobProfiles.fields.jobType}</span>
                 </div>
                 <div class="bottomDivBack row">
                   <div class="col-6 blackBottom">
@@ -212,7 +175,11 @@ jobProfilesArray.push(bdm, unityDeveloper, webDevIntern);
                   </div>
 
                   <div class="col-5 btn">
-                    <a href="/hiring-app/">Apply Now</a>
+                    <a
+                      href={"/hiring-application/" + jobProfiles.fields.params}
+                    >
+                      Apply Now
+                    </a>
                   </div>
                 </div>
               </div>
@@ -221,394 +188,405 @@ jobProfilesArray.push(bdm, unityDeveloper, webDevIntern);
         ))
       }
     </div>
-    <style>
-      a {
-        text-decoration: none;
-      }
-      .exploreBtn:focus {
-        outline: none !important;
-        box-shadow: none !important;
-      }
+  </section>
+  <style>
+    a {
+      text-decoration: none;
+    }
+    .exploreBtn:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+    select {
+      padding: 2% 10% 2% 3% !important;
+
+      width: 140% !important;
+      border: 1.25px solid rgba(26, 26, 26, 0.25) !important;
+      font-family: "anek devanagari";
+      background: rgba(255, 255, 255, 0.7);
+      opacity: 60%;
+      border-radius: 0 0.6vw 0 0.6vw !important;
+      font-size: 1.1vw;
+    }
+    @media screen and (max-width: 767px) {
       select {
         padding: 2% 10% 2% 3% !important;
-
-        width: 140% !important;
+        margin-bottom: 3% !important;
+        width: 100% !important;
         border: 1.25px solid rgba(26, 26, 26, 0.25) !important;
         font-family: "anek devanagari";
         background: rgba(255, 255, 255, 0.7);
         opacity: 60%;
-        border-radius: 0 0.6vw 0 0.6vw !important;
-        font-size: 1.1vw;
+        border-radius: 0.6vw !important;
+        font-size: 2.3vw;
       }
-      @media screen and (max-width: 767px) {
-        select {
-          padding: 2% 10% 2% 3% !important;
-          margin-bottom: 3% !important;
-          width: 100% !important;
-          border: 1.25px solid rgba(26, 26, 26, 0.25) !important;
-          font-family: "anek devanagari";
-          background: rgba(255, 255, 255, 0.7);
-          opacity: 60%;
-          border-radius: 0.6vw !important;
-          font-size: 2.3vw;
-        }
-        .titleText {
-          font-size: 2.2vw !important;
-          /* display: block !important; */
-          margin-top: 2%;
-        }
-        .title {
-          font-size: 18vw !important;
-        }
-        .titleImg {
-          width: 31% !important;
-          margin-top: 2%;
-        }
-        .blackTitle span {
-          font-size: 18vw !important;
-        }
-        .pointersMob {
-          padding-left: 1.5% !important;
-        }
-        .benefitsText {
-          font-size: 3vw !important;
-          width: 80% !important;
-        }
-        .positionsTitle {
-          font-size: 18vw !important;
-        }
-        .pointerDiv {
-          margin-left: 0 !important;
-          margin-top: 3% !important;
-        }
-        .onlyDesk {
-          display: none !important;
-        }
-        .inputCss {
-          border-radius: 0.6vw !important;
-          padding: 4.5%;
-          font-size: 2.3vw !important;
-          width: 100% !important;
-        }
-        .inputTitle {
-          display: none !important;
-        }
-
-        /* Cards CSS */
-        .flip-card {
-          width: 100% !important;
-          height: 100vw !important ;
-        }
-        .card {
-          width: 100% !important;
-          margin-bottom: 5% !important;
-        }
-
-        .cardContent span {
-          font-size: 14.5vw !important;
-        }
-        .bottomDiv span {
-          font-size: 8vw !important;
-        }
-        .eyeDiv {
-          border-radius: 0 0 0 16vw !important;
-        }
-        .backContent h3 {
-          font-size: 5vw !important;
-        }
-        .flip-card-back span {
-          font-size: 3vw !important;
-
-          min-height: 10vw !important;
-        }
-        .locIcon {
-          width: auto !important;
-        }
-        .clock {
-          width: 6% !important;
-        }
-        .bottomDivBack .col-5 {
-          font-size: 6vw !important;
-        }
-        .backContent,
-        .location {
-          padding: 0 7% !important;
-        }
-        .flip-card-back {
-          padding: 19% 0 0 0 !important;
-          width: 100% !important;
-          margin-left: 0 !important;
-        }
-
-        /* cards css ends */
-      }
-
-      @media screen and (min-width: 768px) {
-        .onlyMob {
-          display: none !important;
-        }
-      }
-      @media screen and (max-width: 500px) {
-        .flip-card {
-          height: 105vw !important;
-        }
-      }
-
-      @media screen and (max-width: 820px) {
-        .exploreBtn {
-          width: 6.7vw !important;
-        }
-      }
-
-      .title {
-        font-family: "Deutschlander";
-        font-size: 14.5vw;
-        text-transform: uppercase;
-        line-height: 0.8;
-      }
-
-      .titleImg {
-        vertical-align: baseline;
-        width: 32%;
-
-        border-radius: 12vw;
-        margin-right: 3%;
-      }
-
-      .margins {
-        margin: 0 8% 0 8%;
-        margin-bottom: 4%;
-      }
-
       .titleText {
-        font-family: "anek devanagari";
-        opacity: 60%;
-        font-size: 1.2vw;
-        line-height: 1.9;
-        padding-top: 1%;
+        font-size: 2.2vw !important;
+        /* display: block !important; */
+        margin-top: 2%;
       }
-
-      .blackSec {
-        background-color: #1a1a1a;
-        padding: 11% 8% 8% 8%;
-        border-radius: 0 0 5vw 5vw;
+      .title {
+        font-size: 18vw !important;
+      }
+      .titleImg {
+        width: 31% !important;
+        margin-top: 2%;
       }
       .blackTitle span {
-        font-family: "Deutschlander";
-        font-size: 12.5vw;
-        text-transform: uppercase;
-        line-height: 0.8;
-        color: white;
-        opacity: 100%;
+        font-size: 18vw !important;
+        word-spacing: 0.13rem !important;
       }
-
-      .benefitsImg {
-        border-radius: 0 0.8vw 0 0.8vw;
-        width: 21%;
-        margin-bottom: 4%;
+      .pointersMob {
+        padding-left: 1.5% !important;
       }
       .benefitsText {
-        font-family: "anek devanagari";
-        color: white;
-        font-size: 2vw;
+        font-size: 3vw !important;
+        width: 80% !important;
       }
-
       .positionsTitle {
-        font-family: "Deutschlander";
-        font-size: 12.5vw;
-        text-transform: uppercase;
-        line-height: 0.8;
+        font-size: 18vw !important;
       }
-
+      .pointerDiv {
+        margin-left: 0 !important;
+        margin-top: 3% !important;
+      }
+      .onlyDesk {
+        display: none !important;
+      }
       .inputCss {
-        height: 3vw;
-        border-radius: 0 10px 0 10px;
-        border: 1.25px solid rgba(26, 26, 26, 0.25);
-        background: rgba(255, 255, 255, 0.7);
-        font-size: calc(8px + 0.390625vw);
-        width: 90%;
-        padding-left: 3%;
-        font-family: "anek devanagari";
-        font-weight: 500;
-        opacity: 80%;
+        border-radius: 0.6vw !important;
+        padding: 4.5%;
+        font-size: 2.3vw !important;
+        width: 100% !important;
       }
-
       .inputTitle {
-        opacity: 60%;
-        font-size: 1.2vw !important;
-        font-family: "anek devanagari";
+        display: none !important;
       }
 
-      .exploreBtn {
-        background: rgba(255, 255, 255, 0.7);
-        opacity: 60%;
-        font-weight: 500;
-        font-size: 1vw;
-        border-radius: 0 0.7vw 0 0.7vw;
-        width: 7.7vw;
-        /* height:35px; */
-        border: 1.25px solid rgba(26, 26, 26, 0.25);
-        font-family: "anek devanagari";
-        margin: 1.35%;
-        padding: 2.35%;
-        margin-top: 0 !important;
-      }
-      .exploreBtn.clicked {
-        background-color: black;
-        color: white;
-        opacity: 100%;
-      }
-
-      .eyeDiv {
-        background-color: #e5ff53;
-        width: 30%;
-        padding: 10%;
-        align-self: end;
-        border-radius: 0 0 0 6vw;
-        border-radius: ;
+      /* Cards CSS */
+      .flip-card {
+        width: 100% !important;
+        height: 100vw !important ;
       }
       .card {
-        background-color: #fefff9;
-        border: 1.43px solid #1a1a1a;
-        border-radius: 0.65vw;
-        margin-right: 8%;
-        min-width: 24vw;
+        width: 100% !important;
+        margin-bottom: 5% !important;
       }
-      .eye {
-        width: 90%;
-      }
+
       .cardContent span {
-        font-family: "Deutschlander";
-        font-size: 5.5vw;
-        text-transform: uppercase;
-        line-height: 0.8;
-        opacity: 100%;
-        display: block;
+        font-size: 14.5vw !important;
       }
-      .cardContent {
-        margin: 15% 10% 33% 10%;
-        text-align: center;
-      }
-      @media screen and (min-width: 768px) {
-        .cardContent {
-          height: 18vw !important;
-          margin-bottom: 0 !important ;
-        }
-      }
-      .bottomDiv {
-        background-color: #1a1a1a;
-        text-align: center;
-        align-self: baseline;
-        padding: 3%;
-        margin-left: 1%;
-        margin-right: 2%;
-        margin-bottom: 1%;
-        width: 98%;
-
-        border-radius: 0 0 0.5vw 0.5vw;
-      }
-
       .bottomDiv span {
-        font-family: "Deutschlander";
-        font-size: 2.5vw;
-        text-transform: uppercase;
-        line-height: 0.8;
-        opacity: 100%;
-        color: white;
-        display: block;
+        font-size: 8vw !important;
       }
-      /* card css */
-
-      .flip-card {
-        perspective: 1000px;
-        position: relative;
-        width: 33%;
-        height: 32vw;
+      .eyeDiv {
+        border-radius: 0 0 0 16vw !important;
       }
-
-      .flip-card-inner {
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        position: relative;
-      }
-      .flip-card:hover .flip-card-inner {
-        transform: rotateY(180deg);
-      }
-      .card,
-      .flip-card-back {
-        position: absolute;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-      }
-
-      .flip-card-back {
-        background-color: #1a1a1a;
-        padding: 15% 7% 0 7%;
-        color: white;
-        transform: rotateY(180deg);
-        width: 90%;
-        margin-left: 10%;
-
-        border-radius: 0.65vw;
-      }
-      .flip-card-back h3 {
-        font-family: "anek devanagari";
-        font-weight: 500;
-        font-size: 1.6vw;
-        margin-bottom: 7%;
+      .backContent h3 {
+        font-size: 5vw !important;
       }
       .flip-card-back span {
-        font-family: "anek devanagari";
-        opacity: 50%;
-        line-height: 1.5;
-        font-size: 1vw;
-        letter-spacing: 1px;
-        min-height: 5.5vw;
+        font-size: 3vw !important;
+
+        min-height: 10vw !important;
       }
-      @media screen and (min-width: 1400px) {
-        .flip-card-back span {
-          min-height: 7vw;
-        }
+      .locIcon {
+        width: auto !important;
       }
-      .backContent span {
-        display: block;
+      .clock {
+        width: 6% !important;
       }
-      .location span {
-        font-family: "anek devanagari";
-        opacity: 50%;
-        display: inline-block;
+      .bottomDivBack .col-5 {
+        font-size: 6vw !important;
       }
-      .backContent {
-        margin-bottom: 10%;
-      }
+      .backContent,
       .location {
-        margin-bottom: 10%;
+        padding: 0 7% !important;
+      }
+      .flip-card-back {
+        padding: 19% 0 0 0 !important;
+        width: 100% !important;
+        margin-left: 0 !important;
       }
 
-      .bottomDivBack {
-        /* text-align: center; */
-        align-self: baseline;
+      /* cards css ends */
+    }
 
-        margin-bottom: 2%;
-
-        border-radius: 0 0 0.5vw 0.5vw;
+    @media screen and (min-width: 768px) {
+      .onlyMob {
+        display: none !important;
       }
-      .col-5 {
-        background-color: #e5ff53;
-        padding: 5%;
-        padding-bottom: 0% !important;
-        text-align: center;
-        font-family: "Deutschlander";
-        font-size: 2.3vw;
-        text-transform: uppercase;
-        line-height: 0.8;
-        opacity: 100%;
-        color: black;
-        display: block;
+      .flip-card {
+        margin-bottom: 3%;
       }
+    }
+    @media screen and (max-width: 500px) {
+      .flip-card {
+        height: 105vw !important;
+      }
+    }
 
-      /* .col-5 span {
+    @media screen and (max-width: 820px) {
+      .exploreBtn {
+        width: 6.7vw !important;
+      }
+      .title {
+        word-spacing: 0.13rem !important;
+      }
+    }
+
+    .title {
+      font-family: "Deutschlander";
+      font-size: 14.5vw;
+      text-transform: uppercase;
+      line-height: 0.8;
+      word-spacing: 0.22rem;
+    }
+
+    .titleImg {
+      vertical-align: baseline;
+      width: 32%;
+
+      border-radius: 12vw;
+      margin-right: 3%;
+    }
+
+    .margins {
+      margin: 0 8% 0 8%;
+      margin-bottom: 4%;
+    }
+
+    .titleText {
+      font-family: "anek devanagari";
+      opacity: 60%;
+      font-size: 1.2vw;
+      line-height: 1.9;
+      padding-top: 1%;
+    }
+
+    .blackSec {
+      background-color: #1a1a1a;
+      padding: 11% 8% 8% 8%;
+      border-radius: 0 0 5vw 5vw;
+    }
+    .blackTitle span {
+      font-family: "Deutschlander";
+      font-size: 12.5vw;
+      text-transform: uppercase;
+      line-height: 0.8;
+      color: white;
+      opacity: 100%;
+      word-spacing: 0.2rem;
+    }
+
+    .benefitsImg {
+      border-radius: 0 0.8vw 0 0.8vw;
+      width: 21%;
+      margin-bottom: 4%;
+    }
+    .benefitsText {
+      font-family: "anek devanagari";
+      color: white;
+      font-size: 2vw;
+    }
+
+    .positionsTitle {
+      font-family: "Deutschlander";
+      font-size: 12.5vw;
+      text-transform: uppercase;
+      line-height: 0.8;
+      word-spacing: 0.25rem;
+    }
+
+    .inputCss {
+      height: 3vw;
+      border-radius: 0 10px 0 10px;
+      border: 1.25px solid rgba(26, 26, 26, 0.25);
+      background: rgba(255, 255, 255, 0.7);
+      font-size: calc(8px + 0.390625vw);
+      width: 90%;
+      padding-left: 3%;
+      font-family: "anek devanagari";
+      font-weight: 500;
+      opacity: 80%;
+    }
+
+    .inputTitle {
+      opacity: 60%;
+      font-size: 1.2vw !important;
+      font-family: "anek devanagari";
+    }
+
+    .exploreBtn {
+      background: rgba(255, 255, 255, 0.7);
+      opacity: 60%;
+      font-weight: 500;
+      font-size: 1vw;
+      border-radius: 0 0.7vw 0 0.7vw;
+      width: 7.7vw;
+      /* height:35px; */
+      border: 1.25px solid rgba(26, 26, 26, 0.25);
+      font-family: "anek devanagari";
+      margin: 1.35%;
+      padding: 2.35%;
+      margin-top: 0 !important;
+    }
+    .exploreBtn.clicked {
+      background-color: black;
+      color: white;
+      opacity: 100%;
+    }
+
+    .eyeDiv {
+      background-color: #e5ff53;
+      width: 30%;
+      padding: 10%;
+      align-self: end;
+      border-radius: 0 0 0 6vw;
+      border-radius: ;
+    }
+    .card {
+      background-color: #fefff9;
+      border: 1.43px solid #1a1a1a;
+      border-radius: 0.65vw;
+      margin-right: 8%;
+      min-width: 24vw;
+    }
+    .eye {
+      width: 90%;
+    }
+    .cardContent span {
+      font-family: "Deutschlander";
+      font-size: 5.5vw;
+      text-transform: uppercase;
+      line-height: 0.8;
+      opacity: 100%;
+      display: block;
+    }
+    .cardContent {
+      margin: 15% 10% 33% 10%;
+      text-align: center;
+    }
+    @media screen and (min-width: 768px) {
+      .cardContent {
+        height: 18vw !important;
+        margin-bottom: 0 !important ;
+      }
+    }
+    .bottomDiv {
+      background-color: #1a1a1a;
+      text-align: center;
+      align-self: baseline;
+      padding: 3%;
+      margin-left: 1%;
+      margin-right: 2%;
+      margin-bottom: 1%;
+      width: 98%;
+
+      border-radius: 0 0 0.5vw 0.5vw;
+    }
+
+    .bottomDiv span {
+      font-family: "Deutschlander";
+      font-size: 2.5vw;
+      text-transform: uppercase;
+      line-height: 0.8;
+      opacity: 100%;
+      color: white;
+      display: block;
+    }
+    /* card css */
+
+    .flip-card {
+      perspective: 1000px;
+      position: relative;
+      width: 33%;
+      height: 32vw;
+    }
+
+    .flip-card-inner {
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .card,
+    .flip-card-back {
+      position: absolute;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .flip-card-back {
+      background-color: #1a1a1a;
+      padding: 15% 7% 0 7%;
+      color: white;
+      transform: rotateY(180deg);
+      width: 90%;
+      margin-left: 10%;
+
+      border-radius: 0.65vw;
+    }
+    .flip-card-back h3 {
+      font-family: "anek devanagari";
+      font-weight: 500;
+      font-size: 1.6vw;
+      margin-bottom: 7%;
+    }
+    .flip-card-back span {
+      font-family: "anek devanagari";
+      opacity: 50%;
+      line-height: 1.5;
+      font-size: 1vw;
+      letter-spacing: 1px;
+      min-height: 5.5vw;
+    }
+    @media screen and (min-width: 1400px) {
+      .flip-card-back span {
+        min-height: 7vw;
+      }
+    }
+    .backContent span {
+      display: block;
+    }
+    .location span {
+      font-family: "anek devanagari";
+      opacity: 50%;
+      display: inline-block;
+    }
+    .backContent {
+      margin-bottom: 10%;
+    }
+    .location {
+      margin-bottom: 10%;
+    }
+
+    .bottomDivBack {
+      /* text-align: center; */
+      align-self: baseline;
+
+      margin-bottom: 2%;
+
+      border-radius: 0 0 0.5vw 0.5vw;
+    }
+    .col-5 {
+      background-color: #e5ff53;
+      padding: 5%;
+      padding-bottom: 0% !important;
+      text-align: center;
+      font-family: "Deutschlander";
+      font-size: 2.3vw;
+      text-transform: uppercase;
+      line-height: 0.8;
+      opacity: 100%;
+      color: black;
+      display: block;
+    }
+
+    /* .col-5 span {
       font-family: "Deutschlander";
       font-size: 2.3vw;
       text-transform: uppercase;
@@ -617,50 +595,35 @@ jobProfilesArray.push(bdm, unityDeveloper, webDevIntern);
       color: black;
       display: block;
     } */
-      .blackBottom {
-        background-color: white;
-        padding: 3%;
-        padding-bottom: 4%;
-        margin-left: 3%;
-      }
-      .col-6 img {
-        width: 20%;
-      }
-      .locIcon {
-        width: 9%;
-      }
-      .clock {
-        width: 8%;
-      }
-    </style>
+    .blackBottom {
+      background-color: white;
+      padding: 3%;
+      padding-bottom: 4%;
+      margin-left: 3%;
+    }
+    .col-6 img {
+      width: 20%;
+    }
+    .locIcon {
+      width: 9%;
+    }
+    .clock {
+      width: 8%;
+    }
+  </style>
 
-    <script>
-      const myButton = document.querySelectorAll(".exploreBtn");
+  <script>
+    const myButton = document.querySelectorAll(".exploreBtn");
 
-      for (let i = 0; i < myButton.length; i++) {
-        console.log(myButton.length, "lennnngth");
-        myButton[i].addEventListener("click", function () {
-          if (myButton[i].classList.contains("clicked")) {
-            myButton[i].classList.remove("clicked");
-          } else {
-            myButton[i].classList.add("clicked");
-          }
-        });
-      }
-
-      //     class AstroGreet extends HTMLElement {
-      //   constructor() {
-      //     super();
-
-      //     // Read the message from the data attribute.
-      //     const message = this.dataset.message;
-      //     const button = this.querySelector('button');
-      //     button.addEventListener('click', () => {
-      //       alert(message);
-      //     });
-      //   }
-      // }
-      // positions script
-    </script>
-  </section>
+    for (let i = 0; i < myButton.length; i++) {
+      console.log(myButton.length, "lennnngth");
+      myButton[i].addEventListener("click", function () {
+        if (myButton[i].classList.contains("clicked")) {
+          myButton[i].classList.remove("clicked");
+        } else {
+          myButton[i].classList.add("clicked");
+        }
+      });
+    }
+  </script>
 </Layout>

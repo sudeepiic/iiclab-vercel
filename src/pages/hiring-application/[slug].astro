@@ -1,0 +1,87 @@
+---
+import { contentfulClient } from "../../lib/contentful";
+import Layout from "../../layouts/Layout.astro";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import HiringApp from "../hiring-app.astro";
+
+export async function getStaticPaths() {
+  const entries = await contentfulClient.getEntries<any>({
+    content_type: "jobProfiles",
+  });
+  console.log(entries);
+  const pages = entries.items.map((item) => {
+    console.log(item.fields.params, "profilesssssssss");
+    return {
+      params: { slug: item.fields.params },
+      props: {
+        jobProfilesData: item,
+      },
+    };
+  });
+  return pages;
+}
+
+const { jobProfilesData } = Astro.props;
+---
+
+<HiringApp
+  jobProfile={jobProfilesData.fields.jobProfile}
+  experience={jobProfilesData.fields.experience}
+  profileAndExperience={jobProfilesData.fields.profileAndExperience}
+  shortDescription={jobProfilesData.fields.shortDescription}
+  location={jobProfilesData.fields.location}
+  jobType={jobProfilesData.fields.jobType}
+  aboutJob={jobProfilesData.fields.aboutJob}
+  responsibilities={documentToHtmlString(
+    jobProfilesData.fields.reponsibilities
+  )}
+  jobRequirements={documentToHtmlString(jobProfilesData.fields.jobRequirements)}
+  qualifications={documentToHtmlString(jobProfilesData.fields.qualifications)}
+/>
+
+<style is:global>
+  .turnBlack {
+    background: transparent;
+    position: absolute;
+    width: 100%;
+  }
+
+  .list ul li a {
+    color: white;
+    opacity: 50%;
+  }
+  path {
+    fill: white;
+  }
+
+  .connect,
+  .circles {
+    fill: #1a1a1a;
+  }
+  .oval {
+    fill: white;
+  }
+
+  .tele {
+    fill: white;
+  }
+  .menu p {
+    color: white;
+  }
+  .menu .s1,
+  .menu .s2 {
+    border: 1px solid white;
+  }
+
+  u {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 2.6vw;
+    font-weight: 400;
+    font-style: normal;
+    /* color: white; */
+    line-height: 0.85;
+
+    color: black;
+  }
+</style>

@@ -1,0 +1,378 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import awardsPrev from "../images/awardsPrev.png";
+import awardsNext from "../images/awardsNext.png";
+import products1 from "../images/products1.png";
+import products2 from "../images/products2.png";
+import icon1 from "../images/icon1.png";
+import icon2 from "../images/icon2.png";
+import { contentfulClient } from "../lib/contentful";
+
+const entries: any = await contentfulClient.getEntries<any>({
+  content_type: "caseStudy",
+});
+---
+
+<Layout title="Products">
+  <section style="padding-top: 5%;">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img class="sliderImg" src={products1} alt="" />
+        </div>
+
+        <div class="swiper-slide">
+          <img class="sliderImg" src={products2} alt="" />
+        </div>
+      </div>
+
+      <img class="swiper-button-prev" src={awardsPrev} loading="lazy" alt="" />
+      <img class="swiper-button-next" src={awardsNext} loading="lazy" alt="" />
+    </div>
+  </section>
+  <div class="d-flex">
+    <a href="" class="tabs">V-Tour</a>
+    <a href="" class="tabs">v-retail</a>
+    <a href="" class="tabs">v-conference</a>
+    <a href="" class="tabs">v-verse</a>
+    <a href="" class="tabs">v-stages</a>
+  </div>
+
+  <section style="background-color: #1a1a1a; padding-top: 6%;">
+    <div style="margin-left: 9%;  padding-bottom: 5%;">
+      <span class="title"> India's leading virtual events platform</span>
+      <br />
+      <span class="text">
+        Re-visualised and heightened multi-disciplinary platform (both web and
+        app) integrated with AR for all kinds of devices that strives to take
+        any event, gathering, or conference a notch higher.
+      </span>
+    </div>
+    <div style="margin-left: 9%;">
+      <span class="title">Top brands</span>
+      <div class="iconsDiv">
+        <div class="d-flex">
+          <div class="icons">
+            <img src={icon1} alt="" />
+          </div>
+          <div class="icons">
+            <img src={icon2} alt="" />
+          </div>
+          <div class="icons">
+            <img src={icon1} alt="" />
+          </div>
+          <div class="icons">
+            <img src={icon2} alt="" />
+          </div>
+          <div class="icons">
+            <img src={icon1} alt="" />
+          </div>
+        </div>
+
+        <div class="d-flex">
+          <div class="icons">
+            <img src={icon1} alt="" />
+          </div>
+          <div class="icons">
+            <img src={icon2} alt="" />
+          </div>
+          <div class="icons">
+            <img src={icon1} alt="" />
+          </div>
+          <div class="icons">
+            <img src={icon2} alt="" />
+          </div>
+          <div class="icons">
+            <img src={icon1} alt="" />
+          </div>
+        </div>
+
+        <div class="d-flex">
+          <div class="icons">
+            <img src={icon1} alt="" />
+          </div>
+          <div class="icons">
+            <img src={icon2} alt="" />
+          </div>
+          <div class="icons">
+            <img src={icon1} alt="" />
+          </div>
+          <div class="icons">
+            <img src={icon2} alt="" />
+          </div>
+          <div class="icons">
+            <img src={icon1} alt="" />
+          </div>
+        </div>
+
+        <div class="d-flex">
+          <div class="icons">
+            <img src={icon1} alt="" />
+          </div>
+          <div class="icons">
+            <img src={icon2} alt="" />
+          </div>
+          <div class="icons">
+            <img src={icon1} alt="" />
+          </div>
+          <div class="icons">
+            <img src={icon2} alt="" />
+          </div>
+          <div class="icons">
+            <img src={icon1} alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-left: 9%;">
+      <span class="title">Recent projects</span>
+    </div>
+
+    <div style="padding:7% 0 ; " class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        {
+          entries.items.map((caseStudy, index) => (
+            <div class="swiper-slide">
+              <div>
+                <a href={"/case-study/" + caseStudy.fields.heroTitle}>
+                  <img
+                    class="swiper2Img"
+                    src={caseStudy.fields?.heroBanner?.fields?.file.url}
+                    alt=""
+                  />
+                </a>
+                <div class="imgCaptionDiv">
+                  <span
+                    class="caption1"
+                    set:html={caseStudy.fields.singleClient}
+                  />
+                  <p
+                    class="caption2"
+                    set:html={caseStudy.fields?.whichTechnology}
+                  />
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="yellowDiv">
+      <span>know more about v-tour</span>
+    </div>
+  </section>
+
+  <style>
+    a {
+      text-decoration: none;
+    }
+    .tabs {
+      width: 20%;
+      border: 1px solid rgb(200, 199, 199);
+      border-right: 0 !important;
+      font-family: "anek devanagari";
+      font-weight: 600;
+      font-size: 1.3vw;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 2% 0;
+    }
+
+    .title {
+      font-family: "Deutschlander";
+      font-size: 12vw;
+      text-transform: uppercase;
+      line-height: 0.85;
+      color: white;
+    }
+    .text {
+      font-family: "anek devanagari";
+      font-weight: 300;
+      color: white;
+      opacity: 60%;
+      font-size: 1.5vw;
+      width: 85%;
+      display: inline-block;
+      word-spacing: 0.2rem;
+      margin-top: 1%;
+    }
+    .iconsDiv {
+      margin-right: 9%;
+      margin-top: 3%;
+      padding-bottom: 6%;
+    }
+    .icons {
+      width: 20%;
+      border: 1px solid rgb(78, 77, 77);
+      padding: 3%;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .icons img {
+      width: 65%;
+      margin: auto;
+      display: block;
+    }
+
+    .yellowDiv {
+      background-color: #e5ff53;
+      border-radius: 1.5vw;
+
+      padding: 3%;
+      margin: 0 9%;
+      text-align: center;
+    }
+    .yellowDiv span {
+      font-family: "Deutschlander";
+      font-size: 12vw;
+      text-transform: uppercase;
+      line-height: 0.85;
+    }
+    /* swiper css */
+    .swiper {
+      width: 80%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* margin-left: 1.5%; */
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 6%;
+      height: 15%;
+    }
+    .sliderImg {
+      width: 100%;
+    }
+
+    /* carousal 2 css */
+
+    .mySwiper {
+      width: 100%;
+    }
+
+    .swiper-slide-active .imgCaptionDiv {
+      display: block !important;
+    }
+
+    .swiper2Img {
+      display: block;
+      width: 90%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4/5;
+    }
+
+    .imgCaptionDiv {
+      margin-top: 5%;
+      display: none;
+    }
+
+    .caption1 {
+      text-transform: uppercase;
+      color: white;
+      font-size: 1.8vw;
+      font-family: "anek devanagari";
+      font-weight: 500;
+      letter-spacing: 0.7px;
+    }
+    .caption2 {
+      text-transform: uppercase;
+      font-family: "anek devanagari";
+      font-size: 1.75vw;
+      opacity: 0.4;
+      font-weight: 500;
+      letter-spacing: 0.7px;
+      color: white;
+    }
+  </style>
+  <style is:global>
+    .div1,
+    .div2 {
+      display: none;
+    }
+  </style>
+
+  <script>
+    import {
+      Swiper,
+      Navigation,
+      Pagination,
+      EffectCoverflow,
+      Autoplay,
+      EffectCreative,
+    } from "swiper";
+    let x = 3;
+    var swiper = new Swiper(".swiper", {
+      modules: [Navigation, EffectCreative],
+      // effect: "creative",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      autoplay: {
+        delay: 2000,
+      },
+    });
+
+    // carousal 2 css
+
+    let y = 3;
+    var swiper = new Swiper(".mySwiper", {
+      modules: [Navigation, Autoplay, EffectCreative],
+      effect: "creative",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 3,
+      spaceBetween: 30,
+      loop: true,
+      creativeEffect: {
+        prev: {
+          // will set `translateZ(-400px)` on previous slides
+          rotate: [0, 0, -8],
+          translate: ["-120%", "8%", 0],
+          scale: 0.98,
+        },
+        next: {
+          // will set `translateX(100%)` on next slides
+          rotate: [0, 0, 8],
+          translate: ["120%", "8%", 0],
+          scale: 0.98,
+        },
+      },
+      breakpoints: {
+        767: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        250: {
+          slidesPerView: 1.65,
+          spaceBetween: 30,
+        },
+      },
+
+      autoplay: {
+        delay: 2000,
+      },
+
+      // pagination: {
+      //   el: ".swiper-pagination",
+      //   clickable: true,
+      // },
+    });
+  </script>
+</Layout>
