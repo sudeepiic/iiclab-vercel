@@ -1,0 +1,35 @@
+---
+import { contentfulClient } from "../../lib/contentful";
+
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import products from "../products.astro";
+import Products from "../products.astro";
+
+export async function getStaticPaths() {
+  const entries = await contentfulClient.getEntries<any>({
+    content_type: "products",
+  });
+
+  const pages = entries.items.map((item) => {
+    // console.log(item.fields.caseStudies, "productsssssssss");
+    return {
+      params: { slug: item.fields.params },
+      props: {
+        productsData: item,
+      },
+    };
+  });
+  return pages;
+}
+
+const { productsData } = Astro.props;
+---
+
+<Products
+  waterMark={productsData?.fields.params}
+  title={documentToHtmlString(productsData?.fields?.title)}
+  titleText={productsData?.fields?.titleText}
+  caseStudyImg={productsData?.fields?.caseStudies[0]?.fields?.heroBanner?.fields
+    ?.file.url}
+  productData={productsData}
+/>

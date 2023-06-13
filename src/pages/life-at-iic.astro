@@ -1,0 +1,185 @@
+---
+import Layout from "../layouts/Layout.astro";
+import blogsLeft from "../images/blogsLeft.png";
+import blogsRight from "../images/blogsRight.png";
+import hiringHeroImg from "../images/hiringHeroImg.jpg";
+import officeImg from "../images/officeImg.png";
+---
+
+<Layout title="life-at-iic">
+  <section style="padding-top: 3.5%; background-color: #1a1a1a;">
+    <div class="margins" style="margin-bottom: 4%;">
+      <div class="row">
+        <div class="col-4">
+          <span class="title">life at iic</span>
+          <span class="title" style="color: #e5ff53;">.</span>
+        </div>
+        <div class="col-8">
+          <span class="titleText">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nonummy nibh euismod tincidunt ut laoreet.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="margins">
+      <div class="swiper mySwiper" style="padding:1.5% 0 5% 0 ;">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src={hiringHeroImg} alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src={officeImg} alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src={officeImg} alt="" />
+          </div>
+        </div>
+
+        <div class="d-flex controls">
+          <img class="swiper-prev" src={blogsLeft} alt="" />
+          <img class="swiper-next" src={blogsRight} alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .row {
+    width: 100%;
+  }
+  .margins {
+    margin-left: 7%;
+  }
+  .title {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    color: white;
+    font-size: 12.5vw;
+    line-height: 1;
+    word-spacing: 0.2rem;
+  }
+
+  .titleText {
+    font-family: "anek devanagari";
+    color: white;
+    opacity: 60%;
+    font-size: 1.5vw;
+    display: inline-block;
+    width: 55%;
+    font-weight: 300;
+    padding-top: 4%;
+    padding-left: 4%;
+    line-height: 1.8;
+  }
+
+  /* carousal css */
+  .swiper {
+    width: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    /* font-size: 18px; */
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .swiper-slide img {
+    width: 100%;
+  }
+  /* .swiper-slide-prev {
+    display: none;
+  } */
+
+  .swiper-next,
+  .swiper-prev {
+    width: 4%;
+  }
+  .swiper-prev {
+    margin-right: 3.5%;
+  }
+  .controls {
+    transform: translate(44%, 100%);
+  }
+</style>
+
+<style is:global>
+  .turnBlack {
+    background: #1a1a1a;
+
+    width: 100%;
+  }
+
+  .list ul li a {
+    color: white;
+    opacity: 50%;
+  }
+  path {
+    fill: white;
+  }
+
+  .connect,
+  .circles {
+    fill: #1a1a1a;
+  }
+  .oval {
+    fill: white;
+  }
+
+  .tele {
+    fill: white;
+  }
+  .menu p {
+    color: white;
+  }
+  .menu .s1,
+  .menu .s2 {
+    border: 1px solid white;
+  }
+</style>
+
+<script>
+  import {
+    Swiper,
+    Navigation,
+    Pagination,
+    EffectCoverflow,
+    Autoplay,
+    EffectCreative,
+  } from "swiper";
+  let x = 3;
+  var swiper = new Swiper(".mySwiper", {
+    modules: [Navigation, EffectCreative],
+    //   effect: "creative",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 1,
+
+    spaceBetween: 10,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-next",
+      prevEl: ".swiper-prev",
+    },
+
+    breakpoints: {
+      767: {
+        slidesPerView: 1.5,
+
+        spaceBetween: 30,
+      },
+      250: {
+        slidesPerView: 1.7,
+        spaceBetween: 20,
+      },
+    },
+
+    autoplay: {
+      delay: 2000,
+    },
+  });
+</script>

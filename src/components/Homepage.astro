@@ -29,7 +29,6 @@ import carousalNext from "../images/carousalNext.png";
 import carousalPrev from "../images/carousalPrev.png";
 import { contentfulClient } from "../lib/contentful";
 import close from "../images/close.png";
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
@@ -107,10 +106,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     </div>
     <div class="d-flex" id="main3">
       <a
-      href="#myModal"
-      data-bs-target="#myModal"
-      data-bs-toggle="modal"
-      data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
+        href="#myModal"
+        data-bs-target="#myModal"
+        data-bs-toggle="modal"
+        data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
         class="pause"
         style="width:40px;height:40px; border:1px solid black; border-radius: 50%; background:black;"
       >
@@ -171,12 +170,12 @@ const testimonials: any = await contentfulClient.getEntries<any>({
   <div class="giants" style="margin-left: 12%;">
     <tr>
       {
-        (clientsEntries.items[0].fields.clientIcons as any).map(
+        (clientsEntries?.items[0].fields?.clientIcons as any).map(
           (clients, index) => (
             <td class="img">
               <img
                 class="imgs"
-                src={clients.fields?.file.url}
+                src={clients?.fields?.file.url}
                 alt=""
                 loading="lazy"
               />
@@ -564,18 +563,21 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     {
       entries.items.map((caseStudy, index) => (
         <div class="hoverImg moving-text2 ">
-          <a href={"/case-study/" + caseStudy.fields.heroTitle}>
+          <a href={"/case-study/" + caseStudy?.fields?.heroTitle}>
             <img
-              src={caseStudy.fields?.heroBanner.fields?.file.url}
+              src={caseStudy?.fields?.heroBanner?.fields?.file.url}
               class="movingImgs"
               alt=""
               loading="lazy"
             />
             <div class="image-overlay">
-              <span class="workName" set:html={caseStudy.fields.singleClient} />
+              <span
+                class="workName"
+                set:html={caseStudy?.fields?.singleClient}
+              />
               <span
                 class="workTech"
-                set:html={caseStudy.fields?.whichTechnology}
+                set:html={caseStudy?.fields?.whichTechnology}
               />
             </div>
           </a>
@@ -727,7 +729,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
                 <div class="card-header" style="align-self: center;">
                   <img
                     src={
-                      clientsTestimonials.fields?.companyLogo.fields?.file.url
+                      clientsTestimonials?.fields?.companyLogo?.fields?.file.url
                     }
                     style="width: 50%;"
                     alt=""
@@ -739,17 +741,17 @@ const testimonials: any = await contentfulClient.getEntries<any>({
                   <div class="card-body">
                     <div
                       class="card-text"
-                      set:html={clientsTestimonials.fields?.testimonialText}
+                      set:html={clientsTestimonials?.fields?.testimonialText}
                     />
                     <div class="d-flex cardFooter">
                       <div style="margin:auto; margin-left:1%">
                         <span
                           class="authName"
-                          set:html={clientsTestimonials.fields?.clientName}
+                          set:html={clientsTestimonials?.fields?.clientName}
                         />
                         <span
                           class="authDesign"
-                          set:html={clientsTestimonials.fields?.clientInfo}
+                          set:html={clientsTestimonials?.fields?.clientInfo}
                         />
                       </div>
                     </div>
