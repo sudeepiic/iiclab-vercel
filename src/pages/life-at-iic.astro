@@ -4,35 +4,40 @@ import blogsLeft from "../images/blogsLeft.png";
 import blogsRight from "../images/blogsRight.png";
 import hiringHeroImg from "../images/hiringHeroImg.jpg";
 import officeImg from "../images/officeImg.png";
+import values from "../images/values.jpg";
+import values3 from "../images/values3.png";
+import carousalNext from "../images/carousalNext.png";
+import carousalPrev from "../images/carousalPrev.png";
 ---
 
 <Layout title="life-at-iic">
   <section style="padding-top: 3.5%; background-color: #1a1a1a;">
-    <div class="margins" style="margin-bottom: 4%;">
+    <div class="margins">
       <div class="row">
-        <div class="col-4">
+        <div class="col-lg-4 col-md-4 col-sm-12">
           <span class="title">life at iic</span>
           <span class="title" style="color: #e5ff53;">.</span>
         </div>
-        <div class="col-8">
+        <div class="col-lg-8 col-md-8 col-sm-12">
           <span class="titleText">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
             nonummy nibh euismod tincidunt ut laoreet.
           </span>
+          <span class="watermark">life at iic</span>
         </div>
       </div>
     </div>
 
     <div class="margins">
-      <div class="swiper mySwiper" style="padding:1.5% 0 5% 0 ;">
+      <div class="mySwiper" style="padding:1.5% 0 5% 0 ;">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
+          <div class="swiper-slide imgWidth">
             <img src={hiringHeroImg} alt="" />
           </div>
-          <div class="swiper-slide">
+          <div class="swiper-slide imgWidth">
             <img src={officeImg} alt="" />
           </div>
-          <div class="swiper-slide">
+          <div class="swiper-slide imgWidth">
             <img src={officeImg} alt="" />
           </div>
         </div>
@@ -43,15 +48,93 @@ import officeImg from "../images/officeImg.png";
         </div>
       </div>
     </div>
+
+    <div class="carousal2">
+      <div class="swiper" style="padding:1.5% 0 0 0 ;">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div style="position: relative;">
+              <img class="top-right-img" src={values3} alt="" />
+              <img class="main-img" src={values} alt="" />
+              <img class="bottom-left-img" src={values3} alt="" />
+            </div>
+            <div class="imgCaption">
+              <span>our values</span>
+              <ul class="a">
+                <li>Scenario Mapping Brand Audits</li>
+                <li>Brand Identity</li>
+                <li>Competitor Mapping</li>
+                <li>Graphic Design & Prototype</li>
+              </ul>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div style="position: relative;">
+              <img class="top-right-img" src={values3} alt="" />
+              <img class="main-img" src={values} alt="" />
+              <img class="bottom-left-img" src={values3} alt="" />
+            </div>
+            <div class="imgCaption">
+              <span>our beleives</span>
+              <ul class="a">
+                <li>Scenario Mapping Brand Audits</li>
+                <li>Brand Identity</li>
+                <li>Competitor Mapping</li>
+                <li>Graphic Design & Prototype</li>
+              </ul>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div style="position: relative;">
+              <img class="top-right-img" src={values3} alt="" />
+              <img class="main-img" src={values} alt="" />
+              <img class="bottom-left-img" src={values3} alt="" />
+            </div>
+            <div class="imgCaption">
+              <span>our Initiatives</span>
+              <ul class="a" style="left: 73%;">
+                <li>Scenario Mapping Brand Audits</li>
+                <li>Brand Identity</li>
+                <li>Competitor Mapping</li>
+                <li>Graphic Design & Prototype</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <img class="swiper-button-prev" src={carousalPrev} alt="" />
+        <img class="swiper-button-next" src={carousalNext} alt="" />
+      </div>
+    </div>
   </section>
 </Layout>
 
 <style>
+  .a {
+    list-style-type: disc;
+    color: white;
+    font-family: "anek devanagari";
+    font-size: 1.2vw;
+    font-weight: 300;
+    opacity: 50%;
+    text-align: left;
+    text-transform: capitalize;
+    letter-spacing: 0.03rem;
+    line-height: 2;
+    width: 50%;
+    position: absolute;
+    left: 69%;
+    bottom: 6%;
+  }
+  .imgCaption {
+    position: relative;
+  }
   .row {
     width: 100%;
   }
   .margins {
     margin-left: 7%;
+    margin-bottom: 4%;
   }
   .title {
     font-family: "Deutschlander";
@@ -60,6 +143,18 @@ import officeImg from "../images/officeImg.png";
     font-size: 12.5vw;
     line-height: 1;
     word-spacing: 0.2rem;
+  }
+
+  .watermark {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    color: white;
+    opacity: 3%;
+    font-size: 12.5vw;
+    line-height: 1;
+    word-spacing: 0.2rem;
+    position: absolute;
+    right: 17%;
   }
 
   .titleText {
@@ -75,25 +170,56 @@ import officeImg from "../images/officeImg.png";
     line-height: 1.8;
   }
 
+  .carousal2 {
+    text-align: center;
+    padding-bottom: 2%;
+  }
+
+  .main-img {
+    width: 40%;
+  }
+  .top-right-img {
+    width: 15%;
+    position: absolute;
+    right: 18%;
+    rotate: 31deg;
+    top: 6%;
+  }
+  .bottom-left-img {
+    width: 15%;
+    position: absolute;
+    left: 19.5%;
+    rotate: -25deg;
+    bottom: -18%;
+  }
+  .imgCaption {
+    margin-top: 4%;
+  }
+  .imgCaption span {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    color: white;
+    font-size: 13.5vw;
+    line-height: 1;
+    word-spacing: 0.2rem;
+  }
+
   /* carousal css */
   .swiper {
-    width: 100%;
+    width: 90%;
   }
 
   .swiper-slide {
     text-align: center;
     /* font-size: 18px; */
     background: #1a1a1a;
-    display: flex;
+
     justify-content: center;
     align-items: center;
   }
-  .swiper-slide img {
+  .imgWidth img {
     width: 100%;
   }
-  /* .swiper-slide-prev {
-    display: none;
-  } */
 
   .swiper-next,
   .swiper-prev {
@@ -103,7 +229,50 @@ import officeImg from "../images/officeImg.png";
     margin-right: 3.5%;
   }
   .controls {
-    transform: translate(44%, 100%);
+    transform: translate(44%, 140%);
+  }
+
+  /* carousal2 css */
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 5.5% !important;
+    height: 11%;
+  }
+
+  /* mob view css */
+
+  @media screen and (max-width: 767px) {
+    .watermark {
+      display: none;
+    }
+    .title {
+      font-size: 20vw;
+    }
+    .titleText {
+      padding-left: 0;
+      font-size: 4vw;
+      width: 100%;
+    }
+    .controls {
+      transform: translate(34%, 140%);
+      margin-bottom: 4%;
+    }
+    .swiper-next,
+    .swiper-prev {
+      width: 8%;
+    }
+    .swiper-prev {
+      margin-right: 10.5%;
+    }
+    .swiper {
+      padding-bottom: 17% !important;
+    }
+    .a {
+      font-size: 2.2vw;
+      top: 95%;
+      bottom: 0;
+      left: 28% !important;
+    }
   }
 </style>
 
@@ -157,7 +326,7 @@ import officeImg from "../images/officeImg.png";
     //   effect: "creative",
     grabCursor: true,
     centeredSlides: true,
-    slidesPerView: 1,
+    slidesPerView: 1.5,
 
     spaceBetween: 10,
     loop: true,
@@ -173,10 +342,42 @@ import officeImg from "../images/officeImg.png";
         spaceBetween: 30,
       },
       250: {
-        slidesPerView: 1.7,
+        slidesPerView: 1.15,
         spaceBetween: 20,
       },
     },
+
+    autoplay: {
+      delay: 2000,
+    },
+  });
+
+  let y = 3;
+  var swiper2 = new Swiper(".swiper", {
+    modules: [Navigation, EffectCreative],
+    //   effect: "creative",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 1,
+
+    spaceBetween: 10,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    // breakpoints: {
+    //   767: {
+    //     slidesPerView: 1,
+
+    //     spaceBetween: 30,
+    //   },
+    //   250: {
+    //     slidesPerView: 1,
+    //     spaceBetween: 20,
+    //   },
+    // },
 
     autoplay: {
       delay: 2000,

@@ -44,8 +44,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 <section class="margins">
   <div class="topDiv" style="padding-top: 5%;">
     <div id="main" class="d-flex">
-      <div id="div1" class="head1">
-        <span>Humanizing Tech</span>
+      <div class="head1">
+        <span class="head1Span">Humanizing Tech</span>
       </div>
 
       <svg
@@ -94,7 +94,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           solutions.</span
         >
       </div>
-      <div id="div2">
+      <div class="head2">
         <span>Through Design</span><br />
         <p class="mobPara">
           Ink In Caps is an award-winning <strong class="strong">
@@ -849,98 +849,6 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             </div>
           </div>
         </div>
-
-        <!-- <div class="swiper-slide">
-          <div class="card-parent">
-            <div class="card-header">
-              <img
-                src={testimonialImg}
-                style="width: 50%;"
-                alt=""
-                loading="lazy"
-              />
-            </div>
-
-            <div class="card">
-              <div class="card-body">
-                <div class="card-text">
-                  “ IIC had the right capability and experience in the AR
-                  domain, and I was comfortable awarding them the project to
-                  create a B2B visualizer app for my sales and Experience Center
-                  The team did an amazing job in understanding our needs, we are
-                  delighted with the outcome and are already in talks for the
-                  next phase of the solution.”
-                </div>
-                <div class="d-flex cardFooter">
-                  <img class="authorImg" src={authorImg} alt="" />
-                  <div style="margin:auto; margin-left:6%">
-                    <span class="authName"> Aninda Gupta</span>
-                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card-parent">
-            <div class="card-header">
-              <img src={testimonialImg} style="width: 50%;" alt="" />
-            </div>
-
-            <div class="card">
-              <div class="card-body">
-                <div class="card-text">
-                  “ IIC had the right capability and experience in the AR
-                  domain, and I was comfortable awarding them the project to
-                  create a B2B visualizer app for my sales and Experience Center
-                  The team did an amazing job in understanding our needs, we are
-                  delighted with the outcome and are already in talks for the
-                  next phase of the solution.”
-                </div>
-                <div class="d-flex cardFooter">
-                  <img
-                    class="authorImg"
-                    src={authorImg}
-                    alt=""
-                    loading="lazy"
-                  />
-                  <div style="margin:auto; margin-left:6%">
-                    <span class="authName"> Aninda Gupta</span>
-                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card-parent">
-            <div class="card-header">
-              <img src={testimonialImg} style="width: 50%;" alt="" />
-            </div>
-
-            <div class="card">
-              <div class="card-body">
-                <div class="card-text">
-                  “ IIC had the right capability and experience in the AR
-                  domain, and I was comfortable awarding them the project to
-                  create a B2B visualizer app for my sales and Experience Center
-                  The team did an amazing job in understanding our needs, we are
-                  delighted with the outcome and are already in talks for the
-                  next phase of the solution.”
-                </div>
-                <div class="d-flex cardFooter">
-                  <img class="authorImg" src={authorImg} alt="" />
-                  <div style="margin:auto; margin-left:6%">
-                    <span class="authName"> Aninda Gupta</span>
-                    <span class="authDesign"> CMO Gyproc Saint Gobain</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
       </div>
       <div class="d-flex controls">
         <img class="swiper-prev" src={carousalPrev} alt="" />
@@ -1333,14 +1241,17 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       font-family: Anek Devanagari;
       font-size: 0.9vw;
     }
-    #main #div1 span {
+    .head1 {
       font-family: "Deutschlander";
       text-transform: uppercase;
       font-size: 13vw;
       font-weight: 400;
       font-style: normal;
+      overflow: hidden;
+
       /* padding-top: 2%; */
     }
+
     #main #div2 img {
       width: 20vw;
     }
@@ -1350,7 +1261,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     #main2 #div1 {
       width: 37vw;
     }
-    #main2 #div1 span {
+    .paraDiv .para {
       font-size: 1.25rem;
       font-family: "Anek Devanagari";
       text-align: justify;
@@ -1358,7 +1269,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     #main2 #div2 {
       margin-left: 20px;
     }
-    #main2 #div2 span,
+    .head2,
     .wallHonor {
       font-family: "Deutschlander";
       font-size: 13vw;
@@ -1761,11 +1672,11 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .topDiv {
         padding-top: 0 !important;
       }
-      #main #div1 span {
+      .head1 {
         font-size: 20vw;
         line-height: normal;
       }
-      #main2 #div2 span {
+      .head2 {
         font-size: 20vw;
       }
       svg {
@@ -1781,10 +1692,11 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
       .mobPara {
         font-family: "anek devanagari";
-        margin-top: 4%;
+        margin-top: 5%;
         font-size: 3.4vw;
         opacity: 80%;
         line-height: 1.9;
+        text-transform: capitalize;
       }
       #s1 {
         font-size: 1.2rem;
@@ -2039,7 +1951,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
   </style>
 
   <script>
-    import { gsap } from "gsap";
+    import { gsap, TimelineMax, Eases } from "gsap";
     console.log("i m here", gsap.context());
     const items = document.querySelectorAll(".trial");
 
@@ -2058,6 +1970,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         gsap.to(image, { x: e.offsetX - 200 });
       });
     });
+
+    // let tl = new TimelineMax({});
+
+    // tl.from(".head1Span", 5, { y: "100%", ease: "power2.inOut" });
 
     import {
       Swiper,
@@ -2109,16 +2025,6 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       autoplay: {
         delay: 2000,
       },
-    });
-
-    $(document).ready(function () {
-      var url = $("#videoFrame").attr("src");
-      $("#myModal").on("hide.bs.modal", function () {
-        $("#videoFrame").attr("src", "");
-      });
-      $("#myModal").on("show.bs.modal", function () {
-        $("#videoFrame").attr("src", url);
-      });
     });
   </script>
 </div>
