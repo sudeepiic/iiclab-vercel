@@ -44,7 +44,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 <section class="margins">
   <div class="topDiv" style="padding-top: 5%;">
     <div id="main" class="d-flex">
-      <div class="head1">
+      <div class="head1 animateHeading">
         <span class="head1Span">Humanizing Tech</span>
       </div>
 
@@ -94,7 +94,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           solutions.</span
         >
       </div>
-      <div class="head2">
+      <div class="head2 animateHeading">
         <span>Through Design</span><br />
         <p class="mobPara">
           Ink In Caps is an award-winning <strong class="strong">
@@ -1971,9 +1971,9 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       });
     });
 
-    // let tl = new TimelineMax({});
+    let tl = new TimelineMax({});
 
-    // tl.from(".head1Span", 5, { y: "100%", ease: "power2.inOut" });
+    tl.from(".animateHeading", 1, { y: "-20%", ease: "power2.inOut" });
 
     import {
       Swiper,
