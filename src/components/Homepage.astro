@@ -529,25 +529,31 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     </div>
   </div>
 
-  <div class="d-flex">
-    <p class="our feature">FEATURED</p>
+  <div class="d-flex" id="featureWork-section">
+    <div class="animate-featureWork">
+      <p class="our feature">FEATURED</p>
+    </div>
+    <div style="display:inline" class="featureImg-animate">
+      <img class="featureImg" src={hefty} alt="" loading="lazy" />
+    </div>
+    <div style="display:inline; " class="animate-featureWork2">
+      <p class="solutions work">&nbsp; WORK.</p>
+    </div>
 
-    <img class="featureImg" src={hefty} alt="" loading="lazy" />
-
-    <p class="solutions work" style="margin-top: 11%;">&nbsp; WORK.</p>
-
-    <a
-      href="/portfolio/"
+    <div
+      class="viewAll-feature"
       style="position: relative;  margin-top: 17.7%; left: 56%;"
     >
-      <img
-        class="circleHand"
-        style="width:13vw; height:8vw; "
-        src={circleHand}
-        alt=""
-        loading="lazy"
-      />
-    </a>
+      <a href="/portfolio/">
+        <img
+          class="circleHand"
+          style="width:13vw; height:8vw; "
+          src={circleHand}
+          alt=""
+          loading="lazy"
+        />
+      </a>
+    </div>
 
     <a
       href="/portfolio/"
@@ -560,17 +566,19 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       lass="yellowCircle"> <p class="view">VIEW ALL</p></div>  -->
   </div>
 
-  <div class="d-flex" style="width:100%; ">
+  <div class="d-flex workImg-section" style="width:100%; ">
     {
       entries.items.map((caseStudy, index) => (
         <div class="hoverImg moving-text2 ">
           <a href={"/case-study/" + caseStudy?.fields?.heroTitle}>
-            <img
-              src={caseStudy?.fields?.heroBanner?.fields?.file.url}
-              class="movingImgs"
-              alt=""
-              loading="lazy"
-            />
+            <div class="work-animation">
+              <img
+                src={caseStudy?.fields?.heroBanner?.fields?.file.url}
+                class="movingImgs"
+                alt=""
+                loading="lazy"
+              />
+            </div>
             <div class="image-overlay">
               <span
                 class="workName"
@@ -706,8 +714,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     >
     
   </div> -->
-  <div class="row" style="margin-left: 9%;">
-    <div class="col-md-7 col-lg-7 col-sm-12">
+  <div class="row testimAnime-section" style="margin-left: 9%;">
+    <div class="col-md-7 col-lg-7 col-sm-12 testim-anime">
       <span class="our testimHead">CLIENT &nbsp;</span>
       <span class="solutions">TESTIMONIALS</span>
     </div>
@@ -1345,6 +1353,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     .featureImg {
       width: 13vw;
       height: 8vw;
+    }
+    .featureImg-animate {
       margin-top: 17.3%;
       margin-left: -24%;
     }
@@ -1612,6 +1622,9 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
     /* mobile view css */
     @media screen and (min-width: 768px) {
+      .animate-featureWork2 {
+        margin-top: 17%;
+      }
       .head1 {
         margin-top: auto;
       }
@@ -1653,8 +1666,20 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .hifen {
         display: none;
       }
+      .work {
+        line-height: 0.8;
+      }
     }
     @media screen and (max-width: 767px) {
+      .animate-featureWork2 {
+        margin-top: 22%;
+      }
+      .animate-featureWork2:before {
+        top: 20% !important;
+      }
+      .work {
+        line-height: 0.8;
+      }
       .crossImg {
         width: 2.5vw;
       }
@@ -1847,6 +1872,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .featureImg {
         width: 19vw;
         height: 12vw;
+      }
+      .featureImg-animate {
         margin-top: 30.3%;
         margin-left: -34%;
       }
@@ -1956,6 +1983,60 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       position: relative;
       top: 100%;
     }
+    .testim-anime {
+      position: relative;
+      bottom: 100%;
+    }
+    .animate-featureWork {
+      position: relative;
+      bottom: 100%;
+    }
+    .animate-featureWork2 {
+      position: relative;
+      bottom: 70%;
+    }
+    .testim-anime:before {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: #1a1a1a;
+      z-index: 234555;
+      transition: bottom 1s ease;
+      overflow: hidden;
+    }
+
+    .animate-featureWork:before {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 40%;
+      background: #1a1a1a;
+      z-index: 234555;
+      transition: bottom 1s ease;
+      overflow: hidden;
+    }
+    .animate-featureWork2:before {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: #1a1a1a;
+      z-index: 234555;
+      transition: bottom 1s ease;
+      overflow: hidden;
+    }
+
+    .animation-featureWork:before {
+      bottom: 100%;
+    }
+
     .head1:before,
     .head2:before,
     .paraDiv:before {
@@ -1980,6 +2061,47 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     .head1Span-animate:before {
       top: 100%;
     }
+    #featureWork-section {
+      margin-bottom: 2%;
+    }
+
+    .featureImg-animate {
+      position: relative;
+    }
+    .featureImg-animate:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: #1a1a1a;
+      z-index: 234555;
+      transition: left 1.2s ease;
+      overflow: hidden;
+    }
+    .featureImg-animation:after {
+      left: 100%;
+    }
+    /* .work-animation {
+      position: relative;
+      left: 100%;
+    }
+    .work-animation:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: #f6f7f0;
+      z-index: 234555;
+      transition: left 1.2s ease;
+      overflow: hidden;
+    }
+    .workAnimate-active:after {
+      left: 100%;
+    } */
   </style>
 
   <script>
@@ -2059,6 +2181,65 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           start: "top 30%",
           end: "bottom 30%",
           scrub: true,
+        },
+      })
+      .from("#featureWork-section", 1, {
+        scrollTrigger: {
+          trigger: ".animate-featureWork",
+          start: "top 35%",
+          end: "bottom top",
+          toggleClass: "animation-featureWork",
+          scrub: true,
+        },
+      })
+      .from("#featureWork-section", 1, {
+        scrollTrigger: {
+          trigger: ".animate-featureWork2",
+          start: "top 65%",
+          end: "bottom top",
+          toggleClass: "animation-featureWork",
+          scrub: true,
+        },
+      })
+      .from("#featureWork-section", 1, {
+        scrollTrigger: {
+          trigger: ".featureImg-animate",
+          start: "top 45%",
+          end: "bottom top",
+          toggleClass: "featureImg-animation",
+          scrub: true,
+          markers: false,
+        },
+      })
+      .from(".workImg-section", 1, {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".work-animation",
+          start: "top 55%",
+          end: "bottom 95%",
+          opacity: 0,
+          scrub: true,
+        },
+      })
+      .from(".viewAll-feature", 1, {
+        x: "100%",
+        ease: "ease1.out",
+
+        scrollTrigger: {
+          trigger: ".viewAll-feature",
+          start: "top 25%",
+          end: "bottom 25%",
+          scrub: true,
+        },
+      })
+      .from(".testimAnime-section", 1, {
+        scrollTrigger: {
+          trigger: ".testim-anime",
+          start: "top 30%",
+          end: "bottom top",
+          toggleClass: "animation-featureWork",
+          scrub: true,
+          markers: true,
         },
       });
 
