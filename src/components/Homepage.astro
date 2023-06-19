@@ -720,7 +720,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       <span class="solutions">TESTIMONIALS</span>
     </div>
 
-    <div class="col-md-5 col-lg-5 col-sm-12">
+    <div class="testimText-animate col-md-5 col-lg-5 col-sm-12">
       <span class="blackPara2"
         >The best motivation is carving acclaimed success stories for our
         forevisioned clients</span
@@ -868,20 +868,21 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     </div>
   </div>
 
-  <div class="d-flex" style="margin-left: 9%;">
-    <p class="our prod1">OUR &nbsp;</p>
-
-    <img class="prodImg" src={hefty} alt="" />
+  <div class="d-flex" style="margin-left: 9%; margin-top:7%">
+    <div class="ourAnimate-div">
+      <p class="our prod1">OUR &nbsp;</p>
+    </div>
+    <div class="prodImg-animate">
+      <img class="prodImg" src={hefty} alt="" />
+    </div>
   </div>
-
-  <p class="solutions prod2" style="margin-top: -10.5%; margin-left: 9%;">
-    PRODUCTS
-  </p>
-
-  <div style="margin-left: 9%;">
+  <div class="productAnimate-div">
+    <p class="solutions prod2" style=" margin-left: 9%;">PRODUCTS</p>
+  </div>
+  <div class="product-table-div" style="margin-left: 9%;">
     <table style="width: 90%;">
       <tbody>
-        <tr>
+        <tr class="product-table">
           <td style="font-family: Anek Devanagari;">1.</td>
           <td style="color:white" class="tools"
             >V-Verse : revolutionary metaverse platform by ink in caps</td
@@ -901,7 +902,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             ></td
           >
         </tr>
-        <tr>
+        <tr class="product-table">
           <td style="font-family: Anek Devanagari;">2.</td>
           <td style="color:white" class="tools"
             >V-tour : India's Leading Virtual Events Platform</td
@@ -921,7 +922,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             ></td
           >
         </tr>
-        <tr>
+        <tr class="product-table">
           <td style="font-family: Anek Devanagari;">3.</td>
           <td style="color:white" class="tools"
             >V-Retail : Get your business virtualized the right way</td
@@ -941,7 +942,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             ></td
           >
         </tr>
-        <tr>
+        <tr class="product-table">
           <td style="font-family: Anek Devanagari;">4.</td>
           <td style="color:white" class="tools"
             >V-stages : stunning Virtual stages for your next virtual event</td
@@ -961,7 +962,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             ></td
           >
         </tr>
-        <tr>
+        <tr class="product-table">
           <td style="font-family: Anek Devanagari;">5.</td>
           <td style="color:white" class="tools"
             >V-Conference : Virtual Conferencing Solutions for your business</td
@@ -1669,6 +1670,19 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .work {
         line-height: 0.8;
       }
+      .ourAnimate-div {
+        margin-bottom: 5%;
+      }
+      .prod1 {
+        line-height: 0.75;
+      }
+      .prod2 {
+        line-height: 0.8;
+        margin-top: -5.5%;
+      }
+      .prodImg {
+        margin-top: 0.5%;
+      }
     }
     @media screen and (max-width: 767px) {
       .animate-featureWork2 {
@@ -1930,14 +1944,15 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .prod1,
       .prod2 {
         font-size: 20vw;
+        line-height: 0.75;
       }
       .prod2 {
-        line-height: 1;
+        margin-top: -1.5%;
       }
       .prodImg {
         width: 16vw;
         height: 10vw;
-        margin-top: 11%;
+        margin-top: 2%;
       }
     }
 
@@ -1995,6 +2010,15 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       position: relative;
       bottom: 70%;
     }
+    .ourAnimate-div {
+      position: relative;
+      bottom: 100%;
+    }
+    .productAnimate-div {
+      position: relative;
+      bottom: 100%;
+    }
+
     .testim-anime:before {
       content: "";
       position: absolute;
@@ -2034,7 +2058,31 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     }
 
     .animation-featureWork:before {
-      bottom: 100%;
+      bottom: 100% !important;
+    }
+    .ourAnimate-div:before {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: #1a1a1a;
+      z-index: 234555;
+      transition: bottom 1s ease;
+      overflow: hidden;
+    }
+    .productAnimate-div:before {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: #1a1a1a;
+      z-index: 234555;
+      transition: bottom 1s ease;
+      overflow: hidden;
     }
 
     .head1:before,
@@ -2081,8 +2129,28 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       overflow: hidden;
     }
     .featureImg-animation:after {
-      left: 100%;
+      left: 100% !important;
     }
+
+    .prodImg-animate {
+      position: relative;
+    }
+    .prodImg-animate:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: #1a1a1a;
+      z-index: 234555;
+      transition: left 1.2s ease;
+      overflow: hidden;
+    }
+    .product-table-div {
+      overflow: hidden;
+    }
+
     /* .work-animation {
       position: relative;
       left: 100%;
@@ -2235,11 +2303,60 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .from(".testimAnime-section", 1, {
         scrollTrigger: {
           trigger: ".testim-anime",
-          start: "top 30%",
+          start: "top 50%",
           end: "bottom top",
           toggleClass: "animation-featureWork",
           scrub: true,
-          markers: true,
+        },
+      })
+      .from(".testimText-animate", 1, {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".testimText-animate",
+          start: "top 40%",
+          end: "bottom 30%",
+          opacity: 0,
+          scrub: true,
+        },
+      })
+      .from(".ourAnimate-div", 1, {
+        scrollTrigger: {
+          trigger: ".ourAnimate-div",
+          start: "top 50%",
+          end: "bottom top",
+          toggleClass: "animation-featureWork",
+          scrub: true,
+        },
+      })
+      .from(".ourAnimate-div", 1, {
+        scrollTrigger: {
+          trigger: ".productAnimate-div",
+          start: "top 50%",
+          end: "bottom top",
+          toggleClass: "animation-featureWork",
+          scrub: true,
+        },
+      })
+      .from(".ourAnimate-div", 1, {
+        scrollTrigger: {
+          trigger: ".prodImg-animate",
+          start: "top 50%",
+          end: "bottom top",
+          toggleClass: "featureImg-animation",
+          scrub: true,
+          markers: false,
+        },
+      })
+      .from(".product-table", 1, {
+        opacity: 0,
+        y: "30%",
+        ease: "ease1.out",
+        stagger: 1.5,
+        scrollTrigger: {
+          trigger: ".product-table",
+          start: "top 50%",
+          end: "bottom top",
+          scrub: true,
         },
       });
 

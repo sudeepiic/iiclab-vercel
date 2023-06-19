@@ -9,6 +9,7 @@ import twitterLogo from "../images/twitterLogo.png";
 import fbLogo from "../images/fbLogo.png";
 import whatsappLogo from "../images/whatsappLogo.png";
 import subscribeBtn from "../images/subscribeBtn.png";
+import footerHand from "../images/footerHand.png";
 ---
 
 <section style="background-color: #1a1a1a;  padding-left: 9%; padding-top: 3%;">
@@ -21,7 +22,7 @@ import subscribeBtn from "../images/subscribeBtn.png";
   </div>
 
   <div class="div2 row footerYellow">
-    <div class="col-6">
+    <div class="col-6 footerText">
       <p class="content">Our Drones don't bite.</p>
       <p class="content">
         Share an idea for a new project, apply for your dream job, or join us
@@ -29,9 +30,14 @@ import subscribeBtn from "../images/subscribeBtn.png";
       </p>
     </div>
     <div class="col-6">
-      <a href="/contact">
-        <img class="contactUsImg" src={contactUs} alt="" /></a
-      >
+      <div class="d-flex contact-animate">
+        <a href="/contact">
+          <img class="contactUsImg" src={contactUs} alt="" /></a
+        >
+        <div class="footerHand">
+          <img src={footerHand} alt="" />
+        </div>
+      </div>
     </div>
   </div>
 
@@ -237,6 +243,11 @@ import subscribeBtn from "../images/subscribeBtn.png";
 </section>
 
 <script>
+  import { gsap } from "gsap";
+  import Eases from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
   document
     .getElementById("subscribeForm")
     .addEventListener("submit", function (event) {
@@ -321,6 +332,62 @@ import subscribeBtn from "../images/subscribeBtn.png";
         });
       (event.target as HTMLFormElement).reset();
     });
+
+  let tl = gsap.timeline();
+
+  tl.from(".footerFont", {
+    duration: 1,
+    y: "40%",
+    opacity: "0",
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: ".footerFont",
+      start: "top 65%",
+      end: "bottom top",
+      scrub: true,
+      markers: true,
+    },
+  })
+    .from(".footerText", {
+      duration: 1,
+      y: "30%",
+      opacity: "0",
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: ".footerText",
+        start: "top 75%",
+        end: "bottom 50%",
+        scrub: true,
+        markers: true,
+      },
+    })
+    .from(".contact-animate", {
+      duration: 1.5,
+      x: "50%",
+      opacity: "0",
+
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: ".contact-animate",
+        start: "top 75%",
+        end: "bottom 50%",
+        scrub: true,
+        markers: true,
+      },
+    })
+    .to(".footerHand", {
+      duration: 1,
+      x: "15%",
+      ease: "power1.out",
+
+      scrollTrigger: {
+        trigger: ".footerHand",
+        start: "top 47%",
+        end: "bottom 40%",
+        scrub: true,
+        markers: true,
+      },
+    });
 </script>
 
 <style>
@@ -333,6 +400,7 @@ import subscribeBtn from "../images/subscribeBtn.png";
     font-style: normal;
     font-weight: 400;
     font-size: 7.5vw;
+    display: inline-block;
     word-spacing: 0.3rem;
     src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
   }
@@ -376,6 +444,9 @@ import subscribeBtn from "../images/subscribeBtn.png";
     line-height: 200%;
     font-size: calc(7px + 0.390625vw);
     min-width: 160px;
+  }
+  .footerHand img {
+    width: 85%;
   }
 
   @media only screen and (max-width: 767px) {
