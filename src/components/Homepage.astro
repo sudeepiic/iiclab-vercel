@@ -728,7 +728,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     </div>
   </div>
 
-  <div>
+  <div class="animate-swiper">
     <div style="padding:1.5% 0 5% 0 ; " class="swiper mySwiper">
       <div class="swiper-wrapper">
         {
@@ -2316,6 +2316,15 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           start: "top 40%",
           end: "bottom 30%",
           opacity: 0,
+          scrub: true,
+        },
+      })
+      .from(".animate-swiper", 1, {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".animate-swiper",
+          start: "top 45%",
+          end: "bottom 38%",
           scrub: true,
         },
       })

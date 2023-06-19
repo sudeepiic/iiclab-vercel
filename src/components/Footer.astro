@@ -29,7 +29,7 @@ import footerHand from "../images/footerHand.png";
         for a foosball match.
       </p>
     </div>
-    <div class="col-6">
+    <div class="col-6" style="overflow: hidden;">
       <div class="d-flex contact-animate">
         <a href="/contact">
           <img class="contactUsImg" src={contactUs} alt="" /></a
@@ -337,7 +337,7 @@ import footerHand from "../images/footerHand.png";
 
   tl.from(".footerFont", {
     duration: 1,
-    y: "40%",
+    y: "30%",
     opacity: "0",
     ease: "power1.out",
     scrollTrigger: {
@@ -446,6 +446,13 @@ import footerHand from "../images/footerHand.png";
   }
 
   @media only screen and (max-width: 767px) {
+    .footerHand img {
+      width: 100%;
+    }
+    .footerHand {
+      margin-top: 10%;
+    }
+
     .footerFont {
       word-spacing: 0.2rem;
     }

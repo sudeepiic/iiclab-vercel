@@ -61,59 +61,66 @@ const clientsEntries = await contentfulClient.getEntries<any>({
           style="padding-left: 3%;"
         >
           <div class="btmImgHead">
-            <span
-              >WE'RE AN
+            <div class="label-animate1"><span>WE'RE AN</span></div>
+            <div class="label-animate2">
               <span style="color:#e5ff53">EXPERIENTIAL</span>
+            </div>
+            <div class="label-animate3">
               <span style="color:#e5ff53">DESIGN & TECH</span>
-              COMPANY</span
-            >
+            </div>
+            <div class="label-animate4"><span>COMPANY</span></div>
           </div>
         </div>
         <div class="col-lg-5 col-md-5 col-sm-0 data">
           <div class="d-flex">
-            <div class="content-box numbers">60+</div>
-            <span class="numbersText">team members</span>
+            <div class="content-box content-box1 numbers">60+</div>
+            <div class="numtext-animation">
+              <span class="numbersText">team members</span>
+            </div>
           </div>
           <br />
           <div class="d-flex">
-            <div class="content-box numbers">06+</div>
-            <span class="numbersText">years of experience</span>
+            <div class="content-box content-box2 numbers">06+</div>
+            <div class="numtext-animation">
+              <span class="numbersText">years of experience</span>
+            </div>
           </div>
           <br />
-          <div class="d-flex">
+          <!-- <div class="d-flex">
             <div class="content-box numbers">100+</div>
             <span class="numbersText">projects delivered</span>
-          </div>
-          <br />
+          </div> -->
+
           <div class="d-flex">
-            <div class="content-box numbers">22</div>
-            <span class="numbersText">awards won</span>
+            <div class="content-box content-box3 numbers">22</div>
+            <div class="numtext-animation">
+              <span class="numbersText">awards won</span>
+            </div>
           </div>
         </div>
       </div>
       <div class="margins onlyMob" style="padding-bottom: 5% !important;">
         <div class="row">
           <div class="col-6">
-            <div class="content-box numbers">50+</div>
+            <div class="content-box numbers">60+</div>
             <span class="numbersText">team members</span>
           </div>
           <br />
           <div class="col-6">
-            <div class="content-box numbers">10+</div>
-            <span class="numbersText">years in the market</span>
+            <div class="content-box numbers">22</div>
+            <span class="numbersText">awards won</span>
           </div>
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-6">
             <div class="content-box numbers">100+</div>
             <span class="numbersText">projects delivered</span>
-          </div>
+          </div> -->
 
-          <div class="col-6">
-            <div class="content-box numbers">12</div>
-            <span class="numbersText">awards won</span>
-          </div>
+        <div class="col-6">
+          <div class="content-box numbers">06+</div>
+          <span class="numbersText">years of experience</span>
         </div>
       </div>
     </div>
@@ -192,53 +199,53 @@ const clientsEntries = await contentfulClient.getEntries<any>({
       </div>
     </div>
   </section>
+</Layout>
+<style>
+  /*  carousal css */
+  .members {
+    border: 10px solid white;
+    width: 70%;
+  }
+  .members::before {
+    content: url("../images/imgTags.png");
+  }
 
-  <style>
-    /*  caroousal css */
-    .members {
-      border: 10px solid white;
-      width: 70%;
-    }
-    .members::before {
-      content: url("../images/imgTags.png");
-    }
+  .imgCaptionDiv {
+    margin-top: 7%;
+    display: none;
+  }
+  .memberName {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    color: white;
+    font-size: 8vw;
+    line-height: 1;
+  }
+  .memberDsgn {
+    font-family: "Anek Devanagari";
+    text-transform: capitalize;
+    font-size: 2vw;
+    color: white;
+    opacity: 70%;
+  }
 
-    .imgCaptionDiv {
-      margin-top: 7%;
-      display: none;
-    }
-    .memberName {
-      font-family: "Deutschlander";
-      text-transform: uppercase;
-      color: white;
-      font-size: 8vw;
-      line-height: 1;
-    }
-    .memberDsgn {
-      font-family: "Anek Devanagari";
-      text-transform: capitalize;
-      font-size: 2vw;
-      color: white;
-      opacity: 70%;
-    }
+  .swiper {
+    width: 100%;
+  }
 
-    .swiper {
-      width: 100%;
-    }
+  .swiper-slide {
+    text-align: center;
+    /* font-size: 18px; */
 
-    .swiper-slide {
-      text-align: center;
-      /* font-size: 18px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .swiper-slide-active .imgCaptionDiv {
+    display: block !important;
+  }
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .swiper-slide-active .imgCaptionDiv {
-      display: block !important;
-    }
-
-    /* .swiper-slide img {
+  /* .swiper-slide img {
       display: block;
       width: 90%;
       height: 100%;
@@ -246,321 +253,458 @@ const clientsEntries = await contentfulClient.getEntries<any>({
       aspect-ratio: 4/5;
     } */
 
-    .swiper-next,
-    .swiper-prev {
-      width: 6%;
+  .swiper-next,
+  .swiper-prev {
+    width: 6%;
+  }
+  .swiper-prev {
+    transform: translate(-243%, -512%);
+  }
+  .swiper-next {
+    transform: translate(243%, -512%);
+    z-index: 999 !important;
+    position: inherit;
+  }
+
+  /* mob view css */
+  @media screen and (min-width: 768px) {
+    .onlyMob {
+      display: none !important;
     }
+    .mobMission {
+      display: none !important;
+    }
+  }
+  @media screen and (max-width: 767px) {
     .swiper-prev {
-      transform: translate(-243%, -512%);
+      transform: translate(-357%, -690%);
+      width: 8% !important;
     }
     .swiper-next {
-      transform: translate(243%, -512%);
+      transform: translate(357%, -690%);
       z-index: 999 !important;
       position: inherit;
+      width: 8% !important;
     }
-
-    /* mob view css */
-    @media screen and (min-width: 768px) {
-      .onlyMob {
-        display: none !important;
-      }
-      .mobMission {
-        display: none !important;
-      }
+    .memberName {
+      font-size: 14vw;
     }
-    @media screen and (max-width: 767px) {
-      .swiper-prev {
-        transform: translate(-357%, -690%);
-        width: 8% !important;
-      }
-      .swiper-next {
-        transform: translate(357%, -690%);
-        z-index: 999 !important;
-        position: inherit;
-        width: 8% !important;
-      }
-      .memberName {
-        font-size: 14vw;
-      }
-      .memberDsgn {
-        font-size: 3.2vw;
-      }
-      .data {
-        display: none;
-      }
-      .btmImg {
-        margin-left: 0 !important;
-        padding-left: 0 !important;
-      }
-      .numbersText {
-        margin-left: 0 !important;
-        font-size: 9vw !important;
-      }
-      .numbers {
-        width: 14vw !important;
-        font-size: 8vw !important;
-        border-radius: 0 1.5vw 0 1.5vw !important;
-      }
-      .btmImgHead {
-        width: 80% !important;
-        font-size: 16vw !important;
-      }
-      #main #div1 span {
-        font-size: 16vw !important ;
-      }
-      #main2 #div1 span {
-        font-size: 3vw !important;
-      }
-
-      .onlyDeskMission {
-        display: none !important;
-      }
-      .mobMission span {
-        font-family: "Deutschlander";
-        text-transform: uppercase;
-        font-size: 15vw;
-        font-weight: 400;
-        font-style: normal;
-        color: white;
-      }
-      .meet,
-      .theTeam {
-        font-size: 15vw !important;
-      }
-      .yellow-text {
-        color: #e5ff53 !important;
-      }
-      .mobMission li {
-        font-size: 3.5vw;
-        font-family: "Anek Devanagari";
-        color: white;
-        opacity: 60%;
-        line-height: 2.2;
-        font-weight: 300;
-      }
-      .mobMission {
-        border-bottom: 1px solid rgb(144, 142, 142);
-        padding-bottom: 3%;
-      }
-      #main #div1 span {
-        word-spacing: 0.3rem !important;
-        /* padding-top: 2%; */
-      }
+    .memberDsgn {
+      font-size: 3.2vw;
     }
     .data {
+      display: none;
     }
-
-    .btmImgHead {
-      width: 90%;
-      line-height: 1;
-    }
-    #main {
-      line-height: 1 !important;
-    }
-
-    #main #div1 {
-      font-family: "Deutschlander";
-      text-transform: uppercase;
-      font-size: 13vw;
-      font-weight: 400;
-      font-style: normal;
-      word-spacing: 0.7rem;
-      /* padding-top: 2%; */
-    }
-
-    #main #div2 {
-      padding-left: 3%;
-    }
-
-    #main2 #div1 span {
-      font-size: 1.5vw;
-      font-family: "Anek Devanagari";
-      text-align: justify;
-    }
-
-    .para {
-      display: block;
-      opacity: 75%;
-      width: 83%;
-    }
-
-    .margins {
-      margin-left: 7%;
-      margin-right: 7%;
-    }
-
-    .btn-dark {
-      border-radius: 24px;
-      font-family: "Anek Devanagari";
-      font-size: larger;
-      margin-right: 1.5%;
-    }
-    .btn-dark span {
-      font-size: 0.8rem;
-      margin: 0 15px 0 15px;
-    }
-
-    .knowMore {
-      font-family: "anek devanagari";
-      font-weight: 550;
-    }
-
     .btmImg {
-      font-family: "Deutschlander";
-      text-transform: uppercase;
-      color: white;
-      font-size: 9.5vw;
-      line-height: 0.8 !important;
-      margin-top: 5%;
-      padding-bottom: 5%;
+      margin-left: 0 !important;
+      padding-left: 0 !important;
     }
-
-    .data {
-      margin-top: 7.5%;
+    .numbersText {
+      margin-left: 0 !important;
+      font-size: 9vw !important;
     }
     .numbers {
-      background-color: #e5ff53;
-      border-radius: 0 1vw 0 1vw;
-      width: 15.8%;
-
-      text-align: center;
-      font-family: Deutschlander;
-      font-size: 4.6vw;
+      width: 14vw !important;
+      font-size: 8vw !important;
+      border-radius: 0 1.5vw 0 1.5vw !important;
+    }
+    .btmImgHead {
+      width: 80% !important;
+      font-size: 16vw !important;
+    }
+    #main #div1 span {
+      font-size: 16vw !important ;
+    }
+    #main2 #div1 span {
+      font-size: 3vw !important;
     }
 
-    .numbersText {
-      color: aliceblue;
-
-      margin-left: 3%;
-      font-family: Deutschlander;
-      font-size: 4.6vw;
+    .onlyDeskMission {
+      display: none !important;
+    }
+    .mobMission span {
+      font-family: "Deutschlander";
       text-transform: uppercase;
-    }
-
-    .img {
-      margin: 10%;
-    }
-    .imgs {
-      width: 14.5%;
-      margin: 1.2%;
-    }
-
-    .meet {
-      color: white;
-      font-family: "Deutschlander";
-      font-style: normal;
+      font-size: 15vw;
       font-weight: 400;
-      font-size: 12.5vw;
-      src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
+      font-style: normal;
+      color: white;
     }
+    .meet,
     .theTeam {
-      color: #e5ff53;
-      font-family: "Deutschlander";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12.5vw;
-      src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
+      font-size: 15vw !important;
     }
-
-    .missions {
-      background-color: #1a1a1a;
-
-      width: 60.8%;
+    .yellow-text {
+      color: #e5ff53 !important;
+    }
+    .mobMission li {
+      font-size: 3.5vw;
+      font-family: "Anek Devanagari";
       color: white;
-      text-align: center;
-      font-family: Deutschlander;
-      font-size: 6.6vw;
-      border: 1px solid white;
-      line-height: 1 !important;
-      padding: 7% 0 7% 0;
+      opacity: 60%;
+      line-height: 2.2;
+      font-weight: 300;
     }
-
-    a {
-      text-decoration: none;
+    .mobMission {
+      border-bottom: 1px solid rgb(144, 142, 142);
+      padding-bottom: 3%;
     }
-  </style>
+    #main #div1 span {
+      word-spacing: 0.3rem !important;
+      /* padding-top: 2%; */
+    }
+  }
+  .data {
+  }
 
-  <script>
-    import { gsap, TimelineMax, Eases } from "gsap";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
-    gsap.registerPlugin(ScrollTrigger);
+  .btmImgHead {
+    width: 90%;
+    line-height: 1;
+  }
+  #main {
+    line-height: 1 !important;
+  }
 
-    //  swiper js
-    import {
-      Swiper,
-      Navigation,
-      Pagination,
-      EffectCoverflow,
-      Autoplay,
-      EffectCreative,
-    } from "swiper";
-    let x = 3;
-    var swiper = new Swiper(".mySwiper", {
-      modules: [Navigation, EffectCreative],
-      effect: "creative",
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: 3,
-      spaceBetween: 20,
-      loop: true,
-      navigation: {
-        nextEl: ".swiper-next",
-        prevEl: ".swiper-prev",
+  #main #div1 {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 13vw;
+    font-weight: 400;
+    font-style: normal;
+    word-spacing: 0.7rem;
+    /* padding-top: 2%; */
+  }
+
+  #main #div2 {
+    padding-left: 3%;
+  }
+
+  #main2 #div1 span {
+    font-size: 1.5vw;
+    font-family: "Anek Devanagari";
+    text-align: justify;
+  }
+
+  .para {
+    display: block;
+    opacity: 75%;
+    width: 83%;
+  }
+
+  .margins {
+    margin-left: 7%;
+    margin-right: 7%;
+  }
+
+  .btn-dark {
+    border-radius: 24px;
+    font-family: "Anek Devanagari";
+    font-size: larger;
+    margin-right: 1.5%;
+  }
+  .btn-dark span {
+    font-size: 0.8rem;
+    margin: 0 15px 0 15px;
+  }
+
+  .knowMore {
+    font-family: "anek devanagari";
+    font-weight: 550;
+  }
+
+  .btmImg {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    color: white;
+    font-size: 9.5vw;
+    line-height: 0.8 !important;
+    margin-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  .data {
+    margin-top: 10.5%;
+  }
+  .numbers {
+    background-color: #e5ff53;
+    border-radius: 0 1vw 0 1vw;
+    width: 15.8%;
+
+    text-align: center;
+    font-family: Deutschlander;
+    font-size: 4.6vw;
+  }
+
+  .numbersText {
+    color: aliceblue;
+
+    margin-left: 3%;
+    font-family: Deutschlander;
+    font-size: 4.6vw;
+    text-transform: uppercase;
+  }
+
+  .img {
+    margin: 10%;
+  }
+  .imgs {
+    width: 14.5%;
+    margin: 1.2%;
+  }
+
+  .meet {
+    color: white;
+    font-family: "Deutschlander";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.5vw;
+    src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
+  }
+  .theTeam {
+    color: #e5ff53;
+    font-family: "Deutschlander";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.5vw;
+    src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
+  }
+
+  .missions {
+    background-color: #1a1a1a;
+
+    width: 60.8%;
+    color: white;
+    text-align: center;
+    font-family: Deutschlander;
+    font-size: 6.6vw;
+    border: 1px solid white;
+    line-height: 1 !important;
+    padding: 7% 0 7% 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  /* animation css */
+
+  .label-animate1,
+  .label-animate2,
+  .label-animate3,
+  .label-animate4 {
+    display: inline-block;
+    position: relative;
+    top: 100%;
+  }
+
+  .label-animate1::before,
+  .label-animate2::before,
+  .label-animate3::before,
+  .label-animate4::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #1a1a1a;
+    z-index: 234555;
+    transition: top 1s ease;
+    overflow: hidden;
+  }
+  .label-animation::before {
+    top: 100% !important;
+  }
+
+  .content-box1,
+  .content-box2,
+  .content-box3 {
+    position: relative;
+    /* left:100%; */
+  }
+  .content-box1:after,
+  .content-box2:after,
+  .content-box3:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #1a1a1a;
+    z-index: 234555;
+    transition: left 1.2s ease;
+    overflow: hidden;
+  }
+  .content-box-animation::after {
+    left: 100% !important;
+  }
+  .numtext-animation {
+    width: 100%;
+  }
+</style>
+
+<script>
+  import { gsap, TimelineMax } from "gsap";
+  import Eases from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  //  swiper js
+  import {
+    Swiper,
+    Navigation,
+    Pagination,
+    EffectCoverflow,
+    Autoplay,
+    EffectCreative,
+  } from "swiper";
+  let x = 3;
+  var swiper = new Swiper(".mySwiper", {
+    modules: [Navigation, EffectCreative],
+    effect: "creative",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 3,
+    spaceBetween: 20,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-next",
+      prevEl: ".swiper-prev",
+    },
+    creativeEffect: {
+      prev: {
+        // will set `translateZ(-400px)` on previous slides
+        rotate: [0, 0, -12],
+        translate: ["-105%", "15%", 0],
+        scale: 0.85,
       },
-      creativeEffect: {
-        prev: {
-          // will set `translateZ(-400px)` on previous slides
-          rotate: [0, 0, -12],
-          translate: ["-105%", "15%", 0],
-          scale: 0.85,
-        },
-        next: {
-          // will set `translateX(100%)` on next slides
-          rotate: [0, 0, -12],
-          translate: ["105%", "-6%", 0],
-          scale: 0.85,
-        },
+      next: {
+        // will set `translateX(100%)` on next slides
+        rotate: [0, 0, -12],
+        translate: ["105%", "-6%", 0],
+        scale: 0.85,
       },
+    },
 
-      autoplay: {
-        delay: 2000,
+    autoplay: {
+      delay: 2000,
+    },
+    breakpoints: {
+      767: {
+        slidesPerView: 3,
+        spaceBetween: 20,
       },
-      breakpoints: {
-        767: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-        },
-        220: {
-          slidesPerView: 1.6,
-          spaceBetween: 25,
-        },
+      220: {
+        slidesPerView: 1.6,
+        spaceBetween: 25,
       },
+    },
 
-      // pagination: {
-      //   el: ".swiper-pagination",
-      //   clickable: true,
-      // },
-    });
+    // pagination: {
+    //   el: ".swiper-pagination",
+    //   clickable: true,
+    // },
+  });
 
-    // gsap js
-    var textWrapper = document.querySelector("#div1");
-    textWrapper.innerHTML = textWrapper.textContent.replace(
-      /\S/g,
-      "<span class='letter'>$&</span>"
-    );
+  // gsap js
+  var textWrapper = document.querySelector("#div1");
+  textWrapper.innerHTML = textWrapper.textContent.replace(
+    /\S/g,
+    "<span class='letter'>$&</span>"
+  );
 
-    let tl = new TimelineMax({});
+  let tl = new TimelineMax({});
 
-    tl.from(" .letter", 1, {
-      opacity: "0",
-      ease: "power2.inOut",
-      duration: 1500,
-      stagger: 0.08,
-    }).from("#main2", 1, {
+  tl.from(" .letter", 1, {
+    opacity: "0",
+    ease: "power2.inOut",
+    duration: 1500,
+    stagger: 0.08,
+  })
+    .from("#main2", 1, {
       x: "-10%",
       opacity: "0",
       ease: "power2.inOut",
       duration: 800,
+    })
+    .from("#teamInfo", 1, {
+      stagger: 0.8,
+      scrollTrigger: {
+        trigger: ".label-animate1",
+        start: "top 40%",
+        end: "bottom top",
+        toggleClass: "label-animation",
+        scrub: true,
+      },
+    })
+    .from("#teamInfo", 1, {
+      stagger: 0.8,
+      scrollTrigger: {
+        trigger: ".label-animate2",
+        start: "top 50%",
+        end: "bottom top",
+        toggleClass: "label-animation",
+        scrub: true,
+      },
+    })
+    .from("#teamInfo", 1, {
+      stagger: 0.8,
+      scrollTrigger: {
+        trigger: ".label-animate3",
+        start: "top 60%",
+        end: "bottom top",
+        toggleClass: "label-animation",
+        scrub: true,
+      },
+    })
+    .from("#teamInfo", 1, {
+      stagger: 0.8,
+      scrollTrigger: {
+        trigger: ".label-animate4",
+        start: "top 70%",
+        end: "bottom top",
+        toggleClass: "label-animation",
+        scrub: true,
+      },
+    })
+    .from("#teamInfo", 0.7, {
+      scrollTrigger: {
+        trigger: ".content-box1",
+        start: "top 40%",
+        end: "bottom top",
+        toggleClass: "content-box-animation",
+        scrub: true,
+      },
+    })
+    .from("#teamInfo", 0.7, {
+      scrollTrigger: {
+        trigger: ".content-box2",
+        start: "top 50%",
+        end: "bottom top",
+        toggleClass: "content-box-animation",
+        scrub: true,
+      },
+    })
+    .from("#teamInfo", 0.7, {
+      scrollTrigger: {
+        trigger: ".content-box3",
+        start: "top 55%",
+        end: "bottom top",
+        toggleClass: "content-box-animation",
+        scrub: true,
+        markers: true,
+      },
+    })
+    .from(".numtext-animation", 1, {
+      x: "-30%",
+      opacity: "0",
+      scrollTrigger: {
+        trigger: ".numtext-animation",
+        start: "top 40%",
+        end: "bottom 30%",
+        scrub: true,
+        markers: true,
+      },
     });
-  </script>
-</Layout>
+</script>
