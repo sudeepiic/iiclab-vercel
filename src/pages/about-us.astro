@@ -12,11 +12,27 @@ import { contentfulClient } from "../lib/contentful";
 const clientsEntries = await contentfulClient.getEntries<any>({
   content_type: "clients",
 });
+
+const images = clientsEntries.items[0].fields.clientIcons;
+
+const imagesPerArray = 5;
+const numArrays = Math.ceil((images as []).length / imagesPerArray);
+
+const splitArrays = [];
+for (let i = 0; i < numArrays; i++) {
+  const startIndex = i * imagesPerArray;
+  const endIndex = startIndex + imagesPerArray;
+  const splitArray = (images as []).slice(startIndex, endIndex);
+  splitArrays.push(splitArray);
+}
+console.log(splitArrays);
 ---
 
 <Layout title="Ink In Caps - About Us">
-  <section class="margins">
-    <div style="padding-top: 3%;">
+  <section>
+    <div
+      style="padding-top: 3%; padding:3% 7% 3% 7%; position:sticky; top:0; background-color:#f6f7f0 ;"
+    >
       <div id="main">
         <div id="div1">
           <span>DEDUCE ENGAGE ENABLE</span>
@@ -47,10 +63,12 @@ const clientsEntries = await contentfulClient.getEntries<any>({
         </div>
       </div>
     </div>
+    <div>
+      <img src={officeImg} alt="" style="height:100%;width:100%;  " />
+    </div>
   </section>
 
-  <section style="margin-top:3%;">
-    <img src={officeImg} alt="" style="height:100%;width:100%; " />
+  <section>
     <div
       style="background-color: #1a1a1a; border-radius: 0 0 6vw 6vw;"
       id="teamInfo"
@@ -102,13 +120,17 @@ const clientsEntries = await contentfulClient.getEntries<any>({
       <div class="margins onlyMob" style="padding-bottom: 5% !important;">
         <div class="row">
           <div class="col-6">
-            <div class="content-box numbers">60+</div>
-            <span class="numbersText">team members</span>
+            <div class="content-box numtext-animation1 numbers">60+</div>
+            <div class="numtext-animation1">
+              <span class="numbersText">team members</span>
+            </div>
           </div>
           <br />
           <div class="col-6">
-            <div class="content-box numbers">22</div>
-            <span class="numbersText">awards won</span>
+            <div class="content-box numtext-animation1 numbers">22</div>
+            <div class="numtext-animation1">
+              <span class="numbersText">awards won</span>
+            </div>
           </div>
         </div>
 
@@ -119,14 +141,19 @@ const clientsEntries = await contentfulClient.getEntries<any>({
           </div> -->
 
         <div class="col-6">
-          <div class="content-box numbers">06+</div>
-          <span class="numbersText">years of experience</span>
+          <div class="content-box numtext-animation1 numbers">06+</div>
+          <div class="numtext-animation1">
+            <span class="numbersText">years of experience</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section style="margin-top: 3%; margin-bottom: 3%;">
+  <section
+    class="iconSection"
+    style="margin-top: 3%; margin-bottom: 3%; overflow:hidden;"
+  >
     <div style="margin-left: 8%;">
       <div id="main">
         <div id="div1">
@@ -135,8 +162,22 @@ const clientsEntries = await contentfulClient.getEntries<any>({
       </div>
       <tr>
         {
-          (clientsEntries.items[0].fields.clientIcons as any).map(
-            (clients, index) => (
+          (splitArrays[0] as any).map((clients, index) => (
+            <div class="imgRow clientArray1">
+              <td class="img ">
+                <img
+                  class="imgs"
+                  src={clients.fields?.file.url}
+                  alt=""
+                  loading="lazy"
+                />
+              </td>
+            </div>
+          ))
+        }
+        {
+          (splitArrays[1] as any).map((clients, index) => (
+            <div class="imgRow clientArray2">
               <td class="img">
                 <img
                   class="imgs"
@@ -145,8 +186,36 @@ const clientsEntries = await contentfulClient.getEntries<any>({
                   loading="lazy"
                 />
               </td>
-            )
-          )
+            </div>
+          ))
+        }
+        {
+          (splitArrays[2] as any).map((clients, index) => (
+            <div class="imgRow clientArray1">
+              <td class="img">
+                <img
+                  class="imgs"
+                  src={clients.fields?.file.url}
+                  alt=""
+                  loading="lazy"
+                />
+              </td>
+            </div>
+          ))
+        }
+        {
+          (splitArrays[3] as any).map((clients, index) => (
+            <div class="imgRow clientArray2">
+              <td class="img">
+                <img
+                  class="imgs"
+                  src={clients.fields?.file.url}
+                  alt=""
+                  loading="lazy"
+                />
+              </td>
+            </div>
+          ))
         }
       </tr>
       <br />
@@ -448,8 +517,13 @@ const clientsEntries = await contentfulClient.getEntries<any>({
     margin: 10%;
   }
   .imgs {
-    width: 14.5%;
+    width: 100%;
     margin: 1.2%;
+  }
+  .imgRow {
+    width: 15%;
+    display: inline-block;
+    margin: 1%;
   }
 
   .meet {
@@ -629,7 +703,6 @@ const clientsEntries = await contentfulClient.getEntries<any>({
       duration: 800,
     })
     .from("#teamInfo", 1, {
-      stagger: 0.8,
       scrollTrigger: {
         trigger: ".label-animate1",
         start: "top 40%",
@@ -639,7 +712,6 @@ const clientsEntries = await contentfulClient.getEntries<any>({
       },
     })
     .from("#teamInfo", 1, {
-      stagger: 0.8,
       scrollTrigger: {
         trigger: ".label-animate2",
         start: "top 50%",
@@ -649,7 +721,6 @@ const clientsEntries = await contentfulClient.getEntries<any>({
       },
     })
     .from("#teamInfo", 1, {
-      stagger: 0.8,
       scrollTrigger: {
         trigger: ".label-animate3",
         start: "top 60%",
@@ -693,18 +764,46 @@ const clientsEntries = await contentfulClient.getEntries<any>({
         end: "bottom top",
         toggleClass: "content-box-animation",
         scrub: true,
-        markers: true,
       },
     })
     .from(".numtext-animation", 1, {
-      x: "-30%",
+      x: "-20%",
       opacity: "0",
       scrollTrigger: {
         trigger: ".numtext-animation",
         start: "top 40%",
         end: "bottom 30%",
         scrub: true,
-        markers: true,
+      },
+    })
+    .from(".onlyMob", 1, {
+      x: "-20%",
+      opacity: "0",
+      scrollTrigger: {
+        trigger: ".numtext-animation1",
+        start: "top 40%",
+        end: "bottom 30%",
+        scrub: true,
+      },
+    })
+    .from(".clientArray1", 1, {
+      x: "-60%",
+      opacity: "0",
+      scrollTrigger: {
+        trigger: ".clientArray1",
+        start: "top 35%",
+        end: "bottom 20%",
+        scrub: true,
+      },
+    })
+    .from(".clientArray2", 1, {
+      x: "60%",
+      opacity: "0",
+      scrollTrigger: {
+        trigger: ".clientArray2",
+        start: "top 45%",
+        end: "bottom 30%",
+        scrub: true,
       },
     });
 </script>

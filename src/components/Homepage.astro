@@ -36,6 +36,19 @@ const entries: any = await contentfulClient.getEntries<any>({
 const clientsEntries = await contentfulClient.getEntries<any>({
   content_type: "clients",
 });
+const images = clientsEntries.items[0].fields.clientIcons;
+
+const imagesPerArray = 5;
+const numArrays = Math.ceil((images as []).length / imagesPerArray);
+
+const splitArrays = [];
+for (let i = 0; i < numArrays; i++) {
+  const startIndex = i * imagesPerArray;
+  const endIndex = startIndex + imagesPerArray;
+  const splitArray = (images as []).slice(startIndex, endIndex);
+  splitArrays.push(splitArray);
+}
+console.log(splitArrays);
 const testimonials: any = await contentfulClient.getEntries<any>({
   content_type: "clientsTestimonials",
 });
@@ -168,21 +181,63 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 </section>
 
 <section class="wrapper">
-  <div class="giants" style="margin-left: 12%;">
+  <div class="giants" style="margin-left: 12%; overflow:hidden">
     <tr>
       {
-        (clientsEntries?.items[0].fields?.clientIcons as any).map(
-          (clients, index) => (
-            <td class="img">
+        (splitArrays[0] as any).map((clients, index) => (
+          <div class="imgRow clientArray1">
+            <td class="img ">
               <img
                 class="imgs"
-                src={clients?.fields?.file.url}
+                src={clients.fields?.file.url}
                 alt=""
                 loading="lazy"
               />
             </td>
-          )
-        )
+          </div>
+        ))
+      }
+      {
+        (splitArrays[1] as any).map((clients, index) => (
+          <div class="imgRow clientArray2">
+            <td class="img">
+              <img
+                class="imgs"
+                src={clients.fields?.file.url}
+                alt=""
+                loading="lazy"
+              />
+            </td>
+          </div>
+        ))
+      }
+      {
+        (splitArrays[2] as any).map((clients, index) => (
+          <div class="imgRow clientArray3">
+            <td class="img">
+              <img
+                class="imgs"
+                src={clients.fields?.file.url}
+                alt=""
+                loading="lazy"
+              />
+            </td>
+          </div>
+        ))
+      }
+      {
+        (splitArrays[3] as any).map((clients, index) => (
+          <div class="imgRow clientArray4">
+            <td class="img">
+              <img
+                class="imgs"
+                src={clients.fields?.file.url}
+                alt=""
+                loading="lazy"
+              />
+            </td>
+          </div>
+        ))
       }
     </tr>
 
@@ -1148,8 +1203,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       margin: 10%;
     }
     .imgs {
-      width: 14.5%;
+      width: 100%;
       margin: 1.2%;
+    }
+    .imgRow {
+      width: 15%;
+      display: inline-block;
+      margin: 1%;
     }
 
     .our {
@@ -2365,6 +2425,50 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           trigger: ".product-table",
           start: "top 50%",
           end: "bottom top",
+          scrub: true,
+        },
+      })
+      .from(".clientArray1", 1, {
+        x: "670%",
+        // opacity: "0",
+        ease: "ease1.out",
+        scrollTrigger: {
+          trigger: ".clientArray1",
+          start: "top 50%",
+          end: "bottom 48%",
+          scrub: true,
+        },
+      })
+      .from(".clientArray2", 1, {
+        x: "670%",
+        // opacity: "0",
+        ease: "ease1.out",
+        scrollTrigger: {
+          trigger: ".clientArray2",
+          start: "top 50%",
+          end: "bottom 48%",
+          scrub: true,
+        },
+      })
+      .from(".clientArray3", 1, {
+        x: "670%",
+        // opacity: "0",
+        ease: "ease1.out",
+        scrollTrigger: {
+          trigger: ".clientArray3",
+          start: "top 54%",
+          end: "bottom 52%",
+          scrub: true,
+        },
+      })
+      .from(".clientArray4", 1, {
+        x: "670%",
+        // opacity: "0",
+        ease: "ease1.out",
+        scrollTrigger: {
+          trigger: ".clientArray4",
+          start: "top 54%",
+          end: "bottom 52%",
           scrub: true,
         },
       });

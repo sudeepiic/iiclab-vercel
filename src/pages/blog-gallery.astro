@@ -28,10 +28,14 @@ const entries: any = await contentfulClient.getEntries<any>({
   >
     <div class="row margins mobView">
       <div class="col-lg-6 col-md-6 col-sm-12 heading">
-        <span>thinking out loud</span>
-        <a href="#blogsList">
-          <img class="btn blogbtn" src={blogButton} alt="" />
-        </a>
+        <div class="animate-title">
+          <!-- <div style="display: inline-block;" class="title-animate"> -->
+          <span>thinking out loud</span>
+          <!-- </div> -->
+          <a href="#blogsList">
+            <img class="btn blogbtn" src={blogButton} alt="" />
+          </a>
+        </div>
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-12 topText">
@@ -42,7 +46,7 @@ const entries: any = await contentfulClient.getEntries<any>({
       </div>
     </div>
 
-    <div style="text-align: center;padding:2% 0 0% 0;">
+    <div class="swiper-animate" style="text-align: center;padding:2% 0 0% 0;">
       <div class="swiper mySwiper" style="padding:1.5% 0 5% 0 ;">
         <div class="swiper-wrapper">
           {
@@ -66,11 +70,13 @@ const entries: any = await contentfulClient.getEntries<any>({
                           <span set:html={blogs.fields.genreNew} />
                         </div>
                       </div>
-                      <img
-                        class="carouselImg"
-                        src={blogs.fields?.heroImage?.fields?.file.url}
-                        alt=""
-                      />
+                      <div class="imgDiv">
+                        <img
+                          class="carouselImg"
+                          src={blogs.fields?.heroImage?.fields?.file.url}
+                          alt=""
+                        />
+                      </div>
                     </div>
                     <div class="card-footer">
                       <a href={"/blogs/" + blogs.fields.params}>
@@ -98,37 +104,44 @@ const entries: any = await contentfulClient.getEntries<any>({
       <span>editor's pick</span>
     </div>
 
-    <div style="margin-top: 1%;" class="margins row">
+    <div style="margin-top: 1%; overflow:hidden" class="margins row">
       <div class="col-md-6 col-lg-6 col-sm-12 picks">
-        <img class="editorImgs" src={editorImg1} alt="" /><br />
-        <span class="imgText"
-          >How Are People Coping With Mind Blocking In The Current Situation?</span
-        >
+        <div class="animate-img">
+          <img class="editorImgs" src={editorImg1} alt="" />
+        </div>
+        <div class="animate-imgText">
+          <span class="imgText"
+            >How Are People Coping With Mind Blocking In The Current Situation?</span
+          >
 
-        <a
-          href="/blogs/how-are-people-coping-with-mind-blocking-in-the-current-situation"
-        >
-          <img class="btn goBtn" src={yellowGo} alt="" /></a
-        >
-        <div class="info">
-          <div class="border-box"><span>Design & Technology</span></div>
-          <span class="authorName">By Pallavi.Jain</span>
-          <span class="dot"></span>
-          <span class="readTime">5 min read</span>
+          <a
+            href="/blogs/how-are-people-coping-with-mind-blocking-in-the-current-situation"
+          >
+            <img class="btn goBtn" src={yellowGo} alt="" /></a
+          >
+          <div class="info">
+            <div class="border-box"><span>Design & Technology</span></div>
+            <span class="authorName">By Pallavi.Jain</span>
+            <span class="dot"></span>
+            <span class="readTime">5 min read</span>
+          </div>
         </div>
       </div>
       <div class="col-md-6 col-lg-6 col-sm-12 picks">
-        <img class="editorImgs" src={editorImg2} alt="" />
-        <br />
-        <span class="imgText">The cycle of Analysis Paralysis</span>
-        <a href="/blogs/the-cycle-of-analysis-paralysis">
-          <img class="btn goBtn" src={yellowGo} alt="" />
-        </a>
-        <div class="info">
-          <div class="border-box"><span>Design & Technology</span></div>
-          <span class="authorName">By Pallavi.Jain</span>
-          <span class="dot"></span>
-          <span class="readTime">5 min read</span>
+        <div class="animate-img2">
+          <img class="editorImgs" src={editorImg2} alt="" />
+        </div>
+        <div class="animate-imgText">
+          <span class="imgText">The cycle of Analysis Paralysis</span>
+          <a href="/blogs/the-cycle-of-analysis-paralysis">
+            <img class="btn goBtn" src={yellowGo} alt="" />
+          </a>
+          <div class="info">
+            <div class="border-box"><span>Design & Technology</span></div>
+            <span class="authorName">By Pallavi.Jain</span>
+            <span class="dot"></span>
+            <span class="readTime">5 min read</span>
+          </div>
         </div>
       </div>
     </div>
@@ -268,6 +281,13 @@ const entries: any = await contentfulClient.getEntries<any>({
       object-fit: cover;
       aspect-ratio: 15/14;
       width: 100%;
+      transition: 0.7s ease;
+    }
+    .imgDiv {
+      overflow: hidden;
+    }
+    .imgDiv:hover .carouselImg {
+      transform: scale(1.2);
     }
 
     /* Caraousel css */
@@ -436,6 +456,7 @@ const entries: any = await contentfulClient.getEntries<any>({
     }
     .heading {
       margin-top: 4%;
+      overflow: hidden;
     }
     .heading span {
       font-family: "Deutschlander";
@@ -456,6 +477,8 @@ const entries: any = await contentfulClient.getEntries<any>({
     .blogbtn {
       vertical-align: top !important;
       width: 26%;
+      opacity: 0;
+      display: inline-block;
     }
 
     .topText {
@@ -606,6 +629,60 @@ const entries: any = await contentfulClient.getEntries<any>({
       aspect-ratio: 3/2;
       border-radius: 0 0.8vw 0 0.8vw;
     }
+    .topText {
+      position: relative;
+      bottom: 100%;
+    }
+    .topText:before {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: #1a1a1a;
+      z-index: 234555;
+      transition: bottom 1.2s ease;
+      transition-delay: 0.8s;
+      overflow: hidden;
+    }
+    .topText-animation:before {
+      bottom: 100%;
+    }
+
+    .animate-img {
+      position: relative;
+    }
+    .animate-img:after {
+      content: "";
+      position: absolute;
+      right: 5%;
+      left: -10%;
+      top: 0;
+      bottom: 0;
+      background: #1a1a1a;
+      z-index: 234555;
+      transition: left 1.2s ease;
+      overflow: hidden;
+    }
+    .animate-img2 {
+      position: relative;
+    }
+    .animate-img2:after {
+      content: "";
+      position: absolute;
+      right: 5%;
+      left: -10%;
+      top: 0;
+      bottom: 0;
+      background: #1a1a1a;
+      z-index: 234555;
+      transition: left 1.2s ease;
+      overflow: hidden;
+    }
+    .animation-img:after {
+      left: 100%;
+    }
   </style>
 
   <style is:global>
@@ -644,6 +721,11 @@ const entries: any = await contentfulClient.getEntries<any>({
   </style>
 
   <script>
+    document.querySelector(".topText").classList.add("topText-animation");
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    import Eases from "gsap";
+    gsap.registerPlugin(ScrollTrigger);
     const myButton = document.querySelectorAll(".exploreBtn");
 
     for (let i = 0; i < myButton.length; i++) {
@@ -707,5 +789,57 @@ const entries: any = await contentfulClient.getEntries<any>({
         delay: 2000,
       },
     });
+
+    let tl = gsap.timeline();
+    tl.from(".animate-title", {
+      duration: 1,
+      x: "-60%",
+      opacity: 0.5,
+      ease: "power1.out",
+    })
+      .to(".blogbtn", {
+        duration: 1,
+
+        opacity: 1,
+      })
+      .from(".swiper-animate", {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".swiper-animate",
+          start: "top 30%",
+          end: "bottom 90%",
+          scrub: true,
+        },
+      })
+      .from(".animate-img", {
+        // opacity: 0,
+        scrollTrigger: {
+          trigger: ".animate-img",
+          start: "top 30%",
+          end: "bottom top",
+          toggleClass: "animation-img",
+          scrub: true,
+        },
+      })
+      .from(".animate-img2", {
+        // opacity: 0,
+        scrollTrigger: {
+          trigger: ".animate-img2",
+          start: "top 30%",
+          end: "bottom top",
+          toggleClass: "animation-img",
+          scrub: true,
+        },
+      })
+      .from(".animate-imgText", 1, {
+        x: "-30%",
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".animate-imgText",
+          start: "top 63%",
+          end: "bottom 73%",
+          scrub: true,
+        },
+      });
   </script>
 </Layout>
