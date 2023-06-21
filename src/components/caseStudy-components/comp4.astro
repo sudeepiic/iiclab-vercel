@@ -29,10 +29,14 @@ const props = Astro.props;
     </div>
 
     <div class="margins images" style="margin-top: 4%; text-align: center;">
-       
-            <img class="img1" src={props.tiltImage1}  alt="" loading="lazy">
-            <img class="img2" src={props.tiltImage2} alt="" loading="lazy">
-            <img class="img3" src={props.tiltImage3} alt="" loading="lazy">
+        <!-- <div class="img1-animate"> -->
+            <img class="img1 " src={props.tiltImage1}  alt="" loading="lazy">
+        <!-- </div> -->
+          
+            <img class="img2 img2-animate" src={props.tiltImage2} alt="" loading="lazy">
+
+          
+            <img class="img3 img3-animate" src={props.tiltImage3} alt="" loading="lazy">
         
 
 
@@ -113,4 +117,61 @@ const props = Astro.props;
         !important;
     }
   }
+
+  .img2-animate, .img1-animate{
+    display: inline-block;
+
+  }
+
+  .img1-animate{
+    position: relative;
+  }
+  .img1-animate::before{
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #1a1a1a;
+    z-index: 234555;
+    transition: top 1s ease;
+    overflow: hidden;
+  }
+  .img-animation::before{
+    top:100%;
+  }
 </style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import Eases from "gsap";
+  gsap.registerPlugin(ScrollTrigger);
+
+  let tl = gsap.timeline();
+  tl.from(".img2-animate", {
+    x:"50%",
+    rotate:"80",
+    opacity:0,
+    scrollTrigger: {
+      trigger: ".img2-animate",
+      start: "top 80%",
+      end: "bottom 70%",
+
+      scrub: true,
+    
+ 
+    },
+  })
+  .from(".img1-animate", {
+  
+    scrollTrigger: {
+      trigger: ".img1-animate",
+      start: "top 80%",
+      end: "bottom 70%",
+      toggleClass:"img-animation",
+      scrub: true,
+    },
+  });
+</script>

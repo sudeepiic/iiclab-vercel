@@ -13,19 +13,19 @@ const props = Astro.props;
 >
   <div class="margins row">
     <div
-      class="col-lg-6 col-md-6 col-sm-12 heading"
+      class="col-lg-6 col-md-6 col-sm-12 heading animate-title"
       set:html={props.belowCarousalTitle}
     >
       <!-- <img style="width: 7%;" src={paraDiamond} alt="" /> -->
     </div>
 
     <div
-      class="col-lg-5 col-md-5 col-sm-12 para"
+      class="col-lg-5 col-md-5 col-sm-12 para animate-text"
       set:html={props.belowCarousalText}
     />
   </div>
 
-  <div class="margins img">
+  <div class="margins img animate-img">
     <img src={props.fullSizeImg} alt="" loading="lazy" />
   </div>
 </section>
@@ -79,4 +79,96 @@ const props = Astro.props;
       border-radius: 0 8vw 0 8vw;
     }
   }
+  .animate-title {
+    position: relative;
+  }
+
+  .animate-title::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #1a1a1a;
+    z-index: 234555;
+    transition: left 1s ease;
+    overflow: hidden;
+  }
+  .animation-title::before {
+    left: 100% !important;
+  }
+  .animate-text {
+    position: relative;
+  }
+  .animate-text::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #1a1a1a;
+    z-index: 234555;
+    transition: top 1s ease;
+    overflow: hidden;
+  }
+  .animation-text::before {
+    top: 100%;
+  }
+
+  .animate-img {
+    position: relative;
+  }
+  .animate-img::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #1a1a1a;
+    z-index: 234555;
+    transition: left 1s ease;
+    overflow: hidden;
+  }
+  .img-animation::before {
+    left: 100%;
+  }
 </style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import Eases from "gsap";
+  gsap.registerPlugin(ScrollTrigger);
+
+  let tl = gsap.timeline();
+  tl.from(".animate-title", {
+    scrollTrigger: {
+      trigger: ".animate-title",
+      start: "top 30%",
+      end: "bottom 10%",
+      toggleClass: "animation-title",
+      scrub: true,
+    },
+  })
+    .from(".animate-title", {
+      scrollTrigger: {
+        trigger: ".animate-text",
+        start: "top 30%",
+        end: "bottom 10%",
+        toggleClass: "animation-text",
+        scrub: true,
+      },
+    })
+    .from(".animate-img", {
+      scrollTrigger: {
+        trigger: ".animate-img",
+        start: "top 40%",
+        end: "bottom top",
+        toggleClass: "img-animation",
+        scrub: true,
+      },
+    });
+</script>

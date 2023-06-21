@@ -27,10 +27,12 @@ const entries: any = await contentfulClient.getEntries<any>({
             <div class="swiper-slide">
               <div>
                 <a href={"/case-study/" + caseStudy.fields.heroTitle}>
-                  <img
-                    src={caseStudy.fields?.heroBanner?.fields?.file.url}
-                    alt=""
-                  />
+                  <div class="animate-swiper">
+                    <img
+                      src={caseStudy.fields?.heroBanner?.fields?.file.url}
+                      alt=""
+                    />
+                  </div>
                 </a>
                 <div class="imgCaptionDiv">
                   <span
@@ -94,10 +96,12 @@ const entries: any = await contentfulClient.getEntries<any>({
       padding: 30px;
       font-size: 16vw;
       text-transform: uppercase;
+      display: inline-block;
     }
 
     .moving-text {
-      animation: move-text 10s linear infinite;
+      animation: move-text 15s linear infinite;
+      transition-delay: 5s;
     }
     .wrapper {
       overflow-x: hidden;
@@ -105,10 +109,10 @@ const entries: any = await contentfulClient.getEntries<any>({
 
     @keyframes move-text {
       0% {
-        transform: translateX(100%);
+        transform: translateX(90%);
       }
       100% {
-        transform: translateX(-100%);
+        transform: translateX(-90%);
       }
     }
 
@@ -119,7 +123,8 @@ const entries: any = await contentfulClient.getEntries<any>({
 
     .titles {
       background-color: #1a1a1a;
-
+      position: sticky;
+      top: 0;
       padding: 2% 2% 2% 10%;
     }
     .index,
@@ -269,6 +274,10 @@ const entries: any = await contentfulClient.getEntries<any>({
   </style>
 
   <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    import Eases from "gsap";
+    gsap.registerPlugin(ScrollTrigger);
     import {
       Swiper,
       Navigation,
@@ -319,6 +328,13 @@ const entries: any = await contentfulClient.getEntries<any>({
       //   el: ".swiper-pagination",
       //   clickable: true,
       // },
+    });
+
+    let tl = gsap.timeline();
+    tl.from("#main4 span", {
+      scale: 3.5,
+      duration: 2,
+      ease: "power1.out",
     });
   </script>
 </Layout>
