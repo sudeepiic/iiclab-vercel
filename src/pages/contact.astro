@@ -10,11 +10,17 @@ import positionBtn from "../images/positionBtn.png";
   <section class="topSec">
     <div class="row topSecDiv">
       <div class="col-lg-5 col-md-5 col-sm-12 imgText">
-        <span class="title"> Ready for a Head Start?</span><br />
-        <span class="text"
-          >We can help you with all your questions except, how much calories
-          does Mario burn in a day.</span
-        >
+        <div class="contact-animate">
+          <span class="title title1"> Ready for a</span>
+
+          <span class="title title2">Head Start?</span>
+        </div>
+        <div class="text-animate">
+          <span class="text"
+            >We can help you with all your questions except, how much calories
+            does Mario burn in a day.</span
+          >
+        </div>
       </div>
       <div class="col-lg-7 col-md-7 col-sm-12 imgDiv">
         <img class="heroImg" src={officeImg} alt="" />
@@ -144,7 +150,7 @@ import positionBtn from "../images/positionBtn.png";
         <a href="/hiring"><img class="btn posBtn" src={positionBtn} alt="" /></a
         >
       </div>
-      <div class="col-4">
+      <div class="col-4 hand-animate">
         <img style="width: 80%;" src={contactHand} loading="lazy" alt="" />
       </div>
     </div>
@@ -325,6 +331,7 @@ import positionBtn from "../images/positionBtn.png";
 
   .imgDiv {
     padding-left: 4%;
+    position: relative;
   }
   .topSec {
     background-color: #1a1a1a;
@@ -402,6 +409,11 @@ import positionBtn from "../images/positionBtn.png";
     text-transform: uppercase;
     line-height: 0.85;
   }
+  @media screen and (min-width: 768px) {
+    .title {
+      display: block;
+    }
+  }
   .heroImg {
     width: 100%;
     border-radius: 4.5vw 0 4.5vw 0;
@@ -413,6 +425,7 @@ import positionBtn from "../images/positionBtn.png";
     opacity: 60%;
     color: white;
     font-weight: 300;
+    display: block;
   }
 
   .table {
@@ -515,6 +528,32 @@ import positionBtn from "../images/positionBtn.png";
     font-size: 1.2rem;
     border-radius: 0 0 0.7vw 0.7vw;
   }
+
+  /* animation css */
+
+  .contact-animate {
+    overflow: hidden;
+  }
+  .text-animate {
+    overflow: hidden;
+  }
+
+  .imgDiv::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #1a1a1a;
+    z-index: 234555;
+    transition: right 1s ease;
+    transition-delay: 2s;
+    overflow: hidden;
+  }
+  .imgDiv-animation::before {
+    right: 100%;
+  }
 </style>
 <style is:global>
   .turnBlack {
@@ -550,3 +589,46 @@ import positionBtn from "../images/positionBtn.png";
     border: 1px solid white;
   }
 </style>
+
+<script>
+  document.querySelector(".imgDiv").classList.add("imgDiv-animation");
+
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import Eases from "gsap";
+  gsap.registerPlugin(ScrollTrigger);
+
+  let tl = gsap.timeline();
+
+  tl.from(".title1", {
+    duration: 1,
+    x: "-100%",
+
+    ease: "power1.out",
+  })
+    .from(".title2", {
+      duration: 1,
+      x: "-100%",
+
+      ease: "power1.out",
+    })
+    .from(".text", {
+      duration: 1,
+      y: "100%",
+      ease: "power1.out",
+    })
+    .from(".hand-animate", 0.2, {
+      x: "+=30",
+      rotate: "-=10",
+
+      yoyo: true,
+      repeat: 10,
+      scrollTrigger: {
+        trigger: ".hand-animate",
+        start: "top 40%",
+        end: "bottom 50%",
+
+        scrub: true,
+      },
+    });
+</script>

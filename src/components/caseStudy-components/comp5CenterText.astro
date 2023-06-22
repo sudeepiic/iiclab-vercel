@@ -9,16 +9,18 @@ const props = Astro.props;
 <section style="padding-top: 4%; background-color: #1a1a1a;">
   <div class="margins heading">
     <div
+      class="middleHead-animate"
       style=" width:50% ;text-align: center;"
       set:html={props.bottomCompTitle}
     />
   </div>
-
-  <div
-    class="para contain"
-    style="margin: 0 7% 0 7%;"
-    set:html={props.bottomCompText}
-  />
+  <div class="contain">
+    <div
+      class="para contain-animate"
+      style="margin: 0 7% 0 7%;"
+      set:html={props.bottomCompText}
+    />
+  </div>
 </section>
 
 <style>
@@ -70,4 +72,73 @@ const props = Astro.props;
       width: 75% !important;
     }
   }
+
+  /* animation css */
+
+  .middleHead-animate {
+    position: relative;
+  }
+  .middleHead-animate:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #1a1a1a;
+    z-index: 234555;
+    transition: left 1s ease;
+    overflow: hidden;
+  }
+  .middleHead-animation::before {
+    left: 100%;
+  }
+  .contain {
+    overflow: hidden;
+  }
+  .contain-animate {
+    position: relative;
+  }
+  .contain-animate::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #1a1a1a;
+    z-index: 234555;
+    transition: top 1s ease;
+    overflow: hidden;
+  }
+  .contain-animation:before {
+    top: 100%;
+  }
 </style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import Eases from "gsap";
+  gsap.registerPlugin(ScrollTrigger);
+
+  let tl = gsap.timeline();
+  tl.from(".middleHead-animate", {
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".middleHead-animate",
+      start: "top 70%",
+      end: "bottom 5%",
+      toggleClass: "middleHead-animation",
+      scrub: true,
+    },
+  }).from(".contain-animate", {
+    scrollTrigger: {
+      trigger: ".contain-animate",
+      start: "top 50%",
+      end: "bottom 5%",
+      toggleClass: "contain-animation",
+      scrub: true,
+    },
+  });
+</script>
