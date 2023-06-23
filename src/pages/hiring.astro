@@ -18,9 +18,9 @@ const entries: any = await contentfulClient.getEntries<any>({
 ---
 
 <Layout title="Hiring">
-  <section style="padding-top: 3.5%;">
-    <div class="row margins">
-      <div class="col-lg-8 col-md-8 col-sm-12">
+  <section>
+    <div class="row sticky-div">
+      <div class="col-lg-8 col-md-8 col-sm-12" style="overflow: hidden;">
         <span class="title">Join Our Team</span>
         <!-- <div>
           <img class="titleImg" src={hiringImg1} alt="" />
@@ -42,10 +42,10 @@ const entries: any = await contentfulClient.getEntries<any>({
   <section class="blackSec">
     <div class="row">
       <div class="col-lg-4 col-md-4 col-sm-12 blackTitle">
-        <span>Benefits of being an &nbsp;</span>
+        <span class="blackTitle-animate">Benefits of being an &nbsp;</span>
 
-        <span style="color:#e5ff53">IIC</span>
-        <span style="color:#f5ffbb">IAN</span>
+        <span class="blackTitle-animate" style="color:#e5ff53">IIC</span>
+        <span class="blackTitle-animate" style="color:#f5ffbb">IAN</span>
       </div>
       <div
         class="col-lg-8 col-md-8 col-sm-12 row pointerDiv"
@@ -111,8 +111,8 @@ const entries: any = await contentfulClient.getEntries<any>({
             >
 
             <option value="Business Development">Business Development</option>
-            <option value="contentWriter">Content Writer</option>
-            <option value="graphicDesigner">Graphic Designer</option>
+            <option value="Content Writer">Content Writer</option>
+            <option value="Graphic Designer">Graphic Designer</option>
           </select>
         </label>
       </div>
@@ -142,14 +142,19 @@ const entries: any = await contentfulClient.getEntries<any>({
     <div class="row">
       {
         entries.items.map((jobProfiles, index) => (
-          <div class="col-4 flip-card">
+          <div
+            class={
+              "col-4 flip-card profile-card " +
+              jobProfiles.fields.category.replaceAll(" ", "-")
+            }
+          >
             <div class="flip-card-inner">
               <div class="card">
                 <div class="eyeDiv btn">
                   <img src={closeEye} class="eye" loading="lazy" alt="" />
                 </div>
 
-                <div class="cardContent">
+                <div class="cardContent ">
                   <span>{jobProfiles.fields.jobProfile}</span>
                 </div>
                 <div class="bottomDiv">
@@ -208,7 +213,17 @@ const entries: any = await contentfulClient.getEntries<any>({
       border-radius: 0 0.6vw 0 0.6vw !important;
       font-size: 1.1vw;
     }
+    .sticky-div {
+      padding: 3.5% 8% 4% 8%;
+      position: sticky;
+      top: 0%;
+      margin-right: auto;
+      background-color: #f6f7f0;
+    }
     @media screen and (max-width: 767px) {
+      .blackTitle-animate {
+        transform: translate3d(0, 0, 0) !important;
+      }
       select {
         padding: 2% 10% 2% 3% !important;
         margin-bottom: 3% !important;
@@ -341,6 +356,7 @@ const entries: any = await contentfulClient.getEntries<any>({
       text-transform: uppercase;
       line-height: 0.8;
       word-spacing: 0.22rem;
+      display: block;
     }
 
     .titleImg {
@@ -369,6 +385,9 @@ const entries: any = await contentfulClient.getEntries<any>({
       padding: 11% 8% 8% 8%;
       border-radius: 0 0 5vw 5vw;
     }
+    .blackTitle {
+      overflow: hidden;
+    }
     .blackTitle span {
       font-family: "Deutschlander";
       font-size: 12.5vw;
@@ -376,6 +395,7 @@ const entries: any = await contentfulClient.getEntries<any>({
       line-height: 0.8;
       color: white;
       opacity: 100%;
+      display: inline-block;
       word-spacing: 0.2rem;
     }
 
@@ -383,11 +403,13 @@ const entries: any = await contentfulClient.getEntries<any>({
       border-radius: 0 0.8vw 0 0.8vw;
       width: 21%;
       margin-bottom: 4%;
+      display: inline-block;
     }
     .benefitsText {
       font-family: "anek devanagari";
       color: white;
       font-size: 2vw;
+      display: inline-block;
     }
 
     .positionsTitle {
@@ -610,9 +632,75 @@ const entries: any = await contentfulClient.getEntries<any>({
     .clock {
       width: 8%;
     }
+
+    /* animation css */
+
+    .titleText {
+      position: relative;
+    }
+    .titleText:before {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: #f6f7f0;
+      z-index: 998;
+      transition: top 1.2s ease;
+      transition-delay: 1s;
+      overflow: hidden;
+    }
+    .titleText-animation:before {
+      top: 100%;
+    }
   </style>
 
   <script>
+    document.querySelector(".titleText").classList.add("titleText-animation");
+
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    import Eases from "gsap";
+    gsap.registerPlugin(ScrollTrigger);
+
+    let tl = gsap.timeline();
+
+    tl.from(".title", {
+      duration: 1,
+      x: "-100%",
+      opacity: 0.5,
+      ease: "power1.out",
+    })
+      .from(".blackTitle-animate", 1, {
+        x: "-200%",
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".blackTitle-animate",
+          start: "top 60%",
+          end: "bottom 60%",
+          scrub: true,
+        },
+      })
+      .from(".benefitsText", {
+        x: "-50%",
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".benefitsText",
+          start: "top 60%",
+          end: "bottom 50%",
+          scrub: true,
+        },
+      })
+      .from(".benefitsImg", {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".benefitsImg",
+          start: "top 60%",
+          end: "bottom 50%",
+          scrub: true,
+        },
+      });
     const myButton = document.querySelectorAll(".exploreBtn");
 
     for (let i = 0; i < myButton.length; i++) {
@@ -625,5 +713,22 @@ const entries: any = await contentfulClient.getEntries<any>({
         }
       });
     }
+
+    const category = document.getElementById("slct2");
+
+    category.addEventListener("change", function () {
+      const selectedOption = category.value.replaceAll(" ", "-").toLowerCase();
+      console.log("Selected option:", selectedOption);
+
+      document.querySelectorAll(".profile-card").forEach((profile) => {
+        console.log(profile.classList);
+        profile.classList.remove("d-none");
+        if (!profile.classList.contains(selectedOption)) {
+          profile.classList.add("d-none");
+        } else {
+          profile.classList.add("d-block");
+        }
+      });
+    });
   </script>
 </Layout>
