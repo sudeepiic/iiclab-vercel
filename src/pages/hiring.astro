@@ -91,9 +91,19 @@ const entries: any = await contentfulClient.getEntries<any>({
       <div class="col-4 onlyDesk">
         <span class="inputTitle">Location:</span>
         <br />
-        <button class="btn exploreBtn" style="margin-left: 0;">Any</button>
-        <button class="btn exploreBtn">Mumbai</button>
-        <button class="btn exploreBtn">Lucknow</button>
+
+        <button
+          id="Any"
+          class="btn btn-dark exploreBtn"
+          type="button"
+          style="margin-left: 0;">Any</button
+        >
+        <button id="Mumbai" class="btn btn-dark exploreBtn" type="button"
+          >Mumbai</button
+        >
+        <button id="Lucknow" class="btn btn-dark exploreBtn" type="button"
+          >Lucknow</button
+        >
       </div>
       <div class="col-4 onlyDesk" style="padding-left: 1.7%;">
         <span class="inputTitle">Category:</span>
@@ -106,7 +116,8 @@ const entries: any = await contentfulClient.getEntries<any>({
         /> -->
         <label class="select" for="slct">
           <select id="slct2" required="required">
-            <option value="Design and Development" selected="selected"
+            <option value="Any">Any</option>
+            <option value="Design and Development"
               >Design and Development</option
             >
 
@@ -121,9 +132,9 @@ const entries: any = await contentfulClient.getEntries<any>({
     <div class="row onlyMob">
       <label class="select" for="slct">
         <select id="slct" required="required">
-          <option value="" selected="selected">Location :any</option>
-          <option value="#">Mumbai</option>
-          <option value="#">Lucknow</option>
+          <option value="Any" selected="selected">Location: Any</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Lucknow">Lucknow</option>
           <!-- <option value="#">Three</option> -->
         </select>
       </label>
@@ -132,10 +143,12 @@ const entries: any = await contentfulClient.getEntries<any>({
     <div class="row onlyMob" style="margin-bottom: 4%;">
       <label class="select" for="slct">
         <select id="slct3" required="required">
-          <option value="" selected="selected">Design and Development</option>
-          <option value="#">Business Development</option>
-          <option value="#">Content Writer</option>
-          <option value="#">Graphic Designer</option>
+          <option value="Any">Category: Any</option>
+
+          <option value="Design and Development">Design and Development</option>
+          <option value="Business Development">Business Development</option>
+          <option value="Content Writer">Content Writer</option>
+          <option value="Graphic Designer">Graphic Designer</option>
         </select>
       </label>
     </div>
@@ -144,7 +157,9 @@ const entries: any = await contentfulClient.getEntries<any>({
         entries.items.map((jobProfiles, index) => (
           <div
             class={
-              "col-4 flip-card profile-card " +
+              "flip-card " +
+              jobProfiles.fields.location +
+              " col-4 profile-card " +
               jobProfiles.fields.category.replaceAll(" ", "-")
             }
           >
@@ -441,8 +456,9 @@ const entries: any = await contentfulClient.getEntries<any>({
 
     .exploreBtn {
       background: rgba(255, 255, 255, 0.7);
-      opacity: 60%;
-      font-weight: 500;
+      /* opacity: 60%; */
+      color: grey;
+      font-weight: 400;
       font-size: 1vw;
       border-radius: 0 0.7vw 0 0.7vw;
       width: 7.7vw;
@@ -657,6 +673,7 @@ const entries: any = await contentfulClient.getEntries<any>({
   </style>
 
   <script>
+    // animation script
     document.querySelector(".titleText").classList.add("titleText-animation");
 
     import { gsap } from "gsap";
@@ -701,19 +718,22 @@ const entries: any = await contentfulClient.getEntries<any>({
           scrub: true,
         },
       });
-    const myButton = document.querySelectorAll(".exploreBtn");
 
-    for (let i = 0; i < myButton.length; i++) {
-      console.log(myButton.length, "lennnngth");
-      myButton[i].addEventListener("click", function () {
-        if (myButton[i].classList.contains("clicked")) {
-          myButton[i].classList.remove("clicked");
-        } else {
-          myButton[i].classList.add("clicked");
-        }
-      });
-    }
+    // color change on location button click
+    // const myButton = document.querySelectorAll(".exploreBtn");
 
+    // for (let i = 0; i < myButton.length; i++) {
+    //   console.log(myButton.length, "lennnngth");
+    //   myButton[i].addEventListener("click", function () {
+    //     if (myButton[i].classList.contains("clicked")) {
+    //       myButton[i].classList.remove("clicked");
+    //     } else {
+    //       myButton[i].classList.add("clicked");
+    //     }
+    //   });
+    // }
+
+    // Filter for category dropdown in desktop view
     const category = document.getElementById("slct2");
 
     category.addEventListener("change", function () {
@@ -723,10 +743,71 @@ const entries: any = await contentfulClient.getEntries<any>({
       document.querySelectorAll(".profile-card").forEach((profile) => {
         console.log(profile.classList);
         profile.classList.remove("d-none");
-        if (!profile.classList.contains(selectedOption)) {
-          profile.classList.add("d-none");
-        } else {
+        if (selectedOption === "any") {
           profile.classList.add("d-block");
+        } else if (!profile.classList.contains(selectedOption)) {
+          profile.classList.add("d-none");
+        }
+      });
+    });
+
+    // Filter for category dropdown in mobile view
+
+    const categoryMob = document.getElementById("slct3");
+
+    categoryMob.addEventListener("change", function () {
+      const selectedOption = categoryMob.value
+        .replaceAll(" ", "-")
+        .toLowerCase();
+      console.log("Selected option:", selectedOption);
+
+      document.querySelectorAll(".profile-card").forEach((profile) => {
+        console.log(profile.classList);
+        profile.classList.remove("d-none");
+        if (selectedOption === "any") {
+          profile.classList.add("d-block");
+        } else if (!profile.classList.contains(selectedOption)) {
+          profile.classList.add("d-none");
+        }
+      });
+    });
+
+    // Filter for location buttons
+
+    const myButton = document.querySelectorAll(".exploreBtn");
+
+    for (let i = 0; i < myButton.length; i++) {
+      console.log(myButton.length, "lennnngth");
+      myButton[i].addEventListener("click", function () {
+        document.querySelectorAll(".profile-card").forEach((profile) => {
+          profile.classList.remove("d-none");
+          if (myButton[i].id === "Any") {
+            profile.classList.add("d-block");
+          } else if (!profile.classList.contains(myButton[i].id)) {
+            profile.classList.add("d-none");
+
+            console.log(profile.classList.contains(myButton[i].id));
+          }
+        });
+      });
+    }
+
+    // Filter for location dropdown in mobile view
+
+    const locationMob = document.getElementById("slct");
+
+    locationMob.addEventListener("change", function () {
+      const selectedOption = locationMob.value;
+
+      console.log("Selected option:", selectedOption);
+
+      document.querySelectorAll(".profile-card").forEach((profile) => {
+        console.log(profile.classList);
+        profile.classList.remove("d-none");
+        if (selectedOption === "Any") {
+          profile.classList.add("d-block");
+        } else if (!profile.classList.contains(selectedOption)) {
+          profile.classList.add("d-none");
         }
       });
     });

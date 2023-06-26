@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import awards from "../images/awards.png";
 import hiringImg1 from "../images/hiringImg1.jpg";
 import viewAwardsBtn from "../images/viewAwardsBtn.png";
+import rotatingView from "../images/rotatingView.png";
+import centerArrow from "../images/centerArrow.png";
 import viewProjectBtn from "../images/viewProjectBtn.png";
 import momento from "../images/momento.png";
 import momentoIcon2 from "../images/momentoIcon2.png";
@@ -14,19 +16,23 @@ import { gsap } from "gsap";
 
 <Layout title="Awards">
   <section style="padding-top: 3.5%;">
-    <div class="row margins mob">
-      <div class="col-lg-8 col-md-8 col-sm-12">
-        <span class="title">Awards &</span>
+    <div class="row mob stickyDiv">
+      <div class="col-lg-8 col-md-8 col-sm-12" style="overflow: hidden;">
+        <span class="title title1">Awards &</span>
         <div class="makeInline">
-          <img class="titleImg" src={hiringImg1} alt="" />
-          <span class="title">Recognition</span>
+          <div class="imgDiv">
+            <img class="titleImg" src={hiringImg1} alt="" />
+          </div>
+
+          <span class="title title2">Recognition</span>
         </div>
       </div>
 
       <div class="col-lg-4 col-md-4 col-sm-12">
-        <a href="#awardsList"
-          ><img src={viewAwardsBtn} class="viewAwardsBtn" alt="" /></a
-        >
+        <a href="#awardsList" style="width: fit-content; display:contents"
+          ><img src={rotatingView} class="viewAwardsBtn" alt="" />
+          <img class="centerArrow" src={centerArrow} alt="" />
+        </a>
       </div>
     </div>
     <img class="" style="width:100%;" src={awards} alt="" />
@@ -647,6 +653,18 @@ import { gsap } from "gsap";
   </section>
 
   <style>
+    .centerArrow {
+      position: relative;
+      top: 65%;
+      width: 4%;
+      left: 31.5%;
+    }
+    @media screen and (max-width: 1050px) {
+      .centerArrow {
+        left: 30.5% !important;
+      }
+    }
+
     /* carousel css */
 
     .award-name span {
@@ -859,8 +877,10 @@ import { gsap } from "gsap";
         margin-top: 4% !important;
       }
       .viewAwardsBtn,
+      .centerArrow,
+      .imgDiv,
       .titleImg {
-        display: none;
+        display: none !important;
       }
       .makeInline {
         display: inline;
@@ -934,14 +954,18 @@ import { gsap } from "gsap";
       font-size: 14.5vw;
       text-transform: uppercase;
       line-height: 0.8;
+      display: inline-block;
+    }
+    .imgDiv {
+      width: 28%;
+      margin-right: 3%;
+      display: inline-block;
     }
 
     .titleImg {
       vertical-align: baseline;
-      width: 28%;
-
+      width: 100%;
       border-radius: 12vw;
-      margin-right: 3%;
     }
 
     .margins {
@@ -986,6 +1010,14 @@ import { gsap } from "gsap";
       font-weight: 600;
     }
 
+    .stickyDiv {
+      /* position: sticky;
+      top: 0;
+      background-color: #f6f7f0; */
+      padding: 0 8%;
+      padding-bottom: 6.8%;
+    }
+
     /* award table css */
 
     @media screen and (min-width: 768px) {
@@ -1018,10 +1050,62 @@ import { gsap } from "gsap";
         display: none;
       }
     }
+
+    /*animation css  */
+
+    .imgDiv {
+      position: relative;
+    }
+    .imgDiv:before {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: -10%;
+      top: -20%;
+      bottom: 0;
+      background: #f6f7f0;
+      z-index: 2998;
+      transition: left 1.2s ease;
+      transition-delay: 1s;
+      overflow: hidden;
+    }
+    .imgDiv-animate:before {
+      left: 100%;
+    }
   </style>
 
   <script>
+    document.querySelector(".imgDiv").classList.add("imgDiv-animate");
+
     import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    import Eases from "gsap";
+    gsap.registerPlugin(ScrollTrigger);
+
+    let tl = gsap.timeline();
+
+    tl.from(".title1", {
+      duration: 1,
+      x: "-100%",
+      opacity: 0.5,
+      ease: "power1.out",
+    })
+      .from(".title2", {
+        duration: 1,
+        x: "-30%",
+        opacity: 0,
+        ease: "power1.out",
+      })
+      .from(".viewAwardsBtn, .centerArrow", {
+        opacity: 0,
+      })
+
+      .from(".viewAwardsBtn", {
+        rotate: "360",
+        duration: 10,
+        repeat: -1,
+        ease: "none",
+      });
     console.log("i m here", gsap.context());
     const items = document.querySelectorAll(".trial");
 
