@@ -2259,6 +2259,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       });
     });
 
+    // setTimeout(() => {
+    //   ScrollTrigger.refresh();
+    // }, 3000);
+
     let tl = new TimelineMax({});
 
     tl.from("#main3", 1, {
@@ -2313,6 +2317,51 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           scrub: true,
         },
       })
+      .from(".clientArray1", 1, {
+        x: "670%",
+        // opacity: "0",
+        ease: "ease1.out",
+        scrollTrigger: {
+          trigger: ".clientArray1",
+          start: "top 50%",
+          end: "bottom 48%",
+          scrub: true,
+        },
+      })
+      .from(".clientArray2", 1, {
+        x: "670%",
+        // opacity: "0",
+        ease: "ease1.out",
+        scrollTrigger: {
+          trigger: ".clientArray2",
+          start: "top 50%",
+          end: "bottom 48%",
+          scrub: true,
+        },
+      })
+      .from(".clientArray3", 1, {
+        x: "670%",
+        // opacity: "0",
+        ease: "ease1.out",
+        scrollTrigger: {
+          trigger: ".clientArray3",
+          start: "top 54%",
+          end: "bottom 52%",
+          scrub: true,
+        },
+      })
+      .from(".clientArray4", 1, {
+        x: "670%",
+        // opacity: "0",
+        ease: "ease1.out",
+        scrollTrigger: {
+          trigger: ".clientArray4",
+          start: "top 54%",
+          end: "bottom 52%",
+          scrub: true,
+        },
+      })
+
       .from("#featureWork-section", 1, {
         scrollTrigger: {
           trigger: ".animate-featureWork",
@@ -2427,50 +2476,6 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           trigger: ".product-table",
           start: "top 50%",
           end: "bottom top",
-          scrub: true,
-        },
-      })
-      .from(".clientArray1", 1, {
-        x: "670%",
-        // opacity: "0",
-        ease: "ease1.out",
-        scrollTrigger: {
-          trigger: ".clientArray1",
-          start: "top 50%",
-          end: "bottom 48%",
-          scrub: true,
-        },
-      })
-      .from(".clientArray2", 1, {
-        x: "670%",
-        // opacity: "0",
-        ease: "ease1.out",
-        scrollTrigger: {
-          trigger: ".clientArray2",
-          start: "top 50%",
-          end: "bottom 48%",
-          scrub: true,
-        },
-      })
-      .from(".clientArray3", 1, {
-        x: "670%",
-        // opacity: "0",
-        ease: "ease1.out",
-        scrollTrigger: {
-          trigger: ".clientArray3",
-          start: "top 54%",
-          end: "bottom 52%",
-          scrub: true,
-        },
-      })
-      .from(".clientArray4", 1, {
-        x: "670%",
-        // opacity: "0",
-        ease: "ease1.out",
-        scrollTrigger: {
-          trigger: ".clientArray4",
-          start: "top 54%",
-          end: "bottom 52%",
           scrub: true,
         },
       });

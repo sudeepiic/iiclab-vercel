@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Hand_Holding_Smartphone2 from "../images/Hand_Holding_Smartphone2.jpg";
 import ourSolutionsBtn from "../images/ourSolutionsBtn.png";
+import solutionbtn from "../images/solution-rotateBtn.png";
+import newArrow from "../images/newArrow.png";
 import solutionImg1 from "../images/solutionImg1.png";
 import experimental from "../images/experiment.png";
 import interactiveSoln from "../images/interactiveSoln.png";
@@ -17,22 +19,18 @@ import diamond from "../images/whiteDiamond.png";
     <div class="gradient">
       <div class="bgImage">
         <div class="title">
-          <span>What are we good at</span>
-          <a href="#apply">
-            <img
-              class="btn"
-              style="width: 13%; margin-bottom: 3%; margin-left: 20%;"
-              src={ourSolutionsBtn}
-              alt=""
-            />
+          <span class="animate-title">What are we good at</span>
+          <a class="btnDiv" href="#soln">
+            <img class="btn btn-animate" src={solutionbtn} alt="" />
+            <img class="arrow" src={newArrow} alt="" />
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <section style="padding: 5% 1% 0 1%; background-color: #1a1a1a;">
-    <div class="swiper mySwiper">
+  <section style="padding: 5% 1% 0 1%; background-color: #1a1a1a;" id="soln">
+    <div class="swiper mySwiper swiper-animate">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="swiperDiv">
@@ -291,6 +289,15 @@ import diamond from "../images/whiteDiamond.png";
 </Layout>
 
 <style>
+  .btnDiv {
+    position: relative;
+  }
+  .arrow {
+    position: absolute;
+    left: 78.5%;
+    width: 3.5%;
+    top: 42.5%;
+  }
   /* carousal css */
   ul.a {
     list-style-type: disc;
@@ -476,6 +483,15 @@ import diamond from "../images/whiteDiamond.png";
     .swiper-slide-prev .swiperDiv {
       transform: translateY(25%) !important;
     }
+
+    .btnDiv,
+    .btn-animate,
+    .arrow {
+      display: none;
+    }
+    .animate-title {
+      margin-bottom: 3%;
+    }
   }
 
   .bgImage {
@@ -496,9 +512,18 @@ import diamond from "../images/whiteDiamond.png";
     font-weight: 400;
     font-style: normal;
     line-height: 0.85;
-
+    overflow: hidden;
     width: 90%;
-    margin-top: 9%;
+    margin-top: 6%;
+  }
+  .animate-title {
+    display: inline-block;
+  }
+  .btn-animate {
+    width: 13%;
+    margin-bottom: 3%;
+    margin-left: 20%;
+    display: inline-block;
   }
 
   /* moving text css */
@@ -530,7 +555,26 @@ import diamond from "../images/whiteDiamond.png";
     padding-bottom: 2%;
     background-color: #1a1a1a;
   }
-  /*  */
+  /* animation css */
+
+  .swiper-animate {
+    position: relative;
+  }
+  .swiper-animate:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #1a1a1a;
+    z-index: 998;
+    transition: bottom 1.4s ease;
+    overflow: hidden;
+  }
+  .swiper-animation::before {
+    bottom: 100%;
+  }
 </style>
 
 <style is:global>
@@ -571,6 +615,11 @@ import diamond from "../images/whiteDiamond.png";
 </style>
 
 <script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import Eases from "gsap";
+  gsap.registerPlugin(ScrollTrigger);
+
   import {
     Swiper,
     Navigation,
@@ -602,10 +651,64 @@ import diamond from "../images/whiteDiamond.png";
         spaceBetween: 50,
       },
     },
-
-    // pagination: {
-    //   el: ".swiper-pagination",
-    //   clickable: true,
-    // },
   });
+
+  let tl = gsap.timeline();
+  tl.from(".animate-title", {
+    duration: 0.7,
+    y: "60%",
+
+    ease: "power1.out",
+  })
+    .from(".btn-animate, .arrow", {
+      opacity: 0,
+
+      ease: "power1.out",
+    })
+    .from(".btn-animate", {
+      rotate: "360",
+      duration: 10,
+      repeat: -1,
+      ease: "none",
+    })
+    .from(".swiper-animate", {
+      scrollTrigger: {
+        trigger: ".swiper-animate",
+        start: "top 35%",
+        end: "bottom 20%",
+        toggleClass: "swiper-animation",
+        scrub: true,
+      },
+    })
+    .from(".overlapDiv", {
+      y: "50%",
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".overlapDiv",
+        start: "top 55%",
+        end: "bottom 60%",
+
+        scrub: true,
+      },
+    })
+    .from(".captionDiv", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".overlapDiv",
+        start: "top 55%",
+        end: "bottom 60%",
+
+        scrub: true,
+      },
+    })
+    .from(".techList", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".overlapDiv",
+        start: "top 44%",
+        end: "bottom 60%",
+
+        scrub: true,
+      },
+    });
 </script>

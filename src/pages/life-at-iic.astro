@@ -14,11 +14,11 @@ import carousalPrev from "../images/carousalPrev.png";
   <section style="padding-top: 3.5%; background-color: #1a1a1a;">
     <div class="margins">
       <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-12">
-          <span class="title">life at iic</span>
-          <span class="title" style="color: #e5ff53;">.</span>
+        <div class="col-lg-4 col-md-4 col-sm-12" style="overflow:hidden">
+          <span class="title title1">life at iic</span>
+          <span class="title title2" style="color: #e5ff53;">.</span>
         </div>
-        <div class="col-lg-8 col-md-8 col-sm-12">
+        <div class="col-lg-8 col-md-8 col-sm-12 animate-text">
           <span class="titleText">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
             nonummy nibh euismod tincidunt ut laoreet.
@@ -28,7 +28,7 @@ import carousalPrev from "../images/carousalPrev.png";
       </div>
     </div>
 
-    <div class="margins">
+    <div class="margins animate-swiper">
       <div class="mySwiper" style="padding:1.5% 0 5% 0 ; ">
         <div class="swiper-wrapper">
           <div class="swiper-slide imgWidth">
@@ -142,6 +142,7 @@ import carousalPrev from "../images/carousalPrev.png";
     color: white;
     font-size: 12.5vw;
     line-height: 1;
+    display: inline-block;
     word-spacing: 0.2rem;
   }
 
@@ -322,6 +323,26 @@ import carousalPrev from "../images/carousalPrev.png";
 </style>
 
 <script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import Eases from "gsap";
+  gsap.registerPlugin(ScrollTrigger);
+
+  let tl = gsap.timeline();
+  tl.from(".title1", {
+    duration: 1,
+    x: "-60%",
+    opacity: 0.1,
+    ease: "power1.out",
+  })
+    .from(".animate-text, .title2", {
+      opacity: 0,
+      ease: "power1.out",
+    })
+    .from(".animate-swiper", {
+      opacity: 0,
+      ease: "power1.out",
+    });
   import {
     Swiper,
     Navigation,

@@ -41,9 +41,12 @@ const props = Astro.props;
 
   <section style="background-color: #1a1a1a; padding-top: 6%;">
     <div style="margin-left: 9%;  padding-bottom: 5%;">
-      <span class="title" set:html={props.title} />
-
-      <span class="text" set:html={props.titleText} />
+      <div style="overflow: hidden;">
+        <span class="title" set:html={props.title} />
+      </div>
+      <div style="overflow: hidden;">
+        <span class="text" set:html={props.titleText} />
+      </div>
     </div>
     <div style="margin-left: 9%;">
       <span class="title">Top brands</span>
@@ -334,6 +337,11 @@ const props = Astro.props;
 </style>
 
 <script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import Eases from "gsap";
+  gsap.registerPlugin(ScrollTrigger);
+
   import {
     Swiper,
     Navigation,
@@ -405,5 +413,32 @@ const props = Astro.props;
     //   el: ".swiper-pagination",
     //   clickable: true,
     // },
+  });
+
+  let tl = gsap.timeline();
+  tl.from(".title", {
+    duration: 1,
+    y: "100%",
+    opacity: 0,
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: ".title",
+      start: "top 80%",
+      end: "bottom 73%",
+
+      scrub: true,
+    },
+  }).from(".text", {
+    duration: 1,
+    y: "100%",
+    opacity: 0,
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: ".text",
+      start: "top 70%",
+      end: "bottom 63%",
+
+      scrub: true,
+    },
   });
 </script>
