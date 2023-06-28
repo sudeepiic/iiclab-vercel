@@ -13,7 +13,25 @@ const entries: any = await contentfulClient.getEntries<any>({
 <Layout title="Portfolio Gallery">
   <section style="padding-top: 4.5%;">
     <div class="wrapper">
-      <div id="main4" class="moving-text">
+      <div id="main4" class="moving-text" style="width: max-content;">
+        <span class="zoomIn">Our Work</span><img
+          src={portfolio1}
+          class="movingImg"
+          alt=""
+        />
+        <span>our work &nbsp; &nbsp; &nbsp;</span>
+        <span>Our Work</span><img src={portfolio1} class="movingImg" alt="" />
+        <span>our work &nbsp; &nbsp; &nbsp;</span>
+        <span>Our Work</span><img src={portfolio1} class="movingImg" alt="" />
+        <span>our work &nbsp; &nbsp; &nbsp;</span>
+        <span>Our Work</span><img src={portfolio1} class="movingImg" alt="" />
+        <span>our work &nbsp; &nbsp; &nbsp;</span>
+        <span>Our Work</span><img src={portfolio1} class="movingImg" alt="" />
+        <span>our work &nbsp; &nbsp; &nbsp;</span>
+        <span>Our Work</span><img src={portfolio1} class="movingImg" alt="" />
+        <span>our work &nbsp; &nbsp; &nbsp;</span>
+        <span>Our Work</span><img src={portfolio1} class="movingImg" alt="" />
+        <span>our work</span>
         <span>Our Work</span><img src={portfolio1} class="movingImg" alt="" />
         <span>our work</span>
       </div>
@@ -100,8 +118,8 @@ const entries: any = await contentfulClient.getEntries<any>({
     }
 
     .moving-text {
-      animation: move-text 15s linear infinite;
-      transition-delay: 5s;
+      animation: move-text 55s linear infinite;
+      /* transition-delay: 5s; */
     }
     .wrapper {
       overflow-x: hidden;
@@ -109,15 +127,15 @@ const entries: any = await contentfulClient.getEntries<any>({
 
     @keyframes move-text {
       0% {
-        transform: translateX(90%);
+        transform: translateX(10%);
       }
       100% {
-        transform: translateX(-90%);
+        transform: translateX(-50%);
       }
     }
 
     .movingImg {
-      width: 13%;
+      width: 12vw;
       vertical-align: super;
     }
 
@@ -203,24 +221,6 @@ const entries: any = await contentfulClient.getEntries<any>({
       }
       .caption2 {
         font-size: 2.75vw !important;
-      }
-    }
-    @media screen and (max-width: 480px) {
-      #main4 span {
-        font-size: 12vw;
-      }
-      .movingImg {
-        vertical-align: baseline;
-        width: 10%;
-      }
-    }
-    @media screen and (max-width: 328px) {
-      #main4 span {
-        font-size: 10.5vw;
-      }
-      .movingImg {
-        vertical-align: baseline;
-        width: 9%;
       }
     }
 
@@ -331,7 +331,7 @@ const entries: any = await contentfulClient.getEntries<any>({
     });
 
     let tl = gsap.timeline();
-    tl.from("#main4 span", {
+    tl.from(".zoomIn", {
       scale: 3.5,
       duration: 2,
       ease: "power1.out",

@@ -149,7 +149,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
   </div>
 </section>
 
-<section class="mainImg" style="margin-top:7%;">
+<section class="mainImg" style="margin-top:7%; margin-bottom
+:1%;">
   <img
     src={home}
     alt=""
@@ -161,8 +162,42 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
 <section>
   <div class="wrapper">
-    <div id="main4" class="moving-text" style="width:max-content">
-      <span>Deduce</span><span>Engage</span><span>Enable</span>
+    <div id="main4" class="moving-text" style="display:flex;width:max-content">
+      <span>Deduce</span>
+      <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
+        <img style="width:5vw" src={diamond} alt="" />
+      </div><span>Engage</span>
+      <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
+        <img style="width:5vw" src={diamond} alt="" />
+      </div><span>Enable &nbsp;&nbsp;</span>
+      <span>Deduce</span>
+      <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
+        <img style="width:5vw" src={diamond} alt="" />
+      </div><span>Engage</span>
+      <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
+        <img style="width:5vw" src={diamond} alt="" />
+      </div><span>Enable &nbsp; &nbsp;</span>
+      <span>Deduce</span>
+      <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
+        <img style="width:5vw" src={diamond} alt="" />
+      </div><span>Engage</span>
+      <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
+        <img style="width:5vw" src={diamond} alt="" />
+      </div><span>Enable &nbsp;&nbsp;</span>
+      <span>Deduce</span>
+      <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
+        <img style="width:5vw" src={diamond} alt="" />
+      </div><span>Engage</span>
+      <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
+        <img style="width:5vw" src={diamond} alt="" />
+      </div><span>Enable &nbsp;&nbsp;</span>
+      <span>Deduce</span>
+      <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
+        <img style="width:5vw" src={diamond} alt="" />
+      </div><span>Engage</span>
+      <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
+        <img style="width:5vw" src={diamond} alt="" />
+      </div><span>Enable &nbsp;&nbsp;</span>
     </div>
   </div>
 </section>
@@ -623,7 +658,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 </section>
 
 <section style="margin-top: 4.5%;">
-  <div class="moving-text" style="display: flex; overflow:hidden;">
+  <div
+    class="moving-text"
+    style="display: flex; overflow:hidden; width:max-content"
+  >
     <span class="wallHonor">WALL OF HONOR</span>
     <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
       <img style="width:3.5vw" src={diamond} alt="" />
@@ -632,6 +670,15 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
       <img style="width:3.5vw" src={diamond} alt="" />
     </div>
+    <span class="wallHonor">WALL OF HONOR</span>
+    <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
+      <img style="width:3.5vw" src={diamond} alt="" />
+    </div>
+    <span class="wallHonor">WALL OF HONOR</span>
+    <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
+      <img style="width:3.5vw" src={diamond} alt="" />
+    </div>
+    <span class="wallHonor">WALL OF HONOR</span>
   </div>
 </section>
 
@@ -1329,9 +1376,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     }
     #main4 span {
       font-family: "Deutschlander";
-      padding: 30px;
-      font-size: 18rem;
+      padding: 3vw;
+      font-size: 25vw;
       text-transform: uppercase;
+      line-height: 1;
     }
     #main5 {
       position: relative;
@@ -1363,7 +1411,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     }
 
     .moving-text {
-      animation: move-text 15s linear infinite;
+      animation: move-text 50s linear infinite;
     }
 
     .moving-text2 {
@@ -1411,7 +1459,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
     @keyframes move-text {
       0% {
-        transform: translateX(100%);
+        transform: translateX(15%);
       }
       100% {
         transform: translateX(-100%);
@@ -1718,9 +1766,9 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .crossImg {
         width: 2.5vw;
       }
-      #main4 span {
+      /* #main4 span {
         font-size: 14rem;
-      }
+      } */
       .card-text {
         font-size: 1.7vw !important;
         height: 26vw;
@@ -2262,7 +2310,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         scrollTrigger: {
           trigger: "#main5",
           start: "top bottom",
-          end: "bottom 50%",
+          end: "bottom 60%",
 
           scrub: true,
         },
@@ -2272,8 +2320,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         ease: "ease1.out",
         scrollTrigger: {
           trigger: ".giantHolder-animate",
-          start: "top 30%",
-          end: "bottom 30%",
+          start: "top 40%",
+          end: "bottom 40%",
 
           scrub: true,
         },
@@ -2284,8 +2332,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         ease: "ease1.out",
         scrollTrigger: {
           trigger: ".clientArray1",
-          start: "top 50%",
-          end: "bottom 48%",
+          start: "top 75%",
+          end: "bottom 74%",
           scrub: true,
         },
       })
@@ -2295,8 +2343,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         ease: "ease1.out",
         scrollTrigger: {
           trigger: ".clientArray2",
-          start: "top 50%",
-          end: "bottom 48%",
+          start: "top 80%",
+          end: "bottom 79%",
           scrub: true,
         },
       })
@@ -2306,8 +2354,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         ease: "ease1.out",
         scrollTrigger: {
           trigger: ".clientArray3",
-          start: "top 54%",
-          end: "bottom 52%",
+          start: "top 83%",
+          end: "bottom 82%",
           scrub: true,
         },
       })
@@ -2317,8 +2365,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         ease: "ease1.out",
         scrollTrigger: {
           trigger: ".clientArray4",
-          start: "top 54%",
-          end: "bottom 52%",
+          start: "top 86%",
+          end: "bottom 86%",
           scrub: true,
         },
       })
