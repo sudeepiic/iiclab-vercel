@@ -163,21 +163,17 @@ const entries: any = await contentfulClient.getEntries<any>({
           <div class="makeInline">
             <button
               id="All"
-              class="btn exploreBtn btn-dark"
+              class="btn exploreBtn clicked"
               style="margin-left: 0;">All</button
             >
-            <button id="Design" class="btn exploreBtn btn-dark">Design</button>
-            <button id="Technology" class="btn exploreBtn btn-dark"
-              >Technology</button
-            >
+            <button id="Design" class="btn exploreBtn">Design</button>
+            <button id="Technology" class="btn exploreBtn">Technology</button>
           </div>
 
-          <button
-            id="Social"
-            class="btn exploreBtn btn-dark"
-            style="margin-left: 0;">Social</button
+          <button id="Social" class="btn exploreBtn" style="margin-left: 0;"
+            >Social</button
           >
-          <button id="Culture" class="btn exploreBtn btn-dark">Culture</button>
+          <button id="Culture" class="btn exploreBtn">Culture</button>
         </div>
       </div>
 
@@ -766,17 +762,6 @@ const entries: any = await contentfulClient.getEntries<any>({
     import { ScrollTrigger } from "gsap/ScrollTrigger";
     import Eases from "gsap";
     gsap.registerPlugin(ScrollTrigger);
-    // const myButton = document.querySelectorAll(".exploreBtn");
-
-    // for (let i = 0; i < myButton.length; i++) {
-    //   myButton[i].addEventListener("click", function () {
-    //     if (myButton[i].classList.contains("clicked")) {
-    //       myButton[i].classList.remove("clicked");
-    //     } else {
-    //       myButton[i].classList.add("clicked");
-    //     }
-    //   });
-    // }
 
     // swiper carousal script
 
@@ -886,8 +871,8 @@ const entries: any = await contentfulClient.getEntries<any>({
         opacity: 0,
         scrollTrigger: {
           trigger: ".animate-imgText",
-          start: "top 63%",
-          end: "bottom 73%",
+          start: "top 68%",
+          end: "bottom 72%",
           scrub: true,
         },
       });
@@ -910,6 +895,13 @@ const entries: any = await contentfulClient.getEntries<any>({
             console.log(blog.classList.contains(selectedGenre));
           }
         });
+        for (let j = 0; j < myButton.length; j++) {
+          if (i === j) {
+            myButton[j].classList.add("clicked");
+          } else {
+            myButton[j].classList.remove("clicked");
+          }
+        }
       });
     }
   </script>

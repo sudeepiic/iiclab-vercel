@@ -98,7 +98,7 @@ import positionBtn from "../images/positionBtn.png";
         </div>
 
         <div style="padding-left: 1.5%;">
-          <span>+91-83033 85888</span>
+          <span>+91-83032 29629</span>
         </div>
       </div>
     </div>
@@ -106,7 +106,7 @@ import positionBtn from "../images/positionBtn.png";
     <div class="row table margins">
       <div class="col-lg-2 col-md-2 col-sm-12 col1">TIMING</div>
       <div class="col-lg-10 col-md-10 col-sm-12 col2">
-        Mon-Sat : 10:00 - 18:30 IST
+        Mon-Sat : 10:30 - 19:30 IST
       </div>
     </div>
 
@@ -163,6 +163,7 @@ import positionBtn from "../images/positionBtn.png";
 </Layout>
 
 <script>
+  import swal from "sweetalert";
   document
     .getElementById("connect")
     .addEventListener("submit", function (event) {
@@ -241,6 +242,10 @@ import positionBtn from "../images/positionBtn.png";
         })
         .then(function (data) {
           console.log(data);
+          swal({
+            title: "Sent!",
+            icon: "success",
+          });
         })
         .catch(function (error) {
           console.error("error:", error);

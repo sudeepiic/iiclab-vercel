@@ -225,10 +225,22 @@ console.log(splitArrays);
   <section
     style="border-radius: 6vw 6vw 0 0; background-color:#1a1a1a ; padding-top: 1.5%; padding-bottom: 1.5%;"
   >
-    <div class="margins" style="margin-left: 9%">
-      <span class="meet">MEET&nbsp;</span>
-      <span class="theTeam"> THE TEAM.</span>
+    <div class="d-flex margins">
+      <div class="meetDiv">
+        <span class="meet">MEET&nbsp;</span>
+        <span class="theTeam"> THE TEAM.</span>
+      </div>
+      <div style="width:48%">
+        <div class="d-flex teams">
+          <span class="dept clicked">All</span>
+          <span class="dept">Designers</span>
+          <span class="dept">Developers</span>
+          <span class="dept">Business Development</span>
+          <span class="dept">Marketing</span>
+        </div>
+      </div>
     </div>
+
     <div style="text-align: center;">
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
@@ -270,6 +282,25 @@ console.log(splitArrays);
   </section>
 </Layout>
 <style>
+  .meetDiv {
+    margin-left: 2%;
+    width: 50%;
+  }
+  .teams span {
+    margin-right: 6%;
+    font-family: "anek devanagari";
+    opacity: 60%;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2vw;
+  }
+  .teams {
+    position: relative;
+    top: 63%;
+  }
+  .clicked {
+    opacity: 100% !important;
+  }
   /*  carousal css */
   .members {
     border: 10px solid white;
@@ -345,6 +376,12 @@ console.log(splitArrays);
     }
   }
   @media screen and (max-width: 767px) {
+    .meetDiv {
+      width: 70% !important;
+    }
+    .teams {
+      display: none !important;
+    }
     .swiper-prev {
       transform: translate(-357%, -690%);
       width: 8% !important;
@@ -680,6 +717,20 @@ console.log(splitArrays);
     //   clickable: true,
     // },
   });
+
+  const myButton = document.querySelectorAll(".dept");
+
+  for (let i = 0; i < myButton.length; i++) {
+    myButton[i].addEventListener("click", function () {
+      for (let j = 0; j < myButton.length; j++) {
+        if (i === j) {
+          myButton[j].classList.add("clicked");
+        } else {
+          myButton[j].classList.remove("clicked");
+        }
+      }
+    });
+  }
 
   // gsap js
   var textWrapper = document.querySelector("#div1");

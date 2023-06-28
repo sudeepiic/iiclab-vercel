@@ -94,14 +94,12 @@ const entries: any = await contentfulClient.getEntries<any>({
 
         <button
           id="Any"
-          class="btn btn-dark exploreBtn"
+          class="btn exploreBtn clicked"
           type="button"
           style="margin-left: 0;">Any</button
         >
-        <button id="Mumbai" class="btn btn-dark exploreBtn" type="button"
-          >Mumbai</button
-        >
-        <button id="Lucknow" class="btn btn-dark exploreBtn" type="button"
+        <button id="Mumbai" class="btn exploreBtn" type="button">Mumbai</button>
+        <button id="Lucknow" class="btn exploreBtn" type="button"
           >Lucknow</button
         >
       </div>
@@ -720,18 +718,30 @@ const entries: any = await contentfulClient.getEntries<any>({
       });
 
     // color change on location button click
-    // const myButton = document.querySelectorAll(".exploreBtn");
+    // Filter for location buttons
+    const myButton = document.querySelectorAll(".exploreBtn");
 
-    // for (let i = 0; i < myButton.length; i++) {
-    //   console.log(myButton.length, "lennnngth");
-    //   myButton[i].addEventListener("click", function () {
-    //     if (myButton[i].classList.contains("clicked")) {
-    //       myButton[i].classList.remove("clicked");
-    //     } else {
-    //       myButton[i].classList.add("clicked");
-    //     }
-    //   });
-    // }
+    for (let i = 0; i < myButton.length; i++) {
+      myButton[i].addEventListener("click", function () {
+        document.querySelectorAll(".profile-card").forEach((profile) => {
+          profile.classList.remove("d-none");
+          if (myButton[i].id === "Any") {
+            profile.classList.add("d-block");
+          } else if (!profile.classList.contains(myButton[i].id)) {
+            profile.classList.add("d-none");
+
+            console.log(profile.classList.contains(myButton[i].id));
+          }
+        });
+        for (let j = 0; j < myButton.length; j++) {
+          if (i === j) {
+            myButton[j].classList.add("clicked");
+          } else {
+            myButton[j].classList.remove("clicked");
+          }
+        }
+      });
+    }
 
     // Filter for category dropdown in desktop view
     const category = document.getElementById("slct2");
@@ -771,26 +781,6 @@ const entries: any = await contentfulClient.getEntries<any>({
         }
       });
     });
-
-    // Filter for location buttons
-
-    const myButton = document.querySelectorAll(".exploreBtn");
-
-    for (let i = 0; i < myButton.length; i++) {
-      console.log(myButton.length, "lennnngth");
-      myButton[i].addEventListener("click", function () {
-        document.querySelectorAll(".profile-card").forEach((profile) => {
-          profile.classList.remove("d-none");
-          if (myButton[i].id === "Any") {
-            profile.classList.add("d-block");
-          } else if (!profile.classList.contains(myButton[i].id)) {
-            profile.classList.add("d-none");
-
-            console.log(profile.classList.contains(myButton[i].id));
-          }
-        });
-      });
-    }
 
     // Filter for location dropdown in mobile view
 

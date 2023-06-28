@@ -5,6 +5,7 @@ import applyNow from "../images/applyNow.png";
 import ps from "../images/ps.png";
 import submitArrow from "../images/submitArrow.png";
 import { log } from "astro/dist/core/logger/core";
+
 const props = Astro.props;
 
 console.log(props.jobProfile);
@@ -261,6 +262,7 @@ console.log(props.jobProfile);
 </Layout>
 
 <script>
+  import swal from "sweetalert";
   document
     .getElementById("application")
     .addEventListener("submit", function (event) {
@@ -312,10 +314,14 @@ console.log(props.jobProfile);
 
 <body>
     <table id="customers">
+      <tr>
+            <td style="font-weight:bold;">For Job Profile</td>
+            <td set:html={props.jobProfile}></td>
+        </tr>
 
         <tr>
             <td style="font-weight:bold;">Name</td>
-            <td >${name}</td>
+            <td>${name}</td>
         </tr>
         <tr>
           <td style="font-weight:bold;">Email</td>
@@ -379,6 +385,10 @@ console.log(props.jobProfile);
         })
         .then(function (data) {
           console.log(data);
+          swal({
+            title: "Sent!",
+            icon: "success",
+          });
         })
         .catch(function (error) {
           console.error("error:", error);

@@ -16,6 +16,7 @@
 		"contentful": "^10.1.0",
 		"gsap": "^3.11.5",
 		"jsdom": "^22.1.0",
+		"sweetalert": "^2.1.2",
 		"swiper": "^9.3.2"
 	},
 	"devDependencies": {
