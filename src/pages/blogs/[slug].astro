@@ -29,7 +29,7 @@ export async function getStaticPaths() {
 const { blogsData } = Astro.props;
 ---
 
-<Layout title="Blogs">
+<Layout title="Blogs" seoTitle={blogsData.fields.params}>
   <TitleComp
     blogTitle={documentToHtmlString(blogsData.fields.blogTitle)}
     genre={blogsData.fields.genreNew}

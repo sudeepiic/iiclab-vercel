@@ -13,6 +13,7 @@
 		"@astrojs/react": "^2.2.1",
 		"@contentful/rich-text-html-renderer": "^16.0.3",
 		"astro": "^2.0.8",
+		"astro-seo-metadata": "^0.6.0",
 		"contentful": "^10.1.0",
 		"gsap": "^3.11.5",
 		"jsdom": "^22.1.0",

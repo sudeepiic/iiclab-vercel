@@ -3,8 +3,9 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Homepage from "../components/Homepage.astro";
 import Layout from "../layouts/Layout.astro";
+import { SEOMetadata } from "astro-seo-metadata";
 ---
 
-<Layout title="Ink In Caps - Home Page">
+<Layout title="Ink In Caps - Home Page" seoTitle="homepage">
   <Homepage />
 </Layout>

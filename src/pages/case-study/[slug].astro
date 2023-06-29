@@ -35,7 +35,7 @@ export async function getStaticPaths() {
 const { caseStudyData } = Astro.props;
 ---
 
-<Layout title="case study">
+<Layout title="case study" seoTitle={caseStudyData.fields.heroTitle}>
   <Title1
     heroTitle={documentToHtmlString(caseStudyData.fields.heroTitleMain)}
     heroVideo={caseStudyData.fields?.heroVideo?.fields?.file.url}
