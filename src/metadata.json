@@ -164,6 +164,44 @@
         "description":"Discover the benefits of round table discussions and how they can help you motivate your employees to openly ask questions and provide feedback. Visit https://iiclab.com/ for more",
         "keywords":"How Round Tables Make Things Straight | Fostering positive work environment - IIC Lab"
       },
+
+      "most-common-mistakes-in-ui-ux-design":{
+        "description":"Are you making common UI/UX mistakes on your website? Read our blog to learn about the most common mistakes in UI/UX and how to avoid them.",
+        "keywords":"Most Common Mistakes in UI/UX Designing | How to Avoid Them - IIC Lab"
+      },
+      "how-companies-have-used-virtual-reality-to-wow-their-audiences":{
+        "description":"Are you looking for ways to engage and impress your audience? Discover how companies are using virtual reality to create memorable experiences for their customers. Visit https://iiclab.com/ for more",
+        "keywords":"How Companies Have Used Virtual Reality to create immersive user experiences - IIC Lab"
+      },
+      "4-virtual-reality-games-that-will-have-people-lining-up-to-try":{
+        "description":"Are you looking for the latest virtual reality games that will excite your customers? Check out our list of five virtual reality games that are sure to have people lining up to try them. Visit https://iiclab.com/ for more",
+        "keywords":"Four Virtual Reality Games That Will Have People Lining Up to Try - IIC Lab"
+      },
+      "is-3d-projection-mapping-the-future-or-the-present":{
+        "description":"Are you curious about the potential of 3D projection mapping? Read our blog to explore the possibilities of this innovative technology. Visit https://iiclab.com/ for more.",
+        "keywords":"Is 3D Projection Mapping the Future or the Present? | The Possibilities of 3D Projection - IIC Lab"
+      },
+      "the-purpose-of-life-is-a-life-of-purpose":{
+
+        "description":"We are able to unleash our true potential as soon as we figure out our purpose of life. Read our blog for insights and inspiration to help you discover your true calling. Visit https://iiclab.com/ for more",
+        "keywords":"The Purpose of Life | Finding Your True Calling - IIC Lab"
+      },
+      "how-are-people-coping-with-mind-blocking-in-the-current-situation":{
+        "description":"Learn how to overcome mind blocking in the current situation with practical tips and techniques. Read the latest blog post from IIC Lab.",
+        "keywords":"Overcoming Mind Blocking in the Current Situation - IIC Lab"
+      },
+      "your-network-will-decide-your-net-worth":{
+        "description":"Let's look at how you can leverage your network to increase your net worth. Read the latest blog post from IIC Lab",
+        "keywords":"Your Network Will Decide Your Net Worth - IIC Lab"
+      },
+      "the-paradox-of-being-a-good-boss-radical-candor":{
+        "description":"Explore the paradox of being a good boss and the challenges that come with it. Read the latest blog post from IIC Lab.",
+        "keywords":"The Paradox of Being a Good Boss | Leadership - IIC Lab"
+      },
+     
+
+
+
       "default":{
         "description":"sample metadata",
         "keywords":"IIC Lab"

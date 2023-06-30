@@ -26,7 +26,7 @@ console.log(seoTitle, "THE");
 
     <meta
       name="description"
-      content={(siteMetadata[0]?.seo?.seoTitle || siteMetadata[0]?.seo?.default)
+      content={(siteMetadata[0]?.seo[seoTitle] || siteMetadata[0]?.seo?.default)
         .description}
     />
     {
