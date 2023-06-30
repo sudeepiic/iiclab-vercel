@@ -31,7 +31,7 @@ import footerHand from "../images/footerHand.png";
     </div>
     <div class="col-6" style="overflow: hidden;">
       <div class="d-flex contact-animate">
-        <a href="/contact">
+        <a href="/contact" aria-label="contact">
           <img class="contactUsImg" src={contactUs} alt="" /></a
         >
         <div class="footerHand">
@@ -64,7 +64,7 @@ import footerHand from "../images/footerHand.png";
       </form>
 
       <div class="button mt-3 text-center">
-        <button class="btn" type="submit">
+        <button class="btn" type="submit" aria-label="subscribe newsletter">
           <img class="mobSubscribe" src={subscribeBtn} alt="" loading="lazy" />
         </button>
       </div>
@@ -72,19 +72,19 @@ import footerHand from "../images/footerHand.png";
   </div>
 
   <div class="col-12 TopSocialIcons">
-    <a href="https://www.instagram.com/inkincaps/?hl=en"
+    <a href="https://www.instagram.com/inkincaps/?hl=en" aria-label="instagram"
       ><img class="socialIcons" src={instaLogo} alt="" loading="lazy" /></a
     >
-    <a href="https://in.linkedin.com/company/ink-in-caps"
+    <a href="https://in.linkedin.com/company/ink-in-caps" aria-label="linkedin"
       ><img class="socialIcons" src={linkedinlogo} alt="" loading="lazy" /></a
     >
-    <a href="https://twitter.com/inkincaps?lang=en"
+    <a href="https://twitter.com/inkincaps?lang=en" aria-label="twitter"
       ><img class="socialIcons" src={twitterLogo} alt="" loading="lazy" /></a
     >
-    <a href="https://www.facebook.com/inkincaps/"
+    <a href="https://www.facebook.com/inkincaps/" aria-label="facebook"
       ><img class="socialIcons" src={fbLogo} alt="" loading="lazy" /></a
     >
-    <a class="d-none" href=""
+    <a class="d-none" href="" aria-label="whatsapp"
       ><img class="socialIcons" src={whatsappLogo} alt="" loading="lazy" /></a
     >
   </div>
@@ -110,11 +110,19 @@ import footerHand from "../images/footerHand.png";
     <div class="col-md-2 col-6">
       <p class="headings">Quick Links</p>
       <div class="spacings">
-        <a href="/"><p style="color:grey;  ">Home</p></a>
-        <a href="/solutions"><p style="color:grey">Solutions</p></a>
-        <a href="/portfolio"><p style="color:grey">Our Work</p></a>
-        <a href="/contact"><p style="color:grey">Connect</p></a>
-        <a href="/hiring"><p style="color:grey">Career</p></a>
+        <a href="/" aria-label="home"><p style="color:grey;  ">Home</p></a>
+        <a href="/solutions" aria-label="solutions"
+          ><p style="color:grey">Solutions</p></a
+        >
+        <a href="/portfolio" aria-label="our work"
+          ><p style="color:grey">Our Work</p></a
+        >
+        <a href="/contact" aria-label="connect"
+          ><p style="color:grey">Connect</p></a
+        >
+        <a href="/hiring" aria-label="career"
+          ><p style="color:grey">Career</p></a
+        >
       </div>
     </div>
     <div class="col-md-2 col-6">
@@ -123,11 +131,19 @@ import footerHand from "../images/footerHand.png";
         Our IPs
       </p>
       <div class="spacings">
-        <a href="/products/v-verse"> <p style="color:grey">V-Verse</p></a>
-        <a href="/products/v-tour"><p style="color:grey">V-Tour</p></a>
-        <a href="/products/v-retail"><p style="color:grey">V-Retail</p></a>
-        <a href="/products/v-stages"><p style="color:grey">V-Stages</p></a>
-        <a href="/products/v-conference">
+        <a href="/products/v-verse" aria-label="v-verse">
+          <p style="color:grey">V-Verse</p></a
+        >
+        <a href="/products/v-tour" aria-label="v-tour"
+          ><p style="color:grey">V-Tour</p></a
+        >
+        <a href="/products/v-retail" aria-label="v-retail"
+          ><p style="color:grey">V-Retail</p></a
+        >
+        <a href="/products/v-stages" aria-label="v-stages"
+          ><p style="color:grey">V-Stages</p></a
+        >
+        <a href="/products/v-conference" aria-label="v-conference">
           <p style="color:grey">V-Conference</p></a
         >
       </div>
@@ -150,24 +166,28 @@ import footerHand from "../images/footerHand.png";
         />
         <br />
         <br />
-        <button class="btn" type="submit">
+        <button class="btn" type="submit" aria-label="subscribe to newsletter">
           <img style="width: 13.5vw;" src={subscribe} alt="" />
         </button>
       </form>
       <div class="desktopOnly" style="margin-top: 8%; padding-top: 1.5%;">
-        <a href="https://www.instagram.com/inkincaps/?hl=en"
+        <a
+          href="https://www.instagram.com/inkincaps/?hl=en"
+          aria-label="instagram"
           ><img class="icons" src={instaLogo} alt="" loading="lazy" /></a
         >
-        <a href="https://in.linkedin.com/company/ink-in-caps"
+        <a
+          href="https://in.linkedin.com/company/ink-in-caps"
+          aria-label="linkedin"
           ><img class="icons" src={linkedinlogo} alt="" loading="lazy" /></a
         >
-        <a href="https://twitter.com/inkincaps?lang=en"
+        <a href="https://twitter.com/inkincaps?lang=en" aria-label="twitter"
           ><img class="icons" src={twitterLogo} alt="" loading="lazy" /></a
         >
-        <a href="https://www.facebook.com/inkincaps/"
+        <a href="https://www.facebook.com/inkincaps/" aria-label="facebook"
           ><img class="icons" src={fbLogo} alt="" loading="lazy" /></a
         >
-        <a class="d-none" href=""
+        <a class="d-none" href="" aria-label="whatsapp"
           ><img class="icons" src={whatsappLogo} alt="" /></a
         >
       </div>

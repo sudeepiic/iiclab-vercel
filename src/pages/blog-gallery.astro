@@ -34,7 +34,7 @@ const entries: any = await contentfulClient.getEntries<any>({
           <!-- <div style="display: inline-block;" class="title-animate"> -->
           <span>thinking out loud</span>
           <!-- </div> -->
-          <a href="#blogsList">
+          <a href="#blogsList" aria-label="blogs list">
             <img class="btn blogbtn" src={rotatingBlog} alt="" />
             <img class="arrow" src={arrow} alt="" />
           </a>
@@ -82,7 +82,10 @@ const entries: any = await contentfulClient.getEntries<any>({
                       </div>
                     </div>
                     <div class="card-footer">
-                      <a href={"/blogs/" + blogs.fields.params}>
+                      <a
+                        href={"/blogs/" + blogs.fields.params}
+                        aria-label="read more"
+                      >
                         <div>
                           <span> Read more</span>
                           <img class="readMoreArrow" src={readMore} alt="" />
@@ -119,6 +122,7 @@ const entries: any = await contentfulClient.getEntries<any>({
 
           <a
             href="/blogs/how-are-people-coping-with-mind-blocking-in-the-current-situation"
+            aria-label="open"
           >
             <img class="btn goBtn" src={yellowGo} alt="" /></a
           >
@@ -136,7 +140,7 @@ const entries: any = await contentfulClient.getEntries<any>({
         </div>
         <div class="animate-imgText">
           <span class="imgText">The cycle of Analysis Paralysis</span>
-          <a href="/blogs/the-cycle-of-analysis-paralysis">
+          <a href="/blogs/the-cycle-of-analysis-paralysis" aria-label="open">
             <img class="btn goBtn" src={yellowGo} alt="" />
           </a>
           <div class="info">
@@ -164,16 +168,28 @@ const entries: any = await contentfulClient.getEntries<any>({
             <button
               id="All"
               class="btn exploreBtn clicked"
+              aria-label="all categories"
               style="margin-left: 0;">All</button
             >
-            <button id="Design" class="btn exploreBtn">Design</button>
-            <button id="Technology" class="btn exploreBtn">Technology</button>
+            <button id="Design" class="btn exploreBtn" aria-label="design"
+              >Design</button
+            >
+            <button
+              id="Technology"
+              class="btn exploreBtn"
+              aria-label="technology">Technology</button
+            >
           </div>
 
-          <button id="Social" class="btn exploreBtn" style="margin-left: 0;"
-            >Social</button
+          <button
+            id="Social"
+            class="btn exploreBtn"
+            aria-label="social"
+            style="margin-left: 0;">Social</button
           >
-          <button id="Culture" class="btn exploreBtn">Culture</button>
+          <button id="Culture" class="btn exploreBtn" aria-label="culture"
+            >Culture</button
+          >
         </div>
       </div>
 
@@ -183,7 +199,7 @@ const entries: any = await contentfulClient.getEntries<any>({
       >
         {
           entries.items.map((blogs) => (
-            <a href={"/blogs/" + blogs.fields.params}>
+            <a href={"/blogs/" + blogs.fields.params} aria-label="blogs">
               <div
                 class={
                   "row list " +

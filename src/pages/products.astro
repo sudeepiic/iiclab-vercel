@@ -32,11 +32,13 @@ const props = Astro.props;
     </div>
   </section>
   <div class="d-flex">
-    <a href="./v-tour" class="tabs">V-Tour</a>
-    <a href="./v-retail" class="tabs">v-retail</a>
-    <a href="./v-conference" class="tabs">v-conference</a>
-    <a href="./v-verse" class="tabs">v-verse</a>
-    <a href="" class="tabs">v-stages</a>
+    <a href="./v-tour" class="tabs" aria-label="v-tour">V-Tour</a>
+    <a href="./v-retail" class="tabs" aria-label="v-retail">v-retail</a>
+    <a href="./v-conference" class="tabs" aria-label="v-conference"
+      >v-conference</a
+    >
+    <a href="./v-verse" class="tabs" aria-label="v-verse">v-verse</a>
+    <a href="" class="tabs" aria-label="v-stages">v-stages</a>
   </div>
 
   <section style="background-color: #1a1a1a; padding-top: 6%;">
@@ -136,7 +138,10 @@ const props = Astro.props;
             (products: any) => (
               <div class="swiper-slide">
                 <div>
-                  <a href={"/case-study/" + products?.fields?.heroTitle}>
+                  <a
+                    href={"/case-study/" + products?.fields?.heroTitle}
+                    aria-label="work"
+                  >
                     <img
                       class="swiper2Img"
                       src={products?.fields?.heroBanner?.fields?.file.url}

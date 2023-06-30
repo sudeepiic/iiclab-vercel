@@ -125,6 +125,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         data-bs-toggle="modal"
         data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
         class="pause"
+        aria-label="showreel"
         style="width:40px;height:40px; border:1px solid black; border-radius: 50%; background:black;"
       >
         <img src={puase} alt="" style="margin-left: 15px; margin-top:10px" />
@@ -135,13 +136,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         data-bs-toggle="modal"
         data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
         style="margin-top: auto;"
+        aria-label="showreel"
       >
         <span id="s1">Watch Showreel</span>
         <span id="s2"></span>
       </a>
 
       <div id="div2">
-        <a href="#knowMore">
+        <a href="#knowMore" aria-label="know more">
           <span id="s3">Know More <img src={arrow} alt="" /></span>
         </a>
       </div>
@@ -276,7 +278,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       >Creating storied growth through customized solutions to match individual
       Brand needs</span
     >
-    <a href="/solutions/" class="solutionAnchor"
+    <a href="/solutions/" class="solutionAnchor" aria-label="view all"
       ><div class="yellowCircle"><span class="view">VIEW ALL</span></div></a
     >
   </div>
@@ -607,7 +609,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       class="viewAll-feature"
       style="position: relative;  margin-top: 17.7%; left: 56%;"
     >
-      <a href="/portfolio/">
+      <a href="/portfolio/" aria-label="view all">
         <img
           class="circleHand"
           style="width:13vw; height:8vw; "
@@ -632,7 +634,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     {
       entries.items.map((caseStudy, index) => (
         <div class="hoverImg moving-text2 ">
-          <a href={"/case-study/" + caseStudy?.fields?.heroTitle}>
+          <a
+            href={"/case-study/" + caseStudy?.fields?.heroTitle}
+            aria-label="case study"
+          >
             <div class="work-animation">
               <img
                 src={caseStudy?.fields?.heroBanner?.fields?.file.url}
@@ -690,7 +695,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     height="355"
     style="height:100%;width:100%; "
   />
-  <a href="/awards/">
+  <a href="/awards/" aria-label="awards">
     <img src={viewAllAwards} alt="" class="viewAllAwards" />
   </a>
 </section>
@@ -970,6 +975,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
                 class="table"
                 src={toolsArrow}
                 alt=""
+                aria-label="v-verse"
               /></button
             ></td
           >
@@ -989,6 +995,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
                 class="table"
                 src={toolsArrow}
                 alt=""
+                aria-label="v-tour"
               /></button
             ></td
           >
@@ -1008,6 +1015,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
                 class="table"
                 src={toolsArrow}
                 alt=""
+                aria-label="v-retail"
               /></button
             ></td
           >
@@ -1027,6 +1035,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
                 class="table"
                 src={toolsArrow}
                 alt=""
+                aria-label="v-stages"
               /></button
             ></td
           >
@@ -1046,6 +1055,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
                 class="table"
                 src={toolsArrow}
                 alt=""
+                aria-label="v-conference"
               /></button
             ></td
           >
@@ -1066,7 +1076,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           type="button"
           class="close btn"
           data-bs-dismiss="modal"
-          aria-hidden="true"><img class="crossImg" src={close} alt="" /></button
+          aria-hidden="true"
+          aria-label="close"><img class="crossImg" src={close} alt="" /></button
         >
         <h4 class="modal-title">Showreel</h4>
       </div>

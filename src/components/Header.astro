@@ -44,16 +44,25 @@ import solnImg4 from "../images/solnImg6.png";
       </div>
       <div class="list onlyDesk">
         <ul class="d-inline-flex">
-          <li class="paddingsLi"><a class="navTabs" href="/">Home</a></li>
           <li class="paddingsLi">
-            <a class="navTabs" href="/portfolio/">Our Work</a>
+            <a class="navTabs" href="/" aria-label="home">Home</a>
           </li>
-          <li><a class="navTabs" href="/solutions/">Solutions</a></li>
-          <li><a class="navTabs" href="/hiring/">Career</a></li>
+          <li class="paddingsLi">
+            <a class="navTabs" href="/portfolio/" aria-label="our work"
+              >Our Work</a
+            >
+          </li>
+          <li>
+            <a class="navTabs" href="/solutions/" aria-label="solutions"
+              >Solutions</a>
+          </li>
+          <li>
+            <a class="navTabs" href="/hiring/" aria-label="career">Career</a>
+          </li>
         </ul>
       </div>
       <div class="contact-div btn">
-        <a href="/contact">
+        <a href="/contact" aria-label="contact">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="140"
@@ -98,6 +107,7 @@ import solnImg4 from "../images/solnImg6.png";
         type="button"
         data-bs-target="#exampleModalCenter"
         data-bs-toggle="modal"
+        aria-label="Menu"
       >
         <p>menu</p>
         <span class="s1"></span>
@@ -123,7 +133,7 @@ import solnImg4 from "../images/solnImg6.png";
   >
     <div class="modal-content">
       <div class="modal-header">
-        <a href="/">
+        <a href="/" aria-label="home">
           <svg
             class="onlyMob headerLogo"
             width="44"
@@ -167,7 +177,11 @@ import solnImg4 from "../images/solnImg6.png";
       <div class="modal-body">
         <div class="modalContent">
           <div class="row margBtm header-animate1">
-            <a href="/" class="col-lg-4 col-md-4 col-sm-12 mobView header-img">
+            <a
+              href="/"
+              class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
+              aria-label="home"
+            >
               <img src={solnImg1} class="header-img2" alt="" loading="lazy" />
               <span class="index">01</span>
               <span class="titles">Home</span>
@@ -176,6 +190,7 @@ import solnImg4 from "../images/solnImg6.png";
             <a
               href="/about-us/"
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
+              aria-label="about us"
             >
               <img src={solnImg2} class="header-img2" alt="" loading="lazy" />
 
@@ -185,6 +200,7 @@ import solnImg4 from "../images/solnImg6.png";
             <a
               href="/solutions/"
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
+              aria-label="solutions"
             >
               <img src={solnImg3} class="header-img2" alt="" loading="lazy" />
 
@@ -197,6 +213,7 @@ import solnImg4 from "../images/solnImg6.png";
             <a
               href="/products/v-tour"
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
+              aria-label="products"
             >
               <img src={solnImg4} class="header-img2" alt="" loading="lazy" />
 
@@ -206,6 +223,7 @@ import solnImg4 from "../images/solnImg6.png";
             <a
               href="/portfolio/"
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
+              aria-label="our work"
             >
               <img src={solnImg1} class="header-img2" alt="" loading="lazy" />
 
@@ -215,6 +233,7 @@ import solnImg4 from "../images/solnImg6.png";
             <a
               href="/awards/"
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
+              aria-label="awards"
             >
               <img src={solnImg2} class="header-img2" alt="" loading="lazy" />
 
@@ -227,6 +246,7 @@ import solnImg4 from "../images/solnImg6.png";
             <a
               href="/blog-gallery/"
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
+              aria-label="articles"
             >
               <img src={solnImg3} class="header-img2" alt="" loading="lazy" />
 
@@ -236,6 +256,7 @@ import solnImg4 from "../images/solnImg6.png";
             <a
               href="/life-at-iic/"
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
+              aria-label="life at iic"
             >
               <img src={solnImg4} class="header-img2" alt="" loading="lazy" />
 
@@ -245,6 +266,7 @@ import solnImg4 from "../images/solnImg6.png";
             <a
               href="/hiring/"
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
+              aria-label="career"
             >
               <img src={solnImg1} class="header-img2" alt="" loading="lazy" />
 
@@ -255,6 +277,7 @@ import solnImg4 from "../images/solnImg6.png";
               href="/contact/"
               class="mobView onlyMob"
               style="border-bottom: 0 "
+              aria-label="connect"
             >
               <span class="index">10</span>
               <span class="titles">Connect</span>
@@ -274,10 +297,14 @@ import solnImg4 from "../images/solnImg6.png";
           <div class="col-4" style="text-align: left; padding-left: 7%;">
             <p class="btmHeading">contact</p>
             <p class="btmContent">
-              <a href="tel:+91-83032 29629"> +91-83032 29629</a>
+              <a href="tel:+91-83032 29629" aria-label="contact number">
+                +91-83032 29629</a
+              >
             </p>
             <p class="btmContent">
-              <a href="mailto:help@iiclab.com">help@iiclab.com</a>
+              <a href="mailto:help@iiclab.com" aria-label="mail"
+                >help@iiclab.com</a
+              >
             </p>
           </div>
           <div class="col-4" style="text-align: left; padding-left:7%;">
@@ -286,24 +313,35 @@ import solnImg4 from "../images/solnImg6.png";
             <a
               class="iconbtn"
               href="https://www.instagram.com/inkincaps/?hl=en"
+              aria-label="instagram"
             >
               <img class="icons" src={instaLogo} alt="" loading="lazy" /></a
             >
             <a
               class="iconbtn"
               href="https://in.linkedin.com/company/ink-in-caps"
+              aria-label="linkedin"
             >
               <img class="icons" src={linkedinlogo} alt="" loading="lazy" /></a
             >
-            <a class="iconbtn" href="https://twitter.com/inkincaps?lang=en">
+            <a
+              class="iconbtn"
+              href="https://twitter.com/inkincaps?lang=en"
+              aria-label="twitter"
+            >
               <img class="icons" src={twitterLogo} alt="" loading="lazy" /></a
             >
-            <a class="iconbtn" href="https://www.facebook.com/inkincaps/">
+            <a
+              class="iconbtn"
+              href="https://www.facebook.com/inkincaps/"
+              aria-label="facebook"
+            >
               <img class="icons" src={fbLogo} alt="" loading="lazy" /></a
             >
             <a
               class="iconbtn"
               href="https://in.linkedin.com/company/ink-in-caps"
+              aria-label="whatsapp"
             >
               <img class="icons" src={whatsappLogo} alt="" loading="lazy" /></a
             >

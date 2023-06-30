@@ -97,12 +97,21 @@ const entries: any = await contentfulClient.getEntries<any>({
         <button
           id="Any"
           class="btn exploreBtn clicked"
+          aria-label="any location"
           type="button"
           style="margin-left: 0;">Any</button
         >
-        <button id="Mumbai" class="btn exploreBtn" type="button">Mumbai</button>
-        <button id="Lucknow" class="btn exploreBtn" type="button"
-          >Lucknow</button
+        <button
+          id="Mumbai"
+          class="btn exploreBtn"
+          type="button"
+          aria-label="mumbai">Mumbai</button
+        >
+        <button
+          id="Lucknow"
+          class="btn exploreBtn"
+          type="button"
+          aria-label="lucknow">Lucknow</button
         >
       </div>
       <div class="col-4 onlyDesk" style="padding-left: 1.7%;">
@@ -197,6 +206,7 @@ const entries: any = await contentfulClient.getEntries<any>({
                   <div class="col-5 btn">
                     <a
                       href={"/hiring-application/" + jobProfiles.fields.params}
+                      aria-label="apply now"
                     >
                       Apply Now
                     </a>

@@ -72,7 +72,12 @@ import positionBtn from "../images/positionBtn.png";
       >
         Message :
       </textarea>
-      <button class="submitBtn btn" type="submit" id="submitBtn">
+      <button
+        class="submitBtn btn"
+        type="submit"
+        id="submitBtn"
+        aria-label="submit"
+      >
         <img src={submitArrow} alt="" loading="lazy" /> submit
       </button>
     </form>
@@ -94,11 +99,13 @@ import positionBtn from "../images/positionBtn.png";
           class="innerDivs"
           style="border-right: 1.2px solid rgb(202, 199, 199)"
         >
-          <a href="mailto:help@iiclab.com"><span>help@iiclab.com</span></a>
+          <a href="mailto:help@iiclab.com" aria-label="mail"
+            ><span>help@iiclab.com</span></a
+          >
         </div>
 
         <div style="padding-left: 1.5%;">
-          <a href="tel:+91-83032 29629">
+          <a href="tel:+91-83032 29629" aria-label="phone">
             <span>+91-83032 29629</span>
           </a>
         </div>
@@ -116,28 +123,33 @@ import positionBtn from "../images/positionBtn.png";
       <div class="col-lg-2 col-md-2 col-sm-12 col1">SOCIAL</div>
       <div class="col-lg-10 col-md-10 col-sm-12 col2 d-flex justifyEnd">
         <div class="innerDivs">
-          <a href="https://in.linkedin.com/company/ink-in-caps"
-            ><span>LinkedIn</span></a
+          <a
+            href="https://in.linkedin.com/company/ink-in-caps"
+            aria-label="linkedin"><span>LinkedIn</span></a
           >
         </div>
         <div class="innerDivs">
-          <a href="https://www.instagram.com/inkincaps/?hl=en"
-            ><span>Instagram</span></a
+          <a
+            href="https://www.instagram.com/inkincaps/?hl=en"
+            aria-label="instagram"><span>Instagram</span></a
           >
         </div>
 
         <div class="innerDivs">
-          <a href="https://www.youtube.com/@InkInCaps"><span>Youtube</span></a>
+          <a href="https://www.youtube.com/@InkInCaps" aria-label="youtube"
+            ><span>Youtube</span></a
+          >
         </div>
 
         <div class="innerDivs">
-          <a href="https://twitter.com/inkincaps?lang=en"
+          <a href="https://twitter.com/inkincaps?lang=en" aria-label="twitter"
             ><span>Twitter</span></a
           >
         </div>
 
         <div style="padding-left: 1.5%;">
-          <a href="https://www.facebook.com/inkincaps/"><span>Facebook</span></a
+          <a href="https://www.facebook.com/inkincaps/" aria-label="facebook"
+            ><span>Facebook</span></a
           >
         </div>
       </div>

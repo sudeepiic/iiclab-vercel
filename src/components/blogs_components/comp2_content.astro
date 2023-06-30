@@ -163,11 +163,11 @@ const props = Astro.props;
                 (props.index1 || props.index2 || props.index3 || props.index3|| props.index5)
                 &&  <div class="contents">
                 <p class="tableHead"> Table of contents</p>
-                <span><a href="#content1" set:html={props.index1}></a></span>
-                <span><a href="#content2" set:html={props.index2}></a> </span>
-                <span><a href="#content2b" set:html={props.index3}> </a></span>
-                <span><a href="#content2c"  set:html={props.index4}></a> </span>
-                <span><a href="#content2d" set:html={props.index5}> </a></span>
+                <span><a  href="#content1" aria-label="content1" set:html={props.index1}></a></span>
+                <span><a href="#content2" aria-label="content2" set:html={props.index2}></a> </span>
+                <span><a href="#content2b" aria-label="content2b" set:html={props.index3}> </a></span>
+                <span><a href="#content2c" aria-label="content2c"  set:html={props.index4}></a> </span>
+                <span><a href="#content2d" aria-label="content2d" set:html={props.index5}> </a></span>
                </div>
 
             }
