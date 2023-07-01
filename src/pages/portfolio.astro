@@ -4,7 +4,7 @@ import portfolio1 from "../images/portfolio1.jpg";
 import featuredWorksbtn from "../images/featuredWorksbtn.jpg";
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-
+import { Image, Picture } from "@astrojs/image/components";
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
 });
@@ -73,7 +73,7 @@ const entries: any = await contentfulClient.getEntries<any>({
     </div>
     <!--  -->
 
-    <!-- <img src={featuredWorksbtn} alt=""> -->
+    <!-- <img   src={featuredWorksbtn} alt=""> -->
   </section>
 
   <section>

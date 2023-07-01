@@ -127,7 +127,7 @@ export default function jobProfiles() {
             <div className="flip-card-inner">
               <div className="card">
                 <div className="eyeDiv btn">
-                  <img src={closeEye} className="eye" loading="lazy" alt="" />
+                  <img   src={closeEye} className="eye" loading="lazy" alt="" />
                 </div>
 
                 <div className="cardContent">
@@ -143,14 +143,14 @@ export default function jobProfiles() {
                   <span>{jobProfiles.description}</span>
                 </div>
                 <div className="location">
-                  <img className="locIcon" src={locIcon} alt="" />
+                  <img   className="locIcon" src={locIcon} alt="" />
                   <span style={{marginRight: "10%"}}>{jobProfiles.location}</span>
-                  <img style={{width: "8%"}} src={clock} alt="" loading="lazy" />
+                  <img   style={{width: "8%"}} src={clock} alt="" loading="lazy" />
                   <span>{jobProfiles.jobType}</span>
                 </div>
                 <div className="bottomDivBack row">
                   <div className="col-6 blackBottom">
-                    <img src={ps} alt="" />
+                    <img   src={ps} alt="" />
                   </div>
 
                   <div className="col-5 btn">
