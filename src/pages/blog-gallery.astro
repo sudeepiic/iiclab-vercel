@@ -14,6 +14,7 @@ import yellowGo from "../images/yellowGo2.png";
 import blogsLeft from "../images/blogsLeft.png";
 import blogsRight from "../images/blogsRight.png";
 import readMore from "../images/readMore.png";
+import { Image, Picture } from "@astrojs/image/components";
 
 import { log } from "astro/dist/core/logger/core";
 
@@ -35,8 +36,20 @@ const entries: any = await contentfulClient.getEntries<any>({
           <span>thinking out loud</span>
           <!-- </div> -->
           <a href="#blogsList" aria-label="blogs list">
-            <img class="btn blogbtn" src={rotatingBlog} alt="" />
-            <img class="arrow" src={arrow} alt="" />
+            <Image
+              alt=""
+              format="webp"
+              class="optimization btn blogbtn"
+              src={rotatingBlog}
+              alt=""
+            />
+            <Image
+              alt=""
+              format="webp"
+              class="optimization arrow"
+              src={arrow}
+              alt=""
+            />
           </a>
         </div>
       </div>
@@ -74,8 +87,12 @@ const entries: any = await contentfulClient.getEntries<any>({
                         </div>
                       </div>
                       <div class="imgDiv">
-                        <img
-                          class="carouselImg"
+                        <Image
+                          alt=""
+                          format="webp"
+                          class="optimization carouselImg"
+                          width={1552}
+                          height={720}
                           src={blogs.fields?.heroImage?.fields?.file.url}
                           alt=""
                         />
@@ -88,7 +105,13 @@ const entries: any = await contentfulClient.getEntries<any>({
                       >
                         <div>
                           <span> Read more</span>
-                          <img class="readMoreArrow" src={readMore} alt="" />
+                          <Image
+                            alt=""
+                            format="webp"
+                            class="optimization readMoreArrow"
+                            src={readMore}
+                            alt=""
+                          />
                         </div>
                       </a>
                     </div>
@@ -100,8 +123,20 @@ const entries: any = await contentfulClient.getEntries<any>({
         </div>
 
         <div class="d-flex controls">
-          <img class="swiper-prev" src={blogsLeft} alt="" />
-          <img class="swiper-next" src={blogsRight} alt="" />
+          <Image
+            alt=""
+            format="webp"
+            class="optimization swiper-prev"
+            src={blogsLeft}
+            alt=""
+          />
+          <Image
+            alt=""
+            format="webp"
+            class="optimization swiper-next"
+            src={blogsRight}
+            alt=""
+          />
         </div>
       </div>
     </div>
@@ -113,7 +148,13 @@ const entries: any = await contentfulClient.getEntries<any>({
     <div style="margin-top: 1%; overflow:hidden" class="margins row">
       <div class="col-md-6 col-lg-6 col-sm-12 picks">
         <div class="animate-img">
-          <img class="editorImgs" src={editorImg1} alt="" />
+          <Image
+            alt=""
+            format="webp"
+            class="optimization editorImgs"
+            src={editorImg1}
+            alt=""
+          />
         </div>
         <div class="animate-imgText">
           <span class="imgText"
@@ -124,7 +165,13 @@ const entries: any = await contentfulClient.getEntries<any>({
             href="/blogs/how-are-people-coping-with-mind-blocking-in-the-current-situation"
             aria-label="open"
           >
-            <img class="btn goBtn" src={yellowGo} alt="" /></a
+            <Image
+              alt=""
+              format="webp"
+              class="optimization btn goBtn"
+              src={yellowGo}
+              alt=""
+            /></a
           >
           <div class="info">
             <div class="border-box"><span>Design & Technology</span></div>
@@ -136,12 +183,24 @@ const entries: any = await contentfulClient.getEntries<any>({
       </div>
       <div class="col-md-6 col-lg-6 col-sm-12 picks">
         <div class="animate-img2">
-          <img class="editorImgs" src={editorImg2} alt="" />
+          <Image
+            alt=""
+            format="webp"
+            class="optimization editorImgs"
+            src={editorImg2}
+            alt=""
+          />
         </div>
         <div class="animate-imgText">
           <span class="imgText">The cycle of Analysis Paralysis</span>
           <a href="/blogs/the-cycle-of-analysis-paralysis" aria-label="open">
-            <img class="btn goBtn" src={yellowGo} alt="" />
+            <Image
+              alt=""
+              format="webp"
+              class="optimization btn goBtn"
+              src={yellowGo}
+              alt=""
+            />
           </a>
           <div class="info">
             <div class="border-box"><span>Design & Technology</span></div>
@@ -216,9 +275,13 @@ const entries: any = await contentfulClient.getEntries<any>({
                 </div>
 
                 <div class="col-3">
-                  <img
+                  <Image
+                    alt=""
+                    format="webp"
                     style="width:90%"
-                    class="blogImg"
+                    width={1552}
+                    height={720}
+                    class="blogImg optimization"
                     src={blogs.fields?.heroImage?.fields?.file.url}
                     alt=""
                   />
@@ -232,6 +295,9 @@ const entries: any = await contentfulClient.getEntries<any>({
   </section>
 
   <style>
+    .optimization {
+      height: auto;
+    }
     .btn:focus {
       outline: none !important;
       box-shadow: none !important;

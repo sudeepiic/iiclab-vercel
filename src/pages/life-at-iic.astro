@@ -8,6 +8,7 @@ import values from "../images/values.jpg";
 import values3 from "../images/values3.png";
 import carousalNext from "../images/carousalNext.png";
 import carousalPrev from "../images/carousalPrev.png";
+import { Image, Picture } from "@astrojs/image/components";
 ---
 
 <Layout title="life-at-iic" seoTitle="life-at-iic">
@@ -32,19 +33,49 @@ import carousalPrev from "../images/carousalPrev.png";
       <div class="mySwiper" style="padding:1.5% 0 5% 0 ; ">
         <div class="swiper-wrapper">
           <div class="swiper-slide imgWidth">
-            <img src={hiringHeroImg} alt="" />
+            <Image
+              alt=""
+              format="webp"
+              class="optimization"
+              src={hiringHeroImg}
+              alt=""
+            />
           </div>
           <div class="swiper-slide imgWidth">
-            <img src={officeImg} alt="" />
+            <Image
+              alt=""
+              format="webp"
+              class="optimization"
+              src={officeImg}
+              alt=""
+            />
           </div>
           <div class="swiper-slide imgWidth">
-            <img src={officeImg} alt="" />
+            <Image
+              alt=""
+              format="webp"
+              class="optimization"
+              src={officeImg}
+              alt=""
+            />
           </div>
         </div>
 
         <div class="d-flex controls">
-          <img class="swiper-prev" src={blogsLeft} alt="" />
-          <img class="swiper-next" src={blogsRight} alt="" />
+          <Image
+            alt=""
+            format="webp"
+            class="optimization swiper-prev"
+            src={blogsLeft}
+            alt=""
+          />
+          <Image
+            alt=""
+            format="webp"
+            class="optimization swiper-next"
+            src={blogsRight}
+            alt=""
+          />
         </div>
       </div>
     </div>
@@ -54,9 +85,27 @@ import carousalPrev from "../images/carousalPrev.png";
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div style="position: relative;">
-              <img class="top-right-img" src={values3} alt="" />
-              <img class="main-img" src={values} alt="" />
-              <img class="bottom-left-img" src={values3} alt="" />
+              <Image
+                alt=""
+                format="webp"
+                class="optimization top-right-img"
+                src={values3}
+                alt=""
+              />
+              <Image
+                alt=""
+                format="webp"
+                class="optimization main-img"
+                src={values}
+                alt=""
+              />
+              <Image
+                alt=""
+                format="webp"
+                class="optimization bottom-left-img"
+                src={values3}
+                alt=""
+              />
             </div>
             <div class="imgCaption">
               <span>our values</span>
@@ -70,9 +119,27 @@ import carousalPrev from "../images/carousalPrev.png";
           </div>
           <div class="swiper-slide">
             <div style="position: relative;">
-              <img class="top-right-img" src={values3} alt="" />
-              <img class="main-img" src={values} alt="" />
-              <img class="bottom-left-img" src={values3} alt="" />
+              <Image
+                alt=""
+                format="webp"
+                class="optimization top-right-img"
+                src={values3}
+                alt=""
+              />
+              <Image
+                alt=""
+                format="webp"
+                class="optimization main-img"
+                src={values}
+                alt=""
+              />
+              <Image
+                alt=""
+                format="webp"
+                class="optimization bottom-left-img"
+                src={values3}
+                alt=""
+              />
             </div>
             <div class="imgCaption">
               <span>our beleives</span>
@@ -86,9 +153,27 @@ import carousalPrev from "../images/carousalPrev.png";
           </div>
           <div class="swiper-slide">
             <div style="position: relative;">
-              <img class="top-right-img" src={values3} alt="" />
-              <img class="main-img" src={values} alt="" />
-              <img class="bottom-left-img" src={values3} alt="" />
+              <Image
+                alt=""
+                format="webp"
+                class="optimization top-right-img"
+                src={values3}
+                alt=""
+              />
+              <Image
+                alt=""
+                format="webp"
+                class="optimization main-img"
+                src={values}
+                alt=""
+              />
+              <Image
+                alt=""
+                format="webp"
+                class="optimization bottom-left-img"
+                src={values3}
+                alt=""
+              />
             </div>
             <div class="imgCaption">
               <span>our Initiatives</span>
@@ -102,14 +187,29 @@ import carousalPrev from "../images/carousalPrev.png";
           </div>
         </div>
 
-        <img class="swiper-button-prev" src={carousalPrev} alt="" />
-        <img class="swiper-button-next" src={carousalNext} alt="" />
+        <Image
+          alt=""
+          format="webp"
+          class="optimization swiper-button-prev"
+          src={carousalPrev}
+          alt=""
+        />
+        <Image
+          alt=""
+          format="webp"
+          class="optimization swiper-button-next"
+          src={carousalNext}
+          alt=""
+        />
       </div>
     </div>
   </section>
 </Layout>
 
 <style>
+  .optimization {
+    height: auto;
+  }
   .a {
     list-style-type: disc;
     color: white;

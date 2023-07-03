@@ -1,4 +1,5 @@
 ---
+import { Image, Picture } from "@astrojs/image/components";
 import puase from "../images/pauselogo.png";
 import arrow from "../images/arrow.png";
 import home from "../images/home-1.png";
@@ -62,7 +63,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         <span class="head1Span">Humanizing Tech</span>
       </div>
       <div class="animateHand">
-        <img src={heroHand} alt="" />
+        <Image
+          alt=""
+          format="webp"
+          class="optimization"
+          src={heroHand}
+          alt=""
+        />
       </div>
     </div>
     <div class="d-flex" id="main2" style="margin-bottom: 2%;">
@@ -94,7 +101,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         aria-label="showreel"
         style="width:40px;height:40px; border:1px solid black; border-radius: 50%; background:black;"
       >
-        <img src={puase} alt="" style="margin-left: 15px; margin-top:10px" />
+        <Image
+          alt=""
+          format="webp"
+          src={puase}
+          alt=""
+          class="optimization"
+          style="margin-left: 15px; margin-top:10px"
+        />
       </a>
       <a
         href="#myModal"
@@ -110,7 +124,15 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
       <div id="div2">
         <a href="#knowMore" aria-label="know more">
-          <span id="s3">Know More <img src={arrow} alt="" /></span>
+          <span id="s3"
+            >Know More <Image
+              alt=""
+              format="webp"
+              src={arrow}
+              alt=""
+              class="optimization"
+            /></span
+          >
         </a>
       </div>
     </div>
@@ -119,12 +141,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
 <section class="mainImg" style="margin-top:7%; margin-bottom
 :1%;">
-  <img
+  <Image
+    alt=""
+    format="webp"
     src={home}
     alt=""
-    width="1165"
-    height="656.594"
     style="height:100%;width:100%; "
+    class="optimization"
   />
 </section>
 
@@ -133,38 +156,108 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     <div id="main4" class="moving-text" style="display:flex;width:max-content">
       <span>Deduce</span>
       <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
-        <img style="width:5vw" src={diamond} alt="" />
+        <Image
+          alt=""
+          format="webp"
+          style="width:5vw"
+          class="optimization"
+          src={diamond}
+          alt=""
+        />
       </div><span>Engage</span>
       <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
-        <img style="width:5vw" src={diamond} alt="" />
+        <Image
+          alt=""
+          format="webp"
+          style="width:5vw"
+          class="optimization"
+          src={diamond}
+          alt=""
+        />
       </div><span>Enable &nbsp;&nbsp;</span>
       <span>Deduce</span>
       <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
-        <img style="width:5vw" src={diamond} alt="" />
+        <Image
+          alt=""
+          format="webp"
+          style="width:5vw"
+          class="optimization"
+          src={diamond}
+          alt=""
+        />
       </div><span>Engage</span>
       <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
-        <img style="width:5vw" src={diamond} alt="" />
+        <Image
+          alt=""
+          format="webp"
+          style="width:5vw"
+          class="optimization"
+          src={diamond}
+          alt=""
+        />
       </div><span>Enable &nbsp; &nbsp;</span>
       <span>Deduce</span>
       <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
-        <img style="width:5vw" src={diamond} alt="" />
+        <Image
+          alt=""
+          format="webp"
+          style="width:5vw"
+          class="optimization"
+          src={diamond}
+          alt=""
+        />
       </div><span>Engage</span>
       <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
-        <img style="width:5vw" src={diamond} alt="" />
+        <Image
+          alt=""
+          format="webp"
+          class="optimization"
+          style="width:5vw"
+          src={diamond}
+          alt=""
+        />
       </div><span>Enable &nbsp;&nbsp;</span>
       <span>Deduce</span>
       <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
-        <img style="width:5vw" src={diamond} alt="" />
+        <Image
+          alt=""
+          format="webp"
+          style="width:5vw"
+          class="optimization"
+          src={diamond}
+          alt=""
+        />
       </div><span>Engage</span>
       <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
-        <img style="width:5vw" src={diamond} alt="" />
+        <Image
+          alt=""
+          format="webp"
+          style="width:5vw"
+          class="optimization"
+          src={diamond}
+          alt=""
+        />
       </div><span>Enable &nbsp;&nbsp;</span>
       <span>Deduce</span>
       <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
-        <img style="width:5vw" src={diamond} alt="" />
+        <Image
+          alt=""
+          format="webp"
+          style="width:5vw"
+          class="optimization"
+          src={diamond}
+          alt=""
+        />
       </div><span>Engage</span>
       <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
-        <img style="width:5vw" src={diamond} alt="" />
+        <Image
+          alt=""
+          format="webp"
+          style="width:5vw"
+          class="optimization"
+          src={diamond}
+          alt=""
+        />
       </div><span>Enable &nbsp;&nbsp;</span>
     </div>
   </div>
@@ -173,14 +266,17 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 <section id="knowMore">
   <div id="main5" class="d-flex">
     <div class="giantHolder-animate" id="div1">
-      <img src={hand2} alt="" />
+      <Image alt="" format="webp" class="optimization" src={hand2} alt="" />
     </div>
     <div id="div2">
       <div>
         <span>Giants Trust Us.</span>
-        <img
+        <Image
+          alt=""
+          format="webp"
           src={ovalArrow}
           alt=""
+          class="optimization"
           style="width:18%; margin-bottom: 9%; display:none"
         />
       </div>
@@ -195,7 +291,15 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         (splitArrays[0] as any).map((clients, index) => (
           <div class="imgRow clientArray1">
             <td class="img ">
-              <img class="imgs" src={clients.fields?.file.url} alt="" />
+              <Image
+                alt=""
+                format="webp"
+                class="imgs optimization"
+                width={389}
+                height={282}
+                src={clients.fields?.file.url}
+                alt=""
+              />
             </td>
           </div>
         ))
@@ -204,7 +308,15 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         (splitArrays[1] as any).map((clients, index) => (
           <div class="imgRow clientArray2">
             <td class="img">
-              <img class="imgs" src={clients.fields?.file.url} alt="" />
+              <Image
+                alt=""
+                format="webp"
+                class="imgs optimization"
+                width={389}
+                height={282}
+                src={clients.fields?.file.url}
+                alt=""
+              />
             </td>
           </div>
         ))
@@ -213,7 +325,15 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         (splitArrays[2] as any).map((clients, index) => (
           <div class="imgRow clientArray3">
             <td class="img">
-              <img class="imgs" src={clients.fields?.file.url} alt="" />
+              <Image
+                alt=""
+                format="webp"
+                class="imgs optimization"
+                width={389}
+                height={282}
+                src={clients.fields?.file.url}
+                alt=""
+              />
             </td>
           </div>
         ))
@@ -222,7 +342,15 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         (splitArrays[3] as any).map((clients, index) => (
           <div class="imgRow clientArray4">
             <td class="img">
-              <img class="imgs" src={clients.fields?.file.url} alt="" />
+              <Image
+                alt=""
+                format="webp"
+                class="imgs optimization"
+                width={389}
+                height={282}
+                src={clients.fields?.file.url}
+                alt=""
+              />
             </td>
           </div>
         ))
@@ -264,7 +392,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
           <td>
             <ul class="trial">
-              <img src={solnImg1} class="trial2" alt="" />
+              <Image
+                alt=""
+                format="webp"
+                src={solnImg1}
+                class="trial2 optimization"
+                alt=""
+              />
               <li class="list">Metaverse</li>
               <li class="list">Virtual reality</li>
               <li class="list">Augmented reality</li>
@@ -272,8 +406,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             </ul>
           </td>
           <td
-            ><img
-              class="table"
+            ><Image
+              alt=""
+              format="webp"
+              class="table optimization"
               style="width:1.3rem; height:1.3rem; "
               src={vector}
               alt=""
@@ -286,7 +422,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           <td class="tech">Interactive Solution</td>
           <td>
             <ul class="trial">
-              <img src={solnImg2} class="trial2" alt="" />
+              <Image
+                alt=""
+                format="webp"
+                src={solnImg2}
+                class="trial2 optimization"
+                alt=""
+              />
               <li class="list">Interactive Wall/Screen</li>
               <li class="list">Interactive Table/Interactive Book</li>
               <li class="list">Engagement Experts</li>
@@ -294,8 +436,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             </ul></td
           >
           <td
-            ><img
-              class="table"
+            ><Image
+              alt=""
+              format="webp"
+              class="table optimization"
               style="width:1.3rem; height:1.3rem;  "
               src={vector}
               alt=""
@@ -307,15 +451,23 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           <td class="tech">Mobile & Web</td>
           <td>
             <ul class="trial">
-              <img src={solnImg3} class="trial2" alt="" />
+              <Image
+                alt=""
+                format="webp"
+                src={solnImg3}
+                class="trial2 optimization"
+                alt=""
+              />
               <li class="list">Web Development</li>
               <li class="list">App Development</li>
               <li class="list">Gaming Solutions</li>
             </ul></td
           >
           <td
-            ><img
-              class="table"
+            ><Image
+              alt=""
+              format="webp"
+              class="table optimization"
               style="width:1.3rem; height:1.3rem; "
               src={vector}
               alt=""
@@ -328,7 +480,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           <td class="tech">Content Development</td>
           <td>
             <ul class="trial">
-              <img src={solnImg4} class="trial2" alt="" />
+              <Image
+                alt=""
+                format="webp"
+                src={solnImg4}
+                class="trial2 optimization"
+                alt=""
+              />
               <li class="list">3D/2D Animations</li>
               <li class="list">Motion Graphics</li>
               <li class="list">Architectural Visualization</li>
@@ -336,8 +494,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             </ul></td
           >
           <td
-            ><img
-              class="table"
+            ><Image
+              alt=""
+              format="webp"
+              class="table optimization"
               style="width:1.3rem; height:1.3rem; "
               src={vector}
               alt=""
@@ -350,7 +510,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           <td class="tech">Experiential Marketing</td>
           <td>
             <ul class="trial">
-              <img src={solnImg5} class="trial2" alt="" />
+              <Image
+                alt=""
+                format="webp"
+                src={solnImg5}
+                class="trial2 optimization"
+                alt=""
+              />
               <li class="list">Motion Gesture</li>
               <li class="list">Interactive Campaign</li>
               <li class="list">Photobooth</li>
@@ -358,8 +524,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             </ul></td
           >
           <td
-            ><img
-              class="table"
+            ><Image
+              alt=""
+              format="webp"
+              class="table optimization"
               style="width:1.3rem; height:1.3rem; "
               src={vector}
               alt=""
@@ -372,7 +540,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           <td class="tech">Strategy & Design</td>
           <td class="">
             <ul class="trial">
-              <img src={solnImg6} class="trial2" alt="" />
+              <Image
+                alt=""
+                format="webp"
+                src={solnImg6}
+                class="trial2 optimization"
+                alt=""
+              />
               <li class="list">Scenario Mapping Brand Audits</li>
               <li class="list">Brand Identity</li>
               <li class="list">Competitor Mapping</li>
@@ -380,8 +554,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             </ul></td
           >
           <td
-            ><img
-              class="table"
+            ><Image
+              alt=""
+              format="webp"
+              class="table optimization"
               style="width:1.3rem; height:1.3rem; "
               src={vector}
               alt=""
@@ -400,8 +576,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           <div class="mobTech">Immersive Technology</div>
         </div>
         <div class="col-2">
-          <img
-            class="table1"
+          <Image
+            alt=""
+            format="webp"
+            class="table1 optimization"
             style="width:1.3rem; height:1.3rem; "
             src={vector}
             alt=""
@@ -410,7 +588,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       </div>
       <div class="row">
         <div class="col-5">
-          <img class="mobImg" src={solnImg1} alt="" />
+          <Image
+            alt=""
+            format="webp"
+            class="mobImg optimization"
+            src={solnImg1}
+            alt=""
+          />
         </div>
         <div class="col-7 mobList">
           <li>Metaverse</li>
@@ -428,8 +612,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           <div class="mobTech">Interactive Solutions</div>
         </div>
         <div class="col-2">
-          <img
-            class="table1"
+          <Image
+            alt=""
+            format="webp"
+            class="table1 optimization"
             style="width:1.3rem; height:1.3rem; "
             src={vector}
             alt=""
@@ -438,7 +624,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       </div>
       <div class="row">
         <div class="col-5">
-          <img class="mobImg" src={solnImg2} alt="" />
+          <Image
+            alt=""
+            format="webp"
+            class="mobImg optimization"
+            src={solnImg2}
+            alt=""
+          />
         </div>
         <div class="col-7 mobList">
           <li>Interactive Wall/Screen</li>
@@ -456,8 +648,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           <div class="mobTech">Mobile & Web</div>
         </div>
         <div class="col-2">
-          <img
-            class="table1"
+          <Image
+            alt=""
+            format="webp"
+            class="table1 optimization"
             style="width:1.3rem; height:1.3rem; "
             src={vector}
             alt=""
@@ -466,7 +660,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       </div>
       <div class="row">
         <div class="col-5">
-          <img class="mobImg" src={solnImg3} alt="" />
+          <Image
+            alt=""
+            format="webp"
+            class="mobImg optimization"
+            src={solnImg3}
+            alt=""
+          />
         </div>
         <div class="col-7 mobList">
           <li>Web Development</li>
@@ -483,8 +683,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           <div class="mobTech">Content Development</div>
         </div>
         <div class="col-2">
-          <img
-            class="table1"
+          <Image
+            alt=""
+            format="webp"
+            class="table1 optimization"
             style="width:1.3rem; height:1.3rem; "
             src={vector}
             alt=""
@@ -493,7 +695,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       </div>
       <div class="row">
         <div class="col-5">
-          <img class="mobImg" src={solnImg4} alt="" />
+          <Image
+            alt=""
+            format="webp"
+            class="mobImg optimization"
+            src={solnImg4}
+            alt=""
+          />
         </div>
         <div class="col-7 mobList">
           <li>3D/2D Animation</li>
@@ -511,8 +719,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           <div class="mobTech">Experiential Marketing</div>
         </div>
         <div class="col-2">
-          <img
-            class="table1"
+          <Image
+            alt=""
+            format="webp"
+            class="table1 optimization"
             style="width:1.3rem; height:1.3rem; "
             src={vector}
             alt=""
@@ -521,7 +731,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       </div>
       <div class="row">
         <div class="col-5">
-          <img class="mobImg" src={solnImg5} alt="" />
+          <Image
+            alt=""
+            format="webp"
+            class="mobImg optimization"
+            src={solnImg5}
+            alt=""
+          />
         </div>
         <div class="col-7 mobList">
           <li>Motion Gesture</li>
@@ -538,8 +754,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           <div class="mobTech">Strategy & design</div>
         </div>
         <div class="col-2">
-          <img
-            class="table1"
+          <Image
+            alt=""
+            format="webp"
+            class="table1 optimization"
             style="width:1.3rem; height:1.3rem; "
             src={vector}
             alt=""
@@ -548,7 +766,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       </div>
       <div class="row">
         <div class="col-5">
-          <img class="mobImg" src={solnImg6} alt="" />
+          <Image
+            alt=""
+            format="webp"
+            class="mobImg optimization"
+            src={solnImg6}
+            alt=""
+          />
         </div>
         <div class="col-7 mobList">
           <li>Scenario Mapping Brand Audits</li>
@@ -565,7 +789,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       <p class="our feature">FEATURED</p>
     </div>
     <div style="display:inline" class="featureImg-animate">
-      <img class="featureImg" src={hefty} alt="" />
+      <Image
+        alt=""
+        format="webp"
+        class="featureImg optimization"
+        src={hefty}
+        alt=""
+      />
     </div>
     <div style="display:inline; " class="animate-featureWork2">
       <p class="solutions work">&nbsp; WORK.</p>
@@ -576,8 +806,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       style="position: relative;  margin-top: 17.7%; left: 56%;"
     >
       <a href="/portfolio/" aria-label="view all">
-        <img
-          class="circleHand"
+        <Image
+          alt=""
+          format="webp"
+          class="circleHand optimization"
           style="width:13vw; height:8vw; "
           src={circleHand}
           alt=""
@@ -589,7 +821,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       href="/portfolio/"
       style="position: relative;  margin-top: 26.5%; left: 19%;"
     >
-      <img class="fwViewAll" src={fwViewAll} alt="" /></a
+      <Image
+        alt=""
+        format="webp"
+        class="fwViewAll optimization"
+        src={fwViewAll}
+        alt=""
+      /></a
     >
 
     <!-- <div c
@@ -605,9 +843,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             aria-label="case study"
           >
             <div class="work-animation">
-              <img
+              <Image
+                alt=""
+                format="webp"
+                width={509}
+                height={240}
+                quality={100}
                 src={caseStudy?.fields?.heroBanner?.fields?.file.url}
-                class="movingImgs"
+                class="movingImgs optimization"
                 alt=""
               />
             </div>
@@ -635,34 +878,69 @@ const testimonials: any = await contentfulClient.getEntries<any>({
   >
     <span class="wallHonor">WALL OF HONOR</span>
     <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-      <img style="width:3.5vw" src={diamond} alt="" />
+      <Image
+        alt=""
+        format="webp"
+        style="width:3.5vw"
+        class="optimization"
+        src={diamond}
+        alt=""
+      />
     </div>
     <span class="wallHonor">WALL OF HONOR</span>
     <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-      <img style="width:3.5vw" src={diamond} alt="" />
+      <Image
+        alt=""
+        format="webp"
+        style="width:3.5vw"
+        class="optimization"
+        src={diamond}
+        alt=""
+      />
     </div>
     <span class="wallHonor">WALL OF HONOR</span>
     <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-      <img style="width:3.5vw" src={diamond} alt="" />
+      <Image
+        alt=""
+        format="webp"
+        style="width:3.5vw"
+        class="optimization"
+        src={diamond}
+        alt=""
+      />
     </div>
     <span class="wallHonor">WALL OF HONOR</span>
     <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-      <img style="width:3.5vw" src={diamond} alt="" />
+      <Image
+        alt=""
+        format="webp"
+        style="width:3.5vw"
+        class="optimization"
+        src={diamond}
+        alt=""
+      />
     </div>
     <span class="wallHonor">WALL OF HONOR</span>
   </div>
 </section>
 
 <section style="margin-top:4%;">
-  <img
+  <Image
+    alt=""
+    format="webp"
     src={iicAwards}
     alt=""
-    width="1215"
-    height="355"
+    class="optimization"
     style="height:100%;width:100%; "
   />
   <a href="/awards/" aria-label="awards">
-    <img src={viewAllAwards} alt="" class="viewAllAwards" />
+    <Image
+      alt=""
+      format="webp"
+      src={viewAllAwards}
+      alt=""
+      class="viewAllAwards optimization"
+    />
   </a>
 </section>
 <section class="margins" style="margin-top:4%;">
@@ -786,12 +1064,17 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             <div class="swiper-slide">
               <div class="card-parent">
                 <div class="card-header" style="align-self: center;">
-                  <img
+                  <Image
+                    alt=""
+                    format="webp"
                     src={
                       clientsTestimonials?.fields?.companyLogo?.fields?.file.url
                     }
+                    width={317}
+                    height={131}
                     style="width: 50%;"
                     alt=""
+                    class="optimization"
                   />
                 </div>
 
@@ -822,7 +1105,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         <div class="swiper-slide">
           <div class="card-parent">
             <div class="card-header">
-              <img src={f1Logo} style="width: 50%;" alt="" />
+              <Image
+                alt=""
+                format="webp"
+                src={f1Logo}
+                style="width: 50%;"
+                alt=""
+                class="optimization"
+              />
             </div>
 
             <div class="card">
@@ -851,7 +1141,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         <div class="swiper-slide">
           <div class="card-parent">
             <div class="card-header">
-              <img src={testimonialImg} style="width: 50%;" alt="" />
+              <Image
+                alt=""
+                format="webp"
+                src={testimonialImg}
+                style="width: 50%;"
+                class="optimization"
+              />
             </div>
 
             <div class="card">
@@ -877,7 +1173,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         <div class="swiper-slide">
           <div class="card-parent">
             <div class="card-header">
-              <img src={f1Logo} style="width: 50%;" alt="" />
+              <Image
+                alt=""
+                format="webp"
+                src={f1Logo}
+                style="width: 50%;"
+                class="optimization"
+              />
             </div>
 
             <div class="card">
@@ -904,8 +1206,18 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         </div>
       </div>
       <div class="d-flex controls">
-        <img class="swiper-prev" src={carousalPrev} alt="" />
-        <img class="swiper-next" src={carousalNext} alt="" />
+        <Image
+          alt=""
+          format="webp"
+          class="swiper-prev optimization"
+          src={carousalPrev}
+        />
+        <Image
+          alt=""
+          format="webp"
+          class="swiper-next optimization"
+          src={carousalNext}
+        />
       </div>
 
       <div class="swiper-pagination"></div>
@@ -917,7 +1229,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       <p class="our prod1">OUR &nbsp;</p>
     </div>
     <div class="prodImg-animate">
-      <img class="prodImg" src={hefty} alt="" />
+      <Image
+        alt=""
+        format="webp"
+        class="prodImg optimization"
+        src={hefty}
+        alt=""
+      />
     </div>
   </div>
   <div class="productAnimate-div">
@@ -932,13 +1250,21 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             >V-Verse : revolutionary metaverse platform by ink in caps</td
           >
           <td style="color:#252525; text-align: end;" class="awardName">
-            <img style="width: 7vw;" src={vVerse} alt="" /></td
+            <Image
+              alt=""
+              format="webp"
+              style="width: 7vw; "
+              src={vVerse}
+              class="optimization"
+            /></td
           >
           <td
             ><button class="btn"
-              ><img
+              ><Image
+                alt=""
+                format="webp"
                 style="width:2.5rem; "
-                class="table"
+                class="table optimization"
                 src={toolsArrow}
                 alt=""
                 aria-label="v-verse"
@@ -952,15 +1278,22 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             >V-tour : India's Leading Virtual Events Platform</td
           >
           <td style="color:#252525; text-align: end;" class="awardName">
-            <img style="width: 9vw;" src={vTour} alt="" /></td
+            <Image
+              alt=""
+              format="webp"
+              style="width: 9vw;"
+              src={vTour}
+              class="optimization"
+            /></td
           >
           <td
             ><button class="btn"
-              ><img
-                style="width:2.5rem; "
-                class="table"
-                src={toolsArrow}
+              ><Image
                 alt=""
+                format="webp"
+                style="width:2.5rem; "
+                class="table optimization"
+                src={toolsArrow}
                 aria-label="v-tour"
               /></button
             ></td
@@ -972,13 +1305,21 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             >V-Retail : Get your business virtualized the right way</td
           >
           <td style="color:#252525; text-align: end;" class="awardName">
-            <img style="width: 7vw;" src={vRetail} alt="" /></td
+            <Image
+              alt=""
+              format="webp"
+              style="width: 7vw;"
+              src={vRetail}
+              class="optimization"
+            /></td
           >
           <td
             ><button class="btn"
-              ><img
+              ><Image
+                alt=""
+                format="webp"
                 style="width:2.5rem; "
-                class="table"
+                class="table optimization"
                 src={toolsArrow}
                 alt=""
                 aria-label="v-retail"
@@ -992,13 +1333,22 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             >V-stages : stunning Virtual stages for your next virtual event</td
           >
           <td style="color:#252525; text-align: end;" class="awardName">
-            <img style="width: 9vw;" src={vStages} alt="" /></td
+            <Image
+              alt=""
+              format="webp"
+              style="width: 9vw;"
+              src={vStages}
+              alt=""
+              class="optimization"
+            /></td
           >
           <td
             ><button class="btn"
-              ><img
+              ><Image
+                alt=""
+                format="webp"
                 style="width:2.5rem; "
-                class="table"
+                class="table optimization"
                 src={toolsArrow}
                 alt=""
                 aria-label="v-stages"
@@ -1012,13 +1362,22 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             >V-Conference : Virtual Conferencing Solutions for your business</td
           >
           <td style="color:#252525; text-align: end;" class="awardName">
-            <img style="width: 11vw;" src={vConference} alt="" /></td
+            <Image
+              alt=""
+              format="webp"
+              style="width: 11vw;"
+              src={vConference}
+              alt=""
+              class="optimization"
+            /></td
           >
           <td
             ><button class="btn"
-              ><img
+              ><Image
+                alt=""
+                format="webp"
                 style="width:2.5rem; "
-                class="table"
+                class="table optimization"
                 src={toolsArrow}
                 alt=""
                 aria-label="v-conference"
@@ -1043,7 +1402,15 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           class="close btn"
           data-bs-dismiss="modal"
           aria-hidden="true"
-          aria-label="close"><img class="crossImg" src={close} alt="" /></button
+          aria-label="close"
+          ><Image
+            alt=""
+            format="webp"
+            class="crossImg"
+            src={close}
+            class="optimization"
+            alt=""
+          /></button
         >
         <h4 class="modal-title">Showreel</h4>
       </div>
@@ -1062,6 +1429,9 @@ const testimonials: any = await contentfulClient.getEntries<any>({
   </div>
   <!-- video modal ends -->
   <style>
+    .optimization {
+      height: auto;
+    }
     .animateHand img {
       width: 19vw;
       margin-top: 27%;
@@ -1368,6 +1738,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     }
     #main5 #div1 img {
       height: 11vw;
+      width: auto;
     }
     #main5 #div2 {
       position: relative;
@@ -2358,7 +2729,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .from("#featureWork-section", 1, {
         scrollTrigger: {
           trigger: ".animate-featureWork",
-          start: "top 35%",
+          start: "top 55%",
           end: "bottom top",
           toggleClass: "animation-featureWork",
           scrub: true,
@@ -2367,7 +2738,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .from("#featureWork-section", 1, {
         scrollTrigger: {
           trigger: ".animate-featureWork2",
-          start: "top 65%",
+          start: "top 85%",
           end: "bottom top",
           toggleClass: "animation-featureWork",
           scrub: true,
@@ -2376,7 +2747,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .from("#featureWork-section", 1, {
         scrollTrigger: {
           trigger: ".featureImg-animate",
-          start: "top 45%",
+          start: "top 65%",
           end: "bottom top",
           toggleClass: "featureImg-animation",
           scrub: true,
@@ -2387,7 +2758,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         opacity: 0,
         scrollTrigger: {
           trigger: ".work-animation",
-          start: "top 55%",
+          start: "top 75%",
           end: "bottom 95%",
           opacity: 0,
           scrub: true,
@@ -2399,7 +2770,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
         scrollTrigger: {
           trigger: ".viewAll-feature",
-          start: "top 25%",
+          start: "top 55%",
           end: "bottom 25%",
           scrub: true,
         },
@@ -2435,7 +2806,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .from(".ourAnimate-div", 1, {
         scrollTrigger: {
           trigger: ".ourAnimate-div",
-          start: "top 50%",
+          start: "top 80%",
           end: "bottom top",
           toggleClass: "animation-featureWork",
           scrub: true,
@@ -2444,7 +2815,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .from(".ourAnimate-div", 1, {
         scrollTrigger: {
           trigger: ".productAnimate-div",
-          start: "top 50%",
+          start: "top 80%",
           end: "bottom top",
           toggleClass: "animation-featureWork",
           scrub: true,
@@ -2453,7 +2824,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .from(".ourAnimate-div", 1, {
         scrollTrigger: {
           trigger: ".prodImg-animate",
-          start: "top 50%",
+          start: "top 80%",
           end: "bottom top",
           toggleClass: "featureImg-animation",
           scrub: true,
@@ -2464,10 +2835,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         opacity: 0,
         y: "30%",
         ease: "ease1.out",
-        stagger: 1.5,
+        stagger: 0.25,
         scrollTrigger: {
           trigger: ".product-table",
-          start: "top 50%",
+          start: "top 85%",
           end: "bottom top",
           scrub: true,
         },

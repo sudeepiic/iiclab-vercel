@@ -1,5 +1,6 @@
 ---
 const props = Astro.props;
+import { Image, Picture } from "@astrojs/image/components";
 ---
 
 <section class="bgColor">
@@ -20,11 +21,23 @@ const props = Astro.props;
   </div>
 
   <div class="image-animate">
-    <img src={props.heroImage} alt="" style="width: 100%;" />
+    <Image
+      alt=""
+      format="webp"
+      src={props.heroImage}
+      alt=""
+      width={1552}
+      height={720}
+      class="optimization"
+      style="width: 100%;"
+    />
   </div>
 </section>
 
 <style>
+  .optimization {
+    height: auto;
+  }
   .margins {
     margin-left: 7%;
     margin-right: 7%;

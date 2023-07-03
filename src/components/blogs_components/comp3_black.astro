@@ -2,6 +2,7 @@
 import creative1 from "../../images/creative1.png";
 import yellowGo from "../../images/yellowGo2.png";
 import creative2 from "../../images/creative2.png";
+import { Image, Picture } from "@astrojs/image/components";
 ---
 
 <section
@@ -17,8 +18,10 @@ import creative2 from "../../images/creative2.png";
     </div>
 
     <div class="col-md-4 col-lg-4 col-sm-12">
-      <img
-        class="creative1"
+      <Image
+        alt=""
+        format="webp"
+        class="creative1 optimization"
         src={creative1}
         style="width: 95%; margin-bottom: 5%;"
         alt=""
@@ -33,7 +36,13 @@ import creative2 from "../../images/creative2.png";
         href="get-everyones-attention-with-these-amazing-experiences"
         aria-label="open"
       >
-        <img class="btn goBtn" src={yellowGo} alt="" /></a
+        <Image
+          alt=""
+          format="webp"
+          class="btn goBtn optimization"
+          src={yellowGo}
+          alt=""
+        /></a
       >
       <div style="margin-top: 3.4%;">
         <div class="border-box"><span>Design & Technology</span></div>
@@ -44,11 +53,12 @@ import creative2 from "../../images/creative2.png";
     </div>
 
     <div class="col-md-4 col-lg-4 col-sm-12">
-      <img
-        class="creative2"
+      <Image
+        alt=""
+        format="webp"
+        class="creative2 optimization"
         src={creative2}
         style="width: 95%; margin-bottom: 5%;"
-        alt=""
         loading="lazy"
       />
 
@@ -60,7 +70,12 @@ import creative2 from "../../images/creative2.png";
         href="is-3d-projection-mapping-the-future-or-the-present"
         aria-label="open"
       >
-        <img class="btn goBtn" src={yellowGo} alt="" /></a
+        <Image
+          alt=""
+          format="webp"
+          class="btn goBtn optimization"
+          src={yellowGo}
+        /></a
       >
       <div style="margin-top: 3.4%;">
         <div class="border-box"><span>Design & Technology</span></div>
@@ -73,6 +88,9 @@ import creative2 from "../../images/creative2.png";
 </section>
 
 <style>
+  .optimization {
+    height: auto;
+  }
   .creative {
     font-family: "Deutschlander";
     text-transform: uppercase;

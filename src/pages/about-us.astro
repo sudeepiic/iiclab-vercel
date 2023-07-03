@@ -8,6 +8,7 @@ import Header from "../components/Header.astro";
 import carousalNext from "../images/carousalNext.png";
 import carousalPrev from "../images/carousalPrev.png";
 import { contentfulClient } from "../lib/contentful";
+import { Image, Picture } from "@astrojs/image/components";
 
 const clientsEntries = await contentfulClient.getEntries<any>({
   content_type: "clients",
@@ -58,10 +59,12 @@ console.log(splitArrays);
           >
           <a href="#teamInfo" aria-label="know more">
             <span class="knowMore">
-              Slide To Know More &nbsp;<img
+              Slide To Know More &nbsp;<Image
+                alt=""
+                format="webp"
                 style="width: 0.75rem;"
                 src={downArrow}
-                alt=""
+                class="optimization"
               />
             </span>
           </a>
@@ -69,7 +72,14 @@ console.log(splitArrays);
       </div>
     </div>
     <div>
-      <img src={officeImg} alt="" style="height:100%;width:100%;  " />
+      <Image
+        alt=""
+        format="webp"
+        src={officeImg}
+        alt=""
+        class="optimization"
+        style="height:100%;width:100%;  "
+      />
     </div>
   </section>
 
@@ -170,8 +180,12 @@ console.log(splitArrays);
           (splitArrays[0] as any).map((clients, index) => (
             <div class="imgRow clientArray1">
               <td class="img ">
-                <img
-                  class="imgs"
+                <Image
+                  alt=""
+                  format="webp"
+                  class="imgs optimization"
+                  width={389}
+                  height={282}
                   src={clients.fields?.file.url}
                   alt=""
                   loading="lazy"
@@ -184,8 +198,12 @@ console.log(splitArrays);
           (splitArrays[1] as any).map((clients, index) => (
             <div class="imgRow clientArray2">
               <td class="img">
-                <img
-                  class="imgs"
+                <Image
+                  alt=""
+                  format="webp"
+                  class="imgs optimization"
+                  width={389}
+                  height={282}
                   src={clients.fields?.file.url}
                   alt=""
                   loading="lazy"
@@ -198,8 +216,12 @@ console.log(splitArrays);
           (splitArrays[2] as any).map((clients, index) => (
             <div class="imgRow clientArray1">
               <td class="img">
-                <img
-                  class="imgs"
+                <Image
+                  alt=""
+                  format="webp"
+                  class="imgs optimization"
+                  width={389}
+                  height={282}
                   src={clients.fields?.file.url}
                   alt=""
                   loading="lazy"
@@ -212,8 +234,12 @@ console.log(splitArrays);
           (splitArrays[3] as any).map((clients, index) => (
             <div class="imgRow clientArray2">
               <td class="img">
-                <img
-                  class="imgs"
+                <Image
+                  alt=""
+                  format="webp"
+                  class="imgs optimization"
+                  width={389}
+                  height={282}
                   src={clients.fields?.file.url}
                   alt=""
                   loading="lazy"
@@ -251,7 +277,14 @@ console.log(splitArrays);
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div>
-              <img class="members" src={members1} alt="" loading="lazy" />
+              <Image
+                alt=""
+                format="webp"
+                class="members optimization"
+                src={members1}
+                alt=""
+                loading="lazy"
+              />
               <div class="imgCaptionDiv">
                 <span class="memberName"> Manish Tiwari</span>
                 <p class="memberDsgn">Senior Graphic Designer</p>
@@ -261,7 +294,14 @@ console.log(splitArrays);
 
           <div class="swiper-slide">
             <div>
-              <img class="members" src={members1} alt="" loading="lazy" />
+              <Image
+                alt=""
+                format="webp"
+                class="members optimization"
+                src={members1}
+                alt=""
+                loading="lazy"
+              />
               <div class="imgCaptionDiv">
                 <span class="memberName"> Ayush Shrivastav</span>
                 <p class="memberDsgn">Web Development Intern</p>
@@ -271,7 +311,14 @@ console.log(splitArrays);
 
           <div class="swiper-slide">
             <div>
-              <img class="members" src={members1} alt="" loading="lazy" />
+              <Image
+                alt=""
+                format="webp"
+                class="members optimization"
+                src={members1}
+                alt=""
+                loading="lazy"
+              />
               <div class="imgCaptionDiv">
                 <span class="memberName">Sudeep Kuchara</span>
                 <p class="memberDsgn">Senior Developer</p>
@@ -279,14 +326,31 @@ console.log(splitArrays);
             </div>
           </div>
         </div>
-        <img class="swiper-prev" src={carousalPrev} alt="" loading="lazy" />
+        <Image
+          alt=""
+          format="webp"
+          class="swiper-prev optimization"
+          src={carousalPrev}
+          alt=""
+          loading="lazy"
+        />
 
-        <img class="swiper-next" src={carousalNext} alt="" loading="lazy" />
+        <Image
+          alt=""
+          format="webp"
+          class="swiper-next optimization"
+          src={carousalNext}
+          alt=""
+          loading="lazy"
+        />
       </div>
     </div>
   </section>
 </Layout>
 <style>
+  .optimization {
+    height: auto;
+  }
   .meetDiv {
     margin-left: 2%;
     width: 50%;

@@ -5,6 +5,7 @@ import applyNow from "../images/applyNow.png";
 import ps from "../images/ps.png";
 import submitArrow from "../images/submitArrow.png";
 import { log } from "astro/dist/core/logger/core";
+import { Image, Picture } from "@astrojs/image/components";
 
 const props = Astro.props;
 
@@ -18,8 +19,10 @@ console.log(props.jobProfile);
         <div class="title">
           <span set:html={props.jobProfile} /><br />
           <a href="#apply">
-            <img
-              class="btn"
+            <Image
+              alt=""
+              format="webp"
+              class="btn optimization"
               style="width: 32%; margin-bottom: 5%;"
               src={applyNow}
               alt=""
@@ -57,9 +60,9 @@ console.log(props.jobProfile);
     }
 
     <br />
-    <!-- <img   style="width: 3%; margin-right: 2%;" src={ps} alt="" />
-    <img   style="width: 3%; margin-right: 2%;" src={ps} alt="" />
-    <img   style="width: 3%; margin-right: 2%;" src={ps} alt="" /> -->
+    <!--  <Image alt="" format="webp"   style="width: 3%; margin-right: 2%;" src={ps} alt="" />
+     <Image alt="" format="webp"   style="width: 3%; margin-right: 2%;" src={ps} alt="" />
+     <Image alt="" format="webp"   style="width: 3%; margin-right: 2%;" src={ps} alt="" /> -->
   </section>
 
   <section class="formSec">
@@ -258,7 +261,13 @@ console.log(props.jobProfile);
             id="submit"
             aria-label="submit"
           >
-            <img src={submitArrow} alt="" /> submit application
+            <Image
+              alt=""
+              format="webp"
+              src={submitArrow}
+              class="optimization"
+              alt=""
+            /> submit application
           </button>
         </form>
       </div>
@@ -403,6 +412,9 @@ console.log(props.jobProfile);
 </script>
 
 <style>
+  .optimization {
+    height: auto;
+  }
   .mb-3 {
     margin-bottom: 1.6% !important;
   }

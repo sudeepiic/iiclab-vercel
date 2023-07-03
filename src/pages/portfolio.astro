@@ -14,25 +14,77 @@ const entries: any = await contentfulClient.getEntries<any>({
   <section style="padding-top: 4.5%;">
     <div class="wrapper">
       <div id="main4" class="moving-text" style="width: max-content;">
-        <span class="zoomIn">Our Work</span><img
+        <span class="zoomIn">Our Work</span>
+        <Image
+          alt=""
+          format="webp"
           src={portfolio1}
-          class="movingImg"
+          class="optimization movingImg"
           alt=""
         />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
-        <span>Our Work</span><img src={portfolio1} class="movingImg" alt="" />
+        <span>Our Work</span>
+        <Image
+          alt=""
+          format="webp"
+          src={portfolio1}
+          class="optimization movingImg"
+          alt=""
+        />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
-        <span>Our Work</span><img src={portfolio1} class="movingImg" alt="" />
+        <span>Our Work</span>
+        <Image
+          alt=""
+          format="webp"
+          src={portfolio1}
+          class="optimization movingImg"
+          alt=""
+        />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
-        <span>Our Work</span><img src={portfolio1} class="movingImg" alt="" />
+        <span>Our Work</span>
+        <Image
+          alt=""
+          format="webp"
+          src={portfolio1}
+          class="optimization movingImg"
+          alt=""
+        />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
-        <span>Our Work</span><img src={portfolio1} class="movingImg" alt="" />
+        <span>Our Work</span>
+        <Image
+          alt=""
+          format="webp"
+          src={portfolio1}
+          class="optimization movingImg"
+          alt=""
+        />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
-        <span>Our Work</span><img src={portfolio1} class="movingImg" alt="" />
+        <span>Our Work</span>
+        <Image
+          alt=""
+          format="webp"
+          src={portfolio1}
+          class="optimization movingImg"
+          alt=""
+        />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
-        <span>Our Work</span><img src={portfolio1} class="movingImg" alt="" />
+        <span>Our Work</span>
+        <Image
+          alt=""
+          format="webp"
+          src={portfolio1}
+          class="optimization movingImg"
+          alt=""
+        />
         <span>our work</span>
-        <span>Our Work</span><img src={portfolio1} class="movingImg" alt="" />
+        <span>Our Work</span>
+        <Image
+          alt=""
+          format="webp"
+          src={portfolio1}
+          class="optimization movingImg"
+          alt=""
+        />
         <span>our work</span>
       </div>
     </div>
@@ -49,9 +101,14 @@ const entries: any = await contentfulClient.getEntries<any>({
                   aria-label="case-study"
                 >
                   <div class="animate-swiper">
-                    <img
+                    <Image
+                      alt=""
+                      format="webp"
                       src={caseStudy.fields?.heroBanner?.fields?.file.url}
                       alt=""
+                      width={1528}
+                      height={720}
+                      class="optimization"
                     />
                   </div>
                 </a>
@@ -73,7 +130,7 @@ const entries: any = await contentfulClient.getEntries<any>({
     </div>
     <!--  -->
 
-    <!-- <img   src={featuredWorksbtn} alt=""> -->
+    <!--  <Image alt="" format="webp"   src={featuredWorksbtn} alt=""> -->
   </section>
 
   <section>
@@ -87,11 +144,16 @@ const entries: any = await contentfulClient.getEntries<any>({
             <span class="index">{(index = index + 1)}</span>
             <span class="name" set:html={caseStudy.fields.singleClient} />
           </div>
-          <img
+          <Image
+            alt=""
+            format="webp"
             src={caseStudy.fields?.heroBanner?.fields?.file.url}
             style="width: 100%;"
             alt=""
+            class="optimization"
             loading="lazy"
+            width={1527}
+            height={720}
           />
           <div class="row info">
             <div class="csName col-lg-6 col-md-6 col-sm-12">
@@ -112,6 +174,9 @@ const entries: any = await contentfulClient.getEntries<any>({
   </section>
 
   <style>
+    .optimization {
+      height: auto;
+    }
     a {
       text-decoration: none;
     }

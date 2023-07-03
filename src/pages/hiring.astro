@@ -13,6 +13,8 @@ import ps from "../images/ps.png";
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 // import jobProfiles from "../components/jobProfiles";
+import { Image, Picture } from "@astrojs/image/components";
+
 import viewOpenPositions from "../images/ViewOpenPosition.png";
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "jobProfiles",
@@ -25,7 +27,7 @@ const entries: any = await contentfulClient.getEntries<any>({
       <div class="col-lg-8 col-md-8 col-sm-12" style="overflow: hidden;">
         <span class="title">Join Our Team</span>
         <!-- <div>
-          <img   class="titleImg" src={hiringImg1} alt="" />
+           <Image alt="" format="webp"   class="titleImg" src={hiringImg1} alt="" />
           <span class="title">Join Our Team</span>
         </div> -->
       </div>
@@ -38,7 +40,13 @@ const entries: any = await contentfulClient.getEntries<any>({
         </span>
       </div>
     </div>
-    <img class="" style="width:100%;" src={hiringHeroImg} alt="" />
+    <Image
+      alt=""
+      format="webp"
+      class="optimization"
+      style="width:100%;"
+      src={hiringHeroImg}
+    />
   </section>
 
   <section class="blackSec">
@@ -54,21 +62,49 @@ const entries: any = await contentfulClient.getEntries<any>({
         style=" padding-top: 2.5%;"
       >
         <div class="col-6 pointersMob" style="padding-left: 10%;">
-          <img src={team} class="benefitsImg" alt="" loading="lazy" />
+          <Image
+            alt=""
+            format="webp"
+            src={team}
+            class="optimization benefitsImg"
+            alt=""
+            loading="lazy"
+          />
           <p class="benefitsText" style="margin-bottom: 15%;">
             Working with a highly experienced team.
           </p>
-          <img src={opportunity} class="benefitsImg" alt="" loading="lazy" />
+          <Image
+            alt=""
+            format="webp"
+            src={opportunity}
+            class="optimization benefitsImg"
+            alt=""
+            loading="lazy"
+          />
           <p class="benefitsText">
             Get opportunities to work with major brands.
           </p>
         </div>
         <div class="col-6 pointersMob" style="padding-left: 10%;">
-          <img src={funLoving} class="benefitsImg" alt="" loading="lazy" />
+          <Image
+            alt=""
+            format="webp"
+            src={funLoving}
+            class="optimization benefitsImg"
+            alt=""
+            loading="lazy"
+          />
           <p class="benefitsText" style="margin-bottom: 15%;">
             A fun-loving and creative environment.
           </p>
-          <img src={fun} class="benefitsImg" alt="" loading="lazy" />
+          <Image
+            alt=""
+            format="webp"
+            src={fun}
+            class="optimization benefitsImg"
+            alt=""
+            loading="lazy"
+          />
           <p class="benefitsText">Creative & Fun activities every week.</p>
         </div>
       </div>
@@ -175,7 +211,14 @@ const entries: any = await contentfulClient.getEntries<any>({
             <div class="flip-card-inner">
               <div class="card">
                 <div class="eyeDiv btn">
-                  <img src={closeEye} class="eye" loading="lazy" alt="" />
+                  <Image
+                    alt=""
+                    format="webp"
+                    src={closeEye}
+                    class="optimization eye"
+                    loading="lazy"
+                    alt=""
+                  />
                 </div>
 
                 <div class="cardContent ">
@@ -191,16 +234,36 @@ const entries: any = await contentfulClient.getEntries<any>({
                   <span>{jobProfiles.fields.shortDescription}</span>
                 </div>
                 <div class="location">
-                  <img class="locIcon" src={locIcon} alt="" />
+                  <Image
+                    alt=""
+                    format="webp"
+                    class="locIcon optimization"
+                    src={locIcon}
+                    alt=""
+                  />
                   <span style="margin-right: 10%;">
                     {jobProfiles.fields.location}
                   </span>
-                  <img style="width: 8%;" src={clock} alt="" loading="lazy" />
+                  <Image
+                    alt=""
+                    format="webp"
+                    style="width: 8%;"
+                    class="optimization"
+                    src={clock}
+                    alt=""
+                    loading="lazy"
+                  />
                   <span>{jobProfiles.fields.jobType}</span>
                 </div>
                 <div class="bottomDivBack row">
                   <div class="col-6 blackBottom">
-                    <img src={ps} alt="" />
+                    <Image
+                      alt=""
+                      format="webp"
+                      class="optimization"
+                      src={ps}
+                      alt=""
+                    />
                   </div>
 
                   <div class="col-5 btn">
@@ -220,6 +283,9 @@ const entries: any = await contentfulClient.getEntries<any>({
     </div>
   </section>
   <style>
+    .optimization {
+      height: auto;
+    }
     a {
       text-decoration: none;
     }

@@ -5,7 +5,6 @@ import linkedinlogo from "../images/linkedinLogo.png";
 import twitterLogo from "../images/twitterLogo.png";
 import fbLogo from "../images/fbLogo.png";
 import whatsappLogo from "../images/whatsappLogo.png";
-
 import home from "../images/headerHome.jpg";
 import about from "../images/headerAbout.jpg";
 import solutions from "../images/headerSolutions.jpg";
@@ -15,6 +14,7 @@ import awards from "../images/headerAwards.jpg";
 import articles from "../images/headerArticles.jpg";
 import lifeAtIIC from "../images/headerLifeIic.jpg";
 import career from "../images/headerCareer.jpg";
+import { Image, Picture } from "@astrojs/image/components";
 ---
 
 <header class="turnBlack">
@@ -177,7 +177,13 @@ import career from "../images/headerCareer.jpg";
             data-bs-dismiss="modal"
             aria-label="Close"
           >
-            <img class="crossImg" src={modalCross} alt="" />
+            <Image
+              alt=""
+              format="webp"
+              class="crossImg optimization"
+              src={modalCross}
+              alt=""
+            />
           </button>
         </div>
       </div>
@@ -189,7 +195,14 @@ import career from "../images/headerCareer.jpg";
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="home"
             >
-              <img src={home} class="header-img2" alt="" loading="lazy" />
+              <Image
+                alt=""
+                format="webp"
+                src={home}
+                class="header-img2 optimization"
+                alt=""
+                loading="lazy"
+              />
               <span class="index">01</span>
               <span class="titles">Home</span>
             </a>
@@ -199,7 +212,14 @@ import career from "../images/headerCareer.jpg";
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="about us"
             >
-              <img src={about} class="header-img2" alt="" loading="lazy" />
+              <Image
+                alt=""
+                format="webp"
+                src={about}
+                class="header-img2 optimization"
+                alt=""
+                loading="lazy"
+              />
 
               <span class="index">02</span>
               <span class="titles">About us</span>
@@ -209,7 +229,14 @@ import career from "../images/headerCareer.jpg";
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="solutions"
             >
-              <img src={solutions} class="header-img2" alt="" loading="lazy" />
+              <Image
+                alt=""
+                format="webp"
+                src={solutions}
+                class="header-img2 optimization"
+                alt=""
+                loading="lazy"
+              />
 
               <span class="index">03</span>
               <span class="titles">Solutions</span>
@@ -222,7 +249,14 @@ import career from "../images/headerCareer.jpg";
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="products"
             >
-              <img src={products} class="header-img2" alt="" loading="lazy" />
+              <Image
+                alt=""
+                format="webp"
+                src={products}
+                class="header-img2 optimization"
+                alt=""
+                loading="lazy"
+              />
 
               <span class="index">04</span>
               <span class="titles">products</span>
@@ -232,7 +266,14 @@ import career from "../images/headerCareer.jpg";
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="our work"
             >
-              <img src={work} class="header-img2" alt="" loading="lazy" />
+              <Image
+                alt=""
+                format="webp"
+                src={work}
+                class="header-img2 optimization"
+                alt=""
+                loading="lazy"
+              />
 
               <span class="index">05</span>
               <span class="titles">Our work</span>
@@ -242,7 +283,14 @@ import career from "../images/headerCareer.jpg";
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="awards"
             >
-              <img src={awards} class="header-img2" alt="" loading="lazy" />
+              <Image
+                alt=""
+                format="webp"
+                src={awards}
+                class="header-img2 optimization"
+                alt=""
+                loading="lazy"
+              />
 
               <span class="index">06</span>
               <span class="titles">awards</span>
@@ -255,7 +303,14 @@ import career from "../images/headerCareer.jpg";
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="articles"
             >
-              <img src={articles} class="header-img2" alt="" loading="lazy" />
+              <Image
+                alt=""
+                format="webp"
+                src={articles}
+                class="header-img2 optimization"
+                alt=""
+                loading="lazy"
+              />
 
               <span class="index">07</span>
               <span class="titles">articles</span>
@@ -265,7 +320,14 @@ import career from "../images/headerCareer.jpg";
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="life at iic"
             >
-              <img src={lifeAtIIC} class="header-img2" alt="" loading="lazy" />
+              <Image
+                alt=""
+                format="webp"
+                src={lifeAtIIC}
+                class="header-img2 optimization"
+                alt=""
+                loading="lazy"
+              />
 
               <span class="index">08</span>
               <span class="titles">Life at iic</span>
@@ -275,7 +337,14 @@ import career from "../images/headerCareer.jpg";
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="career"
             >
-              <img src={career} class="header-img2" alt="" loading="lazy" />
+              <Image
+                alt=""
+                format="webp"
+                src={career}
+                class="header-img2 optimization"
+                alt=""
+                loading="lazy"
+              />
 
               <span class="index">09</span>
               <span class="titles">Career</span>
@@ -322,35 +391,70 @@ import career from "../images/headerCareer.jpg";
               href="https://www.instagram.com/inkincaps/?hl=en"
               aria-label="instagram"
             >
-              <img class="icons" src={instaLogo} alt="" loading="lazy" /></a
+              <Image
+                alt=""
+                format="webp"
+                class="icons optimization"
+                src={instaLogo}
+                alt=""
+                loading="lazy"
+              /></a
             >
             <a
               class="iconbtn"
               href="https://in.linkedin.com/company/ink-in-caps"
               aria-label="linkedin"
             >
-              <img class="icons" src={linkedinlogo} alt="" loading="lazy" /></a
+              <Image
+                alt=""
+                format="webp"
+                class="icons optimization"
+                src={linkedinlogo}
+                alt=""
+                loading="lazy"
+              /></a
             >
             <a
               class="iconbtn"
               href="https://twitter.com/inkincaps?lang=en"
               aria-label="twitter"
             >
-              <img class="icons" src={twitterLogo} alt="" loading="lazy" /></a
+              <Image
+                alt=""
+                format="webp"
+                class="icons optimization"
+                src={twitterLogo}
+                alt=""
+                loading="lazy"
+              /></a
             >
             <a
               class="iconbtn"
               href="https://www.facebook.com/inkincaps/"
               aria-label="facebook"
             >
-              <img class="icons" src={fbLogo} alt="" loading="lazy" /></a
+              <Image
+                alt=""
+                format="webp"
+                class="icons optimization"
+                src={fbLogo}
+                alt=""
+                loading="lazy"
+              /></a
             >
             <a
               class="iconbtn"
               href="https://in.linkedin.com/company/ink-in-caps"
               aria-label="whatsapp"
             >
-              <img class="icons" src={whatsappLogo} alt="" loading="lazy" /></a
+              <Image
+                alt=""
+                format="webp"
+                class="icons optimization"
+                src={whatsappLogo}
+                alt=""
+                loading="lazy"
+              /></a
             >
           </div>
         </div>
@@ -360,6 +464,9 @@ import career from "../images/headerCareer.jpg";
   </div>
 </div>
 <style>
+  .optimization {
+    height: auto;
+  }
   /* animation css */
   .header-img {
     position: relative;

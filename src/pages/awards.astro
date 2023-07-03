@@ -10,6 +10,7 @@ import momento from "../images/momento.png";
 import momentoIcon2 from "../images/momentoIcon2.png";
 import awardsPrev from "../images/awardsPrev.png";
 import awardsNext from "../images/awardsNext.png";
+import { Image, Picture } from "@astrojs/image/components";
 
 import { gsap } from "gsap";
 ---
@@ -21,7 +22,13 @@ import { gsap } from "gsap";
         <span class="title title1">Awards &</span>
         <div class="makeInline">
           <div class="imgDiv">
-            <img class="titleImg" src={hiringImg1} alt="" />
+            <Image
+              alt=""
+              format="webp"
+              class="optimization titleImg"
+              src={hiringImg1}
+              alt=""
+            />
           </div>
 
           <span class="title title2">Recognition</span>
@@ -33,12 +40,31 @@ import { gsap } from "gsap";
           href="#awardsList"
           style="width: fit-content; display:contents"
           aria-label="awards list"
-          ><img src={rotatingView} class="viewAwardsBtn" alt="" />
-          <img class="centerArrow" src={centerArrow} alt="" />
+          ><Image
+            alt=""
+            format="webp"
+            src={rotatingView}
+            class="viewAwardsBtn optimization"
+            alt=""
+          />
+          <Image
+            alt=""
+            format="webp"
+            class="optimization centerArrow"
+            src={centerArrow}
+            alt=""
+          />
         </a>
       </div>
     </div>
-    <img class="" style="width:100%;" src={awards} alt="" />
+    <Image
+      alt=""
+      format="webp"
+      class="optimization"
+      style="width:100%;"
+      src={awards}
+      alt=""
+    />
   </section>
 
   <section style="padding: 5% 2%;">
@@ -66,8 +92,10 @@ import { gsap } from "gsap";
                     <span>pro kabaddi league</span>
                   </div>
                   <div class="col-lg-3 col-md-3 col-sm-3">
-                    <img
-                      class="viewProject"
+                    <Image
+                      alt=""
+                      format="webp"
+                      class="viewProject optimization"
                       src={viewProjectBtn}
                       alt=""
                       loading="lazy"
@@ -78,10 +106,18 @@ import { gsap } from "gsap";
             </div>
             <div class="col-4 awardImgDiv">
               <div class="awardImg">
-                <img class="momento" src={momento} alt="" loading="lazy" /><br
-                />
-                <img
-                  class="momentoIcon"
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization momento"
+                  src={momento}
+                  alt=""
+                  loading="lazy"
+                /><br />
+                <Image
+                  alt=""
+                  format="webp"
+                  class="momentoIcon optimization"
                   src={momentoIcon2}
                   alt=""
                   loading="lazy"
@@ -103,14 +139,18 @@ import { gsap } from "gsap";
               </div>
               <div style="width:50%">
                 <div class="mb-awardImg">
-                  <img
-                    class="mb-momento"
+                  <Image
+                    alt=""
+                    format="webp"
+                    class="mb-momento optimization"
                     src={momento}
                     alt=""
                     loading="lazy"
                   /><br />
-                  <img
-                    class="mb-momentoIcon"
+                  <Image
+                    alt=""
+                    format="webp"
+                    class="mb-momentoIcon optimization"
                     src={momentoIcon2}
                     alt=""
                     loading="lazy"
@@ -132,8 +172,10 @@ import { gsap } from "gsap";
                   </div>
                   <div style="width: 30%;">
                     <a href="" aria-label="view project">
-                      <img
-                        class="mb-viewProject"
+                      <Image
+                        alt=""
+                        format="webp"
+                        class="mb-viewProject optimization"
                         src={viewProjectBtn}
                         alt=""
                         loading="lazy"
@@ -169,8 +211,10 @@ import { gsap } from "gsap";
                   </div>
                   <div class="col-lg-3 col-md-3 col-sm-3">
                     <a href="" aria-label="view project">
-                      <img
-                        class="viewProject"
+                      <Image
+                        alt=""
+                        format="webp"
+                        class="viewProject optimization"
                         src={viewProjectBtn}
                         alt=""
                         loading="lazy"
@@ -182,10 +226,18 @@ import { gsap } from "gsap";
             </div>
             <div class="col-4 awardImgDiv">
               <div class="awardImg">
-                <img class="momento" src={momento} alt="" loading="lazy" /><br
-                />
-                <img
-                  class="momentoIcon"
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization momento"
+                  src={momento}
+                  alt=""
+                  loading="lazy"
+                /><br />
+                <Image
+                  alt=""
+                  format="webp"
+                  class="momentoIcon optimization"
                   src={momentoIcon2}
                   alt=""
                   loading="lazy"
@@ -207,14 +259,18 @@ import { gsap } from "gsap";
               </div>
               <div style="width:50%">
                 <div class="mb-awardImg">
-                  <img
-                    class="mb-momento"
+                  <Image
+                    alt=""
+                    format="webp"
+                    class="mb-momento optimization"
                     src={momento}
                     alt=""
                     loading="lazy"
                   /><br />
-                  <img
-                    class="mb-momentoIcon"
+                  <Image
+                    alt=""
+                    format="webp"
+                    class="mb-momentoIcon optimization"
                     src={momentoIcon2}
                     alt=""
                     loading="lazy"
@@ -236,8 +292,10 @@ import { gsap } from "gsap";
                   </div>
                   <div style="width: 30%;">
                     <a href="" aria-label="view project">
-                      <img
-                        class="mb-viewProject"
+                      <Image
+                        alt=""
+                        format="webp"
+                        class="mb-viewProject optimization"
                         src={viewProjectBtn}
                         loading="lazy"
                         alt=""
@@ -250,8 +308,22 @@ import { gsap } from "gsap";
           </div>
         </div>
       </div>
-      <img class="swiper-button-prev" src={awardsPrev} loading="lazy" alt="" />
-      <img class="swiper-button-next" src={awardsNext} loading="lazy" alt="" />
+      <Image
+        alt=""
+        format="webp"
+        class="optimization swiper-button-prev"
+        src={awardsPrev}
+        loading="lazy"
+        alt=""
+      />
+      <Image
+        alt=""
+        format="webp"
+        class="optimization swiper-button-next"
+        src={awardsNext}
+        loading="lazy"
+        alt=""
+      />
     </div>
   </section>
 
@@ -264,9 +336,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2023 - Media & Entertainment</span
@@ -281,9 +355,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2023 - Retail & E-Commerce
@@ -298,9 +374,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2023 - Best Visual Content- Special Events</span
@@ -315,9 +393,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2023 - Best technology engagement/interactivity</span
@@ -332,9 +412,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2023 - EDCA Tech Provider of the Year
@@ -349,9 +431,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2023 - Best Standalone Experience at a Brand Activation</span
@@ -366,9 +450,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2023 - Best Event Technology created for an event</span
@@ -383,9 +469,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2023 - Most Creative On Ground Marketing Campaign</span
@@ -400,9 +488,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Use of AR/VR (Silver)</span
@@ -417,9 +507,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Content Marketing Launch (Gold)</span
@@ -434,9 +526,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Content Marketing Launch (Gold)</span
@@ -451,9 +545,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Brand Activation (Gold)</span
@@ -468,9 +564,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Use of VR (Silver)</span
@@ -485,9 +583,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Use of Technology (Bronze)</span
@@ -502,9 +602,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Use of Technology (Gold)</span
@@ -519,9 +621,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Use of Technology (Silver)</span
@@ -536,9 +640,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Promotion of the Year for Brand Awareness - Digital (Gold)</span
@@ -553,9 +659,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Audience Engagement Technology & Event App for the Year by
@@ -571,9 +679,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Innovation in Interactive Technology (Bronze)</span
@@ -588,9 +698,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Online Promotion (Silver)</span
@@ -605,9 +717,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Online Promotion (Bronze)</span
@@ -622,9 +736,11 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022- Best Innovation in Digital (Bronze)</span
@@ -639,9 +755,11 @@ import { gsap } from "gsap";
       <div class="row mobAward" style="border-bottom: 0;">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
+              alt=""
+              format="webp"
               src={hiringImg1}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Brand Activation (bronze)</span
@@ -656,6 +774,9 @@ import { gsap } from "gsap";
   </section>
 
   <style>
+    .optimization {
+      height: auto;
+    }
     .centerArrow {
       position: relative;
       top: 65%;
