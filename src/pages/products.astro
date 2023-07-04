@@ -11,319 +11,329 @@ import { contentfulClient } from "../lib/contentful";
 import { Image, Picture } from "@astrojs/image/components";
 
 const props = Astro.props;
-// console.log(props);
 ---
 
-<Layout title="Products" seoTitle="products">
-  <section style="padding-top: 8%;">
-    <span class="waterMark" set:html={props.waterMark} />
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
+{
+  Object.keys(props).length && (
+    <Layout title="Products" seoTitle="products">
+      <section style="padding-top: 8%;">
+        <span class="waterMark" set:html={props.waterMark} />
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <Image
+                alt=""
+                format="webp"
+                class="optimization sliderImg"
+                src={products1}
+                alt=""
+              />
+            </div>
+
+            <div class="swiper-slide">
+              <Image
+                alt=""
+                format="webp"
+                class="optimization sliderImg"
+                src={products2}
+                alt=""
+              />
+            </div>
+          </div>
+
           <Image
             alt=""
             format="webp"
-            class="optimization sliderImg"
-            src={products1}
+            class="optimization swiper-button-prev"
+            src={awardsPrev}
+            loading="lazy"
             alt=""
           />
-        </div>
-
-        <div class="swiper-slide">
           <Image
             alt=""
             format="webp"
-            class="optimization sliderImg"
-            src={products2}
+            class="optimization swiper-button-next"
+            src={awardsNext}
+            loading="lazy"
             alt=""
           />
         </div>
+      </section>
+      <div class="d-flex">
+        <a href="./v-retail" class="tabs" aria-label="v-retail">
+          v-retail
+        </a>
+        <a href="./v-verse" class="tabs" aria-label="v-verse">
+          v-verse
+        </a>
+
+        <a href="./v-tour" class="tabs" aria-label="v-tour">
+          V-Tour
+        </a>
+        <a href="./v-conference" class="tabs" aria-label="v-conference">
+          v-conference
+        </a>
+        <a href="" class="tabs" aria-label="v-stages">
+          v-stages
+        </a>
       </div>
 
-      <Image
-        alt=""
-        format="webp"
-        class="optimization swiper-button-prev"
-        src={awardsPrev}
-        loading="lazy"
-        alt=""
-      />
-      <Image
-        alt=""
-        format="webp"
-        class="optimization swiper-button-next"
-        src={awardsNext}
-        loading="lazy"
-        alt=""
-      />
-    </div>
-  </section>
-  <div class="d-flex">
-    <a href="./v-tour" class="tabs" aria-label="v-tour">V-Tour</a>
-    <a href="./v-retail" class="tabs" aria-label="v-retail">v-retail</a>
-    <a href="./v-conference" class="tabs" aria-label="v-conference"
-      >v-conference</a
-    >
-    <a href="./v-verse" class="tabs" aria-label="v-verse">v-verse</a>
-    <a href="" class="tabs" aria-label="v-stages">v-stages</a>
-  </div>
+      <section style="background-color: #1a1a1a; padding-top: 6%;">
+        <div style="margin-left: 9%;  padding-bottom: 5%;">
+          <div style="overflow: hidden;">
+            <span class="title" set:html={props.title} />
+          </div>
+          <div style="overflow: hidden;">
+            <span class="text" set:html={props.titleText} />
+          </div>
+        </div>
+        <div style="margin-left: 9%;">
+          <span class="title">Top brands</span>
+          <div class="iconsDiv">
+            <div class="d-flex">
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon1}
+                  alt=""
+                />
+              </div>
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon2}
+                  alt=""
+                />
+              </div>
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon1}
+                  alt=""
+                />
+              </div>
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon2}
+                  alt=""
+                />
+              </div>
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon1}
+                  alt=""
+                />
+              </div>
+            </div>
 
-  <section style="background-color: #1a1a1a; padding-top: 6%;">
-    <div style="margin-left: 9%;  padding-bottom: 5%;">
-      <div style="overflow: hidden;">
-        <span class="title" set:html={props.title} />
-      </div>
-      <div style="overflow: hidden;">
-        <span class="text" set:html={props.titleText} />
-      </div>
-    </div>
-    <div style="margin-left: 9%;">
-      <span class="title">Top brands</span>
-      <div class="iconsDiv">
-        <div class="d-flex">
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon1}
-              alt=""
-            />
-          </div>
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon2}
-              alt=""
-            />
-          </div>
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon1}
-              alt=""
-            />
-          </div>
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon2}
-              alt=""
-            />
-          </div>
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon1}
-              alt=""
-            />
+            <div class="d-flex">
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon1}
+                  alt=""
+                />
+              </div>
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon2}
+                  alt=""
+                />
+              </div>
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon1}
+                  alt=""
+                />
+              </div>
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon2}
+                  alt=""
+                />
+              </div>
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon1}
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="d-flex">
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon1}
+                  alt=""
+                />
+              </div>
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon2}
+                  alt=""
+                />
+              </div>
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon1}
+                  alt=""
+                />
+              </div>
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon2}
+                  alt=""
+                />
+              </div>
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon1}
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="d-flex">
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon1}
+                  alt=""
+                />
+              </div>
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon2}
+                  alt=""
+                />
+              </div>
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon1}
+                  alt=""
+                />
+              </div>
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon2}
+                  alt=""
+                />
+              </div>
+              <div class="icons">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="optimization"
+                  src={icon1}
+                  alt=""
+                />
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="d-flex">
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon1}
-              alt=""
-            />
-          </div>
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon2}
-              alt=""
-            />
-          </div>
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon1}
-              alt=""
-            />
-          </div>
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon2}
-              alt=""
-            />
-          </div>
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon1}
-              alt=""
-            />
-          </div>
+        <div style="margin-left: 9%;">
+          <span class="title">Recent projects</span>
         </div>
 
-        <div class="d-flex">
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon1}
-              alt=""
-            />
-          </div>
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon2}
-              alt=""
-            />
-          </div>
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon1}
-              alt=""
-            />
-          </div>
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon2}
-              alt=""
-            />
-          </div>
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon1}
-              alt=""
-            />
-          </div>
-        </div>
-
-        <div class="d-flex">
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon1}
-              alt=""
-            />
-          </div>
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon2}
-              alt=""
-            />
-          </div>
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon1}
-              alt=""
-            />
-          </div>
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon2}
-              alt=""
-            />
-          </div>
-          <div class="icons">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization"
-              src={icon1}
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-left: 9%;">
-      <span class="title">Recent projects</span>
-    </div>
-
-    <div style="padding:7% 0 ; " class="mySwiper">
-      <div class="swiper-wrapper">
-        {
-          (props?.productData?.fields?.caseStudies as any)?.map(
-            (products: any) => (
-              <div class="swiper-slide">
-                <div>
-                  <a
-                    href={"/case-study/" + products?.fields?.heroTitle}
-                    aria-label="work"
-                  >
-                    <Image
-                      alt=""
-                      format="webp"
-                      class="swiper2Img"
-                      width={1920}
-                      height={916}
-                      src={products?.fields?.heroBanner?.fields?.file.url}
-                      alt=""
-                    />
-                  </a>
-                  <div class="imgCaptionDiv">
-                    <span
-                      class="caption1"
-                      set:html={products?.fields?.singleClient}
-                    />
-                    <p
-                      class="caption2"
-                      set:html={products?.fields?.whichTechnology}
-                    />
+        <div style="padding:7% 0 ; " class="mySwiper">
+          <div class="swiper-wrapper">
+            {(props?.productData?.fields?.caseStudies as any)?.map(
+              (products: any) => (
+                <div class="swiper-slide">
+                  <div>
+                    <a
+                      href={"/case-study/" + products?.fields?.heroTitle}
+                      aria-label="work"
+                    >
+                      <Image
+                        alt=""
+                        format="webp"
+                        class="swiper2Img"
+                        width={1920}
+                        height={916}
+                        src={products?.fields?.heroBanner?.fields?.file.url}
+                        alt=""
+                      />
+                    </a>
+                    <div class="imgCaptionDiv">
+                      <span
+                        class="caption1"
+                        set:html={products?.fields?.singleClient}
+                      />
+                      <p
+                        class="caption2"
+                        set:html={products?.fields?.whichTechnology}
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-            )
-          )
-        }
-      </div>
-    </div>
-  </section>
+              )
+            )}
+          </div>
+        </div>
+      </section>
 
-  <section style="background-color: #1a1a1a;">
-    <div class="yellowDiv">
-      <span>know more about v-tour</span>
-    </div>
-  </section>
-</Layout>
+      <section style="background-color: #1a1a1a;">
+        <div class="yellowDiv">
+          <span>know more about v-tour</span>
+        </div>
+      </section>
+    </Layout>
+  )
+}
 
 <style>
   .optimization {

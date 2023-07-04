@@ -2,7 +2,7 @@
 import { contentfulClient } from "../../lib/contentful";
 
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import products from "../products.astro";
+
 import Products from "../products.astro";
 
 export async function getStaticPaths() {
@@ -23,6 +23,8 @@ export async function getStaticPaths() {
 }
 
 const { productsData } = Astro.props;
+
+console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", productsData);
 ---
 
 <Products

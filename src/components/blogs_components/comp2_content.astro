@@ -8,7 +8,7 @@ import { Image, Picture } from "@astrojs/image/components";
 const props = Astro.props;
 
 ---
-
+{Object.keys(props).length &&
 <section class="margins">
 
     <div class="row" >
@@ -30,9 +30,6 @@ const props = Astro.props;
                     <Image  alt="" format="webp"   src={blackDiamond} class="bullets optimization" alt="" loading="lazy"/>
                    <span class="contentTitle" set:html={props.content1Heading}></span>
                     }
-                   
-                
-                
                 <span class="text" set:html={props.content1Text}></span>
             </div>
 
@@ -94,7 +91,7 @@ const props = Astro.props;
                     }
                 
 
-                <span class="text" set:html={props.content2dText}></span>
+                    <span class="text" set:html={props.content2dText}></span>
 
                 {
                     props.content2dImg &&
@@ -231,7 +228,7 @@ const props = Astro.props;
   
  
 </section>
-
+}
 <style>
 
     .optimization{

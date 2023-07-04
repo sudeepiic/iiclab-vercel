@@ -33,140 +33,124 @@ export async function getStaticPaths() {
 }
 
 const { caseStudyData } = Astro.props;
+const data = caseStudyData.fields;
+
+console.log(
+  "\n\n\n\n\n\n\n\n\n\n\n\nn\n",
+  data?.heroVideo?.fields.file.url,
+  data?.heroVideo?.fields?.file.url,
+  data.brandLogos
+);
 ---
 
-<Layout title="case study" seoTitle={caseStudyData.fields.heroTitle}>
-  <Title1
-    heroTitle={documentToHtmlString(caseStudyData.fields.heroTitleMain)}
-    heroVideo={caseStudyData.fields?.heroVideo?.fields?.file.url}
-    herobanner={caseStudyData.fields?.heroBanner?.fields?.file.url}
-    whichTechnology={caseStudyData.fields?.whichTechnology}
-    herobanner2={caseStudyData.fields?.heroBanner2?.fields?.file.url}
-    heroContent={documentToHtmlString(caseStudyData.fields.heroContent)}
-    pointerHead1={documentToHtmlString(caseStudyData.fields.pointerHead1)}
-    pointerHeading1={caseStudyData.fields?.pointerHeading1}
-    contentPointers1={documentToHtmlString(
-      caseStudyData.fields.contentPointers1
-    )}
-    pointerHead2={documentToHtmlString(caseStudyData.fields.pointerHead2)}
-    pointerHeading2={caseStudyData.fields?.pointerHeading2}
-    contentPointers2={documentToHtmlString(
-      caseStudyData.fields.contentPointers2
-    )}
-    clientInfo={documentToHtmlString(caseStudyData.fields.clientInfo)}
-    solutionInfo={documentToHtmlString(caseStudyData.fields.solutionInfo)}
-    brandLogo1={caseStudyData?.fields?.brandLogos &&
-      caseStudyData?.fields?.brandLogos[0]?.fields?.file.url}
-    brandLogo2={caseStudyData?.fields?.brandLogos &&
-      caseStudyData?.fields?.brandLogos[1]?.fields?.file.url}
-    carousalImage1={caseStudyData?.fields?.carousalImages &&
-      caseStudyData?.fields?.carousalImages[0]?.fields?.file.url}
-    carousalImage2={caseStudyData?.fields?.carousalImages &&
-      caseStudyData?.fields?.carousalImages[1]?.fields?.file.url}
-    carousalImage3={caseStudyData?.fields?.carousalImages &&
-      caseStudyData?.fields?.carousalImages[2]?.fields?.file.url}
-    carousalImage4={caseStudyData?.fields?.carousalImages &&
-      caseStudyData?.fields?.carousalImages[3]?.fields?.file.url}
-    carousalImage5={caseStudyData?.fields?.carousalImages &&
-      caseStudyData?.fields?.carousalImages[4]?.fields?.file.url}
-    carousalImage6={caseStudyData?.fields?.carousalImages &&
-      caseStudyData?.fields?.carousalImages[5]?.fields?.file.url}
-  />
-
-  <Comp2
-    belowCarousalTitle={documentToHtmlString(
-      caseStudyData.fields.belowCarousalTitle
-    )}
-    belowCarousalText={documentToHtmlString(
-      caseStudyData.fields.belowCarousalText
-    )}
-    fullSizeImg={caseStudyData?.fields?.fullSizeImg?.fields?.file.url}
-  />
-
+<Layout title="case study" seoTitle={data.heroTitle}>
   {
-    caseStudyData?.fields?.midContentImg && (
-      <Comp3
-        midContentTitle={documentToHtmlString(
-          caseStudyData?.fields?.midContentTitle
-        )}
-        midContentImg={
-          caseStudyData?.fields?.midContentImg &&
-          caseStudyData?.fields?.midContentImg[0]?.fields?.file.url
+    false && (
+      <Title1
+        heroTitle={documentToHtmlString(data.heroTitleMain)}
+        heroVideo={data?.heroVideo?.fields?.file.url}
+        herobanner={data?.heroBanner?.fields?.file.url}
+        whichTechnology={data?.whichTechnology}
+        herobanner2={data?.heroBanner2?.fields?.file.url}
+        heroContent={documentToHtmlString(data.heroContent)}
+        pointerHead1={documentToHtmlString(data.pointerHead1)}
+        pointerHeading1={data?.pointerHeading1}
+        contentPointers1={documentToHtmlString(data.contentPointers1)}
+        pointerHead2={documentToHtmlString(data.pointerHead2)}
+        pointerHeading2={data?.pointerHeading2}
+        contentPointers2={documentToHtmlString(data.contentPointers2)}
+        clientInfo={documentToHtmlString(data.clientInfo)}
+        solutionInfo={documentToHtmlString(data.solutionInfo)}
+        brandLogo1={data.brandLogos && data.brandLogos[0]?.fields?.file.url}
+        brandLogo2={data.brandLogos && data.brandLogos[1]?.fields?.file.url}
+        carousalImage1={
+          data.carousalImages && data.carousalImages[0]?.fields?.file.url
         }
-        midImgCaption={documentToHtmlString(caseStudyData.fields.midImgCaption)}
-        midContentText={documentToHtmlString(
-          caseStudyData.fields.midContentText
-        )}
+        carousalImage2={
+          data.carousalImages && data.carousalImages[1]?.fields?.file.url
+        }
+        carousalImage3={
+          data.carousalImages && data.carousalImages[2]?.fields?.file.url
+        }
+        carousalImage4={
+          data.carousalImages && data.carousalImages[3]?.fields?.file.url
+        }
+        carousalImage5={
+          data.carousalImages && data.carousalImages[4]?.fields?.file.url
+        }
+        carousalImage6={
+          data.carousalImages && data.carousalImages[5]?.fields?.file.url
+        }
       />
     )
   }
 
   {
-    caseStudyData.fields.tiltImagesTitle && (
+    data.fullSizeImg?.fields?.file.url && (
+      <Comp2
+        belowCarousalTitle={documentToHtmlString(data.belowCarousalTitle)}
+        belowCarousalText={documentToHtmlString(data.belowCarousalText)}
+        fullSizeImg={data.fullSizeImg?.fields?.file.url}
+      />
+    )
+  }
+
+  {
+    data.midContentImg && (
+      <Comp3
+        midContentTitle={documentToHtmlString(data.midContentTitle)}
+        midContentImg={
+          data.midContentImg && data.midContentImg[0]?.fields?.file.url
+        }
+        midImgCaption={documentToHtmlString(data.midImgCaption)}
+        midContentText={documentToHtmlString(data.midContentText)}
+      />
+    )
+  }
+
+  {
+    data.tiltImagesTitle && false && (
       <Comp4
-        tiltImagesTitle={documentToHtmlString(
-          caseStudyData.fields.tiltImagesTitle
-        )}
-        tiltImagesText={documentToHtmlString(
-          caseStudyData.fields.tiltImagesText
-        )}
-        tiltImage1={
-          caseStudyData?.fields?.tiltImages &&
-          caseStudyData?.fields?.tiltImages[0]?.fields?.file.url
-        }
-        tiltImage2={
-          caseStudyData?.fields?.tiltImages &&
-          caseStudyData?.fields?.tiltImages[1]?.fields?.file.url
-        }
-        tiltImage3={
-          caseStudyData?.fields?.tiltImages &&
-          caseStudyData?.fields?.tiltImages[2]?.fields?.file.url
-        }
+        tiltImagesTitle={documentToHtmlString(data.tiltImagesTitle)}
+        tiltImagesText={documentToHtmlString(data.tiltImagesText)}
+        tiltImage1={data.tiltImages && data.tiltImages[0]?.fields?.file.url}
+        tiltImage2={data.tiltImages && data.tiltImages[1]?.fields?.file.url}
+        tiltImage3={data.tiltImages && data.tiltImages[2]?.fields?.file.url}
       />
     )
   }
 
   <Comp5CenterText
-    bottomCompTitle={documentToHtmlString(caseStudyData.fields.bottomCompTitle)}
-    bottomCompText={documentToHtmlString(caseStudyData.fields.bottomCompText)}
+    bottomCompTitle={documentToHtmlString(data.bottomCompTitle)}
+    bottomCompText={documentToHtmlString(data.bottomCompText)}
   />
   {
-    caseStudyData?.fields?.bottomCompImgs && (
+    data.bottomCompImgs && (
       <Comp6ParallelImgs
         parallelImg1={
-          caseStudyData?.fields?.bottomCompImgs &&
-          caseStudyData?.fields?.bottomCompImgs[0]?.fields?.file.url
+          data.bottomCompImgs && data.bottomCompImgs[0]?.fields?.file.url
         }
         parallelImg2={
-          caseStudyData?.fields?.bottomCompImgs &&
-          caseStudyData?.fields?.bottomCompImgs[1]?.fields?.file.url
+          data.bottomCompImgs && data.bottomCompImgs[1]?.fields?.file.url
         }
       />
     )
   }
 
   {
-    caseStudyData?.fields?.belowParallelImgTitle && (
+    data.belowParallelImgTitle && (
       <Comp6b_belowParallel
-        belowParallelImgTitle={documentToHtmlString(
-          caseStudyData.fields.belowParallelImgTitle
-        )}
-        belowParallelImgText={documentToHtmlString(
-          caseStudyData.fields.belowParallelImgText
-        )}
+        belowParallelImgTitle={documentToHtmlString(data.belowParallelImgTitle)}
+        belowParallelImgText={documentToHtmlString(data.belowParallelImgText)}
       />
     )
   }
 
   {
-    caseStudyData.fields.yellowCompTitle && (
+    data.yellowCompTitle && (
       <Comp7Bottom
-        yellowCompTitle={documentToHtmlString(
-          caseStudyData.fields.yellowCompTitle
-        )}
-        yellowCompText={documentToHtmlString(
-          caseStudyData.fields.yellowCompText
-        )}
+        yellowCompTitle={documentToHtmlString(data.yellowCompTitle)}
+        yellowCompText={documentToHtmlString(data.yellowCompText)}
       />
     )
   }

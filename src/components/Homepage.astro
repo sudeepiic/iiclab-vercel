@@ -2,14 +2,15 @@
 import { Image, Picture } from "@astrojs/image/components";
 import puase from "../images/pauselogo.png";
 import arrow from "../images/arrow.png";
-import home from "../images/home-1.png";
+import BannerImg from "../images/bannerImg2.jpg";
 import hand2 from "../images/hand-2.png";
 import ovalArrow from "../images/ovalArrow.png";
 import vector from "../images/Vector.png";
 import hefty from "../images/hefty.png";
 import circleHand from "../images/circleHand.png";
 import diamond from "../images/diamond.png";
-import iicAwards from "../images/iicAwards.png";
+import awardsNew from "../images/awardsNew.jpg";
+
 import viewAllAwards from "../images/viewAllAwards.png";
 import vVerse from "../images/vVerse.png";
 import vTour from "../images/vTour.png";
@@ -75,19 +76,19 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     <div class="d-flex" id="main2" style="margin-bottom: 2%;">
       <div id="div1" class="paraDiv">
         <span class="para para1"
-          >Ink In Caps is a full-service MarTech Agency that helps brands create
-          immersive customer experiences by harnessing Interactive Technology,
-          XR, Metaverse, Experiential Marketing, and Content Development
-          solutions.</span
+          >IIC is a full-service MarTech Agency that helps brands design
+          scalable experiential marketing campaigns harnessing Interactive
+          Technology, Augmented Reality, Virtual Reality, Metaverse & Content
+          Development solutions.</span
         >
       </div>
       <div class="head2 animateHeading">
         <span>Through Design</span><br />
         <p class="mobPara">
-          Ink In Caps is an award-winning <strong class="strong">
-            Tech+Design+Experience</strong
-          > Agency that capacitates Visionary Brands to unlock Augmented Growth and
-          boost conversations with their audiences. Intrigue Rush?
+          IIC is a full-service MarTech Agency that helps brands design scalable
+          experiential marketing campaigns harnessing Interactive Technology,
+          Augmented Reality, Virtual Reality, Metaverse & Content Development
+          solutions.
         </p>
       </div>
     </div>
@@ -144,7 +145,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
   <Image
     alt=""
     format="webp"
-    src={home}
+    src={BannerImg}
     alt=""
     style="height:100%;width:100%; "
     class="optimization"
@@ -403,6 +404,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               <li class="list">Virtual reality</li>
               <li class="list">Augmented reality</li>
               <li class="list">Projection mapping</li>
+              <li class="list">Holographic Technology</li>
             </ul>
           </td>
           <td
@@ -419,6 +421,38 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         </tr>
         <tr class="hover">
           <td class="index">02.</td>
+          <td class="tech">Experiential Marketing</td>
+          <td>
+            <ul class="trial">
+              <Image
+                alt=""
+                format="webp"
+                src={solnImg5}
+                class="trial2 optimization"
+                alt=""
+              />
+              <li class="list">Gesture Recognition</li>
+              <li class="list">Motion Capture</li>
+              <li class="list">Interactive Tech-led Campaigns</li>
+              <li class="list">IoT/Custom Solutions</li>
+              <li class="list">PhotoBooth</li>
+              <li class="list">Kiosk/Vending Machine</li>
+              <li class="list">Multi-traction Tables</li>
+            </ul></td
+          >
+          <td
+            ><Image
+              alt=""
+              format="webp"
+              class="table optimization"
+              style="width:1.3rem; height:1.3rem; "
+              src={vector}
+              alt=""
+            /></td
+          >
+        </tr>
+        <tr class="hover">
+          <td class="index">03.</td>
           <td class="tech">Interactive Solution</td>
           <td>
             <ul class="trial">
@@ -431,7 +465,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               />
               <li class="list">Interactive Wall/Screen</li>
               <li class="list">Interactive Table/Interactive Book</li>
-              <li class="list">Engagement Experts</li>
+              <li class="list">3D Configurators</li>
               <li class="list">Object Recognition Table</li>
             </ul></td
           >
@@ -447,7 +481,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           >
         </tr>
         <tr class="hover">
-          <td class="index">03.</td>
+          <td class="index">04.</td>
           <td class="tech">Mobile & Web</td>
           <td>
             <ul class="trial">
@@ -476,7 +510,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         </tr>
 
         <tr class="hover">
-          <td class="index">04.</td>
+          <td class="index">05.</td>
           <td class="tech">Content Development</td>
           <td>
             <ul class="trial">
@@ -491,36 +525,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               <li class="list">Motion Graphics</li>
               <li class="list">Architectural Visualization</li>
               <li class="list">Expainer Videos</li>
-            </ul></td
-          >
-          <td
-            ><Image
-              alt=""
-              format="webp"
-              class="table optimization"
-              style="width:1.3rem; height:1.3rem; "
-              src={vector}
-              alt=""
-            /></td
-          >
-        </tr>
-
-        <tr class="hover">
-          <td class="index">05.</td>
-          <td class="tech">Experiential Marketing</td>
-          <td>
-            <ul class="trial">
-              <Image
-                alt=""
-                format="webp"
-                src={solnImg5}
-                class="trial2 optimization"
-                alt=""
-              />
-              <li class="list">Motion Gesture</li>
-              <li class="list">Interactive Campaign</li>
-              <li class="list">Photobooth</li>
-              <li class="list">Kiosk/Vending Machine</li>
+              <li class="list">Anamorphic Content</li>
             </ul></td
           >
           <td
@@ -601,6 +606,45 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           <li>Virtual Reality</li>
           <li>Augmented Reality</li>
           <li>Projection Mapping</li>
+          <li>Holographic Technology</li>
+        </div>
+      </div>
+    </div>
+    <div class="mobSolutions">
+      <div class="row">
+        <div style="margin-bottom: 4.3%;" class="col-10 d-flex">
+          <div class="mobIndex">02.</div>
+          <div class="mobTech">Experiential Marketing</div>
+        </div>
+        <div class="col-2">
+          <Image
+            alt=""
+            format="webp"
+            class="table1 optimization"
+            style="width:1.3rem; height:1.3rem; "
+            src={vector}
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-5">
+          <Image
+            alt=""
+            format="webp"
+            class="mobImg optimization"
+            src={solnImg5}
+            alt=""
+          />
+        </div>
+        <div class="col-7 mobList">
+          <li>Gesture Recognition</li>
+          <li>Motion Capture</li>
+          <li>Interactive Tech-led Campaigns</li>
+          <li>IoT/Custom Solutions</li>
+          <li>PhotoBooth</li>
+          <li>Kiosk/Vending Machine</li>
+          <li>Multi-traction Tables</li>
         </div>
       </div>
     </div>
@@ -608,7 +652,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     <div class="mobSolutions">
       <div class="row">
         <div style="margin-bottom: 4.3%;" class="col-10 d-flex">
-          <div class="mobIndex">02.</div>
+          <div class="mobIndex">03.</div>
           <div class="mobTech">Interactive Solutions</div>
         </div>
         <div class="col-2">
@@ -635,7 +679,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         <div class="col-7 mobList">
           <li>Interactive Wall/Screen</li>
           <li>Interactive Table/Interactive Book</li>
-          <li>Enagagement Experts</li>
+          <li>3D Configurators</li>
           <li>Object Recognition Table</li>
         </div>
       </div>
@@ -644,7 +688,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     <div class="mobSolutions">
       <div class="row">
         <div style="margin-bottom: 4.3%;" class="col-10 d-flex">
-          <div class="mobIndex">03.</div>
+          <div class="mobIndex">04.</div>
           <div class="mobTech">Mobile & Web</div>
         </div>
         <div class="col-2">
@@ -679,7 +723,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     <div class="mobSolutions">
       <div class="row">
         <div style="margin-bottom: 4.3%;" class="col-10 d-flex">
-          <div class="mobIndex">04.</div>
+          <div class="mobIndex">05.</div>
           <div class="mobTech">Content Development</div>
         </div>
         <div class="col-2">
@@ -708,45 +752,11 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           <li>Motion Graphics</li>
           <li>Architectural Visualisation</li>
           <li>Explainer Videos</li>
+          <li>Anamorphic Content</li>
         </div>
       </div>
     </div>
 
-    <div class="mobSolutions">
-      <div class="row">
-        <div style="margin-bottom: 4.3%;" class="col-10 d-flex">
-          <div class="mobIndex">05.</div>
-          <div class="mobTech">Experiential Marketing</div>
-        </div>
-        <div class="col-2">
-          <Image
-            alt=""
-            format="webp"
-            class="table1 optimization"
-            style="width:1.3rem; height:1.3rem; "
-            src={vector}
-            alt=""
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-5">
-          <Image
-            alt=""
-            format="webp"
-            class="mobImg optimization"
-            src={solnImg5}
-            alt=""
-          />
-        </div>
-        <div class="col-7 mobList">
-          <li>Motion Gesture</li>
-          <li>Interactive Campaign</li>
-          <li>Photobooth</li>
-          <li>Kiosk/Vending Machine</li>
-        </div>
-      </div>
-    </div>
     <div class="mobSolutions">
       <div class="row">
         <div style="margin-bottom: 4.3%;" class="col-10 d-flex">
@@ -928,7 +938,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
   <Image
     alt=""
     format="webp"
-    src={iicAwards}
+    src={awardsNew}
     alt=""
     class="optimization"
     style="height:100%;width:100%; "
@@ -1050,8 +1060,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
     <div class="testimText-animate col-md-5 col-lg-5 col-sm-12">
       <span class="blackPara2"
-        >The best motivation is carving acclaimed success stories for our
-        forevisioned clients</span
+        >Carving inspiring brand success stories through transformative MarTech
+        solutions</span
       >
     </div>
   </div>
@@ -1247,6 +1257,34 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         <tr class="product-table">
           <td style="font-family: Anek Devanagari;">1.</td>
           <td style="color:white" class="tools"
+            >V-Retail : Leading virtual sales assistant tool</td
+          >
+          <td style="color:#252525; text-align: end;" class="awardName">
+            <Image
+              alt=""
+              format="webp"
+              style="width: 7vw;"
+              src={vRetail}
+              class="optimization"
+            /></td
+          >
+          <td
+            ><button class="btn"
+              ><Image
+                alt=""
+                format="webp"
+                style="width:2.5rem; "
+                class="table optimization"
+                src={toolsArrow}
+                alt=""
+                aria-label="v-retail"
+              /></button
+            ></td
+          >
+        </tr>
+        <tr class="product-table">
+          <td style="font-family: Anek Devanagari;">2.</td>
+          <td style="color:white" class="tools"
             >V-Verse : revolutionary metaverse platform by ink in caps</td
           >
           <td style="color:#252525; text-align: end;" class="awardName">
@@ -1273,7 +1311,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           >
         </tr>
         <tr class="product-table">
-          <td style="font-family: Anek Devanagari;">2.</td>
+          <td style="font-family: Anek Devanagari;">3.</td>
           <td style="color:white" class="tools"
             >V-tour : India's Leading Virtual Events Platform</td
           >
@@ -1299,34 +1337,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             ></td
           >
         </tr>
-        <tr class="product-table">
-          <td style="font-family: Anek Devanagari;">3.</td>
-          <td style="color:white" class="tools"
-            >V-Retail : Get your business virtualized the right way</td
-          >
-          <td style="color:#252525; text-align: end;" class="awardName">
-            <Image
-              alt=""
-              format="webp"
-              style="width: 7vw;"
-              src={vRetail}
-              class="optimization"
-            /></td
-          >
-          <td
-            ><button class="btn"
-              ><Image
-                alt=""
-                format="webp"
-                style="width:2.5rem; "
-                class="table optimization"
-                src={toolsArrow}
-                alt=""
-                aria-label="v-retail"
-              /></button
-            ></td
-          >
-        </tr>
+
         <tr class="product-table">
           <td style="font-family: Anek Devanagari;">4.</td>
           <td style="color:white" class="tools"
@@ -1863,7 +1874,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       position: absolute;
       z-index: 1000;
       right: 10%;
-      margin-top: 23%;
+      margin-top: 25%;
     }
     .trial {
       position: relative;

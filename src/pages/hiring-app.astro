@@ -12,269 +12,281 @@ const props = Astro.props;
 console.log(props.jobProfile);
 ---
 
-<Layout title="hiring-app" seoTitle="hiring-app">
-  <section>
-    <div class="gradient">
-      <div class="bgImage">
-        <div class="title">
-          <span set:html={props.jobProfile} /><br />
-          <a href="#apply">
-            <Image
-              alt=""
-              format="webp"
-              class="btn optimization"
-              style="width: 32%; margin-bottom: 5%;"
-              src={applyNow}
-              alt=""
-            />
-          </a>
+{
+  Object.keys(props).length && (
+    <Layout title="hiring-app" seoTitle="hiring-app">
+      <section>
+        <div class="gradient">
+          <div class="bgImage">
+            <div class="title">
+              <>
+                <span set:html={props.jobProfile} />
+                <br />
+              </>
+              <a href="#apply">
+                <Image
+                  alt=""
+                  format="webp"
+                  class="btn optimization"
+                  style="width: 32%; margin-bottom: 5%;"
+                  src={applyNow}
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="margins" id="apply">
-    <p class="heading">About the job</p>
-    <span class="text" set:html={props.aboutJob} />
+      <section class="margins" id="apply">
+        <p class="heading">About the job</p>
+        <span class="text" set:html={props.aboutJob} />
 
-    <p class="heading">Responsibilities</p>
-    <span class="text" set:html={props.responsibilities} />
+        <p class="heading">Responsibilities</p>
+        <span class="text" set:html={props.responsibilities} />
 
-    <p class="heading">job requirements</p>
-    <span
-      class="text"
-      style="margin-bottom: 2%;"
-      set:html={props.jobRequirements}
-    />
-    {
-      props.qualifications && (
-        <>
-          <p class="heading">Qualifications</p>
-          <span
-            class="text"
-            style="margin-bottom: 2%;"
-            set:html={props.qualifications}
-          />
-        </>
-      )
-    }
-
-    <br />
-    <!--  <Image alt="" format="webp"   style="width: 3%; margin-right: 2%;" src={ps} alt="" />
-     <Image alt="" format="webp"   style="width: 3%; margin-right: 2%;" src={ps} alt="" />
-     <Image alt="" format="webp"   style="width: 3%; margin-right: 2%;" src={ps} alt="" /> -->
-  </section>
-
-  <section class="formSec">
-    <div class="row">
-      <div class="col-5">
-        <p class="formTitle">Interested?</p>
-        <p class="formTitle" style="color:#e5ff53">Apply Now!</p>
-      </div>
-
-      <div class="col-7">
-        <form action="" id="application">
-          <div class="input-group mb-3 input-group-lg">
-            <div class="input-group-prepend" style="margin-bottom: 2.5%;">
-              <span class="inp-title input-group-text">Your Name :</span>
-            </div>
-            <input
-              type="text"
-              style="margin-bottom: 2.5%;"
-              placeholder="write your full name"
-              class="input form-control"
-              id="name"
-              name="name"
-              required
+        <p class="heading">job requirements</p>
+        <span
+          class="text"
+          style="margin-bottom: 2%;"
+          set:html={props.jobRequirements}
+        />
+        {props.qualifications && (
+          <>
+            <p class="heading">Qualifications</p>
+            <span
+              class="text"
+              style="margin-bottom: 2%;"
+              set:html={props.qualifications}
             />
+          </>
+        )}
+
+        <br />
+      </section>
+
+      <section class="formSec">
+        <div class="row">
+          <div class="col-5">
+            <p class="formTitle">Interested?</p>
+            <p class="formTitle" style="color:#e5ff53;">
+              Apply Now!
+            </p>
           </div>
 
-          <div
-            style="margin-bottom: 3%;"
-            class="input-group mb-3 input-group-lg"
-          >
-            <div class="input-group-prepend" style="margin-bottom: 2.5%;">
-              <span class="inp-title input-group-text">Your Email :</span>
-            </div>
-            <input
-              type="email"
-              style="margin-bottom: 2.5%;"
-              placeholder="Enter Your email address"
-              class="input form-control"
-              id="email"
-              name="email"
-              required
-            />
-          </div>
+          <div class="col-7">
+            <form action="" id="application">
+              <div class="input-group mb-3 input-group-lg">
+                <div class="input-group-prepend" style="margin-bottom: 2.5%;">
+                  <span class="inp-title input-group-text">Your Name :</span>
+                </div>
+                <input
+                  type="text"
+                  style="margin-bottom: 2.5%;"
+                  placeholder="write your full name"
+                  class="input form-control"
+                  id="name"
+                  name="name"
+                  required
+                />
+              </div>
 
-          <div
-            style="margin-bottom: 3%;"
-            class="input-group mb-3 input-group-lg"
-          >
-            <div class="input-group-prepend" style="margin-bottom: 2.5%;">
-              <span class="inp-title input-group-text">Phone :</span>
-            </div>
-            <input
-              type="tel"
-              style="margin-bottom: 2.5%;"
-              placeholder="123 456 7890"
-              class="input form-control"
-              id="phoneNumber"
-              name="phoneNumber"
-              pattern="[0-9]{10}"
-              required
-            />
-          </div>
-
-          <div
-            style="margin-bottom: 3%;"
-            class="input-group mb-3 input-group-lg"
-          >
-            <div class="input-group-prepend" style="margin-bottom: 2.5%;">
-              <span class="inp-title input-group-text">Upload resume :</span>
-            </div>
-            <input
-              type="file"
-              style="margin-bottom: 2.5%; padding-top: 4.5%;"
-              placeholder="Enter link to your CV/Resume"
-              class="input form-control"
-              id="resume"
-              name="resume"
-              required
-            />
-          </div>
-
-          <div
-            style="margin-bottom: 3%;"
-            class="input-group mb-3 input-group-lg"
-          >
-            <div class="input-group-prepend" style="margin-bottom: 2.5%;">
-              <span class="inp-title input-group-text">Portfolio Link :</span>
-            </div>
-            <input
-              type="text"
-              style="margin-bottom: 2.5%;"
-              placeholder="Enter Your Portfolio Link"
-              class="input form-control"
-              id="portfolioLink"
-              name="portfolioLink"
-              required
-            />
-          </div>
-
-          <div
-            style="margin-bottom: 3%;"
-            class="input-group mb-3 input-group-lg"
-          >
-            <div class="input-group-prepend" style="margin-bottom: 2.5%;">
-              <span class="inp-title input-group-text"
-                >Linkedin (optional) :</span
+              <div
+                style="margin-bottom: 3%;"
+                class="input-group mb-3 input-group-lg"
               >
-            </div>
-            <input
-              type="text"
-              style="margin-bottom: 2.5%;"
-              placeholder="LinkedIn Username"
-              class="input form-control"
-              id="linkedinUsername"
-              name="linkedinUsername"
-            />
-          </div>
+                <div class="input-group-prepend" style="margin-bottom: 2.5%;">
+                  <span class="inp-title input-group-text">Your Email :</span>
+                </div>
+                <input
+                  type="email"
+                  style="margin-bottom: 2.5%;"
+                  placeholder="Enter Your email address"
+                  class="input form-control"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
 
-          <div
-            style="margin-bottom: 3%;"
-            class="input-group mb-3 input-group-lg"
-          >
-            <div class="input-group-prepend" style="margin-bottom: 2.5%;">
-              <span class="inp-title input-group-text">Current Job Role :</span>
-            </div>
-            <input
-              type="text"
-              style="margin-bottom: 2.5%;"
-              placeholder="Web Developer"
-              class="input form-control"
-              id="currentJobRole"
-              name="currentJobRole"
-              required
-            />
-          </div>
-
-          <div
-            style="margin-bottom: 3%;"
-            class="input-group mb-3 input-group-lg"
-          >
-            <div class="input-group-prepend" style="margin-bottom: 2.5%;">
-              <span class="inp-title input-group-text"
-                >Year of Experience :</span
+              <div
+                style="margin-bottom: 3%;"
+                class="input-group mb-3 input-group-lg"
               >
-            </div>
-            <input
-              type="text"
-              style="margin-bottom: 2.5%;"
-              placeholder="02 years"
-              class="input form-control"
-              id="experience"
-              name="experience"
-              required
-            />
+                <div class="input-group-prepend" style="margin-bottom: 2.5%;">
+                  <span class="inp-title input-group-text">Phone :</span>
+                </div>
+                <input
+                  type="tel"
+                  style="margin-bottom: 2.5%;"
+                  placeholder="123 456 7890"
+                  class="input form-control"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  pattern="[0-9]{10}"
+                  required
+                />
+              </div>
+
+              <div
+                style="margin-bottom: 3%;"
+                class="input-group mb-3 input-group-lg"
+              >
+                <div class="input-group-prepend" style="margin-bottom: 2.5%;">
+                  <span class="inp-title input-group-text">
+                    Upload resume :
+                  </span>
+                </div>
+                <input
+                  type="file"
+                  style="margin-bottom: 2.5%; padding-top: 4.5%;"
+                  placeholder="Enter link to your CV/Resume"
+                  class="input form-control"
+                  id="resume"
+                  name="resume"
+                  required
+                />
+              </div>
+
+              <div
+                style="margin-bottom: 3%;"
+                class="input-group mb-3 input-group-lg"
+              >
+                <div class="input-group-prepend" style="margin-bottom: 2.5%;">
+                  <span class="inp-title input-group-text">
+                    Portfolio Link :
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  style="margin-bottom: 2.5%;"
+                  placeholder="Enter Your Portfolio Link"
+                  class="input form-control"
+                  id="portfolioLink"
+                  name="portfolioLink"
+                  required
+                />
+              </div>
+
+              <div
+                style="margin-bottom: 3%;"
+                class="input-group mb-3 input-group-lg"
+              >
+                <div class="input-group-prepend" style="margin-bottom: 2.5%;">
+                  <span class="inp-title input-group-text">
+                    Linkedin (optional) :
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  style="margin-bottom: 2.5%;"
+                  placeholder="LinkedIn Username"
+                  class="input form-control"
+                  id="linkedinUsername"
+                  name="linkedinUsername"
+                />
+              </div>
+
+              <div
+                style="margin-bottom: 3%;"
+                class="input-group mb-3 input-group-lg"
+              >
+                <div class="input-group-prepend" style="margin-bottom: 2.5%;">
+                  <span class="inp-title input-group-text">
+                    Current Job Role :
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  style="margin-bottom: 2.5%;"
+                  placeholder="Web Developer"
+                  class="input form-control"
+                  id="currentJobRole"
+                  name="currentJobRole"
+                  required
+                />
+              </div>
+
+              <div
+                style="margin-bottom: 3%;"
+                class="input-group mb-3 input-group-lg"
+              >
+                <div class="input-group-prepend" style="margin-bottom: 2.5%;">
+                  <span class="inp-title input-group-text">
+                    Year of Experience :
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  style="margin-bottom: 2.5%;"
+                  placeholder="02 years"
+                  class="input form-control"
+                  id="experience"
+                  name="experience"
+                  required
+                />
+              </div>
+
+              <div
+                style="margin-bottom: 3%;"
+                class="input-group mb-3 input-group-lg"
+              >
+                <div class="input-group-prepend" style="margin-bottom: 2.5%;">
+                  <span class="inp-title input-group-text">
+                    Notice Period :
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  style="margin-bottom: 2.5%;"
+                  placeholder="3 months"
+                  class="input form-control"
+                  id="noticePeriod"
+                  name="noticePeriod"
+                  required
+                />
+              </div>
+
+              <div
+                style="margin-bottom: 3%;"
+                class="input-group mb-3 input-group-lg"
+              >
+                <div class="input-group-prepend" style="margin-bottom: 2.5%;">
+                  <span class="inp-title input-group-text">Expected CTC :</span>
+                </div>
+                <input
+                  type="text"
+                  style="margin-bottom: 2.5%;"
+                  placeholder="x LPA"
+                  class="input form-control"
+                  id="expectedCTC"
+                  name="expectedCTC"
+                  required
+                />
+              </div>
+
+              <button
+                class="submitBtn btn"
+                type="submit"
+                id="submit"
+                aria-label="submit"
+              >
+                <Image
+                  alt=""
+                  format="webp"
+                  src={submitArrow}
+                  class="optimization"
+                  alt=""
+                />{" "}
+                submit application
+              </button>
+            </form>
           </div>
-
-          <div
-            style="margin-bottom: 3%;"
-            class="input-group mb-3 input-group-lg"
-          >
-            <div class="input-group-prepend" style="margin-bottom: 2.5%;">
-              <span class="inp-title input-group-text">Notice Period :</span>
-            </div>
-            <input
-              type="text"
-              style="margin-bottom: 2.5%;"
-              placeholder="3 months"
-              class="input form-control"
-              id="noticePeriod"
-              name="noticePeriod"
-              required
-            />
-          </div>
-
-          <div
-            style="margin-bottom: 3%;"
-            class="input-group mb-3 input-group-lg"
-          >
-            <div class="input-group-prepend" style="margin-bottom: 2.5%;">
-              <span class="inp-title input-group-text">Expected CTC :</span>
-            </div>
-            <input
-              type="text"
-              style="margin-bottom: 2.5%;"
-              placeholder="x LPA"
-              class="input form-control"
-              id="expectedCTC"
-              name="expectedCTC"
-              required
-            />
-          </div>
-
-          <button
-            class="submitBtn btn"
-            type="submit"
-            id="submit"
-            aria-label="submit"
-          >
-            <Image
-              alt=""
-              format="webp"
-              src={submitArrow}
-              class="optimization"
-              alt=""
-            /> submit application
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-</Layout>
-
+        </div>
+      </section>
+    </Layout>
+  )
+}
 <script>
   import swal from "sweetalert";
   document

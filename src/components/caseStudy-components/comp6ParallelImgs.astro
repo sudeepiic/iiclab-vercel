@@ -9,29 +9,33 @@ import { Image, Picture } from "@astrojs/image/components";
 const props = Astro.props;
 ---
 
-<section style="padding-top: 4%; background-color: #1a1a1a;">
-  <div class="margins imgs">
-    <Image
-      alt=""
-      format="webp"
-      class="img1 optimization"
-      src={props.parallelImg1}
-      width={540}
-      height={370}
-      loading="lazy"
-    />
+{
+  Object.keys(props).length && (
+    <section style="padding-top: 4%; background-color: #1a1a1a;">
+      <div class="margins imgs">
+        <Image
+          alt=""
+          format="webp"
+          class="img1 optimization"
+          src={props.parallelImg1}
+          width={540}
+          height={370}
+          loading="lazy"
+        />
 
-    <Image
-      alt=""
-      format="webp"
-      class="img2 optimization"
-      src={props.parallelImg2}
-      width={540}
-      height={370}
-      loading="lazy"
-    />
-  </div>
-</section>
+        <Image
+          alt=""
+          format="webp"
+          class="img2 optimization"
+          src={props.parallelImg2}
+          width={540}
+          height={370}
+          loading="lazy"
+        />
+      </div>
+    </section>
+  )
+}
 
 <style>
   .optimization {

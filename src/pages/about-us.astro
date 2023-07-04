@@ -8,10 +8,16 @@ import Header from "../components/Header.astro";
 import carousalNext from "../images/carousalNext.png";
 import carousalPrev from "../images/carousalPrev.png";
 import { contentfulClient } from "../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+
 import { Image, Picture } from "@astrojs/image/components";
 
 const clientsEntries = await contentfulClient.getEntries<any>({
   content_type: "clients",
+});
+
+const employeesDetails: any = await contentfulClient.getEntries<any>({
+  content_type: "employees",
 });
 
 const images = clientsEntries.items[0].fields.clientIcons;
@@ -26,7 +32,7 @@ for (let i = 0; i < numArrays; i++) {
   const splitArray = (images as []).slice(startIndex, endIndex);
   splitArrays.push(splitArray);
 }
-console.log(splitArrays);
+console.log(employeesDetails.items.fields, "yeahhhhh");
 ---
 
 <Layout title="Ink In Caps - About Us" seoTitle="about-us">
@@ -275,56 +281,34 @@ console.log(splitArrays);
     <div style="text-align: center;">
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div>
-              <Image
-                alt=""
-                format="webp"
-                class="members optimization"
-                src={members1}
-                alt=""
-                loading="lazy"
-              />
-              <div class="imgCaptionDiv">
-                <span class="memberName"> Manish Tiwari</span>
-                <p class="memberDsgn">Senior Graphic Designer</p>
+          {
+            employeesDetails.items.map((employees) => (
+              <div class="swiper-slide">
+                <div>
+                  <Image
+                    alt=""
+                    format="webp"
+                    class="members optimization"
+                    src={employees?.fields?.photo?.fields?.file.url}
+                    alt=""
+                    loading="lazy"
+                    width={641}
+                    height={844}
+                  />
+                  <div class="imgCaptionDiv">
+                    <span
+                      class="memberName"
+                      set:html={documentToHtmlString(employees?.fields?.name)}
+                    />
+                    <p
+                      class="memberDsgn"
+                      set:html={employees?.fields?.designation}
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div>
-              <Image
-                alt=""
-                format="webp"
-                class="members optimization"
-                src={members1}
-                alt=""
-                loading="lazy"
-              />
-              <div class="imgCaptionDiv">
-                <span class="memberName"> Ayush Shrivastav</span>
-                <p class="memberDsgn">Web Development Intern</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div>
-              <Image
-                alt=""
-                format="webp"
-                class="members optimization"
-                src={members1}
-                alt=""
-                loading="lazy"
-              />
-              <div class="imgCaptionDiv">
-                <span class="memberName">Sudeep Kuchara</span>
-                <p class="memberDsgn">Senior Developer</p>
-              </div>
-            </div>
-          </div>
+            ))
+          }
         </div>
         <Image
           alt=""
@@ -374,6 +358,8 @@ console.log(splitArrays);
   .members {
     border: 10px solid white;
     width: 70%;
+    aspect-ratio: 641/844;
+    object-fit: cover;
   }
   .members::before {
     content: url("../images/imgTags.png");

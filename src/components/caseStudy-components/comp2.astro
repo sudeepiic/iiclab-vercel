@@ -9,35 +9,34 @@ import { Image, Picture } from "@astrojs/image/components";
 const props = Astro.props;
 ---
 
-<section
-  style="padding-top: 2%; padding-bottom: 2%; background-color: #1a1a1a;"
->
-  <div class="margins row">
-    <div
-      class="col-lg-6 col-md-6 col-sm-12 heading animate-title"
-      set:html={props.belowCarousalTitle}
-    >
-      <!-- <Image alt="" format="webp"   style="width: 7%;" src={paraDiamond} alt="" /> -->
-    </div>
+{
+  Object.keys(props).length && (
+    <section style="padding-top: 2%; padding-bottom: 2%; background-color: #1a1a1a;">
+      <div class="margins row">
+        <div
+          class="col-lg-6 col-md-6 col-sm-12 heading animate-title"
+          set:html={props.belowCarousalTitle}
+        />
 
-    <div
-      class="col-lg-5 col-md-5 col-sm-12 para animate-text"
-      set:html={props.belowCarousalText}
-    />
-  </div>
+        <div
+          class="col-lg-5 col-md-5 col-sm-12 para animate-text"
+          set:html={props.belowCarousalText}
+        />
+      </div>
 
-  <div class="margins img animate-img">
-    <Image
-      alt=""
-      format="webp"
-      width={1600}
-      height={900}
-      src={props.fullSizeImg}
-      class="optimization"
-    />
-  </div>
-</section>
-
+      <div class="margins img animate-img">
+        <Image
+          alt=""
+          format="webp"
+          width={1600}
+          height={900}
+          src={props.fullSizeImg}
+          class="optimization"
+        />
+      </div>
+    </section>
+  )
+}
 <style>
   .optimization {
     height: auto;

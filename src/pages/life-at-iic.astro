@@ -5,9 +5,17 @@ import blogsRight from "../images/blogsRight.png";
 import hiringHeroImg from "../images/hiringHeroImg.jpg";
 import officeImg from "../images/officeImg.png";
 import values from "../images/values.jpg";
-import values3 from "../images/values3.png";
+import VR from "../images/VR.jpg";
 import carousalNext from "../images/carousalNext.png";
 import carousalPrev from "../images/carousalPrev.png";
+import conferenceRoomDiscussion from "../images/conferenceRoomDiscussion.jpg";
+import discussion from "../images/discussion.jpg";
+import discussion2 from "../images/discussion2.jpg";
+import discussion3 from "../images/discussion3.jpg";
+import discussion4 from "../images/discussion4.jpg";
+import unoGame from "../images/unoGame.jpg";
+import fussball from "../images/fussball.jpg";
+
 import { Image, Picture } from "@astrojs/image/components";
 ---
 
@@ -21,8 +29,8 @@ import { Image, Picture } from "@astrojs/image/components";
         </div>
         <div class="col-lg-8 col-md-8 col-sm-12 animate-text">
           <span class="titleText">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet.
+            A fun bunch of peeps geeking out over humanizing technology through
+            design, making experiences as real as they can get
           </span>
           <span class="watermark">life at iic</span>
         </div>
@@ -36,8 +44,27 @@ import { Image, Picture } from "@astrojs/image/components";
             <Image
               alt=""
               format="webp"
-              class="optimization"
-              src={hiringHeroImg}
+              class="optimization resizeImg"
+              src={conferenceRoomDiscussion}
+              alt=""
+            />
+          </div>
+
+          <div class="swiper-slide imgWidth">
+            <Image
+              alt=""
+              format="webp"
+              class="optimization resizeImg"
+              src={unoGame}
+              quality={90}
+            />
+          </div>
+          <div class="swiper-slide imgWidth">
+            <Image
+              alt=""
+              format="webp"
+              class="optimization resizeImg"
+              src={discussion}
               alt=""
             />
           </div>
@@ -45,8 +72,9 @@ import { Image, Picture } from "@astrojs/image/components";
             <Image
               alt=""
               format="webp"
-              class="optimization"
-              src={officeImg}
+              class="optimization resizeImg"
+              src={discussion4}
+              quality={90}
               alt=""
             />
           </div>
@@ -54,8 +82,17 @@ import { Image, Picture } from "@astrojs/image/components";
             <Image
               alt=""
               format="webp"
-              class="optimization"
-              src={officeImg}
+              class="optimization resizeImg"
+              src={discussion2}
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide imgWidth">
+            <Image
+              alt=""
+              format="webp"
+              class="optimization resizeImg"
+              src={discussion3}
               alt=""
             />
           </div>
@@ -88,32 +125,33 @@ import { Image, Picture } from "@astrojs/image/components";
               <Image
                 alt=""
                 format="webp"
-                class="optimization top-right-img"
-                src={values3}
+                class="optimization top-right-img resize3"
+                src={VR}
                 alt=""
               />
               <Image
                 alt=""
                 format="webp"
-                class="optimization main-img"
-                src={values}
+                class="optimization main-img resize2"
+                src={discussion4}
                 alt=""
               />
               <Image
                 alt=""
                 format="webp"
-                class="optimization bottom-left-img"
-                src={values3}
+                class="optimization bottom-left-img resize3"
+                src={discussion}
                 alt=""
               />
             </div>
             <div class="imgCaption">
               <span>our values</span>
               <ul class="a">
-                <li>Scenario Mapping Brand Audits</li>
-                <li>Brand Identity</li>
-                <li>Competitor Mapping</li>
-                <li>Graphic Design & Prototype</li>
+                <li>Transparency</li>
+                <li>Passion</li>
+                <li>Curiosity</li>
+                <li>Innovation</li>
+                <li>Impact</li>
               </ul>
             </div>
           </div>
@@ -122,32 +160,32 @@ import { Image, Picture } from "@astrojs/image/components";
               <Image
                 alt=""
                 format="webp"
-                class="optimization top-right-img"
-                src={values3}
+                class="optimization top-right-img resize3"
+                src={conferenceRoomDiscussion}
                 alt=""
               />
               <Image
                 alt=""
                 format="webp"
-                class="optimization main-img"
-                src={values}
+                class="optimization main-img resize2"
+                src={discussion2}
                 alt=""
               />
               <Image
                 alt=""
                 format="webp"
-                class="optimization bottom-left-img"
-                src={values3}
+                class="optimization bottom-left-img resize3"
+                src={VR}
                 alt=""
               />
             </div>
             <div class="imgCaption">
               <span>our beleives</span>
               <ul class="a">
-                <li>Scenario Mapping Brand Audits</li>
-                <li>Brand Identity</li>
-                <li>Competitor Mapping</li>
-                <li>Graphic Design & Prototype</li>
+                <li>The Best is Not Enough</li>
+                <li>Quality makes THE DIFFERENCE</li>
+                <li>Great innovations can happen over a cup of coffee</li>
+                <li>Ingenuity is the core</li>
               </ul>
             </div>
           </div>
@@ -156,32 +194,32 @@ import { Image, Picture } from "@astrojs/image/components";
               <Image
                 alt=""
                 format="webp"
-                class="optimization top-right-img"
-                src={values3}
+                class="optimization top-right-img resize3"
+                src={unoGame}
                 alt=""
               />
               <Image
                 alt=""
                 format="webp"
-                class="optimization main-img"
+                class="optimization main-img resize2"
                 src={values}
                 alt=""
               />
               <Image
                 alt=""
                 format="webp"
-                class="optimization bottom-left-img"
-                src={values3}
+                class="optimization bottom-left-img resize3"
+                src={fussball}
                 alt=""
               />
             </div>
             <div class="imgCaption">
               <span>our Initiatives</span>
-              <ul class="a" style="left: 73%;">
-                <li>Scenario Mapping Brand Audits</li>
-                <li>Brand Identity</li>
-                <li>Competitor Mapping</li>
-                <li>Graphic Design & Prototype</li>
+              <ul class="a" style="left: 71%;">
+                <li>Monday Combat Meeting</li>
+                <li>Friday Five - Knowledge Transfer</li>
+                <li>Upskilling- Regular Training Sessions</li>
+                <li>Employee Engagement Activities flowing</li>
               </ul>
             </div>
           </div>
@@ -209,6 +247,19 @@ import { Image, Picture } from "@astrojs/image/components";
 <style>
   .optimization {
     height: auto;
+  }
+
+  .resizeImg {
+    aspect-ratio: 1440/691 !important;
+    object-fit: cover;
+  }
+  .resize2 {
+    aspect-ratio: 1001/720 !important;
+    object-fit: cover;
+  }
+  .resize3 {
+    aspect-ratio: 1/1 !important;
+    object-fit: cover;
   }
   .a {
     list-style-type: disc;

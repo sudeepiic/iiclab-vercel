@@ -10,6 +10,8 @@ import closeEye from "../images/closeEye.png";
 import locIcon from "../images/locIcon.png";
 import clock from "../images/clock.png";
 import ps from "../images/ps.png";
+import conferenceRoomDiscussion from "../images/conferenceRoomDiscussion.jpg";
+
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 // import jobProfiles from "../components/jobProfiles";
@@ -19,6 +21,7 @@ import viewOpenPositions from "../images/ViewOpenPosition.png";
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "jobProfiles",
 });
+console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
 ---
 
 <Layout title="Hiring" seoTitle="hiring">
@@ -45,7 +48,7 @@ const entries: any = await contentfulClient.getEntries<any>({
       format="webp"
       class="optimization"
       style="width:100%;"
-      src={hiringHeroImg}
+      src={conferenceRoomDiscussion}
     />
   </section>
 

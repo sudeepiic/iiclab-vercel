@@ -1,39 +1,45 @@
 ---
 const props = Astro.props;
 import { Image, Picture } from "@astrojs/image/components";
+console.log(props, "missing imageeeeee");
 ---
 
-<section class="bgColor">
-  <div
-    class="margins headline-animate"
-    style="text-align: center; padding-top: 4%;"
-  >
-    <span class="blogHeadline" set:html={props.blogTitle} />
-  </div>
-  <div
-    class="margins author-animate"
-    style="margin-top: 1.4%; margin-bottom: 3.5%; text-align: center;"
-  >
-    <div class="border-box"><span set:html={props.genre} /></div>
-    <span class="authorName" set:html={props.author} />
-    <span class="dot"></span>
-    <span class="readTime" set:html={props.readTime} />
-  </div>
+{
+  Object.keys(props).length && (
+    <section class="bgColor">
+      <div
+        class="margins headline-animate"
+        style="text-align: center; padding-top: 4%;"
+      >
+        <span class="blogHeadline" set:html={props.blogTitle} />
+      </div>
+      <div
+        class="margins author-animate"
+        style="margin-top: 1.4%; margin-bottom: 3.5%; text-align: center;"
+      >
+        <div class="border-box">
+          <span set:html={props.genre} />
+        </div>
+        <span class="authorName" set:html={props.author} />
+        <span class="dot" />
+        <span class="readTime" set:html={props.readTime} />
+      </div>
 
-  <div class="image-animate">
-    <Image
-      alt=""
-      format="webp"
-      src={props.heroImage}
-      alt=""
-      width={1552}
-      height={720}
-      class="optimization"
-      style="width: 100%;"
-    />
-  </div>
-</section>
-
+      <div class="image-animate">
+        <Image
+          alt=""
+          format="webp"
+          src={props.heroImage}
+          alt=""
+          width={1552}
+          height={720}
+          class="optimization"
+          style="width: 100%;"
+        />
+      </div>
+    </section>
+  )
+}
 <style>
   .optimization {
     height: auto;

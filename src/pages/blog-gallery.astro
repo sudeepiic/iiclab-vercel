@@ -158,501 +158,319 @@ const entries: any = await contentfulClient.getEntries<any>({
         </div>
         <div class="animate-imgText">
           <span class="imgText"
-            >How Are People Coping With Mind Blocking In The Current Situation?</span
+            >I Met Ravi shastri Live from My COuch, The Incredible New Wave of
+            Sports Consumption</span
           >
 
           <a
-            href="/blogs/how-are-people-coping-with-mind-blocking-in-the-current-situation"
-            aria-label="open"
-          >
-            <Image
-              alt=""
-              format="webp"
-              class="optimization btn goBtn"
-              src={yellowGo}
-              alt=""
-            /></a
-          >
-          <div class="info">
-            <div class="border-box"><span>Design & Technology</span></div>
-            <span class="authorName">By Pallavi.Jain</span>
-            <span class="dot"></span>
-            <span class="readTime">5 min read</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-6 col-sm-12 picks">
-        <div class="animate-img2">
+            href="/blogs/i-met-ravi-shastri-live-from-my-couch"
+            aria-label="open"></a>
           <Image
             alt=""
             format="webp"
-            class="optimization editorImgs"
-            src={editorImg2}
+            class="optimization btn goBtn"
+            src={yellowGo}
             alt=""
           />
         </div>
-        <div class="animate-imgText">
-          <span class="imgText">The cycle of Analysis Paralysis</span>
-          <a href="/blogs/the-cycle-of-analysis-paralysis" aria-label="open">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization btn goBtn"
-              src={yellowGo}
-              alt=""
-            />
-          </a>
-          <div class="info">
-            <div class="border-box"><span>Design & Technology</span></div>
-            <span class="authorName">By Pallavi.Jain</span>
-            <span class="dot"></span>
-            <span class="readTime">5 min read</span>
-          </div>
+        <div class="info">
+          <div class="border-box"><span>Design & Technology</span></div>
+          <span class="authorName">By Pallavi.Jain</span>
+          <span class="dot"></span>
+          <span class="readTime">5 min read</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-12 picks">
+      <div class="animate-img2">
+        <Image
+          alt=""
+          format="webp"
+          class="optimization editorImgs"
+          src={editorImg2}
+          alt=""
+        />
+      </div>
+      <div class="animate-imgText">
+        <span class="imgText">The cycle of Analysis Paralysis</span>
+        <a href="/blogs/the-cycle-of-analysis-paralysis" aria-label="open">
+          <Image
+            alt=""
+            format="webp"
+            class="optimization btn goBtn"
+            src={yellowGo}
+            alt=""
+          />
+        </a>
+        <div class="info">
+          <div class="border-box"><span>Design & Technology</span></div>
+          <span class="authorName">By Pallavi.Jain</span>
+          <span class="dot"></span>
+          <span class="readTime">5 min read</span>
         </div>
       </div>
     </div>
   </section>
+</Layout>
 
-  <section style="margin-top: 4%; margin-bottom: 4%;" id="blogsList">
-    <div class="margins row">
-      <div class="col-lg-5 col-md-5 col-sm-12">
-        <div class="titleDiv">
-          <span class="whiteHeading">Explore</span>
+<section style="margin-top: 4%; margin-bottom: 4%;" id="blogsList">
+  <div class="margins row">
+    <div class="col-lg-5 col-md-5 col-sm-12">
+      <div class="titleDiv">
+        <span class="whiteHeading">Explore</span>
 
-          <span class="whiteHeading">more</span>
-        </div>
+        <span class="whiteHeading">more</span>
+      </div>
 
-        <div class="exploreBtns">
-          <div class="makeInline">
-            <button
-              id="All"
-              class="btn exploreBtn clicked"
-              aria-label="all categories"
-              style="margin-left: 0;">All</button
-            >
-            <button id="Design" class="btn exploreBtn" aria-label="design"
-              >Design</button
-            >
-            <button
-              id="Technology"
-              class="btn exploreBtn"
-              aria-label="technology">Technology</button
-            >
-          </div>
-
+      <div class="exploreBtns">
+        <div class="makeInline">
           <button
-            id="Social"
-            class="btn exploreBtn"
-            aria-label="social"
-            style="margin-left: 0;">Social</button
+            id="All"
+            class="btn exploreBtn clicked"
+            aria-label="all categories"
+            style="margin-left: 0;">All</button
           >
-          <button id="Culture" class="btn exploreBtn" aria-label="culture"
-            >Culture</button
+          <button id="Design" class="btn exploreBtn" aria-label="design"
+            >Design</button
+          >
+          <button id="Technology" class="btn exploreBtn" aria-label="technology"
+            >Technology</button
           >
         </div>
-      </div>
 
-      <div
-        style="scroll-behavior: smooth; overflow:scroll;  height: 70vh;"
-        class="col-lg-6 col-md-6 col-sm-12"
-      >
-        {
-          entries.items.map((blogs) => (
-            <a href={"/blogs/" + blogs.fields.params} aria-label="blogs">
-              <div
-                class={
-                  "row list " +
-                  blogs.fields.genreNew.replaceAll(" ", "").toLowerCase()
-                }
-              >
-                <div class="col-9">
-                  <span class="listGenre" set:html={blogs.fields.genreNew} />
-                  <br />
-                  <span
-                    class="listText"
-                    set:html={documentToHtmlString(blogs.fields.blogTitle)}
-                  />
-                </div>
-
-                <div class="col-3">
-                  <Image
-                    alt=""
-                    format="webp"
-                    style="width:90%"
-                    width={1552}
-                    height={720}
-                    class="blogImg optimization"
-                    src={blogs.fields?.heroImage?.fields?.file.url}
-                    alt=""
-                  />
-                </div>
-              </div>
-            </a>
-          ))
-        }
+        <button
+          id="Social"
+          class="btn exploreBtn"
+          aria-label="social"
+          style="margin-left: 0;">Social</button
+        >
+        <button id="Culture" class="btn exploreBtn" aria-label="culture"
+          >Culture</button
+        >
       </div>
     </div>
-  </section>
 
-  <style>
-    .optimization {
-      height: auto;
-    }
-    .btn:focus {
-      outline: none !important;
-      box-shadow: none !important;
-    }
+    <div
+      style="scroll-behavior: smooth; overflow:scroll;  height: 70vh;"
+      class="col-lg-6 col-md-6 col-sm-12"
+    >
+      {
+        entries.items.map((blogs) => (
+          <a href={"/blogs/" + blogs.fields.params} aria-label="blogs">
+            <div
+              class={
+                "row list " +
+                blogs.fields.genreNew.replaceAll(" ", "").toLowerCase()
+              }
+            >
+              <div class="col-9">
+                <span class="listGenre" set:html={blogs.fields.genreNew} />
+                <br />
+                <span
+                  class="listText"
+                  set:html={documentToHtmlString(blogs.fields.blogTitle)}
+                />
+              </div>
+
+              <div class="col-3">
+                <Image
+                  alt=""
+                  format="webp"
+                  style="width:90%"
+                  width={1552}
+                  height={720}
+                  class="blogImg optimization"
+                  src={blogs.fields?.heroImage?.fields?.file.url}
+                  alt=""
+                />
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .optimization {
+    height: auto;
+  }
+  .btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  .arrow {
+    position: relative;
+    right: 15%;
+    width: 2.5%;
+    margin-bottom: 20%;
+  }
+
+  @media screen and (max-width: 1300px) {
     .arrow {
-      position: relative;
-      right: 15%;
-      width: 2.5%;
-      margin-bottom: 20%;
-    }
+      right: 15.4%;
 
-    @media screen and (max-width: 1300px) {
-      .arrow {
-        right: 15.4%;
+      margin-bottom: 21%;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .arrow {
+      right: 15.5%;
 
-        margin-bottom: 21%;
-      }
+      margin-bottom: 21%;
     }
-    @media screen and (max-width: 992px) {
-      .arrow {
-        right: 15.5%;
+  }
+  /* cards css */
 
-        margin-bottom: 21%;
-      }
-    }
-    /* cards css */
+  p {
+    margin-bottom: 0 !important;
+  }
+  .card {
+    width: 35rem;
+    padding: 1.4%;
+    border-radius: 0.65vw;
+  }
+  .card-innerDiv {
+    border: 2px solid #1a1a1a;
+    border-radius: 0.5vw;
+  }
+  .card-body {
+    padding: 0 !important;
+  }
+  .card-text {
+    background-color: #e5ff53;
+  }
+  .card-text span {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 2vw;
+    display: block;
+  }
+  .card-header {
+    padding: 2.5%;
+  }
+  .card-header div {
+    border: 2px solid #1a1a1a;
+    border-radius: 0.3vw 0.3vw 0 0;
+  }
+  .card-header div span {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 2.5vw;
+    display: block;
+  }
 
-    p {
-      margin-bottom: 0 !important;
+  .card-footer {
+    padding: 2.5%;
+  }
+  .card-footer div {
+    background-color: #1a1a1a;
+    border-radius: 0 0 0.3vw 0.3vw;
+  }
+  .card-footer div span {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 2.5vw;
+    color: #e5ff53;
+    /* display: block; */
+  }
+  .readMoreArrow {
+    vertical-align: baseline;
+    width: 5%;
+    margin-bottom: 1%;
+  }
+  .wrapper {
+    overflow-x: hidden;
+  }
+  .swiper-slide-active .moving-text {
+    animation: move-text 10s linear infinite;
+  }
+  @keyframes move-text {
+    0% {
+      transform: translateX(100%);
     }
-    .card {
-      width: 35rem;
-      padding: 1.4%;
-      border-radius: 0.65vw;
+    100% {
+      transform: translateX(-100%);
     }
-    .card-innerDiv {
-      border: 2px solid #1a1a1a;
-      border-radius: 0.5vw;
-    }
-    .card-body {
-      padding: 0 !important;
-    }
-    .card-text {
-      background-color: #e5ff53;
-    }
-    .card-text span {
-      font-family: "Deutschlander";
-      text-transform: uppercase;
-      font-size: 2vw;
-      display: block;
-    }
-    .card-header {
-      padding: 2.5%;
-    }
-    .card-header div {
-      border: 2px solid #1a1a1a;
-      border-radius: 0.3vw 0.3vw 0 0;
-    }
-    .card-header div span {
-      font-family: "Deutschlander";
-      text-transform: uppercase;
-      font-size: 2.5vw;
-      display: block;
-    }
+  }
 
-    .card-footer {
-      padding: 2.5%;
-    }
-    .card-footer div {
-      background-color: #1a1a1a;
-      border-radius: 0 0 0.3vw 0.3vw;
-    }
-    .card-footer div span {
-      font-family: "Deutschlander";
-      text-transform: uppercase;
-      font-size: 2.5vw;
-      color: #e5ff53;
-      /* display: block; */
-    }
-    .readMoreArrow {
-      vertical-align: baseline;
-      width: 5%;
-      margin-bottom: 1%;
-    }
-    .wrapper {
-      overflow-x: hidden;
-    }
-    .swiper-slide-active .moving-text {
-      animation: move-text 10s linear infinite;
-    }
-    @keyframes move-text {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
+  .carouselImg {
+    object-fit: cover;
+    aspect-ratio: 15/14;
+    width: 100%;
+    transition: 0.7s ease;
+  }
+  .imgDiv {
+    overflow: hidden;
+  }
+  .imgDiv:hover .carouselImg {
+    transform: scale(1.2);
+  }
 
-    .carouselImg {
-      object-fit: cover;
-      aspect-ratio: 15/14;
-      width: 100%;
-      transition: 0.7s ease;
-    }
-    .imgDiv {
-      overflow: hidden;
-    }
-    .imgDiv:hover .carouselImg {
-      transform: scale(1.2);
-    }
+  /* Caraousel css */
 
-    /* Caraousel css */
+  .swiper {
+    width: 100%;
+  }
 
-    .swiper {
-      width: 100%;
-    }
+  .swiper-slide {
+    text-align: center;
+    /* font-size: 18px; */
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .swiper-slide {
-      text-align: center;
-      /* font-size: 18px; */
-      background: #1a1a1a;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  .swiper-next,
+  .swiper-prev {
+    width: 4%;
+  }
+  .swiper-prev {
+    margin-right: 3.5%;
+  }
+  .controls {
+    transform: translate(44%, 100%);
+  }
+  p {
+    margin-bottom: 0 !important;
+  }
+  @media screen and (max-width: 767px) {
+    .blogbtn,
+    .arrow {
+      display: none !important;
     }
-
-    .swiper-next,
-    .swiper-prev {
-      width: 4%;
-    }
-    .swiper-prev {
-      margin-right: 3.5%;
-    }
-    .controls {
-      transform: translate(44%, 100%);
-    }
-    p {
-      margin-bottom: 0 !important;
-    }
-    @media screen and (max-width: 767px) {
-      .blogbtn,
-      .arrow {
-        display: none !important;
-      }
-      .topText {
-        margin-top: 0 !important;
-        padding-top: 2% !important;
-      }
-      .topText span {
-        font-size: 3.2vw !important;
-        line-height: 1.7 !important;
-      }
-      .mobView {
-        margin-top: 5%;
-      }
-      .heading span,
-      .editors span {
-        font-size: 15vw !important;
-      }
-      .info {
-        margin-top: 1% !important;
-      }
-      .imgText {
-        font-size: 7.5vw !important;
-      }
-      .editorImgs {
-        margin-bottom: 0 !important;
-      }
-
-      .border-box {
-        background-color: #e5ff53;
-        text-align: center;
-        padding: 0.8vw !important;
-        width: 20vw !important;
-        border-radius: 1.5px;
-        display: inline-block;
-        vertical-align: middle;
-        line-height: 1.65;
-      }
-      .border-box span {
-        font-family: "anek devanagari";
-        font-size: 2vw !important;
-
-        font-weight: 500;
-
-        vertical-align: middle;
-      }
-
-      .authorName {
-        font-family: "anek devanagari";
-        font-size: 2vw !important;
-
-        font-weight: 400;
-        color: white;
-        margin-left: 1%;
-      }
-      .dot {
-        width: 4px;
-        height: 4px;
-        border-radius: 50%;
-        background-color: white;
-        display: inline-block;
-        margin-bottom: 0.2%;
-      }
-      .readTime {
-        font-family: "anek devanagari";
-        font-size: 2vw !important
-        ;
-
-        font-weight: 400;
-        color: white;
-
-        opacity: 50%;
-      }
-      .picks {
-        margin-bottom: 7%;
-      }
-      .titleDiv {
-        width: 100%;
-        margin-top: 3%;
-      }
-      .titleDiv span {
-        font-size: 15vw;
-      }
-      .makeInline {
-        display: inline;
-      }
-      .exploreBtn {
-        width: 16% !important;
-        font-size: 2vw !important;
-      }
-      .listText {
-        font-size: 3.3vw !important;
-      }
-      .listGenre {
-        font-size: 2.3vw !important;
-      }
-      .blogImg {
-        width: 110% !important;
-        margin-right: 3%;
-      }
-      .card-header div span {
-        font-size: 4.7vw !important;
-      }
-      .card-text span {
-        font-size: 4.2vw;
-      }
-      .card-footer div span {
-        font-size: 5.5vw;
-      }
-      .controls {
-        transform: translate(38%, 80%);
-        margin-bottom: 4%;
-      }
-      .swiper-next,
-      .swiper-prev {
-        width: 7.5%;
-      }
-      .swiper-prev {
-        margin-right: 6.5%;
-      }
-    }
-
-    .titleDiv {
-      width: 60%;
-    }
-    .exploreBtns {
-      margin-top: 3%;
-      margin-bottom: 3%;
-    }
-    .info {
-      margin-top: 3.4%;
-    }
-    a {
-      text-decoration: none;
-    }
-    .heading {
-      margin-top: 4%;
-      overflow: hidden;
-    }
-    .heading span {
-      font-family: "Deutschlander";
-      text-transform: uppercase;
-      font-size: 13vw;
-      font-weight: 400;
-      font-style: normal;
-      color: white;
-      line-height: 0.85;
-      /* padding-top: 2%; */
-    }
-
-    .margins {
-      margin-left: 7%;
-      margin-right: 7%;
-    }
-
-    .blogbtn {
-      vertical-align: top !important;
-      width: 26%;
-      opacity: 0;
-      display: inline-block;
-    }
-
     .topText {
-      margin-top: 6%;
-      padding-top: 6%;
+      margin-top: 0 !important;
+      padding-top: 2% !important;
     }
     .topText span {
-      font-family: "anek devanagari";
-      opacity: 50%;
-      color: white;
-      font-size: 2.3vw;
+      font-size: 3.2vw !important;
+      line-height: 1.7 !important;
     }
-
-    .editors {
-      margin-top: 4%;
+    .mobView {
+      margin-top: 5%;
     }
-
+    .heading span,
     .editors span {
-      font-family: "Deutschlander";
-      text-transform: uppercase;
-      font-size: 10vw;
-      font-weight: 400;
-      font-style: normal;
-      color: white;
-      line-height: 0.85;
+      font-size: 15vw !important;
     }
-
-    .editorImgs {
-      width: 100%;
-      margin-left: -9%;
-      margin-bottom: 3%;
+    .info {
+      margin-top: 1% !important;
     }
-
     .imgText {
-      font-family: "Deutschlander";
-      text-transform: uppercase;
-      font-size: 4vw;
-      font-weight: 400;
-      font-style: normal;
-      color: white;
-      line-height: 0.85;
+      font-size: 7.5vw !important;
     }
-
-    .goBtn {
-      width: 14%;
-      vertical-align: top;
+    .editorImgs {
+      margin-bottom: 0 !important;
     }
 
     .border-box {
       background-color: #e5ff53;
       text-align: center;
-      padding: 0.18vw;
-      width: 8vw;
+      padding: 0.8vw !important;
+      width: 20vw !important;
       border-radius: 1.5px;
       display: inline-block;
       vertical-align: middle;
@@ -660,7 +478,7 @@ const entries: any = await contentfulClient.getEntries<any>({
     }
     .border-box span {
       font-family: "anek devanagari";
-      font-size: 0.7vw;
+      font-size: 2vw !important;
 
       font-weight: 500;
 
@@ -669,7 +487,7 @@ const entries: any = await contentfulClient.getEntries<any>({
 
     .authorName {
       font-family: "anek devanagari";
-      font-size: 0.7vw;
+      font-size: 2vw !important;
 
       font-weight: 400;
       color: white;
@@ -685,310 +503,489 @@ const entries: any = await contentfulClient.getEntries<any>({
     }
     .readTime {
       font-family: "anek devanagari";
-      font-size: 0.7vw;
+      font-size: 2vw !important
+        ;
 
       font-weight: 400;
       color: white;
 
       opacity: 50%;
     }
-
-    .whiteHeading {
-      font-family: "Deutschlander";
-      text-transform: uppercase;
-      font-size: 10vw;
-      font-weight: 400;
-      font-style: normal;
-      /* color: white; */
-      line-height: 0.85;
+    .picks {
+      margin-bottom: 7%;
     }
-
-    .exploreBtn {
-      background-color: #f6f7f0;
-      color: black;
-      font-weight: 500;
-      font-size: 1vw;
-      border-radius: 30px;
-      width: 20%;
-      /* height:35px; */
-      border: 1.15px solid rgb(182, 181, 181);
-      font-family: "anek devanagari";
-      margin: 1.35%;
-      padding: 2%;
-    }
-
-    .exploreBtn.clicked {
-      background-color: black;
-      color: white;
-    }
-
-    .list {
-      padding-bottom: 2%;
-      padding-top: 2%;
-      border-bottom: 1.45px solid rgb(204, 202, 202);
-    }
-
-    .listGenre {
-      font-size: 0.85vw;
-      opacity: 50%;
-      font-family: "anek devanagari";
-      font-weight: 500;
-
-      text-transform: uppercase;
-    }
-
-    .listText {
-      width: 75%;
-      font-family: "anek devanagari";
-      font-weight: 600;
-      font-size: 1.2vw;
-      text-transform: capitalize;
-    }
-
-    .blogImg {
-      object-fit: cover;
-      aspect-ratio: 3/2;
-      border-radius: 0 0.8vw 0 0.8vw;
-    }
-    .topText {
-      position: relative;
-      bottom: 100%;
-    }
-    .topText:before {
-      content: "";
-      position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      background: #1a1a1a;
-      z-index: 998;
-      transition: bottom 1.2s ease;
-      transition-delay: 0.8s;
-      transition-duration: 2s;
-      overflow: hidden;
-    }
-    .topText-animation:before {
-      bottom: 100%;
-    }
-
-    .animate-img {
-      position: relative;
-    }
-    .animate-img:after {
-      content: "";
-      position: absolute;
-      right: 5%;
-      left: -10%;
-      top: 0;
-      bottom: 0;
-      background: #1a1a1a;
-      z-index: 998;
-      transition: left 1.2s ease;
-      overflow: hidden;
-    }
-    .animate-img2 {
-      position: relative;
-    }
-    .animate-img2:after {
-      content: "";
-      position: absolute;
-      right: 5%;
-      left: -10%;
-      top: 0;
-      bottom: 0;
-      background: #1a1a1a;
-      z-index: 998;
-      transition: left 1.2s ease;
-      overflow: hidden;
-    }
-    .animation-img:after {
-      left: 100%;
-    }
-  </style>
-
-  <style is:global>
-    .turnBlack {
-      background: transparent;
-      position: absolute;
+    .titleDiv {
       width: 100%;
+      margin-top: 3%;
     }
+    .titleDiv span {
+      font-size: 15vw;
+    }
+    .makeInline {
+      display: inline;
+    }
+    .exploreBtn {
+      width: 16% !important;
+      font-size: 2vw !important;
+    }
+    .listText {
+      font-size: 3.3vw !important;
+    }
+    .listGenre {
+      font-size: 2.3vw !important;
+    }
+    .blogImg {
+      width: 110% !important;
+      margin-right: 3%;
+    }
+    .card-header div span {
+      font-size: 4.7vw !important;
+    }
+    .card-text span {
+      font-size: 4.2vw;
+    }
+    .card-footer div span {
+      font-size: 5.5vw;
+    }
+    .controls {
+      transform: translate(38%, 80%);
+      margin-bottom: 4%;
+    }
+    .swiper-next,
+    .swiper-prev {
+      width: 7.5%;
+    }
+    .swiper-prev {
+      margin-right: 6.5%;
+    }
+  }
 
-    .list ul li a {
-      color: white;
-      opacity: 50%;
-    }
-    path {
-      fill: white;
-    }
+  .titleDiv {
+    width: 60%;
+  }
+  .exploreBtns {
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+  .info {
+    margin-top: 3.4%;
+  }
+  a {
+    text-decoration: none;
+  }
+  .heading {
+    margin-top: 4%;
+    overflow: hidden;
+  }
+  .heading span {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 13vw;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    line-height: 0.85;
+    /* padding-top: 2%; */
+  }
 
-    .connect,
-    .circles {
-      fill: #1a1a1a;
-    }
-    .oval {
-      fill: white;
-    }
+  .margins {
+    margin-left: 7%;
+    margin-right: 7%;
+  }
 
-    .tele {
-      fill: white;
-    }
-    .menu p {
-      color: white;
-    }
-    .menu .s1,
-    .menu .s2 {
-      border: 1px solid white;
-    }
-  </style>
+  .blogbtn {
+    vertical-align: top !important;
+    width: 26%;
+    opacity: 0;
+    display: inline-block;
+  }
 
-  <script>
-    document.querySelector(".topText").classList.add("topText-animation");
-    import { gsap } from "gsap";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
-    import Eases from "gsap";
-    gsap.registerPlugin(ScrollTrigger);
+  .topText {
+    margin-top: 6%;
+    padding-top: 6%;
+  }
+  .topText span {
+    font-family: "anek devanagari";
+    opacity: 50%;
+    color: white;
+    font-size: 2.3vw;
+  }
 
-    // swiper carousal script
+  .editors {
+    margin-top: 4%;
+  }
 
-    import {
-      Swiper,
-      Navigation,
-      Pagination,
-      EffectCoverflow,
-      Autoplay,
-      EffectCreative,
-    } from "swiper";
-    let x = 3;
-    var swiper = new Swiper(".mySwiper", {
-      modules: [Navigation, EffectCreative],
-      effect: "creative",
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: 4,
-      spaceBetween: 0,
-      loop: true,
-      navigation: {
-        nextEl: ".swiper-next",
-        prevEl: ".swiper-prev",
+  .editors span {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 10vw;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    line-height: 0.85;
+  }
+
+  .editorImgs {
+    width: 100%;
+    margin-left: -9%;
+    margin-bottom: 3%;
+  }
+
+  .imgText {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 4vw;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    line-height: 0.85;
+  }
+
+  .goBtn {
+    width: 14%;
+    vertical-align: top;
+  }
+
+  .border-box {
+    background-color: #e5ff53;
+    text-align: center;
+    padding: 0.18vw;
+    width: 8vw;
+    border-radius: 1.5px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.65;
+  }
+  .border-box span {
+    font-family: "anek devanagari";
+    font-size: 0.7vw;
+
+    font-weight: 500;
+
+    vertical-align: middle;
+  }
+
+  .authorName {
+    font-family: "anek devanagari";
+    font-size: 0.7vw;
+
+    font-weight: 400;
+    color: white;
+    margin-left: 1%;
+  }
+  .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: white;
+    display: inline-block;
+    margin-bottom: 0.2%;
+  }
+  .readTime {
+    font-family: "anek devanagari";
+    font-size: 0.7vw;
+
+    font-weight: 400;
+    color: white;
+
+    opacity: 50%;
+  }
+
+  .whiteHeading {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 10vw;
+    font-weight: 400;
+    font-style: normal;
+    /* color: white; */
+    line-height: 0.85;
+  }
+
+  .exploreBtn {
+    background-color: #f6f7f0;
+    color: black;
+    font-weight: 500;
+    font-size: 1vw;
+    border-radius: 30px;
+    width: 20%;
+    /* height:35px; */
+    border: 1.15px solid rgb(182, 181, 181);
+    font-family: "anek devanagari";
+    margin: 1.35%;
+    padding: 2%;
+  }
+
+  .exploreBtn.clicked {
+    background-color: black;
+    color: white;
+  }
+
+  .list {
+    padding-bottom: 2%;
+    padding-top: 2%;
+    border-bottom: 1.45px solid rgb(204, 202, 202);
+  }
+
+  .listGenre {
+    font-size: 0.85vw;
+    opacity: 50%;
+    font-family: "anek devanagari";
+    font-weight: 500;
+
+    text-transform: uppercase;
+  }
+
+  .listText {
+    width: 75%;
+    font-family: "anek devanagari";
+    font-weight: 600;
+    font-size: 1.2vw;
+    text-transform: capitalize;
+  }
+
+  .blogImg {
+    object-fit: cover;
+    aspect-ratio: 3/2;
+    border-radius: 0 0.8vw 0 0.8vw;
+  }
+  .topText {
+    position: relative;
+    bottom: 100%;
+  }
+  .topText:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #1a1a1a;
+    z-index: 998;
+    transition: bottom 1.2s ease;
+    transition-delay: 0.8s;
+    transition-duration: 2s;
+    overflow: hidden;
+  }
+  .topText-animation:before {
+    bottom: 100%;
+  }
+
+  .animate-img {
+    position: relative;
+  }
+  .animate-img:after {
+    content: "";
+    position: absolute;
+    right: 5%;
+    left: -10%;
+    top: 0;
+    bottom: 0;
+    background: #1a1a1a;
+    z-index: 998;
+    transition: left 1.2s ease;
+    overflow: hidden;
+  }
+  .animate-img2 {
+    position: relative;
+  }
+  .animate-img2:after {
+    content: "";
+    position: absolute;
+    right: 5%;
+    left: -10%;
+    top: 0;
+    bottom: 0;
+    background: #1a1a1a;
+    z-index: 998;
+    transition: left 1.2s ease;
+    overflow: hidden;
+  }
+  .animation-img:after {
+    left: 100%;
+  }
+</style>
+
+<style is:global>
+  .turnBlack {
+    background: transparent;
+    position: absolute;
+    width: 100%;
+  }
+
+  .list ul li a {
+    color: white;
+    opacity: 50%;
+  }
+  path {
+    fill: white;
+  }
+
+  .connect,
+  .circles {
+    fill: #1a1a1a;
+  }
+  .oval {
+    fill: white;
+  }
+
+  .tele {
+    fill: white;
+  }
+  .menu p {
+    color: white;
+  }
+  .menu .s1,
+  .menu .s2 {
+    border: 1px solid white;
+  }
+</style>
+
+<script>
+  document.querySelector(".topText").classList.add("topText-animation");
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import Eases from "gsap";
+  gsap.registerPlugin(ScrollTrigger);
+
+  // swiper carousal script
+
+  import {
+    Swiper,
+    Navigation,
+    Pagination,
+    EffectCoverflow,
+    Autoplay,
+    EffectCreative,
+  } from "swiper";
+  let x = 3;
+  var swiper = new Swiper(".mySwiper", {
+    modules: [Navigation, EffectCreative],
+    effect: "creative",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 4,
+    spaceBetween: 0,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-next",
+      prevEl: ".swiper-prev",
+    },
+    creativeEffect: {
+      prev: {
+        rotate: [0, 0, -15],
+        translate: ["-85%", "9%", 0],
+        scale: 0.85,
       },
-      creativeEffect: {
-        prev: {
-          rotate: [0, 0, -15],
-          translate: ["-85%", "9%", 0],
-          scale: 0.85,
-        },
-        next: {
-          rotate: [0, 0, 15],
-          translate: ["85%", "9%", 0],
-          scale: 0.85,
-        },
-
-        limitProgress: 2,
+      next: {
+        rotate: [0, 0, 15],
+        translate: ["85%", "9%", 0],
+        scale: 0.85,
       },
 
-      breakpoints: {
-        767: {
-          slidesPerView: 4,
-          spaceBetween: 0,
-        },
-        250: {
-          slidesPerView: 1.7,
-          spaceBetween: 10,
-        },
-      },
+      limitProgress: 2,
+    },
 
-      autoplay: {
-        delay: 2000,
+    breakpoints: {
+      767: {
+        slidesPerView: 4,
+        spaceBetween: 0,
+      },
+      250: {
+        slidesPerView: 1.7,
+        spaceBetween: 10,
+      },
+    },
+
+    autoplay: {
+      delay: 2000,
+    },
+  });
+
+  // Animation Script
+
+  let tl = gsap.timeline();
+  tl.from(".animate-title", {
+    duration: 1,
+    x: "-60%",
+    opacity: 0.5,
+    ease: "power1.out",
+  })
+    .to(".blogbtn", {
+      duration: 1,
+
+      opacity: 1,
+    })
+    .from(".blogbtn", {
+      rotate: "360",
+      duration: 10,
+      repeat: -1,
+      ease: "none",
+    })
+    .from(".swiper-animate", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".swiper-animate",
+        start: "top 30%",
+        end: "bottom 90%",
+        scrub: true,
+      },
+    })
+    .from(".animate-img", {
+      // opacity: 0,
+      scrollTrigger: {
+        trigger: ".animate-img",
+        start: "top 30%",
+        end: "bottom top",
+        toggleClass: "animation-img",
+        scrub: true,
+      },
+    })
+    .from(".animate-img2", {
+      // opacity: 0,
+      scrollTrigger: {
+        trigger: ".animate-img2",
+        start: "top 30%",
+        end: "bottom top",
+        toggleClass: "animation-img",
+        scrub: true,
+      },
+    })
+    .from(".animate-imgText", 1, {
+      x: "-30%",
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".animate-imgText",
+        start: "top 68%",
+        end: "bottom 72%",
+        scrub: true,
       },
     });
 
-    // Animation Script
+  // filter for blogs based on Genre
 
-    let tl = gsap.timeline();
-    tl.from(".animate-title", {
-      duration: 1,
-      x: "-60%",
-      opacity: 0.5,
-      ease: "power1.out",
-    })
-      .to(".blogbtn", {
-        duration: 1,
+  const myButton = document.querySelectorAll(".exploreBtn");
 
-        opacity: 1,
-      })
-      .from(".blogbtn", {
-        rotate: "360",
-        duration: 10,
-        repeat: -1,
-        ease: "none",
-      })
-      .from(".swiper-animate", {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: ".swiper-animate",
-          start: "top 30%",
-          end: "bottom 90%",
-          scrub: true,
-        },
-      })
-      .from(".animate-img", {
-        // opacity: 0,
-        scrollTrigger: {
-          trigger: ".animate-img",
-          start: "top 30%",
-          end: "bottom top",
-          toggleClass: "animation-img",
-          scrub: true,
-        },
-      })
-      .from(".animate-img2", {
-        // opacity: 0,
-        scrollTrigger: {
-          trigger: ".animate-img2",
-          start: "top 30%",
-          end: "bottom top",
-          toggleClass: "animation-img",
-          scrub: true,
-        },
-      })
-      .from(".animate-imgText", 1, {
-        x: "-30%",
-        opacity: 0,
-        scrollTrigger: {
-          trigger: ".animate-imgText",
-          start: "top 68%",
-          end: "bottom 72%",
-          scrub: true,
-        },
-      });
+  for (let i = 0; i < myButton.length; i++) {
+    console.log(myButton.length, "lennnngth");
+    myButton[i].addEventListener("click", function () {
+      const selectedGenre = myButton[i].id.replaceAll(" ", "-").toLowerCase();
+      document.querySelectorAll(".list").forEach((blog) => {
+        blog.classList.remove("d-none");
+        if (selectedGenre === "all") {
+          blog.classList.add("d-inline-block;");
+        } else if (!blog.classList.contains(selectedGenre)) {
+          blog.classList.add("d-none");
 
-    // filter for blogs based on Genre
-
-    const myButton = document.querySelectorAll(".exploreBtn");
-
-    for (let i = 0; i < myButton.length; i++) {
-      console.log(myButton.length, "lennnngth");
-      myButton[i].addEventListener("click", function () {
-        const selectedGenre = myButton[i].id.replaceAll(" ", "-").toLowerCase();
-        document.querySelectorAll(".list").forEach((blog) => {
-          blog.classList.remove("d-none");
-          if (selectedGenre === "all") {
-            blog.classList.add("d-inline-block;");
-          } else if (!blog.classList.contains(selectedGenre)) {
-            blog.classList.add("d-none");
-
-            console.log(blog.classList.contains(selectedGenre));
-          }
-        });
-        for (let j = 0; j < myButton.length; j++) {
-          if (i === j) {
-            myButton[j].classList.add("clicked");
-          } else {
-            myButton[j].classList.remove("clicked");
-          }
+          console.log(blog.classList.contains(selectedGenre));
         }
       });
-    }
-  </script>
-</Layout>
+      for (let j = 0; j < myButton.length; j++) {
+        if (i === j) {
+          myButton[j].classList.add("clicked");
+        } else {
+          myButton[j].classList.remove("clicked");
+        }
+      }
+    });
+  }
+</script>

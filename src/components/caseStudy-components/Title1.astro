@@ -11,21 +11,29 @@ const props = Astro.props;
 ---
 
 <section style="background-color: #1a1a1a;">
-  <Image
-    alt=""
-    format="webp"
-    src={props.herobanner}
-    width={1528}
-    height={720}
-    style="width: 100%;"
-    alt=""
-    class="optimization"
-  />
+  {
+    props.herobanner && (
+      <Image
+        alt=""
+        format="webp"
+        src={props.herobanner}
+        width={1528}
+        height={720}
+        style="width: 100%;"
+        alt=""
+        class="optimization"
+      />
+    )
+  }
 
   <div class="blankDiv">
     <div class="midDiv">
-      <div class="border-box"><span>Technology</span></div>
-      <div class="border-box"><span set:html={props.whichTechnology} /></div>
+      <div class="border-box">
+        <span>Technology</span>
+      </div>
+      <div class="border-box">
+        <span set:html={props.whichTechnology} />
+      </div>
       <div class="heading" set:html={props.heroTitle} />
     </div>
   </div>
@@ -47,14 +55,18 @@ const props = Astro.props;
 
   <div style="background-color: #1a1a1a;">
     <div class="margins img">
-      <Image
-        alt=""
-        format="webp"
-        src={props.heroVideo}
-        width={1600}
-        height={900}
-        class="optimization"
-      />
+      {
+        props.heroVideo && (
+          <Image
+            alt=""
+            format="webp"
+            src={props.heroVideo}
+            width={1600}
+            height={900}
+            class="optimization"
+          />
+        )
+      }
     </div>
   </div>
 
@@ -64,7 +76,9 @@ const props = Astro.props;
         <span class="para" set:html={props.heroContent} />
 
         <div class="row leftmg" style="margin-bottom: 2%; margin-top: 2%;">
-          <div class="content-box numbers col-2"><span>01</span></div>
+          <div class="content-box numbers col-2">
+            <span>01</span>
+          </div>
           <div class="col-10">
             <span class="pointerHead" set:html={props.pointerHeading1} />
             <span class="numbersText" set:html={props.contentPointers1} />
@@ -86,27 +100,35 @@ const props = Astro.props;
 
       <div class="bannerParent" style="width: 90%;  flex-direction: column;">
         <div class="bannerDiv">
-          <Image
-            alt=""
-            format="webp"
-            class="optimization bannerImg"
-            width={341}
-            height={443}
-            src={props.herobanner2}
-            alt=""
-          />
+          {
+            props.herobanner2 && (
+              <Image
+                alt=""
+                format="webp"
+                class="optimization bannerImg"
+                width={341}
+                height={443}
+                src={props.herobanner2}
+                alt=""
+              />
+            )
+          }
         </div>
 
         <div class="brandsDiv">
-          <Image
-            alt=""
-            format="webp"
-            class="brands b1 optimization"
-            width={400}
-            height={48}
-            src={props.brandLogo1}
-            alt=""
-          />
+          {
+            props.brandLogo1 && (
+              <Image
+                alt=""
+                format="webp"
+                class="brands b1 optimization"
+                width={400}
+                height={48}
+                src={props.brandLogo1}
+                alt=""
+              />
+            )
+          }
           {
             props.brandLogo2 && (
               <Image
@@ -125,79 +147,101 @@ const props = Astro.props;
     </div>
   </div>
 
-  <!-- carousel -->
   <div style="padding:7% 0 ; " class="swiper mySwiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <Image
-          alt=""
-          format="webp"
-          width={900}
-          height={1200}
-          src={props.carousalImage1}
-          alt=""
-          class="optimization"
-        />
+        {
+          props.carousalImage1 && (
+            <Image
+              alt=""
+              format="webp"
+              width={900}
+              height={1200}
+              src={props.carousalImage1}
+              alt=""
+              class="optimization"
+            />
+          )
+        }
       </div>
       <div class="swiper-slide">
-        <Image
-          alt=""
-          format="webp"
-          width={900}
-          height={1200}
-          src={props.carousalImage2}
-          alt=""
-          class="optimization"
-        />
+        {
+          props.carousalImage2 && (
+            <Image
+              alt=""
+              format="webp"
+              width={900}
+              height={1200}
+              src={props.carousalImage2}
+              alt=""
+              class="optimization"
+            />
+          )
+        }
       </div>
       <div class="swiper-slide">
-        <Image
-          alt=""
-          format="webp"
-          width={900}
-          height={1200}
-          src={props.carousalImage3}
-          alt=""
-          class="optimization"
-        />
+        {
+          props.carousalImage3 && (
+            <Image
+              alt=""
+              format="webp"
+              width={900}
+              height={1200}
+              src={props.carousalImage3}
+              alt=""
+              class="optimization"
+            />
+          )
+        }
       </div>
       <div class="swiper-slide">
-        <Image
-          alt=""
-          format="webp"
-          width={900}
-          height={1200}
-          src={props.carousalImage4}
-          alt=""
-          class="optimization"
-        />
+        {
+          props.carousalImage4 && (
+            <Image
+              alt=""
+              format="webp"
+              width={900}
+              height={1200}
+              src={props.carousalImage4}
+              alt=""
+              class="optimization"
+            />
+          )
+        }
       </div>
       <div class="swiper-slide">
-        <Image
-          alt=""
-          format="webp"
-          width={900}
-          height={1200}
-          src={props.carousalImage5}
-          alt=""
-          class="optimization"
-        />
+        {
+          props.carousalImage5 && (
+            <Image
+              alt=""
+              format="webp"
+              width={900}
+              height={1200}
+              src={props.carousalImage5}
+              alt=""
+              class="optimization"
+            />
+          )
+        }
       </div>
       <div class="swiper-slide">
-        <Image
-          alt=""
-          format="webp"
-          width={900}
-          height={1200}
-          src={props.carousalImage6}
-          alt=""
-          class="optimization"
-        />
+        {
+          props.carousalImage6 && (
+            <Image
+              alt=""
+              format="webp"
+              width={900}
+              height={1200}
+              src={props.carousalImage6}
+              alt=""
+              class="optimization"
+            />
+          )
+        }
       </div>
     </div>
     <div class="swiper-pagination"></div>
   </div>
-  <!--  -->
 </section>
 
 <style>
