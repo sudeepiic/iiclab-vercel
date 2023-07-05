@@ -15,7 +15,7 @@ import conferenceRoomDiscussion from "../images/conferenceRoomDiscussion.jpg";
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 // import jobProfiles from "../components/jobProfiles";
-import { Image, Picture } from "@astrojs/image/components";
+//import { Image, Picture } from "@astrojs/image/components";
 
 import viewOpenPositions from "../images/ViewOpenPosition.png";
 const entries: any = await contentfulClient.getEntries<any>({
@@ -30,7 +30,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
       <div class="col-lg-8 col-md-8 col-sm-12" style="overflow: hidden;">
         <span class="title">Join Our Team</span>
         <!-- <div>
-           <Image alt="" format="webp"   class="titleImg" src={hiringImg1} alt="" />
+           <img   class="titleImg" src={hiringImg1} alt="" />
           <span class="title">Join Our Team</span>
         </div> -->
       </div>
@@ -43,13 +43,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
         </span>
       </div>
     </div>
-    <Image
-      alt=""
-      format="webp"
-      class="optimization"
-      style="width:100%;"
-      src={conferenceRoomDiscussion}
-    />
+    <img class="" style="width:100%;" src={conferenceRoomDiscussion} />
   </section>
 
   <section class="blackSec">
@@ -65,49 +59,21 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
         style=" padding-top: 2.5%;"
       >
         <div class="col-6 pointersMob" style="padding-left: 10%;">
-          <Image
-            alt=""
-            format="webp"
-            src={team}
-            class="optimization benefitsImg"
-            alt=""
-            loading="lazy"
-          />
+          <img src={team} class="benefitsImg" alt="" loading="lazy" />
           <p class="benefitsText" style="margin-bottom: 15%;">
             Working with a highly experienced team.
           </p>
-          <Image
-            alt=""
-            format="webp"
-            src={opportunity}
-            class="optimization benefitsImg"
-            alt=""
-            loading="lazy"
-          />
+          <img src={opportunity} class="benefitsImg" alt="" loading="lazy" />
           <p class="benefitsText">
             Get opportunities to work with major brands.
           </p>
         </div>
         <div class="col-6 pointersMob" style="padding-left: 10%;">
-          <Image
-            alt=""
-            format="webp"
-            src={funLoving}
-            class="optimization benefitsImg"
-            alt=""
-            loading="lazy"
-          />
+          <img src={funLoving} class="benefitsImg" alt="" loading="lazy" />
           <p class="benefitsText" style="margin-bottom: 15%;">
             A fun-loving and creative environment.
           </p>
-          <Image
-            alt=""
-            format="webp"
-            src={fun}
-            class="optimization benefitsImg"
-            alt=""
-            loading="lazy"
-          />
+          <img src={fun} class="benefitsImg" alt="" loading="lazy" />
           <p class="benefitsText">Creative & Fun activities every week.</p>
         </div>
       </div>
@@ -214,14 +180,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
             <div class="flip-card-inner">
               <div class="card">
                 <div class="eyeDiv btn">
-                  <Image
-                    alt=""
-                    format="webp"
-                    src={closeEye}
-                    class="optimization eye"
-                    loading="lazy"
-                    alt=""
-                  />
+                  <img src={closeEye} class="  eye" loading="lazy" alt="" />
                 </div>
 
                 <div class="cardContent ">
@@ -237,21 +196,13 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
                   <span>{jobProfiles.fields.shortDescription}</span>
                 </div>
                 <div class="location">
-                  <Image
-                    alt=""
-                    format="webp"
-                    class="locIcon optimization"
-                    src={locIcon}
-                    alt=""
-                  />
+                  <img class="locIcon  " src={locIcon} alt="" />
                   <span style="margin-right: 10%;">
                     {jobProfiles.fields.location}
                   </span>
-                  <Image
-                    alt=""
-                    format="webp"
+                  <img
                     style="width: 8%;"
-                    class="optimization"
+                    class=" "
                     src={clock}
                     alt=""
                     loading="lazy"
@@ -260,13 +211,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
                 </div>
                 <div class="bottomDivBack row">
                   <div class="col-6 blackBottom">
-                    <Image
-                      alt=""
-                      format="webp"
-                      class="optimization"
-                      src={ps}
-                      alt=""
-                    />
+                    <img class=" " src={ps} alt="" />
                   </div>
 
                   <div class="col-5 btn">
@@ -286,7 +231,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
     </div>
   </section>
   <style>
-    .optimization {
+    . {
       height: auto;
     }
     a {

@@ -6,7 +6,7 @@ import caseStudyImg from "../../images/caseStudyImg.png";
 import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import type { Document } from "@contentful/rich-text-types";
-import { Image, Picture } from "@astrojs/image/components";
+//import { Image, Picture } from "@astrojs/image/components";
 
 const props = Astro.props;
 ---
@@ -15,13 +15,7 @@ const props = Astro.props;
   <div class="yellow-animate" style="background-color:#e5ff53;">
     <div class="margins row" style="overflow: hidden;">
       <div class="col-lg-4 col-md-4 col-sm-12 col4 fadein">
-        <Image
-          format="webp"
-          class="optimization"
-          src={blackDiamond}
-          alt=""
-          loading="lazy"
-        />
+        <img class="" src={blackDiamond} alt="" loading="lazy" />
         <span set:html={props.yellowCompTitle} />
       </div>
 
@@ -35,7 +29,7 @@ const props = Astro.props;
 </section>
 
 <style>
-  .optimization {
+  . {
     height: auto;
   }
   .margins {

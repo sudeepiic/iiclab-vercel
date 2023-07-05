@@ -4,7 +4,7 @@ import officeImg from "../images/officeImg.png";
 import submitArrow from "../images/submitArrow.png";
 import contactHand from "../images/contactHand.png";
 import positionBtn from "../images/positionBtn.png";
-import { Image, Picture } from "@astrojs/image/components";
+//import { Image, Picture } from "@astrojs/image/components";
 ---
 
 <Layout title="contact-us" seoTitle="contact-us">
@@ -24,13 +24,7 @@ import { Image, Picture } from "@astrojs/image/components";
         </div>
       </div>
       <div class="col-lg-7 col-md-7 col-sm-12 imgDiv">
-        <Image
-          alt=""
-          format="webp"
-          class="heroImg optimization"
-          src={officeImg}
-          alt=""
-        />
+        <img class="heroImg" src={officeImg} alt="" />
       </div>
     </div>
 
@@ -85,13 +79,8 @@ import { Image, Picture } from "@astrojs/image/components";
         id="submitBtn"
         aria-label="submit"
       >
-        <Image
-          alt=""
-          format="webp"
-          src={submitArrow}
-          class="optimization"
-          loading="lazy"
-        /> submit
+        <img src={submitArrow} class="" loading="lazy" />
+        submit
       </button>
     </form>
   </section>
@@ -179,22 +168,14 @@ import { Image, Picture } from "@astrojs/image/components";
           <span class="clan"> join our clan?</span>
         </div>
         <a class="btn-animate" href="/hiring"
-          ><Image
-            alt=""
-            format="webp"
-            class="btn posBtn optimization"
-            src={positionBtn}
-            alt=""
-          /></a
+          ><img class="btn posBtn" src={positionBtn} alt="" /></a
         >
       </div>
       <div class="col-4 hand-animate">
-        <Image
-          alt=""
-          format="webp"
+        <img
           style="width: 80%;"
           src={contactHand}
-          class="optimization"
+          class=""
           loading="lazy"
           alt=""
         />
@@ -296,7 +277,7 @@ import { Image, Picture } from "@astrojs/image/components";
 </script>
 
 <style>
-  .optimization {
+  . {
     height: auto;
   }
   .input:focus,

@@ -4,7 +4,7 @@ import portfolio1 from "../images/portfolio1.jpg";
 import featuredWorksbtn from "../images/featuredWorksbtn.jpg";
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import { Image, Picture } from "@astrojs/image/components";
+//import { Image, Picture } from "@astrojs/image/components";
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
 });
@@ -15,76 +15,28 @@ const entries: any = await contentfulClient.getEntries<any>({
     <div class="wrapper">
       <div id="main4" class="moving-text" style="width: max-content;">
         <span class="zoomIn">Our Work</span>
-        <Image
-          alt=""
-          format="webp"
-          src={portfolio1}
-          class="optimization movingImg"
-          alt=""
-        />
+        <img src={portfolio1} class="movingImg" alt="" />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
         <span>Our Work</span>
-        <Image
-          alt=""
-          format="webp"
-          src={portfolio1}
-          class="optimization movingImg"
-          alt=""
-        />
+        <img src={portfolio1} class="movingImg" alt="" />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
         <span>Our Work</span>
-        <Image
-          alt=""
-          format="webp"
-          src={portfolio1}
-          class="optimization movingImg"
-          alt=""
-        />
+        <img src={portfolio1} class="movingImg" alt="" />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
         <span>Our Work</span>
-        <Image
-          alt=""
-          format="webp"
-          src={portfolio1}
-          class="optimization movingImg"
-          alt=""
-        />
+        <img src={portfolio1} class="movingImg" alt="" />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
         <span>Our Work</span>
-        <Image
-          alt=""
-          format="webp"
-          src={portfolio1}
-          class="optimization movingImg"
-          alt=""
-        />
+        <img src={portfolio1} class="movingImg" alt="" />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
         <span>Our Work</span>
-        <Image
-          alt=""
-          format="webp"
-          src={portfolio1}
-          class="optimization movingImg"
-          alt=""
-        />
+        <img src={portfolio1} class="movingImg" alt="" />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
         <span>Our Work</span>
-        <Image
-          alt=""
-          format="webp"
-          src={portfolio1}
-          class="optimization movingImg"
-          alt=""
-        />
+        <img src={portfolio1} class="movingImg" alt="" />
         <span>our work</span>
         <span>Our Work</span>
-        <Image
-          alt=""
-          format="webp"
-          src={portfolio1}
-          class="optimization movingImg"
-          alt=""
-        />
+        <img src={portfolio1} class="movingImg" alt="" />
         <span>our work</span>
       </div>
     </div>
@@ -101,14 +53,12 @@ const entries: any = await contentfulClient.getEntries<any>({
                   aria-label="case-study"
                 >
                   <div class="animate-swiper">
-                    <Image
-                      alt=""
-                      format="webp"
+                    <img
                       src={caseStudy.fields?.heroBanner?.fields?.file.url}
                       alt=""
                       width={1528}
                       height={720}
-                      class="optimization"
+                      class=" "
                     />
                   </div>
                 </a>
@@ -130,7 +80,7 @@ const entries: any = await contentfulClient.getEntries<any>({
     </div>
     <!--  -->
 
-    <!--  <Image alt="" format="webp"   src={featuredWorksbtn} alt=""> -->
+    <!--  <img   src={featuredWorksbtn} alt=""> -->
   </section>
 
   <section>
@@ -144,13 +94,11 @@ const entries: any = await contentfulClient.getEntries<any>({
             <span class="index">{(index = index + 1)}</span>
             <span class="name" set:html={caseStudy.fields.singleClient} />
           </div>
-          <Image
-            alt=""
-            format="webp"
+          <img
             src={caseStudy.fields?.heroBanner?.fields?.file.url}
             style="width: 100%;"
             alt=""
-            class="optimization"
+            class=" "
             loading="lazy"
             width={1527}
             height={720}
@@ -174,7 +122,7 @@ const entries: any = await contentfulClient.getEntries<any>({
   </section>
 
   <style>
-    .optimization {
+    . {
       height: auto;
     }
     a {

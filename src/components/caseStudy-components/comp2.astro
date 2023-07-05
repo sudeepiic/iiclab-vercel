@@ -4,7 +4,7 @@ import paraDiamond from "../../images/paraDiamond.png";
 import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import type { Document } from "@contentful/rich-text-types";
-import { Image, Picture } from "@astrojs/image/components";
+//import { Image, Picture } from "@astrojs/image/components";
 
 const props = Astro.props;
 ---
@@ -25,20 +25,13 @@ const props = Astro.props;
       </div>
 
       <div class="margins img animate-img">
-        <Image
-          alt=""
-          format="webp"
-          width={1600}
-          height={900}
-          src={props.fullSizeImg}
-          class="optimization"
-        />
+        <img width={1600} height={900} src={props.fullSizeImg} class=" " />
       </div>
     </section>
   )
 }
 <style>
-  .optimization {
+  . {
     height: auto;
   }
   .margins {

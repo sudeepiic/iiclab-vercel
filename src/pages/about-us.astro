@@ -10,7 +10,7 @@ import carousalPrev from "../images/carousalPrev.png";
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
-import { Image, Picture } from "@astrojs/image/components";
+//import { Image, Picture } from "@astrojs/image/components";
 
 const clientsEntries = await contentfulClient.getEntries<any>({
   content_type: "clients",
@@ -65,12 +65,10 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
           >
           <a href="#teamInfo" aria-label="know more">
             <span class="knowMore">
-              Slide To Know More &nbsp;<Image
-                alt=""
-                format="webp"
+              Slide To Know More &nbsp;<img
                 style="width: 0.75rem;"
                 src={downArrow}
-                class="optimization"
+                class=""
               />
             </span>
           </a>
@@ -78,14 +76,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
       </div>
     </div>
     <div>
-      <Image
-        alt=""
-        format="webp"
-        src={officeImg}
-        alt=""
-        class="optimization"
-        style="height:100%;width:100%;  "
-      />
+      <img src={officeImg} alt="" class="" style="height:100%;width:100%;  " />
     </div>
   </section>
 
@@ -186,10 +177,8 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
           (splitArrays[0] as any).map((clients, index) => (
             <div class="imgRow clientArray1">
               <td class="img ">
-                <Image
-                  alt=""
-                  format="webp"
-                  class="imgs optimization"
+                <img
+                  class="imgs  "
                   width={389}
                   height={282}
                   src={clients.fields?.file.url}
@@ -204,10 +193,8 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
           (splitArrays[1] as any).map((clients, index) => (
             <div class="imgRow clientArray2">
               <td class="img">
-                <Image
-                  alt=""
-                  format="webp"
-                  class="imgs optimization"
+                <img
+                  class="imgs  "
                   width={389}
                   height={282}
                   src={clients.fields?.file.url}
@@ -222,10 +209,8 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
           (splitArrays[2] as any).map((clients, index) => (
             <div class="imgRow clientArray1">
               <td class="img">
-                <Image
-                  alt=""
-                  format="webp"
-                  class="imgs optimization"
+                <img
+                  class="imgs  "
                   width={389}
                   height={282}
                   src={clients.fields?.file.url}
@@ -240,10 +225,8 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
           (splitArrays[3] as any).map((clients, index) => (
             <div class="imgRow clientArray2">
               <td class="img">
-                <Image
-                  alt=""
-                  format="webp"
-                  class="imgs optimization"
+                <img
+                  class="imgs  "
                   width={389}
                   height={282}
                   src={clients.fields?.file.url}
@@ -285,10 +268,8 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
             employeesDetails.items.map((employees) => (
               <div class="swiper-slide">
                 <div>
-                  <Image
-                    alt=""
-                    format="webp"
-                    class="members optimization"
+                  <img
+                    class="members  "
                     src={employees?.fields?.photo?.fields?.file.url}
                     alt=""
                     loading="lazy"
@@ -310,29 +291,15 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
             ))
           }
         </div>
-        <Image
-          alt=""
-          format="webp"
-          class="swiper-prev optimization"
-          src={carousalPrev}
-          alt=""
-          loading="lazy"
-        />
+        <img class="swiper-prev" src={carousalPrev} alt="" loading="lazy" />
 
-        <Image
-          alt=""
-          format="webp"
-          class="swiper-next optimization"
-          src={carousalNext}
-          alt=""
-          loading="lazy"
-        />
+        <img class="swiper-next" src={carousalNext} alt="" loading="lazy" />
       </div>
     </div>
   </section>
 </Layout>
 <style>
-  .optimization {
+  . {
     height: auto;
   }
   .meetDiv {

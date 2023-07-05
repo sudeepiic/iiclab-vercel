@@ -10,30 +10,16 @@ import fbLogo from "../images/fbLogo.png";
 import whatsappLogo from "../images/whatsappLogo.png";
 import subscribeBtn from "../images/subscribeBtn.png";
 import footerHand from "../images/footerHand.png";
-import { Image, Picture } from "@astrojs/image/components";
+//import { Image, Picture } from "@astrojs/image/components";
 ---
 
 <section style="background-color: #1a1a1a;  padding-left: 9%; padding-top: 3%;">
   <div class="div1 footerReady">
-    <Image
-      alt=""
-      format="webp"
-      class="diamond optimization"
-      src={footerDiamond}
-      alt=""
-      loading="lazy"
-    />
+    <img class="diamond" src={footerDiamond} alt="" loading="lazy" />
     <span class="footerFont"
       >&nbsp; READY TO ACTIVATE STRATEGIC GROWTH? &nbsp;</span
     >
-    <Image
-      alt=""
-      format="webp"
-      class="diamond optimization"
-      src={footerDiamond}
-      alt=""
-      loading="lazy"
-    />
+    <img class="diamond" src={footerDiamond} alt="" loading="lazy" />
   </div>
 
   <div class="div2 row footerYellow">
@@ -46,22 +32,10 @@ import { Image, Picture } from "@astrojs/image/components";
     <div class="col-6" style="overflow: hidden;">
       <div class="d-flex contact-animate">
         <a href="/contact" aria-label="contact">
-          <Image
-            alt=""
-            format="webp"
-            class="contactUsImg optimization"
-            src={contactUs}
-            alt=""
-          /></a
+          <img class="contactUsImg" src={contactUs} alt="" /></a
         >
         <div class="footerHand">
-          <Image
-            alt=""
-            format="webp"
-            class="optimization"
-            src={footerHand}
-            alt=""
-          />
+          <img class="" src={footerHand} alt="" />
         </div>
       </div>
     </div>
@@ -74,7 +48,7 @@ import { Image, Picture } from "@astrojs/image/components";
         <div class="col-12">
           <input
             type="text"
-            class="topInput optimization"
+            class="topInput"
             placeholder="Your Name"
             name="name"
           />
@@ -82,7 +56,7 @@ import { Image, Picture } from "@astrojs/image/components";
         <div class="col-12 mt-3">
           <input
             type="email"
-            class="topInput optimization"
+            class="topInput"
             placeholder="Your Email"
             name="email"
           />
@@ -91,69 +65,27 @@ import { Image, Picture } from "@astrojs/image/components";
 
       <div class="button mt-3 text-center">
         <button class="btn" type="submit" aria-label="subscribe newsletter">
-          <Image
-            alt=""
-            format="webp"
-            class="mobSubscribe optimization"
-            src={subscribeBtn}
-            alt=""
-            loading="lazy"
-          />
+          <img class="mobSubscribe" src={subscribeBtn} alt="" loading="lazy" />
         </button>
       </div>
     </div>
   </div>
 
   <div class="col-12 TopSocialIcons">
-    <a href="https://www.instagram.com/inkincaps/?hl=en" aria-label="instagram"
-      ><Image
-        alt=""
-        format="webp"
-        class="socialIcons optimization"
-        src={instaLogo}
-        alt=""
-        loading="lazy"
-      /></a
+    <a href="https://www.instagram.com/inkincaps/?hl=en" aria-label="instagram">
+      <img class="socialIcons" src={instaLogo} alt="" loading="lazy" /></a
     >
-    <a href="https://in.linkedin.com/company/ink-in-caps" aria-label="linkedin"
-      ><Image
-        alt=""
-        format="webp"
-        class="socialIcons optimization"
-        src={linkedinlogo}
-        alt=""
-        loading="lazy"
-      /></a
+    <a href="https://in.linkedin.com/company/ink-in-caps" aria-label="linkedin">
+      <img class="socialIcons" src={linkedinlogo} alt="" loading="lazy" /></a
     >
-    <a href="https://twitter.com/inkincaps?lang=en" aria-label="twitter"
-      ><Image
-        alt=""
-        format="webp"
-        class="socialIcons optimization"
-        src={twitterLogo}
-        alt=""
-        loading="lazy"
-      /></a
+    <a href="https://twitter.com/inkincaps?lang=en" aria-label="twitter">
+      <img class="socialIcons" src={twitterLogo} alt="" loading="lazy" /></a
     >
-    <a href="https://www.facebook.com/inkincaps/" aria-label="facebook"
-      ><Image
-        alt=""
-        format="webp"
-        class="socialIcons optimization"
-        src={fbLogo}
-        alt=""
-        loading="lazy"
-      /></a
+    <a href="https://www.facebook.com/inkincaps/" aria-label="facebook">
+      <img class="socialIcons" src={fbLogo} alt="" loading="lazy" /></a
     >
-    <a class="d-none" href="" aria-label="whatsapp"
-      ><Image
-        alt=""
-        format="webp"
-        class="socialIcons optimization"
-        src={whatsappLogo}
-        alt=""
-        loading="lazy"
-      /></a
+    <a class="d-none" href="" aria-label="whatsapp">
+      <img class="socialIcons" src={whatsappLogo} alt="" loading="lazy" /></a
     >
   </div>
 
@@ -236,69 +168,28 @@ import { Image, Picture } from "@astrojs/image/components";
         <br />
         <br />
         <button class="btn" type="submit" aria-label="subscribe to newsletter">
-          <Image
-            alt=""
-            format="webp"
-            class="optimization"
-            style="width: 13.5vw;"
-            src={subscribe}
-            alt=""
-          />
+          <img class="" style="width: 13.5vw;" src={subscribe} alt="" />
         </button>
       </form>
       <div class="desktopOnly" style="margin-top: 8%; padding-top: 1.5%;">
         <a
           href="https://www.instagram.com/inkincaps/?hl=en"
           aria-label="instagram"
-          ><Image
-            alt=""
-            format="webp"
-            class="icons optimization"
-            src={instaLogo}
-            alt=""
-            loading="lazy"
-          /></a
+          ><img class="icons" src={instaLogo} alt="" loading="lazy" /></a
         >
         <a
           href="https://in.linkedin.com/company/ink-in-caps"
           aria-label="linkedin"
-          ><Image
-            alt=""
-            format="webp"
-            class="icons optimization"
-            src={linkedinlogo}
-            alt=""
-            loading="lazy"
-          /></a
+          ><img class="icons" src={linkedinlogo} alt="" loading="lazy" /></a
         >
         <a href="https://twitter.com/inkincaps?lang=en" aria-label="twitter"
-          ><Image
-            alt=""
-            format="webp"
-            class="icons optimization"
-            src={twitterLogo}
-            alt=""
-            loading="lazy"
-          /></a
+          ><img class="icons" src={twitterLogo} alt="" loading="lazy" /></a
         >
         <a href="https://www.facebook.com/inkincaps/" aria-label="facebook"
-          ><Image
-            alt=""
-            format="webp"
-            class="icons optimization"
-            src={fbLogo}
-            alt=""
-            loading="lazy"
-          /></a
+          ><img class="icons" src={fbLogo} alt="" loading="lazy" /></a
         >
         <a class="d-none" href="" aria-label="whatsapp"
-          ><Image
-            alt=""
-            format="webp"
-            class="icons optimization"
-            src={whatsappLogo}
-            alt=""
-          /></a
+          ><img class="icons" src={whatsappLogo} alt="" /></a
         >
       </div>
     </div>
@@ -320,14 +211,7 @@ import { Image, Picture } from "@astrojs/image/components";
       
         height: 0%;  margin-top: 3%;"
         >
-          <Image
-            alt=""
-            format="webp"
-            class="goArrow optimization"
-            src={goArrow}
-            alt=""
-            loading="lazy"
-          /></button
+          <img class="goArrow" src={goArrow} alt="" loading="lazy" /></button
         >
       </span>
       <span class="collab col-3 d-flex">
@@ -337,14 +221,7 @@ import { Image, Picture } from "@astrojs/image/components";
       
         height: 0%;  margin-top: 3%;"
         >
-          <Image
-            alt=""
-            format="webp"
-            class="goArrow optimization"
-            src={goArrow}
-            alt=""
-            loading="lazy"
-          /></button
+          <img class="goArrow" src={goArrow} alt="" loading="lazy" /></button
         >
       </span>
       <span style="margin-left: 5%;" class="collab col-4 d-flex"
@@ -354,14 +231,7 @@ import { Image, Picture } from "@astrojs/image/components";
       
         height: 0%;  margin-top: 3%;"
         >
-          <Image
-            alt=""
-            format="webp"
-            class="goArrow optimization"
-            src={goArrow}
-            alt=""
-            loading="lazy"
-          /></button
+          <img class="goArrow" src={goArrow} alt="" loading="lazy" /></button
         >
       </span>
     </div>
@@ -370,16 +240,16 @@ import { Image, Picture } from "@astrojs/image/components";
       style="text-align: center; padding-top: 1.5%;"
     >
       <a href="https://www.instagram.com/inkincaps/?hl=en"
-        ><Image alt="" format="webp"   class="icons" src={instaLogo} alt="" loading="lazy" /></a
+        ><img   class="icons" src={instaLogo} alt="" loading="lazy" /></a
       >
       <a href="https://in.linkedin.com/company/ink-in-caps"
-        ><Image alt="" format="webp"   class="icons" src={linkedinlogo} alt="" loading="lazy" /></a
+        ><img   class="icons" src={linkedinlogo} alt="" loading="lazy" /></a
       >
       <a href="https://twitter.com/inkincaps?lang=en"
-        ><Image alt="" format="webp"   class="icons" src={twitterLogo} alt="" loading="lazy" /></a
+        ><img   class="icons" src={twitterLogo} alt="" loading="lazy" /></a
       >
       <a href="https://www.facebook.com/inkincaps/"
-        ><Image alt="" format="webp"   class="icons" src={fbLogo} alt="" loading="lazy" /></a
+        ><img   class="icons" src={fbLogo} alt="" loading="lazy" /></a
       >-->
   </div>
 </section>
@@ -538,7 +408,7 @@ import { Image, Picture } from "@astrojs/image/components";
 </script>
 
 <style>
-  .optimization {
+  . {
     height: auto;
   }
   a {

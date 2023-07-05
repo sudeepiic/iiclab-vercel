@@ -2,7 +2,7 @@
 import creative1 from "../../images/creative1.png";
 import yellowGo from "../../images/yellowGo2.png";
 import creative2 from "../../images/creative2.png";
-import { Image, Picture } from "@astrojs/image/components";
+//import { Image, Picture } from "@astrojs/image/components";
 ---
 
 <section
@@ -18,10 +18,8 @@ import { Image, Picture } from "@astrojs/image/components";
     </div>
 
     <div class="col-md-4 col-lg-4 col-sm-12">
-      <Image
-        alt=""
-        format="webp"
-        class="creative1 optimization"
+      <img
+        class="creative1"
         src={creative1}
         style="width: 95%; margin-bottom: 5%;"
         alt=""
@@ -36,13 +34,7 @@ import { Image, Picture } from "@astrojs/image/components";
         href="get-everyones-attention-with-these-amazing-experiences"
         aria-label="open"
       >
-        <Image
-          alt=""
-          format="webp"
-          class="btn goBtn optimization"
-          src={yellowGo}
-          alt=""
-        /></a
+        <img class="btn goBtn" src={yellowGo} alt="" /></a
       >
       <div style="margin-top: 3.4%;">
         <div class="border-box"><span>Design & Technology</span></div>
@@ -53,10 +45,8 @@ import { Image, Picture } from "@astrojs/image/components";
     </div>
 
     <div class="col-md-4 col-lg-4 col-sm-12">
-      <Image
-        alt=""
-        format="webp"
-        class="creative2 optimization"
+      <img
+        class="creative2"
         src={creative2}
         style="width: 95%; margin-bottom: 5%;"
         loading="lazy"
@@ -70,12 +60,7 @@ import { Image, Picture } from "@astrojs/image/components";
         href="is-3d-projection-mapping-the-future-or-the-present"
         aria-label="open"
       >
-        <Image
-          alt=""
-          format="webp"
-          class="btn goBtn optimization"
-          src={yellowGo}
-        /></a
+        <img class="btn goBtn" src={yellowGo} /></a
       >
       <div style="margin-top: 3.4%;">
         <div class="border-box"><span>Design & Technology</span></div>
@@ -88,7 +73,7 @@ import { Image, Picture } from "@astrojs/image/components";
 </section>
 
 <style>
-  .optimization {
+  . {
     height: auto;
   }
   .creative {

@@ -1,6 +1,6 @@
 ---
 const props = Astro.props;
-import { Image, Picture } from "@astrojs/image/components";
+//import { Image, Picture } from "@astrojs/image/components";
 console.log(props, "missing imageeeeee");
 ---
 
@@ -26,14 +26,12 @@ console.log(props, "missing imageeeeee");
       </div>
 
       <div class="image-animate">
-        <Image
-          alt=""
-          format="webp"
+        <img
           src={props.heroImage}
           alt=""
           width={1552}
           height={720}
-          class="optimization"
+          class=" "
           style="width: 100%;"
         />
       </div>
@@ -41,7 +39,7 @@ console.log(props, "missing imageeeeee");
   )
 }
 <style>
-  .optimization {
+  . {
     height: auto;
   }
   .margins {

@@ -12,7 +12,7 @@ import strategy from "../images/strategy.png";
 import yellowGo from "../images/yellowGo2.png";
 import knowMoreBtn from "../images/knowMoreBtn.png";
 import diamond from "../images/whiteDiamond.png";
-import { Image, Picture } from "@astrojs/image/components";
+//import { Image, Picture } from "@astrojs/image/components";
 ---
 
 <Layout title="Solutions" seoTitle="solutions">
@@ -22,20 +22,8 @@ import { Image, Picture } from "@astrojs/image/components";
         <div class="title">
           <span class="animate-title">What are we good at</span>
           <a class="btnDiv" href="#soln" aria-label="know more">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization btn btn-animate"
-              src={solutionbtn}
-              alt=""
-            />
-            <Image
-              alt=""
-              format="webp"
-              class="optimization arrow"
-              src={newArrow}
-              alt=""
-            />
+            <img class="btn btn-animate" src={solutionbtn} alt="" />
+            <img class="arrow" src={newArrow} alt="" />
           </a>
         </div>
       </div>
@@ -47,14 +35,7 @@ import { Image, Picture } from "@astrojs/image/components";
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="swiperDiv">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization carousalImg"
-              src={solutionImg1}
-              alt=""
-              loading="lazy"
-            />
+            <img class="carousalImg" src={solutionImg1} alt="" loading="lazy" />
             <div class="techList">
               <ul class="a">
                 <li>metaverse</li>
@@ -71,10 +52,8 @@ import { Image, Picture } from "@astrojs/image/components";
                   <li>virtual Reality</li>
                   <li>Augmented Reality</li>
                   <li>Projection Mapping</li>
-                  <Image
-                    alt=""
-                    format="webp"
-                    class="optimization knowMoreBtn"
+                  <img
+                    class="knowMoreBtn"
                     src={knowMoreBtn}
                     alt=""
                     loading="lazy"
@@ -82,14 +61,7 @@ import { Image, Picture } from "@astrojs/image/components";
                 </ul>
               </div>
               <a href="" aria-label="immersive technology">
-                <Image
-                  alt=""
-                  format="webp"
-                  class="optimization"
-                  src={yellowGo}
-                  alt=""
-                  loading="lazy"
-                /></a
+                <img class="" src={yellowGo} alt="" loading="lazy" /></a
               >
             </div>
             <div class="captionDiv">
@@ -101,10 +73,8 @@ import { Image, Picture } from "@astrojs/image/components";
 
         <div class="swiper-slide">
           <div class="swiperDiv">
-            <Image
-              alt=""
-              format="webp"
-              class="carousalImg optimization"
+            <img
+              class="carousalImg"
               src={interactiveSoln}
               alt=""
               loading="lazy"
@@ -125,10 +95,8 @@ import { Image, Picture } from "@astrojs/image/components";
                   <li>Interactive Table/Interactive Book</li>
                   <li>Engagement Experts</li>
                   <li>Object Recognition Table</li>
-                  <Image
-                    alt=""
-                    format="webp"
-                    class="knowMoreBtn optimization"
+                  <img
+                    class="knowMoreBtn"
                     src={knowMoreBtn}
                     alt=""
                     loading="lazy"
@@ -136,14 +104,7 @@ import { Image, Picture } from "@astrojs/image/components";
                 </ul>
               </div>
               <a href="" aria-label="interactive solution">
-                <Image
-                  alt=""
-                  format="webp"
-                  src={yellowGo}
-                  class="optimization"
-                  alt=""
-                  loading="lazy"
-                /></a
+                <img src={yellowGo} class="" alt="" loading="lazy" /></a
               >
             </div>
             <div class="captionDiv">
@@ -155,14 +116,7 @@ import { Image, Picture } from "@astrojs/image/components";
 
         <div class="swiper-slide">
           <div class="swiperDiv">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization carousalImg"
-              src={mobileWeb}
-              alt=""
-              loading="lazy"
-            />
+            <img class="carousalImg" src={mobileWeb} alt="" loading="lazy" />
             <div class="techList">
               <ul class="a">
                 <li>Web Development</li>
@@ -177,10 +131,8 @@ import { Image, Picture } from "@astrojs/image/components";
                   <li>Web Development</li>
                   <li>App Development</li>
                   <li>Gaming Solutions</li>
-                  <Image
-                    alt=""
-                    format="webp"
-                    class="knowMoreBtn optimization"
+                  <img
+                    class="knowMoreBtn"
                     src={knowMoreBtn}
                     alt=""
                     loading="lazy"
@@ -188,14 +140,7 @@ import { Image, Picture } from "@astrojs/image/components";
                 </ul>
               </div>
               <a href="" aria-label="mobile and web">
-                <Image
-                  alt=""
-                  format="webp"
-                  src={yellowGo}
-                  class="optimization"
-                  alt=""
-                  loading="lazy"
-                /></a
+                <img src={yellowGo} class="" alt="" loading="lazy" /></a
               >
             </div>
             <div class="captionDiv">
@@ -206,14 +151,7 @@ import { Image, Picture } from "@astrojs/image/components";
         </div>
         <div class="swiper-slide">
           <div class="swiperDiv">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization carousalImg"
-              src={solutionImg1}
-              alt=""
-              loading="lazy"
-            />
+            <img class="carousalImg" src={solutionImg1} alt="" loading="lazy" />
             <div class="techList">
               <ul class="a">
                 <li>3D/2D Animations</li>
@@ -230,10 +168,8 @@ import { Image, Picture } from "@astrojs/image/components";
                   <li>Motion Graphics</li>
                   <li>Architectural Visualization</li>
                   <li>Expainer Videos</li>
-                  <Image
-                    alt=""
-                    format="webp"
-                    class="optimization knowMoreBtn"
+                  <img
+                    class="knowMoreBtn"
                     src={knowMoreBtn}
                     alt=""
                     loading="lazy"
@@ -241,14 +177,7 @@ import { Image, Picture } from "@astrojs/image/components";
                 </ul>
               </div>
               <a href="" aria-label="content development">
-                <Image
-                  alt=""
-                  format="webp"
-                  src={yellowGo}
-                  class="optimization"
-                  alt=""
-                  loading="lazy"
-                /></a
+                <img src={yellowGo} class="" alt="" loading="lazy" /></a
               >
             </div>
             <div class="captionDiv">
@@ -260,14 +189,7 @@ import { Image, Picture } from "@astrojs/image/components";
 
         <div class="swiper-slide">
           <div class="swiperDiv">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization carousalImg"
-              src={experimental}
-              alt=""
-              loading="lazy"
-            />
+            <img class="carousalImg" src={experimental} alt="" loading="lazy" />
             <div class="techList">
               <ul class="a">
                 <li>Motion Gesture</li>
@@ -284,9 +206,8 @@ import { Image, Picture } from "@astrojs/image/components";
                   <li>Interactive Campaign</li>
                   <li>Photobooth</li>
                   <li>Kiosk/Vending Machine</li>
-                  <Image
-                    format="webp"
-                    class="optimization knowMoreBtn"
+                  <img
+                    class="knowMoreBtn"
                     src={knowMoreBtn}
                     alt=""
                     loading="lazy"
@@ -294,13 +215,7 @@ import { Image, Picture } from "@astrojs/image/components";
                 </ul>
               </div>
               <a href="" aria-label="experiential marketing">
-                <Image
-                  format="webp"
-                  src={yellowGo}
-                  class="optimization"
-                  alt=""
-                  loading="lazy"
-                /></a
+                <img src={yellowGo} class="" alt="" loading="lazy" /></a
               >
             </div>
             <div class="captionDiv">
@@ -312,14 +227,7 @@ import { Image, Picture } from "@astrojs/image/components";
 
         <div class="swiper-slide">
           <div class="swiperDiv">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization carousalImg"
-              src={strategy}
-              alt=""
-              loading="lazy"
-            />
+            <img class="carousalImg" src={strategy} alt="" loading="lazy" />
             <div class="techList">
               <ul class="a">
                 <li>Scenario Mapping Brand Audits</li>
@@ -336,23 +244,12 @@ import { Image, Picture } from "@astrojs/image/components";
                   <li>Brand Identity</li>
                   <li>Competitor Mapping</li>
                   <li>Graphic Design & Prototype</li>
-                  <Image
-                    alt=""
-                    format="webp"
-                    class="knowMoreBtn optimization"
-                    src={knowMoreBtn}
-                    loading="lazy"
-                  />
+                  <img class="knowMoreBtn" src={knowMoreBtn} loading="lazy" />
                 </ul>
               </div>
 
               <a href="" aria-label="strategy and design">
-                <Image
-                  alt=""
-                  format="webp"
-                  src={yellowGo}
-                  class="optimization"
-                /></a
+                <img src={yellowGo} class="" /></a
               >
             </div>
             <div class="captionDiv">
@@ -370,11 +267,9 @@ import { Image, Picture } from "@astrojs/image/components";
       <div class="moving-text" style="display: flex; width:max-content;  ">
         <span class="wallHonor">metaverse</span>
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-          <Image
-            alt=""
-            format="webp"
+          <img
             style="width:3.5vw"
-            class="optimization"
+            class=""
             src={diamond}
             alt=""
             loading="lazy"
@@ -383,59 +278,24 @@ import { Image, Picture } from "@astrojs/image/components";
 
         <span class="wallHonor">ui/ux Design</span>
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-          <Image
-            alt=""
-            format="webp"
-            style="width:3.5vw"
-            class="optimization"
-            src={diamond}
-            loading="lazy"
-          />
+          <img style="width:3.5vw" class="" src={diamond} loading="lazy" />
         </div>
 
         <span class="wallHonor">Augmented Reality</span>
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-          <Image
-            alt=""
-            format="webp"
-            style="width:3.5vw"
-            class="optimization"
-            src={diamond}
-            loading="lazy"
-          />
+          <img style="width:3.5vw" class="" src={diamond} loading="lazy" />
         </div>
         <span class="wallHonor">XR</span>
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-          <Image
-            alt=""
-            format="webp"
-            style="width:3.5vw"
-            class="optimization"
-            src={diamond}
-            loading="lazy"
-          />
+          <img style="width:3.5vw" class="" src={diamond} loading="lazy" />
         </div>
         <span class="wallHonor">Interactive Technology</span>
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-          <Image
-            alt=""
-            format="webp"
-            style="width:3.5vw"
-            class="optimization"
-            src={diamond}
-            loading="lazy"
-          />
+          <img style="width:3.5vw" class="" src={diamond} loading="lazy" />
         </div>
         <span class="wallHonor">Experiential Marketing</span>
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-          <Image
-            alt=""
-            format="webp"
-            style="width:3.5vw"
-            class="optimization"
-            src={diamond}
-            loading="lazy"
-          />
+          <img style="width:3.5vw" class="" src={diamond} loading="lazy" />
         </div>
       </div>
     </div>
@@ -443,7 +303,7 @@ import { Image, Picture } from "@astrojs/image/components";
 </Layout>
 
 <style>
-  .optimization {
+  . {
     height: auto;
   }
   .btnDiv {

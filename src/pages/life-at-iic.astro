@@ -16,7 +16,7 @@ import discussion4 from "../images/discussion4.jpg";
 import unoGame from "../images/unoGame.jpg";
 import fussball from "../images/fussball.jpg";
 
-import { Image, Picture } from "@astrojs/image/components";
+//import { Image, Picture } from "@astrojs/image/components";
 ---
 
 <Layout title="life-at-iic" seoTitle="life-at-iic">
@@ -41,78 +41,29 @@ import { Image, Picture } from "@astrojs/image/components";
       <div class="mySwiper" style="padding:1.5% 0 5% 0 ; ">
         <div class="swiper-wrapper">
           <div class="swiper-slide imgWidth">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization resizeImg"
-              src={conferenceRoomDiscussion}
-              alt=""
-            />
+            <img class="resizeImg" src={conferenceRoomDiscussion} alt="" />
           </div>
 
           <div class="swiper-slide imgWidth">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization resizeImg"
-              src={unoGame}
-              quality={90}
-            />
+            <img class="resizeImg" src={unoGame} />
           </div>
           <div class="swiper-slide imgWidth">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization resizeImg"
-              src={discussion}
-              alt=""
-            />
+            <img class="resizeImg" src={discussion} alt="" />
           </div>
           <div class="swiper-slide imgWidth">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization resizeImg"
-              src={discussion4}
-              quality={90}
-              alt=""
-            />
+            <img class="resizeImg" src={discussion4} alt="" />
           </div>
           <div class="swiper-slide imgWidth">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization resizeImg"
-              src={discussion2}
-              alt=""
-            />
+            <img class="resizeImg" src={discussion2} alt="" />
           </div>
           <div class="swiper-slide imgWidth">
-            <Image
-              alt=""
-              format="webp"
-              class="optimization resizeImg"
-              src={discussion3}
-              alt=""
-            />
+            <img class="resizeImg" src={discussion3} alt="" />
           </div>
         </div>
 
         <div class="d-flex controls">
-          <Image
-            alt=""
-            format="webp"
-            class="optimization swiper-prev"
-            src={blogsLeft}
-            alt=""
-          />
-          <Image
-            alt=""
-            format="webp"
-            class="optimization swiper-next"
-            src={blogsRight}
-            alt=""
-          />
+          <img class="swiper-prev" src={blogsLeft} alt="" />
+          <img class="swiper-next" src={blogsRight} alt="" />
         </div>
       </div>
     </div>
@@ -122,27 +73,9 @@ import { Image, Picture } from "@astrojs/image/components";
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div style="position: relative;">
-              <Image
-                alt=""
-                format="webp"
-                class="optimization top-right-img resize3"
-                src={VR}
-                alt=""
-              />
-              <Image
-                alt=""
-                format="webp"
-                class="optimization main-img resize2"
-                src={discussion4}
-                alt=""
-              />
-              <Image
-                alt=""
-                format="webp"
-                class="optimization bottom-left-img resize3"
-                src={discussion}
-                alt=""
-              />
+              <img class="top-right-img resize3" src={VR} alt="" />
+              <img class="main-img resize2" src={discussion4} alt="" />
+              <img class="bottom-left-img resize3" src={discussion} alt="" />
             </div>
             <div class="imgCaption">
               <span>our values</span>
@@ -157,27 +90,13 @@ import { Image, Picture } from "@astrojs/image/components";
           </div>
           <div class="swiper-slide">
             <div style="position: relative;">
-              <Image
-                alt=""
-                format="webp"
-                class="optimization top-right-img resize3"
+              <img
+                class="top-right-img resize3"
                 src={conferenceRoomDiscussion}
                 alt=""
               />
-              <Image
-                alt=""
-                format="webp"
-                class="optimization main-img resize2"
-                src={discussion2}
-                alt=""
-              />
-              <Image
-                alt=""
-                format="webp"
-                class="optimization bottom-left-img resize3"
-                src={VR}
-                alt=""
-              />
+              <img class="main-img resize2" src={discussion2} alt="" />
+              <img class="bottom-left-img resize3" src={VR} alt="" />
             </div>
             <div class="imgCaption">
               <span>our beleives</span>
@@ -191,27 +110,9 @@ import { Image, Picture } from "@astrojs/image/components";
           </div>
           <div class="swiper-slide">
             <div style="position: relative;">
-              <Image
-                alt=""
-                format="webp"
-                class="optimization top-right-img resize3"
-                src={unoGame}
-                alt=""
-              />
-              <Image
-                alt=""
-                format="webp"
-                class="optimization main-img resize2"
-                src={values}
-                alt=""
-              />
-              <Image
-                alt=""
-                format="webp"
-                class="optimization bottom-left-img resize3"
-                src={fussball}
-                alt=""
-              />
+              <img class="top-right-img resize3" src={unoGame} alt="" />
+              <img class="main-img resize2" src={values} alt="" />
+              <img class="bottom-left-img resize3" src={fussball} alt="" />
             </div>
             <div class="imgCaption">
               <span>our Initiatives</span>
@@ -225,27 +126,15 @@ import { Image, Picture } from "@astrojs/image/components";
           </div>
         </div>
 
-        <Image
-          alt=""
-          format="webp"
-          class="optimization swiper-button-prev"
-          src={carousalPrev}
-          alt=""
-        />
-        <Image
-          alt=""
-          format="webp"
-          class="optimization swiper-button-next"
-          src={carousalNext}
-          alt=""
-        />
+        <img class="swiper-button-prev" src={carousalPrev} alt="" />
+        <img class="swiper-button-next" src={carousalNext} alt="" />
       </div>
     </div>
   </section>
 </Layout>
 
 <style>
-  .optimization {
+  . {
     height: auto;
   }
 
