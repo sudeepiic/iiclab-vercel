@@ -11,20 +11,12 @@ const props = Astro.props;
 ---
 
 <section style="background-color: #1a1a1a;">
-  {
-    props.herobanner && (
-      <img src={props.herobanner} style="width: 100%;" alt="" class=" " />
-    )
-  }
+  <img src={props.herobanner} style="width: 100%;" alt="" />
 
   <div class="blankDiv">
     <div class="midDiv">
-      <div class="border-box">
-        <span>Technology</span>
-      </div>
-      <div class="border-box">
-        <span set:html={props.whichTechnology} />
-      </div>
+      <div class="border-box"><span>Technology</span></div>
+      <div class="border-box"><span set:html={props.whichTechnology} /></div>
       <div class="heading" set:html={props.heroTitle} />
     </div>
   </div>

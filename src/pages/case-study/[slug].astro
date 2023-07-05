@@ -44,46 +44,36 @@ console.log(
 ---
 
 <Layout title="case study" seoTitle={data.heroTitle}>
-  {
-    false && (
-      <Title1
-        heroTitle={documentToHtmlString(data.heroTitleMain)}
-        heroVideo={data?.heroVideo?.fields?.file.url}
-        herobanner={data?.heroBanner?.fields?.file.url}
-        whichTechnology={data?.whichTechnology}
-        herobanner2={data?.heroBanner2?.fields?.file.url}
-        heroContent={documentToHtmlString(data.heroContent)}
-        pointerHead1={documentToHtmlString(data.pointerHead1)}
-        pointerHeading1={data?.pointerHeading1}
-        contentPointers1={documentToHtmlString(data.contentPointers1)}
-        pointerHead2={documentToHtmlString(data.pointerHead2)}
-        pointerHeading2={data?.pointerHeading2}
-        contentPointers2={documentToHtmlString(data.contentPointers2)}
-        clientInfo={documentToHtmlString(data.clientInfo)}
-        solutionInfo={documentToHtmlString(data.solutionInfo)}
-        brandLogo1={data.brandLogos && data.brandLogos[0]?.fields?.file.url}
-        brandLogo2={data.brandLogos && data.brandLogos[1]?.fields?.file.url}
-        carousalImage1={
-          data.carousalImages && data.carousalImages[0]?.fields?.file.url
-        }
-        carousalImage2={
-          data.carousalImages && data.carousalImages[1]?.fields?.file.url
-        }
-        carousalImage3={
-          data.carousalImages && data.carousalImages[2]?.fields?.file.url
-        }
-        carousalImage4={
-          data.carousalImages && data.carousalImages[3]?.fields?.file.url
-        }
-        carousalImage5={
-          data.carousalImages && data.carousalImages[4]?.fields?.file.url
-        }
-        carousalImage6={
-          data.carousalImages && data.carousalImages[5]?.fields?.file.url
-        }
-      />
-    )
-  }
+  <Title1
+    heroTitle={documentToHtmlString(data.heroTitleMain)}
+    heroVideo={data?.heroVideo?.fields?.file.url}
+    herobanner={data?.heroBanner?.fields?.file.url}
+    whichTechnology={data?.whichTechnology}
+    herobanner2={data?.heroBanner2?.fields?.file.url}
+    heroContent={documentToHtmlString(data.heroContent)}
+    pointerHead1={documentToHtmlString(data.pointerHead1)}
+    pointerHeading1={data?.pointerHeading1}
+    contentPointers1={documentToHtmlString(data.contentPointers1)}
+    pointerHead2={documentToHtmlString(data.pointerHead2)}
+    pointerHeading2={data?.pointerHeading2}
+    contentPointers2={documentToHtmlString(data.contentPointers2)}
+    clientInfo={documentToHtmlString(data.clientInfo)}
+    solutionInfo={documentToHtmlString(data.solutionInfo)}
+    brandLogo1={data.brandLogos && data.brandLogos[0]?.fields?.file.url}
+    brandLogo2={data.brandLogos && data.brandLogos[1]?.fields?.file.url}
+    carousalImage1={data.carousalImages &&
+      data.carousalImages[0]?.fields?.file.url}
+    carousalImage2={data.carousalImages &&
+      data.carousalImages[1]?.fields?.file.url}
+    carousalImage3={data.carousalImages &&
+      data.carousalImages[2]?.fields?.file.url}
+    carousalImage4={data.carousalImages &&
+      data.carousalImages[3]?.fields?.file.url}
+    carousalImage5={data.carousalImages &&
+      data.carousalImages[4]?.fields?.file.url}
+    carousalImage6={data.carousalImages &&
+      data.carousalImages[5]?.fields?.file.url}
+  />
 
   {
     data.fullSizeImg?.fields?.file.url && (
