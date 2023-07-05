@@ -13,21 +13,9 @@ const props = Astro.props;
   Object.keys(props).length && (
     <section style="padding-top: 4%; background-color: #1a1a1a;">
       <div class="margins imgs">
-        <img
-          class="img1  "
-          src={props.parallelImg1}
-          width={540}
-          height={370}
-          loading="lazy"
-        />
+        <img class="img1  " src={props.parallelImg1} loading="lazy" />
 
-        <img
-          class="img2  "
-          src={props.parallelImg2}
-          width={540}
-          height={370}
-          loading="lazy"
-        />
+        <img class="img2  " src={props.parallelImg2} loading="lazy" />
       </div>
     </section>
   )

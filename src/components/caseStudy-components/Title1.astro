@@ -13,14 +13,7 @@ const props = Astro.props;
 <section style="background-color: #1a1a1a;">
   {
     props.herobanner && (
-      <img
-        src={props.herobanner}
-        width={1528}
-        height={720}
-        style="width: 100%;"
-        alt=""
-        class=" "
-      />
+      <img src={props.herobanner} style="width: 100%;" alt="" class=" " />
     )
   }
 
@@ -53,11 +46,7 @@ const props = Astro.props;
 
   <div style="background-color: #1a1a1a;">
     <div class="margins img">
-      {
-        props.heroVideo && (
-          <img src={props.heroVideo} width={1600} height={900} class=" " />
-        )
-      }
+      {props.heroVideo && <img src={props.heroVideo} class=" " />}
     </div>
   </div>
 
@@ -93,13 +82,7 @@ const props = Astro.props;
         <div class="bannerDiv">
           {
             props.herobanner2 && (
-              <img
-                class="  bannerImg"
-                width={341}
-                height={443}
-                src={props.herobanner2}
-                alt=""
-              />
+              <img class="  bannerImg" src={props.herobanner2} alt="" />
             )
           }
         </div>
@@ -107,24 +90,12 @@ const props = Astro.props;
         <div class="brandsDiv">
           {
             props.brandLogo1 && (
-              <img
-                class="brands b1  "
-                width={400}
-                height={48}
-                src={props.brandLogo1}
-                alt=""
-              />
+              <img class="brands b1  " src={props.brandLogo1} alt="" />
             )
           }
           {
             props.brandLogo2 && (
-              <img
-                class="brands b2  "
-                width={400}
-                height={48}
-                src={props.brandLogo2}
-                alt=""
-              />
+              <img class="brands b2  " src={props.brandLogo2} alt="" />
             )
           }
         </div>
@@ -137,78 +108,42 @@ const props = Astro.props;
       <div class="swiper-slide">
         {
           props.carousalImage1 && (
-            <img
-              width={900}
-              height={1200}
-              src={props.carousalImage1}
-              alt=""
-              class=" "
-            />
+            <img src={props.carousalImage1} alt="" class=" " />
           )
         }
       </div>
       <div class="swiper-slide">
         {
           props.carousalImage2 && (
-            <img
-              width={900}
-              height={1200}
-              src={props.carousalImage2}
-              alt=""
-              class=" "
-            />
+            <img src={props.carousalImage2} alt="" class=" " />
           )
         }
       </div>
       <div class="swiper-slide">
         {
           props.carousalImage3 && (
-            <img
-              width={900}
-              height={1200}
-              src={props.carousalImage3}
-              alt=""
-              class=" "
-            />
+            <img src={props.carousalImage3} alt="" class=" " />
           )
         }
       </div>
       <div class="swiper-slide">
         {
           props.carousalImage4 && (
-            <img
-              width={900}
-              height={1200}
-              src={props.carousalImage4}
-              alt=""
-              class=" "
-            />
+            <img src={props.carousalImage4} alt="" class=" " />
           )
         }
       </div>
       <div class="swiper-slide">
         {
           props.carousalImage5 && (
-            <img
-              width={900}
-              height={1200}
-              src={props.carousalImage5}
-              alt=""
-              class=" "
-            />
+            <img src={props.carousalImage5} alt="" class=" " />
           )
         }
       </div>
       <div class="swiper-slide">
         {
           props.carousalImage6 && (
-            <img
-              width={900}
-              height={1200}
-              src={props.carousalImage6}
-              alt=""
-              class=" "
-            />
+            <img src={props.carousalImage6} alt="" class=" " />
           )
         }
       </div>

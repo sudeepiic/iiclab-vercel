@@ -197,13 +197,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         (splitArrays[0] as any).map((clients, index) => (
           <div class="imgRow clientArray1">
             <td class="img ">
-              <img
-                class="imgs  "
-                width={389}
-                height={282}
-                src={clients.fields?.file.url}
-                alt=""
-              />
+              <img class="imgs  " src={clients.fields?.file.url} alt="" />
             </td>
           </div>
         ))
@@ -212,13 +206,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         (splitArrays[1] as any).map((clients, index) => (
           <div class="imgRow clientArray2">
             <td class="img">
-              <img
-                class="imgs  "
-                width={389}
-                height={282}
-                src={clients.fields?.file.url}
-                alt=""
-              />
+              <img class="imgs  " src={clients.fields?.file.url} alt="" />
             </td>
           </div>
         ))
@@ -227,13 +215,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         (splitArrays[2] as any).map((clients, index) => (
           <div class="imgRow clientArray3">
             <td class="img">
-              <img
-                class="imgs  "
-                width={389}
-                height={282}
-                src={clients.fields?.file.url}
-                alt=""
-              />
+              <img class="imgs  " src={clients.fields?.file.url} alt="" />
             </td>
           </div>
         ))
@@ -242,13 +224,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         (splitArrays[3] as any).map((clients, index) => (
           <div class="imgRow clientArray4">
             <td class="img">
-              <img
-                class="imgs  "
-                width={389}
-                height={282}
-                src={clients.fields?.file.url}
-                alt=""
-              />
+              <img class="imgs  " src={clients.fields?.file.url} alt="" />
             </td>
           </div>
         ))
@@ -641,8 +617,6 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           >
             <div class="work-animation">
               <img
-                width={509}
-                height={240}
                 src={caseStudy?.fields?.heroBanner?.fields?.file.url}
                 class="movingImgs  "
                 alt=""
@@ -821,8 +795,6 @@ const testimonials: any = await contentfulClient.getEntries<any>({
                     src={
                       clientsTestimonials?.fields?.companyLogo?.fields?.file.url
                     }
-                    width={317}
-                    height={131}
                     style="width: 50%;"
                     alt=""
                     class=" "
