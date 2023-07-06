@@ -134,102 +134,103 @@ const entries: any = await contentfulClient.getEntries<any>({
           <span class="readTime">5 min read</span>
         </div>
       </div>
-    </div>
-    <div class="col-md-6 col-lg-6 col-sm-12 picks">
-      <div class="animate-img2">
-        <img class="editorImgs" src={editorImg2} alt="" />
-      </div>
-      <div class="animate-imgText">
-        <span class="imgText">The cycle of Analysis Paralysis</span>
-        <a href="/blogs/the-cycle-of-analysis-paralysis" aria-label="open">
-          <img class="btn goBtn" src={yellowGo} alt="" />
-        </a>
-        <div class="info">
-          <div class="border-box"><span>Design & Technology</span></div>
-          <span class="authorName">By Pallavi.Jain</span>
-          <span class="dot"></span>
-          <span class="readTime">5 min read</span>
+      <div class="col-md-6 col-lg-6 col-sm-12 picks">
+        <div class="animate-img2">
+          <img class="editorImgs" src={editorImg2} alt="" />
+        </div>
+        <div class="animate-imgText">
+          <span class="imgText">The cycle of Analysis Paralysis</span>
+          <a href="/blogs/the-cycle-of-analysis-paralysis" aria-label="open">
+            <img class="btn goBtn" src={yellowGo} alt="" />
+          </a>
+          <div class="info">
+            <div class="border-box"><span>Design & Technology</span></div>
+            <span class="authorName">By Pallavi.Jain</span>
+            <span class="dot"></span>
+            <span class="readTime">5 min read</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
-</Layout>
 
-<section style="margin-top: 4%; margin-bottom: 4%;" id="blogsList">
-  <div class="margins row">
-    <div class="col-lg-5 col-md-5 col-sm-12">
-      <div class="titleDiv">
-        <span class="whiteHeading">Explore</span>
+  <section style="margin-top: 4%; margin-bottom: 4%;" id="blogsList">
+    <div class="margins row">
+      <div class="col-lg-5 col-md-5 col-sm-12">
+        <div class="titleDiv">
+          <span class="whiteHeading">Explore</span>
 
-        <span class="whiteHeading">more</span>
-      </div>
-
-      <div class="exploreBtns">
-        <div class="makeInline">
-          <button
-            id="All"
-            class="btn exploreBtn clicked"
-            aria-label="all categories"
-            style="margin-left: 0;">All</button
-          >
-          <button id="Design" class="btn exploreBtn" aria-label="design"
-            >Design</button
-          >
-          <button id="Technology" class="btn exploreBtn" aria-label="technology"
-            >Technology</button
-          >
+          <span class="whiteHeading">more</span>
         </div>
 
-        <button
-          id="Social"
-          class="btn exploreBtn"
-          aria-label="social"
-          style="margin-left: 0;">Social</button
-        >
-        <button id="Culture" class="btn exploreBtn" aria-label="culture"
-          >Culture</button
-        >
+        <div class="exploreBtns">
+          <div class="makeInline">
+            <button
+              id="All"
+              class="btn exploreBtn clicked"
+              aria-label="all categories"
+              style="margin-left: 0;">All</button
+            >
+            <button id="Design" class="btn exploreBtn" aria-label="design"
+              >Design</button
+            >
+            <button
+              id="Technology"
+              class="btn exploreBtn"
+              aria-label="technology">Technology</button
+            >
+          </div>
+
+          <button
+            id="Social"
+            class="btn exploreBtn"
+            aria-label="social"
+            style="margin-left: 0;">Social</button
+          >
+          <button id="Culture" class="btn exploreBtn" aria-label="culture"
+            >Culture</button
+          >
+        </div>
+      </div>
+
+      <div
+        style="scroll-behavior: smooth; overflow:scroll;  height: 70vh;"
+        class="col-lg-6 col-md-6 col-sm-12"
+      >
+        {
+          entries.items.map((blogs) => (
+            <a href={"/blogs/" + blogs.fields.params} aria-label="blogs">
+              <div
+                class={
+                  "row list " +
+                  blogs.fields.genreNew.replaceAll(" ", "").toLowerCase()
+                }
+              >
+                <div class="col-9">
+                  <span class="listGenre" set:html={blogs.fields.genreNew} />
+                  <br />
+                  <span
+                    class="listText"
+                    set:html={documentToHtmlString(blogs.fields.blogTitle)}
+                  />
+                </div>
+
+                <div class="col-3">
+                  <img
+                    style="width:90%"
+                    class="blogImg  "
+                    src={blogs.fields?.heroImage?.fields?.file.url}
+                    alt=""
+                  />
+                </div>
+              </div>
+            </a>
+          ))
+        }
       </div>
     </div>
-
-    <div
-      style="scroll-behavior: smooth; overflow:scroll;  height: 70vh;"
-      class="col-lg-6 col-md-6 col-sm-12"
-    >
-      {
-        entries.items.map((blogs) => (
-          <a href={"/blogs/" + blogs.fields.params} aria-label="blogs">
-            <div
-              class={
-                "row list " +
-                blogs.fields.genreNew.replaceAll(" ", "").toLowerCase()
-              }
-            >
-              <div class="col-9">
-                <span class="listGenre" set:html={blogs.fields.genreNew} />
-                <br />
-                <span
-                  class="listText"
-                  set:html={documentToHtmlString(blogs.fields.blogTitle)}
-                />
-              </div>
-
-              <div class="col-3">
-                <img
-                  style="width:90%"
-                  class="blogImg  "
-                  src={blogs.fields?.heroImage?.fields?.file.url}
-                  alt=""
-                />
-              </div>
-            </div>
-          </a>
-        ))
-      }
-    </div>
-  </div>
-</section>
-
+  </section>
+</Layout>
 <style>
   . {
     height: auto;
@@ -544,9 +545,10 @@ const entries: any = await contentfulClient.getEntries<any>({
   }
   .topText span {
     font-family: "anek devanagari";
-    opacity: 50%;
+    opacity: 65%;
     color: white;
-    font-size: 2.3vw;
+    font-size: 2.2vw;
+    font-weight: 300;
   }
 
   .editors {

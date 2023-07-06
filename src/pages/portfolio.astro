@@ -92,13 +92,15 @@ const entries: any = await contentfulClient.getEntries<any>({
             <span class="index">{(index = index + 1)}</span>
             <span class="name" set:html={caseStudy.fields.singleClient} />
           </div>
-          <img
-            src={caseStudy.fields?.heroBanner?.fields?.file.url}
-            style="width: 100%;"
-            alt=""
-            class=" "
-            loading="lazy"
-          />
+          <div class="imgDiv">
+            <img
+              src={caseStudy.fields?.heroBanner?.fields?.file.url}
+              style="width: 100%;"
+              alt=""
+              class=" "
+              loading="lazy"
+            />
+          </div>
           <div class="row info">
             <div class="csName col-lg-6 col-md-6 col-sm-12">
               <span
@@ -124,6 +126,14 @@ const entries: any = await contentfulClient.getEntries<any>({
     a {
       text-decoration: none;
     }
+    .imgDiv img {
+      position: relative;
+      z-index: -1;
+    }
+    .imgDiv {
+      box-shadow: inset 0vw 3.1vw 5.5vw black;
+    }
+
     #main4 span {
       font-family: "Deutschlander";
       padding: 3vw;
