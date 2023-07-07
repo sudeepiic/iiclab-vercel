@@ -10,7 +10,7 @@ import hefty from "../images/hefty.png";
 import circleHand from "../images/circleHand.png";
 import diamond from "../images/diamond.png";
 import awardsNew from "../images/awardsNew.jpg";
-
+import mask from "../images/IIC-Exclude.svg";
 import viewAllAwards from "../images/viewAllAwards.png";
 import vVerse from "../images/vVerse.png";
 import vTour from "../images/vTour.png";
@@ -32,6 +32,7 @@ import carousalPrev from "../images/carousalPrev.png";
 import { contentfulClient } from "../lib/contentful";
 import close from "../images/close.png";
 import heroHand from "../images/heroHand.png";
+import redirectToWork from "../images/redirectToWork.png";
 
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
@@ -92,9 +93,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         data-bs-target="#myModal"
         data-bs-toggle="modal"
         data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
-        class="pause"
+        class="pause showreelBtn"
         aria-label="showreel"
-        style="width:40px;height:40px; border:1px solid black; border-radius: 50%; background:black;"
       >
         <img
           src={puase}
@@ -276,7 +276,9 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           </td>
           <td>
             <a href="/solution-details"
-              ><img class="table solutionArrow" src={vector} alt="" /></a
+              ><div class="onHover">
+                <img class="table solutionArrow" src={vector} alt="" />
+              </div></a
             >
           </td>
           <!-- <td>Data 4</td> -->
@@ -297,11 +299,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             </ul></td
           >
           <td>
-            <a href="/solution-details#experiential"
-              ><img class="table solutionArrow" src={vector} alt="" /></a
+            <a href="/solution-details#experiential">
+              <div class="onHover">
+                <img class="table solutionArrow" src={vector} alt="" />
+              </div></a
             ></td
-          >
-        </tr>
+          ></tr
+        >
+
         <tr class="hover">
           <td class="index">03.</td>
           <td class="tech">Interactive Solution</td>
@@ -314,7 +319,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               <li class="list">Object Recognition Table</li>
             </ul></td
           >
-          <td> <img class="table solutionArrow" src={vector} alt="" /></td>
+          <td>
+            <a href="/solution-details"
+              ><div class="onHover">
+                <img class="table solutionArrow" src={vector} alt="" />
+              </div></a
+            ></td
+          >
         </tr>
         <tr class="hover">
           <td class="index">04.</td>
@@ -327,7 +338,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               <li class="list">Gaming Solutions</li>
             </ul></td
           >
-          <td> <img class="table solutionArrow" src={vector} alt="" /></td>
+          <td>
+            <a href="/solution-details"
+              ><div class="onHover">
+                <img class="table solutionArrow" src={vector} alt="" />
+              </div></a
+            ></td
+          >
         </tr>
 
         <tr class="hover">
@@ -343,7 +360,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               <li class="list">Anamorphic Content</li>
             </ul></td
           >
-          <td> <img class="table solutionArrow" src={vector} alt="" /></td>
+          <td>
+            <a href="/solution-details"
+              ><div class="onHover">
+                <img class="table solutionArrow" src={vector} alt="" />
+              </div></a
+            ></td
+          >
         </tr>
 
         <tr class="hover">
@@ -358,7 +381,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               <li class="list">Graphic Design & Prototype</li>
             </ul></td
           >
-          <td> <img class="table solutionArrow" src={vector} alt="" /></td>
+          <td>
+            <a href="/solution-details"
+              ><div class="onHover">
+                <img class="table solutionArrow" src={vector} alt="" />
+              </div></a
+            ></td
+          >
         </tr>
       </tbody>
     </table>
@@ -589,6 +618,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               />
             </div>
             <div class="image-overlay">
+              <img src={redirectToWork} alt="" />
               <span
                 class="workName"
                 set:html={caseStudy?.fields?.singleClient}
@@ -604,7 +634,6 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     }
   </div>
 </section>
-
 <section style="margin-top: 4.5%;">
   <div
     class="moving-text"
@@ -1039,6 +1068,54 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       height: auto;
     }
 
+    .showreelBtn {
+      width: 40px;
+      height: 40px;
+      border: 1px solid black;
+      border-radius: 50%;
+      background: black;
+      -webkit-animation: glowing 1s ease-in-out infinite alternate;
+      -moz-animation: glowing 1s ease-in-out infinite alternate;
+      animation: glowing 1s ease-in-out infinite alternate;
+    }
+    @-webkit-keyframes glowing {
+      from {
+        box-shadow: 0 0 5px 5px #fff, 0 0 10px 5px #edebeb, 0 0 15px 5px #edebeb,
+          0 0 20px 5px #edebeb, 0 0 25px 5px #faf8f7, 0 0 30px 10px #faf8f7;
+      }
+      to {
+        box-shadow: 0 0 5px 5px #575757, 0 0 10px 5px #edebeb,
+          0 0 15px 5px #cfcbca, 0 0 20px 5px #3b3a39, 0 0 25px 5px #cfcbca,
+          0 0 30px 10px #faf8f7;
+      }
+    }
+
+    @keyframes masking {
+      0% {
+        -webkit-mask-image: radial-gradient(
+          circle,
+          black 0%,
+          rgb(255 255 255 / 0%) 0%
+        );
+      }
+
+      50% {
+        -webkit-mask-image: radial-gradient(
+          circle,
+          black 10%,
+          rgb(255 255 255 / 0%) 0%
+        );
+      }
+
+      100% {
+        -webkit-mask-image: radial-gradient(
+          circle,
+          black 30%,
+          rgb(255 255 255 / 0%) 0%
+        );
+      }
+    }
+
     .solutionArrow {
       width: 1.7rem;
       height: 1.7rem;
@@ -1080,14 +1157,21 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     }
     .image-overlay {
       position: relative;
-      top: -19%;
+      top: -18.8%;
       color: white;
-      background: rgba(0, 0, 0, 0.3);
-      width: 75%;
-      left: 5%;
-      padding-left: 2%;
+      /* backdrop-filter: blur(8px); */
+      background: rgba(0, 0, 0, 0.7);
+
+      padding: 7% 0 7% 9%;
+
       opacity: 0;
-      border-radius: 0 0 0 2vw;
+      border-radius: 0 0 4vw 4vw;
+    }
+    .image-overlay img {
+      width: 16%;
+      position: absolute;
+      left: 82%;
+      bottom: 70%;
     }
     .hoverImg:hover .image-overlay {
       opacity: 1;
@@ -1102,14 +1186,16 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     }
     .workName {
       font-family: "anek devanagari";
-      font-size: 2.2vw;
+      font-size: 1.95vw;
       font-weight: 500;
+      line-height: 1;
       display: block;
       text-transform: capitalize;
     }
     .workTech {
       font-family: "anek devanagari";
-      font-size: 2vw;
+      font-size: 1.6vw;
+      font-weight: 200;
       display: block;
       text-transform: capitalize;
     }
@@ -1166,9 +1252,24 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     table tr {
       border-bottom: 1.15px solid rgb(63, 63, 63);
     }
+    .onHover {
+      padding-left: 24%;
+    }
 
     table .hover:hover {
       background-color: rgb(62, 61, 61);
+    }
+    table .hover:hover .solutionArrow {
+      filter: invert(1);
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    table .hover:hover .onHover {
+      background-color: #e5ff53;
+
+      padding-top: 20%;
+      border-radius: 0 0.5vw 0 0.5vw;
+      margin-right: 15%;
     }
 
     .img {
@@ -2208,6 +2309,31 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     .workAnimate-active:after {
       left: 100%;
     } */
+
+    /* banner image animation */
+    .mainImg {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .mainImg:after {
+      content: "";
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      /* transform: scale(0); */
+      z-index: 1;
+      transform: scale(1);
+
+      position: absolute;
+      background-image: url(../images/IIC-Exclude.svg);
+      background-position: center;
+      transition: transform 2s ease;
+    }
+    .mainImg-animate:after {
+      transform: scale(100);
+    }
   </style>
 
   <script>
@@ -2264,13 +2390,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         },
       })
       .from(".mainImg", 1, {
-        opacity: "0",
-        scale: "0",
-        ease: "ease2.inOut",
         scrollTrigger: {
           trigger: ".mainImg",
-          start: "top bottom",
-          end: "bottom 50%",
+          start: "top 15%",
+          end: "bottom 30%",
+          toggleClass: "mainImg-animate",
+         
+
           scrub: true,
         },
       })
