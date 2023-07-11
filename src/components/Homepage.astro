@@ -59,7 +59,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 ---
 
 <section class="margins animate-topSection">
-  <div class="topDiv" style="padding-top: 5%;">
+  <div class="topDiv" style="padding-top: 9%;">
     <div id="main" class="d-flex">
       <div class="head1 animateHeading">
         <span class="head1Span">Humanizing Tech</span>
@@ -87,6 +87,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         </p>
       </div>
     </div>
+    <!-- <lottie-player
+      src="../../src/playAnimation.json"
+      background="transparent"
+      speed="1"
+      style="width: 300px; height: 300px;"
+      loop
+      autoplay></lottie-player> -->
+
     <div class="d-flex" id="main3">
       <a
         href="#myModal"
@@ -124,7 +132,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
   </div>
 </section>
 
-<section class="mainImg" style="margin-top:7%; margin-bottom
+<section class="mainImg" style="margin-top:1%; margin-bottom
 :1%;">
   <img src={BannerImg} alt="" style="height:100%;width:100%; " class="" />
 </section>
@@ -614,12 +622,12 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     <div class="d-flex workImg-section" style="width:100%; ">
       {
         entries.items.map((caseStudy, index) => (
-          <div class="hoverImg moving-text2 ">
+          <div class="hoverImg moving-text2">
             <a
               href={"/case-study/" + caseStudy?.fields?.heroTitle}
               aria-label="case study"
             >
-              <div class="work-animation">
+              <div class="">
                 <img
                   src={caseStudy?.fields?.heroBanner?.fields?.file.url}
                   class="movingImgs  "
@@ -1078,6 +1086,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         height: auto;
       }
 
+      #animation svg g g:nth-child(1) {
+        fill: black !important;
+      }
+
       /* deduce engage enable animation */
 
       .container {
@@ -1145,8 +1157,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         height: 1.7rem;
       }
       .animateHand img {
-        width: 19vw;
-        margin-top: 27%;
+        width: 22vw;
+        margin-top: 10%;
       }
       .animateHand {
         margin-left: 3%;
@@ -1239,8 +1251,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         margin-left: 8%;
       }
       .para1 {
-        font-size: 1.25vw !important;
-        line-height: 2;
+        font-size: 1.4vw !important;
+        line-height: 1.9;
       }
 
       /* .table{
@@ -1270,7 +1282,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
       table td {
         padding: 10px;
-
+        font-size: calc(16px + 0.390625vw);
         text-align: left;
         color: white;
         /* border: 1px solid black; */
@@ -1437,10 +1449,11 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .head1 {
         font-family: "Deutschlander";
         text-transform: uppercase;
-        font-size: 13vw;
+        font-size: 15vw;
         font-weight: 400;
         font-style: normal;
         overflow: hidden;
+        line-height: 1;
 
         /* padding-top: 2%; */
       }
@@ -1455,9 +1468,9 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         width: 37vw;
       }
       .paraDiv .para {
-        font-size: 1.25rem;
         font-family: "Anek Devanagari";
         text-align: justify;
+        word-spacing: 0.2rem;
       }
       #main2 #div2 {
         margin-left: 20px;
@@ -1519,10 +1532,6 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       }
       .strong {
         opacity: 100% !important;
-      }
-
-      .paraDiv {
-        padding-top: 1%;
       }
 
       .moving-text {
@@ -1812,6 +1821,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         }
         .head1 {
           margin-top: auto;
+        }
+        .head2 {
+          margin-left: 2.4%;
+          font-size: 15vw;
         }
         .mobPara,
         .mobBlackPara {
@@ -2224,7 +2237,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         content: "";
         position: absolute;
         right: 0;
-        left: 0;
+        left: -2%;
         top: 0;
         bottom: 40%;
         background: #1a1a1a;
@@ -2339,25 +2352,25 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         overflow: hidden;
       }
 
-      /* .work-animation {
-      position: relative;
-      left: 100%;
-    }
-    .work-animation:after {
-      content: "";
-      position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      background: #f6f7f0;
-      z-index: 998;
-      transition: left 1.2s ease;
-      overflow: hidden;
-    }
-    .workAnimate-active:after {
-      left: 100%;
-    } */
+      .work-animation {
+        position: relative;
+        left: 100%;
+      }
+      .work-animation:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background: #f6f7f0;
+        z-index: 998;
+        transition: left 1.2s ease;
+        overflow: hidden;
+      }
+      .workAnimate-active:after {
+        left: 100%;
+      }
 
       /* banner image animation */
       .mainImg {
@@ -2558,12 +2571,12 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           },
         })
         .from(".workImg-section", 1, {
-          opacity: 0,
           scrollTrigger: {
             trigger: ".work-animation",
-            start: "top 75%",
-            end: "bottom 95%",
-            opacity: 0,
+            start: "top 55%",
+            end: "bottom top",
+
+            toggleClass: "workAnimate-active",
             scrub: true,
           },
         })

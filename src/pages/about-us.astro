@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import downArrow from "../images/downArrow.png";
 import officeImg from "../images/officeImg.png";
-import imgTags from "../images/imgTags.png";
+import strip from "../images/strip.png";
 import members1 from "../images/members1.png";
 import Header from "../components/Header.astro";
 import carousalNext from "../images/carousalNext.png";
@@ -244,11 +244,13 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
       </div>
       <div style="width:48%">
         <div class="d-flex teams">
-          <span class="dept clicked">All</span>
-          <span class="dept">Designers</span>
-          <span class="dept">Developers</span>
-          <span class="dept">Business Development</span>
-          <span class="dept">Marketing</span>
+          <span id="All" class="dept clicked">All</span>
+          <span id="Designers" class="dept">Designers</span>
+          <span id="Developers" class="dept">Developers</span>
+          <span id="Business Development" class="dept"
+            >Business Development</span
+          >
+          <span id="Marketing" class="dept">Marketing</span>
         </div>
       </div>
     </div>
@@ -258,7 +260,14 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
         <div class="swiper-wrapper">
           {
             employeesDetails.items.map((employees) => (
-              <div class="swiper-slide">
+              <div
+                class={
+                  "swiper-slide employee " +
+                  employees.fields?.department
+                    .replaceAll(" ", "-")
+                    .toLowerCase()
+                }
+              >
                 <div>
                   <img
                     class="members  "
@@ -683,6 +692,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
     EffectCreative,
   } from "swiper";
   let x = 3;
+
   var swiper = new Swiper(".mySwiper", {
     modules: [Navigation, EffectCreative],
     effect: "creative",
@@ -730,10 +740,25 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
     // },
   });
 
+  // filter for employees based on departments
+
   const myButton = document.querySelectorAll(".dept");
 
   for (let i = 0; i < myButton.length; i++) {
     myButton[i].addEventListener("click", function () {
+      const selectedDept = myButton[i].id.replaceAll(" ", "-").toLowerCase();
+      console.log(selectedDept, "deptttttttttt");
+      document.querySelectorAll(".employee").forEach((employeeInfo) => {
+        employeeInfo.classList.remove("d-none");
+
+        if (selectedDept === "all") {
+          employeeInfo.classList.add("d-inline-block;");
+        } else if (!employeeInfo.classList.contains(selectedDept)) {
+          employeeInfo.classList.add("d-none");
+
+          console.log(employeeInfo.classList.contains(selectedDept));
+        }
+      });
       for (let j = 0; j < myButton.length; j++) {
         if (i === j) {
           myButton[j].classList.add("clicked");
@@ -743,6 +768,58 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
       }
     });
   }
+
+  // swiper.destroy(true, true);
+  // swiper.updateSlidesClasses();
+
+  // var swiper = new Swiper(".mySwiper", {
+  //   modules: [Navigation, EffectCreative],
+  //   effect: "creative",
+  //   grabCursor: true,
+  //   centeredSlides: true,
+  //   slidesPerView: 3,
+  //   spaceBetween: 20,
+  //   loop: true,
+  //   navigation: {
+  //     nextEl: ".swiper-next",
+  //     prevEl: ".swiper-prev",
+  //   },
+  //   creativeEffect: {
+  //     prev: {
+  //       // will set `translateZ(-400px)` on previous slides
+  //       rotate: [0, 0, -12],
+  //       translate: ["-105%", "15%", 0],
+  //       scale: 0.85,
+  //     },
+  //     next: {
+  //       // will set `translateX(100%)` on next slides
+  //       rotate: [0, 0, -12],
+  //       translate: ["105%", "-6%", 0],
+  //       scale: 0.85,
+  //     },
+  //   },
+
+  //   autoplay: {
+  //     delay: 2000,
+  //   },
+  //   breakpoints: {
+  //     767: {
+  //       slidesPerView: 3,
+  //       spaceBetween: 20,
+  //     },
+  //     220: {
+  //       slidesPerView: 1.6,
+  //       spaceBetween: 25,
+  //     },
+  //   },
+
+  //   // pagination: {
+  //   //   el: ".swiper-pagination",
+  //   //   clickable: true,
+  //   // },
+  // });
+
+  swiper.updateSlides();
 
   // gsap js
   var textWrapper = document.querySelector("#div1");
