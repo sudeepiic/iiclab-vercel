@@ -2427,25 +2427,24 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .mainImg {
         overflow: hidden;
         position: relative;
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        -webkit-mask-position: center center;
+        mask-position: center center;
+        -webkit-mask-image: url("../images/diamond.svg");
+        mask-image: url("../images/diamond.svg");
+        -webkit-mask-size: 0%;
+        mask-size: 0%;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        transition: mask-size 1s ease;
+        -webkit-transition: -webkit-mask-size 1s ease;
       }
 
-      .mainImg:after {
-        content: "";
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        /* transform: scale(0); */
-        z-index: 1;
-        transform: scale(1);
-
-        position: absolute;
-        background-image: url(../images/IIC-Exclude.svg);
-        background-position: center;
-        transition: transform 2s ease;
-      }
-      .mainImg-animate:after {
-        transform: scale(100);
+      .mainImg-animate {
+        mask-size: 300%;
+        -webkit-mask-size: 300%;
       }
 
       /* swiper css */
