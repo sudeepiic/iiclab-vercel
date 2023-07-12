@@ -21,3 +21,16 @@ u {
 .swiper-slide p {
   margin-bottom: 0 !important;
 }
+
+.workImg-section.moving-text-start .hoverImg {
+  transform: translateX(0%);
+  transition: transform 5s ease;
+}
+
+.workImg-section.moving-text-parent .hoverImg {
+  animation: move-text2 40s 1s linear infinite forwards;
+}
+
+.workImg-section.move-upper-white-bg .work-animation:after {
+  left: 100%;
+}

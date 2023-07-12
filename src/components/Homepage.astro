@@ -68,7 +68,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         <img class="" src={heroHand} alt="" />
       </div>
     </div>
-    <div class="d-flex" id="main2" style="margin-bottom: 2%;">
+    <div class="d-flex" id="main2" style="margin-bottom: 0.4%;">
       <div id="div1" class="paraDiv">
         <span class="para para1"
           >IIC is a full-service MarTech Agency that helps brands design
@@ -87,36 +87,36 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         </p>
       </div>
     </div>
-    <!-- <lottie-player
-      src="../../src/playAnimation.json"
-      background="transparent"
-      speed="1"
-      style="width: 300px; height: 300px;"
-      loop
-      autoplay></lottie-player> -->
 
-    <div class="d-flex" id="main3">
+    <div class="d-flex" id="main3" style="position: relative;">
       <a
         href="#myModal"
         data-bs-target="#myModal"
         data-bs-toggle="modal"
         data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
-        class="pause showreelBtn"
+        class="pause"
         aria-label="showreel"
       >
-        <img
+        <!-- <img
           src={puase}
           alt=""
           class=""
           style="margin-left: 15px; margin-top:10px"
-        />
+        /> -->
+        <lottie-player
+          src="../../src/showreelBtn.json"
+          background="transparent"
+          speed="1"
+          class="lottie"
+          loop
+          autoplay></lottie-player>
       </a>
       <a
         href="#myModal"
         data-bs-target="#myModal"
         data-bs-toggle="modal"
         data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
-        style="margin-top: auto;"
+        class="watch-showreel"
         aria-label="showreel"
       >
         <span id="s1">Watch Showreel</span>
@@ -622,12 +622,12 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     <div class="d-flex workImg-section" style="width:100%; ">
       {
         entries.items.map((caseStudy, index) => (
-          <div class="hoverImg moving-text2">
+          <div class="hoverImg ">
             <a
               href={"/case-study/" + caseStudy?.fields?.heroTitle}
               aria-label="case study"
             >
-              <div class="">
+              <div class="work-animation">
                 <img
                   src={caseStudy?.fields?.heroBanner?.fields?.file.url}
                   class="movingImgs  "
@@ -821,7 +821,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
                         set:html={clientsTestimonials?.fields?.testimonialText}
                       />
                       <div class="d-flex cardFooter">
-                        <div style="margin:auto; margin-left:1%">
+                        <div style="margin:auto; margin-left:1% ;margin-bottom:3%">
                           <span
                             class="authName"
                             set:html={clientsTestimonials?.fields?.clientName}
@@ -855,7 +855,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
                     clients."
                   </div>
                   <div class="d-flex cardFooter">
-                    <div style="margin:auto; margin-left:1%">
+                    <div style="margin:auto; margin-left:1% ; margin-bottom:3%">
                       <span class="authName">Nick Moore</span>
                       <span class="authDesign"
                         >Executive Director and Founder of Lionpoint Group</span
@@ -884,7 +884,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
                     talks for the next phase of the solution.”
                   </div>
                   <div class="d-flex cardFooter">
-                    <div style="margin:auto; margin-left:1%">
+                    <div style="margin:auto; margin-left:1%; margin-bottom:3%">
                       <span class="authName"> Aninda Gupta</span>
                       <span class="authDesign"> CMO Gyproc Saint Gobain</span>
                     </div>
@@ -893,45 +893,23 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               </div>
             </div>
           </div>
-          <div class="swiper-slide">
-            <div class="card-parent">
-              <div class="card-header">
-                <img src={f1Logo} style="width: 50%;" class="" />
-              </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <!-- <div class="d-flex controls"> -->
 
-              <div class="card">
-                <div class="card-body">
-                  <div class="card-text">
-                    "We've worked with Ink In Caps on some innovative tech
-                    projects, in particular the hybrid tour of the Tech Centre
-                    of F1 in which they produced a fantastic result that was
-                    ultimately approved by F1 as a leading app and solution for
-                    them to provide a virtual experience to all of their VIP
-                    clients."
-                  </div>
-                  <div class="d-flex cardFooter">
-                    <div style="margin:auto; margin-left:1%">
-                      <span class="authName">Nick Moore</span>
-                      <span class="authDesign"
-                        >Executive Director and Founder of Lionpoint Group</span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex controls">
-          <img class="swiper-prev" src={carousalPrev} />
-          <img class="swiper-next" src={carousalNext} />
-        </div>
+        <!-- </div> -->
 
         <div class="swiper-pagination"></div>
       </div>
+      <img class="swiper-prev desk-prev" src={carousalPrev} />
+      <img class="swiper-next desk-next" src={carousalNext} />
+      <div class="d-flex controls">
+        <img class="swiper-prev" src={carousalPrev} />
+        <img class="swiper-next" src={carousalNext} />
+      </div>
     </div>
 
-    <div class="d-flex" style="margin-left: 9%; margin-top:7%">
+    <div class="d-flex belowSwiper" style="margin-left: 9%; margin-top:7%">
       <div class="ourAnimate-div">
         <p class="our prod1">OUR &nbsp;</p>
       </div>
@@ -1088,6 +1066,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
       #animation svg g g:nth-child(1) {
         fill: black !important;
+      }
+      /* lottie player */
+      .lottie {
+        width: 80px;
+        height: 80px;
+      }
+      .watch-showreel {
+        margin-top: 2rem;
       }
 
       /* deduce engage enable animation */
@@ -1337,7 +1323,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         margin: 1.2%;
       }
       .imgs:hover {
-        filter: drop-shadow(2px 4px 4px black);
+        /* filter: drop-shadow(2px 4px 4px black); */
+        filter: invert(1);
       }
       .imgRow {
         width: 15%;
@@ -1483,7 +1470,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         line-height: 11vw;
       }
       #main3 #div2 {
-        margin-top: auto;
+        margin-top: 2rem;
       }
       #s1 {
         font-family: "Anek Devanagari";
@@ -1591,7 +1578,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       }
       @keyframes move-text2 {
         0% {
-          transform: translateX(100%);
+          transform: translateX(0%);
         }
         100% {
           transform: translateX(-2000%);
@@ -1666,12 +1653,12 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       /* cards css */
 
       .card-parent {
-        width: 26rem;
+        width: 34rem;
       }
 
       .card-body {
         margin-top: 10%;
-        padding-left: 6% !important;
+        padding: 0 7% !important;
       }
 
       .card-header {
@@ -1679,6 +1666,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         width: 75%;
         text-align: center;
         position: relative;
+        margin-left: 10%;
         padding: 4% 0%;
       }
 
@@ -1689,8 +1677,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .card-text {
         font-family: "anek devanagari";
         /* margin-bottom: 12%; */
-        height: 16vw;
-        font-size: 0.95vw;
+        height: 25vw;
+        font-size: 1.25vw;
         word-spacing: 0.05vw;
       }
 
@@ -1707,20 +1695,20 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         font-family: "anek devanagari";
       }
       .authName {
-        font-size: 1.05rem;
+        font-size: 1.25rem;
         font-weight: 600;
       }
       .authDesign {
         opacity: 50%;
-        font-size: 0.95rem;
+        font-size: 1.05rem;
       }
 
       @media screen and (max-width: 1120px) {
         .authName {
-          font-size: 0.9rem;
+          font-size: 0.95rem;
         }
         .authDesign {
-          font-size: 0.8rem;
+          font-size: 0.85rem;
         }
         .cardFooter {
           margin-top: 5%;
@@ -1763,6 +1751,25 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         .card-body {
           padding-bottom: 5% !important;
         }
+        .swiper-pagination {
+          display: none;
+        }
+        .desk-prev,
+        .desk-next {
+          display: none;
+        }
+        .swiper-prev {
+          margin-right: 4%;
+        }
+        .controls {
+          transform: translate(42%, 75%);
+        }
+        .animate-swiper {
+          margin-bottom: 13% !important;
+        }
+        .swiper {
+          padding-bottom: 0% !important;
+        }
       }
 
       @media screen and (max-width: 675px) {
@@ -1785,7 +1792,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         }
       }
       .swiper {
-        width: 100%;
+        width: 75%;
       }
 
       .swiper-slide {
@@ -1807,17 +1814,34 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .swiper-prev {
         width: 6%;
       }
-      .swiper-prev {
-        margin-right: 4%;
+      .desk-prev {
+        transform: translate(0, -434%);
+        position: relative;
+        left: 6%;
       }
-      .controls {
-        transform: translate(42%, 75%);
+      .desk-next {
+        position: relative;
+        left: 81%;
+        transform: translate(0, -434%);
+      }
+
+      .swiper-pagination {
+        --swiper-pagination-color: white;
+        --swiper-pagination-bullet-inactive-color: white;
+        --swiper-pagination-bullet-horizontal-gap: 7px;
       }
 
       /* mobile view css */
       @media screen and (min-width: 768px) {
+        .controls {
+          display: none !important;
+        }
+
         .animate-featureWork2 {
           margin-top: 17%;
+        }
+        .belowSwiper {
+          margin-top: 0% !important;
         }
         .head1 {
           margin-top: auto;
@@ -1883,6 +1907,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         }
       }
       @media screen and (max-width: 767px) {
+        .lottie {
+          width: 55px;
+          height: 55px;
+        }
+        .watch-showreel,
+        #main3 #div2 {
+          margin-top: 1rem !important;
+        }
         .animateHand img {
           display: none;
         }
@@ -1902,14 +1934,20 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         font-size: 14rem;
       } */
         .card-text {
-          font-size: 1.7vw !important;
-          height: 26vw;
+          font-size: 2.1vw !important;
+          height: 31vw;
+        }
+        .card-parent {
+          width: 29rem !important;
         }
         .paraDiv {
           display: none;
         }
         #main2 #div2 {
           margin-left: 0;
+        }
+        .swiper {
+          width: 100%;
         }
         .topDiv {
           padding-top: 0 !important;
@@ -1950,15 +1988,16 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           font-size: 1.2rem;
           margin-left: 7px;
         }
-        .pause {
+        /* .pause {
           width: 25px !important;
           height: 25px !important;
-        }
-        .pause img {
+          
+        } */
+        /* .pause img {
           margin-left: 8px !important;
           margin-top: -2px !important;
           width: 8px !important;
-        }
+        } */
 
         #main5 #div1 img {
           display: none !important;
@@ -2104,9 +2143,6 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           margin-right: 5%;
           object-fit: cover;
         }
-        .moving-text2 {
-          animation: move-text2 40s linear infinite;
-        }
 
         .wallHonor {
           font-size: 14vw;
@@ -2159,10 +2195,22 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
       @media screen and (max-width: 500px) {
         #s1 {
-          font-size: 1rem;
+          font-size: 0.9rem;
         }
         #main3 #div2 #s3 {
-          font-size: 1rem;
+          font-size: 0.9rem;
+        }
+        .lottie {
+          width: 40px;
+          height: 40px;
+        }
+        .watch-showreel,
+        #main3 #div2 {
+          margin-top: 0.5rem !important;
+        }
+        #s3 img {
+          width: 8px;
+          margin-left: 2px;
         }
         .yellowCircle {
           padding-top: 4.5vw;
@@ -2173,6 +2221,9 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         .tools {
           font-size: calc(10px + 0.390625vw);
           word-spacing: 0.15rem;
+        }
+        .card-text {
+          font-size: 1.8vw !important;
         }
       }
 
@@ -2354,7 +2405,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
       .work-animation {
         position: relative;
-        left: 100%;
+        overflow: hidden;
+        border-radius: 0 4vw 4vw 4vw;
       }
       .work-animation:after {
         content: "";
@@ -2366,7 +2418,6 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         background: #f6f7f0;
         z-index: 998;
         transition: left 1.2s ease;
-        overflow: hidden;
       }
       .workAnimate-active:after {
         left: 100%;
@@ -2396,13 +2447,18 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .mainImg-animate:after {
         transform: scale(100);
       }
+
+      /* swiper css */
     </style>
 
     <script>
       document.querySelector(".head1").classList.add("head1Span-animate");
       document.querySelector(".head2").classList.add("head1Span-animate");
       document.querySelector(".paraDiv").classList.add("head1Span-animate");
-
+      // setTimeout(() => {
+      //   ScrollTrigger.refresh();
+      // }, 3000)
+      const movingImgs = document.querySelectorAll(".hoverImg");
       import { gsap, TimelineMax, Eases } from "gsap";
       import { ScrollTrigger } from "gsap/ScrollTrigger";
       gsap.registerPlugin(ScrollTrigger);
@@ -2572,14 +2628,25 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         })
         .from(".workImg-section", 1, {
           scrollTrigger: {
-            trigger: ".work-animation",
+            trigger: ".workImg-section",
             start: "top 55%",
             end: "bottom top",
 
-            toggleClass: "workAnimate-active",
+            toggleClass: "move-upper-white-bg",
             scrub: true,
           },
         })
+        .from(".workImg-section", 1, {
+          scrollTrigger: {
+            trigger: ".workImg-section",
+            start: "top 55%",
+            end: "bottom top",
+
+            toggleClass: "moving-text-parent",
+            scrub: true,
+          },
+        })
+
         .from(".viewAll-feature", 1, {
           x: "100%",
           ease: "ease1.out",
@@ -2614,8 +2681,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           opacity: 0,
           scrollTrigger: {
             trigger: ".animate-swiper",
-            start: "top 45%",
-            end: "bottom 77%",
+            start: "top 55%",
+            end: "bottom 90%",
             scrub: true,
           },
         })
@@ -2670,11 +2737,11 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       } from "swiper";
       let x = 3;
       var swiper = new Swiper(".mySwiper", {
-        modules: [Navigation, EffectCreative],
+        modules: [Navigation, EffectCreative, Pagination],
         effect: "creative",
         grabCursor: true,
         centeredSlides: true,
-        slidesPerView: 5,
+        slidesPerView: 3,
         spaceBetween: 0,
         loop: true,
         navigation: {
@@ -2684,31 +2751,36 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         creativeEffect: {
           prev: {
             // will set `translateZ(-400px)` on previous slides
-            rotate: [0, 0, -8],
-            translate: ["-120%", "10%", 0],
+            rotate: [0, 0, -6],
+            translate: ["-85%", "5%", 0],
             scale: 0.9,
+            opacity: 0.5,
           },
           next: {
             // will set `translateX(100%)` on next slides
-            rotate: [0, 0, 8],
-            translate: ["120%", "10%", 0],
+            rotate: [0, 0, 6],
+            translate: ["85%", "5%", 0],
             scale: 0.9,
+            opacity: 0.5,
           },
           limitProgress: 2,
         },
         breakpoints: {
           767: {
-            slidesPerView: 5,
-            spaceBetween: 30,
+            slidesPerView: 3,
+            spaceBetween: 0,
           },
           250: {
-            slidesPerView: 2.5,
-            spaceBetween: 50,
+            spaceBetween: 350,
+            slidesPerView: 1.6,
           },
         },
 
         autoplay: {
           delay: 2000,
+        },
+        pagination: {
+          el: ".swiper-pagination",
         },
       });
     </script>
