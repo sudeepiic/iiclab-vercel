@@ -18,10 +18,10 @@ import vRetail from "../images/vRetail.png";
 import vStages from "../images/vStages.png";
 import vConference from "../images/vConference.png";
 import toolsArrow from "../images/toolsArrow.png";
-import solnImg1 from "../images/solnImg1.png";
-import solnImg2 from "../images/solnImg2.png";
-import solnImg3 from "../images/solnImg3.png";
-import solnImg4 from "../images/solnImg4.png";
+import solnImg1 from "../images/solnImg1.jpg";
+import solnImg2 from "../images/solnImg2.jpg";
+import solnImg3 from "../images/solnImg3.jpg";
+import solnImg4 from "../images/solnImg4.jpg";
 import solnImg5 from "../images/solnImg5.png";
 import solnImg6 from "../images/solnImg6.png";
 import fwViewAll from "../images/fwViewAll.png";
@@ -33,6 +33,7 @@ import { contentfulClient } from "../lib/contentful";
 import close from "../images/close.png";
 import heroHand from "../images/heroHand.png";
 import redirectToWork from "../images/redirectToWork.png";
+import ourProdImg from "../images/ourProdImg.jpg";
 
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
@@ -141,20 +142,29 @@ const testimonials: any = await contentfulClient.getEntries<any>({
   <div class="container">
     <div
       id="main4"
-      class="animate-tagline panel"
+      class="animate-tagline"
       style="display:flex;width:max-content"
     >
-      <span>Deduce</span>
-      <div style="text-align: center; margin:15vw 3vw 0vw 3vw">
-        <img style="width:5vw" class="" src={diamond} alt="" />
+      <div class="d-flex panel">
+        <span>Deduce</span>
+        <div style="text-align: center; margin:15vw 3vw 0vw 3vw">
+          <img style="width:5vw" class="" src={diamond} alt="" />
+        </div>
       </div>
 
-      <span>Engage</span>
-      <div style="text-align: center; margin:15vw 3vw 0vw 3vw">
-        <img style="width:5vw" class="" src={diamond} alt="" />
+      <div class="d-flex panel">
+        <span>Engage</span>
+        <div style="text-align: center; margin:15vw 3vw 0vw 3vw">
+          <img style="width:5vw" class="" src={diamond} alt="" />
+        </div>
       </div>
 
-      <span>Enable</span>
+      <div class="d-flex panel">
+        <span>Enable</span>
+        <div style="text-align: center; margin:15vw 3vw 0vw 3vw">
+          <img style="width:5vw; opacity:0" class="" src={diamond} alt="" />
+        </div>
+      </div>
 
       <!-- <span>Deduce</span>
       <div style="text-align: center; margin:11.5vw 3vw 0vw 3vw">
@@ -305,7 +315,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             <td class="tech">Experiential Marketing</td>
             <td>
               <ul class="trial">
-                <img src={solnImg5} class="trial2" alt="" />
+                <img src={solnImg2} class="trial2" alt="" />
                 <li class="list">Gesture Recognition</li>
                 <li class="list">Motion Capture</li>
                 <li class="list">Interactive Tech-led Campaigns</li>
@@ -329,7 +339,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             <td class="tech">Interactive Solution</td>
             <td>
               <ul class="trial">
-                <img src={solnImg2} class="trial2" alt="" />
+                <img src={solnImg3} class="trial2" alt="" />
                 <li class="list">Interactive Wall/Screen</li>
                 <li class="list">Interactive Table/Interactive Book</li>
                 <li class="list">3D Configurators</li>
@@ -349,7 +359,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             <td class="tech">Mobile & Web</td>
             <td>
               <ul class="trial">
-                <img src={solnImg3} class="trial2" alt="" />
+                <img src={solnImg4} class="trial2" alt="" />
                 <li class="list">Web Development</li>
                 <li class="list">App Development</li>
                 <li class="list">Gaming Solutions</li>
@@ -369,7 +379,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             <td class="tech">Content Development</td>
             <td>
               <ul class="trial">
-                <img src={solnImg4} class="trial2" alt="" />
+                <img src={solnImg5} class="trial2" alt="" />
                 <li class="list">3D/2D Animations</li>
                 <li class="list">Motion Graphics</li>
                 <li class="list">Architectural Visualization</li>
@@ -456,7 +466,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         </div>
         <div class="row">
           <div class="col-5">
-            <img class="mobImg" src={solnImg5} alt="" />
+            <img class="mobImg" src={solnImg2} alt="" />
           </div>
           <div class="col-7 mobList">
             <li>Gesture Recognition</li>
@@ -487,7 +497,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         </div>
         <div class="row">
           <div class="col-5">
-            <img class="mobImg" src={solnImg2} alt="" />
+            <img class="mobImg" src={solnImg3} alt="" />
           </div>
           <div class="col-7 mobList">
             <li>Interactive Wall/Screen</li>
@@ -515,7 +525,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         </div>
         <div class="row">
           <div class="col-5">
-            <img class="mobImg" src={solnImg3} alt="" />
+            <img class="mobImg" src={solnImg4} alt="" />
           </div>
           <div class="col-7 mobList">
             <li>Web Development</li>
@@ -542,7 +552,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         </div>
         <div class="row">
           <div class="col-5">
-            <img class="mobImg" src={solnImg4} alt="" />
+            <img class="mobImg" src={solnImg5} alt="" />
           </div>
           <div class="col-7 mobList">
             <li>3D/2D Animation</li>
@@ -588,7 +598,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         <p class="our feature">FEATURED</p>
       </div>
       <div style="display:inline" class="featureImg-animate">
-        <img class="featureImg" src={hefty} alt="" />
+        <img class="featureImg" src={solnImg1} alt="" />
       </div>
       <div style="display:inline; " class="animate-featureWork2">
         <p class="solutions work">&nbsp; WORK.</p>
@@ -619,7 +629,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       lass="yellowCircle"> <p class="view">VIEW ALL</p></div>  -->
     </div>
 
-    <div class="d-flex workImg-section" style="width:100%; ">
+    <div id="stopOnHover" class="d-flex workImg-section" style="width:100%; ">
       {
         entries.items.map((caseStudy, index) => (
           <div class="hoverImg ">
@@ -914,7 +924,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         <p class="our prod1">OUR &nbsp;</p>
       </div>
       <div class="prodImg-animate">
-        <img class="prodImg" src={hefty} alt="" />
+        <img class="prodImg" src={ourProdImg} alt="" />
       </div>
     </div>
     <div class="productAnimate-div">
@@ -1087,29 +1097,6 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       }
       .pin-spacer {
         margin: 0 !important;
-      }
-
-      .showreelBtn {
-        width: 40px;
-        height: 40px;
-        border: 1px solid black;
-        border-radius: 50%;
-        background: black;
-        -webkit-animation: glowing 1s ease-in-out infinite alternate;
-        -moz-animation: glowing 1s ease-in-out infinite alternate;
-        animation: glowing 1s ease-in-out infinite alternate;
-      }
-      @-webkit-keyframes glowing {
-        from {
-          box-shadow: 0 0 5px 5px #fff, 0 0 10px 5px #edebeb,
-            0 0 15px 5px #edebeb, 0 0 20px 5px #edebeb, 0 0 25px 5px #faf8f7,
-            0 0 30px 10px #faf8f7;
-        }
-        to {
-          box-shadow: 0 0 5px 5px #575757, 0 0 10px 5px #edebeb,
-            0 0 15px 5px #cfcbca, 0 0 20px 5px #3b3a39, 0 0 25px 5px #cfcbca,
-            0 0 30px 10px #faf8f7;
-        }
       }
 
       @keyframes masking {
@@ -1526,14 +1513,16 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       }
 
       .moving-text2 {
-        animation: move-text2 45s linear infinite;
+        animation: move-text2 50s linear infinite;
       }
+
       .wrapper {
         overflow-x: hidden;
       }
       .featureImg {
         width: 13vw;
         height: 8vw;
+        border-radius: 4vw;
       }
       .featureImg-animate {
         margin-top: 17.3%;
@@ -1541,7 +1530,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       }
       .prodImg {
         width: 13vw;
-        height: 8vw;
+        height: 7.5vw;
+        border-radius: 4vw;
         margin-top: 5%;
       }
 
@@ -1638,6 +1628,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         opacity: 0;
         visibily: hidden;
         pointer-events: none;
+      }
+      .trail2 {
+        aspect-ratio: 101/72;
+        object-fit: cover;
       }
       @media screen and (min-width: 1300px) {
         .trial2 {
@@ -1903,7 +1897,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           margin-top: -5.5%;
         }
         .prodImg {
-          margin-top: 0.5%;
+          margin-top: 5.5%;
         }
       }
       @media screen and (max-width: 767px) {
@@ -2126,6 +2120,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         .featureImg {
           width: 19vw;
           height: 12vw;
+          border-radius: 6vw;
         }
         .featureImg-animate {
           margin-top: 30.3%;
@@ -2190,6 +2185,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           width: 16vw;
           height: 10vw;
           margin-top: 2%;
+          border-radius: 6vw;
         }
       }
 
@@ -2316,7 +2312,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         content: "";
         position: absolute;
         right: 0;
-        left: 0;
+        left: -5%;
         top: 0;
         bottom: 0;
         background: #1a1a1a;
@@ -2393,7 +2389,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         right: 0;
         left: 0;
         top: 0;
-        bottom: 0;
+        bottom: 40%;
         background: #1a1a1a;
         z-index: 998;
         transition: left 1.2s ease;
@@ -2438,8 +2434,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         mask-size: 0%;
         -webkit-mask-repeat: no-repeat;
         mask-repeat: no-repeat;
-        transition: mask-size 1s ease;
-        -webkit-transition: -webkit-mask-size 1s ease;
+        transition: mask-size 2s ease;
+        -webkit-transition: -webkit-mask-size 2s ease;
       }
 
       .mainImg-animate {
@@ -2448,6 +2444,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       }
 
       /* swiper css */
+
+      #main4 {
+        transform: translate(48%, 0px);
+      }
     </style>
 
     <script>
@@ -2483,13 +2483,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       let sections = gsap.utils.toArray(".panel");
 
       gsap.to(sections, {
-        xPercent: -115 * 1,
+        xPercent: -280 * (sections.length - 1),
         ease: "none",
         scrollTrigger: {
           trigger: ".container",
           pin: true,
           scrub: 1,
-          snap: 1 / (sections.length - 1),
+          snap: 1 / (sections.length - 0.7),
           end: () => "+=" + document.querySelector(".container").offsetWidth,
         },
       });
@@ -2507,8 +2507,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         delay: "2",
       })
         .from(".animateHand", 1.5, {
-          x: "270%",
-          rotate: "-20",
+          x: "190%",
+          rotate: "-17",
           ease: "back.inOut",
           duration: "1.2",
         })

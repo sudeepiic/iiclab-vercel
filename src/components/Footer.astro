@@ -112,16 +112,9 @@ import footerHand from "../images/footerHand.png";
         Lotus Corporate Park, E-Wing 802 Ram Mandir Lane, Jay Coach Junction,
         off Western Express Highway Goregaon, Mumbai, 400063
       </p>
-      <a
-        href="tel:+91-83032 29629"
-        style="color: rgba(255, 255, 255, 1); font-size: calc(7px + 0.390625vw);"
-        >+91-83032 29629</a
-      ><br />
+      <a href="tel:+91-83032 29629">+91-83032 29629</a><br />
 
-      <a
-        href="mailto:mumbai@inkincaps.com"
-        target="_blank"
-        style="color: rgba(255, 255, 255, 1); font-size: calc(7px + 0.390625vw);"
+      <a href="mailto:mumbai@inkincaps.com" target="_blank"
         >mumbai@inkincaps.com</a
       >
     </div>
@@ -401,31 +394,43 @@ import footerHand from "../images/footerHand.png";
       scrollTrigger: {
         trigger: ".footerText",
         start: "top 75%",
-        end: "bottom 50%",
+        end: "bottom 60%",
         scrub: true,
       },
     })
     .from(".contact-animate", {
       duration: 1.5,
-      x: "50%",
+
       opacity: "0",
 
       ease: "power1.out",
       scrollTrigger: {
         trigger: ".contact-animate",
         start: "top 75%",
+        end: "bottom 70%",
+        scrub: true,
+      },
+    })
+    .from(".contact-animate", {
+      duration: 1.5,
+      x: "30%",
+
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: ".contact-animate",
+        start: "top 65%",
         end: "bottom 50%",
         scrub: true,
       },
     })
     .to(".footerHand", {
       duration: 1,
-      x: "15%",
+      x: "30%",
       ease: "power1.out",
 
       scrollTrigger: {
         trigger: ".footerHand",
-        start: "top 47%",
+        start: "top 42%",
         end: "bottom 40%",
         scrub: true,
       },
@@ -449,6 +454,14 @@ import footerHand from "../images/footerHand.png";
     word-spacing: 0.3rem;
     src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
   }
+  .footerText {
+    padding-top: 2%;
+  }
+  .footerContact a {
+    color: rgba(255, 255, 255, 1);
+    font-size: calc(11px + 0.390625vw);
+    font-family: anek devanagari;
+  }
 
   .div1 {
     border: 1px solid rgba(255, 255, 255, 0.35);
@@ -462,7 +475,7 @@ import footerHand from "../images/footerHand.png";
     /* border: 1px solid rgba(255, 255, 255, 0.35); */
     margin-top: 3%;
     border-radius: 2vw;
-    padding: 4% 0 1% 4%;
+    padding: 2.5% 0 2.5% 4%;
     background: rgba(229, 255, 83, 1);
 
     width: 90%;
@@ -487,8 +500,9 @@ import footerHand from "../images/footerHand.png";
     color: grey;
     width: 70%;
     line-height: 200%;
-    font-size: calc(7px + 0.390625vw);
+    font-size: calc(11px + 0.390625vw);
     min-width: 160px;
+    font-family: anek devanagari;
   }
   .footerHand img {
     width: 85%;
@@ -523,7 +537,7 @@ import footerHand from "../images/footerHand.png";
       height: 9vw;
       border-radius: 0 10px 0 10px;
       color: rgba(255, 255, 255, 1);
-      font-size: calc(10px + 0.390625vw);
+      font-size: calc(11px + 0.390625vw);
       width: 88%;
       border: 0.5px solid #a9a9a987;
       padding-left: 4%;
@@ -565,17 +579,17 @@ import footerHand from "../images/footerHand.png";
       color: grey;
       width: 70%;
       line-height: 200%;
-      font-size: calc(10px + 0.390625vw) !important;
+      font-size: calc(11px + 0.390625vw) !important;
       min-width: 160px;
     }
     .headings {
       font-size: calc(13px + 0.390625vw) !important;
     }
     .spacings {
-      font-size: calc(10px + 0.390625vw) !important;
+      font-size: calc(11px + 0.390625vw) !important;
     }
     a {
-      font-size: calc(10px + 0.390625vw) !important;
+      font-size: calc(11px + 0.390625vw) !important;
     }
     .button {
       margin-right: 6%;
@@ -645,7 +659,8 @@ import footerHand from "../images/footerHand.png";
   }
   .spacings {
     line-height: 115%;
-    font-size: calc(7px + 0.390625vw);
+    font-size: calc(11px + 0.390625vw);
+    font-family: anek devanagari;
   }
 
   .collab {

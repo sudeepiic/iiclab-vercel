@@ -28,8 +28,15 @@ u {
 }
 
 .workImg-section.moving-text-parent .hoverImg {
-  animation: move-text2 40s 1s linear infinite forwards;
+  animation: move-text2 50s 1s linear infinite forwards;
 }
+/* .workImg-section:hover .moving-text-parent:hover .hoverImg:hover {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+  cursor: pointer;
+} */
 
 .workImg-section.move-upper-white-bg .work-animation:after {
   left: 100%;
