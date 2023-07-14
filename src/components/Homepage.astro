@@ -938,19 +938,23 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             <td style="color:white" class="tools"
               >V-Retail : Leading virtual sales assistant tool</td
             >
-            <td style="color:#252525; text-align: end;" class="awardName">
+            <td
+              style="color:#252525; text-align: end; "
+              class="awardName hidden-onHover2"
+            >
               <img style="width: 7vw;" src={vRetail} class="" /></td
             >
             <td
-              ><button class="btn"
+              ><button class="btn hidden-onHover"
                 ><img
                   style="width:2.5rem; "
                   class="table"
                   src={toolsArrow}
                   alt=""
                   aria-label="v-retail"
-                /></button
-              ></td
+                />
+              </button>
+              <a class="visible-onHover" href="">know more</a></td
             >
           </tr>
           <tr class="product-table">
@@ -958,11 +962,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             <td style="color:white" class="tools"
               >V-Verse : revolutionary metaverse platform by ink in caps</td
             >
-            <td style="color:#252525; text-align: end;" class="awardName">
+            <td
+              style="color:#252525; text-align: end;"
+              class="awardName hidden-onHover2"
+            >
               <img style="width: 7vw; " src={vVerse} class="" /></td
             >
             <td
-              ><button class="btn"
+              ><button class="btn hidden-onHover"
                 ><img
                   style="width:2.5rem; "
                   class="table"
@@ -970,7 +977,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
                   alt=""
                   aria-label="v-verse"
                 /></button
-              ></td
+              >
+              <a class="visible-onHover" href="">know more</a></td
             >
           </tr>
           <tr class="product-table">
@@ -978,18 +986,22 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             <td style="color:white" class="tools"
               >V-tour : India's Leading Virtual Events Platform</td
             >
-            <td style="color:#252525; text-align: end;" class="awardName">
+            <td
+              style="color:#252525; text-align: end;"
+              class="awardName hidden-onHover2"
+            >
               <img style="width: 9vw;" src={vTour} class="" /></td
             >
             <td
-              ><button class="btn"
+              ><button class="btn hidden-onHover"
                 ><img
                   style="width:2.5rem; "
                   class="table"
                   src={toolsArrow}
                   aria-label="v-tour"
                 /></button
-              ></td
+              >
+              <a class="visible-onHover" href="">know more</a></td
             >
           </tr>
 
@@ -998,11 +1010,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             <td style="color:white" class="tools"
               >V-stages : stunning Virtual stages for your next virtual event</td
             >
-            <td style="color:#252525; text-align: end;" class="awardName">
+            <td
+              style="color:#252525; text-align: end;"
+              class="awardName hidden-onHover2"
+            >
               <img style="width: 9vw;" src={vStages} alt="" class="" /></td
             >
             <td
-              ><button class="btn"
+              ><button class="btn hidden-onHover"
                 ><img
                   style="width:2.5rem; "
                   class="table"
@@ -1010,7 +1025,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
                   alt=""
                   aria-label="v-stages"
                 /></button
-              ></td
+              >
+              <a class="visible-onHover" href="">know more</a></td
             >
           </tr>
           <tr class="product-table">
@@ -1018,11 +1034,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             <td style="color:white" class="tools"
               >V-Conference : Virtual Conferencing Solutions for your business</td
             >
-            <td style="color:#252525; text-align: end;" class="awardName">
+            <td
+              style="color:#252525; text-align: end;"
+              class="awardName hidden-onHover2"
+            >
               <img style="width: 11vw;" src={vConference} alt="" class="" /></td
             >
             <td
-              ><button class="btn"
+              ><button class="btn hidden-onHover"
                 ><img
                   style="width:2.5rem; "
                   class="table"
@@ -1030,7 +1049,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
                   alt=""
                   aria-label="v-conference"
                 /></button
-              ></td
+              >
+              <a class="visible-onHover" href="">know more</a></td
             >
           </tr>
         </tbody>
@@ -2448,6 +2468,66 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       #main4 {
         transform: translate(48%, 0px);
       }
+
+      /* our product table hover effects */
+      /* .product-table:hover {
+        background-color: #e5ff53;
+      } */
+      .product-table:hover td {
+        color: black !important;
+        font-weight: 600 !important;
+      }
+      .product-table:hover button img,
+      .product-table:hover .awardName img {
+        filter: invert(1);
+      }
+      .visible-onHover {
+        display: none !important;
+        font-family: "Anek Devanagari";
+        font-style: normal;
+        font-weight: 600;
+        font-size: calc(16px + 0.390625vw);
+        text-transform: capitalize;
+        color: black !important;
+        word-spacing: 0.2rem;
+        text-align: end;
+      }
+
+      /* table .product-table:hover .visible-onHover {
+        display: inline-block !important;
+      }
+      table .product-table:hover .hidden-onHover {
+        display: none;
+      }
+      table .product-table:hover .hidden-onHover2 {
+        opacity: 0;
+      }
+
+      table .product-table:hover td {
+        padding: 0.6vw 0 !important;
+      } */
+
+      table .product-table {
+        position: relative;
+        z-index: 1;
+      }
+      table .product-table:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: scaleY(0);
+        transform-origin: bottom center;
+        background: #e5ff53;
+        z-index: -1;
+        transition: transform 0.55s;
+      }
+
+      table .product-table:hover::after {
+        transform: scaleY(1);
+      }
     </style>
 
     <script>
@@ -2483,7 +2563,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       let sections = gsap.utils.toArray(".panel");
 
       gsap.to(sections, {
-        xPercent: -280 * (sections.length - 1),
+        xPercent: -280 * (sections.length - 1.35),
         ease: "none",
         scrollTrigger: {
           trigger: ".container",
@@ -2491,6 +2571,75 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           scrub: 1,
           snap: 1 / (sections.length - 0.7),
           end: () => "+=" + document.querySelector(".container").offsetWidth,
+        },
+      });
+      gsap.from("#main5", {
+        x: "-60%",
+
+        duration: 1.2,
+        // repeat: -1,
+        scrollTrigger: {
+          trigger: "#main5",
+          start: "top 45%",
+          end: "top top",
+          toggleActions: "play complete reverse reset",
+        },
+      });
+      gsap.to(".giantHolder-animate", {
+        x: "-100%",
+        ease: "none",
+
+        duration: 0.6,
+
+        scrollTrigger: {
+          trigger: ".giantHolder-animate",
+          start: "top 14%",
+          end: "bottom top",
+          toggleActions: "restart complete reverse reset",
+        },
+      });
+      gsap.from(".clientArray1", 1, {
+        x: "670%",
+        // opacity: "0",
+        ease: "ease1.out",
+        scrollTrigger: {
+          trigger: ".clientArray1",
+          start: "top 45%",
+          end: "top top",
+          toggleActions: "restart complete reverse reset",
+        },
+      });
+      gsap.from(".clientArray2", 1, {
+        x: "670%",
+        // opacity: "0",
+        ease: "ease1.out",
+        scrollTrigger: {
+          trigger: ".clientArray2",
+          start: "top 55%",
+          end: "top top",
+          toggleActions: "restart complete reverse reset",
+        },
+      });
+      gsap.from(".clientArray3", 1, {
+        x: "670%",
+        // opacity: "0",
+        ease: "ease1.out",
+        scrollTrigger: {
+          trigger: ".clientArray3",
+          start: "top 65%",
+          end: "top top",
+          toggleActions: "restart complete reverse reset",
+        },
+      });
+      gsap.from(".clientArray4", 1, {
+        x: "670%",
+        // opacity: "0",
+        ease: "ease1.out",
+        scrollTrigger: {
+          trigger: ".clientArray4",
+          start: "top 75%",
+          end: "top top",
+          toggleActions: "restart complete reverse reset",
         },
       });
 
@@ -2528,71 +2677,6 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             end: "bottom 30%",
             toggleClass: "mainImg-animate",
 
-            scrub: true,
-          },
-        })
-        .from("#main5", 1, {
-          x: "-100%",
-          scrollTrigger: {
-            trigger: "#main5",
-            start: "top bottom",
-            end: "bottom 60%",
-
-            scrub: true,
-          },
-        })
-        .to(".giantHolder-animate", 1.5, {
-          x: "-100%",
-          ease: "ease1.out",
-          scrollTrigger: {
-            trigger: ".giantHolder-animate",
-            start: "top 40%",
-            end: "bottom 40%",
-
-            scrub: true,
-          },
-        })
-        .from(".clientArray1", 1, {
-          x: "670%",
-          // opacity: "0",
-          ease: "ease1.out",
-          scrollTrigger: {
-            trigger: ".clientArray1",
-            start: "top 75%",
-            end: "bottom 74%",
-            scrub: true,
-          },
-        })
-        .from(".clientArray2", 1, {
-          x: "670%",
-          // opacity: "0",
-          ease: "ease1.out",
-          scrollTrigger: {
-            trigger: ".clientArray2",
-            start: "top 80%",
-            end: "bottom 79%",
-            scrub: true,
-          },
-        })
-        .from(".clientArray3", 1, {
-          x: "670%",
-          // opacity: "0",
-          ease: "ease1.out",
-          scrollTrigger: {
-            trigger: ".clientArray3",
-            start: "top 83%",
-            end: "bottom 82%",
-            scrub: true,
-          },
-        })
-        .from(".clientArray4", 1, {
-          x: "670%",
-          // opacity: "0",
-          ease: "ease1.out",
-          scrollTrigger: {
-            trigger: ".clientArray4",
-            start: "top 86%",
-            end: "bottom 86%",
             scrub: true,
           },
         })
