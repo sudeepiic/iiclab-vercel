@@ -6,7 +6,7 @@ import BannerImg from "../images/bannerImg2.jpg";
 import hand2 from "../images/hand-2.png";
 import ovalArrow from "../images/ovalArrow.png";
 import vector from "../images/Vector.png";
-import hefty from "../images/hefty.png";
+
 import circleHand from "../images/circleHand.png";
 import diamond from "../images/diamond.png";
 import awardsNew from "../images/awardsNew.jpg";
@@ -32,6 +32,7 @@ import carousalPrev from "../images/carousalPrev.png";
 import { contentfulClient } from "../lib/contentful";
 import close from "../images/close.png";
 import heroHand from "../images/heroHand.png";
+import content from "../images/content.png";
 // import redirectToWork from "../images/redirectToWork.png";
 import redirectToWork from "../images/redirectToWork2.png";
 
@@ -381,7 +382,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             <td class="tech">Content Development</td>
             <td>
               <ul class="trial">
-                <img src={solnImg5} class="trial2" alt="" />
+                <img src={content} class="trial2" alt="" />
                 <li class="list">3D/2D Animations</li>
                 <li class="list">Motion Graphics</li>
                 <li class="list">Architectural Visualization</li>
@@ -1658,6 +1659,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       .trial2 {
         position: absolute;
         object-fit: cover;
+
         transform: translateX(-50%) translateY(-50%);
         top: 50%;
         left: 50%;
@@ -1666,6 +1668,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         visibily: hidden;
         pointer-events: none;
       }
+
       .trail2 {
         aspect-ratio: 101/72;
         object-fit: cover;
@@ -2635,6 +2638,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           start: "top 45%",
           end: "top top",
           toggleActions: "restart complete reverse reset",
+          markers: true,
         },
       });
       gsap.from(".clientArray2", 1, {
@@ -2646,6 +2650,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           start: "top 55%",
           end: "top top",
           toggleActions: "restart complete reverse reset",
+          markers: true,
         },
       });
       gsap.from(".clientArray3", 1, {
@@ -2657,6 +2662,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           start: "top 65%",
           end: "top top",
           toggleActions: "restart complete reverse reset",
+          markers: true,
         },
       });
       gsap.from(".clientArray4", 1, {
@@ -2668,6 +2674,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           start: "top 75%",
           end: "top top",
           toggleActions: "restart complete reverse reset",
+          markers: true,
         },
       });
 
