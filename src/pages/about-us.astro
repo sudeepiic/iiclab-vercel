@@ -264,7 +264,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
                 class={
                   "swiper-slide employee " +
                   employees.fields?.department
-                    .replaceAll(" ", "-")
+                    ?.replaceAll(" ", "-")
                     .toLowerCase()
                 }
               >
