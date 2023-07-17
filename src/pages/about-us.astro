@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import downArrow from "../images/downArrow.png";
 import officeImg from "../images/officeImg.png";
 import strip from "../images/strip.png";
-import members1 from "../images/members1.png";
+
 import Header from "../components/Header.astro";
 import carousalNext from "../images/carousalNext.png";
 import carousalPrev from "../images/carousalPrev.png";
@@ -705,6 +705,12 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
       nextEl: ".swiper-next",
       prevEl: ".swiper-prev",
     },
+    observer: true,
+    observeParents: true,
+    freeMode: true,
+    // @ts-ignore
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
     creativeEffect: {
       prev: {
         // will set `translateZ(-400px)` on previous slides
@@ -733,11 +739,6 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
         spaceBetween: 25,
       },
     },
-
-    // pagination: {
-    //   el: ".swiper-pagination",
-    //   clickable: true,
-    // },
   });
 
   // filter for employees based on departments
@@ -766,60 +767,14 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
           myButton[j].classList.remove("clicked");
         }
       }
+      console.log("update slides ", swiper);
+
+      swiper.update();
+      swiper.updateSlides();
     });
   }
 
   // swiper.destroy(true, true);
-  // swiper.updateSlidesClasses();
-
-  // var swiper = new Swiper(".mySwiper", {
-  //   modules: [Navigation, EffectCreative],
-  //   effect: "creative",
-  //   grabCursor: true,
-  //   centeredSlides: true,
-  //   slidesPerView: 3,
-  //   spaceBetween: 20,
-  //   loop: true,
-  //   navigation: {
-  //     nextEl: ".swiper-next",
-  //     prevEl: ".swiper-prev",
-  //   },
-  //   creativeEffect: {
-  //     prev: {
-  //       // will set `translateZ(-400px)` on previous slides
-  //       rotate: [0, 0, -12],
-  //       translate: ["-105%", "15%", 0],
-  //       scale: 0.85,
-  //     },
-  //     next: {
-  //       // will set `translateX(100%)` on next slides
-  //       rotate: [0, 0, -12],
-  //       translate: ["105%", "-6%", 0],
-  //       scale: 0.85,
-  //     },
-  //   },
-
-  //   autoplay: {
-  //     delay: 2000,
-  //   },
-  //   breakpoints: {
-  //     767: {
-  //       slidesPerView: 3,
-  //       spaceBetween: 20,
-  //     },
-  //     220: {
-  //       slidesPerView: 1.6,
-  //       spaceBetween: 25,
-  //     },
-  //   },
-
-  //   // pagination: {
-  //   //   el: ".swiper-pagination",
-  //   //   clickable: true,
-  //   // },
-  // });
-
-  swiper.updateSlides();
 
   // gsap js
   var textWrapper = document.querySelector("#div1");

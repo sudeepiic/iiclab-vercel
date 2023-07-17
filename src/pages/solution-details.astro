@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import sampleImg from "../images/solnImg.jpg";
 import rightArrow from "../images/carousalNext.png";
 import leftArrow from "../images/carousalPrev.png";
+import solndetailimg from "../images/solndetailimg.jpg";
 ---
 
 <Layout title="our solutions" seoTitle="solutions">
@@ -22,6 +23,7 @@ import leftArrow from "../images/carousalPrev.png";
             </div>
             <div class="col-10">
               <p>Metaverse</p>
+              <img src={solndetailimg} class="pointerImg" alt="" />
               <span>
                 Replicate the elements of an in-person interaction in the
                 virtual world harnessing the power of Metaverse. Gamify your
@@ -775,6 +777,11 @@ import leftArrow from "../images/carousalPrev.png";
         position: absolute;
         right: 25%;
         top: 27%;
+      }
+
+      .pointerImg {
+        width: 100%;
+        margin: 3% 0;
       }
     </style>
 
