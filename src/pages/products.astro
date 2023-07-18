@@ -57,14 +57,14 @@ const props = Astro.props;
         <a href="./v-conference" class="tabs" aria-label="v-conference">
           v-conference
         </a>
-        <a href="" class="tabs" aria-label="v-stages">
+        <a href="./v-stages" class="tabs" aria-label="v-stages">
           v-stages
         </a>
       </div>
 
       <section style="background-color: #1a1a1a; padding-top: 6%;">
         <div style="margin-left: 9%;  padding-bottom: 5%;">
-          <div style="overflow: hidden;">
+          <div style="overflow: hidden; margin-bottom:2%;">
             <span class="title" set:html={props.title} />
           </div>
           <div style="overflow: hidden;">
@@ -151,39 +151,40 @@ const props = Astro.props;
         <div style="margin-left: 9%;">
           <span class="title">Recent projects</span>
         </div>
-
-        <div style="padding:7% 0 ; " class="mySwiper">
-          <div class="swiper-wrapper">
-            {(props?.productData?.fields?.caseStudies as any)?.map(
-              (products: any) => (
-                <div class="swiper-slide">
-                  <div>
-                    <a
-                      href={"/case-study/" + products?.fields?.heroTitle}
-                      aria-label="work"
-                    >
-                      <img
-                        class="swiper2Img"
-                        src={products?.fields?.heroBanner?.fields?.file.url}
-                        alt=""
-                      />
-                    </a>
-                    <div class="imgCaptionDiv">
-                      <span
-                        class="caption1"
-                        set:html={products?.fields?.singleClient}
-                      />
-                      <p
-                        class="caption2"
-                        set:html={products?.fields?.whichTechnology}
-                      />
+        {props?.productData?.fields?.caseStudies && (
+          <div style="padding:7% 0 ; " class="mySwiper">
+            <div class="swiper-wrapper">
+              {(props?.productData?.fields?.caseStudies as any)?.map(
+                (products: any) => (
+                  <div class="swiper-slide">
+                    <div>
+                      <a
+                        href={"/case-study/" + products?.fields?.heroTitle}
+                        aria-label="work"
+                      >
+                        <img
+                          class="swiper2Img"
+                          src={products?.fields?.heroBanner?.fields?.file.url}
+                          alt=""
+                        />
+                      </a>
+                      <div class="imgCaptionDiv">
+                        <span
+                          class="caption1"
+                          set:html={products?.fields?.singleClient}
+                        />
+                        <p
+                          class="caption2"
+                          set:html={products?.fields?.whichTechnology}
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-              )
-            )}
+                )
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </section>
 
       <section style="background-color: #1a1a1a;">
@@ -230,7 +231,7 @@ const props = Astro.props;
 
   .title {
     font-family: "Deutschlander";
-    font-size: 12vw;
+    font-size: 8vw;
     text-transform: uppercase;
     line-height: 0.85;
     color: white;
@@ -459,7 +460,7 @@ const props = Astro.props;
     },
   }).from(".text", {
     duration: 1,
-    y: "100%",
+
     opacity: 0,
     ease: "power1.out",
     scrollTrigger: {

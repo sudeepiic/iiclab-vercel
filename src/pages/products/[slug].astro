@@ -30,7 +30,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", productsData);
 <Products
   waterMark={productsData?.fields.params}
   title={documentToHtmlString(productsData?.fields?.title)}
-  titleText={productsData?.fields?.titleText}
+  titleText={documentToHtmlString(productsData?.fields?.titleText)}
   caseStudyImg={productsData?.fields?.caseStudies[0]?.fields?.heroBanner?.fields
     ?.file.url}
   productData={productsData}

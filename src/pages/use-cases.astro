@@ -1,0 +1,417 @@
+---
+import Layout from "../layouts/Layout.astro";
+import portfolio1 from "../images/portfolio1.jpg";
+import discussion from "../images/discussion.jpg";
+import unoGame from "../images/unoGame.jpg";
+import conferenceRoomDiscussion from "../images/conferenceRoomDiscussion.jpg";
+import swiper2Img from "../images/useCase-swiperImg.jpg";
+import blogsLeft from "../images/blogsLeft.png";
+import blogsRight from "../images/blogsRight.png";
+---
+
+<Layout title="Use Cases" seoTitle="use cases">
+  <section class="margins titleSection">
+    <span class="title"> Explore our</span>
+
+    <div style="position: relative;">
+      <span class="title" style="margin-right: 4%;">use</span>
+      <img class="titleImg" src={portfolio1} alt="" />
+      <span class="title" style="margin-left: 22%;"> cases</span>
+    </div>
+  </section>
+
+  <section class="swiper1-section">
+    <div class="animate-swiper">
+      <div class="mySwiper" style="padding:1.5% 0 5% 0 ; ">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide imgWidth">
+            <img class="resizeImg" src={conferenceRoomDiscussion} alt="" />
+          </div>
+
+          <div class="swiper-slide imgWidth">
+            <img class="resizeImg" src={unoGame} />
+          </div>
+          <div class="swiper-slide imgWidth">
+            <img class="resizeImg" src={discussion} alt="" />
+          </div>
+        </div>
+
+        <!-- <div class="d-flex controls">
+            <img class="swiper-prev" src={blogsLeft} alt="" />
+            <img class="swiper-next" src={blogsRight} alt="" />
+          </div> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="blackSection">
+    <span class="explore">Explore</span>
+    <span class="explore" style="color: #e5ff53;">&nbsp; Industries</span>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="row" style="margin-top: 6%;">
+            <div class="col-6">
+              <img class="swiperImg" src={swiper2Img} alt="" />
+            </div>
+            <div class="col-5">
+              <div class="imgInfo">
+                <span class="imgTitle">Automobile</span>
+                <br />
+                <span class="imgText"
+                  >Revolutionizing how today’s customer experiences a test drive
+                  of his dream car</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="row" style="margin-top: 6%;">
+            <div class="col-6">
+              <img class="swiperImg" src={swiper2Img} alt="" />
+            </div>
+            <div class="col-5">
+              <div class="imgInfo">
+                <span class="imgTitle">Automobile</span>
+                <br />
+                <span class="imgText"
+                  >Revolutionizing how today’s customer experiences a test drive
+                  of his dream car</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="controls col-6">
+          <img class="swiper-prev" src={blogsLeft} alt="" />
+          <span class="swiper-index">01/</span>
+          <span class="swiper-index" style="color:#e5ff53">06</span>
+          <img class="swiper-next" src={blogsRight} alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="pointersDiv">
+      <div class="row pointerRow">
+        <div class="row col-6">
+          <div class="content-box numbers col-2">
+            <span>01</span>
+          </div>
+          <div class="col-10" style="line-height:1.9vw;">
+            <span class="pointerText"
+              >Create a futuristic city in Metaverse from scratch to provide an
+              immersive virtual test drive experience to your customers.</span
+            >
+          </div>
+        </div>
+        <div class="row col-6 rightsidePointers">
+          <div class="content-box numbers col-2">
+            <span>02</span>
+          </div>
+          <div class="col-10" style="line-height:1.9vw;">
+            <span class="pointerText"
+              >Empower the users to explore and experience every feature of the
+              car in detail</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="row pointerRow">
+        <div class="row col-6">
+          <div class="content-box numbers col-2">
+            <span>03</span>
+          </div>
+          <div class="col-10" style="line-height:1.9vw;">
+            <span class="pointerText"
+              >Unveil the car in a virtual environment- Web or VR Metaverse.
+              Looking for a more visionary approach? Host a Virtual Car Launch
+              in a Physical Space.</span
+            >
+          </div>
+        </div>
+        <div class="row col-6 rightsidePointers">
+          <div class="content-box numbers col-2">
+            <span>04</span>
+          </div>
+          <div class="col-10" style="line-height:1.9vw;">
+            <span class="pointerText"
+              >Personalize your user’s car buying journey with AR-enabled 3D Car
+              configurators.
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row pointerRow">
+        <div class="row col-6">
+          <div class="content-box numbers col-2">
+            <span>05</span>
+          </div>
+          <div class="col-10" style="line-height:1.9vw;">
+            <span class="pointerText"
+              >Interactive Projection Mapping with hyper-personalized animation
+              patterns.</span
+            >
+          </div>
+        </div>
+        <div class="row col-6 rightsidePointers"></div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .margins {
+    margin: 0 7%;
+  }
+  .title {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 20vw;
+    font-weight: 400;
+    font-style: normal;
+    overflow: hidden;
+    line-height: 0.8;
+    word-spacing: 1vw;
+    color: #1a1a1a;
+  }
+
+  .titleSection {
+    margin: 6% 7% 4% 7%;
+  }
+  .titleImg {
+    width: 18%;
+    position: absolute;
+    bottom: 10%;
+    border-radius: 0 3vw;
+  }
+
+  .blackSection {
+    padding: 7% 7%;
+    background-color: #1a1a1a;
+    border-radius: 4vw 4vw 0 0;
+    padding-bottom: 3% !important;
+  }
+
+  .explore {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 14vw;
+    font-weight: 400;
+    font-style: normal;
+    overflow: hidden;
+    line-height: 0.8;
+    /* word-spacing: 1vw; */
+    color: white;
+  }
+
+  .numbers {
+    background-color: #e5ff53;
+    border-radius: 0 0.6vw 0 0.6vw;
+    width: 11%;
+    text-align: center;
+    font-family: Deutschlander;
+    font-size: 4.5vw;
+    line-height: 1;
+    height: fit-content;
+    margin-right: 3%;
+    margin-top: 0.8%;
+  }
+  .pointersDiv {
+    margin-top: 3%;
+    border-bottom: 1.5px solid rgb(74, 72, 72);
+  }
+  .pointerRow {
+    border-top: 1.5px solid rgb(74, 72, 72);
+    padding: 4% 0;
+  }
+  .pointerText {
+    font-family: anek devanagari;
+    font-size: 1.3vw;
+    color: white;
+    font-weight: 300;
+    width: 90%;
+    display: inline-block;
+    word-spacing: 0.08rem;
+  }
+  @media screen and (max-width: 450px) {
+    .pointerText {
+      width: 100%;
+    }
+  }
+  .rightsidePointers {
+    padding-left: 4.5%;
+  }
+
+  /* swiper css */
+  .swiper1-section {
+    margin-bottom: 4%;
+  }
+
+  /* .swiper {
+    width: 90%;
+  } */
+  .mySwiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
+  }
+
+  .swiper-slide {
+    /* font-size: 18px; */
+    /* 
+    justify-content: center;
+    align-items: center; */
+  }
+  .imgWidth img {
+    width: 100%;
+  }
+
+  .animate-swiper {
+    margin-left: 7%;
+  }
+
+  /* swiper 2 css */
+
+  .swiperImg {
+    width: 88%;
+    border-radius: 4.5vw 0;
+  }
+  .imgInfo {
+    position: relative;
+    top: 25%;
+    left: 8%;
+  }
+
+  .imgTitle {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 10vw;
+    font-weight: 400;
+    font-style: normal;
+    overflow: hidden;
+    line-height: 0.8;
+    /* word-spacing: 1vw; */
+    color: white;
+  }
+  .imgText {
+    color: white;
+    font-family: "anek devanagari";
+    width: 85%;
+    font-size: 1.3vw;
+    display: inline-block;
+    margin-top: 2%;
+    opacity: 90%;
+    font-weight: 300;
+  }
+  .swiper-prev,
+  .swiper-next {
+    width: 15%;
+  }
+  .controls {
+    margin-top: 6%;
+  }
+  .swiper-prev {
+    margin-right: 20%;
+    margin-bottom: 6.7%;
+  }
+  .swiper-next {
+    margin-left: 20%;
+    margin-bottom: 6.7%;
+  }
+
+  .swiper-index {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 7vw;
+    font-weight: 400;
+    font-style: normal;
+    overflow: hidden;
+    line-height: 0;
+    /* word-spacing: 1vw; */
+    color: white;
+  }
+</style>
+<script>
+  import {
+    Swiper,
+    Navigation,
+    Pagination,
+    EffectCoverflow,
+    Autoplay,
+    EffectCreative,
+  } from "swiper";
+  let x = 3;
+  var swiper = new Swiper(".mySwiper", {
+    modules: [Navigation, EffectCreative],
+    //   effect: "creative",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 1.2,
+
+    spaceBetween: 10,
+    loop: true,
+    // navigation: {
+    //   nextEl: ".swiper-next",
+    //   prevEl: ".swiper-prev",
+    // },
+
+    breakpoints: {
+      767: {
+        slidesPerView: 1.2,
+
+        spaceBetween: 30,
+      },
+      250: {
+        slidesPerView: 1.15,
+        spaceBetween: 20,
+      },
+    },
+
+    autoplay: {
+      delay: 2000,
+    },
+  });
+
+  let y = 3;
+  var swiper2 = new Swiper(".swiper", {
+    modules: [Navigation, EffectCreative],
+    //   effect: "creative",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 1,
+
+    spaceBetween: 10,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-next",
+      prevEl: ".swiper-prev",
+    },
+
+    // breakpoints: {
+    //   767: {
+    //     slidesPerView: 1,
+
+    //     spaceBetween: 30,
+    //   },
+    //   250: {
+    //     slidesPerView: 1,
+    //     spaceBetween: 20,
+    //   },
+    // },
+
+    autoplay: {
+      delay: 2000,
+    },
+  });
+</script>

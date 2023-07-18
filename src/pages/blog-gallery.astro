@@ -114,29 +114,40 @@ const entries: any = await contentfulClient.getEntries<any>({
     <div style="margin-top: 1%; overflow:hidden" class="margins row">
       <div class="col-md-6 col-lg-6 col-sm-12 picks">
         <div class="animate-img">
-          <img class="editorImgs" src={editorImg1} alt="" />
+          <img
+            class="editorImgs"
+            src={"//images.ctfassets.net/i7u70o31dp49/7dyu5mQVmtZnNzMVvPlssC/421d79adb861c9f778727e1d070a8e22/Mask_group.png"}
+            alt=""
+          />
         </div>
-        <div class="animate-imgText">
+        <div class="animate-imgText" style="width: 95%;">
           <span class="imgText"
-            >I Met Ravi shastri Live from My COuch, The Incredible New Wave of
-            Sports Consumption</span
+            >I Met Ravi shastri Live from My COuch, The New Wave of Sports
+            Consumption</span
           >
 
           <a
             href="/blogs/i-met-ravi-shastri-live-from-my-couch"
-            aria-label="open"></a>
-          <img class="btn goBtn" src={yellowGo} alt="" />
-        </div>
-        <div class="info">
-          <div class="border-box"><span>Design & Technology</span></div>
-          <span class="authorName">By Pallavi.Jain</span>
-          <span class="dot"></span>
-          <span class="readTime">5 min read</span>
+            aria-label="open"
+          >
+            <img class="btn goBtn" src={yellowGo} alt="" />
+          </a>
+
+          <div class="info">
+            <div class="border-box"><span>Design & Technology</span></div>
+            <span class="authorName">By Pallavi.Jain</span>
+            <span class="dot"></span>
+            <span class="readTime">5 min read</span>
+          </div>
         </div>
       </div>
       <div class="col-md-6 col-lg-6 col-sm-12 picks">
         <div class="animate-img2">
-          <img class="editorImgs" src={editorImg2} alt="" />
+          <img
+            class="editorImgs"
+            src={"//images.ctfassets.net/i7u70o31dp49/jAKoXNdwpn9ICPENRR1wb/c0c86c5bf3bd06ea10fb5062d22e3510/Mask_group.png"}
+            alt=""
+          />
         </div>
         <div class="animate-imgText">
           <span class="imgText">The cycle of Analysis Paralysis</span>
@@ -244,6 +255,16 @@ const entries: any = await contentfulClient.getEntries<any>({
     right: 15%;
     width: 2.5%;
     margin-bottom: 20%;
+  }
+
+  .animate-img img,
+  .animate-img2 img {
+    width: 90%;
+    object-fit: cover;
+    aspect-ratio: 625/334;
+
+    border: 0.62vw solid white;
+    border-radius: 0.38vw;
   }
 
   @media screen and (max-width: 1300px) {
@@ -402,7 +423,7 @@ const entries: any = await contentfulClient.getEntries<any>({
       font-size: 7.5vw !important;
     }
     .editorImgs {
-      margin-bottom: 0 !important;
+      margin-bottom: 4.2% !important;
     }
 
     .border-box {
@@ -567,8 +588,8 @@ const entries: any = await contentfulClient.getEntries<any>({
 
   .editorImgs {
     width: 100%;
-    margin-left: -9%;
-    margin-bottom: 3%;
+
+    margin-bottom: 6%;
   }
 
   .imgText {
@@ -579,6 +600,7 @@ const entries: any = await contentfulClient.getEntries<any>({
     font-style: normal;
     color: white;
     line-height: 0.85;
+    word-spacing: 0.25rem;
   }
 
   .goBtn {
@@ -874,7 +896,7 @@ const entries: any = await contentfulClient.getEntries<any>({
       // opacity: 0,
       scrollTrigger: {
         trigger: ".animate-img",
-        start: "top 30%",
+        start: "top 50%",
         end: "bottom top",
         toggleClass: "animation-img",
         scrub: true,
@@ -884,7 +906,7 @@ const entries: any = await contentfulClient.getEntries<any>({
       // opacity: 0,
       scrollTrigger: {
         trigger: ".animate-img2",
-        start: "top 30%",
+        start: "top 50%",
         end: "bottom top",
         toggleClass: "animation-img",
         scrub: true,
@@ -895,8 +917,8 @@ const entries: any = await contentfulClient.getEntries<any>({
       opacity: 0,
       scrollTrigger: {
         trigger: ".animate-imgText",
-        start: "top 68%",
-        end: "bottom 72%",
+        start: "top 75%",
+        end: "bottom 78%",
         scrub: true,
       },
     });

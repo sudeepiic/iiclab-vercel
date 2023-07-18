@@ -257,7 +257,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
 
     <div style="text-align: center;">
       <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper" id="employeeDiv">
           {
             employeesDetails.items.map((employees) => (
               <div
@@ -741,25 +741,37 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
     },
   });
 
+  // storing employee data in array
+
+  const employeeDiv = document.getElementById("employeeDiv");
+
+  const employeeDataArray = [];
+
+  const employee = employeeDiv.querySelectorAll(".swiper-slide");
+  employee.forEach((element) => {
+    employeeDataArray.push(element);
+  });
+
+  console.log(employeeDataArray, "dataaaaaaaaa");
+
+  const updatedEmployeeData = [];
+
   // filter for employees based on departments
 
   const myButton = document.querySelectorAll(".dept");
 
   for (let i = 0; i < myButton.length; i++) {
     myButton[i].addEventListener("click", function () {
+      employeeDiv.innerText = "";
       const selectedDept = myButton[i].id.replaceAll(" ", "-").toLowerCase();
       console.log(selectedDept, "deptttttttttt");
-      document.querySelectorAll(".employee").forEach((employeeInfo) => {
-        employeeInfo.classList.remove("d-none");
-
-        if (selectedDept === "all") {
-          employeeInfo.classList.add("d-inline-block;");
-        } else if (!employeeInfo.classList.contains(selectedDept)) {
-          employeeInfo.classList.add("d-none");
-
-          console.log(employeeInfo.classList.contains(selectedDept));
-        }
+      employeeDataArray.forEach((employeeInfo) => {
+        if (selectedDept == "all") {
+          employeeDiv.appendChild(employeeInfo);
+        } else if (employeeInfo.classList.contains(selectedDept))
+          employeeDiv.appendChild(employeeInfo);
       });
+      console.log(updatedEmployeeData, "updated data");
       for (let j = 0; j < myButton.length; j++) {
         if (i === j) {
           myButton[j].classList.add("clicked");
@@ -771,6 +783,8 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
 
       swiper.update();
       swiper.updateSlides();
+
+      swiper.slideTo(swiper.realIndex);
     });
   }
 
