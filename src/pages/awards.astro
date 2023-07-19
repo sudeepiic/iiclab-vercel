@@ -24,8 +24,15 @@ import digies2 from "../images/digies2.png";
 import wowImage2 from "../images/wowImage2.png";
 import wowImage from "../images/wowImage.png";
 import wowBrand from "../images/wowBrandImg.png";
-
+import { contentfulClient } from "../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 //import { Image, Picture } from "@astrojs/image/components";
+
+const awardsData: any = await contentfulClient.getEntries<any>({
+  content_type: "awards",
+});
+
+console.log(awardsData.items[0].fields, "dataa");
 
 import { gsap } from "gsap";
 ---
@@ -60,107 +67,149 @@ import { gsap } from "gsap";
   <section style="padding: 5% 2%;">
     <div class="swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="row desktopSlider">
-            <div class="col-7 leftSide">
-              <div class="award-name">
-                <span> Marketers' excellence</span>
-              </div>
-              <div class="award-category">
-                <span class="category-name">best brand activation</span>
-                <span class="year">(gold) - 2022</span>
-              </div>
+        {
+          awardsData.items.map((awards, index) => (
+            <div class="swiper-slide">
+              <div class="row desktopSlider">
+                <div class="col-7 leftSide">
+                  <div class="award-name">
+                    <span set:html={awards.fields.awardName} />
+                  </div>
+                  <div class="award-category">
+                    <span
+                      class="category-name"
+                      set:html={awards.fields.category}
+                    />
+                    <span class="year" set:html={awards.fields.rankAndYear} />
+                  </div>
 
-              <div class="project">
-                <div class="row">
-                  <div class="col-1 projectNum">
-                    <span class="index">01</span>
-                    <span class="length">/22</span>
+                  <div class="project">
+                    <div class="row">
+                      <div class="col-1 projectNum">
+                        <span class="index">{(index = index + 1)}</span>
+                        <span class="length">/22</span>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-5 projectName">
+                        {awards.fields.projectName &&
+                        <p>PROJECT:</p>
+                        <span set:html={awards.fields.projectName} />
+                        }
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-3">
+                        { awards.fields.projectReference?.fields?.heroTitle &&
+                        
+                        <a
+                          href={
+                            "/case-study/" +
+                            awards.fields.projectReference?.fields?.heroTitle
+                          }
+                        >
+                          <img
+                            class="viewProject"
+                            src={viewProjectBtn}
+                            alt=""
+                            loading="lazy"
+                          />
+                        </a>
+                      }
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-lg-6 col-md-6 col-sm-5 projectName">
-                    <p>PROJECT:</p>
-                    <span>pro kabaddi league</span>
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-3">
+                </div>
+                <div class="col-4 awardImgDiv">
+                  <div class="awardImg">
+                    <>
+                      <img
+                        class="momento resize"
+                        src={awards?.fields?.awardImage?.fields?.file.url}
+                        alt=""
+                        loading="lazy"
+                      />
+                      <br />
+                    </>
                     <img
-                      class="viewProject"
-                      src={viewProjectBtn}
+                      class="momentoIcon"
+                      src={awards?.fields?.awardBrandLogo?.fields?.file.url}
                       alt=""
                       loading="lazy"
                     />
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-4 awardImgDiv">
-              <div class="awardImg">
-                <img class="momento" src={momento} alt="" loading="lazy" /><br
-                />
-                <img
-                  class="momentoIcon"
-                  src={momentoIcon2}
-                  alt=""
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
 
-          <div class="onlyMob">
-            <div class="mb-award-name">
-              <span>Marketer's excellence</span>
-            </div>
-            <div class="d-flex">
-              <div style="width: 45%;">
-                <div class="mb-award-category">
-                  <span class="category-name">best brand activation</span>
-                  <span class="year">(gold) - 2022</span>
+              <div class="onlyMob">
+                <div class="mb-award-name">
+                  <span set:html={awards.fields.awardName} />
                 </div>
-              </div>
-              <div style="width:50%">
-                <div class="mb-awardImg">
-                  <img
-                    class="mb-momento"
-                    src={momento}
-                    alt=""
-                    loading="lazy"
-                  /><br />
-                  <img
-                    class="mb-momentoIcon"
-                    src={momentoIcon2}
-                    alt=""
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="mb-project">
                 <div class="d-flex">
-                  <div style="width: 20%;">
-                    <span class="mb-index">01</span>
-                    <span class="mb-length">/22</span>
+                  <div style="width: 45%;">
+                    <div class="mb-award-category">
+                      <span
+                        class="category-name"
+                        set:html={awards.fields.category}
+                      />
+                      <span class="year" set:html={awards.fields.rankAndYear} />
+                    </div>
                   </div>
-                  <div class="mb-projectName" style="width: 50%;">
-                    <p>PROJECT:</p>
-                    <span>pro kabaddi league</span>
-                  </div>
-                  <div style="width: 30%;">
-                    <a href="" aria-label="view project">
+                  <div style="width:50%">
+                    <div class="mb-awardImg">
+                      <>
+                        <img
+                          class="mb-momento resize"
+                          src={awards?.fields?.awardImage?.fields?.file.url}
+                          alt=""
+                          loading="lazy"
+                        />
+                        <br />
+                      </>
                       <img
-                        class="mb-viewProject"
-                        src={viewProjectBtn}
+                        class="mb-momentoIcon"
+                        src={awards?.fields?.awardBrandLogo?.fields?.file.url}
                         alt=""
                         loading="lazy"
                       />
-                    </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="mb-project">
+                    <div class="d-flex">
+                      <div style="width: 20%;">
+                        <span class="mb-index">{(index = index + 1)}</span>
+                        <span class="mb-length">/22</span>
+                      </div>
+                      <div class="mb-projectName" style="width: 50%;">
+                        {awards.fields.projectName &&
+                        <p>PROJECT:</p>
+                        <span set:html={awards.fields.projectName} />
+                        }
+                      </div>
+                      <div style="width: 30%;">
+                        {awards.fields.projectReference?.fields?.heroTitle &&
+                        <a
+                          href={
+                            "/case-study/" +
+                            awards.fields.projectReference?.fields?.heroTitle
+                          }
+                          aria-label="view project"
+                        >
+                          <img
+                            class="mb-viewProject"
+                            src={viewProjectBtn}
+                            alt=""
+                            loading="lazy"
+                          />
+                        </a>
+                      }
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          ))
+        }
 
         <!-- <div class="swiper-slide">
           <div class="row desktopSlider">
@@ -270,7 +319,7 @@ import { gsap } from "gsap";
           </div>
         </div> -->
         <!-- kaleido -->
-        <div class="swiper-slide">
+        <!-- <div class="swiper-slide">
           <div class="row desktopSlider">
             <div class="col-7 leftSide">
               <div class="award-name">
@@ -371,11 +420,11 @@ import { gsap } from "gsap";
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- futech -->
 
-        <div class="swiper-slide">
+        <!-- <div class="swiper-slide">
           <div class="row desktopSlider">
             <div class="col-7 leftSide">
               <div class="award-name">
@@ -476,9 +525,9 @@ import { gsap } from "gsap";
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="swiper-slide">
+        <!-- <div class="swiper-slide">
           <div class="row desktopSlider">
             <div class="col-7 leftSide">
               <div class="award-name">
@@ -580,8 +629,8 @@ import { gsap } from "gsap";
               </div>
             </div>
           </div>
-        </div>
-
+        </div> -->
+        <!-- 
         <div class="swiper-slide">
           <div class="row desktopSlider">
             <div class="col-7 leftSide">
@@ -682,8 +731,8 @@ import { gsap } from "gsap";
               </div>
             </div>
           </div>
-        </div>
-        <div class="swiper-slide">
+        </div> -->
+        <!-- <div class="swiper-slide">
           <div class="row desktopSlider">
             <div class="col-7 leftSide">
               <div class="award-name">
@@ -783,10 +832,10 @@ import { gsap } from "gsap";
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- wow awards -->
-
+        <!-- 
         <div class="swiper-slide">
           <div class="row desktopSlider">
             <div class="col-7 leftSide">
@@ -994,9 +1043,9 @@ import { gsap } from "gsap";
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="swiper-slide">
+        <!-- <div class="swiper-slide">
           <div class="row desktopSlider">
             <div class="col-7 leftSide">
               <div class="award-name">
@@ -1099,7 +1148,7 @@ import { gsap } from "gsap";
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <img class="swiper-button-prev" src={awardsPrev} loading="lazy" alt="" />
       <img class="swiper-button-next" src={awardsNext} loading="lazy" alt="" />
@@ -1262,23 +1311,6 @@ import { gsap } from "gsap";
         <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
           <span class="hifen">~</span>
           <span>FuTech Awards</span>
-        </div>
-      </div>
-
-      <div class="row mobAward">
-        <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
-          <span>
-            <img
-              src={momento}
-              class="foxdigi trial2 hoverImg"
-              alt=""
-              loading="lazy"
-            />2022 - Best Content Marketing Launch (Gold)</span
-          >
-        </div>
-        <div class="col-sm-12 col-md-4 col-lg-4 mbAwardName">
-          <span class="hifen">~</span>
-          <span>Marketers' Excellence Awards</span>
         </div>
       </div>
 
@@ -1513,7 +1545,7 @@ import { gsap } from "gsap";
     } */
 
     .resize {
-      aspect-ratio: 879/1210;
+      aspect-ratio: 444/610;
       object-fit: cover;
     }
     .kaleido {
@@ -1556,7 +1588,7 @@ import { gsap } from "gsap";
     .award-category {
       background-color: #1a1a1a;
       font-family: "Deutschlander";
-      font-size: 8vw;
+      font-size: 7vw;
       text-transform: uppercase;
       padding: 7% 5%;
       border-radius: 0 3rem 0 3rem;
@@ -2025,6 +2057,8 @@ import { gsap } from "gsap";
       centeredSlides: true,
       slidesPerView: 1,
       spaceBetween: 20,
+      
+     
       loop: true,
       navigation: {
         nextEl: ".swiper-button-next",

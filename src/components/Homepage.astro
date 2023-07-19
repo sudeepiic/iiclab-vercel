@@ -917,7 +917,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               <img style="width: 6.55vw;" src={vRetail} class="" /></td
             >
             <td
-              ><button class="btn hidden-onHover"
+              ><a class="btn hidden-onHover" href="/products/v-retail"
                 ><img
                   style="width:2.5rem; "
                   class="table"
@@ -925,7 +925,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
                   alt=""
                   aria-label="v-retail"
                 />
-              </button>
+              </a>
               <a class="visible-onHover" href="">know more</a></td
             >
           </tr>
@@ -941,14 +941,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               <img style="width: 5vw; " src={vVerse} class="" /></td
             >
             <td
-              ><button class="btn hidden-onHover"
+              ><a class="btn hidden-onHover" href="/products/v-verse"
                 ><img
                   style="width:2.5rem; "
                   class="table"
                   src={toolsArrow}
                   alt=""
                   aria-label="v-verse"
-                /></button
+                /></a
               >
               <a class="visible-onHover" href="">know more</a></td
             >
@@ -965,13 +965,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               <img style="width: 8.5vw;" src={vTour} class="" /></td
             >
             <td
-              ><button class="btn hidden-onHover"
+              ><a class="btn hidden-onHover" href="/products/v-tour"
                 ><img
                   style="width:2.5rem; "
                   class="table"
                   src={toolsArrow}
                   aria-label="v-tour"
-                /></button
+                /></a
               >
               <a class="visible-onHover" href="">know more</a></td
             >
@@ -989,14 +989,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               <img style="width: 9vw;" src={vStages} alt="" class="" /></td
             >
             <td
-              ><button class="btn hidden-onHover"
+              ><a class="btn hidden-onHover" href="/products/v-stages"
                 ><img
                   style="width:2.5rem; "
                   class="table"
                   src={toolsArrow}
                   alt=""
                   aria-label="v-stages"
-                /></button
+                /></a
               >
               <a class="visible-onHover" href="">know more</a></td
             >
@@ -1018,14 +1018,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               /></td
             >
             <td
-              ><button class="btn hidden-onHover"
+              ><a class="btn hidden-onHover" href="/products/v-conference"
                 ><img
                   style="width:2.5rem; "
                   class="table"
                   src={toolsArrow}
                   alt=""
                   aria-label="v-conference"
-                /></button
+                /></a
               >
               <a class="visible-onHover" href="">know more</a></td
             >
@@ -2484,7 +2484,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         color: black !important;
         font-weight: 600 !important;
       }
-      .product-table:hover button img,
+      .product-table:hover a img,
       .product-table:hover .awardName img {
         filter: invert(1);
       }
