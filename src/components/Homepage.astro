@@ -791,7 +791,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
                           .url
                       }
                       style="width: 50%;"
-                      alt=""
+                      alt={
+                        clientsTestimonials?.fields?.companyLogo?.fields
+                          ?.description
+                      }
                       class=" "
                     />
                   </div>

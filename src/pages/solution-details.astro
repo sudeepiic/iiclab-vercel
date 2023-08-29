@@ -4,16 +4,45 @@ import sampleImg from "../images/solnImg.jpg";
 import rightArrow from "../images/carousalNext.png";
 import leftArrow from "../images/carousalPrev.png";
 import solndetailimg from "../images/solndetailimg.jpg";
+import redirectToWork from "../images/redirectToWork2.png";
+import { contentfulClient } from "../lib/contentful";
+
+const entries: any = await contentfulClient.getEntries<any>({
+  content_type: "caseStudy",
+});
+
+const props = Astro.props;
+console.log(props, "solutionData");
 ---
 
 <Layout title="our solutions" seoTitle="solutions">
   <section id="section">
     <div class="margins" style="margin-top: 2%;" id="immersive">
       <div class="heading">
-        <span> Immersive technology</span>
+        <span set:html={props.Title} />
         <span style="color: #e5ff53;">.</span>
       </div>
-      <img class="img" src={sampleImg} alt="" />
+      <div class="animate-swiper">
+        <div class="mySwiper" style="padding:1.5% 0 0 0 ; ">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide imgWidth">
+              <img class="resizeImg" src={sampleImg} alt="" />
+            </div>
+
+            <div class="swiper-slide imgWidth">
+              <img class="resizeImg" src={sampleImg} />
+            </div>
+            <div class="swiper-slide imgWidth">
+              <img class="resizeImg" src={sampleImg} alt="" />
+            </div>
+          </div>
+
+          <!-- <div class="d-flex controls">
+              <img class="swiper-prev" src={blogsLeft} alt="" />
+              <img class="swiper-next" src={blogsRight} alt="" />
+            </div> -->
+        </div>
+      </div>
 
       <div class="contentDiv">
         <div class="row borders">
@@ -22,32 +51,21 @@ import solndetailimg from "../images/solndetailimg.jpg";
               <span>01</span>
             </div>
             <div class="col-10">
-              <p>Metaverse</p>
+              <p set:html={props.pointer1Heading} />
             </div>
-            <img src={solndetailimg} class="pointerImg" alt="" />
-            <span class="pointerText">
-              Replicate the elements of an in-person interaction in the virtual
-              world harnessing the power of Metaverse. Gamify your customer’s
-              user journey by offering unique engagement opportunities &
-              redefining how they interact with your brand.
-            </span>
+            <img src={props.pointer1Img} class="pointerImg" alt="" />
+            <span class="pointerText" set:html={props.pointer1Text} />
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
             <div class="content-box numbers col-2">
               <span>02</span>
             </div>
             <div class="col-10">
-              <p>Augmented Reality</p>
+              <p set:html={props.pointer2Heading} />
             </div>
-            <img src={solndetailimg} class="pointerImg" alt="" />
+            <img src={props.pointer2Img} class="pointerImg" alt="" />
 
-            <span class="pointerText">
-              Leverage the power of Augmented Reality (AR) to bring your brand
-              to life and create meaningful customer interactions. Our
-              innovative AR solutions seamlessly merge virtual elements with the
-              real world, engaging your audience in immersive experiences that
-              leave a lasting brand impression.
-            </span>
+            <span class="pointerText" set:html={props.pointer2Text} />
           </div>
         </div>
 
@@ -57,775 +75,515 @@ import solndetailimg from "../images/solndetailimg.jpg";
               <span>03</span>
             </div>
             <div class="col-10">
-              <p>Virtual Reality</p>
+              <p set:html={props.pointer3Heading} />
             </div>
-            <img src={solndetailimg} class="pointerImg" alt="" />
+            <img src={props.pointer3Img} class="pointerImg" alt="" />
 
-            <span class="pointerText">
-              Bring about exhilarating Virtual Reality experiences for your
-              customers by transporting them to captivating environments and
-              allowing them to interact with your brand on an entirely new
-              level. Let us redefine how your customers perceive your products
-              or services.
-            </span>
+            <span class="pointerText" set:html={props.pointer3Text} />
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
             <div class="content-box numbers col-2">
               <span>04</span>
             </div>
             <div class="col-10">
-              <p>Projection Mapping</p>
+              <p set:html={props.pointer4Heading} />
             </div>
-            <img src={solndetailimg} class="pointerImg" alt="" />
+            <img src={props.pointer4Img} class="pointerImg" alt="" />
 
-            <span class="pointerText">
-              Transform any surface into a captivating canvas with Projection
-              Mapping. Our skilled team combines enticing animations and
-              technology to create stunning visual displays, turning ordinary
-              spaces into extraordinary interactive experiences in an extremely
-              personalized manner.
-            </span>
+            <span class="pointerText" set:html={props.pointer4Text} />
           </div>
         </div>
 
-        <div class="row borders">
-          <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
-            <div class="content-box numbers col-2">
-              <span>05</span>
-            </div>
-            <div class="col-10">
-              <p>Holographic Technology</p>
-            </div>
-            <img src={solndetailimg} class="pointerImg" alt="" />
+        {
+          props.pointer5Text && (
+            <div class="row borders">
+              <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
+                <div class="content-box numbers col-2">
+                  <span>05</span>
+                </div>
+                <div class="col-10">
+                  <p set:html={props.pointer5Heading} />
+                </div>
+                <img src={props.pointer5Img} class="pointerImg" alt="" />
 
-            <span class="pointerText">
-              Showcase your products, tell your brand's story, and deliver
-              intriguing messages through meticulously designed & developed
-              holographic displays acting as attention magnets.
-            </span>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs"></div>
+                <span class="pointerText" set:html={props.pointer5Text} />
+              </div>
+              {props.pointer6Text && (
+                <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
+                  <div class="content-box numbers col-2">
+                    <span>05</span>
+                  </div>
+                  <div class="col-10">
+                    <p set:html={props.pointer6Heading} />
+                  </div>
+                  <img src={props.pointer6Img} class="pointerImg" alt="" />
+
+                  <span class="pointerText" set:html={props.pointer6Text} />
+                </div>
+              )}
+            </div>
+          )
+        }
+
+        {
+          props.pointer7Text && (
+            <div class="row borders">
+              <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
+                <div class="content-box numbers col-2">
+                  <span>07</span>
+                </div>
+                <div class="col-10">
+                  <p set:html={props.pointer7Heading} />
+                </div>
+                <img src={props.pointer7Img} class="pointerImg" alt="" />
+
+                <span class="pointerText" set:html={props.pointer7Text} />
+              </div>
+            </div>
+          )
+        }
+      </div>
+      <div style="padding-top:4%; ">
+        <div class="relatedProjectHeading">
+          <span>Related <span style="color: #e5ff53">Projects</span></span>
         </div>
+      </div>
+
+      <div
+        id="stopOnHover"
+        class="d-flex workImg-section borders"
+        style="width:100%; padding:7% 0 !important;  "
+      >
+        {
+          entries.items.map((caseStudy, index) => (
+            <div class="hoverImg ">
+              <a
+                href={"/case-study/" + caseStudy?.fields?.heroTitle}
+                aria-label="case study"
+              >
+                <div class="work-animation">
+                  <img
+                    src={caseStudy?.fields?.heroBanner?.fields?.file.url}
+                    class="movingImgs  "
+                    alt=""
+                  />
+                  <div class="image-overlay">
+                    <img src={redirectToWork} alt="" />
+                    <span
+                      class="workName"
+                      set:html={caseStudy?.fields?.singleClient}
+                    />
+                    <span
+                      class="workTech"
+                      set:html={caseStudy?.fields?.whichTechnology}
+                    />
+                  </div>
+                </div>
+              </a>
+            </div>
+          ))
+        }
       </div>
       <div class="margins arrowDiv" style="padding-top:4%">
         <div class="row">
           <div class="col-6 arrows">
-            <a href="#strategy">
+            <a href={props.previousSolutionSlug}>
               <img src={leftArrow} alt="" />
             </a>
-            <span style="margin-left:3%">Strategy & Design</span>
+            <span style="margin-left:3%" set:html={props.previousSolution} />
           </div>
           <div class="col-6 arrows rightArrow" style="padding-left:5%">
-            <span>experiential marketing</span>
-            <a href="#experiential">
+            <span set:html={props.nextSolution} />
+            <a href={props.nextSolutionSlug}>
               <img src={rightArrow} alt="" />
             </a>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- experiential marketing -->
-    <div class="margins" style="margin-top: 2%; " id="experiential">
-      <div class="heading">
-        <span> Experiential Marketing</span>
-        <span style="color: #e5ff53;">.</span>
-      </div>
-      <img class="img" src={sampleImg} alt="" />
+  <style>
+    /* swiper css */
 
-      <div class="contentDiv">
-        <div class="row borders">
-          <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
-            <div class="content-box numbers col-2">
-              <span>01</span>
-            </div>
-            <div class="col-10">
-              <p>Gesture Recognition Technology</p>
-              <span>
-                Unleash the power of intuitive interactions with our gesture
-                recognition technology. By tracking and interpreting hand
-                movements, our solutions enable users to navigate digital
-                content, control applications, and interact with your brand in a
-                natural and seamless manner.
-              </span>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
-            <div class="content-box numbers col-2">
-              <span>02</span>
-            </div>
-            <div class="col-10">
-              <p>Motion capture technology</p>
-              <span>
-                Take experiential marketing to the next level with motion
-                capture technology. By capturing the movements of individuals,
-                we create immersive experiences that respond to their actions,
-                allowing them to actively engage with your brand and become part
-                of the narrative.
-              </span>
-            </div>
-          </div>
-        </div>
+    .mySwiper {
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      overflow: hidden;
+      list-style: none;
+      padding: 0;
+      z-index: 1;
+      display: block;
+    }
 
-        <div class="row borders">
-          <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
-            <div class="content-box numbers col-2">
-              <span>03</span>
-            </div>
-            <div class="col-10">
-              <p>Interactive tech-led campaigns</p>
-              <span>
-                Combine innovative technologies, captivating storytelling, and
-                strategic planning to create immersive experiences that connect
-                with your target audience on a deeper level through interactive
-                campaigns.
-              </span>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
-            <div class="content-box numbers col-2">
-              <span>04</span>
-            </div>
-            <div class="col-10">
-              <p>IoT/Custom Solutions</p>
-              <span>
-                Tailored IoT solutions that seamlessly integrate physical and
-                digital elements, delivering personalized and connected
-                experiences for your audience.
-              </span>
-            </div>
-          </div>
-        </div>
+    .imgWidth img {
+      width: 100%;
+    }
+    /*  */
+    /* related projects css */
 
-        <div class="row borders">
-          <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
-            <div class="content-box numbers col-2">
-              <span>05</span>
-            </div>
-            <div class="col-10">
-              <p>Photobooth</p>
-              <span>
-                Capture the excitement of your audience with our interactive
-                photo booth experience, combining customizable backdrops, props,
-                and digital enhancements, ensuring your event attendees have a
-                blast and leave with cherished memories
-              </span>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
-            <div class="content-box numbers col-2">
-              <span>06</span>
-            </div>
-            <div class="col-10">
-              <p>Kiosk/Vending Machine</p>
-              <span>
-                From information delivery to product demonstrations, empower
-                your customers with seamless access to relevant content through
-                smart kiosks placed at hotspot locations, enhancing your
-                customers’ overall experience.
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="row borders">
-          <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
-            <div class="content-box numbers col-2">
-              <span>07</span>
-            </div>
-            <div class="col-10">
-              <p>Multi-traction Tables</p>
-              <span>
-                Engage your audience with our state-of-the-art multi-traction
-                tables. These interactive tables combine smart-touch surfaces
-                with advanced technology, allowing users to interact with
-                dynamic content, and explore information, fostering a positive
-                brand image.
-              </span>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs"></div>
-        </div>
-      </div>
-      <div class="margins arrowDiv" style="padding-top:4%">
-        <div class="row">
-          <div class="col-6 arrows">
-            <a href="#immersive">
-              <img src={leftArrow} alt="" />
-            </a>
-            <span style="margin-left:3%">immersive technology</span>
-          </div>
-          <div class="col-6 arrows rightArrow" style="padding-left:5%">
-            <span>Interactive solutions</span>
-            <a href="#interactive">
-              <img src={rightArrow} alt="" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+    .workImg-section {
+      padding-bottom: 7.3%;
+    }
 
-    <!--  Interactive solution-->
+    .hoverImg:hover .image-overlay {
+      opacity: 1;
+    }
+    .hoverImg {
+      margin-right: 2%;
+    }
 
-    <div class="margins" style="margin-top: 2%;" id="interactive">
-      <div class="heading">
-        <span> Interactive Solution</span>
-        <span style="color: #e5ff53;">.</span>
-      </div>
-      <img class="img" src={sampleImg} alt="" />
+    .work-animation {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0 4vw 4vw 4vw;
+    }
+    .work-animation:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: #f6f7f0;
+      z-index: 998;
+      transition: left 1.2s ease;
+    }
+    .workAnimate-active:after {
+      left: 100%;
+    }
+    .movingImgs {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      width: 25vw;
+      border-radius: 0 4vw 4vw 4vw;
+    }
 
-      <div class="contentDiv">
-        <div class="row borders">
-          <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
-            <div class="content-box numbers col-2">
-              <span>01</span>
-            </div>
-            <div class="col-10">
-              <p>Interactive Wall/ Interactive Screen</p>
-              <span>
-                Immerse your audience in an unforgettable experience with the
-                interactive wall/ interactive screen solution combining stunning
-                visuals, smart-touch surfaces, and dynamic entrancing content to
-                create captivating experiences for your audience.
-              </span>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
-            <div class="content-box numbers col-2">
-              <span>02</span>
-            </div>
-            <div class="col-10">
-              <p>Interactive Table/ Interactive Book</p>
-              <span>
-                Revolutionize storytelling with interactive tables and
-                interactive books. This digital interactive solution provides a
-                multi-sensory experience to the audience by integrating branding
-                elements, interactive product demonstrations, and a narrative
-                that keeps your audience’s attention intact.
-              </span>
-            </div>
-          </div>
-        </div>
+    .image-overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      /* backdrop-filter: blur(5px); */
+      background: rgba(0, 0, 0, 0.7);
+      padding: 7% 0 7% 9%;
+      opacity: 0;
+      border-radius: 0 0 4vw 4vw;
+    }
+    .image-overlay img {
+      width: 16%;
+      position: absolute;
+      left: 82%;
+      bottom: 70%;
+    }
 
-        <div class="row borders">
-          <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
-            <div class="content-box numbers col-2">
-              <span>03</span>
-            </div>
-            <div class="col-10">
-              <p>Object Recognition Table:</p>
-              <span>
-                With cutting-edge ORT technology clubbed with enthralling
-                animations, you can create immensely interactive experiences
-                that recognize and respond to objects placed on the table,
-                opening up a world of possibilities for engagement.
-              </span>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
-            <div class="content-box numbers col-2">
-              <span>04</span>
-            </div>
-            <div class="col-10">
-              <p>3D Configurators</p>
-              <span>
-                Enhance your customers' shopping experience with our 3D
-                configurators. Empower them to customize and visualize your
-                products in comprehensive detail, making their purchasing
-                journey both interactive and well-informed.
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="margins arrowDiv" style="padding-top:4%">
-        <div class="row">
-          <div class="col-6 arrows">
-            <a href="#experiential">
-              <img src={leftArrow} alt="" />
-            </a>
-            <span style="margin-left:3%">Experiential Marketing</span>
-          </div>
-          <div class="col-6 arrows rightArrow" style="padding-left:5%">
-            <span>Mobile & web</span>
-            <a href="#mobile">
-              <img src={rightArrow} alt="" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+    .workTech {
+      font-family: "anek devanagari";
+      font-size: 1.5vw;
+      font-weight: 200;
+      display: block;
+      text-transform: capitalize;
+    }
+    .workName {
+      font-family: "anek devanagari";
+      font-size: 1.8vw;
+      font-weight: 500;
+      line-height: 1;
+      display: block;
+      text-transform: capitalize;
+      width: 79%;
+    }
 
-    <!-- mobile and web -->
-
-    <div class="margins" style="margin-top: 2%;" id="mobile">
-      <div class="heading">
-        <span> Mobile & Web</span>
-        <span style="color: #e5ff53;">.</span>
-      </div>
-      <img class="img" src={sampleImg} alt="" />
-
-      <div class="contentDiv">
-        <div class="row borders">
-          <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
-            <div class="content-box numbers col-2">
-              <span>01</span>
-            </div>
-            <div class="col-10">
-              <p>Website Development</p>
-              <span>
-                Create visually captivating and interactive website experiences
-                with carefully-crafted user journeys engulfing thoughtfully
-                planned touchpoints for an effective showcase of your product
-                and service offerings.
-              </span>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
-            <div class="content-box numbers col-2">
-              <span>02</span>
-            </div>
-            <div class="col-10">
-              <p>App Development</p>
-              <span>
-                Take your brand to the fingertips of your audience. From iOS to
-                Android, we design and develop intuitive and feature-rich mobile
-                applications that elevate your brand's reach and engagement.
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="row borders">
-          <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
-            <div class="content-box numbers col-2">
-              <span>03</span>
-            </div>
-            <div class="col-10">
-              <p>Gaming Solutions</p>
-              <span>
-                Tap into the power of gamification to drive engagement and
-                create memorable experiences. Our gaming solutions infuse fun
-                and interactivity into your brand's marketing initiatives,
-                fostering meaningful connections with your target audience.
-              </span>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs"></div>
-        </div>
-      </div>
-      <div class="margins arrowDiv" style="padding-top:4%">
-        <div class="row">
-          <div class="col-6 arrows">
-            <a href="#interactive">
-              <img src={leftArrow} alt="" />
-            </a>
-            <span style="margin-left:3%">Interactive solutions</span>
-          </div>
-          <div class="col-6 arrows rightArrow" style="padding-left:5%">
-            <span>Content development</span>
-            <a href="#content">
-              <img src={rightArrow} alt="" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- content development -->
-
-    <div class="margins" style="margin-top: 2%;" id="content">
-      <div class="heading">
-        <span>content development</span>
-        <span style="color: #e5ff53;">.</span>
-      </div>
-      <img class="img" src={sampleImg} alt="" />
-
-      <div class="contentDiv">
-        <div class="row borders">
-          <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
-            <div class="content-box numbers col-2">
-              <span>01</span>
-            </div>
-            <div class="col-10">
-              <p>3D/2D Animations</p>
-              <span>
-                3D/2D Animations: Immerse your audience in captivating
-                storytelling with high-quality 3D and 2D animations. Transform
-                your concepts into attention-grabbing animations that convey
-                your message, evoke emotions, and leave a lasting impact on your
-                viewers.
-              </span>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
-            <div class="content-box numbers col-2">
-              <span>02</span>
-            </div>
-            <div class="col-10">
-              <p>Motion Graphics</p>
-              <span>
-                Elevate your brand's visual communication with dynamic motion
-                graphics solutions. From animated logos to explainer videos, we
-                combine enticing visuals, kinetic typography, and captivating
-                effects to deliver memorable and engaging content.
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="row borders">
-          <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
-            <div class="content-box numbers col-2">
-              <span>03</span>
-            </div>
-            <div class="col-10">
-              <p>Architectural Visualization</p>
-              <span>
-                Present architectural concepts and designs in a visually
-                striking manner with architectural visualization. Using
-                cutting-edge technology, we create realistic 3D renderings and
-                walkthroughs that bring your vision to life and help your
-                stakeholders visualize the final result.
-              </span>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
-            <div class="content-box numbers col-2">
-              <span>04</span>
-            </div>
-            <div class="col-10">
-              <p>Explainer Videos</p>
-              <span>
-                Tell your brand's story in a visually engaging and concise
-                manner combining modern animation, storytelling, and impactful
-                messaging. Result? Compelling videos that effectively
-                communicate your brand's value proposition to your target
-                audience.
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="row borders">
-          <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
-            <div class="content-box numbers col-2">
-              <span>05</span>
-            </div>
-            <div class="col-10">
-              <p>Anamorphic Content</p>
-              <span>
-                Make surfaces come alive with dynamic anamorphic visuals that
-                play with perspective, depth, and optical illusions. With
-                expertise in anamorphic content development, we seamlessly
-                integrate mind-bending visuals and animations to captivate and
-                engage audiences
-              </span>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs"></div>
-        </div>
-      </div>
-      <div class="margins arrowDiv" style="padding-top:4%">
-        <div class="row">
-          <div class="col-6 arrows">
-            <a href="#mobile">
-              <img src={leftArrow} alt="" />
-            </a>
-            <span style="margin-left:3%">Mobile & web</span>
-          </div>
-          <div class="col-6 arrows rightArrow" style="padding-left:5%">
-            <span>strategy & Design</span>
-            <a href="#strategy">
-              <img src={rightArrow} alt="" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- strategy and design -->
-
-    <div class="margins" style="margin-top: 2%;" id="strategy">
-      <div class="heading">
-        <span>Strategy & Design</span>
-        <span style="color: #e5ff53;">.</span>
-      </div>
-      <img class="img" src={sampleImg} alt="" />
-
-      <div class="contentDiv">
-        <div class="row borders">
-          <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
-            <div class="content-box numbers col-2">
-              <span>01</span>
-            </div>
-            <div class="col-10">
-              <p>Scenario Mapping & Brand Audits</p>
-              <span>
-                Gain valuable insights into your brand's positioning and
-                identify opportunities for growth with scenario mapping and
-                brand audits. Our strategic analysis and comprehensive audits
-                help you understand your brand's current state and map out a
-                path towards success.
-              </span>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
-            <div class="content-box numbers col-2">
-              <span>02</span>
-            </div>
-            <div class="col-10">
-              <p>Brand Identity</p>
-              <span>
-                We craft a compelling and cohesive brand identity by delving
-                deep into your brand's values, mission, and target audience to
-                develop a visual identity that reflects your uniqueness and
-                resonates with your customers.
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="row borders">
-          <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
-            <div class="content-box numbers col-2">
-              <span>03</span>
-            </div>
-            <div class="col-10">
-              <p>Competitor Mapping</p>
-              <span>
-                Stay ahead of the competition with thorough competitor mapping
-                services. We analyze your industry landscape, identify key
-                competitors, and provide you with actionable insights to refine
-                your brand strategy and gain a competitive edge.
-              </span>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
-            <div class="content-box numbers col-2">
-              <span>04</span>
-            </div>
-            <div class="col-10">
-              <p>Graphic Design & Prototype</p>
-              <span>
-                Create stunning visuals, mockups, and prototypes that capture
-                the essence of your brand and engage your audience across
-                various touchpoints.
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="margins arrowDiv" style="padding-top:4%">
-        <div class="row">
-          <div class="col-6 arrows">
-            <a href="#content">
-              <img src={leftArrow} alt="" />
-            </a>
-            <span style="margin-left:3%">Content Development</span>
-          </div>
-          <div class="col-6 arrows rightArrow" style="padding-left:5%">
-            <span>Immersive technology</span>
-            <a href="#immersive">
-              <img src={rightArrow} alt="" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <style>
-      @media screen and (max-width: 767px) {
-        .col-10 p {
-          font-size: 9vw !important;
-        }
-        .pointerText {
-          font-size: 2.5vw !important;
-        }
-        .col-sm-12 {
-          margin-bottom: 6% !important;
-          margin-left: 3% !important;
-        }
-        .numbers {
-          width: 10% !important;
-          font-size: 6.5vw !important;
-        }
-        .borders {
-          border: none !important;
-          padding: 0 !important;
-        }
-        .rightDivs,
-        .leftDivs {
-          padding: 0 !important;
-        }
-        .arrows img {
-          width: 20% !important;
-        }
-        .arrows span {
-          font-size: 2.5vw !important;
-        }
-
-        .rightArrow img {
-          right: 0 !important;
-        }
-        .rightArrow span {
-          right: 25% !important;
-          top: 30% !important;
-        }
-        .arrowDiv {
-          padding: 0 !important;
-        }
+    .moving-text2 {
+      animation: move-text2 50s linear infinite;
+    }
+    @keyframes move-text2 {
+      0% {
+        transform: translateX(0%);
       }
+      100% {
+        transform: translateX(-2000%);
+      }
+    }
 
-      @media screen and (max-width: 450px) {
-        .col-10 p {
-          font-size: 10vw !important;
-        }
-        .col-10 span {
-          font-size: 3.5vw !important;
-        }
-        .arrows span {
-          font-size: 2.7vw !important;
-        }
+    /*  */
+    @media screen and (max-width: 767px) {
+      .movingImgs {
+        aspect-ratio: 4/5;
+        width: 30vw;
+        border-radius: 0 4vw 4vw 4vw;
+        margin-right: 5%;
+        object-fit: cover;
       }
-      @media screen and (max-width: 380px) {
-        .arrows span {
-          font-size: 2.5vw !important;
-        }
-      }
-      #section {
-        padding-top: 9vh;
-        background-color: #1a1a1a;
-        overflow-y: scroll;
-        display: grid;
-        grid-template-columns: repeat(6, 100%);
-        scroll-behavior: smooth;
-        scroll-snap-type: x mandatory;
-      }
-      .margins {
-        padding: 0 9% 0 9%;
-      }
-      .heading span {
-        font-family: Deutschlander;
-        text-transform: uppercase;
-        font-size: 13vw;
-        font-weight: 400;
-        font-style: normal;
-        color: #fff;
-        /* line-height: 0.85; */
-      }
-
-      .img {
-        width: 100%;
-      }
-
-      .contentDiv {
-        margin-top: 7%;
-        /* height: 100vh;
-        overflow-y: scroll; */
-        /* overflow-x: hidden; */
-      }
-      .numbers {
-        background-color: #e5ff53;
-        border-radius: 0 0.6vw 0 0.6vw;
-        width: 13%;
-        text-align: center;
-        font-family: Deutschlander;
-        font-size: 4.5vw;
-        line-height: 1.1;
-        height: fit-content;
-      }
-
-      p {
-        font-family: Deutschlander;
-        text-transform: uppercase;
-        font-size: 5vw;
-        font-weight: 400;
-        font-style: normal;
-        color: #fff;
-        line-height: 0.85;
-        margin-bottom: 1% !important;
-      }
-      .col-10 {
-        padding-left: 4%;
+      .col-10 p {
+        font-size: 9vw !important;
       }
       .pointerText {
-        font-family: "anek devanagari";
-        font-size: 1.27vw;
-        color: #fff;
-        font-weight: 300;
-        line-height: 1.6;
+        font-size: 2.5vw !important;
       }
-      .leftDivs {
-        padding-right: 5%;
+      .col-sm-12 {
+        margin-bottom: 6% !important;
+        margin-left: 3% !important;
       }
-      .rightDivs {
-        padding-left: 5%;
+      .numbers {
+        width: 10% !important;
+        font-size: 6.5vw !important;
       }
       .borders {
-        padding: 4% 0;
-        border-bottom: 1.1px solid rgb(99, 99, 99);
+        border: none !important;
+        padding: 0 !important;
       }
-
+      .rightDivs,
+      .leftDivs {
+        padding: 0 !important;
+      }
       .arrows img {
-        width: 15%;
+        width: 20% !important;
       }
       .arrows span {
-        font-family: "anek devanagari";
-        text-transform: uppercase;
-        font-size: 1.7vw;
-        color: #fff;
+        font-size: 2.5vw !important;
       }
-      .rightArrow {
-        position: relative;
-      }
+
       .rightArrow img {
-        position: absolute;
-        right: 0;
+        right: 0 !important;
       }
       .rightArrow span {
-        position: absolute;
-        right: 25%;
-        top: 27%;
+        right: 25% !important;
+        top: 30% !important;
       }
+      .arrowDiv {
+        padding: 0 !important;
+      }
+    }
 
-      .pointerImg {
-        width: 100%;
-        margin: 3% 0;
+    @media screen and (max-width: 450px) {
+      .col-10 p {
+        font-size: 10vw !important;
       }
-    </style>
+      .col-10 span {
+        font-size: 3.5vw !important;
+      }
+      .arrows span {
+        font-size: 2.7vw !important;
+      }
+    }
+    @media screen and (max-width: 380px) {
+      .arrows span {
+        font-size: 2.5vw !important;
+      }
+    }
+    #section {
+      padding-top: 9vh;
+      background-color: #1a1a1a;
+    }
+    .margins {
+      padding: 0 9% 0 9%;
+    }
+    .heading span {
+      font-family: Deutschlander;
+      text-transform: uppercase;
+      font-size: 13vw;
+      font-weight: 400;
+      font-style: normal;
+      color: #fff;
+      /* line-height: 0.85; */
+    }
 
-    <style is:global>
-      .turnBlack {
-        background: transparent;
-        position: absolute;
-        width: 100%;
-      }
+    .img {
+      width: 100%;
+    }
 
-      .list ul li a {
-        color: white;
-        opacity: 50%;
-      }
-      path {
-        fill: white;
-      }
+    .contentDiv {
+      margin-top: 7%;
+      /* height: 100vh;
+        overflow-y: scroll; */
+      /* overflow-x: hidden; */
+    }
+    .numbers {
+      background-color: #e5ff53;
+      border-radius: 0 0.6vw 0 0.6vw;
+      width: 13%;
+      text-align: center;
+      font-family: Deutschlander;
+      font-size: 4.5vw;
+      line-height: 1.1;
+      height: fit-content;
+    }
 
-      .connect,
-      .circles {
-        fill: #1a1a1a;
-      }
-      .oval {
-        fill: white;
-      }
+    p {
+      font-family: Deutschlander;
+      text-transform: uppercase;
+      font-size: 5vw;
+      font-weight: 400;
+      font-style: normal;
+      color: #fff;
+      line-height: 0.85;
+      margin-bottom: 1% !important;
+    }
+    .relatedProjectHeading span {
+      font-family: Deutschlander;
+      text-transform: uppercase;
+      font-size: 10vw;
+      font-weight: 400;
+      font-style: normal;
+      color: #fff;
+      line-height: 0.85;
+      margin-bottom: 1% !important;
+    }
+    .col-10 {
+      padding-left: 4%;
+    }
+    .pointerText {
+      font-family: "anek devanagari";
+      font-size: 1.27vw;
+      color: #fff;
+      font-weight: 300;
+      line-height: 1.6;
+      text-align: justify;
+    }
+    .leftDivs {
+      padding-right: 5%;
+    }
+    .rightDivs {
+      padding-left: 5%;
+    }
+    .borders {
+      padding: 4% 0;
+      border-bottom: 1.1px solid rgb(99, 99, 99);
+    }
 
-      .tele {
-        fill: white;
-      }
-      .menu p {
-        color: white;
-      }
-      .menu .s1,
-      .menu .s2 {
-        border: 1px solid white;
-      }
-    </style>
-  </section>
+    .arrows img {
+      width: 15%;
+    }
+    .arrows span {
+      font-family: "anek devanagari";
+      text-transform: uppercase;
+      font-size: 1.7vw;
+      color: #fff;
+    }
+    .rightArrow {
+      position: relative;
+    }
+    .rightArrow img {
+      position: absolute;
+      right: 0;
+    }
+    .rightArrow span {
+      position: absolute;
+      right: 25%;
+      top: 27%;
+    }
+
+    .pointerImg {
+      width: 100%;
+      margin: 3% 0;
+    }
+  </style>
+
+  <style is:global>
+    .turnBlack {
+      background: transparent;
+      position: absolute;
+      width: 100%;
+    }
+
+    .list ul li a {
+      color: white;
+      opacity: 50%;
+    }
+    path {
+      fill: white;
+    }
+
+    .connect,
+    .circles {
+      fill: #1a1a1a;
+    }
+    .oval {
+      fill: white;
+    }
+
+    .tele {
+      fill: white;
+    }
+    .menu p {
+      color: white;
+    }
+    .menu .s1,
+    .menu .s2 {
+      border: 1px solid white;
+    }
+  </style>
+
+  <script>
+    // swiper
+    import {
+      Swiper,
+      Navigation,
+      Pagination,
+      EffectCoverflow,
+      Autoplay,
+      EffectCreative,
+    } from "swiper";
+    let x = 3;
+    var swiper = new Swiper(".mySwiper", {
+      modules: [Navigation, EffectCreative, Autoplay],
+      //   effect: "creative",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 1.2,
+      autoplay: true,
+      spaceBetween: 10,
+      loop: true,
+      // navigation: {
+      //   nextEl: ".swiper-next",
+      //   prevEl: ".swiper-prev",
+      // },
+
+      breakpoints: {
+        767: {
+          slidesPerView: 1.2,
+
+          spaceBetween: 30,
+        },
+        250: {
+          slidesPerView: 1.15,
+          spaceBetween: 20,
+        },
+      },
+
+      autoplay: {
+        delay: 2000,
+      },
+    });
+    //
+    import { gsap, TimelineMax, Eases } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+    const movingImgs = document.querySelectorAll(".hoverImg");
+    gsap.from(".workImg-section", 1, {
+      scrollTrigger: {
+        trigger: ".workImg-section",
+        start: "top 55%",
+        end: "bottom top",
+
+        toggleClass: "move-upper-white-bg",
+        scrub: true,
+      },
+    });
+    gsap.from(".workImg-section", 1, {
+      scrollTrigger: {
+        trigger: ".workImg-section",
+        start: "top 55%",
+        end: "bottom top",
+
+        toggleClass: "moving-text-parent",
+        scrub: true,
+      },
+    });
+  </script>
 </Layout>

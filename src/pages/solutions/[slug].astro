@@ -1,0 +1,103 @@
+---
+import { contentfulClient } from "../../lib/contentful";
+import Layout from "../../layouts/Layout.astro";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+
+import Solutions from "../solutions.astro";
+import Solution from "../solution-details.astro";
+
+export async function getStaticPaths() {
+  const entries = await contentfulClient.getEntries<any>({
+    content_type: "solutions",
+  });
+  console.log(entries);
+  const pages = entries.items.map((item) => {
+    console.log(item?.fields.slug, "solutionsssssssss");
+    return {
+      params: { slug: item.fields.slug },
+      props: {
+        solutionsData: item,
+      },
+    };
+  });
+  return pages;
+}
+
+const { solutionsData } = Astro.props;
+---
+
+<Solution
+  Title={solutionsData.fields.title}
+  pointer1Heading={solutionsData.fields.pointer1Heading}
+  pointer1Img={solutionsData?.fields?.pointer1Img?.fields?.file.url}
+  pointer1Text={solutionsData?.fields?.pointer1Text}
+  pointer2Heading={solutionsData.fields.pointer2Heading}
+  pointer2Img={solutionsData?.fields?.pointer2Img?.fields?.file.url}
+  pointer2Text={solutionsData?.fields?.pointer2Text}
+  pointer3Heading={solutionsData.fields.pointer3Heading}
+  pointer3Img={solutionsData?.fields?.pointer3Img?.fields?.file.url}
+  pointer3Text={solutionsData?.fields?.pointer3Text}
+  pointer4Heading={solutionsData.fields.pointer4Heading}
+  pointer4Img={solutionsData?.fields?.pointer4Img?.fields?.file.url}
+  pointer4Text={solutionsData?.fields?.pointer4Text}
+  pointer5Heading={solutionsData.fields.pointer5Heading}
+  pointer5Img={solutionsData?.fields?.pointer5Img?.fields?.file.url}
+  pointer5Text={solutionsData?.fields?.pointer5Text}
+  pointer6Heading={solutionsData.fields.pointer6Heading}
+  pointer6Img={solutionsData?.fields?.pointer6Img?.fields?.file.url}
+  pointer6Text={solutionsData?.fields?.pointer6Text}
+  pointer7Heading={solutionsData.fields.pointer7Heading}
+  pointer7Img={solutionsData?.fields?.pointer7Img?.fields?.file.url}
+  pointer7Text={solutionsData?.fields?.pointer7Text}
+  previousSolution={solutionsData?.fields?.previousSolutionTitle}
+  previousSolutionSlug={solutionsData?.fields?.previousSolutionSlug}
+  nextSolution={solutionsData?.fields?.nextSolutionTitle}
+  nextSolutionSlug={solutionsData?.fields?.nextSolutionSlug}
+/>
+
+<style is:global>
+  .turnBlack {
+    background: transparent !important ;
+    position: absolute !important;
+    width: 100% !important;
+  }
+
+  .list ul li a {
+    color: white !important;
+    opacity: 50% !important;
+  }
+  path {
+    fill: white !important;
+  }
+
+  .connect,
+  .circles {
+    fill: #1a1a1a !important;
+  }
+  .oval {
+    fill: white !important;
+  }
+
+  .tele {
+    fill: white !important;
+  }
+  .menu p {
+    color: white !important;
+  }
+  .menu .s1,
+  .menu .s2 {
+    border: 1px solid white !important;
+  }
+
+  u {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 2.6vw;
+    font-weight: 400;
+    font-style: normal;
+    /* color: white; */
+    line-height: 0.85;
+
+    color: black !important;
+  }
+</style>
