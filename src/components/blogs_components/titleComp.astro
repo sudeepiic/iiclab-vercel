@@ -26,7 +26,12 @@ console.log(props, "missing imageeeeee");
       </div>
 
       <div class="image-animate">
-        <img src={props.heroImage} alt="" class=" " style="width: 100%;" />
+        <img
+          src={props.heroImage}
+          alt={props.heroImageAlt}
+          class=" "
+          style="width: 100%;"
+        />
       </div>
     </section>
   )

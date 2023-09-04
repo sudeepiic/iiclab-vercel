@@ -37,6 +37,7 @@ const { blogsData } = Astro.props;
     author={documentToHtmlString(blogsData.fields.author)}
     readTime={documentToHtmlString(blogsData.fields.readTime)}
     heroImage={blogsData.fields?.heroImage?.fields?.file.url}
+    heroImageAlt={blogsData.fields?.heroImage?.fields?.description}
   />
 
   <Comp2Content
@@ -49,24 +50,34 @@ const { blogsData } = Astro.props;
     content2Text={documentToHtmlString(blogsData.fields.content2text)}
     content2Img={blogsData.fields?.content2img &&
       blogsData.fields?.content2img?.fields?.file.url}
+    content2ImgAlt={blogsData.fields?.content2img &&
+      blogsData.fields?.content2img?.fields?.description}
     content2bHeading={blogsData.fields.content2bHeading}
     content2bText={documentToHtmlString(blogsData.fields.content2bText)}
     content2bImg={blogsData.fields?.content2bImage &&
       blogsData.fields?.content2bImage?.fields?.file.url}
+    content2bImgAlt={blogsData.fields?.content2bImage &&
+      blogsData.fields?.content2bImage?.fields?.description}
     content2cHeading={documentToHtmlString(blogsData.fields.content2cHeading)}
     content2cText={documentToHtmlString(blogsData.fields.content2cText)}
     content2cImg={blogsData.fields?.content2cImg &&
       blogsData.fields?.content2cImg?.fields?.file.url}
+    content2cImgAlt={blogsData.fields?.content2cImg &&
+      blogsData.fields?.content2cImg?.fields?.description}
     content2dHeading={documentToHtmlString(blogsData.fields.content2dHeading)}
     content2dText={documentToHtmlString(blogsData.fields.content2dText)}
     content2dImg={blogsData.fields?.content2dImg &&
       blogsData.fields?.content2dImg?.fields?.file.url}
+    content2dImgAlt={blogsData.fields?.content2dImg &&
+      blogsData.fields?.content2dImg?.fields?.description}
     content3Heading={documentToHtmlString(blogsData.fields.content3heading)}
     content3Text={documentToHtmlString(blogsData.fields.content3text)}
     content3bHeading={documentToHtmlString(blogsData.fields.content3bHeading)}
     content3btext={documentToHtmlString(blogsData.fields.content3bText)}
     content3bImg={blogsData.fields?.content3bImg &&
       blogsData.fields?.content3bImg?.fields?.file.url}
+    content3bImgAlt={blogsData.fields?.content3bImg &&
+      blogsData.fields?.content3bImg?.fields?.description}
     content3cHeading={documentToHtmlString(blogsData.fields.content3cHeading)}
     content3cText={documentToHtmlString(blogsData.fields.content3cText)}
     index1={documentToHtmlString(blogsData.fields.index1)}

@@ -32,11 +32,23 @@ const props = Astro.props;
       </div>
 
       <div class="margins images" style="margin-top: 4%; text-align: center;">
-        <img src={props.tiltImage1} class="img1 img-animate  " alt="" />
+        <img
+          src={props.tiltImage1}
+          class="img1 img-animate  "
+          alt={props.tiltImage1Alt}
+        />
 
-        <img src={props.tiltImage2} class="img2 img2-animate  " alt="" />
+        <img
+          src={props.tiltImage2}
+          class="img2 img2-animate  "
+          alt={props.tiltImage2Alt}
+        />
 
-        <img src={props.tiltImage3} class="img3 img-animate  " alt="" />
+        <img
+          src={props.tiltImage3}
+          class="img3 img-animate  "
+          alt={props.tiltImage3Alt}
+        />
       </div>
     </section>
   )

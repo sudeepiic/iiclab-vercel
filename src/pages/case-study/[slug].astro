@@ -48,9 +48,12 @@ console.log(
   <Title1
     heroTitle={documentToHtmlString(data.heroTitleMain)}
     heroVideo={data?.heroVideo?.fields?.file.url}
+    heroVideoAlt={data?.heroVideo?.fields?.description}
     herobanner={data?.heroBanner?.fields?.file.url}
+    herobannerAlt={data?.heroBanner?.fields?.description}
     whichTechnology={data?.whichTechnology}
     herobanner2={data?.heroBanner2?.fields?.file.url}
+    herobanner2Alt={data?.heroBanner2?.fields?.description}
     heroContent={documentToHtmlString(data.heroContent)}
     pointerHead1={documentToHtmlString(data.pointerHead1)}
     pointerHeading1={data?.pointerHeading1}
@@ -61,7 +64,9 @@ console.log(
     clientInfo={documentToHtmlString(data.clientInfo)}
     solutionInfo={documentToHtmlString(data.solutionInfo)}
     brandLogo1={data.brandLogos && data.brandLogos[0]?.fields?.file.url}
+    brandLogo1Alt={data.brandLogos[0]?.fields?.description}
     brandLogo2={data.brandLogos && data.brandLogos[1]?.fields?.file.url}
+    brandLogo2Alt={data.brandLogos[1]?.fields?.description}
     carousalImage1={data.carousalImages &&
       data.carousalImages[0]?.fields?.file.url}
     carousalImage2={data.carousalImages &&
@@ -74,6 +79,18 @@ console.log(
       data.carousalImages[4]?.fields?.file.url}
     carousalImage6={data.carousalImages &&
       data.carousalImages[5]?.fields?.file.url}
+    carousalImage1Alt={data.carousalImages &&
+      data.carousalImages[0]?.fields?.description}
+    carousalImage2Alt={data.carousalImages &&
+      data.carousalImages[1]?.fields?.description}
+    carousalImage3Alt={data.carousalImages &&
+      data.carousalImages[2]?.fields?.description}
+    carousalImage4Alt={data.carousalImages &&
+      data.carousalImages[3]?.fields?.description}
+    carousalImage5Alt={data.carousalImages &&
+      data.carousalImages[4]?.fields?.description}
+    carousalImage6Alt={data.carousalImages &&
+      data.carousalImages[5]?.fields?.description}
   />
 
   {
@@ -82,6 +99,7 @@ console.log(
         belowCarousalTitle={documentToHtmlString(data.belowCarousalTitle)}
         belowCarousalText={documentToHtmlString(data.belowCarousalText)}
         fullSizeImg={data.fullSizeImg?.fields?.file.url}
+        fullSizeImgAlt={data.fullSizeImg?.fields?.description}
       />
     )
   }
@@ -92,6 +110,9 @@ console.log(
         midContentTitle={documentToHtmlString(data.midContentTitle)}
         midContentImg={
           data.midContentImg && data.midContentImg[0]?.fields?.file.url
+        }
+        midContentImgAlt={
+          data.midContentImg && data.midContentImg[0]?.fields?.description
         }
         midImgCaption={documentToHtmlString(data.midImgCaption)}
         midContentText={documentToHtmlString(data.midContentText)}
@@ -107,6 +128,15 @@ console.log(
         tiltImage1={data.tiltImages && data.tiltImages[0]?.fields?.file.url}
         tiltImage2={data.tiltImages && data.tiltImages[1]?.fields?.file.url}
         tiltImage3={data.tiltImages && data.tiltImages[2]?.fields?.file.url}
+        tiltImage1Alt={
+          data.tiltImages && data.tiltImages[0]?.fields?.description
+        }
+        tiltImage2Alt={
+          data.tiltImages && data.tiltImages[1]?.fields?.description
+        }
+        tiltImage3Alt={
+          data.tiltImages && data.tiltImages[2]?.fields?.description
+        }
       />
     )
   }
@@ -123,6 +153,12 @@ console.log(
         }
         parallelImg2={
           data.bottomCompImgs && data.bottomCompImgs[1]?.fields?.file.url
+        }
+        parallelImg1Alt={
+          data.bottomCompImgs && data.bottomCompImgs[0]?.fields?.description
+        }
+        parallelImg2Alt={
+          data.bottomCompImgs && data.bottomCompImgs[1]?.fields?.description
         }
       />
     )

@@ -16,7 +16,7 @@ const props = Astro.props;
 {
   Object.keys(props).length && (
     <Layout title="Products" seoTitle="products">
-      <section style="padding-top: 8%;">
+      <section style="padding-top: 8%; position:relative; ">
         <span class="waterMark" set:html={props.waterMark} />
         <div class="swiper">
           <div class="swiper-wrapper">
@@ -189,7 +189,9 @@ const props = Astro.props;
 
       <section style="background-color: #1a1a1a;">
         <div class="yellowDiv">
-          <span>know more about v-tour</span>
+          <span>
+            know more about <span set:html={props.waterMark} />
+          </span>
         </div>
       </section>
     </Layout>
@@ -225,7 +227,7 @@ const props = Astro.props;
     width: 100%;
     word-spacing: 0.27rem;
     position: absolute;
-    top: 12%;
+    top: 5%;
     text-align: center;
   }
 

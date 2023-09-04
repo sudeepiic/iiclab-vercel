@@ -11,7 +11,7 @@ const props = Astro.props;
 ---
 
 <section style="background-color: #1a1a1a;">
-  <img src={props.herobanner} style="width: 100%;" alt="" />
+  <img src={props.herobanner} style="width: 100%;" alt={props.herobannerAlt} />
 
   <div class="blankDiv">
     <div class="midDiv">
@@ -38,7 +38,11 @@ const props = Astro.props;
 
   <div style="background-color: #1a1a1a;">
     <div class="margins img">
-      {props.heroVideo && <img src={props.heroVideo} class=" " />}
+      {
+        props.heroVideo && (
+          <img src={props.heroVideo} alt={props.heroVideoAlt} class=" " />
+        )
+      }
     </div>
   </div>
 
@@ -74,7 +78,11 @@ const props = Astro.props;
         <div class="bannerDiv">
           {
             props.herobanner2 && (
-              <img class="  bannerImg" src={props.herobanner2} alt="" />
+              <img
+                class="  bannerImg"
+                src={props.herobanner2}
+                alt={props.herobanner2Alt}
+              />
             )
           }
         </div>
@@ -82,12 +90,20 @@ const props = Astro.props;
         <div class="brandsDiv">
           {
             props.brandLogo1 && (
-              <img class="brands b1  " src={props.brandLogo1} alt="" />
+              <img
+                class="brands b1  "
+                src={props.brandLogo1}
+                alt={props.brandLogo1Alt}
+              />
             )
           }
           {
             props.brandLogo2 && (
-              <img class="brands b2  " src={props.brandLogo2} alt="" />
+              <img
+                class="brands b2  "
+                src={props.brandLogo2}
+                alt={props.brandLogo2Alt}
+              />
             )
           }
         </div>
@@ -100,42 +116,66 @@ const props = Astro.props;
       <div class="swiper-slide">
         {
           props.carousalImage1 && (
-            <img src={props.carousalImage1} alt="" class=" " />
+            <img
+              src={props.carousalImage1}
+              alt={props.carousalImage1Alt}
+              class=" "
+            />
           )
         }
       </div>
       <div class="swiper-slide">
         {
           props.carousalImage2 && (
-            <img src={props.carousalImage2} alt="" class=" " />
+            <img
+              src={props.carousalImage2}
+              alt={props.carousalImage2Alt}
+              class=" "
+            />
           )
         }
       </div>
       <div class="swiper-slide">
         {
           props.carousalImage3 && (
-            <img src={props.carousalImage3} alt="" class=" " />
+            <img
+              src={props.carousalImage3}
+              alt={props.carousalImage3Alt}
+              class=" "
+            />
           )
         }
       </div>
       <div class="swiper-slide">
         {
           props.carousalImage4 && (
-            <img src={props.carousalImage4} alt="" class=" " />
+            <img
+              src={props.carousalImage4}
+              alt={props.carousalImage4Alt}
+              class=" "
+            />
           )
         }
       </div>
       <div class="swiper-slide">
         {
           props.carousalImage5 && (
-            <img src={props.carousalImage5} alt="" class=" " />
+            <img
+              src={props.carousalImage5}
+              alt={props.carousalImage5Alt}
+              class=" "
+            />
           )
         }
       </div>
       <div class="swiper-slide">
         {
           props.carousalImage6 && (
-            <img src={props.carousalImage6} alt="" class=" " />
+            <img
+              src={props.carousalImage6}
+              alt={props.carousalImage6Alt}
+              class=" "
+            />
           )
         }
       </div>
