@@ -11,8 +11,10 @@ export async function getStaticPaths() {
   console.log(entries);
   const pages = entries.items.map((item) => {
     console.log(item.fields.params, "profilesssssssss");
+    const newSlug = (item.fields.params as string).replace(/\n/g, "");
+
     return {
-      params: { slug: item.fields.params },
+      params: { slug: newSlug },
       props: {
         jobProfilesData: item,
       },

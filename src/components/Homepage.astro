@@ -9,7 +9,7 @@ import vector from "../images/Vector.png";
 
 import diamond from "../images/diamond.png";
 import awardsNew from "../images/awardsNew.jpg";
-import mask from "../images/IIC-Exclude.svg";
+
 import viewAllAwards from "../images/viewAllAwards.png";
 import vVerse from "../images/vVerse.png";
 import vTour from "../images/vTour.png";
@@ -21,7 +21,6 @@ import solnImg1 from "../images/solnImg1.jpg";
 import solnImg2 from "../images/solnImg2.jpg";
 import solnImg3 from "../images/solnImg3.jpg";
 import solnImg4 from "../images/solnImg4.jpg";
-import solnImg5 from "../images/solnImg5.png";
 import solnImg6 from "../images/solnImg6.png";
 import fwViewAll from "../images/fwViewAll.png";
 import f1Logo from "../images/f1Logo.png";
@@ -268,7 +267,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               </ul>
             </td>
             <td>
-              <a href="/solution-details"
+              <a href="/solutions/immersive-technology"
                 ><div class="onHover">
                   <img class="table solutionArrow" src={vector} alt="" />
                 </div></a
@@ -292,7 +291,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               </ul></td
             >
             <td>
-              <a href="/solution-details#experiential">
+              <a href="/solutions/experiential-marketing">
                 <div class="onHover">
                   <img class="table solutionArrow" src={vector} alt="" />
                 </div></a
@@ -313,7 +312,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               </ul></td
             >
             <td>
-              <a href="/solution-details"
+              <a href="/solutions/interactive-solution"
                 ><div class="onHover">
                   <img class="table solutionArrow" src={vector} alt="" />
                 </div></a
@@ -332,7 +331,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               </ul></td
             >
             <td>
-              <a href="/solution-details"
+              <a href="/solutions/mobile-and-web"
                 ><div class="onHover">
                   <img class="table solutionArrow" src={vector} alt="" />
                 </div></a
@@ -354,7 +353,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               </ul></td
             >
             <td>
-              <a href="/solution-details"
+              <a href="/solutions/content-development"
                 ><div class="onHover">
                   <img class="table solutionArrow" src={vector} alt="" />
                 </div></a
@@ -375,7 +374,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               </ul></td
             >
             <td>
-              <a href="/solution-details"
+              <a href="/solutions/strategy-and-design"
                 ><div class="onHover">
                   <img class="table solutionArrow" src={vector} alt="" />
                 </div></a
@@ -394,12 +393,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             <div class="mobTech">Immersive Technology</div>
           </div>
           <div class="col-2">
-            <img
-              class="table1"
-              style="width:1.3rem; height:1.3rem; "
-              src={vector}
-              alt=""
-            />
+            <a href="/solutions/immersive-technology">
+              <img
+                class="table1"
+                style="width:1.3rem; height:1.3rem; "
+                src={vector}
+                alt=""
+              />
+            </a>
           </div>
         </div>
         <div class="row">
@@ -422,12 +423,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             <div class="mobTech">Experiential Marketing</div>
           </div>
           <div class="col-2">
-            <img
-              class="table1"
-              style="width:1.3rem; height:1.3rem; "
-              src={vector}
-              alt=""
-            />
+            <a href="/solutions/experiential-marketing">
+              <img
+                class="table1"
+                style="width:1.3rem; height:1.3rem; "
+                src={vector}
+                alt=""
+              />
+            </a>
           </div>
         </div>
         <div class="row">
@@ -453,12 +456,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             <div class="mobTech">Interactive Solutions</div>
           </div>
           <div class="col-2">
-            <img
-              class="table1"
-              style="width:1.3rem; height:1.3rem; "
-              src={vector}
-              alt=""
-            />
+            <a href="/solutions/interactive-solution">
+              <img
+                class="table1"
+                style="width:1.3rem; height:1.3rem; "
+                src={vector}
+                alt=""
+              />
+            </a>
           </div>
         </div>
         <div class="row">
@@ -481,12 +486,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             <div class="mobTech">Mobile & Web</div>
           </div>
           <div class="col-2">
-            <img
-              class="table1"
-              style="width:1.3rem; height:1.3rem; "
-              src={vector}
-              alt=""
-            />
+            <a href="/solutions/mobile-and-web">
+              <img
+                class="table1"
+                style="width:1.3rem; height:1.3rem; "
+                src={vector}
+                alt=""
+              />
+            </a>
           </div>
         </div>
         <div class="row">
@@ -508,12 +515,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             <div class="mobTech">Content Development</div>
           </div>
           <div class="col-2">
-            <img
-              class="table1"
-              style="width:1.3rem; height:1.3rem; "
-              src={vector}
-              alt=""
-            />
+            <a href="/solutions/content-development">
+              <img
+                class="table1"
+                style="width:1.3rem; height:1.3rem; "
+                src={vector}
+                alt=""
+              />
+            </a>
           </div>
         </div>
         <div class="row">
@@ -537,12 +546,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             <div class="mobTech">Strategy & design</div>
           </div>
           <div class="col-2">
-            <img
-              class="table1"
-              style="width:1.3rem; height:1.3rem; "
-              src={vector}
-              alt=""
-            />
+            <a href="/solutions/strategy-and-design">
+              <img
+                class="table1"
+                style="width:1.3rem; height:1.3rem; "
+                src={vector}
+                alt=""
+              />
+            </a>
           </div>
         </div>
         <div class="row">

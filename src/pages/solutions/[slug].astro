@@ -12,7 +12,7 @@ export async function getStaticPaths() {
   });
   console.log(entries);
   const pages = entries.items.map((item) => {
-    console.log(item?.fields.slug, "solutionsssssssss");
+    console.log(item?.fields.sliderImages, "solutionsssssssss");
     return {
       params: { slug: item.fields.slug },
       props: {
@@ -53,6 +53,15 @@ const { solutionsData } = Astro.props;
   previousSolutionSlug={solutionsData?.fields?.previousSolutionSlug}
   nextSolution={solutionsData?.fields?.nextSolutionTitle}
   nextSolutionSlug={solutionsData?.fields?.nextSolutionSlug}
+  relatedProjectImg={solutionsData?.fields?.relatedProjects?.fields?.heroBanner
+    ?.fields?.file.url}
+  relatedProjectTitle={solutionsData?.fields?.relatedProjects?.fields
+    ?.singleClient}
+  relatedProjectSubTitle={solutionsData?.fields?.relatedProjects?.fields
+    ?.whichTechnology}
+  relatedProjectSlug={solutionsData?.fields?.relatedProjects?.fields?.heroTitle}
+  solutionsData={solutionsData}
+  sliderImages={solutionsData?.fields?.sliderImages}
 />
 
 <style is:global>

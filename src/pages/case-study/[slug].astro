@@ -22,8 +22,9 @@ export async function getStaticPaths() {
   });
 
   const pages = entries.items.map((item) => {
+    const newSlug = (item.fields.heroTitle as string).replace(/\n/g, "");
     return {
-      params: { slug: item.fields.heroTitle },
+      params: { slug: newSlug },
       props: {
         caseStudyData: item,
       },
@@ -99,7 +100,7 @@ console.log(
   }
 
   {
-    data.tiltImagesTitle && false && (
+    data.tiltImagesTitle && (
       <Comp4
         tiltImagesTitle={documentToHtmlString(data.tiltImagesTitle)}
         tiltImagesText={documentToHtmlString(data.tiltImagesText)}

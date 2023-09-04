@@ -41,3 +41,13 @@ u {
 .workImg-section.move-upper-white-bg .work-animation:after {
   left: 100%;
 }
+.workImg-section-soln.move-upper-white-bg .work-animation:after {
+  left: 100%;
+}
+.workImg-section-soln.moving-text-parent .hoverImg {
+  animation: move-text2 20s 1s linear infinite forwards;
+}
+.workImg-section-soln.moving-text-start .hoverImg {
+  transform: translateX(0%);
+  transition: transform 5s ease;
+}

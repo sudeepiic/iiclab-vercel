@@ -17,24 +17,27 @@ console.log(props, "solutionData");
 
 <Layout title="our solutions" seoTitle="solutions">
   <section id="section">
-    <div class="margins" style="margin-top: 2%;" id="immersive">
-      <div class="heading">
+    <div style="margin-top: 2%;" id="immersive">
+      <div class="margins heading">
         <span set:html={props.Title} />
         <span style="color: #e5ff53;">.</span>
       </div>
-      <div class="animate-swiper">
+      <div class="marginsanimate-swiper">
         <div class="mySwiper" style="padding:1.5% 0 0 0 ; ">
           <div class="swiper-wrapper">
-            <div class="swiper-slide imgWidth">
-              <img class="resizeImg" src={sampleImg} alt="" />
-            </div>
-
-            <div class="swiper-slide imgWidth">
-              <img class="resizeImg" src={sampleImg} />
-            </div>
-            <div class="swiper-slide imgWidth">
-              <img class="resizeImg" src={sampleImg} alt="" />
-            </div>
+            {
+              (props.sliderImages as any)?.map((projects: any) => (
+                <div class="swiper-slide imgWidth">
+                  
+                    <img
+                      class="resizeImg"
+                      src={projects.fields?.file.url}
+                      alt=""
+                    />
+                  </div>
+                </div>
+              ))
+            }
           </div>
 
           <!-- <div class="d-flex controls">
@@ -44,7 +47,7 @@ console.log(props, "solutionData");
         </div>
       </div>
 
-      <div class="contentDiv">
+      <div class="margins contentDiv">
         <div class="row borders">
           <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
             <div class="content-box numbers col-2">
@@ -81,17 +84,21 @@ console.log(props, "solutionData");
 
             <span class="pointerText" set:html={props.pointer3Text} />
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
-            <div class="content-box numbers col-2">
-              <span>04</span>
-            </div>
-            <div class="col-10">
-              <p set:html={props.pointer4Heading} />
-            </div>
-            <img src={props.pointer4Img} class="pointerImg" alt="" />
+          {
+            props.pointer4Text && (
+              <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
+                <div class="content-box numbers col-2">
+                  <span>04</span>
+                </div>
+                <div class="col-10">
+                  <p set:html={props.pointer4Heading} />
+                </div>
+                <img src={props.pointer4Img} class="pointerImg" alt="" />
 
-            <span class="pointerText" set:html={props.pointer4Text} />
-          </div>
+                <span class="pointerText" set:html={props.pointer4Text} />
+              </div>
+            )
+          }
         </div>
 
         {
@@ -143,48 +150,60 @@ console.log(props, "solutionData");
           )
         }
       </div>
-      <div style="padding-top:4%; ">
-        <div class="relatedProjectHeading">
-          <span>Related <span style="color: #e5ff53">Projects</span></span>
-        </div>
-      </div>
-
-      <div
-        id="stopOnHover"
-        class="d-flex workImg-section borders"
-        style="width:100%; padding:7% 0 !important;  "
-      >
-        {
-          entries.items.map((caseStudy, index) => (
-            <div class="hoverImg ">
-              <a
-                href={"/case-study/" + caseStudy?.fields?.heroTitle}
-                aria-label="case study"
-              >
-                <div class="work-animation">
-                  <img
-                    src={caseStudy?.fields?.heroBanner?.fields?.file.url}
-                    class="movingImgs  "
-                    alt=""
-                  />
-                  <div class="image-overlay">
-                    <img src={redirectToWork} alt="" />
-                    <span
-                      class="workName"
-                      set:html={caseStudy?.fields?.singleClient}
-                    />
-                    <span
-                      class="workTech"
-                      set:html={caseStudy?.fields?.whichTechnology}
-                    />
-                  </div>
-                </div>
-              </a>
+      {
+        props?.solutionsData?.fields?.relatedProjects && (
+          <div class="margins" style="padding-top:4%; ">
+            <div class="relatedProjectHeading">
+              <span>
+                Related <span style="color: #e5ff53">Projects</span>
+              </span>
             </div>
-          ))
-        }
-      </div>
-      <div class="margins arrowDiv" style="padding-top:4%">
+          </div>
+        )
+      }
+      {
+        props?.solutionsData?.fields?.relatedProjects && (
+          <div class="overflow-hidden m-0" style="padding:0 9%;">
+            <div
+              id="stopOnHover"
+              class="d-flex workImg-section-soln borders"
+              style="width:100%; padding:7% 0 !important;  "
+            >
+              {(props?.solutionsData?.fields?.relatedProjects as any)?.map(
+                (projects: any) => (
+                  <div class="hoverImg ">
+                    <a
+                      href={"/case-study/" + projects?.fields?.heroTitle}
+                      aria-label="case study"
+                    >
+                      <div class="work-animation">
+                        <img
+                          src={projects?.fields?.heroBanner?.fields?.file.url}
+                          class="movingImgs  "
+                          alt=""
+                        />
+                        <div class="image-overlay">
+                          <img src={redirectToWork} alt="" />
+                          <span
+                            class="workName"
+                            set:html={projects?.fields?.singleClient}
+                          />
+                          <span
+                            class="workTech"
+                            set:html={projects?.fields?.whichTechnology}
+                          />
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        )
+      }
+
+      <div class="margins-navigations arrowDiv" style="padding-top:4%">
         <div class="row">
           <div class="col-6 arrows">
             <a href={props.previousSolutionSlug}>
@@ -219,11 +238,13 @@ console.log(props, "solutionData");
 
     .imgWidth img {
       width: 100%;
+      aspect-ratio:1440/681;
+      object-fit:cover;
     }
     /*  */
     /* related projects css */
 
-    .workImg-section {
+    .workImg-section-soln {
       padding-bottom: 7.3%;
     }
 
@@ -298,14 +319,14 @@ console.log(props, "solutionData");
     }
 
     .moving-text2 {
-      animation: move-text2 50s linear infinite;
+      animation: move-text2 10s linear infinite;
     }
     @keyframes move-text2 {
       0% {
         transform: translateX(0%);
       }
       100% {
-        transform: translateX(-2000%);
+        transform: translateX(-680%);
       }
     }
 
@@ -355,7 +376,7 @@ console.log(props, "solutionData");
         top: 30% !important;
       }
       .arrowDiv {
-        padding: 0 !important;
+        padding: 3% !important;
       }
     }
 
@@ -381,6 +402,9 @@ console.log(props, "solutionData");
     }
     .margins {
       padding: 0 9% 0 9%;
+    }
+    .margins-navigations {
+      padding: 0 15% 0 15%;
     }
     .heading span {
       font-family: Deutschlander;
@@ -534,9 +558,10 @@ console.log(props, "solutionData");
       //   effect: "creative",
       grabCursor: true,
       centeredSlides: true,
-      slidesPerView: 1.2,
+      slidesPerView: 1.3,
       autoplay: true,
       spaceBetween: 10,
+      speed: 2000,
       loop: true,
       // navigation: {
       //   nextEl: ".swiper-next",
@@ -545,7 +570,7 @@ console.log(props, "solutionData");
 
       breakpoints: {
         767: {
-          slidesPerView: 1.2,
+          slidesPerView: 1.28,
 
           spaceBetween: 30,
         },
@@ -565,9 +590,9 @@ console.log(props, "solutionData");
     gsap.registerPlugin(ScrollTrigger);
 
     const movingImgs = document.querySelectorAll(".hoverImg");
-    gsap.from(".workImg-section", 1, {
+    gsap.from(".workImg-section-soln", 1, {
       scrollTrigger: {
-        trigger: ".workImg-section",
+        trigger: ".workImg-section-soln",
         start: "top 55%",
         end: "bottom top",
 
@@ -575,9 +600,9 @@ console.log(props, "solutionData");
         scrub: true,
       },
     });
-    gsap.from(".workImg-section", 1, {
+    gsap.from(".workImg-section-soln", 1, {
       scrollTrigger: {
-        trigger: ".workImg-section",
+        trigger: ".workImg-section-soln",
         start: "top 55%",
         end: "bottom top",
 

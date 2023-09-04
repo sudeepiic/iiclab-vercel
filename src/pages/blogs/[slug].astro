@@ -15,9 +15,10 @@ export async function getStaticPaths() {
   });
 
   const pages = entries.items.map((item) => {
-    console.log(item.fields.params, "oooooooooooooooooooooooooooo");
+    const newSlug = (item.fields.params as string).replace(/\n/g, "");
+    console.log(newSlug, "oooooooooooooooooooooooooooo");
     return {
-      params: { slug: item.fields.params },
+      params: { slug: newSlug },
       props: {
         blogsData: item,
       },
