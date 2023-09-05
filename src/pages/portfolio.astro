@@ -49,7 +49,7 @@ const entries: any = await contentfulClient.getEntries<any>({
             <div class="swiper-slide">
               <div>
                 <a
-                  href={"/case-study/" + caseStudy.fields.heroTitle}
+                  href={"/portfolio/" + caseStudy.fields.heroTitle}
                   aria-label="case-study"
                 >
                   <div class="animate-swiper">
@@ -85,7 +85,7 @@ const entries: any = await contentfulClient.getEntries<any>({
     {
       entries.items.map((caseStudy, index) => (
         <a
-          href={"/case-study/" + caseStudy.fields.heroTitle}
+          href={"/portfolio/" + caseStudy.fields.heroTitle}
           aria-label="case study"
         >
           <div class="titles">

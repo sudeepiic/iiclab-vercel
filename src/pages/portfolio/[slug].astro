@@ -48,7 +48,7 @@ console.log(
   <Title1
     heroTitle={documentToHtmlString(data.heroTitleMain)}
     heroVideo={data?.heroVideo?.fields?.file.url}
-    heroVideoAlt={data?.heroVideo?.fields?.description}
+    heroVideoAlt={data?.heroVideo && data?.heroVideo?.fields?.description}
     herobanner={data?.heroBanner?.fields?.file.url}
     herobannerAlt={data?.heroBanner?.fields?.description}
     whichTechnology={data?.whichTechnology}
@@ -64,9 +64,9 @@ console.log(
     clientInfo={documentToHtmlString(data.clientInfo)}
     solutionInfo={documentToHtmlString(data.solutionInfo)}
     brandLogo1={data.brandLogos && data.brandLogos[0]?.fields?.file.url}
-    brandLogo1Alt={data.brandLogos[0]?.fields?.description}
+    brandLogo1Alt={data.brandLogos && data.brandLogos[0]?.fields?.description}
     brandLogo2={data.brandLogos && data.brandLogos[1]?.fields?.file.url}
-    brandLogo2Alt={data.brandLogos[1]?.fields?.description}
+    brandLogo2Alt={data.brandLogos && data.brandLogos[1]?.fields?.description}
     carousalImage1={data.carousalImages &&
       data.carousalImages[0]?.fields?.file.url}
     carousalImage2={data.carousalImages &&
