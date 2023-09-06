@@ -1,0 +1,39 @@
+---
+import { contentfulClient } from "../../lib/contentful";
+
+import UseCases from "../use-cases.astro";
+
+export async function getStaticPaths() {
+  const entries = await contentfulClient.getEntries<any>({
+    content_type: "useCases",
+  });
+  console.log(entries);
+  const pages = entries.items.map((item) => {
+    console.log(item?.fields.useCase, "solutionsssssssss");
+    return {
+      params: { slug: item.fields.slug },
+      props: {
+        useCasesData: item,
+      },
+    };
+  });
+  return pages;
+}
+
+const { useCasesData } = Astro.props;
+---
+
+<UseCases
+  title={useCasesData.fields.useCase}
+  slug={useCasesData.fields.slug}
+  tagline={useCasesData.fields.tagline}
+  pointer1={useCasesData.fields.pointer1}
+  pointer2={useCasesData.fields.pointer2}
+  pointer3={useCasesData.fields.pointer3}
+  pointer4={useCasesData.fields.pointer4}
+  pointer5={useCasesData.fields.pointer5}
+  pointer6={useCasesData.fields.pointer6}
+  pointer7={useCasesData.fields.pointer7}
+  pointer8={useCasesData.fields.pointer8}
+  pointer9={useCasesData.fields.pointer9}
+/>

@@ -1,166 +1,182 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import portfolio1 from "../images/portfolio1.jpg";
-import discussion from "../images/discussion.jpg";
-import unoGame from "../images/unoGame.jpg";
-import conferenceRoomDiscussion from "../images/conferenceRoomDiscussion.jpg";
+
 import swiper2Img from "../images/useCase-swiperImg.jpg";
 import blogsLeft from "../images/blogsLeft.png";
 import blogsRight from "../images/blogsRight.png";
+import UseCasesTitle from "../components/useCasesTitle.astro";
+const props = Astro.props;
 ---
 
 <Layout title="Use Cases" seoTitle="use cases">
-  <section class="margins titleSection">
-    <span class="title"> Explore our</span>
+  <UseCasesTitle />
 
-    <div style="position: relative;">
-      <span class="title" style="margin-right: 4%;">use</span>
-      <img class="titleImg" src={portfolio1} alt="" />
-      <span class="title" style="margin-left: 22%;"> cases</span>
-    </div>
-  </section>
-
-  <section class="swiper1-section">
-    <div class="animate-swiper">
-      <div class="mySwiper" style="padding:1.5% 0 5% 0 ; ">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide imgWidth">
-            <img class="resizeImg" src={conferenceRoomDiscussion} alt="" />
-          </div>
-
-          <div class="swiper-slide imgWidth">
-            <img class="resizeImg" src={unoGame} />
-          </div>
-          <div class="swiper-slide imgWidth">
-            <img class="resizeImg" src={discussion} alt="" />
-          </div>
-        </div>
-
-        <!-- <div class="d-flex controls">
-            <img class="swiper-prev" src={blogsLeft} alt="" />
-            <img class="swiper-next" src={blogsRight} alt="" />
-          </div> -->
-      </div>
-    </div>
-  </section>
-
-  <section class="blackSection">
+  <section id="redirect" class="blackSection">
     <span class="explore">Explore</span>
     <span class="explore" style="color: #e5ff53;">&nbsp; Industries</span>
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="row" style="margin-top: 6%;">
-            <div class="col-6">
-              <img class="swiperImg" src={swiper2Img} alt="" />
-            </div>
-            <div class="col-5">
-              <div class="imgInfo">
-                <span class="imgTitle">Automobile</span>
-                <br />
-                <span class="imgText"
-                  >Revolutionizing how today’s customer experiences a test drive
-                  of his dream car</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="swiper-slide">
-          <div class="row" style="margin-top: 6%;">
-            <div class="col-6">
-              <img class="swiperImg" src={swiper2Img} alt="" />
-            </div>
-            <div class="col-5">
-              <div class="imgInfo">
-                <span class="imgTitle">Automobile</span>
-                <br />
-                <span class="imgText"
-                  >Revolutionizing how today’s customer experiences a test drive
-                  of his dream car</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="d-flex" style="margin-top: 3%;">
+
+      <a href="./automobile#redirect" class="tabs" id="automobile"> automobile</a>
+      <a href="./real-estate#redirect" class="tabs" id="real-estate"> real estate</a>
+      <a href="./sports-and-media#redirect" class="tabs" id="sports-and-media"> sports & media</a>
+      <a href="./retail#redirect" class="tabs" id="retail"> retail</a>
+      <a
+        href="./government#redirect"
+        class="tabs"
+        id="government"
+        style=" border-right: 1px solid #8a8a8a !important"
+      >
+        government</a
+      >
+    </div>
+    <script>
+  
+    
+   
+     
+        if(window.location.pathname.includes("automobile")){
+          
+          document.getElementById("automobile").classList.add('clicked');
+        }
+        else  if(window.location.pathname.includes("real-estate")){
+          
+          document.getElementById("real-estate").classList.add('clicked');
+        }
+       else  if(window.location.pathname.includes("sports-and-media")){
+          
+          document.getElementById("sports-and-media").classList.add('clicked');
+        }
+        else if(window.location.pathname.includes("retail")){
+          
+          document.getElementById("retail").classList.add('clicked');
+        }
+        if(window.location.pathname.includes("government")){
+          
+          document.getElementById("government").classList.add('clicked');
+        }
+    </script>
+
+    <div class="row" style="margin-top: 6%;">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <img class="swiperImg" src={swiper2Img} alt="" />
       </div>
-
-      <div class="row">
-        <div class="controls col-6">
-          <img class="swiper-prev" src={blogsLeft} alt="" />
-          <span class="swiper-index">01/</span>
-          <span class="swiper-index" style="color:#e5ff53">06</span>
-          <img class="swiper-next" src={blogsRight} alt="" />
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="imgInfo">
+          <span class="imgTitle" set:html={props.title} />
+          <br />
+          <span class="imgText" set:html={props.tagline} />
         </div>
       </div>
     </div>
+
     <div class="pointersDiv">
       <div class="row pointerRow">
-        <div class="row col-6">
+        <div class="row col-lg-6 col-md-6 col-sm-12">
           <div class="content-box numbers col-2">
             <span>01</span>
           </div>
-          <div class="col-10" style="line-height:1.9vw;">
-            <span class="pointerText"
-              >Create a futuristic city in Metaverse from scratch to provide an
-              immersive virtual test drive experience to your customers.</span
-            >
+          <div class="col-10 pointerTextDiv">
+            <span class="pointerText" set:html={props.pointer1} />
           </div>
         </div>
-        <div class="row col-6 rightsidePointers">
+        <div class="row col-lg-6 col-md-6 col-sm-12 rightsidePointers">
           <div class="content-box numbers col-2">
             <span>02</span>
           </div>
-          <div class="col-10" style="line-height:1.9vw;">
-            <span class="pointerText"
-              >Empower the users to explore and experience every feature of the
-              car in detail</span
-            >
+          <div class="col-10 pointerTextDiv">
+            <span class="pointerText" set:html={props.pointer2} />
           </div>
         </div>
       </div>
 
       <div class="row pointerRow">
-        <div class="row col-6">
+        <div class="row col-lg-6 col-md-6 col-sm-12">
           <div class="content-box numbers col-2">
             <span>03</span>
           </div>
-          <div class="col-10" style="line-height:1.9vw;">
-            <span class="pointerText"
-              >Unveil the car in a virtual environment- Web or VR Metaverse.
-              Looking for a more visionary approach? Host a Virtual Car Launch
-              in a Physical Space.</span
-            >
+          <div class="col-10 pointerTextDiv">
+            <span class="pointerText" set:html={props.pointer3} />
           </div>
         </div>
-        <div class="row col-6 rightsidePointers">
+        <div class="row col-lg-6 col-md-6 col-sm-12 rightsidePointers">
+          { props.pointer4 && 
           <div class="content-box numbers col-2">
             <span>04</span>
           </div>
-          <div class="col-10" style="line-height:1.9vw;">
-            <span class="pointerText"
-              >Personalize your user’s car buying journey with AR-enabled 3D Car
-              configurators.
-            </span>
+          <div class="col-10 pointerTextDiv">
+            <span class="pointerText" set:html={props.pointer4} />
           </div>
+          
+          }
         </div>
       </div>
 
-      <div class="row pointerRow">
-        <div class="row col-6">
-          <div class="content-box numbers col-2">
-            <span>05</span>
+      {
+        props.pointer5 && 
+        <div class="row pointerRow">
+          <div class="row col-lg-6 col-md-6 col-sm-12">
+            <div class="content-box numbers col-2">
+              <span>05</span>
+            </div>
+            <div class="col-10 pointerTextDiv">
+              <span class="pointerText" set:html={props.pointer5} />
+            </div>
           </div>
-          <div class="col-10" style="line-height:1.9vw;">
-            <span class="pointerText"
-              >Interactive Projection Mapping with hyper-personalized animation
-              patterns.</span
-            >
+          <div class="row col-lg-6 col-md-6 col-sm-12 rightsidePointers">
+            { props.pointer6 && 
+            <div class="content-box numbers col-2">
+              <span>06</span>
+            </div>
+            <div class="col-10 pointerTextDiv">
+              <span class="pointerText" set:html={props.pointer6} />
+            </div>
+          }
           </div>
         </div>
-        <div class="row col-6 rightsidePointers"></div>
+      }
+
+{
+  props.pointer7 && 
+  <div class="row pointerRow">
+    <div class="row col-lg-6 col-md-6 col-sm-12">
+      <div class="content-box numbers col-2">
+        <span>07</span>
       </div>
+      <div class="col-10 pointerTextDiv">
+        <span class="pointerText" set:html={props.pointer7} />
+      </div>
+    </div>
+    <div class="row col-lg-6 col-md-6 col-sm-12 rightsidePointers">
+      { props.pointer8 && 
+      <div class="content-box numbers col-2">
+        <span>08</span>
+      </div>
+      <div class="col-10 pointerTextDiv">
+        <span class="pointerText" set:html={props.pointer9} />
+      </div>
+    }
+    </div>
+  </div>
+}
+
+{
+  props.pointer9 && 
+  <div class="row pointerRow">
+    <div class="row col-lg-6 col-md-6 col-sm-12">
+      <div class="content-box numbers col-2">
+        <span>09</span>
+      </div>
+      <div class="col-10 pointerTextDiv">
+        <span class="pointerText" set:html={props.pointer9} />
+      </div>
+    </div>
+    <div class="row col-lg-6 col-md-6 col-sm-12 rightsidePointers">
+   
+    </div>
+  </div>
+}
+
     </div>
   </section>
 </Layout>
@@ -169,26 +185,30 @@ import blogsRight from "../images/blogsRight.png";
   .margins {
     margin: 0 7%;
   }
-  .title {
-    font-family: "Deutschlander";
-    text-transform: uppercase;
-    font-size: 20vw;
-    font-weight: 400;
-    font-style: normal;
-    overflow: hidden;
-    line-height: 0.8;
-    word-spacing: 1vw;
-    color: #1a1a1a;
+
+  .clicked{
+    background-color: #e5ff53;
+    color: #1a1a1a !important;
+    font-weight: 600 !important;
   }
 
-  .titleSection {
-    margin: 6% 7% 4% 7%;
+  .pointerTextDiv {
+    line-height: 1.9vw;
   }
-  .titleImg {
-    width: 18%;
-    position: absolute;
-    bottom: 10%;
-    border-radius: 0 3vw;
+  a {
+    text-decoration: none;
+  }
+  .tabs {
+    width: 20%;
+    border: 1px solid #8a8a8a;
+    border-right: 0 !important;
+    font-family: anek devanagari;
+    font-weight: 500;
+    font-size: 1.32vw;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 2% 0;
+    color: #ffffff;
   }
 
   .blackSection {
@@ -256,16 +276,6 @@ import blogsRight from "../images/blogsRight.png";
   /* .swiper {
     width: 90%;
   } */
-  .mySwiper {
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    overflow: hidden;
-    list-style: none;
-    padding: 0;
-    z-index: 1;
-    display: block;
-  }
 
   .swiper-slide {
     /* font-size: 18px; */
@@ -341,9 +351,44 @@ import blogsRight from "../images/blogsRight.png";
     /* word-spacing: 1vw; */
     color: white;
   }
+
+  @media screen and (max-width: 767px) {
+    .imgInfo {
+      position: relative;
+      top: 0;
+      left: 0;
+      margin-top: 6%;
+    }
+    .imgText {
+      font-size: 3.3vw;
+    }
+    .imgTitle {
+      font-size: 12vw;
+    }
+    .rightsidePointers {
+      padding-left: 2%;
+    }
+    .pointerText {
+      font-size: 3.2vw !important;
+    }
+    .pointerTextDiv {
+      line-height: 4.9vw;
+    }
+    .numbers {
+      width: 10%;
+
+      font-size: 6.5vw;
+      line-height: 1.2;
+    }
+    .rightsidePointers {
+      margin-top: 5%;
+    }
+  }
 </style>
+
 <script>
-  import {
+ 
+import {
     Swiper,
     Navigation,
     Pagination,
@@ -351,37 +396,6 @@ import blogsRight from "../images/blogsRight.png";
     Autoplay,
     EffectCreative,
   } from "swiper";
-  let x = 3;
-  var swiper = new Swiper(".mySwiper", {
-    modules: [Navigation, EffectCreative],
-    //   effect: "creative",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: 1.2,
-
-    spaceBetween: 10,
-    loop: true,
-    // navigation: {
-    //   nextEl: ".swiper-next",
-    //   prevEl: ".swiper-prev",
-    // },
-
-    breakpoints: {
-      767: {
-        slidesPerView: 1.2,
-
-        spaceBetween: 30,
-      },
-      250: {
-        slidesPerView: 1.15,
-        spaceBetween: 20,
-      },
-    },
-
-    autoplay: {
-      delay: 2000,
-    },
-  });
 
   let y = 3;
   var swiper2 = new Swiper(".swiper", {
@@ -414,4 +428,6 @@ import blogsRight from "../images/blogsRight.png";
       delay: 2000,
     },
   });
+
+ 
 </script>

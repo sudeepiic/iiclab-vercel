@@ -35,6 +35,7 @@ const awardsData: any = await contentfulClient.getEntries<any>({
 console.log(awardsData.items[0].fields, "dataa");
 
 import { gsap } from "gsap";
+
 ---
 
 <Layout title="Awards" seoTitle="awards">
@@ -46,10 +47,10 @@ import { gsap } from "gsap";
           <div class="imgDiv">
             <img class="titleImg" src={awardsNew} alt="" />
           </div>
-
+   
           <span class="title title2">Recognition</span>
-        </div>
-      </div>
+        </div> 
+      </div>                            
 
       <div class="col-lg-4 col-md-4 col-sm-12">
         <a

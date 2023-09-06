@@ -21,46 +21,73 @@ const props = Astro.props;
         <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img class="  sliderImg" src={products1} alt="" />
+              <img class="  sliderImg" src={props.heroImg} alt="" />
             </div>
-
-            <div class="swiper-slide">
-              <img class="  sliderImg" src={products2} alt="" />
-            </div>
+           
           </div>
-
-          <img
-            class="  swiper-button-prev"
-            src={awardsPrev}
-            loading="lazy"
-            alt=""
-          />
-          <img
-            class="  swiper-button-next"
-            src={awardsNext}
-            loading="lazy"
-            alt=""
-          />
+          <a href={"./" + props.previousSlug}>
+            <img
+              class="  swiper-button-prev"
+              src={awardsPrev}
+              loading="lazy"
+              alt=""
+            />
+          </a>
+          <a href={"./" + props.nextSlug}>
+            <img
+              class="  swiper-button-next"
+              src={awardsNext}
+              loading="lazy"
+              alt=""
+            />
+          </a>
         </div>
       </section>
       <div class="d-flex">
-        <a href="./v-retail" class="tabs" aria-label="v-retail">
+        <a href="./v-retail" id="v-retail" class="tabs" style="border-left: 0 !important;" aria-label="v-retail">
           v-retail
         </a>
-        <a href="./v-verse" class="tabs" aria-label="v-verse">
+        <a href="./v-verse"id="v-verse" class="tabs" aria-label="v-verse">
           v-verse
         </a>
 
-        <a href="./v-tour" class="tabs" aria-label="v-tour">
+        <a href="./v-tour" id="v-tour" class="tabs" aria-label="v-tour">
           V-Tour
         </a>
-        <a href="./v-conference" class="tabs" aria-label="v-conference">
+        <a href="./v-conference" id="v-conference" class="tabs" aria-label="v-conference">
           v-conference
         </a>
-        <a href="./v-stages" class="tabs" aria-label="v-stages">
+        <a href="./v-stages" id="v-stages" class="tabs" aria-label="v-stages">
           v-stages
         </a>
       </div>
+
+ <script>
+  
+    
+   
+     
+  if(window.location.pathname.includes("v-retail")){
+    
+    document.getElementById("v-retail").classList.add('clicked');
+  }
+  else  if(window.location.pathname.includes("v-verse")){
+    
+    document.getElementById("v-verse").classList.add('clicked');
+  }
+ else  if(window.location.pathname.includes("v-tour")){
+    
+    document.getElementById("v-tour").classList.add('clicked');
+  }
+  else if(window.location.pathname.includes("v-conference")){
+    
+    document.getElementById("v-conference").classList.add('clicked');
+  }
+  if(window.location.pathname.includes("v-stages")){
+    
+    document.getElementById("v-stages").classList.add('clicked');
+  }
+</script>
 
       <section style="background-color: #1a1a1a; padding-top: 6%;">
         <div style="margin-left: 9%;  padding-bottom: 5%;">
@@ -74,84 +101,21 @@ const props = Astro.props;
         <div style="margin-left: 9%;">
           <span class="title">Top brands</span>
           <div class="iconsDiv">
-            <div class="d-flex">
-              <div class="icons">
-                <img class=" " src={icon1} alt="" />
-              </div>
-              <div class="icons">
-                <img class=" " src={icon2} alt="" />
-              </div>
-              <div class="icons">
-                <img class=" " src={icon1} alt="" />
-              </div>
-              <div class="icons">
-                <img class=" " src={icon2} alt="" />
-              </div>
-              <div class="icons">
-                <img class=" " src={icon1} alt="" />
-              </div>
-            </div>
-
-            <div class="d-flex">
-              <div class="icons">
-                <img class=" " src={icon1} alt="" />
-              </div>
-              <div class="icons">
-                <img class=" " src={icon2} alt="" />
-              </div>
-              <div class="icons">
-                <img class=" " src={icon1} alt="" />
-              </div>
-              <div class="icons">
-                <img class=" " src={icon2} alt="" />
-              </div>
-              <div class="icons">
-                <img class=" " src={icon1} alt="" />
-              </div>
-            </div>
-
-            <div class="d-flex">
-              <div class="icons">
-                <img class=" " src={icon1} alt="" />
-              </div>
-              <div class="icons">
-                <img class=" " src={icon2} alt="" />
-              </div>
-              <div class="icons">
-                <img class=" " src={icon1} alt="" />
-              </div>
-              <div class="icons">
-                <img class=" " src={icon2} alt="" />
-              </div>
-              <div class="icons">
-                <img class=" " src={icon1} alt="" />
-              </div>
-            </div>
-
-            <div class="d-flex">
-              <div class="icons">
-                <img class=" " src={icon1} alt="" />
-              </div>
-              <div class="icons">
-                <img class=" " src={icon2} alt="" />
-              </div>
-              <div class="icons">
-                <img class=" " src={icon1} alt="" />
-              </div>
-              <div class="icons">
-                <img class=" " src={icon2} alt="" />
-              </div>
-              <div class="icons">
-                <img class=" " src={icon1} alt="" />
-              </div>
+            <div class="row">
+              {(props.brandLogos as any)?.map((logo: any) => (
+                <div class="icons">
+                  <img class=" " src={logo.fields.file.url} alt="" />
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
-        <div style="margin-left: 9%;">
+       
+        {props?.productData?.fields?.caseStudies && (
+          <div style="margin-left: 9%;">
           <span class="title">Recent projects</span>
         </div>
-        {props?.productData?.fields?.caseStudies && (
           <div style="padding:7% 0 ; " class="mySwiper">
             <div class="swiper-wrapper">
               {(props?.productData?.fields?.caseStudies as any)?.map(
@@ -204,17 +168,29 @@ const props = Astro.props;
   }
   a {
     text-decoration: none;
+
+  }
+  .clicked:hover{
+    color:  #e5ff53 !important;
   }
   .tabs {
     width: 20%;
     border: 1px solid rgb(200, 199, 199);
     border-right: 0 !important;
+    border-bottom: 0 !important;
+
     font-family: "anek devanagari";
     font-weight: 600;
     font-size: 1.3vw;
     text-transform: uppercase;
     text-align: center;
     padding: 2% 0;
+  }
+
+  .clicked{
+    background-color: #1a1a1a;
+    color: #ffffff;
+
   }
   .waterMark {
     font-family: "Deutschlander";
@@ -261,8 +237,8 @@ const props = Astro.props;
     width: 20%;
     border: 1px solid rgb(78, 77, 77);
     padding: 3%;
-    text-align: center;
-    vertical-align: middle;
+
+    display: flex;
   }
   .icons img {
     width: 65%;

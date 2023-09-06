@@ -1,0 +1,125 @@
+---
+import portfolio1 from "../images/portfolio1.jpg";
+import discussion from "../images/discussion.jpg";
+import unoGame from "../images/unoGame.jpg";
+import conferenceRoomDiscussion from "../images/conferenceRoomDiscussion.jpg";
+---
+
+<section class="margins titleSection">
+  <span class="title"> Explore our</span>
+
+  <div style="position: relative;">
+    <span class="title" style="margin-right: 4%;">use</span>
+    <img class="titleImg" src={portfolio1} alt="" />
+    <span class="title" style="margin-left: 22%;"> cases</span>
+  </div>
+</section>
+
+<section class="swiper1-section">
+  <div class="animate-swiper">
+    <div class="mySwiper" style="padding:1.5% 0 5% 0 ; ">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide imgWidth">
+          <img class="resizeImg" src={conferenceRoomDiscussion} alt="" />
+        </div>
+
+        <div class="swiper-slide imgWidth">
+          <img class="resizeImg" src={unoGame} />
+        </div>
+        <div class="swiper-slide imgWidth">
+          <img class="resizeImg" src={discussion} alt="" />
+        </div>
+      </div>
+
+      <!-- <div class="d-flex controls">
+            <img class="swiper-prev" src={blogsLeft} alt="" />
+            <img class="swiper-next" src={blogsRight} alt="" />
+          </div> -->
+    </div>
+  </div>
+</section>
+
+<style>
+  .titleSection {
+    margin: 6% 7% 4% 7%;
+  }
+  .titleImg {
+    width: 18%;
+    position: absolute;
+    bottom: 10%;
+    border-radius: 0 3vw;
+  }
+
+  .title {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 20vw;
+    font-weight: 400;
+    font-style: normal;
+    overflow: hidden;
+    line-height: 0.8;
+    word-spacing: 1vw;
+    color: #1a1a1a;
+  }
+  .swiper1-section {
+    margin-bottom: 4%;
+  }
+  .animate-swiper {
+    margin-left: 7%;
+  }
+  .mySwiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
+  }
+  .imgWidth img {
+    width: 100%;
+  }
+
+  .animate-swiper {
+    margin-left: 7%;
+  }
+</style>
+
+<script>
+  import {
+    Swiper,
+    Navigation,
+    Pagination,
+    EffectCoverflow,
+    Autoplay,
+    EffectCreative,
+  } from "swiper";
+  let x = 3;
+  var swiper = new Swiper(".mySwiper", {
+    modules: [Navigation, EffectCreative],
+    //   effect: "creative",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 1.2,
+
+    spaceBetween: 10,
+    loop: true,
+
+    breakpoints: {
+      767: {
+        slidesPerView: 1.2,
+
+        spaceBetween: 30,
+      },
+      250: {
+        slidesPerView: 1.15,
+        spaceBetween: 20,
+      },
+    },
+
+    autoplay: {
+      delay: 2000,
+    },
+  });
+</script>

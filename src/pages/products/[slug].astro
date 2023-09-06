@@ -24,14 +24,18 @@ export async function getStaticPaths() {
 
 const { productsData } = Astro.props;
 
-console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", productsData);
+console.log("brand Logos", productsData.fields.brandImages);
 ---
 
 <Products
   waterMark={productsData?.fields.params}
   title={documentToHtmlString(productsData?.fields?.title)}
   titleText={documentToHtmlString(productsData?.fields?.titleText)}
-  caseStudyImg={productsData?.fields?.caseStudies[0]?.fields?.heroBanner?.fields
-    ?.file.url}
+  brandLogos={productsData.fields.brandImages}
+  caseStudyImg={productsData?.fields?.caseStudies &&
+    productsData?.fields?.caseStudies[0]?.fields?.heroBanner?.fields?.file.url}
+  heroImg={productsData.fields.heroImage.fields.file.url}
+  previousSlug={productsData.fields?.previousProductSlug}
+  nextSlug={productsData.fields?.nextProductSlug}
   productData={productsData}
 />
