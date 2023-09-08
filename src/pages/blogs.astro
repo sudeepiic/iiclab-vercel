@@ -866,62 +866,115 @@ const entries: any = await contentfulClient.getEntries<any>({
   // Animation Script
 
   let tl = gsap.timeline();
-  tl.from(".animate-title", {
-    duration: 1,
-    x: "-60%",
-    opacity: 0.5,
-    ease: "power1.out",
-  })
-    .to(".blogbtn", {
-      duration: 1,
 
-      opacity: 1,
+  let mm = gsap.matchMedia();
+  mm.add("(min-width: 768px)", () => {
+    tl.from(".animate-title", {
+      duration: 1,
+      x: "-60%",
+      opacity: 0.5,
+      ease: "power1.out",
     })
-    .from(".blogbtn", {
-      rotate: "360",
-      duration: 10,
-      repeat: -1,
-      ease: "none",
+      .to(".blogbtn", {
+        duration: 1,
+
+        opacity: 1,
+      })
+      .from(".blogbtn", {
+        rotate: "360",
+        duration: 10,
+        repeat: -1,
+        ease: "none",
+      })
+      .from(".swiper-animate", {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".swiper-animate",
+          start: "top 30%",
+          end: "bottom 90%",
+          scrub: true,
+        },
+      })
+      .from(".animate-img", {
+        // opacity: 0,
+        scrollTrigger: {
+          trigger: ".animate-img",
+          start: "top 50%",
+          end: "bottom top",
+          toggleClass: "animation-img",
+          scrub: true,
+        },
+      })
+      .from(".animate-img2", {
+        // opacity: 0,
+        scrollTrigger: {
+          trigger: ".animate-img2",
+          start: "top 50%",
+          end: "bottom top",
+          toggleClass: "animation-img",
+          scrub: true,
+        },
+      })
+      .from(".animate-imgText", 1, {
+        x: "-30%",
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".animate-imgText",
+          start: "top 75%",
+          end: "bottom 78%",
+          scrub: true,
+        },
+      });
+  });
+
+  mm.add("(max-width: 767px)", () => {
+    tl.from(".animate-title", {
+      duration: 1,
+      x: "-60%",
+      opacity: 0.5,
+      ease: "power1.out",
     })
-    .from(".swiper-animate", {
-      opacity: 0,
-      scrollTrigger: {
-        trigger: ".swiper-animate",
-        start: "top 30%",
-        end: "bottom 90%",
-        scrub: true,
-      },
-    })
-    .from(".animate-img", {
-      // opacity: 0,
-      scrollTrigger: {
-        trigger: ".animate-img",
-        start: "top 50%",
-        end: "bottom top",
-        toggleClass: "animation-img",
-        scrub: true,
-      },
-    })
-    .from(".animate-img2", {
-      // opacity: 0,
-      scrollTrigger: {
-        trigger: ".animate-img2",
-        start: "top 50%",
-        end: "bottom top",
-        toggleClass: "animation-img",
-        scrub: true,
-      },
-    })
-    .from(".animate-imgText", 1, {
-      x: "-30%",
-      opacity: 0,
-      scrollTrigger: {
-        trigger: ".animate-imgText",
-        start: "top 75%",
-        end: "bottom 78%",
-        scrub: true,
-      },
-    });
+      .to(".blogbtn", {
+        duration: 1,
+
+        opacity: 1,
+      })
+
+      .from(".swiper-animate", {
+        opacity: 0,
+      })
+
+      .from(".animate-img", {
+        // opacity: 0,
+        scrollTrigger: {
+          trigger: ".animate-img",
+          start: "top 60%",
+          end: "bottom top",
+          toggleClass: "animation-img",
+          scrub: true,
+        },
+      })
+      .from(".animate-img2", {
+        // opacity: 0,
+        scrollTrigger: {
+          trigger: ".animate-img2",
+          start: "top 60%",
+          end: "bottom top",
+          toggleClass: "animation-img",
+          scrub: true,
+        },
+      })
+      .from(".animate-imgText", 1, {
+        x: "-30%",
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".animate-imgText",
+          start: "top 85%",
+          end: "bottom 78%",
+          scrub: true,
+        },
+      });
+  });
 
   // filter for blogs based on Genre
 

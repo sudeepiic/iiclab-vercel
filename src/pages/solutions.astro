@@ -686,61 +686,126 @@ import diamond from "../images/whiteDiamond.png";
   });
 
   let tl = gsap.timeline();
-  tl.from(".animate-title", {
-    duration: 0.7,
-    y: "60%",
 
-    ease: "power1.out",
-  })
-    .from(".btn-animate, .arrow", {
-      opacity: 0,
+  let mm = gsap.matchMedia();
+
+  mm.add("(min-width: 768px)", () => {
+    tl.from(".animate-title", {
+      duration: 0.7,
+      y: "60%",
 
       ease: "power1.out",
     })
-    .from(".btn-animate", {
-      rotate: "360",
-      duration: 10,
-      repeat: -1,
-      ease: "none",
-    })
-    .from(".swiper-animate", {
-      scrollTrigger: {
-        trigger: ".swiper-animate",
-        start: "top 50%",
-        end: "bottom 30%",
-        toggleClass: "swiper-animation",
-        scrub: true,
-      },
-    })
-    .from(".overlapDiv", {
-      y: "50%",
-      opacity: 0,
-      scrollTrigger: {
-        trigger: ".overlapDiv",
-        start: "top 70%",
-        end: "bottom 75%",
+      .from(".btn-animate, .arrow", {
+        opacity: 0,
 
-        scrub: true,
-      },
-    })
-    .from(".captionDiv", {
-      opacity: 0,
-      scrollTrigger: {
-        trigger: ".overlapDiv",
-        start: "top 55%",
-        end: "bottom 60%",
+        ease: "power1.out",
+      })
+      .from(".btn-animate", {
+        rotate: "360",
+        duration: 10,
+        repeat: -1,
+        ease: "none",
+      })
+      .from(".swiper-animate", {
+        scrollTrigger: {
+          trigger: ".swiper-animate",
+          start: "top 50%",
+          end: "bottom 30%",
+          toggleClass: "swiper-animation",
+          scrub: true,
+        },
+      })
+      .from(".overlapDiv", {
+        y: "50%",
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".overlapDiv",
+          start: "top 70%",
+          end: "bottom 75%",
 
-        scrub: true,
-      },
-    })
-    .from(".techList", {
-      opacity: 0,
-      scrollTrigger: {
-        trigger: ".overlapDiv",
-        start: "top 48%",
-        end: "bottom 66%",
+          scrub: true,
+        },
+      })
+      .from(".captionDiv", {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".overlapDiv",
+          start: "top 55%",
+          end: "bottom 60%",
 
-        scrub: true,
-      },
-    });
+          scrub: true,
+        },
+      })
+      .from(".techList", {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".overlapDiv",
+          start: "top 48%",
+          end: "bottom 66%",
+
+          scrub: true,
+        },
+      });
+  });
+
+  mm.add("(max-width: 767px)", () => {
+    tl.from(".animate-title", {
+      duration: 0.7,
+      y: "60%",
+
+      ease: "power1.out",
+    })
+      .from(".btn-animate, .arrow", {
+        opacity: 0,
+
+        ease: "power1.out",
+      })
+      .from(".btn-animate", {
+        rotate: "360",
+        duration: 10,
+        repeat: -1,
+        ease: "none",
+      })
+      .from(".swiper-animate", {
+        scrollTrigger: {
+          trigger: ".swiper-animate",
+          start: "top 50%",
+          end: "bottom 30%",
+          toggleClass: "swiper-animation",
+          scrub: true,
+        },
+      })
+      .from(".overlapDiv", {
+        y: "50%",
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".overlapDiv",
+          start: "top 70%",
+          end: "bottom 75%",
+
+          scrub: true,
+        },
+      })
+      .from(".captionDiv", {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".overlapDiv",
+          start: "top 55%",
+          end: "bottom 60%",
+
+          scrub: true,
+        },
+      })
+      .from(".techList", {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".overlapDiv",
+          start: "top 48%",
+          end: "bottom 66%",
+
+          scrub: true,
+        },
+      });
+  });
 </script>

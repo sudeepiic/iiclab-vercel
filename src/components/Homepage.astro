@@ -142,22 +142,22 @@ const testimonials: any = await contentfulClient.getEntries<any>({
     >
       <div class="d-flex panel">
         <span>Deduce</span>
-        <div style="text-align: center; margin:15vw 3vw 0vw 3vw">
-          <img style="width:5vw" class="" src={diamond} alt="" />
+        <div class="taglineDiamond">
+          <img class="" src={diamond} alt="" />
         </div>
       </div>
 
       <div class="d-flex panel">
         <span>Engage</span>
-        <div style="text-align: center; margin:15vw 3vw 0vw 3vw">
-          <img style="width:5vw" class="" src={diamond} alt="" />
+        <div class="taglineDiamond">
+          <img class="" src={diamond} alt="" />
         </div>
       </div>
 
       <div class="d-flex panel">
         <span>Enable</span>
-        <div style="text-align: center; margin:15vw 3vw 0vw 3vw">
-          <img style="width:5vw; opacity:0" class="" src={diamond} alt="" />
+        <div class="taglineDiamond">
+          <img style=" opacity:0" class="" src={diamond} alt="" />
         </div>
       </div>
     </div>
@@ -599,7 +599,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
       <a
         href="/portfolio/"
-        style="position: relative;  margin-top: 26.5%; left: 19%;"
+        class="mobile-viewAll"
+        style="position: relative;  margin-top: 26.5%; left: 19%; display:inline-block;"
       >
         <img class="fwViewAll" src={fwViewAll} alt="" /></a
       >
@@ -1101,7 +1102,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
       .container {
         padding: 10% 0;
-        height: 100vh;
+        height: 0vh;
 
         display: flex;
         flex-wrap: nowrap;
@@ -1770,8 +1771,25 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           padding: 0.8rem 0.8rem 0.2rem 0.8rem !important;
         }
       }
+      @media screen and (max-width: 767px) and (min-width: 550px) {
+        .container {
+          height: 50vh !important;
+        }
+      }
+      @media screen and (max-width: 548px) {
+        .container {
+          height: 30vh !important;
+        }
+      }
 
       @media screen and (max-width: 767px) {
+        .workImg-section {
+          overflow-x: scroll;
+        }
+        #main4 span {
+          padding: 3vw;
+          font-size: 50vw;
+        }
         .authName {
           font-size: 1.7vw;
         }
@@ -1863,6 +1881,13 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
       /* mobile view css */
       @media screen and (min-width: 768px) {
+        .taglineDiamond {
+          text-align: center;
+          margin: 15vw 3vw 0vw 3vw;
+        }
+        .taglineDiamond img {
+          width: 5vw;
+        }
         .controls {
           display: none !important;
         }
@@ -1937,6 +1962,14 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         }
       }
       @media screen and (max-width: 767px) {
+        .taglineDiamond {
+          text-align: center;
+          margin: 20vw 3vw 0vw 3vw;
+        }
+        .taglineDiamond img {
+          width: 9vw;
+        }
+
         .lottie {
           width: 55px;
           height: 55px;
@@ -1949,10 +1982,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           display: none;
         }
         .animate-featureWork2 {
-          margin-top: 22%;
+          margin-top: 4%;
         }
         .animate-featureWork2:before {
-          top: 20% !important;
+          top: 50% !important;
         }
         .work {
           line-height: 0.8;
@@ -2160,7 +2193,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         }
         .featureImg-animate {
           margin-top: 30.3%;
-          margin-left: -34%;
+          margin-left: -39%;
+          margin-right: 3%;
         }
 
         .fwViewAll {
@@ -2598,263 +2632,533 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 
       let sections = gsap.utils.toArray(".panel");
 
-      gsap.to(sections, {
-        xPercent: -290 * (sections.length - 1.35),
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".container",
-          pin: true,
-          scrub: 1,
-          snap: 1 / (sections.length - 0.7),
-          end: () => "+=" + document.querySelector(".container").offsetWidth,
-        },
-      });
-      gsap.from("#main5", {
-        x: "-60%",
+      let mm = gsap.matchMedia();
 
-        duration: 1.2,
-        // repeat: -1,
-        scrollTrigger: {
-          trigger: "#main5",
-          start: "top 45%",
-          end: "top top",
-          toggleActions: "play complete reverse reset",
-        },
-      });
-      gsap.to(".giantHolder-animate", {
-        x: "-100%",
-        ease: "none",
-        duration: 0.6,
-        scrollTrigger: {
-          trigger: ".giantHolder-animate",
-          start: "top 10%",
-          end: "bottom top",
-          toggleActions: "restart complete reverse reset",
-        },
-      });
-      gsap.from(".clientArray1", 1, {
-        x: "670%",
-        // opacity: "0",
-        ease: "ease1.out",
-        scrollTrigger: {
-          trigger: ".clientArray1",
-          start: "top 45%",
-          end: "top top",
-          toggleActions: "restart complete reverse reset",
-        },
-      });
-      gsap.from(".clientArray2", 1, {
-        x: "670%",
-        // opacity: "0",
-        ease: "ease1.out",
-        scrollTrigger: {
-          trigger: ".clientArray2",
-          start: "top 55%",
-          end: "top top",
-          toggleActions: "restart complete reverse reset",
-        },
-      });
-      gsap.from(".clientArray3", 1, {
-        x: "670%",
-        // opacity: "0",
-        ease: "ease1.out",
-        scrollTrigger: {
-          trigger: ".clientArray3",
-          start: "top 65%",
-          end: "top top",
-          toggleActions: "restart complete reverse reset",
-        },
-      });
-      gsap.from(".clientArray4", 1, {
-        x: "670%",
-        // opacity: "0",
-        ease: "ease1.out",
-        scrollTrigger: {
-          trigger: ".clientArray4",
-          start: "top 75%",
-          end: "top top",
-          toggleActions: "restart complete reverse reset",
-        },
-      });
+      mm.add("(min-width: 768px)", () => {
+        // desktop setup code here...
 
-      // setTimeout(() => {
-      //   ScrollTrigger.refresh();
-      // }, 3000);
+        gsap.to(sections, {
+          xPercent: -290 * (sections.length - 1.35),
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".container",
+            pin: true,
+            scrub: 1,
+            snap: 1 / (sections.length - 0.7),
+            end: () => "+=" + document.querySelector(".container").offsetWidth,
+          },
+        });
+        gsap.from("#main5", {
+          x: "-60%",
 
-      let tl = new TimelineMax({});
-
-      tl.from("#main3", 1, {
-        x: "30%",
-        ease: "power2.inOut",
-        opacity: "0",
-        delay: "2",
-      })
-        .from(".animateHand", 1.5, {
-          x: "190%",
-          rotate: "-17",
-          ease: "back.inOut",
-          duration: "1.2",
-        })
-        .to(".animate-topSection", 1, {
-          opacity: "0",
+          duration: 1.2,
+          // repeat: -1,
           scrollTrigger: {
-            trigger: ".animate-topSection",
-            start: "top top",
-            end: "bottom 30%",
-            scrub: true,
+            trigger: "#main5",
+            start: "top 45%",
+            end: "top top",
+            toggleActions: "play complete reverse reset",
           },
-        })
-        .from(".mainImg", 1, {
+        });
+        gsap.to(".giantHolder-animate", {
+          x: "-100%",
+          ease: "none",
+          duration: 0.6,
           scrollTrigger: {
-            trigger: ".mainImg",
-            start: "top 15%",
+            trigger: ".giantHolder-animate",
+            start: "top 10%",
             end: "bottom top",
-            toggleClass: "mainImg-animate",
-
-            scrub: true,
+            toggleActions: "restart complete reverse reset",
           },
-        })
-
-        .from("#featureWork-section", 1, {
-          scrollTrigger: {
-            trigger: ".animate-featureWork",
-            start: "top 55%",
-            end: "bottom top",
-            toggleClass: "animation-featureWork",
-            scrub: true,
-          },
-        })
-        .from("#featureWork-section", 1, {
-          scrollTrigger: {
-            trigger: ".animate-featureWork2",
-            start: "top 85%",
-            end: "bottom top",
-            toggleClass: "animation-featureWork",
-            scrub: true,
-          },
-        })
-        .from("#featureWork-section", 1, {
-          scrollTrigger: {
-            trigger: ".featureImg-animate",
-            start: "top 65%",
-            end: "bottom top",
-            toggleClass: "featureImg-animation",
-            scrub: true,
-            markers: false,
-          },
-        })
-        .from(".workImg-section", 1, {
-          scrollTrigger: {
-            trigger: ".workImg-section",
-            start: "top 55%",
-            end: "bottom top",
-
-            toggleClass: "move-upper-white-bg",
-            scrub: true,
-          },
-        })
-        .from(".workImg-section", 1, {
-          scrollTrigger: {
-            trigger: ".workImg-section",
-            start: "top 55%",
-            end: "bottom top",
-
-            toggleClass: "moving-text-parent",
-            scrub: true,
-          },
-        })
-
-        .from(".testimAnime-section", 1, {
-          scrollTrigger: {
-            trigger: ".testim-anime",
-            start: "top 50%",
-            end: "bottom top",
-            toggleClass: "animation-featureWork",
-            scrub: true,
-          },
-        })
-        .from(".testimText-animate", 1, {
-          opacity: 0,
-          scrollTrigger: {
-            trigger: ".testimText-animate",
-            start: "top 40%",
-            end: "bottom 30%",
-            opacity: 0,
-            scrub: true,
-          },
-        })
-        .from(".animate-swiper", 1, {
-          opacity: 0,
-          scrollTrigger: {
-            trigger: ".animate-swiper",
-            start: "top 55%",
-            end: "bottom 90%",
-            scrub: true,
-          },
-        })
-        .from(".ourAnimate-div", 1, {
-          scrollTrigger: {
-            trigger: ".ourAnimate-div",
-            start: "top 80%",
-            end: "bottom top",
-            toggleClass: "animation-featureWork",
-            scrub: true,
-          },
-        })
-        .from(".ourAnimate-div", 1, {
-          scrollTrigger: {
-            trigger: ".productAnimate-div",
-            start: "top 80%",
-            end: "bottom top",
-            toggleClass: "animation-featureWork",
-            scrub: true,
-          },
-        })
-        .from(".ourAnimate-div", 1, {
-          scrollTrigger: {
-            trigger: ".prodImg-animate",
-            start: "top 80%",
-            end: "bottom top",
-            toggleClass: "featureImg-animation",
-            scrub: true,
-            markers: false,
-          },
-        })
-        .from(".product-table", 1, {
-          opacity: 0,
-          y: "30%",
+        });
+        gsap.from(".clientArray1", 1, {
+          x: "670%",
+          // opacity: "0",
           ease: "ease1.out",
-          stagger: 0.25,
           scrollTrigger: {
-            trigger: ".product-table",
-            start: "top 85%",
-            end: "bottom top",
-            scrub: true,
+            trigger: ".clientArray1",
+            start: "top 45%",
+            end: "top top",
+            toggleActions: "restart complete reverse reset",
+          },
+        });
+        gsap.from(".clientArray2", 1, {
+          x: "670%",
+          // opacity: "0",
+          ease: "ease1.out",
+          scrollTrigger: {
+            trigger: ".clientArray2",
+            start: "top 55%",
+            end: "top top",
+            toggleActions: "restart complete reverse reset",
+          },
+        });
+        gsap.from(".clientArray3", 1, {
+          x: "670%",
+          // opacity: "0",
+          ease: "ease1.out",
+          scrollTrigger: {
+            trigger: ".clientArray3",
+            start: "top 65%",
+            end: "top top",
+            toggleActions: "restart complete reverse reset",
+          },
+        });
+        gsap.from(".clientArray4", 1, {
+          x: "670%",
+          // opacity: "0",
+          ease: "ease1.out",
+          scrollTrigger: {
+            trigger: ".clientArray4",
+            start: "top 75%",
+            end: "top top",
+            toggleActions: "restart complete reverse reset",
           },
         });
 
-      gsap.from(".viewAll-feature", 1, {
-        x: "100%",
-        ease: "ease1.out",
+        // setTimeout(() => {
+        //   ScrollTrigger.refresh();
+        // }, 3000);
 
-        scrollTrigger: {
-          trigger: ".viewAll-feature",
-          start: "top 60%",
-          end: "bottom 42%",
-          toggleActions: "restart complete reverse reset",
-        },
+        let tl = new TimelineMax({});
+
+        tl.from("#main3", 1, {
+          x: "30%",
+          ease: "power2.inOut",
+          opacity: "0",
+          delay: "2",
+        })
+          .from(".animateHand", 1.5, {
+            x: "190%",
+            rotate: "-17",
+            ease: "back.inOut",
+            duration: "1.2",
+          })
+          .to(".animate-topSection", 1, {
+            opacity: "0",
+            scrollTrigger: {
+              trigger: ".animate-topSection",
+              start: "top top",
+              end: "bottom 30%",
+              scrub: true,
+            },
+          })
+          .from(".mainImg", 1, {
+            scrollTrigger: {
+              trigger: ".mainImg",
+              start: "top 15%",
+              end: "bottom top",
+              toggleClass: "mainImg-animate",
+
+              scrub: true,
+            },
+          })
+
+          .from("#featureWork-section", 1, {
+            scrollTrigger: {
+              trigger: ".animate-featureWork",
+              start: "top 55%",
+              end: "bottom top",
+              toggleClass: "animation-featureWork",
+              scrub: true,
+            },
+          })
+          .from("#featureWork-section", 1, {
+            scrollTrigger: {
+              trigger: ".animate-featureWork2",
+              start: "top 85%",
+              end: "bottom top",
+              toggleClass: "animation-featureWork",
+              scrub: true,
+            },
+          })
+          .from("#featureWork-section", 1, {
+            scrollTrigger: {
+              trigger: ".featureImg-animate",
+              start: "top 65%",
+              end: "bottom top",
+              toggleClass: "featureImg-animation",
+              scrub: true,
+              markers: false,
+            },
+          })
+          .from(".workImg-section", 1, {
+            scrollTrigger: {
+              trigger: ".workImg-section",
+              start: "top 55%",
+              end: "bottom top",
+
+              toggleClass: "move-upper-white-bg",
+              scrub: true,
+            },
+          })
+          .from(".workImg-section", 1, {
+            scrollTrigger: {
+              trigger: ".workImg-section",
+              start: "top 55%",
+              end: "bottom top",
+
+              toggleClass: "moving-text-parent",
+              scrub: true,
+            },
+          })
+
+          .from(".testimAnime-section", 1, {
+            scrollTrigger: {
+              trigger: ".testim-anime",
+              start: "top 50%",
+              end: "bottom top",
+              toggleClass: "animation-featureWork",
+              scrub: true,
+            },
+          })
+          .from(".testimText-animate", 1, {
+            opacity: 0,
+            scrollTrigger: {
+              trigger: ".testimText-animate",
+              start: "top 40%",
+              end: "bottom 30%",
+              opacity: 0,
+              scrub: true,
+            },
+          })
+          .from(".animate-swiper", 1, {
+            opacity: 0,
+            scrollTrigger: {
+              trigger: ".animate-swiper",
+              start: "top 55%",
+              end: "bottom 90%",
+              scrub: true,
+            },
+          })
+          .from(".ourAnimate-div", 1, {
+            scrollTrigger: {
+              trigger: ".ourAnimate-div",
+              start: "top 80%",
+              end: "bottom top",
+              toggleClass: "animation-featureWork",
+              scrub: true,
+            },
+          })
+          .from(".ourAnimate-div", 1, {
+            scrollTrigger: {
+              trigger: ".productAnimate-div",
+              start: "top 80%",
+              end: "bottom top",
+              toggleClass: "animation-featureWork",
+              scrub: true,
+            },
+          })
+          .from(".ourAnimate-div", 1, {
+            scrollTrigger: {
+              trigger: ".prodImg-animate",
+              start: "top 80%",
+              end: "bottom top",
+              toggleClass: "featureImg-animation",
+              scrub: true,
+              markers: false,
+            },
+          })
+          .from(".product-table", 1, {
+            opacity: 0,
+            y: "30%",
+            ease: "ease1.out",
+            stagger: 0.22,
+            scrollTrigger: {
+              trigger: ".product-table",
+              start: "top 85%",
+              end: "bottom top",
+              scrub: true,
+            },
+          });
+
+        gsap.from(".viewAll-feature", 1, {
+          x: "100%",
+          ease: "ease1.out",
+
+          scrollTrigger: {
+            trigger: ".viewAll-feature",
+            start: "top 60%",
+            end: "bottom 42%",
+            toggleActions: "restart complete reverse reset",
+          },
+        });
+        gsap.to(".workBtnHand", 1, {
+          x: "107%",
+          ease: "ease1.out",
+
+          scrollTrigger: {
+            trigger: ".viewAll-feature",
+            start: "top 31%",
+            end: "bottom top",
+            // scrub: true,
+            toggleActions: "restart complete reverse reset",
+          },
+        });
       });
-      gsap.to(".workBtnHand", 1, {
-        x: "107%",
-        ease: "ease1.out",
 
-        scrollTrigger: {
-          trigger: ".viewAll-feature",
-          start: "top 31%",
-          end: "bottom top",
-          // scrub: true,
-          toggleActions: "restart complete reverse reset",
-        },
+      mm.add("(max-width: 767px)", () => {
+        // mobile setup code here...
+
+        gsap.to(sections, {
+          xPercent: -290 * (sections.length - 1.35),
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".container",
+            pin: true,
+            scrub: 1,
+            snap: 1 / (sections.length - 0.7),
+            end: () => "+=" + document.querySelector(".container").offsetWidth,
+          },
+        });
+        gsap.from("#main5", {
+          x: "-70%",
+
+          duration: 1.2,
+          // repeat: -1,
+          scrollTrigger: {
+            trigger: "#main5",
+            start: "top 45%",
+            end: "top top",
+            toggleActions: "play complete reverse reset",
+          },
+        });
+        gsap.to(".giantHolder-animate", {
+          x: "-100%",
+          ease: "none",
+          duration: 0.6,
+          scrollTrigger: {
+            trigger: ".giantHolder-animate",
+            start: "top 10%",
+            end: "bottom top",
+            toggleActions: "restart complete reverse reset",
+          },
+        });
+        gsap.from(".clientArray1", 1, {
+          x: "670%",
+          // opacity: "0",
+          ease: "ease1.out",
+          scrollTrigger: {
+            trigger: ".clientArray1",
+            start: "top 45%",
+            end: "top top",
+            toggleActions: "restart complete reverse reset",
+          },
+        });
+        gsap.from(".clientArray2", 1, {
+          x: "670%",
+          // opacity: "0",
+          ease: "ease1.out",
+          scrollTrigger: {
+            trigger: ".clientArray2",
+            start: "top 55%",
+            end: "top top",
+            toggleActions: "restart complete reverse reset",
+          },
+        });
+        gsap.from(".clientArray3", 1, {
+          x: "670%",
+          // opacity: "0",
+          ease: "ease1.out",
+          scrollTrigger: {
+            trigger: ".clientArray3",
+            start: "top 65%",
+            end: "top top",
+            toggleActions: "restart complete reverse reset",
+          },
+        });
+        gsap.from(".clientArray4", 1, {
+          x: "670%",
+          // opacity: "0",
+          ease: "ease1.out",
+          scrollTrigger: {
+            trigger: ".clientArray4",
+            start: "top 75%",
+            end: "top top",
+            toggleActions: "restart complete reverse reset",
+          },
+        });
+
+        // setTimeout(() => {
+        //   ScrollTrigger.refresh();
+        // }, 3000);
+
+        let tl = new TimelineMax({});
+
+        tl.from("#main3", 1, {
+          x: "30%",
+          ease: "power2.inOut",
+          opacity: "0",
+          delay: "2",
+        })
+          .from(".animateHand", 1.5, {
+            x: "190%",
+            rotate: "-17",
+            ease: "back.inOut",
+            duration: "1.2",
+          })
+          .to(".animate-topSection", 1, {
+            opacity: "0",
+            scrollTrigger: {
+              trigger: ".animate-topSection",
+              start: "top top",
+              end: "bottom 30%",
+              scrub: true,
+            },
+          })
+          .from(".mainImg", 5, {
+            delay: 5,
+            scrollTrigger: {
+              trigger: ".mainImg",
+              start: "top 50%",
+              end: "bottom top",
+              toggleClass: "mainImg-animate",
+
+              scrub: true,
+            },
+          })
+
+          .from("#featureWork-section", 1, {
+            scrollTrigger: {
+              trigger: ".animate-featureWork",
+              start: "top 70%",
+              end: "bottom top",
+              toggleClass: "animation-featureWork",
+              scrub: true,
+            },
+          })
+          .from("#featureWork-section", 1, {
+            scrollTrigger: {
+              trigger: ".animate-featureWork2",
+              start: "top 70%",
+              end: "bottom top",
+              toggleClass: "animation-featureWork",
+              scrub: true,
+            },
+          })
+          .from("#featureWork-section", 1, {
+            scrollTrigger: {
+              trigger: ".featureImg-animate",
+              start: "top 75%",
+              end: "bottom top",
+              toggleClass: "featureImg-animation",
+              scrub: true,
+              markers: false,
+            },
+          })
+          .from(".workImg-section", 1, {
+            scrollTrigger: {
+              trigger: ".workImg-section",
+              start: "top 65%",
+              end: "bottom top",
+
+              toggleClass: "move-upper-white-bg",
+              scrub: true,
+            },
+          })
+          // .from(".workImg-section", 1, {
+          //   scrollTrigger: {
+          //     trigger: ".workImg-section",
+          //     start: "top 65%",
+          //     end: "bottom top",
+
+          //     toggleClass: "moving-text-parent",
+          //     scrub: true,
+          //   },
+          // })
+
+          .from(".testimAnime-section", 1, {
+            scrollTrigger: {
+              trigger: ".testim-anime",
+              start: "top 80%",
+              end: "bottom top",
+              toggleClass: "animation-featureWork",
+              scrub: true,
+            },
+          })
+          .from(".testimText-animate", 1, {
+            opacity: 0,
+            scrollTrigger: {
+              trigger: ".testimText-animate",
+              start: "top 70%",
+              end: "bottom 30%",
+              opacity: 0,
+              scrub: true,
+            },
+          })
+          .from(".animate-swiper", 1, {
+            opacity: 0,
+            scrollTrigger: {
+              trigger: ".animate-swiper",
+              start: "top 75%",
+              end: "bottom 90%",
+              scrub: true,
+            },
+          })
+          .from(".ourAnimate-div", 1, {
+            scrollTrigger: {
+              trigger: ".ourAnimate-div",
+              start: "top 90%",
+              end: "bottom top",
+              toggleClass: "animation-featureWork",
+              scrub: true,
+            },
+          })
+          .from(".ourAnimate-div", 1, {
+            scrollTrigger: {
+              trigger: ".productAnimate-div",
+              start: "top 90%",
+              end: "bottom top",
+              toggleClass: "animation-featureWork",
+              scrub: true,
+            },
+          })
+          .from(".ourAnimate-div", 1, {
+            scrollTrigger: {
+              trigger: ".prodImg-animate",
+              start: "top 90%",
+              end: "bottom top",
+              toggleClass: "featureImg-animation",
+              scrub: true,
+              markers: false,
+            },
+          })
+          .from(".product-table", 1, {
+            opacity: 0,
+            y: "30%",
+            ease: "ease1.out",
+            stagger: 0.2,
+            scrollTrigger: {
+              trigger: ".product-table",
+              start: "top 90%",
+              end: "bottom top",
+              scrub: true,
+            },
+          });
+
+        gsap.to(".mobile-viewAll", 1, {
+          x: "-100%",
+          ease: "ease1.out",
+
+          scrollTrigger: {
+            trigger: ".mobile-viewAll",
+            start: "top 65%",
+            end: "bottom top",
+            toggleActions: "restart complete reverse reset",
+          },
+        });
+        gsap.to(".workBtnHand", 1, {
+          x: "107%",
+          ease: "ease1.out",
+
+          scrollTrigger: {
+            trigger: ".viewAll-feature",
+            start: "top 31%",
+            end: "bottom top",
+            // scrub: true,
+            toggleActions: "restart complete reverse reset",
+          },
+        });
       });
 
       import {

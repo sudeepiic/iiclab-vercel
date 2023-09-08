@@ -799,121 +799,207 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
   );
 
   let tl = new TimelineMax({});
+  let mm = gsap.matchMedia();
 
-  tl.from(" .letter", 1, {
-    opacity: "0",
-    ease: "power2.inOut",
-    duration: 1500,
-    stagger: 0.08,
-  })
-    .from("#main2", 1, {
-      x: "-10%",
+  mm.add("(min-width: 768px)", () => {
+    tl.from(" .letter", 1, {
       opacity: "0",
       ease: "power2.inOut",
-      duration: 800,
+      duration: 1500,
+      stagger: 0.08,
     })
-    .from("#teamInfo", 1, {
-      scrollTrigger: {
-        trigger: ".label-animate1",
-        start: "top 40%",
-        end: "bottom top",
-        toggleClass: "label-animation",
-        scrub: true,
-      },
-    })
-    .from("#teamInfo", 1, {
-      scrollTrigger: {
-        trigger: ".label-animate2",
-        start: "top 50%",
-        end: "bottom top",
-        toggleClass: "label-animation",
-        scrub: true,
-      },
-    })
-    .from("#teamInfo", 1, {
-      scrollTrigger: {
-        trigger: ".label-animate3",
-        start: "top 60%",
-        end: "bottom top",
-        toggleClass: "label-animation",
-        scrub: true,
-      },
-    })
-    .from("#teamInfo", 1, {
-      stagger: 0.8,
-      scrollTrigger: {
-        trigger: ".label-animate4",
-        start: "top 70%",
-        end: "bottom top",
-        toggleClass: "label-animation",
-        scrub: true,
-      },
-    })
-    .from("#teamInfo", 0.7, {
-      scrollTrigger: {
-        trigger: ".content-box1",
-        start: "top 40%",
-        end: "bottom top",
-        toggleClass: "content-box-animation",
-        scrub: true,
-      },
-    })
-    .from("#teamInfo", 0.7, {
-      scrollTrigger: {
-        trigger: ".content-box2",
-        start: "top 50%",
-        end: "bottom top",
-        toggleClass: "content-box-animation",
-        scrub: true,
-      },
-    })
-    .from("#teamInfo", 0.7, {
-      scrollTrigger: {
-        trigger: ".content-box3",
-        start: "top 55%",
-        end: "bottom top",
-        toggleClass: "content-box-animation",
-        scrub: true,
-      },
-    })
-    .from(".numtext-animation", 1, {
-      x: "-20%",
+      .from("#main2", 1, {
+        x: "-10%",
+        opacity: "0",
+        ease: "power2.inOut",
+        duration: 800,
+      })
+      .from("#teamInfo", 1, {
+        scrollTrigger: {
+          trigger: ".label-animate1",
+          start: "top 40%",
+          end: "bottom top",
+          toggleClass: "label-animation",
+          scrub: true,
+        },
+      })
+      .from("#teamInfo", 1, {
+        scrollTrigger: {
+          trigger: ".label-animate2",
+          start: "top 50%",
+          end: "bottom top",
+          toggleClass: "label-animation",
+          scrub: true,
+        },
+      })
+      .from("#teamInfo", 1, {
+        scrollTrigger: {
+          trigger: ".label-animate3",
+          start: "top 60%",
+          end: "bottom top",
+          toggleClass: "label-animation",
+          scrub: true,
+        },
+      })
+      .from("#teamInfo", 1, {
+        stagger: 0.8,
+        scrollTrigger: {
+          trigger: ".label-animate4",
+          start: "top 70%",
+          end: "bottom top",
+          toggleClass: "label-animation",
+          scrub: true,
+        },
+      })
+      .from("#teamInfo", 0.7, {
+        scrollTrigger: {
+          trigger: ".content-box1",
+          start: "top 40%",
+          end: "bottom top",
+          toggleClass: "content-box-animation",
+          scrub: true,
+        },
+      })
+      .from("#teamInfo", 0.7, {
+        scrollTrigger: {
+          trigger: ".content-box2",
+          start: "top 50%",
+          end: "bottom top",
+          toggleClass: "content-box-animation",
+          scrub: true,
+        },
+      })
+      .from("#teamInfo", 0.7, {
+        scrollTrigger: {
+          trigger: ".content-box3",
+          start: "top 55%",
+          end: "bottom top",
+          toggleClass: "content-box-animation",
+          scrub: true,
+        },
+      })
+      .from(".numtext-animation", 1, {
+        x: "-20%",
+        opacity: "0",
+        scrollTrigger: {
+          trigger: ".numtext-animation",
+          start: "top 40%",
+          end: "bottom 30%",
+          scrub: true,
+        },
+      })
+      .from(".onlyMob", 1, {
+        x: "-20%",
+        opacity: "0",
+        scrollTrigger: {
+          trigger: ".numtext-animation1",
+          start: "top 40%",
+          end: "bottom 30%",
+          scrub: true,
+        },
+      })
+      .from(".clientArray1", 1, {
+        x: "-60%",
+        opacity: "0",
+        scrollTrigger: {
+          trigger: ".clientArray1",
+          start: "top 35%",
+          end: "bottom 20%",
+          scrub: true,
+        },
+      })
+      .from(".clientArray2", 1, {
+        x: "60%",
+        opacity: "0",
+        scrollTrigger: {
+          trigger: ".clientArray2",
+          start: "top 45%",
+          end: "bottom 30%",
+          scrub: true,
+        },
+      });
+  });
+
+  mm.add("(max-width: 767px)", () => {
+    tl.from(" .letter", 1, {
       opacity: "0",
-      scrollTrigger: {
-        trigger: ".numtext-animation",
-        start: "top 40%",
-        end: "bottom 30%",
-        scrub: true,
-      },
+      ease: "power2.inOut",
+      duration: 1500,
+      stagger: 0.08,
     })
-    .from(".onlyMob", 1, {
-      x: "-20%",
-      opacity: "0",
-      scrollTrigger: {
-        trigger: ".numtext-animation1",
-        start: "top 40%",
-        end: "bottom 30%",
-        scrub: true,
-      },
-    })
-    .from(".clientArray1", 1, {
-      x: "-60%",
-      opacity: "0",
-      scrollTrigger: {
-        trigger: ".clientArray1",
-        start: "top 35%",
-        end: "bottom 20%",
-        scrub: true,
-      },
-    })
-    .from(".clientArray2", 1, {
-      x: "60%",
-      opacity: "0",
-      scrollTrigger: {
-        trigger: ".clientArray2",
-        start: "top 45%",
-        end: "bottom 30%",
-        scrub: true,
-      },
-    });
+      .from("#main2", 1, {
+        x: "-10%",
+        opacity: "0",
+        ease: "power2.inOut",
+        duration: 800,
+      })
+      .from("#teamInfo", 1, {
+        scrollTrigger: {
+          trigger: ".label-animate1",
+          start: "top 60%",
+          end: "bottom top",
+          toggleClass: "label-animation",
+          scrub: true,
+        },
+      })
+      .from("#teamInfo", 1, {
+        scrollTrigger: {
+          trigger: ".label-animate2",
+          start: "top 70%",
+          end: "bottom top",
+          toggleClass: "label-animation",
+          scrub: true,
+        },
+      })
+      .from("#teamInfo", 1, {
+        scrollTrigger: {
+          trigger: ".label-animate3",
+          start: "top 70%",
+          end: "bottom top",
+          toggleClass: "label-animation",
+          scrub: true,
+        },
+      })
+      .from("#teamInfo", 1, {
+        stagger: 0.8,
+        scrollTrigger: {
+          trigger: ".label-animate4",
+          start: "top 80%",
+          end: "bottom top",
+          toggleClass: "label-animation",
+          scrub: true,
+        },
+      })
+
+      .from(".onlyMob", 1, {
+        x: "-20%",
+        opacity: "0",
+        scrollTrigger: {
+          trigger: ".numtext-animation1",
+          start: "top 70%",
+          end: "bottom 55%",
+          scrub: true,
+        },
+      })
+      .from(".clientArray1", 1, {
+        x: "-60%",
+        opacity: "0",
+        scrollTrigger: {
+          trigger: ".clientArray1",
+          start: "top 70%",
+          end: "bottom 55%",
+          scrub: true,
+        },
+      })
+      .from(".clientArray2", 1, {
+        x: "60%",
+        opacity: "0",
+        scrollTrigger: {
+          trigger: ".clientArray2",
+          start: "top 80%",
+          end: "bottom 65%",
+          scrub: true,
+        },
+      });
+  });
 </script>
