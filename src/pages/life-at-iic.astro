@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import blogsLeft from "../images/blogsLeft.png";
 import blogsRight from "../images/blogsRight.png";
 import hiringHeroImg from "../images/hiringHeroImg.jpg";
-import officeImg from "../images/officeImg.png";
 import values from "../images/values.jpg";
 import VR from "../images/VR.jpg";
 import carousalNext from "../images/carousalNext.png";
@@ -369,20 +368,45 @@ import fussball from "../images/fussball.jpg";
   gsap.registerPlugin(ScrollTrigger);
 
   let tl = gsap.timeline();
-  tl.from(".title1", {
-    duration: 1,
-    x: "-60%",
-    opacity: 0.1,
-    ease: "power1.out",
-  })
-    .from(".animate-text, .title2", {
-      opacity: 0,
+  let mm = gsap.matchMedia();
+
+  mm.add("(min-width: 768px)", () => {
+    tl.from(".title1", {
+      duration: 1,
+      x: "-60%",
+      opacity: 0.1,
       ease: "power1.out",
     })
-    .from(".animate-swiper", {
-      opacity: 0,
+      .from(".animate-text, .title2", {
+        opacity: 0,
+        ease: "power1.out",
+      })
+      .from(".animate-swiper", {
+        opacity: 0,
+        ease: "power1.out",
+      });
+  });
+
+  mm.add("(max-width: 767px)", () => {
+    tl.from(".title1", {
+      duration: 1,
+      x: "-60%",
+      opacity: 0.1,
       ease: "power1.out",
-    });
+    })
+      .from(".animate-text, .title2", {
+        opacity: 0,
+        ease: "power1.out",
+      })
+      .from(".animate-swiper", {
+        opacity: 0,
+        ease: "power1.out",
+      })
+      .from(".carousal2", {
+        opacity: 0,
+        ease: "power1.out",
+      });
+  });
   import {
     Swiper,
     Navigation,

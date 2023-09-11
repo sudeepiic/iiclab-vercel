@@ -574,6 +574,7 @@ const entries: any = await contentfulClient.getEntries<any>({
 
   .editors {
     margin-top: 4%;
+    overflow: hidden;
   }
 
   .editors span {
@@ -584,6 +585,7 @@ const entries: any = await contentfulClient.getEntries<any>({
     font-style: normal;
     color: white;
     line-height: 0.85;
+    display: inline-block;
   }
 
   .editorImgs {
@@ -943,7 +945,12 @@ const entries: any = await contentfulClient.getEntries<any>({
       .from(".swiper-animate", {
         opacity: 0,
       })
-
+      .from(".editors span", {
+        duration: 1,
+        x: "-100%",
+        opacity: 0.5,
+        ease: "power1.out",
+      })
       .from(".animate-img", {
         // opacity: 0,
         scrollTrigger: {

@@ -36,6 +36,7 @@ import diamond from "../images/whiteDiamond.png";
         <div class="swiper-slide">
           <div class="swiperDiv">
             <img class="carousalImg" src={solutionImg1} alt="" loading="lazy" />
+            <!-- <div class="overlay"></div> -->
             <div class="techList">
               <ul class="a">
                 <li>metaverse</li>
@@ -309,7 +310,7 @@ import diamond from "../images/whiteDiamond.png";
           <img style="width:3.5vw" class="" src={diamond} loading="lazy" />
         </div>
         <span class="wallHonor">Experiential Marketing</span>
-        <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
+        <div style="text-align: center; margin:3vw 3vw 3vw 3vw; opacity:0">
           <img style="width:3.5vw" class="" src={diamond} loading="lazy" />
         </div>
       </div>
@@ -318,6 +319,14 @@ import diamond from "../images/whiteDiamond.png";
 </Layout>
 
 <style>
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
   . {
     height: auto;
   }
@@ -427,6 +436,7 @@ import diamond from "../images/whiteDiamond.png";
 
   .swiper-slide-active .carousalImg {
     scale: 0.8;
+    opacity: 75%;
   }
   .swiper-slide-next .captionDiv,
   .swiper-slide-prev .captionDiv {
@@ -527,9 +537,12 @@ import diamond from "../images/whiteDiamond.png";
   }
 
   .bgImage {
-    background-image: url(../images/Hand_Holding_Smartphone2.jpg);
+    background-image: url(../images/Hand_Holding_Smartphone2.jpg),
+      linear-gradient(rgba(243, 243, 243, 0.82), rgba(0, 0, 0, 0.9));
 
     background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
 
     object-fit: cover;
     padding-left: 10%;
@@ -721,8 +734,8 @@ import diamond from "../images/whiteDiamond.png";
         opacity: 0,
         scrollTrigger: {
           trigger: ".overlapDiv",
-          start: "top 70%",
-          end: "bottom 75%",
+          start: "top 75%",
+          end: "bottom 80%",
 
           scrub: true,
         },
@@ -731,8 +744,8 @@ import diamond from "../images/whiteDiamond.png";
         opacity: 0,
         scrollTrigger: {
           trigger: ".overlapDiv",
-          start: "top 55%",
-          end: "bottom 60%",
+          start: "top 60%",
+          end: "bottom 65%",
 
           scrub: true,
         },
@@ -741,8 +754,8 @@ import diamond from "../images/whiteDiamond.png";
         opacity: 0,
         scrollTrigger: {
           trigger: ".overlapDiv",
-          start: "top 48%",
-          end: "bottom 66%",
+          start: "top 58%",
+          end: "bottom 73%",
 
           scrub: true,
         },

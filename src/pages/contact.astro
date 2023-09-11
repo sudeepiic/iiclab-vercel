@@ -374,6 +374,9 @@ import positionBtn from "../images/positionBtn.png";
       padding-top: 7% !important;
       margin-right: auto;
     }
+    .textArea {
+      font-size: 3vw !important;
+    }
   }
 
   .imgDiv {
@@ -385,6 +388,7 @@ import positionBtn from "../images/positionBtn.png";
     padding-top: 7vw;
     padding-bottom: 5%;
     border-radius: 0 0 4vw 4vw;
+    overflow: hidden;
   }
   .topSecDiv {
     margin-top: 1%;
@@ -593,9 +597,9 @@ import positionBtn from "../images/positionBtn.png";
   .imgDiv::before {
     content: "";
     position: absolute;
-    right: 0;
+    right: 1.5%;
     left: 0;
-    top: 0;
+    top: -1%;
     bottom: 0;
     background: #1a1a1a;
     z-index: 998;
@@ -670,86 +674,174 @@ import positionBtn from "../images/positionBtn.png";
 
   let tl = gsap.timeline();
 
-  tl.from(".title1", {
-    duration: 1,
-    x: "-100%",
+  let mm = gsap.matchMedia();
 
-    ease: "power1.out",
-  })
-    .from(".title2", {
+  mm.add("(min-width: 768px)", () => {
+    tl.from(".title1", {
       duration: 1,
       x: "-100%",
 
       ease: "power1.out",
     })
-    .from(".text", {
+      .from(".title2", {
+        duration: 1,
+        x: "-100%",
+
+        ease: "power1.out",
+      })
+      .from(".text", {
+        duration: 1,
+        y: "100%",
+        ease: "power1.out",
+      })
+      .from(".input-group, .textArea, .submitBtn", 1, {
+        y: "50%",
+        opacity: 0,
+      })
+      .from(".col1, .col2", 1, {
+        y: "50%",
+        opacity: 0,
+        stagger: 0.5,
+
+        scrollTrigger: {
+          trigger: ".col1, .col2",
+          start: "top 50%",
+          end: "bottom 30%",
+          scrub: true,
+        },
+      })
+
+      .from(".clan", 1, {
+        y: "100%",
+
+        scrollTrigger: {
+          trigger: ".clan",
+          start: "top 70%",
+          end: "bottom 60%",
+
+          scrub: true,
+        },
+      })
+      .from(".hand-animate", 1, {
+        opacity: 0,
+
+        scrollTrigger: {
+          trigger: ".hand-animate",
+          start: "top 25%",
+          end: "bottom 90%",
+
+          scrub: true,
+        },
+      })
+
+      .from(".hand-animate", 1, {
+        x: "+=30",
+        rotate: "-=10",
+        yoyo: true,
+        repeat: 10,
+        scrollTrigger: {
+          trigger: ".hand-animate",
+          start: "top 40%",
+          end: "bottom 50%",
+
+          scrub: true,
+        },
+      })
+      .from(".btn-animate", 1, {
+        x: "-20%",
+        opacity: 0,
+
+        scrollTrigger: {
+          trigger: ".hand-animate",
+          start: "top 50%",
+          end: "bottom 60%",
+
+          scrub: true,
+        },
+      });
+  });
+
+  mm.add("(max-width: 767px)", () => {
+    tl.from(".contact-animate", {
       duration: 1,
-      y: "100%",
+      x: "-100%",
+
       ease: "power1.out",
     })
-    .from(".input-group, .textArea, .submitBtn", 1, {
-      y: "50%",
-      opacity: 0,
-    })
-    .from(".col1, .col2", 1, {
-      y: "50%",
-      opacity: 0,
-      stagger: 0.5,
 
-      scrollTrigger: {
-        trigger: ".col1, .col2",
-        start: "top 50%",
-        end: "bottom 30%",
-        scrub: true,
-      },
-    })
+      .from(".text", {
+        duration: 1,
+        y: "100%",
+        ease: "power1.out",
+      })
+      .from(".input-group, .textArea, .submitBtn", 1, {
+        y: "50%",
+        opacity: 0,
+      })
+      .from("#connect span", {
+        y: "50%",
+        opacity: 0,
+      })
+      .from(".col1, .col2", 1, {
+        y: "50%",
+        opacity: 0,
+        stagger: 0.5,
 
-    .from(".clan", 1, {
-      y: "100%",
+        scrollTrigger: {
+          trigger: ".col1, .col2",
+          start: "top 50%",
+          end: "bottom 30%",
+          scrub: true,
+        },
+      })
 
-      scrollTrigger: {
-        trigger: ".clan",
-        start: "top 70%",
-        end: "bottom 60%",
+      .from(".clan", 1, {
+        y: "100%",
 
-        scrub: true,
-      },
-    })
-    .from(".hand-animate", 1, {
-      opacity: 0,
+        scrollTrigger: {
+          trigger: ".clan",
+          start: "top 70%",
+          end: "bottom 60%",
 
-      scrollTrigger: {
-        trigger: ".hand-animate",
-        start: "top 25%",
-        end: "bottom 90%",
+          scrub: true,
+        },
+      })
+      .from(".hand-animate", 1, {
+        opacity: 0,
 
-        scrub: true,
-      },
-    })
+        scrollTrigger: {
+          trigger: ".hand-animate",
+          start: "top 25%",
+          end: "bottom 90%",
 
-    .from(".hand-animate", 1, {
-      x: "+=30",
-      rotate: "-=10",
-      yoyo: true,
-      repeat: 10,
-      scrollTrigger: {
-        trigger: ".hand-animate",
-        start: "top 40%",
-        end: "bottom 50%",
+          scrub: true,
+        },
+      })
 
-        scrub: true,
-      },
-    })
-    .from(".btn-animate", 1, {
-      x: "-20%",
-      opacity: 0,
+      .from(".hand-animate", 1, {
+        x: "+=30",
+        rotate: "-=10",
+        yoyo: true,
+        repeat: 10,
+        scrollTrigger: {
+          trigger: ".hand-animate",
+          start: "top 40%",
+          end: "bottom 50%",
 
-      scrollTrigger: {
-        trigger: ".hand-animate",
-        start: "top 50%",
-        end: "bottom 60%",
+          scrub: true,
+        },
+      })
+      .from(".btn-animate", 1, {
+        x: "-20%",
+        opacity: 0,
 
-        scrub: true,
-      },
-    });
+        scrollTrigger: {
+          trigger: ".hand-animate",
+          start: "top 50%",
+          end: "bottom 60%",
+
+          scrub: true,
+        },
+      });
+  });
 </script>

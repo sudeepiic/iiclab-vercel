@@ -5,6 +5,8 @@ import swiper2Img from "../images/useCase-swiperImg.jpg";
 import blogsLeft from "../images/blogsLeft.png";
 import blogsRight from "../images/blogsRight.png";
 import UseCasesTitle from "../components/useCasesTitle.astro";
+import redirectToWork from "../images/redirectToWork2.png";
+
 const props = Astro.props;
 ---
 
@@ -178,10 +180,174 @@ const props = Astro.props;
 }
 
     </div>
-  </section>
+    
+ 
+   
+
+</section>
+
+<section style="background-color: #1a1a1a;">
+
+  {
+    props?.useCasesData?.fields?.relatedProjects && (
+      <div class="margins" style="padding-top:2%; ">
+        <div class="relatedProjectHeading">
+          <span>
+            Related <span style="color: #e5ff53">Projects</span>
+          </span>
+        </div>
+      </div>
+    )
+  }
+  {
+    props?.useCasesData?.fields?.relatedProjects && (
+      <div class="overflow-hidden m-0" style="padding:0 9%;">
+        <div
+          id="stopOnHover"
+          class="d-flex workImg-section-soln borders"
+          style="width:100%; padding:4% 0 7% 0 !important;  "
+        >
+          {(props?.useCasesData?.fields?.relatedProjects as any)?.map(
+            (projects: any) => (
+              <div class="hoverImg ">
+                <a
+                  href={"/portfolio/" + projects?.fields?.heroTitle}
+                  aria-label="case study"
+                >
+                  <div class="work-animation">
+                    <img
+                      src={projects?.fields?.heroBanner?.fields?.file.url}
+                      class="movingImgs  "
+                      alt=""
+                    />
+                    <div class="image-overlay">
+                      <img src={redirectToWork} alt="" />
+                      <span
+                        class="workName"
+                        set:html={projects?.fields?.singleClient}
+                      />
+                      <span
+                        class="workTech"
+                        set:html={projects?.fields?.whichTechnology}
+                      />
+                    </div>
+                  </div>
+                </a>
+              </div>
+            )
+          )}
+        </div>
+      </div>
+    )
+  }
+</section>
 </Layout>
 
 <style>
+
+
+/* related projects css */
+.relatedProjectHeading span {
+      font-family: Deutschlander;
+      text-transform: uppercase;
+      font-size: 10vw;
+      font-weight: 400;
+      font-style: normal;
+      color: #fff;
+      line-height: 0.85;
+      margin-bottom: 1% !important;
+    }
+
+    .workImg-section-soln {
+      padding-bottom: 7.3%;
+    }
+
+    .hoverImg:hover .image-overlay {
+      opacity: 1;
+    }
+    .hoverImg {
+      margin-right: 2%;
+    }
+
+    .work-animation {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0 4vw 4vw 4vw;
+    }
+    .work-animation:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: #f6f7f0;
+      z-index: 998;
+      transition: left 1.2s ease;
+    }
+    .workAnimate-active:after {
+      left: 100%;
+    }
+    .movingImgs {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      width: 25vw;
+      border-radius: 0 4vw 4vw 4vw;
+    }
+
+    .image-overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      /* backdrop-filter: blur(5px); */
+      background: rgba(0, 0, 0, 0.7);
+      padding: 7% 0 7% 9%;
+      opacity: 0;
+      border-radius: 0 0 4vw 4vw;
+    }
+    .image-overlay img {
+      width: 16%;
+      position: absolute;
+      left: 82%;
+      bottom: 70%;
+    }
+
+    .workTech {
+      font-family: "anek devanagari";
+      font-size: 1.5vw;
+      font-weight: 200;
+      display: block;
+      text-transform: capitalize;
+    }
+    .workName {
+      font-family: "anek devanagari";
+      font-size: 1.8vw;
+      font-weight: 500;
+      line-height: 1;
+      display: block;
+      text-transform: capitalize;
+      width: 79%;
+    }
+
+    .moving-text2 {
+      animation: move-text2 10s linear infinite;
+    }
+    @keyframes move-text2 {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-680%);
+      }
+    }
+
+
+
+
+/*  */
   .margins {
     margin: 0 7%;
   }
@@ -353,6 +519,14 @@ const props = Astro.props;
   }
 
   @media screen and (max-width: 767px) {
+
+    .movingImgs {
+        aspect-ratio: 4/5;
+        width: 30vw;
+        border-radius: 0 4vw 4vw 4vw;
+        margin-right: 5%;
+        object-fit: cover;
+      }
     .imgInfo {
       position: relative;
       top: 0;
@@ -429,5 +603,30 @@ import {
     },
   });
 
+  import { gsap, TimelineMax,  } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+    const movingImgs = document.querySelectorAll(".hoverImg");
+    gsap.from(".workImg-section-soln", 1, {
+      scrollTrigger: {
+        trigger: ".workImg-section-soln",
+        start: "top 55%",
+        end: "bottom top",
+
+        toggleClass: "move-upper-white-bg",
+        scrub: true,
+      },
+    });
+    gsap.from(".workImg-section-soln", 1, {
+      scrollTrigger: {
+        trigger: ".workImg-section-soln",
+        start: "top 55%",
+        end: "bottom top",
+
+        toggleClass: "moving-text-parent",
+        scrub: true,
+      },
+    });
  
 </script>
