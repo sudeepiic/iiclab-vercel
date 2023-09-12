@@ -9,7 +9,10 @@ import { Image } from 'astro:assets';
 const props = Astro.props;
 
 ---
-{Object.keys(props).length &&
+
+
+{
+Object.keys(props).length &&
 <section class="margins">
 
     <div class="row" >

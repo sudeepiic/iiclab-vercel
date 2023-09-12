@@ -18,14 +18,16 @@ const props = Astro.props;
             <span set:html={props.midContentTitle} />
           </div>
           <div class="midcontent-img">
+            {props.midContentImg &&
             <Image
               src={props.midContentImg}
-              alt={props.midContentImgAlt}
+               alt={"" + props.midContentImgAlt}
               loading="lazy"
               width={1200}
               height={700}
               class="optimization"
             />
+          }
           </div>
           <div class="caption-animate">
             <span class="caption" set:html={props.midImgCaption} />

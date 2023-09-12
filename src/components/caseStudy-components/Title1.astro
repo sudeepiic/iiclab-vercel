@@ -12,9 +12,10 @@ const props = Astro.props;
 ---
 
 <section style="background-color: #1a1a1a;">
+  {props.herobanner &&
   <Image src={props.herobanner}  width={1528}
-  height={720} format="webp" style="width: 100%;" class="optimization" alt={props.herobannerAlt} />
-
+  height={720} format="webp" style="width: 100%;" class="optimization"  alt={"" + props.herobannerAlt + ""} />
+}
   <div class="blankDiv">
     <div class="midDiv">
       <div class="border-box"><span>Technology</span></div>
@@ -41,10 +42,10 @@ const props = Astro.props;
   <div style="background-color: #1a1a1a;">
     <div class="margins img">
       {
-        props.heroVideo && (
-          <Image src={props.heroVideo} alt={props.heroVideoAlt} width={1600}
+        props.heroVideo && 
+          <Image src={props.heroVideo}  alt={"" + props.heroVideoAlt} width={1600}
          height={900} class="optimization" />
-        )
+        
       }
     </div>
   </div>
@@ -84,7 +85,7 @@ const props = Astro.props;
               <Image
                 class=" optimization  bannerImg"
                 src={props.herobanner2}
-                alt={props.herobanner2Alt}
+                 alt={"" + props.herobanner2Alt}
                 width={341}
                 height={443}
               />
@@ -98,7 +99,7 @@ const props = Astro.props;
               <Image
                 class="brands b1  optimization"
                 src={props.brandLogo1}
-                alt={props.brandLogo1Alt}
+                 alt={"" + props.brandLogo1Alt}
                 width={400}
                 height={48}
               />
@@ -109,7 +110,7 @@ const props = Astro.props;
               <Image
                 class="brands b2  optimization"
                 src={props.brandLogo2}
-                alt={props.brandLogo2Alt}
+                 alt={"" + props.brandLogo2Alt}
                 width={400}
                 height={48}
               />
@@ -127,7 +128,7 @@ const props = Astro.props;
           props.carousalImage1 && (
             <Image
               src={props.carousalImage1}
-              alt={props.carousalImage1Alt}
+               alt={"" + props.carousalImage1Alt}
               class="optimization "
               width={900}
           height={1200}
@@ -140,7 +141,7 @@ const props = Astro.props;
           props.carousalImage2 && (
             <Image
               src={props.carousalImage2}
-              alt={props.carousalImage2Alt}
+               alt={"" + props.carousalImage2Alt}
               class=" optimization"
               width={900}
           height={1200}
@@ -153,7 +154,7 @@ const props = Astro.props;
           props.carousalImage3 && (
             <Image
               src={props.carousalImage3}
-              alt={props.carousalImage3Alt}
+               alt={"" + props.carousalImage3Alt}
               class="optimization "
               width={900}
           height={1200}
@@ -166,7 +167,7 @@ const props = Astro.props;
           props.carousalImage4 && (
             <Image
               src={props.carousalImage4}
-              alt={props.carousalImage4Alt}
+               alt={"" + props.carousalImage4Alt}
               class="optimization "
               width={900}
           height={1200}
@@ -179,7 +180,7 @@ const props = Astro.props;
           props.carousalImage5 && (
             <Image
               src={props.carousalImage5}
-              alt={props.carousalImage5Alt}
+               alt={"" + props.carousalImage5Alt}
               class="optimization "
               width={900}
           height={1200}
@@ -192,7 +193,7 @@ const props = Astro.props;
           props.carousalImage6 && (
             <Image
               src={props.carousalImage6}
-              alt={props.carousalImage6Alt}
+               alt={"" + props.carousalImage6Alt}
               class="optimization "
               width={900}
               height={1200}
