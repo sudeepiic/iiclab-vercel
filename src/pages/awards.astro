@@ -1,13 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import awards from "../images/awards.png";
-import hiringImg1 from "../images/hiringImg1.jpg";
-import viewAwardsBtn from "../images/viewAwardsBtn.png";
+
 import rotatingView from "../images/rotatingView.png";
 import centerArrow from "../images/centerArrow.png";
 import viewProjectBtn from "../images/viewProjectBtn.png";
 import momento from "../images/momento.png";
-import momentoIcon2 from "../images/momentoIcon2.png";
+
 import awardsPrev from "../images/awardsPrev.png";
 import awardsNext from "../images/awardsNext.png";
 import dgplus from "../images/dgplus.png";
@@ -16,16 +14,15 @@ import awardsNew from "../images/awardsNew.jpg";
 import foxglove from "../images/foxglove.png";
 import kaleido from "../images/kaleido.png";
 import futech from "../images/futech.png";
-import futech2 from "../images/futech2.png";
-import kaleido2 from "../images/kaleido2.png";
+
 import edcaGold from "../images/edcaGold.png";
-import digies from "../images/digies.png";
+
 import digies2 from "../images/digies2.png";
 import wowImage2 from "../images/wowImage2.png";
-import wowImage from "../images/wowImage.png";
-import wowBrand from "../images/wowBrandImg.png";
+
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { Image } from 'astro:assets';
 //import { Image, Picture } from "@astrojs/image/components";
 
 const awardsData: any = await contentfulClient.getEntries<any>({
@@ -45,7 +42,7 @@ import { gsap } from "gsap";
         <span class="title title1">Awards &</span>
         <div class="makeInline">
           <div class="imgDiv">
-            <img class="titleImg" src={awardsNew} alt="" />
+            <Image class="optimization titleImg" src={awardsNew} alt="" />
           </div>
    
           <span class="title title2">Recognition</span>
@@ -57,12 +54,12 @@ import { gsap } from "gsap";
           href="#awardsList"
           style="width: fit-content; display:contents"
           aria-label="awards list"
-          ><img src={rotatingView} class="viewAwardsBtn" alt="" />
-          <img class="centerArrow" src={centerArrow} alt="" />
+          ><Image src={rotatingView} class=" optimization viewAwardsBtn" alt="" />
+          <Image class="optimization centerArrow" src={centerArrow} alt="" />
         </a>
       </div>
     </div>
-    <img class="" style="width:100%;" src={awardsNew} alt="" />
+    <Image class="optimization " style="width:100%;" src={awardsNew} alt="" />
   </section>
 
   <section style="padding: 5% 2%;">
@@ -105,8 +102,8 @@ import { gsap } from "gsap";
                             awards.fields.projectReference?.fields?.heroTitle
                           }
                         >
-                          <img
-                            class="viewProject"
+                          <Image
+                            class="viewProject optimization"
                             src={viewProjectBtn}
                             alt=""
                             loading="lazy"
@@ -119,21 +116,27 @@ import { gsap } from "gsap";
                 </div>
                 <div class="col-4 awardImgDiv">
                   <div class="awardImg">
-                    <>
-                      <img
-                        class="momento resize"
+                   
+                      <Image
+                        class="momento resize optimization"
                         src={awards?.fields?.awardImage?.fields?.file.url}
                         alt=""
                         loading="lazy"
+                        width={444}
+                        height={610}
                       />
                       <br />
-                    </>
-                    <img
-                      class="momentoIcon"
-                      src={awards?.fields?.awardBrandLogo?.fields?.file.url}
+                  {awards?.fields?.awardBrandLogo && 
+                  
+                    <Image
+                      class="momentoIcon optimization"
+                      src={awards?.fields?.awardBrandLogo && awards?.fields?.awardBrandLogo?.fields?.file.url}
                       alt=""
                       loading="lazy"
+                      width={330}
+                        height={130}
                     />
+                  }
                   </div>
                 </div>
               </div>
@@ -155,20 +158,26 @@ import { gsap } from "gsap";
                   <div style="width:50%">
                     <div class="mb-awardImg">
                       <>
-                        <img
-                          class="mb-momento resize"
+                        <Image
+                          class="mb-momento resize optimization"
                           src={awards?.fields?.awardImage?.fields?.file.url}
                           alt=""
                           loading="lazy"
+                          width={444}
+                          height={610}
                         />
                         <br />
                       </>
-                      <img
-                        class="mb-momentoIcon"
-                        src={awards?.fields?.awardBrandLogo?.fields?.file.url}
+                      {awards?.fields?.awardBrandLogo && 
+                      <Image
+                        class="mb-momentoIcon optimization"
+                        src={awards?.fields?.awardBrandLogo && awards?.fields?.awardBrandLogo?.fields?.file.url}
                         alt=""
                         loading="lazy"
+                        width={330}
+                        height={130}
                       />
+                      }
                     </div>
                   </div>
                 </div>
@@ -195,8 +204,8 @@ import { gsap } from "gsap";
                           }
                           aria-label="view project"
                         >
-                          <img
-                            class="mb-viewProject"
+                          <Image
+                            class="mb-viewProject optimization"
                             src={viewProjectBtn}
                             alt=""
                             loading="lazy"
@@ -212,947 +221,10 @@ import { gsap } from "gsap";
           ))
         }
 
-        <!-- <div class="swiper-slide">
-          <div class="row desktopSlider">
-            <div class="col-7 leftSide">
-              <div class="award-name">
-                <span>India DigiPlus</span>
-              </div>
-              <div class="award-category">
-                <span class="category-name">Media & Entertainment</span>
-                <span class="year">2023</span>
-              </div>
-
-              <div class="project">
-                <div class="row">
-                  <div class="col-1 projectNum">
-                    <span class="index">02</span>
-                    <span class="length">/22</span>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-5 projectName">
-                    <p>PROJECT:</p>
-                    <span>pro kabaddi league</span>
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-3">
-                    <a href="" aria-label="view project">
-                      <img
-                        class="viewProject  "
-                        src={viewProjectBtn}
-                        alt=""
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-4 awardImgDiv">
-              <div class="awardImg">
-               <img
-                  class="  momento"
-                  src={dgplusNew}
-                  alt=""
-                  loading="lazy"
-                /><br />
-               <img
-                  class="momentoIcon  "
-                  src={momentoIcon2}
-                  alt=""
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="onlyMob">
-            <div class="mb-award-name">
-              <span>Media & Entertainment</span>
-            </div>
-            <div class="d-flex">
-              <div style="width: 45%;">
-                <div class="mb-award-category">
-                  <span class="category-name">Media & Entertainment</span>
-                  <span class="year">2023</span>
-                </div>
-              </div>
-              <div style="width:50%">
-                <div class="mb-awardImg">
-                  <img
-                    class="mb-momento   resize"
-                    src={dgplusNew}
-                    alt=""
-                    loading="lazy"
-                  /><br />
-                  <img
-                    class="mb-momentoIcon  "
-                    src={momentoIcon2}
-                    alt=""
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="mb-project">
-                <div class="d-flex">
-                  <div style="width: 20%;">
-                    <span class="mb-index">02</span>
-                    <span class="mb-length">/22</span>
-                  </div>
-                  <div class="mb-projectName" style="width: 50%;">
-                    <p>PROJECT:</p>
-                    <span>pro kabaddi league</span>
-                  </div>
-                  <div style="width: 30%;">
-                    <a href="" aria-label="view project">
-                      <img
-                        class="mb-viewProject  "
-                        src={viewProjectBtn}
-                        loading="lazy"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        <!-- kaleido -->
-        <!-- <div class="swiper-slide">
-          <div class="row desktopSlider">
-            <div class="col-7 leftSide">
-              <div class="award-name">
-                <span>Kaleido Awards</span>
-              </div>
-              <div class="award-category">
-                <span class="category-name">Retail & E-Commerce</span>
-                <span class="year">2023</span>
-              </div>
-
-              <div class="project">
-                <div class="row">
-                  <div class="col-1 projectNum">
-                    <span class="index">02</span>
-                    <span class="length">/22</span>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-5 projectName">
-                    <p>PROJECT:</p>
-                    <span>Nautica</span>
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-3">
-                    <a href="" aria-label="view project">
-                      <img
-                        class="viewProject"
-                        src={viewProjectBtn}
-                        alt=""
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-4 awardImgDiv">
-              <div class="awardImg">
-                <img
-                  class="momento resize"
-                  src={kaleido}
-                  alt=""
-                  loading="lazy"
-                /><br />
-                <img class="momentoIcon" src={kaleido2} alt="" loading="lazy" />
-              </div>
-            </div>
-          </div>
-
-          <div class="onlyMob">
-            <div class="mb-award-name">
-              <span>kaleido</span>
-            </div>
-            <div class="d-flex">
-              <div style="width: 45%;">
-                <div class="mb-award-category">
-                  <span class="category-name">Retail & E-Commerce</span>
-                  <span class="year">2023</span>
-                </div>
-              </div>
-              <div style="width:50%">
-                <div class="mb-awardImg">
-                  <img
-                    class="mb-momento resize"
-                    src={kaleido}
-                    alt=""
-                    loading="lazy"
-                  /><br />
-                  <img
-                    class="mb-momentoIcon kaleido"
-                    src={kaleido2}
-                    alt=""
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="mb-project">
-                <div class="d-flex">
-                  <div style="width: 20%;">
-                    <span class="mb-index">02</span>
-                    <span class="mb-length">/23</span>
-                  </div>
-                  <div class="mb-projectName" style="width: 50%;">
-                    <p>PROJECT:</p>
-                    <span>Nautica</span>
-                  </div>
-                  <div style="width: 30%;">
-                    <a href="" aria-label="view project">
-                      <img
-                        class="mb-viewProject"
-                        src={viewProjectBtn}
-                        loading="lazy"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- futech -->
-
-        <!-- <div class="swiper-slide">
-          <div class="row desktopSlider">
-            <div class="col-7 leftSide">
-              <div class="award-name">
-                <span>Futech Awards</span>
-              </div>
-              <div class="award-category">
-                <span class="category-name">Best use of AR/VR</span>
-                <span class="year">(Silver) - 2023</span>
-              </div>
-
-              <div class="project">
-                <div class="row">
-                  <div class="col-1 projectNum">
-                    <span class="index">03</span>
-                    <span class="length">/22</span>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-5 projectName">
-                    <p>PROJECT:</p>
-                    <span>Rudra</span>
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-3">
-                    <a href="" aria-label="view project">
-                      <img
-                        class="viewProject"
-                        src={viewProjectBtn}
-                        alt=""
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-4 awardImgDiv">
-              <div class="awardImg">
-                <img
-                  class="momento resize"
-                  src={futech}
-                  alt=""
-                  loading="lazy"
-                /><br />
-                <img class="momentoIcon" src={futech2} alt="" loading="lazy" />
-              </div>
-            </div>
-          </div>
-
-          <div class="onlyMob">
-            <div class="mb-award-name">
-              <span>kaleido</span>
-            </div>
-            <div class="d-flex">
-              <div style="width: 45%;">
-                <div class="mb-award-category">
-                  <span class="category-name">Best use of AR/VR</span>
-                  <span class="year">(silver) - 2022</span>
-                </div>
-              </div>
-              <div style="width:50%">
-                <div class="mb-awardImg">
-                  <img
-                    class="mb-momento resize"
-                    src={futech}
-                    alt=""
-                    loading="lazy"
-                  /><br />
-                  <img
-                    class="mb-momentoIcon"
-                    src={futech2}
-                    alt=""
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="mb-project">
-                <div class="d-flex">
-                  <div style="width: 20%;">
-                    <span class="mb-index">03</span>
-                    <span class="mb-length">/23</span>
-                  </div>
-                  <div class="mb-projectName" style="width: 50%;">
-                    <p>PROJECT:</p>
-                    <span>Rudra</span>
-                  </div>
-                  <div style="width: 30%;">
-                    <a href="" aria-label="view project">
-                      <img
-                        class="mb-viewProject"
-                        src={viewProjectBtn}
-                        loading="lazy"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- <div class="swiper-slide">
-          <div class="row desktopSlider">
-            <div class="col-7 leftSide">
-              <div class="award-name">
-                <span> Marketers' excellence</span>
-              </div>
-              <div class="award-category" style="font-size: 7vw;">
-                <span class="category-name">best content marketing launch</span>
-                <span class="year">(gold) - 2022</span>
-              </div>
-
-              <div class="project">
-                <div class="row">
-                  <div class="col-1 projectNum">
-                    <span class="index">04</span>
-                    <span class="length">/22</span>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-5 projectName">
-                    <p>PROJECT:</p>
-                    <span>ONLY - 2022</span>
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-3">
-                    <img
-                      class="viewProject"
-                      src={viewProjectBtn}
-                      alt=""
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-4 awardImgDiv">
-              <div class="awardImg">
-                <img class="momento" src={momento} alt="" loading="lazy" /><br
-                />
-                <img
-                  class="momentoIcon"
-                  src={momentoIcon2}
-                  alt=""
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="onlyMob">
-            <div class="mb-award-name">
-              <span>Marketer's excellence</span>
-            </div>
-            <div class="d-flex">
-              <div style="width: 45%;">
-                <div class="mb-award-category">
-                  <span class="category-name"
-                    >best content marketing launch</span
-                  >
-                  <span class="year">(gold) - 2022</span>
-                </div>
-              </div>
-              <div style="width:50%">
-                <div class="mb-awardImg">
-                  <img
-                    class="mb-momento"
-                    src={momento}
-                    alt=""
-                    loading="lazy"
-                  /><br />
-                  <img
-                    class="mb-momentoIcon"
-                    src={momentoIcon2}
-                    alt=""
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="mb-project">
-                <div class="d-flex">
-                  <div style="width: 20%;">
-                    <span class="mb-index">04</span>
-                    <span class="mb-length">/22</span>
-                  </div>
-                  <div class="mb-projectName" style="width: 50%;">
-                    <p>PROJECT:</p>
-                    <span>ONLY - 2022</span>
-                  </div>
-                  <div style="width: 30%;">
-                    <a href="" aria-label="view project">
-                      <img
-                        class="mb-viewProject"
-                        src={viewProjectBtn}
-                        alt=""
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        <!-- 
-        <div class="swiper-slide">
-          <div class="row desktopSlider">
-            <div class="col-7 leftSide">
-              <div class="award-name">
-                <span> Marketers' excellence</span>
-              </div>
-              <div class="award-category">
-                <span class="category-name">best use of vr</span>
-                <span class="year">(silver) - 2022</span>
-              </div>
-
-              <div class="project">
-                <div class="row">
-                  <div class="col-1 projectNum">
-                    <span class="index">05</span>
-                    <span class="length">/22</span>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-5 projectName">
-                    <p>PROJECT:</p>
-                    <span>Rudra - 2022</span>
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-3">
-                    <img
-                      class="viewProject"
-                      src={viewProjectBtn}
-                      alt=""
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-4 awardImgDiv">
-              <div class="awardImg">
-                <img class="momento" src={momento} alt="" loading="lazy" /><br
-                />
-                <img
-                  class="momentoIcon"
-                  src={momentoIcon2}
-                  alt=""
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="onlyMob">
-            <div class="mb-award-name">
-              <span>Marketer's excellence</span>
-            </div>
-            <div class="d-flex">
-              <div style="width: 45%;">
-                <div class="mb-award-category">
-                  <span class="category-name">best use of vr</span>
-                  <span class="year">(silver) - 2022</span>
-                </div>
-              </div>
-              <div style="width:50%">
-                <div class="mb-awardImg">
-                  <img
-                    class="mb-momento"
-                    src={momento}
-                    alt=""
-                    loading="lazy"
-                  /><br />
-                  <img
-                    class="mb-momentoIcon"
-                    src={momentoIcon2}
-                    alt=""
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="mb-project">
-                <div class="d-flex">
-                  <div style="width: 20%;">
-                    <span class="mb-index">05</span>
-                    <span class="mb-length">/22</span>
-                  </div>
-                  <div class="mb-projectName" style="width: 50%;">
-                    <p>PROJECT:</p>
-                    <span>Rudra - 2022</span>
-                  </div>
-                  <div style="width: 30%;">
-                    <a href="" aria-label="view project">
-                      <img
-                        class="mb-viewProject"
-                        src={viewProjectBtn}
-                        alt=""
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        <!-- <div class="swiper-slide">
-          <div class="row desktopSlider">
-            <div class="col-7 leftSide">
-              <div class="award-name">
-                <span> Marketers' excellence</span>
-              </div>
-              <div class="award-category">
-                <span class="category-name">best use of technology</span>
-                <span class="year">(bronze) - 2022</span>
-              </div>
-
-              <div class="project">
-                <div class="row">
-                  <div class="col-1 projectNum">
-                    <span class="index">06</span>
-                    <span class="length">/22</span>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-5 projectName">
-                    <p>PROJECT:</p>
-                    <span>Unmatched - Jack & Jones</span>
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-3">
-                    <img
-                      class="viewProject"
-                      src={viewProjectBtn}
-                      alt=""
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-4 awardImgDiv">
-              <div class="awardImg">
-                <img class="momento" src={momento} alt="" loading="lazy" /><br
-                />
-                <img
-                  class="momentoIcon"
-                  src={momentoIcon2}
-                  alt=""
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="onlyMob">
-            <div class="mb-award-name">
-              <span>Marketer's excellence</span>
-            </div>
-            <div class="d-flex">
-              <div style="width: 45%;">
-                <div class="mb-award-category">
-                  <span class="category-name">best use of technology</span>
-                  <span class="year">(bronze) - 2022</span>
-                </div>
-              </div>
-              <div style="width:50%">
-                <div class="mb-awardImg">
-                  <img
-                    class="mb-momento"
-                    src={momento}
-                    alt=""
-                    loading="lazy"
-                  /><br />
-                  <img
-                    class="mb-momentoIcon"
-                    src={momentoIcon2}
-                    alt=""
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="mb-project">
-                <div class="d-flex">
-                  <div style="width: 20%;">
-                    <span class="mb-index">06</span>
-                    <span class="mb-length">/22</span>
-                  </div>
-                  <div class="mb-projectName" style="width: 50%;">
-                    <p>PROJECT:</p>
-                    <span>Unmatched - Jack & Jones</span>
-                  </div>
-                  <div style="width: 30%;">
-                    <a href="" aria-label="view project">
-                      <img
-                        class="mb-viewProject"
-                        src={viewProjectBtn}
-                        alt=""
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- wow awards -->
-        <!-- 
-        <div class="swiper-slide">
-          <div class="row desktopSlider">
-            <div class="col-7 leftSide">
-              <div class="award-name">
-                <span>WOW Awards Asia</span>
-              </div>
-              <div class="award-category">
-                <span class="category-name"
-                  >Promotion of the Year for Brand Awareness - Digital</span
-                >
-                <span class="year">(Gold) - 2022</span>
-              </div>
-
-              <div class="project">
-                <div class="row">
-                  <div class="col-1 projectNum">
-                    <span class="index">07</span>
-                    <span class="length">/22</span>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-5 projectName">
-                    <p>PROJECT:</p>
-                    <span>Unmatched - Jack & Jones</span>
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-3">
-                    <img
-                      class="viewProject"
-                      src={viewProjectBtn}
-                      alt=""
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-4 awardImgDiv">
-              <div class="awardImg">
-                <img
-                  class="momento resize"
-                  src={wowImage}
-                  alt=""
-                  loading="lazy"
-                /><br />
-                <img class="momentoIcon" src={wowBrand} alt="" loading="lazy" />
-              </div>
-            </div>
-          </div>
-
-          <div class="onlyMob">
-            <div class="mb-award-name">
-              <span>WOW Awards Asia</span>
-            </div>
-            <div class="d-flex">
-              <div style="width: 45%;">
-                <div class="mb-award-category">
-                  <span class="category-name"
-                    >Promotion of the Year for Brand Awareness - Digital</span
-                  >
-                  <span class="year">(Gold) - 2022</span>
-                </div>
-              </div>
-              <div style="width:50%">
-                <div class="mb-awardImg">
-                  <img
-                    class="mb-momento"
-                    src={wowImage}
-                    alt=""
-                    loading="lazy"
-                  /><br />
-                  <img
-                    class="mb-momentoIcon"
-                    src={wowBrand}
-                    alt=""
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="mb-project">
-                <div class="d-flex">
-                  <div style="width: 20%;">
-                    <span class="mb-index">07</span>
-                    <span class="mb-length">/22</span>
-                  </div>
-                  <div class="mb-projectName" style="width: 50%;">
-                    <p>PROJECT:</p>
-                    <span>Unmatched - Jack & Jones</span>
-                  </div>
-                  <div style="width: 30%;">
-                    <a href="" aria-label="view project">
-                      <img
-                        class="mb-viewProject"
-                        src={viewProjectBtn}
-                        alt=""
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="row desktopSlider">
-            <div class="col-7 leftSide">
-              <div class="award-name">
-                <span>WOW Awards Asia</span>
-              </div>
-              <div class="award-category">
-                <span class="category-name">Audience Engagement Technology</span
-                >
-                <span class="year">(Gold) - 2022</span>
-              </div>
-
-              <div class="project">
-                <div class="row">
-                  <div class="col-1 projectNum">
-                    <span class="index">08</span>
-                    <span class="length">/22</span>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-5 projectName">
-                    <p>PROJECT:</p>
-                    <span>Pro Kabaddi League</span>
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-3">
-                    <img
-                      class="viewProject"
-                      src={viewProjectBtn}
-                      alt=""
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-4 awardImgDiv">
-              <div class="awardImg">
-                <img
-                  class="momento resize"
-                  src={wowImage}
-                  alt=""
-                  loading="lazy"
-                /><br />
-                <img class="momentoIcon" src={wowBrand} alt="" loading="lazy" />
-              </div>
-            </div>
-          </div>
-
-          <div class="onlyMob">
-            <div class="mb-award-name">
-              <span>WOW Awards Asia</span>
-            </div>
-            <div class="d-flex">
-              <div style="width: 45%;">
-                <div class="mb-award-category">
-                  <span class="category-name"
-                    >Audience Engagement Technology</span
-                  >
-                  <span class="year">(Gold) - 2022</span>
-                </div>
-              </div>
-              <div style="width:50%">
-                <div class="mb-awardImg">
-                  <img
-                    class="mb-momento"
-                    src={wowImage}
-                    alt=""
-                    loading="lazy"
-                  /><br />
-                  <img
-                    class="mb-momentoIcon"
-                    src={wowBrand}
-                    alt=""
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="mb-project">
-                <div class="d-flex">
-                  <div style="width: 20%;">
-                    <span class="mb-index">08</span>
-                    <span class="mb-length">/22</span>
-                  </div>
-                  <div class="mb-projectName" style="width: 50%;">
-                    <p>PROJECT:</p>
-                    <span>Pro Kabaddi League</span>
-                  </div>
-                  <div style="width: 30%;">
-                    <a href="" aria-label="view project">
-                      <img
-                        class="mb-viewProject"
-                        src={viewProjectBtn}
-                        alt=""
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- <div class="swiper-slide">
-          <div class="row desktopSlider">
-            <div class="col-7 leftSide">
-              <div class="award-name">
-                <span>WOW Awards Asia</span>
-              </div>
-              <div class="award-category">
-                <span class="category-name"
-                  >Innovation in Interactive Technology</span
-                >
-                <span class="year">(Bronze) - 2022</span>
-              </div>
-
-              <div class="project">
-                <div class="row">
-                  <div class="col-1 projectNum">
-                    <span class="index">09</span>
-                    <span class="length">/22</span>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-5 projectName">
-                    <p>PROJECT:</p>
-                    <span>Rudra</span>
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-3">
-                    <img
-                      class="viewProject"
-                      src={viewProjectBtn}
-                      alt=""
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-4 awardImgDiv">
-              <div class="awardImg">
-                <img
-                  class="momento resize"
-                  src={wowImage}
-                  alt=""
-                  loading="lazy"
-                /><br />
-                <img class="momentoIcon" src={wowBrand} alt="" loading="lazy" />
-              </div>
-            </div>
-          </div>
-
-          <div class="onlyMob">
-            <div class="mb-award-name">
-              <span>WOW Awards Asia</span>
-            </div>
-            <div class="d-flex">
-              <div style="width: 45%;">
-                <div class="mb-award-category">
-                  <span class="category-name"
-                    >Innovation in Interactive Technology</span
-                  >
-                  <span class="year">(Bronze) - 2022</span>
-                </div>
-              </div>
-              <div style="width:50%">
-                <div class="mb-awardImg">
-                  <img
-                    class="mb-momento"
-                    src={wowImage}
-                    alt=""
-                    loading="lazy"
-                  /><br />
-                  <img
-                    class="mb-momentoIcon"
-                    src={wowBrand}
-                    alt=""
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="mb-project">
-                <div class="d-flex">
-                  <div style="width: 20%;">
-                    <span class="mb-index">09</span>
-                    <span class="mb-length">/22</span>
-                  </div>
-                  <div class="mb-projectName" style="width: 50%;">
-                    <p>PROJECT:</p>
-                    <span>Rudra</span>
-                  </div>
-                  <div style="width: 30%;">
-                    <a href="" aria-label="view project">
-                      <img
-                        class="mb-viewProject"
-                        src={viewProjectBtn}
-                        alt=""
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
+       
       </div>
-      <img class="swiper-button-prev" src={awardsPrev} loading="lazy" alt="" />
-      <img class="swiper-button-next" src={awardsNext} loading="lazy" alt="" />
+      <Image class="optimization swiper-button-prev" src={awardsPrev} loading="lazy" alt="" />
+      <Image class="optimization swiper-button-next" src={awardsNext} loading="lazy" alt="" />
     </div>
   </section>
 
@@ -1165,9 +237,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={dgplus}
-              class="trial2 hoverImg foxdigi"
+              class="trial2 hoverImg foxdigi optimization"
               alt=""
               loading="lazy"
             />2023 - Media & Entertainment</span
@@ -1182,9 +254,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={kaleido}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2023 - Retail & E-Commerce
@@ -1199,9 +271,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={edcaGold}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2023 - Best Visual Content- Special Events</span
@@ -1216,9 +288,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={edcaGold}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2023 - Best technology engagement/interactivity</span
@@ -1233,9 +305,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={edcaGold}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2023 - EDCA Tech Provider of the Year
@@ -1250,9 +322,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={edcaGold}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2023 - Best Standalone Experience at a Brand Activation</span
@@ -1267,9 +339,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={edcaGold}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2023 - Best Event Technology created for an event</span
@@ -1284,9 +356,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={edcaGold}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2023 - Most Creative On Ground Marketing Campaign</span
@@ -1301,9 +373,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={futech}
-              class="foxdigi trial2 hoverImg"
+              class="foxdigi trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Use of AR/VR (Silver)</span
@@ -1318,9 +390,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={momento}
-              class="foxdigi trial2 hoverImg"
+              class="foxdigi trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Content Marketing Launch (Gold)</span
@@ -1335,9 +407,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={momento}
-              class="foxdigi trial2 hoverImg"
+              class="foxdigi trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Brand Activation (Gold)</span
@@ -1352,9 +424,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={momento}
-              class="foxdigi trial2 hoverImg"
+              class="foxdigi trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Use of VR (Silver)</span
@@ -1369,9 +441,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={momento}
-              class="foxdigi trial2 hoverImg"
+              class="foxdigi trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Use of Technology (Bronze)</span
@@ -1386,9 +458,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={digies2}
-              class="degies trial2 hoverImg"
+              class="degies trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Use of Technology (Gold)</span
@@ -1403,9 +475,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={digies2}
-              class="degies trial2 hoverImg"
+              class="degies trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Use of Technology (Silver)</span
@@ -1420,9 +492,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={wowImage2}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Promotion of the Year for Brand Awareness - Digital (Gold)</span
@@ -1437,9 +509,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={wowImage2}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Audience Engagement Technology & Event App for the Year by
@@ -1455,9 +527,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={wowImage2}
-              class="trial2 hoverImg"
+              class="trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Innovation in Interactive Technology (Bronze)</span
@@ -1472,9 +544,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={foxglove}
-              class="foxglove trial2 hoverImg"
+              class="foxglove trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Online Promotion (Silver)</span
@@ -1489,9 +561,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={foxglove}
-              class="foxglove trial2 hoverImg"
+              class="foxglove trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Online Promotion (Bronze)</span
@@ -1506,9 +578,9 @@ import { gsap } from "gsap";
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={foxglove}
-              class="foxglove trial2 hoverImg"
+              class="foxglove trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022- Best Innovation in Digital (Bronze)</span
@@ -1523,9 +595,9 @@ import { gsap } from "gsap";
       <div class="row mobAward" style="border-bottom: 0;">
         <div class="col-sm-12 col-md-8 col-lg-8 trial mbAwardCat">
           <span>
-            <img
+            <Image
               src={foxglove}
-              class="foxglove trial2 hoverImg"
+              class="foxglove trial2 hoverImg optimization"
               alt=""
               loading="lazy"
             />2022 - Best Brand Activation (bronze)</span
@@ -1556,14 +628,14 @@ import { gsap } from "gsap";
       width: 10% !important;
     }
 
-    . {
+    .optimization {
       height: auto;
     }
     .centerArrow {
       position: relative;
       top: 65%;
       width: 4%;
-      left: 31.5%;
+      left: 32.5%;
     }
     .foxdigi {
       width: 20% !important;
@@ -1573,7 +645,7 @@ import { gsap } from "gsap";
     }
     @media screen and (max-width: 1050px) {
       .centerArrow {
-        left: 30.5% !important;
+        left: 32.5% !important;
       }
     }
 
@@ -1771,7 +843,9 @@ import { gsap } from "gsap";
 
     @media screen and (max-width: 767px) {
       /* carousal css */
-
+  .title2{
+    margin-left:1%;
+  }
       
     .stickyDiv {
      
@@ -2003,7 +1077,7 @@ import { gsap } from "gsap";
 
     import { gsap } from "gsap";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
-    import Eases from "gsap";
+    // import Eases from "gsap";
     gsap.registerPlugin(ScrollTrigger);
 
     let tl = gsap.timeline();

@@ -2,6 +2,7 @@
 import creative1 from "../../images/creative1.png";
 import yellowGo from "../../images/yellowGo2.png";
 import creative2 from "../../images/creative2.png";
+import { Image } from 'astro:assets';
 //import { Image, Picture } from "@astrojs/image/components";
 ---
 
@@ -18,8 +19,8 @@ import creative2 from "../../images/creative2.png";
     </div>
 
     <div class="col-md-4 col-lg-4 col-sm-12">
-      <img
-        class="creative1"
+      <Image
+        class="creative1 optimization"
         src={creative1}
         style="width: 95%; margin-bottom: 5%;"
         alt=""
@@ -34,7 +35,7 @@ import creative2 from "../../images/creative2.png";
         href="get-everyones-attention-with-these-amazing-experiences"
         aria-label="open"
       >
-        <img class="btn goBtn" src={yellowGo} alt="" /></a
+        <Image class="btn goBtn optimization" src={yellowGo} alt="" /></a
       >
       <div style="margin-top: 3.4%;">
         <div class="border-box"><span>Design & Technology</span></div>
@@ -45,11 +46,12 @@ import creative2 from "../../images/creative2.png";
     </div>
 
     <div class="col-md-4 col-lg-4 col-sm-12">
-      <img
-        class="creative2"
+      <Image
+        class="creative2 optimization"
         src={creative2}
         style="width: 95%; margin-bottom: 5%;"
         loading="lazy"
+        alt=""
       />
 
       <span class="imgText"
@@ -60,7 +62,7 @@ import creative2 from "../../images/creative2.png";
         href="is-3d-projection-mapping-the-future-or-the-present"
         aria-label="open"
       >
-        <img class="btn goBtn" src={yellowGo} /></a
+        <Image class="btn goBtn optimization" src={yellowGo} alt="" /></a
       >
       <div style="margin-top: 3.4%;">
         <div class="border-box"><span>Design & Technology</span></div>
@@ -73,7 +75,7 @@ import creative2 from "../../images/creative2.png";
 </section>
 
 <style>
-  . {
+  .optimization {
     height: auto;
   }
   .creative {
@@ -128,7 +130,7 @@ import creative2 from "../../images/creative2.png";
 
     font-weight: 400;
     color: white;
-    margin-left: 1%;
+    margin-left: 2%;
   }
   .dot {
     width: 4px;
@@ -137,6 +139,8 @@ import creative2 from "../../images/creative2.png";
     background-color: white;
     display: inline-block;
     margin-bottom: 0.2%;
+    margin-left: 1.5%;
+
   }
   .readTime {
     font-family: "anek devanagari";
@@ -144,6 +148,7 @@ import creative2 from "../../images/creative2.png";
 
     font-weight: 400;
     color: white;
+    margin-left: 1.5%;
 
     opacity: 50%;
   }

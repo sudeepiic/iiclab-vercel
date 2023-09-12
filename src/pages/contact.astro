@@ -4,6 +4,7 @@ import officeImg from "../images/officeImg.png";
 import submitArrow from "../images/submitArrow.png";
 import contactHand from "../images/contactHand.png";
 import positionBtn from "../images/positionBtn.png";
+import { Image } from 'astro:assets';
 //import { Image, Picture } from "@astrojs/image/components";
 ---
 
@@ -24,7 +25,7 @@ import positionBtn from "../images/positionBtn.png";
         </div>
       </div>
       <div class="col-lg-7 col-md-7 col-sm-12 imgDiv">
-        <img class="heroImg" src={officeImg} alt="" />
+        <Image class="heroImg optimization" src={officeImg} alt="" />
       </div>
     </div>
 
@@ -79,7 +80,7 @@ import positionBtn from "../images/positionBtn.png";
         id="submitBtn"
         aria-label="submit"
       >
-        <img src={submitArrow} class="" loading="lazy" />
+        <Image src={submitArrow} class="optimization" loading="lazy" alt="" />
         submit
       </button>
     </form>
@@ -178,14 +179,14 @@ import positionBtn from "../images/positionBtn.png";
           <span class="clan"> join our clan?</span>
         </div>
         <a class="btn-animate" href="/hiring"
-          ><img class="btn posBtn" src={positionBtn} alt="" /></a
+          ><Image class="btn posBtn optimization" src={positionBtn} alt="" /></a
         >
       </div>
       <div class="col-4 hand-animate">
-        <img
+        <Image
           style="width: 80%;"
           src={contactHand}
-          class=""
+          class="optimization"
           loading="lazy"
           alt=""
         />
@@ -288,7 +289,7 @@ import positionBtn from "../images/positionBtn.png";
 </script>
 
 <style>
-  . {
+  .optimization {
     height: auto;
   }
   .input:focus,
@@ -637,30 +638,30 @@ import positionBtn from "../images/positionBtn.png";
   }
 
   .list ul li a {
-    color: white;
+    color: white !important;
     opacity: 50%;
   }
   path {
-    fill: white;
+    fill: white !important;
   }
 
   .connect,
   .circles {
-    fill: #1a1a1a;
+    fill: #1a1a1a !important;
   }
   .oval {
-    fill: white;
+    fill: white !important;
   }
 
   .tele {
-    fill: white;
+    fill: white !important;
   }
   .menu p {
-    color: white;
+    color: white !important;
   }
   .menu .s1,
   .menu .s2 {
-    border: 1px solid white;
+    border: 1px solid white !important;
   }
 </style>
 

@@ -14,6 +14,7 @@ import discussion3 from "../images/discussion3.jpg";
 import discussion4 from "../images/discussion4.jpg";
 import unoGame from "../images/unoGame.jpg";
 import fussball from "../images/fussball.jpg";
+import { Image } from 'astro:assets';
 
 //import { Image, Picture } from "@astrojs/image/components";
 ---
@@ -24,7 +25,7 @@ import fussball from "../images/fussball.jpg";
       <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12" style="overflow:hidden">
           <span class="title title1">life at iic</span>
-          <span class="title title2" style="color: #e5ff53;">.</span>
+          <span class="title title2" style="color: #e5ff53;  margin-left: 2%;">.</span>
         </div>
         <div class="col-lg-8 col-md-8 col-sm-12 animate-text">
           <span class="titleText">
@@ -40,29 +41,29 @@ import fussball from "../images/fussball.jpg";
       <div class="mySwiper" style="padding:1.5% 0 5% 0 ; ">
         <div class="swiper-wrapper">
           <div class="swiper-slide imgWidth">
-            <img class="resizeImg" src={conferenceRoomDiscussion} alt="" />
+            <Image class="resizeImg optimization" src={conferenceRoomDiscussion} alt="" />
           </div>
 
           <div class="swiper-slide imgWidth">
-            <img class="resizeImg" src={unoGame} />
+            <Image class="resizeImg optimization" src={unoGame} alt="" />
           </div>
           <div class="swiper-slide imgWidth">
-            <img class="resizeImg" src={discussion} alt="" />
+            <Image class="resizeImg optimization" src={discussion} alt="" />
           </div>
           <div class="swiper-slide imgWidth">
-            <img class="resizeImg" src={discussion4} alt="" />
+            <Image class="resizeImg optimization" src={discussion4} alt="" />
           </div>
           <div class="swiper-slide imgWidth">
-            <img class="resizeImg" src={discussion2} alt="" />
+            <Image class="resizeImg optimization" src={discussion2} alt="" />
           </div>
           <div class="swiper-slide imgWidth">
-            <img class="resizeImg" src={discussion3} alt="" />
+            <Image class="resizeImg optimization" src={discussion3} alt="" />
           </div>
         </div>
 
         <div class="d-flex controls">
-          <img class="swiper-prev" src={blogsLeft} alt="" />
-          <img class="swiper-next" src={blogsRight} alt="" />
+          <Image class="swiper-prev optimization" src={blogsLeft} alt="" />
+          <Image class="swiper-next optimization" src={blogsRight} alt="" />
         </div>
       </div>
     </div>
@@ -72,9 +73,9 @@ import fussball from "../images/fussball.jpg";
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div style="position: relative;">
-              <img class="top-right-img resize3" src={VR} alt="" />
-              <img class="main-img resize2" src={discussion4} alt="" />
-              <img class="bottom-left-img resize3" src={discussion} alt="" />
+              <Image class="top-right-img resize3 optimization" src={VR} alt="" />
+              <Image class="main-img resize2 optimization" src={discussion4} alt="" />
+              <Image class="bottom-left-img resize3 optimization" src={discussion} alt="" />
             </div>
             <div class="imgCaption">
               <span>our values</span>
@@ -89,13 +90,13 @@ import fussball from "../images/fussball.jpg";
           </div>
           <div class="swiper-slide">
             <div style="position: relative;">
-              <img
-                class="top-right-img resize3"
+              <Image
+                class="top-right-img resize3 optimization"
                 src={conferenceRoomDiscussion}
                 alt=""
               />
-              <img class="main-img resize2" src={discussion2} alt="" />
-              <img class="bottom-left-img resize3" src={VR} alt="" />
+              <Image class="main-img resize2 optimization" src={discussion2} alt="" />
+              <Image class="bottom-left-img resize3 optimization" src={VR} alt="" />
             </div>
             <div class="imgCaption">
               <span>our beleives</span>
@@ -109,9 +110,9 @@ import fussball from "../images/fussball.jpg";
           </div>
           <div class="swiper-slide">
             <div style="position: relative;">
-              <img class="top-right-img resize3" src={unoGame} alt="" />
-              <img class="main-img resize2" src={values} alt="" />
-              <img class="bottom-left-img resize3" src={fussball} alt="" />
+              <Image class="top-right-img resize3 optimization" src={unoGame} alt="" />
+              <Image class="main-img resize2 optimization" src={values} alt="" />
+              <Image class="bottom-left-img resize3 optimization" src={fussball} alt="" />
             </div>
             <div class="imgCaption">
               <span>our Initiatives</span>
@@ -125,15 +126,15 @@ import fussball from "../images/fussball.jpg";
           </div>
         </div>
 
-        <img class="swiper-button-prev" src={carousalPrev} alt="" />
-        <img class="swiper-button-next" src={carousalNext} alt="" />
+        <Image class="swiper-button-prev optimization" src={carousalPrev} alt="" />
+        <Image class="swiper-button-next optimization" src={carousalNext} alt="" />
       </div>
     </div>
   </section>
 </Layout>
 
 <style>
-  . {
+  .optimization {
     height: auto;
   }
 
@@ -328,36 +329,36 @@ import fussball from "../images/fussball.jpg";
 
 <style is:global>
   .turnBlack {
-    background: #1a1a1a;
+    background: #1a1a1a !important;
 
     width: 100%;
   }
 
   .list ul li a {
-    color: white;
+    color: white !important;
     opacity: 50%;
   }
   path {
-    fill: white;
+    fill: white !important;
   }
 
   .connect,
   .circles {
-    fill: #1a1a1a;
+    fill: #1a1a1a !important;
   }
   .oval {
-    fill: white;
+    fill: white !important;
   }
 
   .tele {
-    fill: white;
+    fill: white !important;
   }
   .menu p {
-    color: white;
+    color: white !important;
   }
   .menu .s1,
   .menu .s2 {
-    border: 1px solid white;
+    border: 1px solid white !important;
   }
 </style>
 

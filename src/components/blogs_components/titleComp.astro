@@ -2,6 +2,7 @@
 const props = Astro.props;
 //import { Image, Picture } from "@astrojs/image/components";
 console.log(props, "missing imageeeeee");
+import { Image } from 'astro:assets';
 ---
 
 {
@@ -26,10 +27,12 @@ console.log(props, "missing imageeeeee");
       </div>
 
       <div class="image-animate">
-        <img
+        <Image
           src={props.heroImage}
           alt={props.heroImageAlt}
-          class=" "
+          class="optimization"
+          width={1552}
+          height={720}
           style="width: 100%;"
         />
       </div>
@@ -37,7 +40,7 @@ console.log(props, "missing imageeeeee");
   )
 }
 <style>
-  . {
+  .optimization {
     height: auto;
   }
   .margins {
@@ -81,7 +84,7 @@ console.log(props, "missing imageeeeee");
 
     font-weight: 400;
     color: white;
-    margin-left: 1%;
+    margin-left: 1.4%;
     display: inline-block;
   }
   .dot {
@@ -91,6 +94,7 @@ console.log(props, "missing imageeeeee");
     background-color: white;
     display: inline-block;
     margin-bottom: 0.2%;
+    margin-left: 0.4%;
   }
   .readTime {
     font-family: "anek devanagari";
@@ -99,7 +103,7 @@ console.log(props, "missing imageeeeee");
     font-weight: 400;
     color: white;
     display: inline-block;
-
+    margin-left: 0.4%;
     opacity: 50%;
   }
 

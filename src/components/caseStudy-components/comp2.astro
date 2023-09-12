@@ -5,6 +5,7 @@ import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import type { Document } from "@contentful/rich-text-types";
 //import { Image, Picture } from "@astrojs/image/components";
+import { Image } from 'astro:assets';
 
 const props = Astro.props;
 ---
@@ -25,13 +26,14 @@ const props = Astro.props;
       </div>
 
       <div class="margins img animate-img">
-        <img alt={props.fullSizeImgAlt} src={props.fullSizeImg} class=" " />
+        <Image alt={props.fullSizeImgAlt} src={props.fullSizeImg} width={1600}
+      height={900} class="optimization" />
       </div>
     </section>
   )
 }
 <style>
-  . {
+  .optimization {
     height: auto;
   }
   .margins {

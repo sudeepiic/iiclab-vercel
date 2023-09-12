@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import applyNow from "../images/applyNow.png";
 import ps from "../images/ps.png";
 import submitArrow from "../images/submitArrow.png";
-import { log } from "astro/dist/core/logger/core";
+import { Image } from 'astro:assets';
 //import { Image, Picture } from "@astrojs/image/components";
 
 const props = Astro.props;
@@ -24,8 +24,8 @@ console.log(props.jobProfile);
                 <br />
               </>
               <a href="#apply">
-                <img
-                  class="btn  "
+                <Image
+                  class="btn optimization "
                   style="width: 32%; margin-bottom: 5%;"
                   src={applyNow}
                   alt=""
@@ -269,7 +269,7 @@ console.log(props.jobProfile);
                 id="submit"
                 aria-label="submit"
               >
-                <img src={submitArrow} class=" " alt="" /> submit application
+                <Image src={submitArrow} class=" optimization" alt="" /> submit application
               </button>
             </form>
           </div>
@@ -415,7 +415,7 @@ console.log(props.jobProfile);
 </script>
 
 <style>
-  . {
+  .optimization {
     height: auto;
   }
   .mb-3 {

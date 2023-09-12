@@ -1,6 +1,7 @@
 ---
 import yellowDiamond from "../../images/yellowDiamond.png";
 //import { Image, Picture } from "@astrojs/image/components";
+import { Image } from 'astro:assets';
 
 const props = Astro.props;
 ---
@@ -8,12 +9,12 @@ const props = Astro.props;
 <section style="padding-top: 4%; background-color: #1a1a1a;">
   <div class="margins row">
     <div class="col-5 heading">
-      <img
+      <Image
         alt="pointer"
-        class=""
+        class="optimization"
         src={yellowDiamond}
         loading="lazy"
-        style="width: 7%; padding-bottom:2%"
+        style="width: 7%; padding-bottom:2%;"
       />
       <span
         style="display: inline-block;"
@@ -26,7 +27,7 @@ const props = Astro.props;
 </section>
 
 <style>
-  . {
+  .optimization {
     height: auto;
   }
   .margins {

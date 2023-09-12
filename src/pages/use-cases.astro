@@ -6,6 +6,7 @@ import blogsLeft from "../images/blogsLeft.png";
 import blogsRight from "../images/blogsRight.png";
 import UseCasesTitle from "../components/useCasesTitle.astro";
 import redirectToWork from "../images/redirectToWork2.png";
+import { Image } from 'astro:assets';
 
 const props = Astro.props;
 ---
@@ -61,7 +62,7 @@ const props = Astro.props;
 
     <div class="row" style="margin-top: 6%;">
       <div class="col-lg-6 col-md-6 col-sm-12">
-        <img class="swiperImg" src={swiper2Img} alt="" />
+        <Image class="swiperImg optimization" src={swiper2Img} alt="" />
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="imgInfo">
@@ -205,7 +206,7 @@ const props = Astro.props;
         <div
           id="stopOnHover"
           class="d-flex workImg-section-soln borders"
-          style="width:100%; padding:4% 0 7% 0 !important;  "
+          style="width:100%; padding:4% 0 7% 0 !important;  overflow-x: scroll; "
         >
           {(props?.useCasesData?.fields?.relatedProjects as any)?.map(
             (projects: any) => (
@@ -215,13 +216,15 @@ const props = Astro.props;
                   aria-label="case study"
                 >
                   <div class="work-animation">
-                    <img
+                    <Image
                       src={projects?.fields?.heroBanner?.fields?.file.url}
-                      class="movingImgs  "
+                      class="movingImgs optimization "
                       alt=""
+                      width={509}
+                          height={240}
                     />
                     <div class="image-overlay">
-                      <img src={redirectToWork} alt="" />
+                      <Image class="optimization" src={redirectToWork} alt="" />
                       <span
                         class="workName"
                         set:html={projects?.fields?.singleClient}
@@ -245,6 +248,9 @@ const props = Astro.props;
 
 <style>
 
+.optimization{
+  height: auto;
+}
 
 /* related projects css */
 .relatedProjectHeading span {
@@ -603,7 +609,7 @@ import {
     },
   });
 
-  import { gsap, TimelineMax,  } from "gsap";
+  import { gsap, TimelineMax  } from "gsap";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
     gsap.registerPlugin(ScrollTrigger);
 
@@ -618,15 +624,6 @@ import {
         scrub: true,
       },
     });
-    gsap.from(".workImg-section-soln", 1, {
-      scrollTrigger: {
-        trigger: ".workImg-section-soln",
-        start: "top 55%",
-        end: "bottom top",
-
-        toggleClass: "moving-text-parent",
-        scrub: true,
-      },
-    });
+  
  
 </script>

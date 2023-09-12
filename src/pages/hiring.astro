@@ -11,7 +11,7 @@ import locIcon from "../images/locIcon.png";
 import clock from "../images/clock.png";
 import ps from "../images/ps.png";
 import conferenceRoomDiscussion from "../images/conferenceRoomDiscussion.jpg";
-
+import { Image } from 'astro:assets';
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 // import jobProfiles from "../components/jobProfiles";
@@ -30,7 +30,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
       <div class="col-lg-8 col-md-8 col-sm-12" style="overflow: hidden;">
         <span class="title">Join Our Team</span>
         <!-- <div>
-           <img   class="titleImg" src={hiringImg1} alt="" />
+           <Image   class="titleImg" src={hiringImg1} alt="" />
           <span class="title">Join Our Team</span>
         </div> -->
       </div>
@@ -43,7 +43,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
         </span>
       </div>
     </div>
-    <img class="" style="width:100%;" src={conferenceRoomDiscussion} />
+    <Image class="optimization" style="width:100%;" src={conferenceRoomDiscussion} alt="" />
   </section>
 
   <section class="blackSec">
@@ -52,28 +52,28 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
         <span class="blackTitle-animate">Benefits of being an &nbsp;</span>
 
         <span class="blackTitle-animate" style="color:#e5ff53">IIC</span>
-        <span class="blackTitle-animate" style="color:#f5ffbb">IAN</span>
+        <span class="blackTitle-animate" style="color:#f5ffbb; margin-left: 2%;" >IAN</span>
       </div>
       <div
         class="col-lg-8 col-md-8 col-sm-12 row pointerDiv"
         style=" padding-top: 2.5%;"
       >
         <div class="col-6 pointersMob" style="padding-left: 10%;">
-          <img src={team} class="benefitsImg" alt="" loading="lazy" />
+          <Image src={team} class="benefitsImg optimization" alt="" loading="lazy" />
           <p class="benefitsText" style="margin-bottom: 15%;">
             Working with a highly experienced team.
           </p>
-          <img src={opportunity} class="benefitsImg" alt="" loading="lazy" />
+          <Image src={opportunity} class="benefitsImg optimization" alt="" loading="lazy" />
           <p class="benefitsText">
             Get opportunities to work with major brands.
           </p>
         </div>
         <div class="col-6 pointersMob" style="padding-left: 10%;">
-          <img src={funLoving} class="benefitsImg" alt="" loading="lazy" />
+          <Image src={funLoving} class="benefitsImg optimization" alt="" loading="lazy" />
           <p class="benefitsText" style="margin-bottom: 15%;">
             A fun-loving and creative environment.
           </p>
-          <img src={fun} class="benefitsImg" alt="" loading="lazy" />
+          <Image src={fun} class="benefitsImg optimization" alt="" loading="lazy" />
           <p class="benefitsText">Creative & Fun activities every week.</p>
         </div>
       </div>
@@ -180,7 +180,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
             <div class="flip-card-inner">
               <div class="card">
                 <div class="eyeDiv btn">
-                  <img src={closeEye} class="  eye" loading="lazy" alt="" />
+                  <Image src={closeEye} class="optimization  eye" loading="lazy" alt="" />
                 </div>
 
                 <div class="cardContent ">
@@ -196,13 +196,13 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
                   <span>{jobProfiles.fields.shortDescription}</span>
                 </div>
                 <div class="location">
-                  <img class="locIcon  " src={locIcon} alt="" />
-                  <span style="margin-right: 10%;">
+                  <Image class="locIcon optimization " src={locIcon} alt="" />
+                  <span style="margin-right: 13%;">
                     {jobProfiles.fields.location}
                   </span>
-                  <img
-                    style="width: 8%;"
-                    class=" "
+                  <Image
+                    style="width: 8%; margin-right:3%;"
+                    class="optimization "
                     src={clock}
                     alt=""
                     loading="lazy"
@@ -211,7 +211,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
                 </div>
                 <div class="bottomDivBack row">
                   <div class="col-6 blackBottom">
-                    <img class=" " src={ps} alt="" />
+                    <Image class=" optimization" src={ps} alt="" />
                   </div>
 
                   <div class="col-5 btn">
@@ -231,7 +231,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
     </div>
   </section>
   <style>
-    . {
+    .optimization {
       height: auto;
     }
     a {
@@ -490,6 +490,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
       border: 1.25px solid rgba(26, 26, 26, 0.25);
       font-family: "anek devanagari";
       margin: 1.35%;
+      margin-left:3%;
       padding: 2.35%;
       margin-top: 0 !important;
     }
@@ -668,6 +669,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
     }
     .locIcon {
       width: 9%;
+      margin-right:3%;
     }
     .clock {
       width: 8%;

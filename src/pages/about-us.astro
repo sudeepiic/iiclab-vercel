@@ -9,7 +9,7 @@ import carousalNext from "../images/carousalNext.png";
 import carousalPrev from "../images/carousalPrev.png";
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-
+import { Image } from 'astro:assets';
 //import { Image, Picture } from "@astrojs/image/components";
 
 const clientsEntries = await contentfulClient.getEntries<any>({
@@ -65,10 +65,11 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
           >
           <a href="#teamInfo" aria-label="know more">
             <span class="knowMore">
-              Slide To Know More &nbsp;<img
+              Slide To Know More &nbsp;<Image
                 style="width: 0.75rem;"
                 src={downArrow}
-                class=""
+                class="optimization"
+                alt=""
               />
             </span>
           </a>
@@ -76,7 +77,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
       </div>
     </div>
     <div>
-      <img src={officeImg} alt="" class="" style="height:100%;width:100%;  " />
+      <Image src={officeImg} alt="" class="optimization" style="height:100%;width:100%;  " />
     </div>
   </section>
 
@@ -177,11 +178,13 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
           (splitArrays[0] as any).map((clients, index) => (
             <div class="imgRow clientArray1">
               <td class="img ">
-                <img
-                  class="imgs  "
+                <Image
+                  class="imgs optimization "
                   src={clients.fields?.file.url}
                   alt=""
                   loading="lazy"
+                  width={389}
+                  height={282}
                 />
               </td>
             </div>
@@ -191,11 +194,13 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
           (splitArrays[1] as any).map((clients, index) => (
             <div class="imgRow clientArray2">
               <td class="img">
-                <img
-                  class="imgs  "
+                <Image
+                  class="imgs  optimization"
                   src={clients.fields?.file.url}
                   alt=""
                   loading="lazy"
+                   width={389}
+                  height={282}
                 />
               </td>
             </div>
@@ -205,11 +210,13 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
           (splitArrays[2] as any).map((clients, index) => (
             <div class="imgRow clientArray1">
               <td class="img">
-                <img
-                  class="imgs  "
+                <Image
+                  class="imgs  optimization"
                   src={clients.fields?.file.url}
                   alt=""
                   loading="lazy"
+                   width={389}
+                  height={282}
                 />
               </td>
             </div>
@@ -219,11 +226,13 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
           (splitArrays[3] as any).map((clients, index) => (
             <div class="imgRow clientArray2">
               <td class="img">
-                <img
-                  class="imgs  "
+                <Image
+                  class="imgs  optimization"
                   src={clients.fields?.file.url}
                   alt=""
                   loading="lazy"
+                   width={389}
+                  height={282}
                 />
               </td>
             </div>
@@ -269,11 +278,15 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
                 }
               >
                 <div>
-                  <img
-                    class="members  "
+                  <Image
+                    class="members  optimization"
                     src={employees?.fields?.photo?.fields?.file.url}
                     alt=""
                     loading="lazy"
+                    width={640}
+                    height={844}
+                    format="webp"
+
                   />
                   <div class="imgCaptionDiv">
                     <span
@@ -290,14 +303,18 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
             ))
           }
         </div>
-        <img class="swiper-prev" src={carousalPrev} alt="" loading="lazy" />
+        <Image class="swiper-prev optimization" src={carousalPrev} alt="" loading="lazy" />
 
-        <img class="swiper-next" src={carousalNext} alt="" loading="lazy" />
+        <Image class="swiper-next optimization" src={carousalNext} alt="" loading="lazy" />
       </div>
     </div>
   </section>
 </Layout>
 <style>
+.optimization{
+  height: auto;
+}
+
   . {
     height: auto;
   }

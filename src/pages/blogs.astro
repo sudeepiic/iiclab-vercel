@@ -14,9 +14,10 @@ import yellowGo from "../images/yellowGo2.png";
 import blogsLeft from "../images/blogsLeft.png";
 import blogsRight from "../images/blogsRight.png";
 import readMore from "../images/readMore.png";
+import { Image } from 'astro:assets';
 //import { Image, Picture } from "@astrojs/image/components";
 
-import { log } from "astro/dist/core/logger/core";
+
 
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "blogs",
@@ -35,9 +36,9 @@ const entries: any = await contentfulClient.getEntries<any>({
           <!-- <div style="display: inline-block;" class="title-animate"> -->
           <span>thinking out loud</span>
           <!-- </div> -->
-          <a href="#blogsList" aria-label="blogs list">
-            <img class="btn blogbtn" src={rotatingBlog} alt="" />
-            <img class="arrow" src={arrow} alt="" />
+          <a href="#blogsList" aria-label="blogs list" style="margin-left: 1%;">
+            <Image  class="btn blogbtn optimization" src={rotatingBlog} alt="" />
+            <Image class="arrow optimization" src={arrow} alt="" />
           </a>
         </div>
       </div>
@@ -75,8 +76,11 @@ const entries: any = await contentfulClient.getEntries<any>({
                         </div>
                       </div>
                       <div class="imgDiv">
-                        <img
-                          class="  carouselImg"
+                        <Image
+                          class=" optimization carouselImg"
+                          format="webp"
+                          width={1552}
+                          height={720}
                           src={blogs.fields?.heroImage?.fields?.file.url}
                           alt=""
                         />
@@ -89,7 +93,7 @@ const entries: any = await contentfulClient.getEntries<any>({
                       >
                         <div>
                           <span> Read more</span>
-                          <img class="  readMoreArrow" src={readMore} alt="" />
+                          <Image class=" optimization readMoreArrow" src={readMore} alt="" />
                         </div>
                       </a>
                     </div>
@@ -101,8 +105,8 @@ const entries: any = await contentfulClient.getEntries<any>({
         </div>
 
         <div class="d-flex controls">
-          <img class="swiper-prev" src={blogsLeft} alt="" />
-          <img class="swiper-next" src={blogsRight} alt="" />
+          <Image class="swiper-prev optimization" src={blogsLeft} alt="" />
+          <Image class="swiper-next optimization" src={blogsRight} alt="" />
         </div>
       </div>
     </div>
@@ -114,8 +118,10 @@ const entries: any = await contentfulClient.getEntries<any>({
     <div style="margin-top: 1%; overflow:hidden" class="margins row">
       <div class="col-md-6 col-lg-6 col-sm-12 picks">
         <div class="animate-img">
-          <img
-            class="editorImgs"
+          <Image
+          width={2281}
+          height={1057}
+            class="editorImgs optimization"
             src={"//images.ctfassets.net/i7u70o31dp49/7dyu5mQVmtZnNzMVvPlssC/421d79adb861c9f778727e1d070a8e22/Mask_group.png"}
             alt=""
           />
@@ -130,7 +136,7 @@ const entries: any = await contentfulClient.getEntries<any>({
             href="/blogs/i-met-ravi-shastri-live-from-my-couch"
             aria-label="open"
           >
-            <img class="btn goBtn" src={yellowGo} alt="" />
+            <Image class="btn goBtn optimization" src={yellowGo} alt="" />
           </a>
 
           <div class="info">
@@ -143,8 +149,10 @@ const entries: any = await contentfulClient.getEntries<any>({
       </div>
       <div class="col-md-6 col-lg-6 col-sm-12 picks">
         <div class="animate-img2">
-          <img
-            class="editorImgs"
+          <Image
+            class="editorImgs optimization"
+            width={2281}
+            height={1057}
             src={"//images.ctfassets.net/i7u70o31dp49/jAKoXNdwpn9ICPENRR1wb/c0c86c5bf3bd06ea10fb5062d22e3510/Mask_group.png"}
             alt=""
           />
@@ -152,7 +160,7 @@ const entries: any = await contentfulClient.getEntries<any>({
         <div class="animate-imgText">
           <span class="imgText">The cycle of Analysis Paralysis</span>
           <a href="/blogs/the-cycle-of-analysis-paralysis" aria-label="open">
-            <img class="btn goBtn" src={yellowGo} alt="" />
+            <Image class="btn goBtn optimization" src={yellowGo} alt="" />
           </a>
           <div class="info">
             <div class="border-box"><span>Design & Technology</span></div>
@@ -227,9 +235,11 @@ const entries: any = await contentfulClient.getEntries<any>({
                 </div>
 
                 <div class="col-3">
-                  <img
+                  <Image
                     style="width:90%"
-                    class="blogImg  "
+                    width={1552}
+                    height={720}
+                    class="blogImg  optimization"
                     src={blogs.fields?.heroImage?.fields?.file.url}
                     alt=""
                   />
@@ -243,7 +253,7 @@ const entries: any = await contentfulClient.getEntries<any>({
   </section>
 </Layout>
 <style>
-  . {
+  .optimization {
     height: auto;
   }
   .btn:focus {
@@ -252,7 +262,7 @@ const entries: any = await contentfulClient.getEntries<any>({
   }
   .arrow {
     position: relative;
-    right: 15%;
+    right: 14.5%;
     width: 2.5%;
     margin-bottom: 20%;
   }
@@ -269,14 +279,14 @@ const entries: any = await contentfulClient.getEntries<any>({
 
   @media screen and (max-width: 1300px) {
     .arrow {
-      right: 15.4%;
+      right: 14.2;
 
       margin-bottom: 21%;
     }
   }
   @media screen and (max-width: 992px) {
     .arrow {
-      right: 15.5%;
+      right: 14%;
 
       margin-bottom: 21%;
     }
@@ -338,6 +348,7 @@ const entries: any = await contentfulClient.getEntries<any>({
   .readMoreArrow {
     vertical-align: baseline;
     width: 5%;
+    margin-left: 2%;
     margin-bottom: 1%;
   }
   .wrapper {
@@ -451,7 +462,7 @@ const entries: any = await contentfulClient.getEntries<any>({
 
       font-weight: 400;
       color: white;
-      margin-left: 1%;
+      margin-left: 2%;
     }
     .dot {
       width: 4px;
@@ -460,6 +471,7 @@ const entries: any = await contentfulClient.getEntries<any>({
       background-color: white;
       display: inline-block;
       margin-bottom: 0.2%;
+      margin-left: 1%;
     }
     .readTime {
       font-family: "anek devanagari";
@@ -468,7 +480,7 @@ const entries: any = await contentfulClient.getEntries<any>({
 
       font-weight: 400;
       color: white;
-
+       margin-left: 1%;
       opacity: 50%;
     }
     .picks {
@@ -635,7 +647,7 @@ const entries: any = await contentfulClient.getEntries<any>({
 
     font-weight: 400;
     color: white;
-    margin-left: 1%;
+    margin-left: 2%;
   }
   .dot {
     width: 4px;
@@ -644,6 +656,7 @@ const entries: any = await contentfulClient.getEntries<any>({
     background-color: white;
     display: inline-block;
     margin-bottom: 0.2%;
+    margin-left: 1%;
   }
   .readTime {
     font-family: "anek devanagari";
@@ -651,7 +664,7 @@ const entries: any = await contentfulClient.getEntries<any>({
 
     font-weight: 400;
     color: white;
-
+    margin-left: 1%;
     opacity: 50%;
   }
 
@@ -663,6 +676,7 @@ const entries: any = await contentfulClient.getEntries<any>({
     font-style: normal;
     /* color: white; */
     line-height: 0.85;
+    display: inline-block;
   }
 
   .exploreBtn {
@@ -777,30 +791,30 @@ const entries: any = await contentfulClient.getEntries<any>({
   }
 
   .list ul li a {
-    color: white;
+    color: white !important;
     opacity: 50%;
   }
   path {
-    fill: white;
+    fill: white !important;
   }
 
   .connect,
   .circles {
-    fill: #1a1a1a;
+    fill: #1a1a1a !important;
   }
   .oval {
-    fill: white;
+    fill: white !important;
   }
 
   .tele {
-    fill: white;
+    fill: white !important;
   }
   .menu p {
-    color: white;
+    color: white !important;
   }
   .menu .s1,
   .menu .s2 {
-    border: 1px solid white;
+    border: 1px solid white !important;
   }
 </style>
 

@@ -6,6 +6,7 @@ import leftArrow from "../images/carousalPrev.png";
 import solndetailimg from "../images/solndetailimg.jpg";
 import redirectToWork from "../images/redirectToWork2.png";
 import { contentfulClient } from "../lib/contentful";
+import { Image } from 'astro:assets';
 
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
@@ -29,10 +30,12 @@ console.log(props, "solutionData");
               (props.sliderImages as any)?.map((projects: any) => (
                 <div class="swiper-slide imgWidth">
                   
-                    <img
-                      class="resizeImg"
+                    <Image
+                      class="resizeImg optimization"
                       src={projects.fields?.file.url}
                       alt=""
+                      width={732}
+                      height={400}
                     />
                   </div>
                 </div>
@@ -41,8 +44,8 @@ console.log(props, "solutionData");
           </div>
 
           <!-- <div class="d-flex controls">
-              <img class="swiper-prev" src={blogsLeft} alt="" />
-              <img class="swiper-next" src={blogsRight} alt="" />
+              <Image class="swiper-prev" src={blogsLeft} alt="" />
+              <Image class="swiper-next" src={blogsRight} alt="" />
             </div> -->
         </div>
       </div>
@@ -56,7 +59,8 @@ console.log(props, "solutionData");
             <div class="col-10">
               <p set:html={props.pointer1Heading} />
             </div>
-            <img src={props.pointer1Img} class="pointerImg" alt="" />
+            <Image src={props.pointer1Img}   width={732}
+            height={400} class="pointerImg optimization" alt="" />
             <span class="pointerText" set:html={props.pointer1Text} />
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
@@ -66,7 +70,8 @@ console.log(props, "solutionData");
             <div class="col-10">
               <p set:html={props.pointer2Heading} />
             </div>
-            <img src={props.pointer2Img} class="pointerImg" alt="" />
+            <Image src={props.pointer2Img}   width={732}
+            height={400} class="pointerImg optimization" alt="" />
 
             <span class="pointerText" set:html={props.pointer2Text} />
           </div>
@@ -80,7 +85,8 @@ console.log(props, "solutionData");
             <div class="col-10">
               <p set:html={props.pointer3Heading} />
             </div>
-            <img src={props.pointer3Img} class="pointerImg" alt="" />
+            <Image src={props.pointer3Img}   width={732}
+            height={400} class="pointerImg optimization" alt="" />
 
             <span class="pointerText" set:html={props.pointer3Text} />
           </div>
@@ -93,7 +99,8 @@ console.log(props, "solutionData");
                 <div class="col-10">
                   <p set:html={props.pointer4Heading} />
                 </div>
-                <img src={props.pointer4Img} class="pointerImg" alt="" />
+                <Image src={props.pointer4Img}   width={732}
+                      height={400} class="pointerImg optimization" alt="" />
 
                 <span class="pointerText" set:html={props.pointer4Text} />
               </div>
@@ -111,7 +118,8 @@ console.log(props, "solutionData");
                 <div class="col-10">
                   <p set:html={props.pointer5Heading} />
                 </div>
-                <img src={props.pointer5Img} class="pointerImg" alt="" />
+                <Image src={props.pointer5Img}   width={732}
+                      height={400} class="pointerImg optimization" alt="" />
 
                 <span class="pointerText" set:html={props.pointer5Text} />
               </div>
@@ -123,7 +131,8 @@ console.log(props, "solutionData");
                   <div class="col-10">
                     <p set:html={props.pointer6Heading} />
                   </div>
-                  <img src={props.pointer6Img} class="pointerImg" alt="" />
+                  <Image src={props.pointer6Img}   width={732}
+                      height={400} class="pointerImg optimization" alt="" />
 
                   <span class="pointerText" set:html={props.pointer6Text} />
                 </div>
@@ -142,7 +151,8 @@ console.log(props, "solutionData");
                 <div class="col-10">
                   <p set:html={props.pointer7Heading} />
                 </div>
-                <img src={props.pointer7Img} class="pointerImg" alt="" />
+                <Image src={props.pointer7Img}   width={732}
+                      height={400}  class="pointerImg optimization" alt="" />
 
                 <span class="pointerText" set:html={props.pointer7Text} />
               </div>
@@ -167,7 +177,7 @@ console.log(props, "solutionData");
             <div
               id="stopOnHover"
               class="d-flex workImg-section-soln borders"
-              style="width:100%; padding:7% 0 !important;  "
+              style="width:100%; padding:7% 0 !important; overflow-x: scroll; "
             >
               {(props?.solutionsData?.fields?.relatedProjects as any)?.map(
                 (projects: any) => (
@@ -177,13 +187,15 @@ console.log(props, "solutionData");
                       aria-label="case study"
                     >
                       <div class="work-animation">
-                        <img
+                        <Image
                           src={projects?.fields?.heroBanner?.fields?.file.url}
-                          class="movingImgs  "
+                          class="movingImgs optimization  "
+                          width={509}
+                          height={240}
                           alt=""
                         />
                         <div class="image-overlay">
-                          <img src={redirectToWork} alt="" />
+                          <Image class="optimization" src={redirectToWork} alt="" />
                           <span
                             class="workName"
                             set:html={projects?.fields?.singleClient}
@@ -207,14 +219,14 @@ console.log(props, "solutionData");
         <div class="row">
           <div class="col-6 arrows">
             <a href={props.previousSolutionSlug}>
-              <img src={leftArrow} alt="" />
+              <Image class="optimization" src={leftArrow} alt="" />
             </a>
             <span style="margin-left:3%" set:html={props.previousSolution} />
           </div>
           <div class="col-6 arrows rightArrow" style="padding-left:5%">
             <span set:html={props.nextSolution} />
             <a href={props.nextSolutionSlug}>
-              <img src={rightArrow} alt="" />
+              <Image class="optimization" src={rightArrow} alt="" />
             </a>
           </div>
         </div>
@@ -224,6 +236,10 @@ console.log(props, "solutionData");
 
   <style>
     /* swiper css */
+
+    .optimization{
+      height:auto;
+    }
 
     .mySwiper {
       margin-left: auto;
@@ -585,7 +601,7 @@ console.log(props, "solutionData");
       },
     });
     //
-    import { gsap, TimelineMax, Eases } from "gsap";
+    import { gsap, TimelineMax } from "gsap";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
     gsap.registerPlugin(ScrollTrigger);
 
@@ -600,15 +616,15 @@ console.log(props, "solutionData");
         scrub: true,
       },
     });
-    gsap.from(".workImg-section-soln", 1, {
-      scrollTrigger: {
-        trigger: ".workImg-section-soln",
-        start: "top 55%",
-        end: "bottom top",
+    // gsap.from(".workImg-section-soln", 1, {
+    //   scrollTrigger: {
+    //     trigger: ".workImg-section-soln",
+    //     start: "top 55%",
+    //     end: "bottom top",
 
-        toggleClass: "moving-text-parent",
-        scrub: true,
-      },
-    });
+    //     toggleClass: "moving-text-parent",
+    //     scrub: true,
+    //   },
+    // });
   </script>
 </Layout>

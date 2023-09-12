@@ -12,6 +12,7 @@ import strategy from "../images/strategy.png";
 import yellowGo from "../images/yellowGo2.png";
 import knowMoreBtn from "../images/knowMoreBtn.png";
 import diamond from "../images/whiteDiamond.png";
+import { Image } from 'astro:assets';
 //import { Image, Picture } from "@astrojs/image/components";
 ---
 
@@ -22,8 +23,8 @@ import diamond from "../images/whiteDiamond.png";
         <div class="title">
           <span class="animate-title">What are we good at</span>
           <a class="btnDiv" href="#soln" aria-label="know more">
-            <img class="btn btn-animate" src={solutionbtn} alt="" />
-            <img class="arrow" src={newArrow} alt="" />
+            <Image class="btn btn-animate optimization" src={solutionbtn} alt="" />
+            <Image class="arrow optimization" src={newArrow} alt="" />
           </a>
         </div>
       </div>
@@ -35,7 +36,7 @@ import diamond from "../images/whiteDiamond.png";
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="swiperDiv">
-            <img class="carousalImg" src={solutionImg1} alt="" loading="lazy" />
+            <Image class="carousalImg optimization" src={solutionImg1} alt="" loading="lazy" />
             <!-- <div class="overlay"></div> -->
             <div class="techList">
               <ul class="a">
@@ -53,8 +54,8 @@ import diamond from "../images/whiteDiamond.png";
                   <li>virtual Reality</li>
                   <li>Augmented Reality</li>
                   <li>Projection Mapping</li>
-                  <img
-                    class="knowMoreBtn"
+                  <Image
+                    class="knowMoreBtn optimization"
                     src={knowMoreBtn}
                     alt=""
                     loading="lazy"
@@ -65,7 +66,7 @@ import diamond from "../images/whiteDiamond.png";
                 href="/solutions/immersive-technology"
                 aria-label="immersive technology"
               >
-                <img class="" src={yellowGo} alt="" loading="lazy" /></a
+                <Image class="optimization" src={yellowGo} alt="" loading="lazy" /></a
               >
             </div>
             <div class="captionDiv">
@@ -77,8 +78,8 @@ import diamond from "../images/whiteDiamond.png";
 
         <div class="swiper-slide">
           <div class="swiperDiv">
-            <img
-              class="carousalImg"
+            <Image
+              class="carousalImg optimization"
               src={interactiveSoln}
               alt=""
               loading="lazy"
@@ -99,8 +100,8 @@ import diamond from "../images/whiteDiamond.png";
                   <li>Interactive Table/Interactive Book</li>
                   <li>Engagement Experts</li>
                   <li>Object Recognition Table</li>
-                  <img
-                    class="knowMoreBtn"
+                  <Image
+                    class="knowMoreBtn optimization"
                     src={knowMoreBtn}
                     alt=""
                     loading="lazy"
@@ -111,7 +112,7 @@ import diamond from "../images/whiteDiamond.png";
                 href="/solutions/interactive-solution"
                 aria-label="interactive solution"
               >
-                <img src={yellowGo} class="" alt="" loading="lazy" /></a
+                <Image src={yellowGo} class="optimization" alt="" loading="lazy" /></a
               >
             </div>
             <div class="captionDiv">
@@ -123,7 +124,7 @@ import diamond from "../images/whiteDiamond.png";
 
         <div class="swiper-slide">
           <div class="swiperDiv">
-            <img class="carousalImg" src={mobileWeb} alt="" loading="lazy" />
+            <Image class="carousalImg optimization" src={mobileWeb} alt="" loading="lazy" />
             <div class="techList">
               <ul class="a">
                 <li>Web Development</li>
@@ -138,8 +139,8 @@ import diamond from "../images/whiteDiamond.png";
                   <li>Web Development</li>
                   <li>App Development</li>
                   <li>Gaming Solutions</li>
-                  <img
-                    class="knowMoreBtn"
+                  <Image
+                    class="knowMoreBtn optimization"
                     src={knowMoreBtn}
                     alt=""
                     loading="lazy"
@@ -147,7 +148,7 @@ import diamond from "../images/whiteDiamond.png";
                 </ul>
               </div>
               <a href="/solutions/mobile-and-web" aria-label="mobile and web">
-                <img src={yellowGo} class="" alt="" loading="lazy" /></a
+                <Image src={yellowGo} class=" optimization" alt="" loading="lazy" /></a
               >
             </div>
             <div class="captionDiv">
@@ -158,7 +159,7 @@ import diamond from "../images/whiteDiamond.png";
         </div>
         <div class="swiper-slide">
           <div class="swiperDiv">
-            <img class="carousalImg" src={solutionImg1} alt="" loading="lazy" />
+            <Image class="carousalImg optimization" src={solutionImg1} alt="" loading="lazy" />
             <div class="techList">
               <ul class="a">
                 <li>3D/2D Animations</li>
@@ -175,8 +176,8 @@ import diamond from "../images/whiteDiamond.png";
                   <li>Motion Graphics</li>
                   <li>Architectural Visualization</li>
                   <li>Expainer Videos</li>
-                  <img
-                    class="knowMoreBtn"
+                  <Image
+                    class="knowMoreBtn optimization"
                     src={knowMoreBtn}
                     alt=""
                     loading="lazy"
@@ -187,7 +188,7 @@ import diamond from "../images/whiteDiamond.png";
                 href="/solutions/content-development"
                 aria-label="content development"
               >
-                <img src={yellowGo} class="" alt="" loading="lazy" /></a
+                <Image src={yellowGo} class=" optimization" alt="" loading="lazy" /></a
               >
             </div>
             <div class="captionDiv">
@@ -199,7 +200,7 @@ import diamond from "../images/whiteDiamond.png";
 
         <div class="swiper-slide">
           <div class="swiperDiv">
-            <img class="carousalImg" src={experimental} alt="" loading="lazy" />
+            <Image class="carousalImg optimization" src={experimental} alt="" loading="lazy" />
             <div class="techList">
               <ul class="a">
                 <li>Motion Gesture</li>
@@ -216,8 +217,8 @@ import diamond from "../images/whiteDiamond.png";
                   <li>Interactive Campaign</li>
                   <li>Photobooth</li>
                   <li>Kiosk/Vending Machine</li>
-                  <img
-                    class="knowMoreBtn"
+                  <Image
+                    class="knowMoreBtn optimization"
                     src={knowMoreBtn}
                     alt=""
                     loading="lazy"
@@ -228,7 +229,7 @@ import diamond from "../images/whiteDiamond.png";
                 href="/solutions/experiential-marketing"
                 aria-label="experiential marketing"
               >
-                <img src={yellowGo} class="" alt="" loading="lazy" /></a
+                <Image src={yellowGo} class=" optimization" alt="" loading="lazy" /></a
               >
             </div>
             <div class="captionDiv">
@@ -240,7 +241,7 @@ import diamond from "../images/whiteDiamond.png";
 
         <div class="swiper-slide">
           <div class="swiperDiv">
-            <img class="carousalImg" src={strategy} alt="" loading="lazy" />
+            <Image class="carousalImg optimization" src={strategy} alt="" loading="lazy" />
             <div class="techList">
               <ul class="a">
                 <li>Scenario Mapping Brand Audits</li>
@@ -257,7 +258,7 @@ import diamond from "../images/whiteDiamond.png";
                   <li>Brand Identity</li>
                   <li>Competitor Mapping</li>
                   <li>Graphic Design & Prototype</li>
-                  <img class="knowMoreBtn" src={knowMoreBtn} loading="lazy" />
+                  <Image class="knowMoreBtn optimization" src={knowMoreBtn} loading="lazy" alt="" />
                 </ul>
               </div>
 
@@ -265,7 +266,7 @@ import diamond from "../images/whiteDiamond.png";
                 href="solutions/strategy-and-design"
                 aria-label="strategy and design"
               >
-                <img src={yellowGo} class="" /></a
+                <Image src={yellowGo} class=" optimization" alt=""/></a
               >
             </div>
             <div class="captionDiv">
@@ -283,9 +284,9 @@ import diamond from "../images/whiteDiamond.png";
       <div class="moving-text" style="display: flex; width:max-content;  ">
         <span class="wallHonor">metaverse</span>
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-          <img
+          <Image
             style="width:3.5vw"
-            class=""
+            class=" optimization"
             src={diamond}
             alt=""
             loading="lazy"
@@ -294,24 +295,24 @@ import diamond from "../images/whiteDiamond.png";
 
         <span class="wallHonor">ui/ux Design</span>
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-          <img style="width:3.5vw" class="" src={diamond} loading="lazy" />
+          <Image style="width:3.5vw" class=" optimization" src={diamond} loading="lazy" alt="" />
         </div>
 
         <span class="wallHonor">Augmented Reality</span>
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-          <img style="width:3.5vw" class="" src={diamond} loading="lazy" />
+          <Image style="width:3.5vw" class=" optimization" src={diamond} loading="lazy" alt="" />
         </div>
         <span class="wallHonor">XR</span>
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-          <img style="width:3.5vw" class="" src={diamond} loading="lazy" />
+          <Image style="width:3.5vw" class=" optimization" src={diamond} loading="lazy" alt="" />
         </div>
         <span class="wallHonor">Interactive Technology</span>
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-          <img style="width:3.5vw" class="" src={diamond} loading="lazy" />
+          <Image style="width:3.5vw" class=" optimization" src={diamond} loading="lazy" alt="" />
         </div>
         <span class="wallHonor">Experiential Marketing</span>
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw; opacity:0">
-          <img style="width:3.5vw" class="" src={diamond} loading="lazy" />
+          <Image style="width:3.5vw" class=" optimization" src={diamond} loading="lazy" alt="" />
         </div>
       </div>
     </div>
@@ -327,7 +328,7 @@ import diamond from "../images/whiteDiamond.png";
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  . {
+  .optimization {
     height: auto;
   }
   .btnDiv {
@@ -630,32 +631,32 @@ import diamond from "../images/whiteDiamond.png";
   }
 
   .list ul li a {
-    color: white;
-    opacity: 100%;
+    color: white !important;
+    opacity: 100% !important;
   }
   path {
-    fill: white;
+    fill: white !important;
   }
 
   /* connect button css */
 
   .connect,
   .circles {
-    fill: #1a1a1a;
+    fill: #1a1a1a !important;
   }
   .oval {
-    fill: white;
+    fill: white !important;
   }
 
   .tele {
-    fill: white;
+    fill: white !important;
   }
   .menu p {
-    color: white;
+    color: white !important;
   }
   .menu .s1,
   .menu .s2 {
-    border: 1px solid white;
+    border: 1px solid white !important;
   }
 </style>
 

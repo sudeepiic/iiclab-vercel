@@ -10,6 +10,7 @@ import fbLogo from "../images/fbLogo.png";
 import whatsappLogo from "../images/whatsappLogo.png";
 import subscribeBtn from "../images/subscribeBtn.png";
 import footerHand from "../images/footerHand.png";
+import { Image } from 'astro:assets';
 //import { Image, Picture } from "@astrojs/image/components";
 ---
 
@@ -17,11 +18,11 @@ import footerHand from "../images/footerHand.png";
   style="background-color: #1a1a1a;  padding-left: 9%; padding-top: 3%; overflow: hidden"
 >
   <div class="div1 footerReady">
-    <img class="diamond" src={footerDiamond} alt="" loading="lazy" />
+    <Image class="diamond optimization" src={footerDiamond} alt="" style="margin-right:0.6%" loading="lazy" />
     <span class="footerFont"
       >&nbsp; READY TO ACTIVATE STRATEGIC GROWTH? &nbsp;</span
     >
-    <img class="diamond" src={footerDiamond} alt="" loading="lazy" />
+    <Image class="diamond optimization" src={footerDiamond} alt="" style="margin-left:0.6%" loading="lazy" />
   </div>
 
   <div class="div2 row footerYellow">
@@ -34,10 +35,10 @@ import footerHand from "../images/footerHand.png";
     <div class="col-6">
       <div class="d-flex contact-animate">
         <a href="/contact" aria-label="contact">
-          <img class="contactUsImg" src={contactUs} alt="" /></a
+          <Image class="contactUsImg optimization " src={contactUs} alt="" /></a
         >
         <div class="footerHand">
-          <img class="" src={footerHand} alt="" />
+          <Image class="optimization" src={footerHand} alt="" />
         </div>
       </div>
     </div>
@@ -67,7 +68,7 @@ import footerHand from "../images/footerHand.png";
 
       <div class="button mt-3 text-center">
         <button class="btn" type="submit" aria-label="subscribe newsletter">
-          <img class="mobSubscribe" src={subscribeBtn} alt="" loading="lazy" />
+          <Image class="mobSubscribe optimization" src={subscribeBtn} alt="" loading="lazy" />
         </button>
       </div>
     </div>
@@ -79,31 +80,31 @@ import footerHand from "../images/footerHand.png";
       aria-label="instagram"
       target="_blank"
     >
-      <img class="socialIcons" src={instaLogo} alt="" loading="lazy" /></a
+      <Image class="socialIcons optimization" src={instaLogo} alt="" loading="lazy" /></a
     >
     <a
       href="https://in.linkedin.com/company/ink-in-caps"
       aria-label="linkedin"
       target="_blank"
     >
-      <img class="socialIcons" src={linkedinlogo} alt="" loading="lazy" /></a
+      <Image class="socialIcons optimization" src={linkedinlogo} alt="" loading="lazy" /></a
     >
     <a
       href="https://twitter.com/inkincaps?lang=en"
       aria-label="twitter"
       target="_blank"
     >
-      <img class="socialIcons" src={twitterLogo} alt="" loading="lazy" /></a
+      <Image class="socialIcons optimization" src={twitterLogo} alt="" loading="lazy" /></a
     >
     <a
       href="https://www.facebook.com/inkincaps/"
       aria-label="facebook"
       target="_blank"
     >
-      <img class="socialIcons" src={fbLogo} alt="" loading="lazy" /></a
+      <Image class="socialIcons optimization" src={fbLogo} alt="" loading="lazy" /></a
     >
     <a class="d-none" href="" aria-label="whatsapp" target="_blank">
-      <img class="socialIcons" src={whatsappLogo} alt="" loading="lazy" /></a
+      <Image class="socialIcons optimization" src={whatsappLogo} alt="" loading="lazy" /></a
     >
   </div>
 
@@ -172,7 +173,7 @@ import footerHand from "../images/footerHand.png";
         />
         <input
           class="inputCss"
-          style="margin-left: 10px;"
+          style="margin-left: 14px;"
           type="email"
           placeholder="Your Email"
           name="email"
@@ -180,7 +181,7 @@ import footerHand from "../images/footerHand.png";
         <br />
         <br />
         <button class="btn" type="submit" aria-label="subscribe to newsletter">
-          <img class="" style="width: 13.5vw;" src={subscribe} alt="" />
+          <Image class=" optimization" style="width: 13.5vw;" src={subscribe} alt="" />
         </button>
       </form>
       <div class="desktopOnly" style="margin-top: 8%; padding-top: 1.5%;">
@@ -188,28 +189,28 @@ import footerHand from "../images/footerHand.png";
           href="https://www.instagram.com/inkincaps/?hl=en"
           aria-label="instagram"
           target="_blank"
-          ><img class="icons" src={instaLogo} alt="" loading="lazy" /></a
+          ><Image class="icons optimization" src={instaLogo} alt="" loading="lazy" /></a
         >
         <a
           href="https://in.linkedin.com/company/ink-in-caps"
           aria-label="linkedin"
           target="_blank"
-          ><img class="icons" src={linkedinlogo} alt="" loading="lazy" /></a
+          ><Image class="icons optimization" src={linkedinlogo} alt="" loading="lazy" /></a
         >
         <a
           href="https://twitter.com/inkincaps?lang=en"
           aria-label="twitter"
           target="_blank"
-          ><img class="icons" src={twitterLogo} alt="" loading="lazy" /></a
+          ><Image class="icons optimization" src={twitterLogo} alt="" loading="lazy" /></a
         >
         <a
           href="https://www.facebook.com/inkincaps/"
           aria-label="facebook"
           target="_blank"
-          ><img class="icons" src={fbLogo} alt="" loading="lazy" /></a
+          ><Image class="icons optimization" src={fbLogo} alt="" loading="lazy" /></a
         >
         <a class="d-none" href="" aria-label="whatsapp" target="_blank"
-          ><img class="icons" src={whatsappLogo} alt="" /></a
+          ><Image class="icons optimization" src={whatsappLogo} alt="" /></a
         >
       </div>
     </div>
@@ -231,7 +232,7 @@ import footerHand from "../images/footerHand.png";
       
         height: 0%;  margin-top: 3%;"
         >
-          <img class="goArrow" src={goArrow} alt="" loading="lazy" /></button
+          <Image class="goArrow optimization" src={goArrow} alt="" loading="lazy" /></button
         >
       </span>
       <span class="collab col-3 d-flex">
@@ -241,7 +242,7 @@ import footerHand from "../images/footerHand.png";
       
         height: 0%;  margin-top: 3%;"
         >
-          <img class="goArrow" src={goArrow} alt="" loading="lazy" /></button
+          <Image class="goArrow optimization" src={goArrow} alt="" loading="lazy" /></button
         >
       </span>
       <span style="margin-left: 5%;" class="collab col-4 d-flex"
@@ -251,7 +252,7 @@ import footerHand from "../images/footerHand.png";
       
         height: 0%;  margin-top: 3%;"
         >
-          <img class="goArrow" src={goArrow} alt="" loading="lazy" /></button
+          <Image class="goArrow optimization" src={goArrow} alt="" loading="lazy" /></button
         >
       </span>
     </div>
@@ -260,16 +261,16 @@ import footerHand from "../images/footerHand.png";
       style="text-align: center; padding-top: 1.5%;"
     >
       <a href="https://www.instagram.com/inkincaps/?hl=en"
-        ><img   class="icons" src={instaLogo} alt="" loading="lazy" /></a
+        ><Image   class="icons" src={instaLogo} alt="" loading="lazy" /></a
       >
       <a href="https://in.linkedin.com/company/ink-in-caps"
-        ><img   class="icons" src={linkedinlogo} alt="" loading="lazy" /></a
+        ><Image   class="icons" src={linkedinlogo} alt="" loading="lazy" /></a
       >
       <a href="https://twitter.com/inkincaps?lang=en"
-        ><img   class="icons" src={twitterLogo} alt="" loading="lazy" /></a
+        ><Image   class="icons" src={twitterLogo} alt="" loading="lazy" /></a
       >
       <a href="https://www.facebook.com/inkincaps/"
-        ><img   class="icons" src={fbLogo} alt="" loading="lazy" /></a
+        ><Image   class="icons" src={fbLogo} alt="" loading="lazy" /></a
       >-->
   </div>
 </section>
@@ -442,7 +443,7 @@ import footerHand from "../images/footerHand.png";
 </script>
 
 <style>
-  . {
+  .optimization {
     height: auto;
   }
   a {
@@ -683,7 +684,7 @@ import footerHand from "../images/footerHand.png";
   }
   .icons {
     width: 2.5vw;
-    margin-right: 1.1%;
+    margin-right: 2.5%;
   }
 
   .btn {

@@ -5,18 +5,20 @@ import "swiper/css/bundle";
 import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import type { Document } from "@contentful/rich-text-types";
+import { Image } from 'astro:assets';
 //import { Image, Picture } from "@astrojs/image/components";
 
 const props = Astro.props;
 ---
 
 <section style="background-color: #1a1a1a;">
-  <img src={props.herobanner} style="width: 100%;" alt={props.herobannerAlt} />
+  <Image src={props.herobanner}  width={1528}
+  height={720} format="webp" style="width: 100%;" class="optimization" alt={props.herobannerAlt} />
 
   <div class="blankDiv">
     <div class="midDiv">
       <div class="border-box"><span>Technology</span></div>
-      <div class="border-box"><span set:html={props.whichTechnology} /></div>
+      <div class="border-box" style="margin-left: 1%;"><span set:html={props.whichTechnology} /></div>
       <div class="heading" set:html={props.heroTitle} />
     </div>
   </div>
@@ -40,7 +42,8 @@ const props = Astro.props;
     <div class="margins img">
       {
         props.heroVideo && (
-          <img src={props.heroVideo} alt={props.heroVideoAlt} class=" " />
+          <Image src={props.heroVideo} alt={props.heroVideoAlt} width={1600}
+         height={900} class="optimization" />
         )
       }
     </div>
@@ -78,10 +81,12 @@ const props = Astro.props;
         <div class="bannerDiv">
           {
             props.herobanner2 && (
-              <img
-                class="  bannerImg"
+              <Image
+                class=" optimization  bannerImg"
                 src={props.herobanner2}
                 alt={props.herobanner2Alt}
+                width={341}
+                height={443}
               />
             )
           }
@@ -90,19 +95,23 @@ const props = Astro.props;
         <div class="brandsDiv">
           {
             props.brandLogo1 && (
-              <img
-                class="brands b1  "
+              <Image
+                class="brands b1  optimization"
                 src={props.brandLogo1}
                 alt={props.brandLogo1Alt}
+                width={400}
+                height={48}
               />
             )
           }
           {
             props.brandLogo2 && (
-              <img
-                class="brands b2  "
+              <Image
+                class="brands b2  optimization"
                 src={props.brandLogo2}
                 alt={props.brandLogo2Alt}
+                width={400}
+                height={48}
               />
             )
           }
@@ -116,10 +125,12 @@ const props = Astro.props;
       <div class="swiper-slide">
         {
           props.carousalImage1 && (
-            <img
+            <Image
               src={props.carousalImage1}
               alt={props.carousalImage1Alt}
-              class=" "
+              class="optimization "
+              width={900}
+          height={1200}
             />
           )
         }
@@ -127,10 +138,12 @@ const props = Astro.props;
       <div class="swiper-slide">
         {
           props.carousalImage2 && (
-            <img
+            <Image
               src={props.carousalImage2}
               alt={props.carousalImage2Alt}
-              class=" "
+              class=" optimization"
+              width={900}
+          height={1200}
             />
           )
         }
@@ -138,10 +151,12 @@ const props = Astro.props;
       <div class="swiper-slide">
         {
           props.carousalImage3 && (
-            <img
+            <Image
               src={props.carousalImage3}
               alt={props.carousalImage3Alt}
-              class=" "
+              class="optimization "
+              width={900}
+          height={1200}
             />
           )
         }
@@ -149,10 +164,12 @@ const props = Astro.props;
       <div class="swiper-slide">
         {
           props.carousalImage4 && (
-            <img
+            <Image
               src={props.carousalImage4}
               alt={props.carousalImage4Alt}
-              class=" "
+              class="optimization "
+              width={900}
+          height={1200}
             />
           )
         }
@@ -160,10 +177,12 @@ const props = Astro.props;
       <div class="swiper-slide">
         {
           props.carousalImage5 && (
-            <img
+            <Image
               src={props.carousalImage5}
               alt={props.carousalImage5Alt}
-              class=" "
+              class="optimization "
+              width={900}
+          height={1200}
             />
           )
         }
@@ -171,10 +190,12 @@ const props = Astro.props;
       <div class="swiper-slide">
         {
           props.carousalImage6 && (
-            <img
+            <Image
               src={props.carousalImage6}
               alt={props.carousalImage6Alt}
-              class=" "
+              class="optimization "
+              width={900}
+              height={1200}
             />
           )
         }
@@ -185,7 +206,7 @@ const props = Astro.props;
 </section>
 
 <style>
-  . {
+  .optimization {
     height: auto;
   }
   @media screen and (max-width: 767px) {

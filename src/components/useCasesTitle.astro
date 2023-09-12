@@ -3,6 +3,7 @@ import portfolio1 from "../images/portfolio1.jpg";
 import discussion from "../images/discussion.jpg";
 import unoGame from "../images/unoGame.jpg";
 import conferenceRoomDiscussion from "../images/conferenceRoomDiscussion.jpg";
+import { Image } from 'astro:assets';
 ---
 
 <section class="margins titleSection">
@@ -10,7 +11,7 @@ import conferenceRoomDiscussion from "../images/conferenceRoomDiscussion.jpg";
 
   <div style="position: relative;">
     <span class="title" style="margin-right: 4%;">use</span>
-    <img class="titleImg" src={portfolio1} alt="" />
+    <Image class="titleImg optimization" src={portfolio1} alt="" />
     <span class="title" style="margin-left: 22%;"> cases</span>
   </div>
 </section>
@@ -20,26 +21,29 @@ import conferenceRoomDiscussion from "../images/conferenceRoomDiscussion.jpg";
     <div class="mySwiper" style="padding:1.5% 0 5% 0 ; ">
       <div class="swiper-wrapper">
         <div class="swiper-slide imgWidth">
-          <img class="resizeImg" src={conferenceRoomDiscussion} alt="" />
+          <Image class="resizeImg optimization" src={conferenceRoomDiscussion} alt="" />
         </div>
 
         <div class="swiper-slide imgWidth">
-          <img class="resizeImg" src={unoGame} />
+          <Image class="resizeImg optimization" src={unoGame} alt="" />
         </div>
         <div class="swiper-slide imgWidth">
-          <img class="resizeImg" src={discussion} alt="" />
+          <Image class="resizeImg optimization" src={discussion} alt="" />
         </div>
       </div>
 
       <!-- <div class="d-flex controls">
-            <img class="swiper-prev" src={blogsLeft} alt="" />
-            <img class="swiper-next" src={blogsRight} alt="" />
+            <Image class="swiper-prev" src={blogsLeft} alt="" />
+            <Image class="swiper-next" src={blogsRight} alt="" />
           </div> -->
     </div>
   </div>
 </section>
 
 <style>
+  .optimization{
+    height: auto;
+  }
   .titleSection {
     margin: 6% 7% 4% 7%;
   }

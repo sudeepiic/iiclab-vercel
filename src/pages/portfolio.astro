@@ -5,6 +5,7 @@ import featuredWorksbtn from "../images/featuredWorksbtn.jpg";
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 //import { Image, Picture } from "@astrojs/image/components";
+import { Image } from 'astro:assets';
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
 });
@@ -15,28 +16,28 @@ const entries: any = await contentfulClient.getEntries<any>({
     <div class="wrapper" id="top">
       <div id="main4" class="moving-text" style="width: max-content;">
         <span class="zoomIn">Our Work</span>
-        <img src={portfolio1} class="movingImg" alt="" />
+        <Image src={portfolio1} class="movingImg optimization" alt="" />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
         <span>Our Work</span>
-        <img src={portfolio1} class="movingImg" alt="" />
+        <Image src={portfolio1} class="movingImg optimization" alt="" />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
         <span>Our Work</span>
-        <img src={portfolio1} class="movingImg" alt="" />
+        <Image src={portfolio1} class="movingImg optimization" alt="" />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
         <span>Our Work</span>
-        <img src={portfolio1} class="movingImg" alt="" />
+        <Image src={portfolio1} class="movingImg optimization" alt="" />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
         <span>Our Work</span>
-        <img src={portfolio1} class="movingImg" alt="" />
+        <Image src={portfolio1} class="movingImg optimization" alt="" />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
         <span>Our Work</span>
-        <img src={portfolio1} class="movingImg" alt="" />
+        <Image src={portfolio1} class="movingImg optimization" alt="" />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
         <span>Our Work</span>
-        <img src={portfolio1} class="movingImg" alt="" />
+        <Image src={portfolio1} class="movingImg optimization" alt="" />
         <span>our work</span>
         <span>Our Work</span>
-        <img src={portfolio1} class="movingImg" alt="" />
+        <Image src={portfolio1} class="movingImg optimization" alt="" />
         <span>our work</span>
       </div>
     </div>
@@ -53,10 +54,12 @@ const entries: any = await contentfulClient.getEntries<any>({
                   aria-label="case-study"
                 >
                   <div class="animate-swiper">
-                    <img
+                    <Image
                       src={caseStudy.fields?.heroBanner?.fields?.file.url}
                       alt=""
-                      class=" "
+                      class="optimization "
+                      width={1528}
+                      height={720}
                     />
                   </div>
                 </a>
@@ -78,7 +81,7 @@ const entries: any = await contentfulClient.getEntries<any>({
     </div>
     <!--  -->
 
-    <!--  <img   src={featuredWorksbtn} alt=""> -->
+    <!--  <Image   src={featuredWorksbtn} alt=""> -->
   </section>
 
   <section class="bttTrial">
@@ -93,12 +96,14 @@ const entries: any = await contentfulClient.getEntries<any>({
             <span class="name" set:html={caseStudy.fields.singleClient} />
           </div>
           <div class="imgDiv">
-            <img
+            <Image
               src={caseStudy.fields?.heroBanner?.fields?.file.url}
               style="width: 100%;"
               alt=""
-              class=" "
+              class="optimization "
               loading="lazy"
+              width={1527}
+            height={720}
             />
           </div>
           <div class="row info">
@@ -145,7 +150,7 @@ const entries: any = await contentfulClient.getEntries<any>({
       display: none !important;
     }
 
-    . {
+    .optimization {
       height: auto;
     }
     a {

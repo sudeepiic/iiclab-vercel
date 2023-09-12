@@ -7,6 +7,7 @@ import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import type { Document } from "@contentful/rich-text-types";
 //import { Image, Picture } from "@astrojs/image/components";
+import { Image } from 'astro:assets';
 
 const props = Astro.props;
 ---
@@ -15,7 +16,7 @@ const props = Astro.props;
   <div class="yellow-animate" style="background-color:#e5ff53;">
     <div class="margins row" style="overflow: hidden;">
       <div class="col-lg-4 col-md-4 col-sm-12 col4 fadein">
-        <img class="" src={blackDiamond} alt="" loading="lazy" />
+        <Image class="optimization" src={blackDiamond} alt="" loading="lazy" style="margin-right:1.2%" />
         <span set:html={props.yellowCompTitle} />
       </div>
 
@@ -29,7 +30,7 @@ const props = Astro.props;
 </section>
 
 <style>
-  . {
+  .optimization {
     height: auto;
   }
   .margins {
@@ -49,7 +50,7 @@ const props = Astro.props;
     display: inline-block;
   }
   .col4 img {
-    margin-bottom: 15%;
+    margin-bottom: 12.5%;
     width: 2vw;
   }
 

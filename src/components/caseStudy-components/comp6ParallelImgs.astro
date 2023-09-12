@@ -4,6 +4,7 @@ import parallelImg2 from "../../images/parallelImg2.png";
 import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import type { Document } from "@contentful/rich-text-types";
+import { Image } from 'astro:assets';
 //import { Image, Picture } from "@astrojs/image/components";
 
 const props = Astro.props;
@@ -13,18 +14,22 @@ const props = Astro.props;
   Object.keys(props).length && (
     <section style="padding-top: 4%; background-color: #1a1a1a;">
       <div class="margins imgs">
-        <img
-          class="img1  "
+        <Image
+          class="img1  optimization"
           src={props.parallelImg1}
           loading="lazy"
           alt={props.parallelImg1Alt}
+          width={540}
+          height={370}
         />
 
-        <img
-          class="img2  "
+        <Image
+          class="img2  optimization"
           src={props.parallelImg2}
           loading="lazy"
           alt={props.parallelImg2Alt}
+          width={540}
+          height={370}
         />
       </div>
     </section>
@@ -32,7 +37,7 @@ const props = Astro.props;
 }
 
 <style>
-  . {
+  .optimization {
     height: auto;
   }
   .margins {
