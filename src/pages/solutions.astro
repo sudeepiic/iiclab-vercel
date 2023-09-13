@@ -54,17 +54,20 @@ import { Image } from 'astro:assets';
                   <li>virtual Reality</li>
                   <li>Augmented Reality</li>
                   <li>Projection Mapping</li>
+                  <a href="/solutions/immersive-technology">
                   <Image
                     class="knowMoreBtn optimization"
                     src={knowMoreBtn}
                     alt=""
                     loading="lazy"
                   />
+                </a>
                 </ul>
               </div>
               <a
                 href="/solutions/immersive-technology"
                 aria-label="immersive technology"
+                class="desktopKnowMore"
               >
                 <Image class="optimization" src={yellowGo} alt="" loading="lazy" /></a
               >
@@ -100,17 +103,20 @@ import { Image } from 'astro:assets';
                   <li>Interactive Table/Interactive Book</li>
                   <li>Engagement Experts</li>
                   <li>Object Recognition Table</li>
+                  <a href="/solutions/interactive-solution">
                   <Image
                     class="knowMoreBtn optimization"
                     src={knowMoreBtn}
                     alt=""
                     loading="lazy"
                   />
+                </a>
                 </ul>
               </div>
               <a
                 href="/solutions/interactive-solution"
                 aria-label="interactive solution"
+                class="desktopKnowMore"
               >
                 <Image src={yellowGo} class="optimization" alt="" loading="lazy" /></a
               >
@@ -139,15 +145,17 @@ import { Image } from 'astro:assets';
                   <li>Web Development</li>
                   <li>App Development</li>
                   <li>Gaming Solutions</li>
+                  <a href="/solutions/mobile-and-web">
                   <Image
                     class="knowMoreBtn optimization"
                     src={knowMoreBtn}
                     alt=""
                     loading="lazy"
                   />
+                </a>
                 </ul>
               </div>
-              <a href="/solutions/mobile-and-web" aria-label="mobile and web">
+              <a href="/solutions/mobile-and-web" aria-label="mobile and web" class="desktopKnowMore">
                 <Image src={yellowGo} class=" optimization" alt="" loading="lazy" /></a
               >
             </div>
@@ -176,17 +184,20 @@ import { Image } from 'astro:assets';
                   <li>Motion Graphics</li>
                   <li>Architectural Visualization</li>
                   <li>Expainer Videos</li>
+                  <a href="/solutions/content-development">
                   <Image
                     class="knowMoreBtn optimization"
                     src={knowMoreBtn}
                     alt=""
                     loading="lazy"
                   />
+                </a>
                 </ul>
               </div>
               <a
                 href="/solutions/content-development"
                 aria-label="content development"
+                class="desktopKnowMore"
               >
                 <Image src={yellowGo} class=" optimization" alt="" loading="lazy" /></a
               >
@@ -217,17 +228,20 @@ import { Image } from 'astro:assets';
                   <li>Interactive Campaign</li>
                   <li>Photobooth</li>
                   <li>Kiosk/Vending Machine</li>
+                  <a href="/solutions/experiential-marketing">
                   <Image
                     class="knowMoreBtn optimization"
                     src={knowMoreBtn}
                     alt=""
                     loading="lazy"
                   />
+                </a>
                 </ul>
               </div>
               <a
                 href="/solutions/experiential-marketing"
                 aria-label="experiential marketing"
+                class="desktopKnowMore"
               >
                 <Image src={yellowGo} class=" optimization" alt="" loading="lazy" /></a
               >
@@ -258,13 +272,17 @@ import { Image } from 'astro:assets';
                   <li>Brand Identity</li>
                   <li>Competitor Mapping</li>
                   <li>Graphic Design & Prototype</li>
-                  <Image class="knowMoreBtn optimization" src={knowMoreBtn} loading="lazy" alt="" />
+                  <a href="solutions/strategy-and-design">
+
+                    <Image class="knowMoreBtn optimization" src={knowMoreBtn} loading="lazy" alt="" />
+                  </a>
                 </ul>
               </div>
 
               <a
                 href="solutions/strategy-and-design"
                 aria-label="strategy and design"
+                class="desktopKnowMore"
               >
                 <Image src={yellowGo} class=" optimization" alt=""/></a
               >
@@ -502,7 +520,7 @@ import { Image } from 'astro:assets';
       display: none;
       width: 130%;
     }
-    .overlapDiv a {
+    .overlapDiv .desktopKnowMore {
       display: none;
     }
     .overlapTitle {

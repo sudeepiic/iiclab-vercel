@@ -938,7 +938,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               style="color:#252525; text-align: end; "
               class="awardName hidden-onHover2"
             >
-              <Image style="width: 6.55vw;" src={vRetail} class="optimization" alt="" /></td
+              <Image  src={vRetail} class="optimization vretail-icon" alt="" /></td
             >
             <td
               ><a class="btn hidden-onHover" href="/products/v-retail"
@@ -962,7 +962,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               style="color:#252525; text-align: end;"
               class="awardName hidden-onHover2"
             >
-              <Image style="width: 5vw; " src={vVerse} class="optimization" alt="" /></td
+              <Image  src={vVerse} class="optimization vVerse-icon" alt="" /></td
             >
             <td
               ><a class="btn hidden-onHover" href="/products/v-verse"
@@ -986,7 +986,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               style="color:#252525; text-align: end;"
               class="awardName hidden-onHover2"
             >
-              <Image style="width: 8.5vw;" src={vTour} class="optimization" alt="" /></td
+              <Image  src={vTour} class="optimization vTour-icon" alt="" /></td
             >
             <td
               ><a class="btn hidden-onHover" href="/products/v-tour"
@@ -1011,7 +1011,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               style="color:#252525; text-align: end;"
               class="awardName hidden-onHover2"
             >
-              <Image style="width: 9vw;" src={vStages} alt="" class="optimization" /></td
+              <Image src={vStages} alt="" class="optimization vStages-icon" /></td
             >
             <td
               ><a class="btn hidden-onHover" href="/products/v-stages"
@@ -1036,10 +1036,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
               class="awardName hidden-onHover2"
             >
               <Image
-                style="width: 10vw; margin-bottom:2%;"
+                style=" margin-bottom:2%;"
                 src={vConference}
                 alt=""
-                class="optimization"
+                class="vConference-icon optimization"
               /></td
             >
             <td
@@ -1099,6 +1099,26 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       . {
         height: auto;
       }
+
+      /* products Icons */
+
+      .vretail-icon{
+        width: 6.55vw;
+      }
+      .vVerse-icon{
+        width:5vw;
+      }
+      .vTour-icon{
+        width: 8.5vw;
+      }
+      .vStages-icon{
+        width: 9vw;
+      }
+      .vConference-icon{
+        width:10vw;
+      }
+
+      /*  */
 
       #animation svg g g:nth-child(1) {
         fill: black !important;
@@ -1797,6 +1817,34 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       }
 
       @media screen and (max-width: 767px) {
+        /* .mobile-viewAll{
+          opacity:0;
+        } */
+
+        /* productsIcons */
+      .vretail-icon{
+        width: 10.55vw;
+      }
+      .vVerse-icon{
+        width:9vw;
+      }
+      .vTour-icon{
+        width: 12.5vw;
+      }
+      .vStages-icon{
+        width: 14vw;
+      }
+      .vConference-icon{
+        width:15vw;
+      }
+
+      /*  */
+      table td {
+        
+        font-size: calc(14px + 0.390625vw);
+      
+        /* border: 1px solid black; */
+      }
         .workImg-section {
           overflow-x: scroll;
         }
@@ -1996,10 +2044,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           display: none;
         }
         .animate-featureWork2 {
-          margin-top: 4%;
+          margin-top: 22%;
         }
         .animate-featureWork2:before {
-          top: 50% !important;
+          top: 10% !important;
         }
         .work {
           line-height: 0.8;
@@ -3151,7 +3199,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           });
 
         gsap.to(".mobile-viewAll", 1, {
-          x: "-100%",
+          x: "-70%",
+        
           ease: "ease1.out",
 
           scrollTrigger: {

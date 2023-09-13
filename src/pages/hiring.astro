@@ -49,7 +49,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
   <section class="blackSec">
     <div class="row">
       <div class="col-lg-4 col-md-4 col-sm-12 blackTitle">
-        <span class="blackTitle-animate">Benefits of being an &nbsp;</span>
+        <span class="blackTitle-animate blockInMob">Benefits of being an &nbsp;</span>
 
         <span class="blackTitle-animate" style="color:#e5ff53">IIC</span>
         <span class="blackTitle-animate" style="color:#f5ffbb; margin-left: 2%;" >IAN</span>
@@ -260,6 +260,9 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
       background-color: #f6f7f0;
     }
     @media screen and (max-width: 767px) {
+      .blockInMob{
+        display: block !important; 
+      }
       .blackTitle-animate {
         transform: translate3d(0, 0, 0) !important;
       }
@@ -275,7 +278,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
         font-size: 2.3vw;
       }
       .titleText {
-        font-size: 2.2vw !important;
+        font-size: 3vw !important;
         /* display: block !important; */
         margin-top: 2%;
       }
@@ -296,6 +299,9 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
       .benefitsText {
         font-size: 3vw !important;
         width: 80% !important;
+      }
+      .benefitsImg{
+        display:block !important;
       }
       .positionsTitle {
         font-size: 18vw !important;
@@ -709,6 +715,9 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
 
     let tl = gsap.timeline();
 
+    let mm = gsap.matchMedia();
+
+ mm.add("(min-width: 768px)", () => {
     tl.from(".title", {
       duration: 1,
       x: "-100%",
@@ -718,11 +727,13 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
       .from(".blackTitle-animate", 1, {
         x: "-200%",
         opacity: 0,
+       
         scrollTrigger: {
           trigger: ".blackTitle-animate",
           start: "top 60%",
           end: "bottom 60%",
           scrub: true,
+          markers: true,
         },
       })
       .from(".benefitsText", {
@@ -744,7 +755,48 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
           scrub: true,
         },
       });
+    })
 
+
+    mm.add("(max-width: 767px)", () => {
+    tl.from(".title", {
+      duration: 1,
+      x: "-100%",
+      opacity: 0.5,
+      ease: "power1.out",
+    })
+      .from(".blackTitle-animate", 1, {
+        x: "-200%",
+        opacity: 0,
+       
+        scrollTrigger: {
+          trigger: ".blackTitle-animate",
+          start: "top 54%",
+          end: "bottom 54%",
+          scrub: true,
+          markers: true,
+        },
+      })
+      .from(".benefitsText", {
+        x: "-50%",
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".benefitsText",
+          start: "top 55%",
+          end: "bottom 47%",
+          scrub: true,
+        },
+      })
+      .from(".benefitsImg", {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".benefitsImg",
+          start: "top 55%",
+          end: "bottom 47%",
+          scrub: true,
+        },
+      });
+    })
     // color change on location button click
     // Filter for location buttons
     const myButton = document.querySelectorAll(".exploreBtn");

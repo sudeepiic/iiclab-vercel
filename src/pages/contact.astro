@@ -8,7 +8,7 @@ import { Image } from 'astro:assets';
 //import { Image, Picture } from "@astrojs/image/components";
 ---
 
-<Layout title="contact-us" seoTitle="contact-us">
+<Layout title="Contact Us" seoTitle="contact-us">
   <section class="topSec">
     <div class="row topSecDiv">
       <div class="col-lg-5 col-md-5 col-sm-12 imgText">
@@ -104,7 +104,7 @@ import { Image } from 'astro:assets';
         >
           <a
             href="mailto:mumbai@inkincaps.com"
-            aria-label="mail"
+            aria-label="mail"  style="padding-left: 0 !important;"
             target="_blank"><span>mumbai@inkincaps.com</span></a
           >
         </div>
@@ -131,6 +131,7 @@ import { Image } from 'astro:assets';
           <a
             href="https://in.linkedin.com/company/ink-in-caps"
             target="_blank"
+            style="padding-left: 0 !important;"
             aria-label="linkedin"><span>LinkedIn</span></a
           >
         </div>
@@ -317,6 +318,9 @@ import { Image } from 'astro:assets';
     }
   }
   @media screen and (max-width: 767px) {
+    .title2{
+      margin-left: 2% !important;
+    }
     .imgDiv {
       padding-left: 0 !important;
     }
@@ -359,7 +363,8 @@ import { Image } from 'astro:assets';
       line-height: 2 !important;
     }
     .innerDivs {
-      padding-left: 0 !important;
+      padding-left: 0.75% !important;
+      padding-right: 0.75% !important;
     }
     .table {
       padding-bottom: 2% !important;
@@ -812,7 +817,7 @@ import { Image } from 'astro:assets';
 
         scrollTrigger: {
           trigger: ".hand-animate",
-          start: "top 25%",
+          start: "top 55%",
           end: "bottom 90%",
 
           scrub: true,
@@ -826,7 +831,7 @@ import { Image } from 'astro:assets';
         repeat: 10,
         scrollTrigger: {
           trigger: ".hand-animate",
-          start: "top 40%",
+          start: "top 50%",
           end: "bottom 50%",
 
           scrub: true,
