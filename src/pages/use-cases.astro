@@ -2,16 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 
 import swiper2Img from "../images/useCase-swiperImg.jpg";
-import blogsLeft from "../images/blogsLeft.png";
-import blogsRight from "../images/blogsRight.png";
+
 import UseCasesTitle from "../components/useCasesTitle.astro";
 import redirectToWork from "../images/redirectToWork2.png";
 import { Image } from 'astro:assets';
 
+
 const props = Astro.props;
 ---
 
+
 <Layout title="Use Cases" seoTitle="use cases">
+
   <UseCasesTitle />
 
   <section id="redirect" class="blackSection">
@@ -20,15 +22,16 @@ const props = Astro.props;
 
     <div class="d-flex" style="margin-top: 3%;">
 
-      <a href="./automobile#redirect" class="tabs" id="automobile"> automobile</a>
-      <a href="./real-estate#redirect" class="tabs" id="real-estate"> real estate</a>
-      <a href="./sports-and-media#redirect" class="tabs" id="sports-and-media"> sports & media</a>
-      <a href="./retail#redirect" class="tabs" id="retail"> retail</a>
+      <a href="./automobile#redirect" class="tabs" id="automobile" > automobile</a>
+      <a href="./real-estate#redirect" class="tabs" id="real-estate" > real estate</a>
+      <a href="./sports-and-media#redirect" class="tabs" id="sports-and-media"  > sports & media</a>
+      <a href="./retail#redirect" class="tabs" id="retail"  > retail</a>
       <a
         href="./government#redirect"
         class="tabs"
         id="government"
         style=" border-right: 1px solid #8a8a8a !important"
+        
       >
         government</a
       >
@@ -245,6 +248,7 @@ const props = Astro.props;
   }
 </section>
 </Layout>
+
 
 <style>
 

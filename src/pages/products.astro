@@ -9,13 +9,16 @@ import products2 from "../images/products2.png";
 import icon1 from "../images/icon1.png";
 import icon2 from "../images/icon2.png";
 import { contentfulClient } from "../lib/contentful";
+import {ViewTransitions} from 'astro:transitions';
 //import { Image, Picture } from "@astrojs/image/components";
 
 const props = Astro.props;
 ---
 
+
 {
   Object.keys(props).length && (
+    <ViewTransitions />
     <Layout title="Products" seoTitle="products">
       <section style="padding-top: 8%; position:relative; ">
         <span class="waterMark" set:html={props.waterMark} />
@@ -26,36 +29,21 @@ const props = Astro.props;
             </div>
            
           </div>
-          <a href={"./" + props.previousSlug}>
-            <Image
-              class=" optimization swiper-button-prev"
-              src={awardsPrev}
-              loading="lazy"
-              alt=""
-            />
-          </a>
-          <a href={"./" + props.nextSlug}>
-            <Image
-              class="optimization  swiper-button-next"
-              src={awardsNext}
-              loading="lazy"
-              alt=""
-            />
-          </a>
+         
         </div>
       </section>
       <div class="d-flex">
-        <a href="./v-retail" id="v-retail" class="tabs" style="border-left: 0 !important;" aria-label="v-retail">
+        <a href="./v-retail" id="v-retail" class="tabs" style="border-left: 0 !important;" aria-label="v-retail" >
           v-retail
         </a>
-        <a href="./v-verse"id="v-verse" class="tabs" aria-label="v-verse">
+        <a href="./v-verse"id="v-verse" class="tabs" aria-label="v-verse"  >
           v-verse
         </a>
 
-        <a href="./v-tour" id="v-tour" class="tabs" aria-label="v-tour">
+        <a href="./v-tour" id="v-tour" class="tabs" aria-label="v-tour" >
           V-Tour
         </a>
-        <a href="./v-conference" id="v-conference" class="tabs" aria-label="v-conference">
+        <a href="./v-conference" id="v-conference" class="tabs" aria-label="v-conference" >
           v-conference
         </a>
         <a href="./v-stages" id="v-stages" class="tabs" aria-label="v-stages">
