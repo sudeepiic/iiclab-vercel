@@ -1,9 +1,9 @@
 ---
-import { isHTMLBytes } from "astro/dist/runtime/server/escape";
+
 import CaseStudy1 from "../case-study1.astro";
 import { contentfulClient } from "../../lib/contentful";
 import type { CaseStudy } from "../../lib/contentful";
-import { log } from "astro/dist/core/logger/core";
+
 import Title1 from "../../components/caseStudy-components/Title1.astro";
 import Comp2 from "../../components/caseStudy-components/comp2.astro";
 import Comp3 from "../../components/caseStudy-components/comp3.astro";
@@ -52,6 +52,8 @@ console.log(
     herobanner={data?.heroBanner?.fields?.file.url}
     herobannerAlt={data?.heroBanner?.fields?.description}
     whichTechnology={data?.whichTechnology}
+    whichTechnology2={data?.whichTechnology2}
+
     herobanner2={data?.heroBanner2?.fields?.file.url}
     herobanner2Alt={data?.heroBanner2?.fields?.description}
     heroContent={documentToHtmlString(data.heroContent)}
