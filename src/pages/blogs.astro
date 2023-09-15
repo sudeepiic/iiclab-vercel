@@ -45,7 +45,7 @@ const entries: any = await contentfulClient.getEntries<any>({
 
       <div class="col-lg-6 col-md-6 col-sm-12 topText">
         <span
-          >Newly minted Articles that you can read if you are not abducted by
+          >Newly minted articles that you can read if you are not abducted by
           the Aliens</span
         >
       </div>
@@ -92,7 +92,7 @@ const entries: any = await contentfulClient.getEntries<any>({
                         aria-label="read more"
                       >
                         <div>
-                          <span> Read more</span>
+                          <span> Read&nbsp; more</span>
                           <Image class=" optimization readMoreArrow" src={readMore} alt="" />
                         </div>
                       </a>
@@ -112,7 +112,7 @@ const entries: any = await contentfulClient.getEntries<any>({
     </div>
 
     <div class="editors margins">
-      <span>editor's pick</span>
+      <span>editor's&nbsp; pick</span>
     </div>
 
     <div style="margin-top: 1%; overflow:hidden" class="margins row">
@@ -329,6 +329,10 @@ const entries: any = await contentfulClient.getEntries<any>({
     text-transform: uppercase;
     font-size: 2.5vw;
     display: block;
+    min-height: 12ch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .card-footer {

@@ -18,8 +18,8 @@ import { Image } from 'astro:assets';
 //import { Image, Picture } from "@astrojs/image/components";
 ---
 
-<header class="turnBlack">
-  <div class="d margins">
+<header class="turnBlack " >
+  <div class="d margins ">
     <nav class="main d-inline-flex">
       <div class="logo">
         <a href="/" area-label="home">
@@ -377,6 +377,22 @@ import { Image } from 'astro:assets';
     height: auto;
   }
 
+  /* header visible on scroll back css */
+
+  .sticky-header {
+  position: sticky;
+  top: 0; /* Initially hide the header above the viewport */
+  width: 100%;
+  transition: top 0.3s ease; /* Add a smooth transition effect */
+  z-index: 1000; /* Adjust the z-index to ensure it overlays other content */
+}
+.sticky-header.hidden {
+  top: -100px; /* Show the header when scrolled up */
+}
+
+
+  /*  */
+
   /* animation css */
   .header-img {
     position: relative;
@@ -484,6 +500,7 @@ import { Image } from 'astro:assets';
     bottom: 3%;
     left: 15%;
     width: 73%;
+  
   }
   .icons {
     width: 2.5vw;

@@ -130,6 +130,7 @@ const props = Astro.props;
       <div class="swiper-slide">
         {
           props.carousalImage1 && (
+            <div class="carousalImgBorder">
             <Image
               src={props.carousalImage1}
                alt={"" + props.carousalImage1Alt}
@@ -137,12 +138,14 @@ const props = Astro.props;
               width={900}
           height={1200}
             />
+          </div>
           )
         }
       </div>
       <div class="swiper-slide">
         {
           props.carousalImage2 && (
+            <div class="carousalImgBorder">
             <Image
               src={props.carousalImage2}
                alt={"" + props.carousalImage2Alt}
@@ -150,12 +153,14 @@ const props = Astro.props;
               width={900}
           height={1200}
             />
+          </div>
           )
         }
       </div>
       <div class="swiper-slide">
         {
           props.carousalImage3 && (
+            <div class="carousalImgBorder">
             <Image
               src={props.carousalImage3}
                alt={"" + props.carousalImage3Alt}
@@ -163,12 +168,14 @@ const props = Astro.props;
               width={900}
           height={1200}
             />
+          </div>
           )
         }
       </div>
       <div class="swiper-slide">
         {
           props.carousalImage4 && (
+            <div class="carousalImgBorder">
             <Image
               src={props.carousalImage4}
                alt={"" + props.carousalImage4Alt}
@@ -176,12 +183,14 @@ const props = Astro.props;
               width={900}
           height={1200}
             />
+          </div>
           )
         }
       </div>
       <div class="swiper-slide">
         {
           props.carousalImage5 && (
+            <div class="carousalImgBorder">
             <Image
               src={props.carousalImage5}
                alt={"" + props.carousalImage5Alt}
@@ -189,12 +198,14 @@ const props = Astro.props;
               width={900}
           height={1200}
             />
+          </div>
           )
         }
       </div>
       <div class="swiper-slide">
         {
           props.carousalImage6 && (
+            <div class="carousalImgBorder">
             <Image
               src={props.carousalImage6}
                alt={"" + props.carousalImage6Alt}
@@ -202,6 +213,7 @@ const props = Astro.props;
               width={900}
               height={1200}
             />
+          </div>
           )
         }
       </div>
@@ -213,6 +225,12 @@ const props = Astro.props;
 <style>
   .optimization {
     height: auto;
+  }
+  .carousalImgBorder{
+    padding: 2.5%;
+    border: 1.5px solid #ffffffc3;
+    background: #373535;
+    border-radius: 2%;
   }
   @media screen and (max-width: 767px) {
     .smDiv {
@@ -510,7 +528,7 @@ const props = Astro.props;
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    /* background: #fff; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -520,7 +538,9 @@ const props = Astro.props;
     display: block;
     width: 100%;
     height: 100%;
+    aspect-ratio: 4/5;
     object-fit: cover;
+    border-radius: 0.8%;
   }
   .img {
     position: relative;
