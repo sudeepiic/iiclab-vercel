@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import blogsLeft from "../images/blogsLeft.png";
 import blogsRight from "../images/blogsRight.png";
-import hiringHeroImg from "../images/hiringHeroImg.jpg";
 import values from "../images/values.jpg";
 import VR from "../images/VR.jpg";
 import carousalNext from "../images/carousalNext.png";
@@ -19,7 +18,7 @@ import { Image } from 'astro:assets';
 //import { Image, Picture } from "@astrojs/image/components";
 ---
 
-<Layout title="life-at-iic" seoTitle="life-at-iic">
+<Layout title="life at iic" seoTitle="life-at-iic">
   <section style="padding-top: 3.5%; background-color: #1a1a1a;">
     <div class="margins">
       <div class="row">
@@ -365,7 +364,7 @@ import { Image } from 'astro:assets';
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import Eases from "gsap";
+
   gsap.registerPlugin(ScrollTrigger);
 
   let tl = gsap.timeline();

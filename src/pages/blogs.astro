@@ -3,10 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import blogButton from "../images/blogButton.png";
 import rotatingBlog from "../images/rotatingBlog.png";
 import arrow from "../images/arrow.png";
-import editorImg1 from "../images/editorImg1.png";
-import editorImg2 from "../images/editorImg2.png";
-import exploreimg1 from "../images/exploreimg1.png";
-import blogsCarousel1 from "../images/blogsCarousel1.png";
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import type { Document } from "@contentful/rich-text-types";
@@ -28,7 +24,7 @@ const entries: any = await contentfulClient.getEntries<any>({
 
 <Layout title="Ink In Caps - Blog Gallery" seoTitle="blog-gallery">
   <section
-    style="background-color: #1a1a1a; border-radius: 0 0 6vw 6vw; padding-bottom: 4%; padding-top: 9vh;"
+    style="background-color: #1a1a1a; border-radius: 0 0 6vw 6vw; padding-bottom: 4%; padding-top: 10vh;"
   >
     <div class="row margins mobView">
       <div class="col-lg-6 col-md-6 col-sm-12 heading">
@@ -791,9 +787,11 @@ const entries: any = await contentfulClient.getEntries<any>({
 
 <style is:global>
   .turnBlack {
-    background: transparent;
-    position: absolute;
+    background: #1a1a1a !important;
+    position: fixed !important;
     width: 100%;
+
+
   }
 
   .list ul li a {

@@ -1,10 +1,5 @@
 ---
-import paraDiamond from "../../images/paraDiamond.png";
 
-import { contentfulClient } from "../../lib/contentful";
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import type { Document } from "@contentful/rich-text-types";
-//import { Image, Picture } from "@astrojs/image/components";
 import { Image } from 'astro:assets';
 
 const props = Astro.props;
@@ -145,7 +140,7 @@ const props = Astro.props;
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import Eases from "gsap";
+  
   gsap.registerPlugin(ScrollTrigger);
 
   let tl = gsap.timeline();
@@ -155,6 +150,7 @@ const props = Astro.props;
       start: "top 30%",
       end: "bottom 10%",
       toggleClass: "animation-title",
+   
       scrub: true,
     },
   })
@@ -165,6 +161,7 @@ const props = Astro.props;
         end: "bottom 10%",
         toggleClass: "animation-text",
         scrub: true,
+     
       },
     })
     .from(".animate-img", {

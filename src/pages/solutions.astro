@@ -642,10 +642,16 @@ import { Image } from 'astro:assets';
 </style>
 
 <style is:global>
+
+
+.sticky-header{
+  position: fixed !important;
+}
   .turnBlack {
-    background: transparent;
+    background: transparent !important;
     position: absolute;
     width: 100%;
+    margin-bottom: 1%;
   }
 
   .list ul li a {

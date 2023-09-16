@@ -2,9 +2,9 @@
 import modalCross from "../images/modalCross.png";
 import instaLogo from "../images/instaLogo.png";
 import linkedinlogo from "../images/linkedinLogo.png";
-import twitterLogo from "../images/twitterLogo.png";
+import twitterX from "../images/twitterX.png";
 import fbLogo from "../images/fbLogo.png";
-import whatsappLogo from "../images/whatsappLogo.png";
+import threads from "../images/threads.png";
 import home from "../images/headerHome.jpg";
 import about from "../images/headerAbout.jpg";
 import solutions from "../images/headerSolutions.jpg";
@@ -18,7 +18,7 @@ import { Image } from 'astro:assets';
 //import { Image, Picture } from "@astrojs/image/components";
 ---
 
-<header class="turnBlack " >
+<header class="turnBlack sticky-header" >
   <div class="d margins ">
     <nav class="main d-inline-flex">
       <div class="logo">
@@ -347,7 +347,7 @@ import { Image } from 'astro:assets';
               aria-label="twitter"
               target="_blank"
             >
-              <Image class="icons optimization" src={twitterLogo} alt="" loading="lazy" /></a
+              <Image class="icons optimization" src={twitterX} alt="" loading="lazy" /></a
             >
             <a
               class="iconbtn"
@@ -359,11 +359,11 @@ import { Image } from 'astro:assets';
             >
             <a
               class="iconbtn"
-              href="https://in.linkedin.com/company/ink-in-caps"
+              href="https://www.threads.net/@inkincaps"
               aria-label="whatsapp"
               target="_blank"
             >
-              <Image class="icons optimization" src={whatsappLogo} alt="" loading="lazy" /></a
+              <Image class="icons optimization" src={threads} alt="" loading="lazy" /></a
             >
           </div>
         </div>
@@ -381,13 +381,14 @@ import { Image } from 'astro:assets';
 
   .sticky-header {
   position: sticky;
-  top: 0; /* Initially hide the header above the viewport */
+  top: -1px; /* Initially hide the header above the viewport */
   width: 100%;
   transition: top 0.3s ease; /* Add a smooth transition effect */
   z-index: 1000; /* Adjust the z-index to ensure it overlays other content */
+  background: #f6f7f0;
 }
 .sticky-header.hidden {
-  top: -100px; /* Show the header when scrolled up */
+  top: -120px; /* Show the header when scrolled up */
 }
 
 
@@ -504,6 +505,7 @@ import { Image } from 'astro:assets';
   }
   .icons {
     width: 2.5vw;
+    margin-right: 2.2%;
   }
   @media screen and (max-width: 1080px) {
     .icons {
@@ -538,6 +540,7 @@ import { Image } from 'astro:assets';
     height: 60px;
     width: 100%;
     margin-top: 2.4%;
+    margin-bottom: 1%;
     /* border:1px solid black; */
   }
   .main .logo {
@@ -585,6 +588,7 @@ import { Image } from 'astro:assets';
     position: relative;
     /* border: 1px solid black; */
     margin-left: auto;
+    padding-top: 0 !important;
   }
 
   .menu {

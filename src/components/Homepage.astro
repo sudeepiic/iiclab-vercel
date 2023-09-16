@@ -1,15 +1,11 @@
 ---
-
-
 import arrow from "../images/arrow.png";
 import BannerImg from "../images/bannerImg2.jpg";
 import hand2 from "../images/hand-2.png";
 import ovalArrow from "../images/ovalArrow.png";
 import vector from "../images/Vector.png";
-
 import diamond from "../images/diamond.png";
 import awardsNew from "../images/awardsNew.jpg";
-
 import viewAllAwards from "../images/viewAllAwards.png";
 import vVerse from "../images/vVerse.png";
 import vTour from "../images/vTour.png";
@@ -58,10 +54,15 @@ console.log(splitArrays);
 const testimonials: any = await contentfulClient.getEntries<any>({
   content_type: "clientsTestimonials",
 });
+const showreel: any = await contentfulClient.getEntries<any>({
+  content_type: "showreel",
+});
+const showreelVideo = showreel.items[0].fields.video.fields.file.url
+
 ---
 
-<section class="margins animate-topSection">
-  <div class="topDiv" style="padding-top: 9%;">
+<section class="margins animate-topSection" style="overflow-x: hidden;">
+  <div class="topDiv" style="padding-top: 8%;">
     <div id="main" class="d-flex">
       <div class="head1 animateHeading">
         <span class="head1Span">Humanizing Tech</span>
@@ -97,6 +98,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         data-bs-toggle="modal"
         data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
         class="pause"
+        id="playButton"
         aria-label="showreel"
       >
         <lottie-player
@@ -111,7 +113,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         href="#myModal"
         data-bs-target="#myModal"
         data-bs-toggle="modal"
-        data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
+       id="playButtonText"
         class="watch-showreel"
         aria-label="showreel"
       >
@@ -133,7 +135,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
   <Image src={BannerImg} alt="" style="height:100%;width:100%; " class="optimization" />
 </section>
 
-<section>
+<section style="overflow-x: hidden;">
   <div class="container">
     <div
       id="main4"
@@ -1073,21 +1075,27 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             data-bs-dismiss="modal"
             aria-hidden="true"
             aria-label="close"
-            ><Image class="crossImg optimization" src={close} class="" alt="" /></button
+            id="videoClose" 
+            ><Image class="crossImg optimization" src={close}  alt="" /></button
           >
           <h4 class="modal-title">Showreel</h4>
         </div>
         <div class="modal-body">
-          <iframe
+          <!-- <iframe
             width="560"
             height="315"
             id="videoFrame"
             
             src="https://www.youtube.com/embed/wd0eBI7eXrI"
+            data-autoplay-src="//www.youtube.com/embed/wd0eBI7eXrI?autoplay=1"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share "
-            allowfullscreen></iframe>
+            allowfullscreen></iframe> -->
+            <video id="myVideo" controls>
+              <source src={showreelVideo} type="video/mp4">
+              <!-- Add additional source elements for other video formats if needed -->
+          </video>
         </div>
       </div>
     </div>
@@ -1099,6 +1107,10 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       }
       . {
         height: auto;
+      }
+      #myVideo{
+        width:100%;
+        height:100%;
       }
 
       /* products Icons */
@@ -1266,9 +1278,9 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         margin-left: 7%;
         margin-right: 7%;
       }
-      body {
+      /* body {
         overflow-x: hidden;
-      }
+      } */
       svg {
         margin-top: 6vw;
         width: 16vw;
@@ -2673,6 +2685,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
       }
     </style>
 
+    
+
     <script>
       document.querySelector(".head1").classList.add("head1Span-animate");
       document.querySelector(".head2").classList.add("head1Span-animate");
@@ -2703,6 +2717,56 @@ const testimonials: any = await contentfulClient.getEntries<any>({
         });
       });
 
+      // autoplayvideo
+
+      document.addEventListener("DOMContentLoaded", function () {
+    const video = document.getElementById("myVideo");
+    const playButton = document.getElementById("playButton");
+    const playButtonText = document.getElementById("playButtonText");
+
+    const videoClose = document.getElementById("videoClose");
+    
+    playButton.addEventListener("click", function () {
+        // Check if the video is paused or ended
+        if (video.paused || video.ended) {
+
+          setTimeout(() => {
+            video.play();
+          }, 700);
+        
+            
+           
+        } else {
+            
+            video.pause();
+            playButton.textContent = "Play Video";
+        }
+    });
+    playButtonText.addEventListener("click", function () {
+        // Check if the video is paused or ended
+        if (video.paused || video.ended) {
+          setTimeout(() => {
+            video.play();
+          }, 700);
+        
+           
+        } else {
+            
+            video.pause();
+            playButton.textContent = "Play Video";
+        }
+    });
+    videoClose.addEventListener("click", function () {
+       
+        video.pause();
+
+    });
+
+
+
+      })
+
+      // 
       let sections = gsap.utils.toArray(".panel");
 
       let mm = gsap.matchMedia();
@@ -2879,7 +2943,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
           .from(".testimAnime-section", 1, {
             scrollTrigger: {
               trigger: ".testim-anime",
-              start: "top 50%",
+              start: "top 60%",
               end: "bottom top",
               toggleClass: "animation-featureWork",
               scrub: true,
@@ -2889,8 +2953,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             opacity: 0,
             scrollTrigger: {
               trigger: ".testimText-animate",
-              start: "top 40%",
-              end: "bottom 30%",
+              start: "top 50%",
+              end: "bottom 40%",
               opacity: 0,
               scrub: true,
             },
@@ -2899,8 +2963,8 @@ const testimonials: any = await contentfulClient.getEntries<any>({
             opacity: 0,
             scrollTrigger: {
               trigger: ".animate-swiper",
-              start: "top 55%",
-              end: "bottom 90%",
+              start: "top 60%",
+              end: "bottom 100%",
               scrub: true,
             },
           })
