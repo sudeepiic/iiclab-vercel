@@ -27,6 +27,7 @@ const { useCasesData } = Astro.props;
   title={useCasesData.fields.useCase}
   slug={useCasesData.fields.slug}
   tagline={useCasesData.fields.tagline}
+  image = {useCasesData?.fields?.image?.fields?.file.url}
   pointer1={useCasesData.fields.pointer1}
   pointer2={useCasesData.fields.pointer2}
   pointer3={useCasesData.fields.pointer3}

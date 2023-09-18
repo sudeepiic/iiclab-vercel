@@ -2,6 +2,11 @@
 import portfolio1 from "../images/portfolio1.jpg";
 import discussion from "../images/discussion.jpg";
 import unoGame from "../images/unoGame.jpg";
+import automobile from "../images/automobile.jpg"
+import retail from "../images/retail.jpg"
+import sports from "../images/sports.jpg"
+import realEstate from "../images/realEstate.jpg"
+import government from "../images/government.jpg"
 import conferenceRoomDiscussion from "../images/conferenceRoomDiscussion.jpg";
 import { Image } from 'astro:assets';
 ---
@@ -21,14 +26,20 @@ import { Image } from 'astro:assets';
     <div class="mySwiper" style="padding:1.5% 0 5% 0 ; ">
       <div class="swiper-wrapper">
         <div class="swiper-slide imgWidth">
-          <Image class="resizeImg optimization" src={conferenceRoomDiscussion} alt="" />
+          <Image class="resizeImg optimization" src={automobile} alt="" />
         </div>
 
         <div class="swiper-slide imgWidth">
-          <Image class="resizeImg optimization" src={unoGame} alt="" />
+          <Image class="resizeImg optimization" src={realEstate} alt="" />
         </div>
         <div class="swiper-slide imgWidth">
-          <Image class="resizeImg optimization" src={discussion} alt="" />
+          <Image class="resizeImg optimization" src={sports} alt="" />
+        </div>
+        <div class="swiper-slide imgWidth">
+          <Image class="resizeImg optimization" src={retail} alt="" />
+        </div>
+        <div class="swiper-slide imgWidth">
+          <Image class="resizeImg optimization" src={government} alt="" />
         </div>
       </div>
 
@@ -101,15 +112,15 @@ import { Image } from 'astro:assets';
   } from "swiper";
   let x = 3;
   var swiper = new Swiper(".mySwiper", {
-    modules: [Navigation, EffectCreative],
+    modules: [Navigation, EffectCreative, Autoplay],
     //   effect: "creative",
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1.2,
-
+    
     spaceBetween: 10,
     loop: true,
-
+    speed: 1700,
     breakpoints: {
       767: {
         slidesPerView: 1.2,

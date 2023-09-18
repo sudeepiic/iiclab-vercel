@@ -288,7 +288,7 @@ import { Image } from 'astro:assets';
   document.getElementById("copyright").innerHTML =
     "&copy Copyright " + new Date().getFullYear();
   import { gsap } from "gsap";
-  import Eases from "gsap";
+  
 
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
@@ -378,6 +378,12 @@ import { Image } from 'astro:assets';
     });
 
   let tl = gsap.timeline();
+  (window as any).ScrollTrigger = ScrollTrigger
+  setTimeout(() => {
+    
+    ScrollTrigger.refresh();
+
+  }, 2000);
 
   tl.from(".footerFont", {
     duration: 1,

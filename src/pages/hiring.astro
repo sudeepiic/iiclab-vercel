@@ -88,11 +88,12 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
 
     <div class="row" style="margin-bottom: 3%;">
       <div class="col-lg-4 col-md-4 col-sm-12">
-        <span class="inputTitle">Search for a title...</span>
+        <span class="inputTitle">Search for a title</span>
         <input
+        id="search"
           class="inputCss"
           type="text"
-          placeholder="Search for a job title..."
+          placeholder="Press enter to search"
         />
       </div>
       <div class="col-4 onlyDesk">
@@ -174,7 +175,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
               "flip-card " +
               jobProfiles.fields.location +
               " col-4 profile-card " +
-              jobProfiles.fields.category.replaceAll(" ", "-")
+              jobProfiles.fields.category.replaceAll(" ", "-") + " " + jobProfiles.fields.jobProfile.toLowerCase()
             }
           >
             <div class="flip-card-inner">
@@ -210,11 +211,8 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
                   <span>{jobProfiles.fields.jobType}</span>
                 </div>
                 <div class="bottomDivBack row">
-                  <div class="col-6 blackBottom">
-                    <Image class=" optimization" src={ps} alt="" />
-                  </div>
-
-                  <div class="col-5 btn">
+                 
+                  <div class="col-12 btn">
                     <a
                       href={"/hiring-application/" + jobProfiles.fields.params}
                       aria-label="apply now"
@@ -356,8 +354,10 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
       .clock {
         width: 6% !important;
       }
-      .bottomDivBack .col-5 {
+      .bottomDivBack .col-12 {
         font-size: 6vw !important;
+        width:90% !important;
+        margin:auto !important;
       }
       .backContent,
       .location {
@@ -605,6 +605,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
       font-weight: 500;
       font-size: 1.6vw;
       margin-bottom: 7%;
+      min-height: 4ch;
     }
     .flip-card-back span {
       font-family: "anek devanagari";
@@ -612,7 +613,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
       line-height: 1.5;
       font-size: 1vw;
       letter-spacing: 1px;
-      min-height: 5.5vw;
+      min-height: 7vw;
     }
     @media screen and (min-width: 1400px) {
       .flip-card-back span {
@@ -631,21 +632,21 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
       margin-bottom: 10%;
     }
     .location {
-      margin-bottom: 10%;
+      margin-bottom: 7.5%;
     }
 
     .bottomDivBack {
       /* text-align: center; */
       align-self: baseline;
 
-      margin-bottom: 2%;
+      margin-bottom: 4%;
 
       border-radius: 0 0 0.5vw 0.5vw;
     }
-    .col-5 {
+    .col-12 {
       background-color: #e5ff53;
-      padding: 5%;
-      padding-bottom: 0% !important;
+      padding: 3%;
+      
       text-align: center;
       font-family: "Deutschlander";
       font-size: 2.3vw;
@@ -882,5 +883,25 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
         }
       });
     });
+
+    // search functionality code
+
+    const InputValue = document.getElementById("search");
+    InputValue.addEventListener("change", function () {
+    console.log(InputValue.value, "input value")
+    const searchString = InputValue.value;
+
+    document.querySelectorAll(".profile-card").forEach((profile) => {
+        console.log(profile.classList);
+        profile.classList.remove("d-none");
+        if (InputValue === "Any") {
+          profile.classList.add("d-block");
+        } else if (!profile.classList.value.includes(searchString)) {
+          profile.classList.add("d-none");
+        }
+      });
+
+    })
+    
   </script>
 </Layout>
