@@ -11,7 +11,7 @@ const props = Astro.props;
 
 {
   Object.keys(props).length && (
-    <section style="padding-top: 4%; background-color: #1a1a1a;">
+    <section style="padding-top: 3%; background-color: #1a1a1a;">
       <div class="margins row">
         <div class="col-lg-5 col-md-5 col-sm-12 heading">
           <div class="animate-midcontent">
@@ -184,7 +184,7 @@ const props = Astro.props;
   tl.from(".animate-midcontent", {
     scrollTrigger: {
       trigger: ".animate-midcontent",
-      start: "top 50%",
+      start: "top 70%",
       end: "bottom 10%",
       toggleClass: "animation-midcontent",
       scrub: true,
@@ -193,7 +193,7 @@ const props = Astro.props;
     .from(".midcontent-img", {
       scrollTrigger: {
         trigger: ".midcontent-img",
-        start: "top 50%",
+        start: "top 70%",
         end: "bottom 10%",
         toggleClass: "midcontent-imgAnimation",
         scrub: true,
@@ -205,7 +205,7 @@ const props = Astro.props;
       ease: "Power1.easeOut",
       scrollTrigger: {
         trigger: ".caption-animate",
-        start: "top 70%",
+        start: "top 75%",
         end: "bottom 60%",
         scrub: true,
       },
@@ -215,7 +215,7 @@ const props = Astro.props;
 
       scrollTrigger: {
         trigger: ".para-animate",
-        start: "top 40%",
+        start: "top 60%",
         end: "bottom 32%",
         toggleClass: "para-animation",
         scrub: true,

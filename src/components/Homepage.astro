@@ -69,6 +69,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
       </div>
       <div class="animateHand">
         <Image class="optimization" src={heroHand} alt="" />
+
       </div>
     </div>
     <div class="d-flex" id="main2" style="margin-bottom: 0.4%;">
@@ -245,7 +246,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
         individual Brand needs</span
       >
       <a href="/solutions/" class="solutionAnchor" aria-label="view all"
-        ><div class="yellowCircle"><span class="view">VIEW ALL</span></div></a
+        ><div class="yellowCircle flipOnHover"><span class="view">VIEW ALL</span></div></a
       >
     </div>
     <div class="mobBlackPara">
@@ -260,7 +261,8 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
         <tbody>
           <tr class="hover" style="border-top: 1.15px solid rgb(63, 63, 63);">
             <td class="index">01.</td>
-            <td class="tech"> Immersive Technology</td>
+            
+            <td class="tech trial"> <Image src={solnImg1} class="trial2 optimization" alt="" />  Immersive Technology</td>
 
             <td>
               <ul class="trial">
@@ -283,7 +285,8 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
           </tr>
           <tr class="hover">
             <td class="index">02.</td>
-            <td class="tech">Experiential Marketing</td>
+            <td class="tech trial">    <Image src={solnImg2} class="trial2 optimization" alt="" />
+                  Experiential Marketing</td>
             <td>
               <ul class="trial">
                 <Image src={solnImg2} class="trial2 optimization" alt="" />
@@ -307,7 +310,8 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
 
           <tr class="hover">
             <td class="index">03.</td>
-            <td class="tech">Interactive Solution</td>
+            <td class="tech trial">  <Image src={solnImg3} class="trial2 optimization" alt="" />
+               Interactive Solution</td>
             <td>
               <ul class="trial">
                 <Image src={solnImg3} class="trial2 optimization" alt="" />
@@ -347,7 +351,9 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
 
           <tr class="hover">
             <td class="index">05.</td>
-            <td class="tech">Content Development</td>
+            <td class="tech trial">
+              <Image src={content} class="trial2 optimization" alt="" />
+              Content Development</td>
             <td>
               <ul class="trial">
                 <Image src={content} class="trial2 optimization" alt="" />
@@ -369,7 +375,9 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
 
           <tr class="hover">
             <td class="index">06.</td>
-            <td class="tech">Strategy & Design</td>
+            <td class="tech trial">
+              <Image src={solnImg6} class="trial2 optimization" alt="" />
+              Strategy & Design</td>
             <td class="">
               <ul class="trial">
                 <Image src={solnImg6} class="trial2 optimization" alt="" />
@@ -593,7 +601,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
       >
         <a href="/portfolio/" aria-label="view all">
           <Image
-            class="circleHand optimization"
+            class="circleHand optimization flipOnHover"
             style="width:8vw; height:8vw; "
             src={viewAllAwards}
             alt=""
@@ -682,10 +690,10 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
   <section style="margin-top:4%;">
     <Image src={awardsNew} alt="" class="optimization" style="height:100%;width:100%; " />
     <a href="/awards/" aria-label="awards">
-      <Image src={viewAllAwards}  alt="" class="viewAllAwards optimization" />
+      <Image src={viewAllAwards}  alt="" class="viewAllAwards optimization flipOnHover" />
     </a>
   </section>
-  <section class="margins" style="margin-top:4%;">
+  <section class="margins" style="margin-top:6%;">
     <div>
       <div class="row mobAward">
         <div class="col-sm-12 col-md-8 col-lg-8 mbAwardCat">
@@ -1709,7 +1717,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
       }
       @media screen and (min-width: 1300px) {
         .trial2 {
-          scale: 1.35 !important;
+          scale: 1.4 !important;
         }
       }
       @media screen and (min-width: 1100px) {
@@ -2606,7 +2614,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
       /* swiper css */
 
       #main4 {
-        transform: translate(52%, 0px);
+        transform: translate(55%, 0px);
       }
 
       /* our product table hover effects */
@@ -2683,6 +2691,65 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
       .circleHand {
         display: inline-block;
       }
+
+
+      /* awards table animation on hover */
+
+      .mobAward {
+        position: relative;
+        z-index: 1;
+      }
+      .mobAward:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: scaleY(0);
+        transform-origin: bottom center;
+        background: #1a1a1a;
+        z-index: -1;
+        transition: transform 0.55s;
+      }
+
+      .mobAward:hover .mbAwardCat span,   .mobAward:hover .mbAwardName span{
+        color:white !important;
+      }
+
+      .mobAward:hover::after {
+        transform: scaleY(1);
+      }
+
+
+      /* award animation end */
+
+
+      /* flip animation css */
+
+   
+
+      @keyframes flip {
+
+        0%{
+          transform:scaleX(0)
+        }
+      
+
+        50%{
+          transform:scaleX(-1)
+        }
+
+        100% {
+          transform:scaleX(1)
+        }
+      }
+      .flipOnHover:hover{
+        animation: flip 0.8s ease 0.25s;
+        /* animation-fill-mode: forwards; */
+       
+      }
+
     </style>
 
     
@@ -2691,6 +2758,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
       document.querySelector(".head1").classList.add("head1Span-animate");
       document.querySelector(".head2").classList.add("head1Span-animate");
       document.querySelector(".paraDiv").classList.add("head1Span-animate");
+ 
       // setTimeout(() => {
       //   ScrollTrigger.refresh();
       // }, 3000)
@@ -2883,10 +2951,10 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
           .from(".mainImg", 1, {
             scrollTrigger: {
               trigger: ".mainImg",
-              start: "top 15%",
+              start: "top 50%",
               end: "bottom top",
               toggleClass: "mainImg-animate",
-
+           
               scrub: true,
             },
           })

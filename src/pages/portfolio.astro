@@ -14,7 +14,7 @@ const entries: any = await contentfulClient.getEntries<any>({
 <Layout title="Portfolio" seoTitle="portfolio">
   <section style="padding-top: 4.5%;">
     <div class="wrapper" id="top">
-      <div id="main4" class="moving-text" style="width: max-content;">
+      <div id="main4" class="moving-text" style="width: max-content; color: #1a1a1a">
         <span class="zoomIn">Our Work</span>
         <Image src={portfolio1} class="movingImg optimization" alt="" />
         <span>our work &nbsp; &nbsp; &nbsp;</span>
@@ -174,7 +174,7 @@ const entries: any = await contentfulClient.getEntries<any>({
     }
 
     .moving-text {
-      animation: move-text 55s linear infinite;
+      animation: move-text 45s linear infinite;
       /* transition-delay: 5s; */
     }
     .wrapper {
