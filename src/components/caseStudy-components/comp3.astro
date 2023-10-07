@@ -4,7 +4,7 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import type { Document } from "@contentful/rich-text-types";
 
 import { Image } from 'astro:assets';
-//import { Image, Picture } from "@astrojs/image/components";
+
 
 const props = Astro.props;
 ---
@@ -170,7 +170,7 @@ const props = Astro.props;
     overflow: hidden;
   }
   .para-animation::before {
-    top: 90%;
+    top: 98%;
   }
 </style>
 
@@ -179,13 +179,18 @@ const props = Astro.props;
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import Eases from "gsap";
   gsap.registerPlugin(ScrollTrigger);
+  (window as any).ScrollTrigger = ScrollTrigger
+  setTimeout(() => {
+    
+    ScrollTrigger.refresh();
 
+  }, 2000);
   let tl = gsap.timeline();
   tl.from(".animate-midcontent", {
     scrollTrigger: {
       trigger: ".animate-midcontent",
       start: "top 70%",
-      end: "bottom 10%",
+      end: "bottom top",
       toggleClass: "animation-midcontent",
       scrub: true,
     },
@@ -194,7 +199,7 @@ const props = Astro.props;
       scrollTrigger: {
         trigger: ".midcontent-img",
         start: "top 70%",
-        end: "bottom 10%",
+        end: "bottom top",
         toggleClass: "midcontent-imgAnimation",
         scrub: true,
       },
@@ -205,8 +210,8 @@ const props = Astro.props;
       ease: "Power1.easeOut",
       scrollTrigger: {
         trigger: ".caption-animate",
-        start: "top 75%",
-        end: "bottom 60%",
+        start: "top 80%",
+        end: "bottom 70%",
         scrub: true,
       },
     })
@@ -216,7 +221,7 @@ const props = Astro.props;
       scrollTrigger: {
         trigger: ".para-animate",
         start: "top 60%",
-        end: "bottom 32%",
+        end: "bottom top",
         toggleClass: "para-animation",
         scrub: true,
       },

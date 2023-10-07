@@ -7,7 +7,7 @@ const props = Astro.props;
 
 {
   Object.keys(props).length && (
-    <section style="padding-top: 2%; padding-bottom: 2%; background-color: #1a1a1a;">
+    <section style="padding-top: 3%; padding-bottom: 2%; background-color: #1a1a1a;">
       <div class="margins row">
         <div
           class="col-lg-6 col-md-6 col-sm-12 heading animate-title"
@@ -142,6 +142,12 @@ const props = Astro.props;
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   
   gsap.registerPlugin(ScrollTrigger);
+  (window as any).ScrollTrigger = ScrollTrigger
+  setTimeout(() => {
+    
+    ScrollTrigger.refresh();
+
+  }, 2000);
 
   let tl = gsap.timeline();
   tl.from(".animate-title", {

@@ -92,6 +92,12 @@ const props = Astro.props;
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import Eases from "gsap";
   gsap.registerPlugin(ScrollTrigger);
+  (window as any).ScrollTrigger = ScrollTrigger
+  setTimeout(() => {
+    
+    ScrollTrigger.refresh();
+
+  }, 3000);
 
   let tl = gsap.timeline();
   tl.from(".yellow-animate", {
