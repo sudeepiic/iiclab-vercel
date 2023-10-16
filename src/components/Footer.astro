@@ -379,7 +379,7 @@ import { Image } from 'astro:assets';
 
   let tl = gsap.timeline();
   (window as any).ScrollTrigger = ScrollTrigger
-  setTimeout(() => {
+  setInterval(() => {
     
     ScrollTrigger.refresh();
 
@@ -392,8 +392,8 @@ import { Image } from 'astro:assets';
     ease: "power1.out",
     scrollTrigger: {
       trigger: ".footerFont",
-      start: "top 65%",
-      end: "bottom 20%",
+      start: "top 80%",
+      end: "bottom 35%",
       scrub: true,
     },
   })
@@ -404,8 +404,8 @@ import { Image } from 'astro:assets';
       ease: "power1.out",
       scrollTrigger: {
         trigger: ".footerText",
-        start: "top 75%",
-        end: "bottom 60%",
+        start: "top 85%",
+        end: "bottom 70%",
         scrub: true,
       },
     })

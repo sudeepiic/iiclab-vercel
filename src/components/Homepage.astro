@@ -30,7 +30,7 @@ import content from "../images/content.png";
 import redirectToWork from "../images/redirectToWork2.png";
 import workBtnHand from "../images/workBtnHand.png";
 import ourProdImg from "../images/ourProdImg.jpg";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
 });
@@ -56,8 +56,7 @@ const testimonials: any = await contentfulClient.getEntries<any>({
 const showreel: any = await contentfulClient.getEntries<any>({
   content_type: "showreel",
 });
-const showreelVideo = showreel.items[0].fields.video.fields.file.url
-
+const showreelVideo = showreel.items[0].fields.video.fields.file.url;
 ---
 
 <section class="margins animate-topSection" style="overflow-x: hidden;">
@@ -68,7 +67,6 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
       </div>
       <div class="animateHand">
         <Image class="optimization" src={heroHand} alt="" />
-
       </div>
     </div>
     <div class="d-flex" id="main2" style="margin-bottom: 0.4%;">
@@ -113,7 +111,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
         href="#myModal"
         data-bs-target="#myModal"
         data-bs-toggle="modal"
-       id="playButtonText"
+        id="playButtonText"
         class="watch-showreel"
         aria-label="showreel"
       >
@@ -123,7 +121,9 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
 
       <div id="div2">
         <a href="#knowMore" aria-label="know more">
-          <span id="s3">Know More <Image src={arrow} alt="" class="optimization" /></span>
+          <span id="s3"
+            >Know More <Image src={arrow} alt="" class="optimization" /></span
+          >
         </a>
       </div>
     </div>
@@ -132,7 +132,13 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
 
 <section class="mainImg" style="margin-top:1%; margin-bottom
 :1%;">
-  <Image src={BannerImg} alt="" quality={97} style="height:100%;width:100%; " class="optimization" />
+  <Image
+    src={BannerImg}
+    alt=""
+    quality={97}
+    style="height:100%;width:100%; "
+    class="optimization"
+  />
 </section>
 
 <section style="overflow-x: hidden;">
@@ -191,8 +197,13 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
           (splitArrays[0] as any).map((clients, index) => (
             <div class="imgRow clientArray1">
               <td class="img ">
-                <Image class="imgs optimization"  width={389}
-                height={282} src={clients.fields?.file.url} alt="" />
+                <Image
+                  class="imgs optimization"
+                  width={389}
+                  height={282}
+                  src={clients.fields?.file.url}
+                  alt=""
+                />
               </td>
             </div>
           ))
@@ -201,8 +212,13 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
           (splitArrays[1] as any).map((clients, index) => (
             <div class="imgRow clientArray2">
               <td class="img">
-                <Image class="imgs optimization"  width={389}
-                height={282} src={clients.fields?.file.url} alt="" />
+                <Image
+                  class="imgs optimization"
+                  width={389}
+                  height={282}
+                  src={clients.fields?.file.url}
+                  alt=""
+                />
               </td>
             </div>
           ))
@@ -211,8 +227,13 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
           (splitArrays[2] as any).map((clients, index) => (
             <div class="imgRow clientArray3">
               <td class="img">
-                <Image class="imgs  optimization"  width={389}
-                height={282} src={clients.fields?.file.url} alt="" />
+                <Image
+                  class="imgs  optimization"
+                  width={389}
+                  height={282}
+                  src={clients.fields?.file.url}
+                  alt=""
+                />
               </td>
             </div>
           ))
@@ -221,8 +242,13 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
           (splitArrays[3] as any).map((clients, index) => (
             <div class="imgRow clientArray4">
               <td class="img">
-                <Image class="imgs optimization "   width={389}
-                height={282} src={clients.fields?.file.url} alt="" />
+                <Image
+                  class="imgs optimization "
+                  width={389}
+                  height={282}
+                  src={clients.fields?.file.url}
+                  alt=""
+                />
               </td>
             </div>
           ))
@@ -245,7 +271,9 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
         individual Brand needs</span
       >
       <a href="/solutions/" class="solutionAnchor" aria-label="view all"
-        ><div class="yellowCircle flipOnHover"><span class="view">VIEW ALL</span></div></a
+        ><div class="yellowCircle flipOnHover">
+          <span class="view">VIEW ALL</span>
+        </div></a
       >
     </div>
     <div class="mobBlackPara">
@@ -260,8 +288,11 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
         <tbody>
           <tr class="hover" style="border-top: 1.15px solid rgb(63, 63, 63);">
             <td class="index">01.</td>
-            
-            <td class="tech trial"> <Image src={solnImg1} class="trial2 optimization" alt="" />  Immersive Technology</td>
+
+            <td class="tech trial">
+              <Image src={solnImg1} class="trial2 optimization" alt="" />
+               Immersive Technology</td
+            >
 
             <td>
               <ul class="trial">
@@ -276,7 +307,11 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
             <td>
               <a href="/solutions/immersive-technology"
                 ><div class="onHover">
-                  <Image class="table solutionArrow optimization" src={vector} alt="" />
+                  <Image
+                    class="table solutionArrow optimization"
+                    src={vector}
+                    alt=""
+                  />
                 </div></a
               >
             </td>
@@ -284,8 +319,10 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
           </tr>
           <tr class="hover">
             <td class="index">02.</td>
-            <td class="tech trial">    <Image src={solnImg2} class="trial2 optimization" alt="" />
-                  Experiential Marketing</td>
+            <td class="tech trial">
+              <Image src={solnImg2} class="trial2 optimization" alt="" />
+               Experiential Marketing</td
+            >
             <td>
               <ul class="trial">
                 <Image src={solnImg2} class="trial2 optimization" alt="" />
@@ -301,7 +338,11 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
             <td>
               <a href="/solutions/experiential-marketing">
                 <div class="onHover">
-                  <Image class="table solutionArrow optimization" src={vector} alt="" />
+                  <Image
+                    class="table solutionArrow optimization"
+                    src={vector}
+                    alt=""
+                  />
                 </div></a
               ></td
             ></tr
@@ -309,8 +350,10 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
 
           <tr class="hover">
             <td class="index">03.</td>
-            <td class="tech trial">  <Image src={solnImg3} class="trial2 optimization" alt="" />
-               Interactive Solution</td>
+            <td class="tech trial">
+              <Image src={solnImg3} class="trial2 optimization" alt="" />
+               Interactive Solution</td
+            >
             <td>
               <ul class="trial">
                 <Image src={solnImg3} class="trial2 optimization" alt="" />
@@ -323,14 +366,22 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
             <td>
               <a href="/solutions/interactive-solution"
                 ><div class="onHover">
-                  <Image class="table solutionArrow optimization" src={vector} alt="" />
+                  <Image
+                    class="table solutionArrow optimization"
+                    src={vector}
+                    alt=""
+                  />
                 </div></a
               ></td
             >
           </tr>
           <tr class="hover">
             <td class="index">04.</td>
-            <td class="tech">Mobile & Web</td>
+            <td class="tech trial">
+              <Image src={solnImg4} class="trial2 optimization" alt="" />
+
+               Mobile & Web</td
+            >
             <td>
               <ul class="trial">
                 <Image src={solnImg4} class="trial2 optimization" alt="" />
@@ -342,7 +393,11 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
             <td>
               <a href="/solutions/mobile-and-web"
                 ><div class="onHover">
-                  <Image class="table solutionArrow optimization" src={vector} alt="" />
+                  <Image
+                    class="table solutionArrow optimization"
+                    src={vector}
+                    alt=""
+                  />
                 </div></a
               ></td
             >
@@ -352,7 +407,8 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
             <td class="index">05.</td>
             <td class="tech trial">
               <Image src={content} class="trial2 optimization" alt="" />
-              Content Development</td>
+               Content Development</td
+            >
             <td>
               <ul class="trial">
                 <Image src={content} class="trial2 optimization" alt="" />
@@ -366,7 +422,11 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
             <td>
               <a href="/solutions/content-development"
                 ><div class="onHover">
-                  <Image class="table solutionArrow optimization" src={vector} alt="" />
+                  <Image
+                    class="table solutionArrow optimization"
+                    src={vector}
+                    alt=""
+                  />
                 </div></a
               ></td
             >
@@ -376,7 +436,8 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
             <td class="index">06.</td>
             <td class="tech trial">
               <Image src={solnImg6} class="trial2 optimization" alt="" />
-              Strategy & Design</td>
+               Strategy & Design</td
+            >
             <td class="">
               <ul class="trial">
                 <Image src={solnImg6} class="trial2 optimization" alt="" />
@@ -389,7 +450,11 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
             <td>
               <a href="/solutions/strategy-and-design"
                 ><div class="onHover">
-                  <Image class="table solutionArrow optimization" src={vector} alt="" />
+                  <Image
+                    class="table solutionArrow optimization"
+                    src={vector}
+                    alt=""
+                  />
                 </div></a
               ></td
             >
@@ -635,8 +700,8 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
                   src={caseStudy?.fields?.heroBanner?.fields?.file.url}
                   class="movingImgs  optimization"
                   width={509}
-                height={240}
-                quality={100}
+                  height={240}
+                  quality={100}
                   alt=""
                 />
                 <div class="image-overlay">
@@ -687,9 +752,18 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
   </section>
 
   <section style="margin-top:4%;">
-    <Image src={awardsNew} alt="" class="optimization" style="height:100%;width:100%; " />
+    <Image
+      src={awardsNew}
+      alt=""
+      class="optimization"
+      style="height:100%;width:100%; "
+    />
     <a href="/awards/" aria-label="awards">
-      <Image src={viewAllAwards}  alt="" class="viewAllAwards optimization flipOnHover" />
+      <Image
+        src={viewAllAwards}
+        alt=""
+        class="viewAllAwards optimization flipOnHover"
+      />
     </a>
   </section>
   <section class="margins" style="margin-top:6%;">
@@ -819,7 +893,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
                           .url
                       }
                       width={317}
-                    height={131}
+                      height={131}
                       style="width: 50%;"
                       alt={
                         clientsTestimonials?.fields?.companyLogo?.fields
@@ -856,7 +930,12 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
           <div class="swiper-slide">
             <div class="card-parent">
               <div class="card-header">
-                <Image src={f1Logo} style="width: 50%;" alt="" class="optimization" />
+                <Image
+                  src={f1Logo}
+                  style="width: 50%;"
+                  alt=""
+                  class="optimization"
+                />
               </div>
 
               <div class="card">
@@ -885,7 +964,12 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
           <div class="swiper-slide">
             <div class="card-parent">
               <div class="card-header">
-                <Image src={testimonialImg} style="width: 50%;" class="optimization" alt=""/>
+                <Image
+                  src={testimonialImg}
+                  style="width: 50%;"
+                  class="optimization"
+                  alt=""
+                />
               </div>
 
               <div class="card">
@@ -916,8 +1000,16 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
 
         <div class="swiper-pagination"></div>
       </div>
-      <Image class="swiper-prev desk-prev optimization" src={carousalPrev} alt="" />
-      <Image class="swiper-next desk-next optimization" src={carousalNext} alt="" />
+      <Image
+        class="swiper-prev desk-prev optimization"
+        src={carousalPrev}
+        alt=""
+      />
+      <Image
+        class="swiper-next desk-next optimization"
+        src={carousalNext}
+        alt=""
+      />
       <div class="d-flex controls">
         <Image class="swiper-prev optimization" src={carousalPrev} alt="" />
         <Image class="swiper-next optimization" src={carousalNext} alt="" />
@@ -947,7 +1039,11 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
               style="color:#252525; text-align: end; "
               class="awardName hidden-onHover2"
             >
-              <Image  src={vRetail} class="optimization vretail-icon" alt="" /></td
+              <Image
+                src={vRetail}
+                class="optimization vretail-icon"
+                alt=""
+              /></td
             >
             <td
               ><a class="btn hidden-onHover" href="/products/v-retail"
@@ -971,7 +1067,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
               style="color:#252525; text-align: end;"
               class="awardName hidden-onHover2"
             >
-              <Image  src={vVerse} class="optimization vVerse-icon" alt="" /></td
+              <Image src={vVerse} class="optimization vVerse-icon" alt="" /></td
             >
             <td
               ><a class="btn hidden-onHover" href="/products/v-verse"
@@ -995,7 +1091,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
               style="color:#252525; text-align: end;"
               class="awardName hidden-onHover2"
             >
-              <Image  src={vTour} class="optimization vTour-icon" alt="" /></td
+              <Image src={vTour} class="optimization vTour-icon" alt="" /></td
             >
             <td
               ><a class="btn hidden-onHover" href="/products/v-tour"
@@ -1020,7 +1116,11 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
               style="color:#252525; text-align: end;"
               class="awardName hidden-onHover2"
             >
-              <Image src={vStages} alt="" class="optimization vStages-icon" /></td
+              <Image
+                src={vStages}
+                alt=""
+                class="optimization vStages-icon"
+              /></td
             >
             <td
               ><a class="btn hidden-onHover" href="/products/v-stages"
@@ -1055,7 +1155,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
               ><a class="btn hidden-onHover" href="/products/v-conference"
                 ><Image
                   style="width:2.5rem; "
-                  class="table  optimization"
+                  class="table optimization"
                   src={toolsArrow}
                   alt=""
                   aria-label="v-conference"
@@ -1082,8 +1182,8 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
             data-bs-dismiss="modal"
             aria-hidden="true"
             aria-label="close"
-            id="videoClose" 
-            ><Image class="crossImg optimization" src={close}  alt="" /></button
+            id="videoClose"
+            ><Image class="crossImg optimization" src={close} alt="" /></button
           >
           <h4 class="modal-title">Showreel</h4>
         </div>
@@ -1099,43 +1199,42 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share "
             allowfullscreen></iframe> -->
-            <video id="myVideo" controls>
-              <source src={showreelVideo} type="video/mp4">
-              <!-- Add additional source elements for other video formats if needed -->
+          <video id="myVideo" controls>
+            <source src={showreelVideo} type="video/mp4" />
+            <!-- Add additional source elements for other video formats if needed -->
           </video>
         </div>
       </div>
     </div>
     <!-- video modal ends -->
     <style>
-
-      .optimization{
+      .optimization {
         height: auto;
       }
       . {
         height: auto;
       }
-      #myVideo{
-        width:100%;
-        height:100%;
+      #myVideo {
+        width: 100%;
+        height: 100%;
       }
 
       /* products Icons */
 
-      .vretail-icon{
+      .vretail-icon {
         width: 6.55vw;
       }
-      .vVerse-icon{
-        width:5vw;
+      .vVerse-icon {
+        width: 5vw;
       }
-      .vTour-icon{
+      .vTour-icon {
         width: 8.5vw;
       }
-      .vStages-icon{
+      .vStages-icon {
         width: 9vw;
       }
-      .vConference-icon{
-        width:10vw;
+      .vConference-icon {
+        width: 10vw;
       }
 
       /*  */
@@ -1318,7 +1417,9 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
         font-weight: 400;
         font-size: 3.5vw !important;
         letter-spacing: 0.04rem;
-        src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
+        src:
+          local("Deutschlander"),
+          url("/Deutschlander.woff") format("woff");
         padding-right: 0 !important;
         word-spacing: 0.2rem;
       }
@@ -1395,7 +1496,9 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
         font-style: normal;
         font-weight: 400;
         font-size: 12.5vw;
-        src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
+        src:
+          local("Deutschlander"),
+          url("/Deutschlander.woff") format("woff");
       }
       .solutions {
         color: #e5ff53;
@@ -1403,7 +1506,9 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
         font-style: normal;
         font-weight: 400;
         font-size: 12.5vw;
-        src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
+        src:
+          local("Deutschlander"),
+          url("/Deutschlander.woff") format("woff");
       }
       .movingImgs {
         display: block;
@@ -1744,12 +1849,12 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
         margin-left: 10%;
         padding: 4% 0%;
         aspect-ratio: 5/1;
-        display:flex;
+        display: flex;
       }
-      .card-header img{
+      .card-header img {
         margin: auto;
         object-fit: contain;
-        aspect-ratio:9/5;
+        aspect-ratio: 9/5;
       }
 
       .card {
@@ -1784,7 +1889,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
       .authDesign {
         opacity: 50%;
         font-size: 1.37rem;
-        min-height:5ch !important;
+        min-height: 5ch !important;
       }
       @media screen and (max-width: 1600px) {
         .authName {
@@ -1852,29 +1957,28 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
         } */
 
         /* productsIcons */
-      .vretail-icon{
-        width: 10.55vw;
-      }
-      .vVerse-icon{
-        width:9vw;
-      }
-      .vTour-icon{
-        width: 12.5vw;
-      }
-      .vStages-icon{
-        width: 14vw;
-      }
-      .vConference-icon{
-        width:15vw;
-      }
+        .vretail-icon {
+          width: 10.55vw;
+        }
+        .vVerse-icon {
+          width: 9vw;
+        }
+        .vTour-icon {
+          width: 12.5vw;
+        }
+        .vStages-icon {
+          width: 14vw;
+        }
+        .vConference-icon {
+          width: 15vw;
+        }
 
-      /*  */
-      table td {
-        
-        font-size: calc(14px + 0.390625vw);
-      
-        /* border: 1px solid black; */
-      }
+        /*  */
+        table td {
+          font-size: calc(14px + 0.390625vw);
+
+          /* border: 1px solid black; */
+        }
         .workImg-section {
           overflow-x: scroll;
         }
@@ -2691,7 +2795,6 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
         display: inline-block;
       }
 
-
       /* awards table animation on hover */
 
       .mobAward {
@@ -2712,52 +2815,43 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
         transition: transform 0.55s;
       }
 
-      .mobAward:hover .mbAwardCat span,   .mobAward:hover .mbAwardName span{
-        color:white !important;
+      .mobAward:hover .mbAwardCat span,
+      .mobAward:hover .mbAwardName span {
+        color: white !important;
       }
 
       .mobAward:hover::after {
         transform: scaleY(1);
       }
 
-
       /* award animation end */
-
 
       /* flip animation css */
 
-   
-
       @keyframes flip {
-
-        0%{
-          transform:scaleX(0)
+        0% {
+          transform: scaleX(0);
         }
-      
 
-        50%{
-          transform:scaleX(-1)
+        50% {
+          transform: scaleX(-1);
         }
 
         100% {
-          transform:scaleX(1)
+          transform: scaleX(1);
         }
       }
-      .flipOnHover:hover{
+      .flipOnHover:hover {
         animation: flip 0.8s ease 0.25s;
         /* animation-fill-mode: forwards; */
-       
       }
-
     </style>
-
-    
 
     <script>
       document.querySelector(".head1").classList.add("head1Span-animate");
       document.querySelector(".head2").classList.add("head1Span-animate");
       document.querySelector(".paraDiv").classList.add("head1Span-animate");
- 
+
       // setTimeout(() => {
       //   ScrollTrigger.refresh();
       // }, 3000)
@@ -2787,53 +2881,40 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
       // autoplayvideo
 
       document.addEventListener("DOMContentLoaded", function () {
-    const video = document.getElementById("myVideo");
-    const playButton = document.getElementById("playButton");
-    const playButtonText = document.getElementById("playButtonText");
+        const video: any = document.getElementById("myVideo");
+        const playButton = document.getElementById("playButton");
+        const playButtonText = document.getElementById("playButtonText");
 
-    const videoClose = document.getElementById("videoClose");
-    
-    playButton.addEventListener("click", function () {
-        // Check if the video is paused or ended
-        if (video.paused || video.ended) {
+        const videoClose = document.getElementById("videoClose");
 
-          setTimeout(() => {
-            video.play();
-          }, 700);
-        
-            
-           
-        } else {
-            
+        playButton.addEventListener("click", function () {
+          // Check if the video is paused or ended
+          if (video.paused || video.ended) {
+            setTimeout(() => {
+              video.play();
+            }, 700);
+          } else {
             video.pause();
             playButton.textContent = "Play Video";
-        }
-    });
-    playButtonText.addEventListener("click", function () {
-        // Check if the video is paused or ended
-        if (video.paused || video.ended) {
-          setTimeout(() => {
-            video.play();
-          }, 700);
-        
-           
-        } else {
-            
+          }
+        });
+        playButtonText.addEventListener("click", function () {
+          // Check if the video is paused or ended
+          if (video.paused || video.ended) {
+            setTimeout(() => {
+              video.play();
+            }, 700);
+          } else {
             video.pause();
             playButton.textContent = "Play Video";
-        }
-    });
-    videoClose.addEventListener("click", function () {
-       
-        video.pause();
+          }
+        });
+        videoClose.addEventListener("click", function () {
+          video.pause();
+        });
+      });
 
-    });
-
-
-
-      })
-
-      // 
+      //
       let sections = gsap.utils.toArray(".panel");
 
       let mm = gsap.matchMedia();
@@ -2849,7 +2930,8 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
             pin: true,
             scrub: 1,
             snap: 1 / (sections.length - 0.7),
-            end: () => "+=" + document.querySelector(".container").offsetWidth,
+            end: () =>
+              "+=" + (document.querySelector(".container") as any).offsetWidth,
           },
         });
         gsap.from("#main5", {
@@ -2924,7 +3006,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
         //   ScrollTrigger.refresh();
         // }, 3000);
 
-        let tl = new TimelineMax({});
+        let tl: any = new TimelineMax({});
 
         tl.from("#main3", 1, {
           x: "30%",
@@ -2953,7 +3035,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
               start: "top 50%",
               end: "bottom top",
               toggleClass: "mainImg-animate",
-           
+
               scrub: true,
             },
           })
@@ -3030,7 +3112,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
             opacity: 0,
             scrollTrigger: {
               trigger: ".animate-swiper",
-              start: "top 60%",
+              start: "top 76%",
               end: "bottom 100%",
               scrub: true,
             },
@@ -3112,7 +3194,8 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
             pin: true,
             scrub: 1,
             snap: 1 / (sections.length - 0.7),
-            end: () => "+=" + document.querySelector(".container").offsetWidth,
+            end: () =>
+              "+=" + (document.querySelector(".container") as any).offsetWidth,
           },
         });
         gsap.from("#main5", {
@@ -3187,7 +3270,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
         //   ScrollTrigger.refresh();
         // }, 3000);
 
-        let tl = new TimelineMax({});
+        let tl: any = new TimelineMax({});
 
         tl.from("#main3", 1, {
           x: "30%",
@@ -3342,7 +3425,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url
 
         gsap.to(".mobile-viewAll", 1, {
           x: "-70%",
-        
+
           ease: "ease1.out",
 
           scrollTrigger: {
