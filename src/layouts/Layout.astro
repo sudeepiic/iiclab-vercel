@@ -21,6 +21,10 @@ console.log(seoTitle, "THE");
 
     <!--  -->
     <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src https://*; child-src 'none';"
+    />
 
     <meta name="viewport" content="width=device-width" />
     <meta name="theme-color" content="#f6f7f0" />
@@ -122,7 +126,6 @@ console.log(seoTitle, "THE");
     <Footer />
   </body>
 
-
   <script>
     const header = document.querySelector(".sticky-header");
     let lastScrollY = 0;
@@ -139,4 +142,5 @@ console.log(seoTitle, "THE");
       lastScrollY = currentScrollY;
     });
   </script>
+
 </html>
