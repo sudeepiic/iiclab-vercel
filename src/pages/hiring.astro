@@ -829,7 +829,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
     const category = document.getElementById("slct2");
 
     category.addEventListener("change", function () {
-      const selectedOption = category.value.replaceAll(" ", "-").toLowerCase();
+      const selectedOption = category.value?.replaceAll(" ", "-").toLowerCase();
       console.log("Selected option:", selectedOption);
 
       document.querySelectorAll(".profile-card").forEach((profile) => {

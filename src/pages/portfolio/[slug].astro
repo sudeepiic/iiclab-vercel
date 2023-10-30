@@ -38,9 +38,9 @@ const data = caseStudyData.fields;
 
 console.log(
   "\n\n\n\n\n\n\n\n\n\n\n\nn\n",
-  data?.heroVideo?.fields.file.url,
-  data?.heroVideo?.fields?.file.url,
-  data.brandLogos
+  // data?.heroVideo?.fields?.file.url,
+  // data?.heroVideo?.fields?.file.url,
+  data.videoLink
 );
 ---
 
@@ -49,6 +49,7 @@ console.log(
     heroTitle={documentToHtmlString(data.heroTitleMain)}
     heroVideo={data?.heroVideo?.fields?.file.url}
     heroVideoAlt={data?.heroVideo && data?.heroVideo?.fields?.description}
+    videoLink ={data.videoLink}
     herobanner={data?.heroBanner?.fields?.file.url}
     herobannerAlt={data?.heroBanner?.fields?.description}
     whichTechnology={data?.whichTechnology}

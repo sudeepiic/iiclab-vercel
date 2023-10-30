@@ -33,8 +33,8 @@ const props = Astro.props;
         />
       </div>
 
+      {props.tiltImage1 && 
       <div class="margins images" style="margin-top: 2%; text-align: center;"> 
-        {props.tiltImage1 && 
         <Image
           src={props.tiltImage1}
           class="img1 img-animate optimization "
@@ -42,12 +42,26 @@ const props = Astro.props;
           width={1010} height={1150}
         />
 
-        <Image
+        
+        {props.tiltImage2.includes('mp4')? 
+      
+        <video id="myVideo"  class="img2 img2-animate optimization " style="aspect-ratio: 101/115;" width={1010} height={1150}   controls>
+            <source src={props.tiltImage2}     type="video/mp4" />
+           
+          </video>
+
+          :
+
+          <Image
           src={props.tiltImage2}
           class="img2 img2-animate optimization "
            alt={"" + props.tiltImage2Alt}
           width={1010} height={1150}
         />
+      
+      }
+
+      
 
         <Image
           src={props.tiltImage3}
@@ -55,8 +69,8 @@ const props = Astro.props;
            alt={"" + props.tiltImage3Alt}
           width={1010} height={1150}
         />
+        </div>
       }
-      </div>
     </section>
   )
 }
