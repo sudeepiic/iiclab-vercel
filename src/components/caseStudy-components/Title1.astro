@@ -9,15 +9,6 @@ import { Image } from "astro:assets";
 //import { Image, Picture } from "@astrojs/image/components";
 
 const props = Astro.props;
-
-
-
-
-
-if(props.heroVideo.includes('mp4')){
-  console.log('Trueee')
-}
-
 ---
 
 <section style="background-color: #1a1a1a;">
@@ -67,29 +58,25 @@ if(props.heroVideo.includes('mp4')){
     </div>
   </div>
 
-
-  {(props.heroVideo || props.videoLink ) &&
-
- (<div style="background-color: #1a1a1a;">
-    <div class="margins img" id="video-or-img">
-
-      {props.videoLink ? 
-      
-       ( <iframe  class="video" src={props.videoLink} allowfullscreen></iframe>)
-      :  
-
-      (   <Image
-            src={props.heroVideo}
-            alt={"" + props.heroVideoAlt}
-            width={1600}
-            height={900}
-            class="optimization"
-          />)
-      }
-   
-    </div>
-  </div>)
-}
+  {
+    (props.heroVideo || props.videoLink) && (
+      <div style="background-color: #1a1a1a;">
+        <div class="margins img" id="video-or-img">
+          {props.videoLink ? (
+            <iframe class="video" src={props.videoLink} allowfullscreen />
+          ) : (
+            <Image
+              src={props.heroVideo}
+              alt={"" + props.heroVideoAlt}
+              width={1600}
+              height={900}
+              class="optimization"
+            />
+          )}
+        </div>
+      </div>
+    )
+  }
 
   <div class="animate" style="background-color: #1a1a1a;">
     <div class="d-flex lastDiv">
@@ -287,8 +274,10 @@ if(props.heroVideo.includes('mp4')){
   .optimization {
     height: auto;
   }
-  .video{
-    width: 100%; aspect-ratio: 16/9; border-radius: 0 5vw 0 5vw;
+  .video {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 0 5vw 0 5vw;
   }
   .carousalImgBorder {
     padding: 2.5%;
