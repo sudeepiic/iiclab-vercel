@@ -1,4 +1,5 @@
 ---
+// import "./homepage.css";
 import arrow from "../images/arrow.png";
 import BannerImg from "../images/groupPhoto.jpg";
 import hand2 from "../images/hand-2.png";
@@ -30,6 +31,9 @@ import content from "../images/content.png";
 import redirectToWork from "../images/redirectToWork2.png";
 import workBtnHand from "../images/workBtnHand.png";
 import ourProdImg from "../images/ourProdImg.jpg";
+import titleImg from "../images/titleImg.jpg";
+import titleImg2 from "../images/titleImg2.jpg";
+
 import { Image } from "astro:assets";
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
@@ -59,7 +63,7 @@ const showreel: any = await contentfulClient.getEntries<any>({
 const showreelVideo = showreel.items[0].fields.video.fields.file.url;
 ---
 
-<section class="margins animate-topSection" style="overflow-x: hidden;">
+<!-- <section class="margins animate-topSection" style="overflow-x: hidden;">
   <div class="topDiv" style="padding-top: 8%;">
     <div id="main" class="d-flex">
       <div class="head1 animateHeading">
@@ -128,9 +132,82 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
       </div>
     </div>
   </div>
+</section> -->
+<section class="margins animate-topSection">
+  <div class="row topDiv" style="padding-top:3.5%">
+    <div class="col-lg-7 col-md-7 col-sm-12" style="overflow-x: hidden;">
+      <div class="head1 animateHeading">
+        <span class="head1Span">Humanizing Tech</span>
+      </div>
+      <div class="head2 animateHeading">
+        <span>Through Design</span>
+      </div>
+
+      <div id="#main2" class="mt-2" style="margin-bottom: 0.4%;">
+        <div id="div1" class="paraDiv" style="width:80% ; padding-left: 1%">
+          <span class="para para1"
+            >IIC is a full-service MarTech Agency that helps brands design
+            scalable experiential marketing campaigns harnessing Interactive
+            Technology, Augmented Reality, Virtual Reality, Metaverse & Content
+            Development solutions.</span
+          >
+        </div>
+      </div>
+
+      <div class="d-flex" id="main3" style="position: relative;">
+        <a
+          href="#myModal"
+          data-bs-target="#myModal"
+          data-bs-toggle="modal"
+          data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
+          class="pause"
+          id="playButton"
+          aria-label="showreel"
+        >
+          <lottie-player
+            src="/showreelBtn.json"
+            background="transparent"
+            speed="1"
+            class="lottie"
+            loop
+            autoplay></lottie-player>
+        </a>
+        <a
+          href="#myModal"
+          data-bs-target="#myModal"
+          data-bs-toggle="modal"
+          id="playButtonText"
+          class="watch-showreel"
+          aria-label="showreel"
+        >
+          <span id="s1">Watch Showreel</span>
+          <span id="s2"></span>
+        </a>
+
+        <div id="div2">
+          <a href="#knowMore" aria-label="know more">
+            <span id="s3"
+              >Know More <Image src={arrow} alt="" class="optimization" /></span
+            >
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5 col-md-5 col-sm-12 d-flex titleImgsDiv">
+      <div class="position-relative d-flex">
+        <Image
+          src={titleImg}
+          alt=""
+          class="optimization w-100 mt-1 flex-grow-1"
+        />
+        <Image src={titleImg2} alt="" class="optimization overlayImage" />
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="mainImg" style="margin-top:1%; margin-bottom
+<section class="mainImg mt-5 pt-3" style="margin-bottom
 :1%;">
   <Image
     src={BannerImg}
@@ -1218,6 +1295,15 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
         width: 100%;
         height: 100%;
       }
+      .overlayImage {
+        position: absolute;
+
+        top: 72%;
+        right: 63%;
+        width: 53% !important;
+        border: 2px solid white;
+        box-shadow: -17px 16px 0px #e5ff53;
+      }
 
       /* products Icons */
 
@@ -1393,8 +1479,8 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
         margin-left: 8%;
       }
       .para1 {
-        font-size: 1.31vw !important;
-        line-height: 1.9;
+        font-size: 1.45vw !important;
+        line-height: 1.65;
       }
 
       /* .table{
@@ -1598,11 +1684,11 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
       .head1 {
         font-family: "Deutschlander";
         text-transform: uppercase;
-        font-size: 15vw;
+        font-size: 13.5vw;
         font-weight: 400;
         font-style: normal;
         overflow: hidden;
-        line-height: 1;
+        line-height: 0.8;
 
         /* padding-top: 2%; */
       }
@@ -1637,7 +1723,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
       }
       #s1 {
         font-family: "Anek Devanagari";
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         margin-left: 15px;
         text-transform: uppercase;
         font-weight: 500;
@@ -1648,7 +1734,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
       }
       #main3 #div2 #s3 {
         font-family: "Anek Devanagari";
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         margin-left: 15px;
         text-transform: uppercase;
         font-weight: 500;
@@ -1723,6 +1809,10 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
         }
         svg {
           margin-top: 4vw;
+        }
+        #s1,
+        #s3 {
+          font-size: 1.3rem !important;
         }
       }
 
@@ -1805,7 +1895,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
       .trial2 {
         position: absolute;
         object-fit: cover;
-
+        aspect-ratio: 202/144;
         transform: translateX(-50%) translateY(-50%);
         top: 50%;
         left: 50%;
@@ -1891,6 +1981,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
         font-size: 1.37rem;
         min-height: 5ch !important;
       }
+
       @media screen and (max-width: 1600px) {
         .authName {
           font-size: 1.3rem;
@@ -1956,6 +2047,16 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
           opacity:0;
         } */
 
+        .titleImgsDiv {
+          padding-top: 5%;
+          padding-bottom: 24%;
+        }
+        .overlayImage {
+          top: 76%;
+          right: 13%;
+          width: 75% !important;
+          box-shadow: none;
+        }
         /* productsIcons */
         .vretail-icon {
           width: 10.55vw;
@@ -2098,8 +2199,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
           margin-top: auto;
         }
         .head2 {
-          margin-left: 2.4%;
-          font-size: 15vw;
+          font-size: 13.5vw;
         }
         .mobPara,
         .mobBlackPara {
@@ -2199,9 +2299,15 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
         .card-parent {
           width: 29rem !important;
         }
-        .paraDiv {
-          display: none;
+
+        .para1 {
+          font-size: 3vw !important;
         }
+        .paraDiv {
+          margin-top: 5%;
+          width: 82% !important;
+        }
+
         #main2 #div2 {
           margin-left: 0;
         }
@@ -2457,10 +2563,10 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
 
       @media screen and (max-width: 500px) {
         #s1 {
-          font-size: 0.9rem;
+          font-size: 0.9rem !important;
         }
         #main3 #div2 #s3 {
-          font-size: 0.9rem;
+          font-size: 0.9rem !important;
         }
         .lottie {
           width: 40px;
@@ -2515,7 +2621,6 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
       .head2,
       .paraDiv {
         position: relative;
-        top: 100%;
       }
       .testim-anime {
         position: relative;
@@ -3006,7 +3111,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
         //   ScrollTrigger.refresh();
         // }, 3000);
 
-        let tl: any = new TimelineMax({});
+        let tl: any = gsap.timeline({});
 
         tl.from("#main3", 1, {
           x: "30%",
@@ -3014,12 +3119,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
           opacity: "0",
           delay: "2",
         })
-          .from(".animateHand", 1.5, {
-            x: "190%",
-            rotate: "-17",
-            ease: "back.inOut",
-            duration: "1.2",
-          })
+
           .to(".animate-topSection", 1, {
             opacity: "0",
             scrollTrigger: {
@@ -3032,7 +3132,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
           .from(".mainImg", 1, {
             scrollTrigger: {
               trigger: ".mainImg",
-              start: "top 50%",
+              start: "top 60%",
               end: "bottom top",
               toggleClass: "mainImg-animate",
 
@@ -3278,12 +3378,7 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
           opacity: "0",
           delay: "2",
         })
-          .from(".animateHand", 1.5, {
-            x: "190%",
-            rotate: "-17",
-            ease: "back.inOut",
-            duration: "1.2",
-          })
+
           .to(".animate-topSection", 1, {
             opacity: "0",
             scrollTrigger: {
