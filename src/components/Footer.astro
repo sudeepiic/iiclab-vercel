@@ -4,6 +4,7 @@ import contactUs from "../images/contactUs.png";
 import subscribe from "../images/subscribe.png";
 import goArrow from "../images/goArrow.png";
 import instaLogo from "../images/instaLogo.png";
+import youtubeLogo from "../images/youtubeIcon.png";
 import linkedinlogo from "../images/linkedinLogo.png";
 import twitterX from "../images/twitterX.png";
 import fbLogo from "../images/fbLogo.png";
@@ -140,6 +141,19 @@ import { Image } from "astro:assets";
         loading="lazy"
       /></a
     >
+
+    <a
+    href="https://www.youtube.com/inkincaps/"
+    aria-label="youtube"
+    target="_blank"
+  >
+    <Image
+      class="socialIcons optimization"
+      src={youtubeLogo}
+      alt=""
+      loading="lazy"
+    /></a
+  >
     <a class="d-none" href="" aria-label="whatsapp" target="_blank">
       <Image
         class="socialIcons optimization"
@@ -276,6 +290,17 @@ import { Image } from "astro:assets";
             loading="lazy"
           /></a
         >
+        <a
+        href="https://www.youtube.com/inkincaps/"
+        aria-label="youtube"
+        target="_blank"
+        ><Image
+          class="icons optimization"
+          src={youtubeLogo}
+          alt=""
+          loading="lazy"
+        /></a
+      >
         <a class="d-none" href="" aria-label="whatsapp" target="_blank"
           ><Image class="icons optimization" src={whatsappLogo} alt="" /></a
         >
