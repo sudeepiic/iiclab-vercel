@@ -218,7 +218,7 @@ const entries: any = await contentfulClient.getEntries<any>({
               <div
                 class={
                   "row list " +
-                  blogs.fields.genreNew.replaceAll(" ", "").toLowerCase()
+                  blogs.fields.genreNew?.replaceAll(" ", "").toLowerCase()
                 }
               >
                 <div class="col-9">

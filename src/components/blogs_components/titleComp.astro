@@ -6,11 +6,11 @@ import { Image } from 'astro:assets';
 ---
 
 {
-  Object.keys(props).length && (
+  Object.keys(props).length && props.blogTitle && (
     <section class="bgColor">
       <div
         class="margins headline-animate"
-        style="text-align: center; padding-top: 4%;"
+        style="text-align: center; padding-top: 5%;"
       >
         <span class="blogHeadline" set:html={props.blogTitle} />
       </div>
@@ -25,17 +25,19 @@ import { Image } from 'astro:assets';
         <span class="dot" />
         <span class="readTime" set:html={props.readTime} />
       </div>
-
+      {props.heroImage && 
       <div class="image-animate">
         <Image
           src={props.heroImage}
           alt={props.heroImageAlt}
-          class="optimization"
+          class="optimization resizeImage"
+
           width={1552}
           height={720}
           style="width: 100%;"
         />
       </div>
+    }
     </section>
   )
 }
@@ -56,6 +58,10 @@ import { Image } from 'astro:assets';
     font-style: normal;
     color: white;
     line-height: 0.85;
+  }
+  .resizeImage{
+    aspect-ratio: 1020/475;
+    object-fit: cover;
   }
 
   .border-box {
