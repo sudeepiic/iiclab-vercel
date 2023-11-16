@@ -15,7 +15,7 @@ import vStages from "../images/vStages.png";
 import vConference from "../images/vConference.png";
 import toolsArrow from "../images/toolsArrow.png";
 import solnImg1 from "../images/solnImg1.jpg";
-import solnImg2 from "../images/experientialImg.png";
+import solnImg2 from "../images/exphome.jpg";
 import solnImg3 from "../images/interactiveImg.png";
 import solnImg4 from "../images/solnImg4.jpg";
 import solnImg6 from "../images/strategyImg.png";
@@ -187,7 +187,7 @@ animate-topSection
         <div id="div2">
           <a href="#knowMore" aria-label="know more">
             <span id="s3"
-              >Know More <Image src={arrow} alt="" class="optimization" /></span
+              >Know More <Image src={arrow} alt="" quality={100} class="optimization" /></span
             >
           </a>
         </div>
@@ -195,11 +195,11 @@ animate-topSection
     </div>
 
     <div class="col-lg-5 col-md-5 col-sm-12 d-flex titleImgsDiv">
-      <div class="position-relative d-flex">
+      <div class="position-relative">
         <Image
           src={titleImg}
           alt=""
-          class="optimization w-100 mt-1 flex-grow-1"
+          class="optimization w-100 mt-2 flex-grow-1"
         />
         <Image src={titleImg2} alt="" class="optimization overlayImage" />
       </div>
@@ -212,7 +212,7 @@ animate-topSection
   <Image
     src={BannerImg}
     alt=""
-    quality={97}
+    quality={100}
     style="height:100%;width:100%; "
     class="optimization"
   />
@@ -559,7 +559,7 @@ animate-topSection
             </a>
           </div>
         </div>
-        <div class="row">
+        <div class="row d-flex align-items-center">
           <div class="col-5">
             <Image class="mobImg optimization" src={solnImg1} alt="" />
           </div>
@@ -590,7 +590,7 @@ animate-topSection
           </div>
         </div>
         <div class="row">
-          <div class="col-5">
+          <div class="col-5  d-flex align-items-center">
             <Image class="mobImg optimization" src={solnImg2} alt="" />
           </div>
           <div class="col-7 mobList">
@@ -622,7 +622,7 @@ animate-topSection
             </a>
           </div>
         </div>
-        <div class="row">
+        <div class="row  d-flex align-items-center">
           <div class="col-5">
             <Image class="mobImg optimization" src={solnImg3} alt="" />
           </div>
@@ -652,7 +652,7 @@ animate-topSection
             </a>
           </div>
         </div>
-        <div class="row">
+        <div class="row  d-flex align-items-center">
           <div class="col-5">
             <Image class="mobImg optimization" src={solnImg4} alt="" />
           </div>
@@ -682,7 +682,7 @@ animate-topSection
           </div>
         </div>
         <div class="row">
-          <div class="col-5">
+          <div class="col-5  d-flex align-items-center">
             <Image class="mobImg optimization" src={content} alt="" />
           </div>
           <div class="col-7 mobList">
@@ -712,7 +712,7 @@ animate-topSection
             </a>
           </div>
         </div>
-        <div class="row">
+        <div class="row  d-flex align-items-center">
           <div class="col-5">
             <Image class="mobImg optimization" src={solnImg6} alt="" />
           </div>
@@ -1299,8 +1299,8 @@ animate-topSection
       .overlayImage {
         position: absolute;
 
-        top: 72%;
-        right: 63%;
+        top: 65%;
+       right: 69%;
         width: 53% !important;
         border: 2px solid white;
         box-shadow: -15px 14px 0px #e5ff53;
@@ -3140,7 +3140,7 @@ animate-topSection
           .from(".mainImg", 1, {
             scrollTrigger: {
               trigger: ".mainImg",
-              start: "top 60%",
+              start: "top 70%",
               end: "bottom top",
               toggleClass: "mainImg-animate",
 
