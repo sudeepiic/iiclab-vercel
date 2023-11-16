@@ -117,6 +117,18 @@ const entries: any = await contentfulClient.getEntries<any>({
                 class="capitalize"
                 set:html={caseStudy.fields?.whichTechnology}
               />
+
+              {
+                caseStudy.fields?.whichTechnology2 && 
+
+                <span>, &nbsp;</span>
+              <div
+                class="capitalize"
+                set:html={caseStudy.fields?.whichTechnology2}
+              />
+
+              }
+             
             </div>
           </div>
         </a>
@@ -238,7 +250,7 @@ const entries: any = await contentfulClient.getEntries<any>({
     .tech div {
       display: inline-block;
 
-      padding-right: 7.5%;
+     
     }
 
     .capitalize {
