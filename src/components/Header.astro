@@ -78,6 +78,8 @@ import { Image } from 'astro:assets';
       </div>
       <div class="contact-div btn">
         <a href="/contact" aria-label="contact">
+
+          <!-- <button class="btn btn-dark rounded-pill"> Connect</button> -->
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="140"
@@ -104,12 +106,15 @@ import { Image } from 'astro:assets';
               cy="32.1406"
               r="18.873"
               fill="currentColor"></circle>
-            <circle
-              class="circles"
-              cx="52.6619"
-              cy="32.1404"
-              r="12.9587"
-              fill="currentColor"></circle>
+         
+
+                <circle
+                  class="circles "
+                  cx="52.6619"
+                  cy="32.1404"
+                  r="12.9587"
+                  fill="currentColor"></circle>
+              
             <path
               class="tele"
               d="M55.2802 37.2513C54.507 37.2341 53.5791 36.8905 52.7142 36.3864C50.5204 35.0977 48.8422 33.3392 47.8914 30.9507C47.5935 30.1947 47.4561 29.4042 47.6336 28.5909C47.7826 27.9036 48.1835 27.4052 48.8365 27.1303C49.3348 26.9184 49.8675 27.0501 50.1882 27.4911C50.5605 27.9952 50.9214 28.5107 51.2708 29.0377C51.6259 29.5761 51.4942 30.2119 50.9729 30.6071C50.8183 30.7274 50.5319 30.8075 50.5319 30.9736C50.5376 31.1455 50.7438 31.323 50.8698 31.4834C51.6717 32.5087 52.5996 33.4137 53.6478 34.1869C53.8025 34.3015 53.8998 34.3187 53.9915 34.1297C54.0545 34.0094 54.1404 33.9063 54.2206 33.8032C54.6101 33.3049 55.2459 33.1903 55.7785 33.5454C56.2941 33.8891 56.8038 34.2442 57.3021 34.6108C57.7546 34.943 57.8806 35.47 57.6687 35.9855C57.3365 36.8103 56.5804 37.2513 55.2802 37.2513Z"
@@ -377,6 +382,10 @@ import { Image } from 'astro:assets';
     height: auto;
   }
 
+
+
+
+
   /* header visible on scroll back css */
 
   .sticky-header {
@@ -575,6 +584,15 @@ import { Image } from 'astro:assets';
     .list ul li a {
       font-size: 18px !important;
     }
+
+    .list ul li:hover{     
+      transition: 0.35s ease;    
+      scale: 1.;
+    }
+    .list ul li:hover a{
+      opacity:100%;
+    }
+
   }
 
   @media screen and (max-width: 992px) {
