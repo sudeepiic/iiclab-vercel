@@ -11,6 +11,7 @@ import fbLogo from "../images/fbLogo.png";
 import whatsappLogo from "../images/whatsappLogo.png";
 import subscribeBtn from "../images/subscribeBtn.png";
 import footerHand from "../images/footerHand.png";
+import threads from "../images/threads.png";
 import { Image } from "astro:assets";
 //import { Image, Picture } from "@astrojs/image/components";
 ---
@@ -143,6 +144,15 @@ import { Image } from "astro:assets";
     >
 
     <a
+              
+    href="https://www.threads.net/@inkincaps"
+    aria-label="threads"
+    target="_blank"
+  >
+    <Image class="socialIcons optimization" src={threads} alt="" loading="lazy" /></a
+  >
+
+    <a
     href="https://www.youtube.com/inkincaps/"
     aria-label="youtube"
     target="_blank"
@@ -171,7 +181,7 @@ import { Image } from "astro:assets";
         Lotus Corporate Park, E-Wing 802 Ram Mandir Lane, Jay Coach Junction,
         off Western Express Highway Goregaon, Mumbai, 400063
       </p>
-      <a href="tel:+91-83032 29629">+91-83032 29629</a><br />
+      <a href="tel:+91-83033 85888">+91-83033 85888</a><br />
 
       <a href="mailto:mumbai@inkincaps.com" target="_blank"
         >mumbai@inkincaps.com</a
@@ -290,6 +300,15 @@ import { Image } from "astro:assets";
             loading="lazy"
           /></a
         >
+
+        <a
+              
+        href="https://www.threads.net/@inkincaps"
+        aria-label="whatsapp"
+        target="_blank"
+      >
+        <Image class="icons optimization" src={threads} alt="" loading="lazy" /></a
+      >
         <a
         href="https://www.youtube.com/inkincaps/"
         aria-label="youtube"
@@ -301,6 +320,7 @@ import { Image } from "astro:assets";
           loading="lazy"
         /></a
       >
+    
         <a class="d-none" href="" aria-label="whatsapp" target="_blank"
           ><Image class="icons optimization" src={whatsappLogo} alt="" /></a
         >

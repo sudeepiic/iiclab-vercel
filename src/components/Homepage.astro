@@ -33,6 +33,7 @@ import workBtnHand from "../images/workBtnHand.png";
 import ourProdImg from "../images/ourProdImg.jpg";
 import titleImg from "../images/airtelBannerImg.jpg";
 import titleImg2 from "../images/ajayBannerImg2.jpg";
+import backToTop from "../images/bttBtn.svg";
 
 import { Image } from "astro:assets";
 const entries: any = await contentfulClient.getEntries<any>({
@@ -1276,7 +1277,8 @@ animate-topSection
       </table>
     </div>
     <a href="#top">
-      <div class="backToTop">Back To Top</div>
+      <!-- <div class="backToTop">Back To Top</div> -->
+      <Image src={backToTop} alt="" class="backToTop optimization"/>
     </a>
     <!-- <div class="yellowCircle"> <p class="view">VIEW ALL</p></div>  -->
   </section>
@@ -1363,17 +1365,10 @@ animate-topSection
       bottom: 20px; /* Place the button at the bottom of the page */
       right: 30px; /* Place the button 30px from the right */
       z-index: 99; /* Make sure it does not overlap */
-      border: none; /* Remove borders */
-      outline: none; /* Remove outline */
-      background-color: #e5ff53; /* Set a background color */
-      color: black; /* Text color */
       cursor: pointer; /* Add a mouse pointer on hover */
-      padding: 15px; /* Some padding */
-      border-radius: 10vw; /* Rounded corners */
-      font-size: 18px;
       scroll-behavior: smooth;
       display: block;
-      font-family: "anek devanagari";
+     
     }
 
     .toggle {
@@ -2059,7 +2054,7 @@ animate-topSection
       }
       .authName {
         font-size: 1.6rem;
-        font-weight: 600;
+        font-weight: 500;
       }
       .authDesign {
         opacity: 50%;
