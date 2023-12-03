@@ -830,7 +830,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
 
     category.addEventListener("change", function () {
       const selectedOption = category.value?.replaceAll(" ", "-").toLowerCase();
-      console.log("Selected option:", selectedOption);
+      // console.log("Selected option:", selectedOption);
 
       document.querySelectorAll(".profile-card").forEach((profile) => {
         console.log(profile.classList);
@@ -851,7 +851,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
       const selectedOption = categoryMob.value
         .replaceAll(" ", "-")
         .toLowerCase();
-      console.log("Selected option:", selectedOption);
+      // console.log("Selected option:", selectedOption);
 
       document.querySelectorAll(".profile-card").forEach((profile) => {
         console.log(profile.classList);
@@ -871,7 +871,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
     locationMob.addEventListener("change", function () {
       const selectedOption = locationMob.value;
 
-      console.log("Selected option:", selectedOption);
+      // console.log("Selected option:", selectedOption);
 
       document.querySelectorAll(".profile-card").forEach((profile) => {
         console.log(profile.classList);
@@ -888,7 +888,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
 
     const InputValue = document.getElementById("search");
     InputValue.addEventListener("change", function () {
-    console.log(InputValue.value, "input value")
+    // console.log(InputValue.value, "input value")
     const searchString = InputValue.value;
 
     document.querySelectorAll(".profile-card").forEach((profile) => {

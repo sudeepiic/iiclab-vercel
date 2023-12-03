@@ -1,5 +1,4 @@
 ---
-// import "./homepage.css";
 import arrow from "../images/arrow.png";
 import BannerImg from "../images/bannerImg.jpg";
 import hand2 from "../images/hand-2.png";
@@ -54,7 +53,7 @@ for (let i = 0; i < numArrays; i++) {
   const splitArray = (images as []).slice(startIndex, endIndex);
   splitArrays.push(splitArray);
 }
-console.log(splitArrays);
+// console.log(splitArrays);
 const testimonials: any = await contentfulClient.getEntries<any>({
   content_type: "clientsTestimonials",
 });
@@ -62,6 +61,7 @@ const showreel: any = await contentfulClient.getEntries<any>({
   content_type: "showreel",
 });
 const showreelVideo = showreel.items[0].fields.video.fields.file.url;
+
 ---
 
 <!-- <section class="margins animate-topSection" style="overflow-x: hidden;">
@@ -219,31 +219,34 @@ animate-topSection
   />
 </section>
 
-<section style="overflow-x: hidden;">
-  <div class="container">
-    <div
-      id="main4"
-      class="animate-tagline"
-      style="display:flex;width:max-content"
-    >
-      <div class="d-flex panel">
-        <span>Deduce</span>
-        <div class="taglineDiamond">
-          <Image class="optimization" src={diamond} alt="" />
-        </div>
-      </div>
+<section  style="overflow-x: hidden;">
+  <div class="snapTagline">
 
-      <div class="d-flex panel">
-        <span>Engage</span>
-        <div class="taglineDiamond">
-          <Image class="optimization" src={diamond} alt="" />
+    <div class="container">
+      <div
+        id="main4"
+        class="animate-tagline"
+        style="display:flex;width:max-content"
+      >
+        <div class="d-flex panel">
+          <span>Deduce</span>
+          <div class="taglineDiamond">
+            <Image class="optimization" src={diamond} alt="" />
+          </div>
         </div>
-      </div>
-
-      <div class="d-flex panel">
-        <span>Enable</span>
-        <div class="taglineDiamond">
-          <Image style=" opacity:0" class="optimization" src={diamond} alt="" />
+  
+        <div class="d-flex panel">
+          <span>Engage</span>
+          <div class="taglineDiamond">
+            <Image class="optimization" src={diamond} alt="" />
+          </div>
+        </div>
+  
+        <div class="d-flex panel">
+          <span>Enable</span>
+          <div class="taglineDiamond">
+            <Image style=" opacity:0" class="optimization" src={diamond} alt="" />
+          </div>
         </div>
       </div>
     </div>
@@ -995,7 +998,12 @@ animate-topSection
             testimonials.items.map((clientsTestimonials, index) => (
               <div class="swiper-slide">
                 <div class="card-parent">
+                
                   <div class="card-header" style="align-self: center;">
+                    {
+                      clientsTestimonials?.fields?.companyLogo?.fields &&
+
+                    
                     <Image
                       src={
                         clientsTestimonials?.fields?.companyLogo?.fields?.file
@@ -1010,6 +1018,8 @@ animate-topSection
                       }
                       class=" optimization"
                     />
+
+                    }
                   </div>
 
                   <div class="card">
@@ -1019,7 +1029,9 @@ animate-topSection
                         set:html={clientsTestimonials?.fields?.testimonialText}
                       />
                       <div class="d-flex cardFooter">
-                        <div style="margin:auto; margin-left:1% ;margin-bottom:3%">
+                        <div style="margin:auto; margin-left:1% ;  
+    position: absolute;
+    bottom: 0%;">
                           <span
                             class="authName"
                             set:html={clientsTestimonials?.fields?.clientName}
@@ -1035,77 +1047,9 @@ animate-topSection
                 </div>
               </div>
             ))
-          }
-          <div class="swiper-slide">
-            <div class="card-parent">
-              <div class="card-header">
-                <Image
-                  src={f1Logo}
-                  style="width: 50%;"
-                  alt=""
-                  class="optimization"
-                />
-              </div>
-
-              <div class="card">
-                <div class="card-body">
-                  <div class="card-text">
-                    "We've worked with Ink In Caps on some innovative tech
-                    projects, in particular the hybrid tour of the Tech Centre
-                    of F1 in which they produced a fantastic result that was
-                    ultimately approved by F1 as a leading app and solution for
-                    them to provide a virtual experience to all of their VIP
-                    clients."
-                  </div>
-                  <div class="d-flex cardFooter">
-                    <div style="margin:auto; margin-left:1% ; margin-bottom:3%">
-                      <span class="authName">Nick Moore</span>
-                      <span class="authDesign"
-                        >Executive Director and Founder of Lionpoint Group</span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="card-parent">
-              <div class="card-header">
-                <Image
-                  src={testimonialImg}
-                  style="width: 50%;"
-                  class="optimization"
-                  alt=""
-                />
-              </div>
-
-              <div class="card">
-                <div class="card-body">
-                  <div class="card-text">
-                    “ IIC had the right capability and experience in the AR
-                    domain, and I was comfortable awarding them the project to
-                    create a B2B visualizer app for my sales and Experience
-                    Center The team did an amazing job in understanding our
-                    needs, we are delighted with the outcome and are already in
-                    talks for the next phase of the solution.”
-                  </div>
-                  <div class="d-flex cardFooter">
-                    <div style="margin:auto; margin-left:1%; margin-bottom:3%">
-                      <span class="authName"> Aninda Gupta</span>
-                      <span class="authDesign"> CMO Gyproc Saint Gobain</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          }       
         </div>
         <div class="swiper-pagination"></div>
-        <!-- <div class="d-flex controls"> -->
-
-        <!-- </div> -->
 
         <div class="swiper-pagination"></div>
       </div>
@@ -1411,6 +1355,7 @@ animate-topSection
 
       .container {
         padding: 10% 0;
+        padding-top: 0 !important;
         height: 0vh;
 
         display: flex;
@@ -1821,6 +1766,7 @@ animate-topSection
       #main4 span {
         font-family: "Deutschlander";
         padding: 3vw;
+        padding-top: 0 !important;
         font-size: 32vw;
         text-transform: uppercase;
         line-height: 1;
@@ -2007,8 +1953,11 @@ animate-topSection
       }
 
       .card-body {
+        /* margin-top: 10%;
+        padding: 0 7% !important; */
         margin-top: 10%;
-        padding: 0 7% !important;
+    padding: 0 7%!important;
+    height: 26vw;
       }
 
       .card-header {
@@ -2033,11 +1982,17 @@ animate-topSection
         aspect-ratio: 3/4;
       }
       .card-text {
-        font-family: "anek devanagari";
-        /* margin-bottom: 12%; */
+        /* font-family: "anek devanagari";
+       
         height: 25vw;
         font-size: 1.25vw;
-        word-spacing: 0.05vw;
+        word-spacing: 0.05vw; */
+        font-family: "anek devanagari";
+    /* height: 25vw; */
+    height: 22vw;
+    font-size: 1.25vw;
+    word-spacing: 0.05vw;
+    overflow-y: scroll;
       }
 
       .authorImg {
@@ -2266,7 +2221,7 @@ animate-topSection
       @media screen and (min-width: 768px) {
         .taglineDiamond {
           text-align: center;
-          margin: 15vw 3vw 0vw 3vw;
+          margin: 12vw 3vw 0vw 3vw;
         }
         .taglineDiamond img {
           width: 5vw;
@@ -2380,7 +2335,7 @@ animate-topSection
       } */
         .card-text {
           font-size: 2.1vw !important;
-          height: 31vw;
+         
         }
         .card-parent {
           width: 29rem !important;
@@ -3115,15 +3070,18 @@ animate-topSection
         // desktop setup code here...
 
         gsap.to(sections, {
-          xPercent: -290 * (sections.length - 1.35),
+          xPercent: -300 * (sections.length - 1.35),
           ease: "none",
           scrollTrigger: {
             trigger: ".container",
             pin: true,
             scrub: 1,
-            snap: 1 / (sections.length - 0.7),
-            end: () =>
-              "+=" + (document.querySelector(".container") as any).offsetWidth,
+            //   ,
+            // snap: 1 / (sections.length - 0.8),
+            start: "top 22%",
+            end:'bottom -50%'
+            // end: () =>
+            //   "+=" + ((document.querySelector(".container") as any).offsetWidth - 40),
           },
         });
         gsap.from("#main5", {
@@ -3133,8 +3091,10 @@ animate-topSection
           // repeat: -1,
           scrollTrigger: {
             trigger: "#main5",
-            start: "top 45%",
+            start: "top 47%",
             end: "top top",
+            snap: 1,
+             
             toggleActions: "play complete reverse reset",
           },
         });
@@ -3146,6 +3106,7 @@ animate-topSection
             trigger: ".giantHolder-animate",
             start: "top 10%",
             end: "bottom top",
+          
             toggleActions: "restart complete reverse reset",
           },
         });
@@ -3227,8 +3188,22 @@ animate-topSection
               start: "top 70%",
               end: "bottom top",
               toggleClass: "mainImg-animate",
-
+            
+              // markers: true,
               scrub: true,
+            },
+          })
+          .from(".snapTagline",  {
+            scrollTrigger: {
+              trigger: ".snapTagline",
+              start: "top 90%",
+              end: "bottom 70%",
+              snap:{
+                snapTo:0.7,
+                duration: 0.9,
+              },      
+             
+           
             },
           })
 
@@ -3605,13 +3580,13 @@ animate-topSection
           })
           .from(".product-table", 1, {
             opacity: 0,
-            y: "30%",
+            y: "25%",
             ease: "ease1.out",
-            stagger: 0.2,
+            stagger: 0.17,
             scrollTrigger: {
               trigger: ".product-table",
-              start: "top 90%",
-              end: "bottom top",
+              start: "top 100%",
+              end: "bottom 35%",
               scrub: true,
             },
           });
