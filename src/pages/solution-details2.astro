@@ -8,11 +8,10 @@ import close from "../images/close.png";
 import blogsLeft from "../images/blogsLeft.png";
 import blogsRight from "../images/blogsRight.png";
 
-
 import redirectToWork from "../images/redirectToWork2.png";
-import mallEgypt from "../images/mallEgypt.png"
+import mallEgypt from "../images/mallEgypt.png";
 import { contentfulClient } from "../lib/contentful";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 const entries: any = await contentfulClient.getEntries<any>({
@@ -26,297 +25,284 @@ const showreel: any = await contentfulClient.getEntries<any>({
   content_type: "showreel",
 });
 const showreelVideo = showreel.items[0].fields.video.fields.file.url;
+console.log("Mid Content Img: ", props.midContentImg);
 ---
 
 <Layout title="our solutions" seoTitle="solutions">
-  <section  id="section">
+  <section id="section">
     <div style="margin-top: 5%;" id="immersive">
       <div class="margins heading">
-        <span set:html={props.title}></span>
+        <span set:html={props.title} />
         <span style="color: #e5ff53;">.</span>
       </div>
-      <div class=" margins mt-3">
-        <span class="titleText fs-2" set:html={props.subTitle}>
-
-        </span>
+      <div class="margins mt-3">
+        <span class="titleText fs-2" set:html={props.subTitle} />
       </div>
       <div class="watchVideo margins d-flex align-items-center mt-3 gap-2">
         <a
-        href="#myModal"
-        data-bs-target="#myModal"
-        data-bs-toggle="modal"
-        data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
-        class="pause"
-        id="playButton"
-        aria-label="showreel"
-      >
-        <lottie-player
-          src="/showreelBtn.json"
-          background="transparent"
-          speed="1"
-          class="lottie pointer"
-          loop
-          autoplay></lottie-player>
-      </a>
-      <a
-        href="#myModal"
-        data-bs-target="#myModal"
-        data-bs-toggle="modal"
-        id="playButtonText"
-        class="watch-showreel"
-        aria-label="showreel"
-      >
-        <span  id="s1">Watch Video</span>
-        
-      </a>
+          href="#myModal"
+          data-bs-target="#myModal"
+          data-bs-toggle="modal"
+          data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
+          class="pause"
+          id="playButton"
+          aria-label="showreel"
+        >
+          <lottie-player
+            src="/showreelBtn.json"
+            background="transparent"
+            speed="1"
+            class="lottie pointer"
+            loop
+            autoplay></lottie-player>
+        </a>
+        <a
+          href="#myModal"
+          data-bs-target="#myModal"
+          data-bs-toggle="modal"
+          id="playButtonText"
+          class="watch-showreel"
+          aria-label="showreel"
+        >
+          <span id="s1">Watch Video</span>
+        </a>
       </div>
-      
-      <div class=" animate-swiper">
+
+      <div class="animate-swiper">
         <div class="mySwiper" style="padding:1.5% 0 0 0 ; ">
           <div class="swiper-wrapper">
             {
               (props.sliderImages as any)?.map((projects: any) => (
-                <div class="swiper-slide imgWidth">
-
-                 {projects.fields?.file && 
-                  
-                    <Image
-                      class="resizeImg optimization"
-                      src={projects.fields?.file.url}
-                      alt=""
-                      width={732}
-                      height={400}
-                    />
-                  } 
-                  </div>
-
+                <>
                   <div class="swiper-slide imgWidth">
-
-                 
+                    {projects.fields?.file && (
                       <Image
                         class="resizeImg optimization"
-                        src={discussion}
+                        src={projects.fields?.file.url}
                         alt=""
                         width={732}
                         height={400}
                       />
-                     
-                    </div>
-                   ))
-                } 
-                </div>
-            </div>
-            <!-- <div class="d-flex controls align-items-center">
+                    )}
+                  </div>
+                  <div class="swiper-slide imgWidth">
+                    <Image
+                      class="resizeImg optimization"
+                      src={discussion}
+                      alt=""
+                      width={732}
+                      height={400}
+                    />
+                  </div>
+                </>
+              ))
+            }
+          </div>
+        </div>
+        <!-- <div class="d-flex controls align-items-center">
                 <Image class="swiper-prev" src={blogsLeft} alt="" />
                 <Image class="swiper-next" src={blogsRight} alt="" />
               </div> -->
+      </div>
+    </div>
 
+    <section class="margins">
+      <div class="clientIconsDiv" style="margin-top:6%;">
+        <span
+          >Trusted by clients for <span
+            style="color: #e5ff53"
+            set:html={props.solutionName}
+          /> services.</span
+        >
+      </div>
+
+      <div class="clientIcons row w-100">
+        {
+          (props.clientIcons as any)?.map((icon: any) => (
+            <div class="iconDiv  d-flex align-items-center justify-content-center ">
+              <Image
+                class="opacity-100 optimization w-75 "
+                width={140}
+                height={70}
+                src={icon.fields.file.url}
+                alt=""
+              />
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="margins midcontentSection">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <span
+            class="d-block midcontent"
+            set:html={documentToHtmlString(props.midContentTitle)}
+          />
+          <span class="text fs-4 mt-3" set:html={props.midContentText} />
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          {
+            props.midContentImg && (
+              <Image
+                alt=""
+                src={props.midContentImg}
+                class="optimization w-100"
+                width={660}
+                height={460}
+              />
+            )
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="pointers margins mt-5">
+      <div class="d-flex gap-4 mt-5 pointerDiv">
+        <div class="content-box numbers">
+          <span>01</span>
+        </div>
+        <div>
+          <div class="pointerHeading" set:html={props.pointer1Title} />
+          <div class="pointerText fs-4 mt-2" set:html={props.pointer1Text} />
+        </div>
+      </div>
+      <div class="d-flex gap-4 mt-5 pointerDiv">
+        <div class="content-box numbers">
+          <span>02</span>
+        </div>
+        <div>
+          <div class="pointerHeading" set:html={props.pointer2Title} />
+          <div class="pointerText fs-4 mt-2" set:html={props.pointer2Text} />
+        </div>
+      </div>
+      <div class="d-flex gap-4 mt-5 pointerDiv">
+        <div class="content-box numbers">
+          <span>03</span>
+        </div>
+        <div>
+          <div class="pointerHeading" set:html={props.pointer3Title} />
+          <div class="pointerText fs-4 mt-2" set:html={props.pointer3Text} />
+        </div>
+      </div>
+      <div class="d-flex gap-4 mt-5 pointerDiv">
+        <div class="content-box numbers">
+          <span>04</span>
+        </div>
+        <div>
+          <div class="pointerHeading" set:html={props.pointer4Title} />
+          <div class="pointerText fs-4 mt-2" set:html={props.pointer4Text} />
+        </div>
+      </div>
+      <div class="d-flex gap-4 mt-5 pointerDiv">
+        <div class="content-box numbers">
+          <span>05</span>
+        </div>
+        <div>
+          <div class="pointerHeading" set:html={props.pointer5Title} />
+          <div class="pointerText fs-4 mt-2" set:html={props.pointer5Text} />
         </div>
       </div>
 
-      <section class="margins">
-
-        <div class="  clientIconsDiv" style="margin-top:6%;">
-              <span>Trusted by clients for <span  style="color: #e5ff53" set:html={props.solutionName }>
-                  </span>  services.</span>
-        </div>
-
-        <div class="clientIcons row  w-100">
-   
-          {(props.clientIcons as any)?.map((icon: any) => (
-            <div class="iconDiv  d-flex align-items-center justify-content-center ">
-              <Image class="opacity-100 optimization w-75 "width={140} height={70} src={icon.fields.file.url} alt="" />
-            </div>
-          ))}
-  
-        </div>
-
-      </section>
-
-      <section class=" margins midcontentSection ">
-        <div class="row align-items-center">
-          <div class="col-lg-6 col-md-6 col-sm-12 ">
-               <span class="d-block midcontent" set:html={documentToHtmlString(props.midContentTitle)}>
-               
-               </span>
-               <span class="text fs-4 mt-3" set:html={props.midContentText}>
-
-               </span>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 ">
-                 <Image alt="" src={props.midContentImg} class="optimization w-100 " width={660} height={460}/>
-          </div>
-
-        </div>
-
-      </section>
-
-      <section class="pointers margins mt-5 ">
-
-        <div class="d-flex gap-4 mt-5 pointerDiv">
-          <div class="content-box numbers ">
-            <span>01</span>
-          </div>
-          <div >
-            <div class="pointerHeading" set:html={props.pointer1Title}>
-            </div>
-            <div class="pointerText  fs-4 mt-2" set:html={props.pointer1Text}>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex gap-4 mt-5 pointerDiv ">
-          <div class="content-box numbers ">
-            <span>02</span>
-          </div>
-          <div >
-            <div class="pointerHeading" set:html={props.pointer2Title}>
-            </div>
-            <div class="pointerText  fs-4 mt-2" set:html={props.pointer2Text}>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex gap-4 mt-5 pointerDiv ">
-          <div class="content-box numbers ">
-            <span>03</span>
-          </div>
-          <div >
-            <div class="pointerHeading" set:html={props.pointer3Title}>
-            </div>
-            <div class="pointerText  fs-4 mt-2" set:html={props.pointer3Text}>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex gap-4 mt-5 pointerDiv ">
-          <div class="content-box numbers ">
-            <span>04</span>
-          </div>
-          <div >
-            <div class="pointerHeading" set:html={props.pointer4Title}>
-            </div>
-            <div class="pointerText  fs-4 mt-2" set:html={props.pointer4Text}>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex gap-4 mt-5 pointerDiv ">
-          <div class="content-box numbers ">
-            <span>05</span>
-          </div>
-          <div >
-            <div class="pointerHeading" set:html={props.pointer5Title}>
-            </div>
-            <div class="pointerText  fs-4 mt-2" set:html={props.pointer5Text}>
-            </div>
-          </div>
-        </div>
-
-     
-        {
-          props.pointer6Title &&
-
-          <div class="d-flex gap-4 mt-5 pointerDiv ">
-          <div class="content-box numbers ">
-            <span>06</span>
-          </div>
-          <div >
-            <div class="pointerHeading" set:html={props.pointer6Title}>
-            </div>
-            <div class="pointerText  fs-4 mt-2" set:html={props.pointer6Text}>
-            </div>
-          </div>
-        </div>
-
-        }
-
-    
-{
-  props.pointer7Title &&
-
-
-<div class="d-flex gap-4 mt-5 pointerDiv ">
-  <div class="content-box numbers ">
-    <span>07</span>
-  </div>
-  <div >
-    <div class="pointerHeading" set:html={props.pointer7Title}>
-    </div>
-    <div class="pointerText  fs-4 mt-2" set:html={props.pointer7Text}>
-    </div>
-  </div>
-</div>
-}
-
-{
-  props.pointer8Title &&
-
-<div class="d-flex gap-4 mt-5 pointerDiv ">
-  <div class="content-box numbers ">
-    <span>08</span>
-  </div>
-  <div >
-    <div class="pointerHeading" set:html={props.pointer8Title}>
-    </div>
-    <div class="pointerText  fs-4 mt-2" set:html={props.pointer8Text}>
-    </div>
-  </div>
-</div>
-}
-
-
-{
-  props.pointer9Title &&
-
-  
+      {
+        props.pointer6Title && (
           <div class="d-flex gap-4 mt-5 pointerDiv ">
             <div class="content-box numbers ">
-              <span>09</span>
+              <span>06</span>
             </div>
-            <div >
-              <div class="pointerHeading" set:html={props.pointer9Title}>
-              </div>
-              <div class="pointerText  fs-4 mt-2" set:html={props.pointer9Text}>
-              </div>
-            </div>
-          </div>
-
-}
-
-
-
-
-      </section>
-
-
-
-   
-      {
-        props?.solutionDetails?.fields?.relatedProjects && (
-          <div class="margins" style="padding-top:4%; ">
-            <div class="relatedProjectHeading">
-              <span>
-               <span set:html={props.solutionName}></span> <span style="color: #e5ff53">Projects</span>
-              </span>
+            <div>
+              <div class="pointerHeading" set:html={props.pointer6Title} />
+              <div
+                class="pointerText  fs-4 mt-2"
+                set:html={props.pointer6Text}
+              />
             </div>
           </div>
         )
       }
+
       {
-        props?.solutionDetails?.fields?.relatedProjects && (
-          <div class="overflow-hidden m-0" style="padding:0 9%;">
-            
-            <div
-              id="stopOnHover"
-              class="d-flex workImg-section-soln borders"
-              style="width:100%; padding:7% 0 !important; overflow-x: scroll; "
-            >
-              {(props?.solutionDetails?.fields?.relatedProjects as any)?.map(
-                (projects: any) => (
-                  <div class="hoverImg ">
-                    <a
-                      href={"/portfolio/" + projects?.fields?.heroTitle}
-                      aria-label="case study"
-                    >
-                      <div class="work-animation">
-                        {projects?.fields?.heroBanner &&
+        props.pointer7Title && (
+          <div class="d-flex gap-4 mt-5 pointerDiv ">
+            <div class="content-box numbers ">
+              <span>07</span>
+            </div>
+            <div>
+              <div class="pointerHeading" set:html={props.pointer7Title} />
+              <div
+                class="pointerText  fs-4 mt-2"
+                set:html={props.pointer7Text}
+              />
+            </div>
+          </div>
+        )
+      }
+
+      {
+        props.pointer8Title && (
+          <div class="d-flex gap-4 mt-5 pointerDiv ">
+            <div class="content-box numbers ">
+              <span>08</span>
+            </div>
+            <div>
+              <div class="pointerHeading" set:html={props.pointer8Title} />
+              <div
+                class="pointerText  fs-4 mt-2"
+                set:html={props.pointer8Text}
+              />
+            </div>
+          </div>
+        )
+      }
+
+      {
+        props.pointer9Title && (
+          <div class="d-flex gap-4 mt-5 pointerDiv ">
+            <div class="content-box numbers ">
+              <span>09</span>
+            </div>
+            <div>
+              <div class="pointerHeading" set:html={props.pointer9Title} />
+              <div
+                class="pointerText  fs-4 mt-2"
+                set:html={props.pointer9Text}
+              />
+            </div>
+          </div>
+        )
+      }
+    </section>
+
+    {
+      props?.solutionDetails?.fields?.relatedProjects && (
+        <div class="margins" style="padding-top:4%; ">
+          <div class="relatedProjectHeading">
+            <span>
+              <span set:html={props.solutionName} />{" "}
+              <span style="color: #e5ff53">Projects</span>
+            </span>
+          </div>
+        </div>
+      )
+    }
+    {
+      props?.solutionDetails?.fields?.relatedProjects && (
+        <div class="overflow-hidden m-0" style="padding:0 9%;">
+          <div
+            id="stopOnHover"
+            class="d-flex workImg-section-soln borders"
+            style="width:100%; padding:7% 0 !important; overflow-x: scroll; "
+          >
+            {(props?.solutionDetails?.fields?.relatedProjects as any)?.map(
+              (projects: any) => (
+                <div class="hoverImg ">
+                  <a
+                    href={"/portfolio/" + projects?.fields?.heroTitle}
+                    aria-label="case study"
+                  >
+                    <div class="work-animation">
+                      {projects?.fields?.heroBanner && (
                         <Image
                           src={projects?.fields?.heroBanner?.fields?.file.url}
                           class="movingImgs optimization  "
@@ -324,47 +310,49 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
                           height={240}
                           alt=""
                         />
-                      }
-                        <div class="image-overlay">
-                          <Image class="optimization" src={redirectToWork} alt="" />
-                          <span
-                            class="workName"
-                            set:html={projects?.fields?.singleClient}
-                          />
-                          <span
-                            class="workTech"
-                            set:html={projects?.fields?.whichTechnology}
-                          />
-                        </div>
+                      )}
+                      <div class="image-overlay">
+                        <Image
+                          class="optimization"
+                          src={redirectToWork}
+                          alt=""
+                        />
+                        <span
+                          class="workName"
+                          set:html={projects?.fields?.singleClient}
+                        />
+                        <span
+                          class="workTech"
+                          set:html={projects?.fields?.whichTechnology}
+                        />
                       </div>
-                    </a>
-                  </div>
-                )
-              )}
-            </div>
+                    </div>
+                  </a>
+                </div>
+              )
+            )}
           </div>
-        )
-      }
-
-    
-    </div>
-    <div id="myModal" class="modal fade">
-        <div class="modal-dialog modal-fullscreen">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button
-                type="button"
-                class="close btn"
-                data-bs-dismiss="modal"
-                aria-hidden="true"
-                aria-label="close"
-                id="videoClose"
-                ><Image class="crossImg optimization" src={close} alt="" /></button
-              >
-              <h4 class="modal-title">Showreel</h4>
-            </div>
-            <div class="modal-body">
-              <!-- <iframe
+        </div>
+      )
+    }
+  </section>
+  <div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button
+            type="button"
+            class="close btn"
+            data-bs-dismiss="modal"
+            aria-hidden="true"
+            aria-label="close"
+            id="videoClose"
+            ><Image class="crossImg optimization" src={close} alt="" /></button
+          >
+          <h4 class="modal-title">Showreel</h4>
+        </div>
+        <div class="modal-body">
+          <!-- <iframe
                 width="560"
                 height="315"
                 id="videoFrame"
@@ -375,46 +363,45 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share "
                 allowfullscreen></iframe> -->
-              <video id="myVideo" controls>
-                <source src={showreelVideo} type="video/mp4" />
-                <!-- Add additional source elements for other video formats if needed -->
-              </video>
-            </div>
-          </div>
-       
+          <video id="myVideo" controls>
+            <source src={showreelVideo} type="video/mp4" />
+            <!-- Add additional source elements for other video formats if needed -->
+          </video>
         </div>
-</div>
-  </section>
+      </div>
+    </div>
+  </div>
+</Layout>
 
-  <style>
-    /* swiper css */
+<style>
+  /* swiper css */
 
-    .optimization{
-      height:auto;
-    }
-    p{
-      display: inline-block !important;
-    }
+  .optimization {
+    height: auto;
+  }
+  p {
+    display: inline-block !important;
+  }
 
-    .iconDiv{
-      /* aspect-ratio: 26/19; */
-      width: 17%;
-      background-color: #242424;
-      margin: 1.2%;
-      padding: 4%;
-    }
+  .iconDiv {
+    /* aspect-ratio: 26/19; */
+    width: 17%;
+    background-color: #242424;
+    margin: 1.2%;
+    padding: 4%;
+  }
 
-    .mySwiper {
-      margin-left: auto;
-      margin-right: auto;
-      position: relative;
-      overflow: hidden;
-      list-style: none;
-      padding: 0;
-      z-index: 1;
-      display: block;
-    }
-    .swiper-next,
+  .mySwiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
+  }
+  .swiper-next,
   .swiper-prev {
     width: 4%;
   }
@@ -431,316 +418,311 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
     width: 5.5% !important;
     height: 11%;
   }
-   
-    .watchVideo{
-        transform: translate(-1%, 0px);
-    }
-      /* lottie player */
-      .lottie {
-        width: 80px;
-        height: 80px;
-        filter: invert(1);
-      }
-   
 
-      a{
-        text-decoration: none;
-      }
+  .watchVideo {
+    transform: translate(-1%, 0px);
+  }
+  /* lottie player */
+  .lottie {
+    width: 80px;
+    height: 80px;
+    filter: invert(1);
+  }
 
-      #s1{
-        color: #fff;
-        text-transform: uppercase;
-        font-size: 1.5vw;
+  a {
+    text-decoration: none;
+  }
 
-        font-family: "anek devanagari";
+  #s1 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.5vw;
 
-
-      }
-      /* .watch-showreel {
+    font-family: "anek devanagari";
+  }
+  /* .watch-showreel {
         margin-top: 2rem;
       } */
 
+  .imgWidth img {
+    width: 100%;
+    aspect-ratio: 1440/681;
+    object-fit: cover;
+  }
+  /*  */
+  /* related projects css */
 
-    .imgWidth img {
-      width: 100%;
-      aspect-ratio:1440/681;
-      object-fit:cover;
-    }
-    /*  */
-    /* related projects css */
+  .workImg-section-soln {
+    padding-bottom: 7.3%;
+  }
 
-    .workImg-section-soln {
-      padding-bottom: 7.3%;
-    }
+  .hoverImg:hover .image-overlay {
+    opacity: 1;
+  }
+  .hoverImg {
+    margin-right: 2%;
+  }
 
-    .hoverImg:hover .image-overlay {
-      opacity: 1;
-    }
-    .hoverImg {
-      margin-right: 2%;
-    }
+  .work-animation {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 4vw 4vw 4vw;
+  }
+  .work-animation:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #f6f7f0;
+    z-index: 998;
+    transition: left 1.2s ease;
+  }
+  .workAnimate-active:after {
+    left: 100%;
+  }
+  .movingImgs {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    width: 25vw;
+    border-radius: 0 4vw 4vw 4vw;
+  }
 
-    .work-animation {
-      position: relative;
-      overflow: hidden;
-      border-radius: 0 4vw 4vw 4vw;
-    }
-    .work-animation:after {
-      content: "";
-      position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      background: #f6f7f0;
-      z-index: 998;
-      transition: left 1.2s ease;
-    }
-    .workAnimate-active:after {
-      left: 100%;
-    }
-    .movingImgs {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      width: 25vw;
-      border-radius: 0 4vw 4vw 4vw;
-    }
+  .image-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    /* backdrop-filter: blur(5px); */
+    background: rgba(0, 0, 0, 0.7);
+    padding: 7% 0 7% 9%;
+    opacity: 0;
+    border-radius: 0 0 4vw 4vw;
+  }
+  .image-overlay img {
+    width: 16%;
+    position: absolute;
+    left: 82%;
+    bottom: 70%;
+  }
 
-    .image-overlay {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      color: white;
-      /* backdrop-filter: blur(5px); */
-      background: rgba(0, 0, 0, 0.7);
-      padding: 7% 0 7% 9%;
-      opacity: 0;
-      border-radius: 0 0 4vw 4vw;
-    }
-    .image-overlay img {
-      width: 16%;
-      position: absolute;
-      left: 82%;
-      bottom: 70%;
-    }
+  .workTech {
+    font-family: "anek devanagari";
+    font-size: 1.5vw;
+    font-weight: 200;
+    display: block;
+    text-transform: capitalize;
+  }
+  .workName {
+    font-family: "anek devanagari";
+    font-size: 1.8vw;
+    font-weight: 500;
+    line-height: 1;
+    display: block;
+    text-transform: capitalize;
+    width: 79%;
+  }
 
-    .workTech {
-      font-family: "anek devanagari";
-      font-size: 1.5vw;
-      font-weight: 200;
-      display: block;
-      text-transform: capitalize;
+  .moving-text2 {
+    animation: move-text2 10s linear infinite;
+  }
+  @keyframes move-text2 {
+    0% {
+      transform: translateX(0%);
     }
-    .workName {
-      font-family: "anek devanagari";
-      font-size: 1.8vw;
-      font-weight: 500;
-      line-height: 1;
-      display: block;
-      text-transform: capitalize;
-      width: 79%;
+    100% {
+      transform: translateX(-680%);
     }
+  }
 
-    .moving-text2 {
-      animation: move-text2 10s linear infinite;
-    }
-    @keyframes move-text2 {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-680%);
-      }
-    }
+  /*  */
 
-    /*  */
- 
-    #section {
-      padding-top: 9vh;
-      background-color: #1a1a1a;
-    }
-    .margins {
-      padding: 0 9% 0 9%;
-    }
-    .margins-navigations {
-      padding: 0 15% 0 15%;
-    }
-    .heading span {
-      font-family: Deutschlander;
-      text-transform: uppercase;
-      font-size: 14.5vw;
-      font-weight: 400;
-      font-style: normal;
-      color: #fff;
-      line-height: 0.8;
-      /* line-height: 0.85; */
-    }
+  #section {
+    padding-top: 9vh;
+    background-color: #1a1a1a;
+  }
+  .margins {
+    padding: 0 9% 0 9%;
+  }
+  .margins-navigations {
+    padding: 0 15% 0 15%;
+  }
+  .heading span {
+    font-family: Deutschlander;
+    text-transform: uppercase;
+    font-size: 14.5vw;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    line-height: 0.8;
+    /* line-height: 0.85; */
+  }
 
-    .img {
-      width: 100%;
-    }
+  .img {
+    width: 100%;
+  }
 
-    .contentDiv {
-      margin-top: 7%;
-      /* height: 100vh;
+  .contentDiv {
+    margin-top: 7%;
+    /* height: 100vh;
         overflow-y: scroll; */
-      /* overflow-x: hidden; */
-    }
-    .numbers {
-      background-color: #e5ff53;
-      border-radius: 0 0.6vw 0 0.6vw;
-   
-      text-align: center;
-      font-family: Deutschlander;
-      font-size: 4.5vw;
-      line-height: 1.1;
-      height: fit-content;
-      padding: 0 2%;
-    }
+    /* overflow-x: hidden; */
+  }
+  .numbers {
+    background-color: #e5ff53;
+    border-radius: 0 0.6vw 0 0.6vw;
 
-    p {
-      font-family: Deutschlander;
-      text-transform: uppercase;
-      font-size: 5vw;
-      font-weight: 400;
-      font-style: normal;
-      color: #fff;
-      line-height: 0.85;
-      margin-bottom: 1% !important;
-    }
-    .midcontentSection{
-      margin-top: 4%;
-    }
-    .midcontentSection img{
-      border-radius: 4vw 0 4vw 0 ;
-    }
-    .clientIcons{
-      margin-top: 2%;
-    }
-    .clientIconsDiv span, .midcontent, .pointerHeading{
-        font-family: Deutschlander;
-      text-transform: uppercase;
-      font-size: 7vw;
-      font-weight: 400;
-      font-style: normal;
-      color: #fff;
-      line-height: 0.87;
-      margin-bottom: 1% !important;
-    }
-    .relatedProjectHeading span {
-      font-family: Deutschlander;
-      text-transform: uppercase;
-      font-size: 10vw;
-      font-weight: 400;
-      font-style: normal;
-      color: #fff;
-      line-height: 0.85;
-      margin-bottom: 1% !important;
-    }
-    /* .col-10 {
+    text-align: center;
+    font-family: Deutschlander;
+    font-size: 4.5vw;
+    line-height: 1.1;
+    height: fit-content;
+    padding: 0 2%;
+  }
+
+  p {
+    font-family: Deutschlander;
+    text-transform: uppercase;
+    font-size: 5vw;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    line-height: 0.85;
+    margin-bottom: 1% !important;
+  }
+  .midcontentSection {
+    margin-top: 4%;
+  }
+  .midcontentSection img {
+    border-radius: 4vw 0 4vw 0;
+  }
+  .clientIcons {
+    margin-top: 2%;
+  }
+  .clientIconsDiv span,
+  .midcontent,
+  .pointerHeading {
+    font-family: Deutschlander;
+    text-transform: uppercase;
+    font-size: 7vw;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    line-height: 0.87;
+    margin-bottom: 1% !important;
+  }
+  .relatedProjectHeading span {
+    font-family: Deutschlander;
+    text-transform: uppercase;
+    font-size: 10vw;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    line-height: 0.85;
+    margin-bottom: 1% !important;
+  }
+  /* .col-10 {
       padding-left: 4%;
     } */
-    .titleText{
-      font-family: "anek devanagari";
-      /* font-size: 1.27vw; */
-      color: #fff;
-      font-weight: 300;
-      opacity: 0.7;
-      text-align: justify;
+  .titleText {
+    font-family: "anek devanagari";
+    /* font-size: 1.27vw; */
+    color: #fff;
+    font-weight: 300;
+    opacity: 0.7;
+    text-align: justify;
+  }
+  .leftDivs {
+    padding-right: 5%;
+  }
+  .rightDivs {
+    padding-left: 5%;
+  }
+  .borders {
+    padding: 4% 0;
+    border-bottom: 1.1px solid rgb(99, 99, 99);
+  }
+
+  .arrows img {
+    width: 15%;
+  }
+  .arrows span {
+    font-family: "anek devanagari";
+    text-transform: uppercase;
+    font-size: 1.7vw;
+    color: #fff;
+  }
+  .rightArrow {
+    position: relative;
+  }
+  .rightArrow img {
+    position: absolute;
+    right: 0;
+  }
+  .rightArrow span {
+    position: absolute;
+    right: 25%;
+    top: 27%;
+  }
+
+  .text,
+  .pointerText {
+    font-family: "anek devanagari";
+    color: #fff;
+    font-weight: 300;
+    /* opacity: 1; */
+    text-align: justify;
+  }
+
+  @media screen and (max-width: 767px) {
+    .movingImgs {
+      aspect-ratio: 4/5;
+      width: 30vw;
+      border-radius: 0 4vw 4vw 4vw;
+      margin-right: 5%;
+      object-fit: cover;
     }
-    .leftDivs {
-      padding-right: 5%;
+    .col-10 p {
+      font-size: 9vw !important;
     }
-    .rightDivs {
-      padding-left: 5%;
+
+    .col-sm-12 {
+      margin-top: 6%;
+    }
+    .numbers {
+      width: 12% !important;
+      font-size: 8.5vw !important;
+      border-radius: 0 1.3vw 0 1.3vw;
     }
     .borders {
-      padding: 4% 0;
-      border-bottom: 1.1px solid rgb(99, 99, 99);
+      border: none !important;
+      padding: 0 !important;
     }
-
+    .rightDivs,
+    .leftDivs {
+      padding: 0 !important;
+    }
     .arrows img {
-      width: 15%;
+      width: 20% !important;
     }
     .arrows span {
-      font-family: "anek devanagari";
-      text-transform: uppercase;
-      font-size: 1.7vw;
-      color: #fff;
+      font-size: 2.5vw !important;
     }
-    .rightArrow {
-      position: relative;
-    }
+
     .rightArrow img {
-      position: absolute;
-      right: 0;
+      right: 0 !important;
     }
     .rightArrow span {
-      position: absolute;
-      right: 25%;
-      top: 27%;
+      right: 25% !important;
+      top: 30% !important;
     }
-
-  
-    .text, .pointerText {
-      font-family: "anek devanagari";
-      color: #fff;
-      font-weight: 300;
-      /* opacity: 1; */
-      text-align: justify;
+    .arrowDiv {
+      padding: 3% !important;
     }
-    
-
-    @media screen and (max-width: 767px) {
-      .movingImgs {
-        aspect-ratio: 4/5;
-        width: 30vw;
-        border-radius: 0 4vw 4vw 4vw;
-        margin-right: 5%;
-        object-fit: cover;
-      }
-      .col-10 p {
-        font-size: 9vw !important;
-      }
-  
-      .col-sm-12 {
-      
-        margin-top: 6%;
-        
-      }
-      .numbers {
-        width: 12% !important;
-        font-size: 8.5vw !important;
-        border-radius: 0 1.3vw 0 1.3vw;
-      }
-      .borders {
-        border: none !important;
-        padding: 0 !important;
-      }
-      .rightDivs,
-      .leftDivs {
-        padding: 0 !important;
-      }
-      .arrows img {
-        width: 20% !important;
-      }
-      .arrows span {
-        font-size: 2.5vw !important;
-      }
-
-      .rightArrow img {
-        right: 0 !important;
-      }
-      .rightArrow span {
-        right: 25% !important;
-        top: 30% !important;
-      }
-      .arrowDiv {
-        padding: 3% !important;
-      }
-      .controls {
+    .controls {
       transform: translate(34%, 140%);
       margin-bottom: 4%;
     }
@@ -751,30 +733,32 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
     .swiper-prev {
       margin-right: 10.5%;
     }
-    #s1{
+    #s1 {
       font-size: 3.3vw;
     }
-    .heading span{
+    .heading span {
       font-size: 17.5vw;
       line-height: 0.85;
     }
-    .clientIconsDiv span, .midcontent, .pointerHeading, .relatedProjectHeading span{
+    .clientIconsDiv span,
+    .midcontent,
+    .pointerHeading,
+    .relatedProjectHeading span {
       font-size: 14vw;
     }
-    .iconDiv{
-    width: 45%;
-    
-    margin: 2.2%;
-    padding: 7% 4%;
-    }
-    .pointerDiv{
-       flex-direction: column;
-       gap: 1rem 
-       !important;
-    }
-    }
+    .iconDiv {
+      width: 45%;
 
-    /* @media screen and (max-width: 450px) {
+      margin: 2.2%;
+      padding: 7% 4%;
+    }
+    .pointerDiv {
+      flex-direction: column;
+      gap: 1rem !important;
+    }
+  }
+
+  /* @media screen and (max-width: 450px) {
       .col-10 p {
         font-size: 10vw !important;
       }
@@ -790,135 +774,132 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
         font-size: 2.5vw !important;
       }
     } */
-  </style>
+</style>
 
 <style is:global>
-    .turnBlack {
-      background: transparent !important;
-      position: absolute !important;
-      width: 100% !important;
-    }
+  .turnBlack {
+    background: transparent !important;
+    position: absolute !important;
+    width: 100% !important;
+  }
 
-    .list ul li a {
-      color: white !important;
-      opacity: 50% !important;
-    }
-    path {
-      fill: white !important;
-    }
+  .list ul li a {
+    color: white !important;
+    opacity: 50% !important;
+  }
+  path {
+    fill: white !important;
+  }
 
-    .connect,
-    .circles {
-      fill: #1a1a1a !important;
-    }
-    .oval {
-      fill: white !important;
-    }
+  .connect,
+  .circles {
+    fill: #1a1a1a !important;
+  }
+  .oval {
+    fill: white !important;
+  }
 
-    .tele {
-      fill: white !important;
-    }
-    .menu p {
-      color: white !important;
-    }
-    .menu .s1,
-    .menu .s2 {
-      border: 1px solid white !important;
-    }
-  </style>
+  .tele {
+    fill: white !important;
+  }
+  .menu p {
+    color: white !important;
+  }
+  .menu .s1,
+  .menu .s2 {
+    border: 1px solid white !important;
+  }
+</style>
 
-  <script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const video: any = document.getElementById("myVideo");
+    const playButton = document.getElementById("playButton");
+    const playButtonText = document.getElementById("playButtonText");
 
-document.addEventListener("DOMContentLoaded", function () {
-        const video: any = document.getElementById("myVideo");
-        const playButton = document.getElementById("playButton");
-        const playButtonText = document.getElementById("playButtonText");
+    const videoClose = document.getElementById("videoClose");
 
-        const videoClose = document.getElementById("videoClose");
-
-        playButton.addEventListener("click", function () {
-          // Check if the video is paused or ended
-          if (video.paused || video.ended) {
-            setTimeout(() => {
-              video.play();
-            }, 700);
-          } else {
-            video.pause();
-            playButton.textContent = "Play Video";
-          }
-        });
-        playButtonText.addEventListener("click", function () {
-          // Check if the video is paused or ended
-          if (video.paused || video.ended) {
-            setTimeout(() => {
-              video.play();
-            }, 700);
-          } else {
-            video.pause();
-            playButton.textContent = "Play Video";
-          }
-        });
-        videoClose.addEventListener("click", function () {
-          video.pause();
-        });
-      });
-    // swiper
-    import {
-      Swiper,
-      Navigation,
-      Pagination,
-      EffectCoverflow,
-      Autoplay,
-      EffectCreative,
-    } from "swiper";
-    let x = 3;
-    var swiper = new Swiper(".mySwiper", {
-      modules: [Navigation, EffectCreative, Autoplay],
-      //   effect: "creative",
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: 1.3,
-      // autoplay: true,
-      spaceBetween: 10,
-      speed: 2000,
-      loop: true,
-      navigation: {
-        nextEl: ".swiper-next",
-        prevEl: ".swiper-prev",
-      },
-
-      breakpoints: {
-        767: {
-          slidesPerView: 1.28,
-
-          spaceBetween: 30,
-        },
-        250: {
-          slidesPerView: 1.15,
-          spaceBetween: 20,
-        },
-      },
-
-      autoplay: {
-        delay: 2000,
-      },
+    playButton.addEventListener("click", function () {
+      // Check if the video is paused or ended
+      if (video.paused || video.ended) {
+        setTimeout(() => {
+          video.play();
+        }, 700);
+      } else {
+        video.pause();
+        playButton.textContent = "Play Video";
+      }
     });
-    //
-    import { gsap, TimelineMax } from "gsap";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
-    gsap.registerPlugin(ScrollTrigger);
-
-    const movingImgs = document.querySelectorAll(".hoverImg");
-    gsap.from(".workImg-section-soln", 1, {
-      scrollTrigger: {
-        trigger: ".workImg-section-soln",
-        start: "top 55%",
-        end: "bottom top",
-
-        toggleClass: "move-upper-white-bg",
-        scrub: true,
-      },
+    playButtonText.addEventListener("click", function () {
+      // Check if the video is paused or ended
+      if (video.paused || video.ended) {
+        setTimeout(() => {
+          video.play();
+        }, 700);
+      } else {
+        video.pause();
+        playButton.textContent = "Play Video";
+      }
     });
- 
-  </script>
-</Layout>
+    videoClose.addEventListener("click", function () {
+      video.pause();
+    });
+  });
+  // swiper
+  import {
+    Swiper,
+    Navigation,
+    Pagination,
+    EffectCoverflow,
+    Autoplay,
+    EffectCreative,
+  } from "swiper";
+  let x = 3;
+  var swiper = new Swiper(".mySwiper", {
+    modules: [Navigation, EffectCreative, Autoplay],
+    //   effect: "creative",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 1.3,
+    // autoplay: true,
+    spaceBetween: 10,
+    speed: 2000,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-next",
+      prevEl: ".swiper-prev",
+    },
+
+    breakpoints: {
+      767: {
+        slidesPerView: 1.28,
+
+        spaceBetween: 30,
+      },
+      250: {
+        slidesPerView: 1.15,
+        spaceBetween: 20,
+      },
+    },
+
+    autoplay: {
+      delay: 2000,
+    },
+  });
+  //
+  import { gsap, TimelineMax } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  const movingImgs = document.querySelectorAll(".hoverImg");
+  gsap.from(".workImg-section-soln", 1, {
+    scrollTrigger: {
+      trigger: ".workImg-section-soln",
+      start: "top 55%",
+      end: "bottom top",
+
+      toggleClass: "move-upper-white-bg",
+      scrub: true,
+    },
+  });
+</script>
