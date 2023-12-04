@@ -6,11 +6,12 @@ import Footer from "../components/Footer.astro";
 export interface Props {
   title: string;
   seoTitle: string;
+  description: string;
 }
 const siteMetadata: any = await Astro.glob("../metadata.json");
 
-const { title, seoTitle } = Astro.props;
-console.log(seoTitle, "THE");
+const { title, seoTitle, description } = Astro.props;
+console.log(title, "THE");
 ---
 
 <!doctype html>
@@ -33,8 +34,10 @@ console.log(seoTitle, "THE");
     /> -->
     <meta
       name="description"
-      content={(siteMetadata[0]?.seo[seoTitle] || siteMetadata[0]?.seo?.default)
-        .description}
+      content={(siteMetadata[0]?.seo[seoTitle] &&
+        siteMetadata[0]?.seo[seoTitle].description) ||
+        description ||
+        siteMetadata[0]?.seo?.default.description}
     />
     {
       siteMetadata[0]?.seo[seoTitle]?.image && (

@@ -61,7 +61,6 @@ const showreel: any = await contentfulClient.getEntries<any>({
   content_type: "showreel",
 });
 const showreelVideo = showreel.items[0].fields.video.fields.file.url;
-
 ---
 
 <!-- <section class="margins animate-topSection" style="overflow-x: hidden;">
@@ -155,7 +154,11 @@ animate-topSection
         </div>
       </div>
 
-      <div class="d-flex" id="main3" style="position: relative; transform: translate(-1.3%, 0px)">
+      <div
+        class="d-flex"
+        id="main3"
+        style="position: relative; transform: translate(-1.3%, 0px)"
+      >
         <a
           href="#myModal"
           data-bs-target="#myModal"
@@ -188,7 +191,12 @@ animate-topSection
         <div id="div2">
           <a href="#knowMore" aria-label="know more">
             <span id="s3"
-              >Brands we've worked with <Image src={arrow} alt="" quality={100} class="optimization" /></span
+              >Brands we've worked with <Image
+                src={arrow}
+                alt=""
+                quality={100}
+                class="optimization"
+              /></span
             >
           </a>
         </div>
@@ -219,9 +227,8 @@ animate-topSection
   />
 </section>
 
-<section  style="overflow-x: hidden;">
+<section style="overflow-x: hidden;">
   <div class="snapTagline">
-
     <div class="container">
       <div
         id="main4"
@@ -234,18 +241,23 @@ animate-topSection
             <Image class="optimization" src={diamond} alt="" />
           </div>
         </div>
-  
+
         <div class="d-flex panel">
           <span>Engage</span>
           <div class="taglineDiamond">
             <Image class="optimization" src={diamond} alt="" />
           </div>
         </div>
-  
+
         <div class="d-flex panel">
           <span>Enable</span>
           <div class="taglineDiamond">
-            <Image style=" opacity:0" class="optimization" src={diamond} alt="" />
+            <Image
+              style=" opacity:0"
+              class="optimization"
+              src={diamond}
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -261,13 +273,13 @@ animate-topSection
         <div class="d-flex align-items-center gap-3">
           <span class="text-nowrap">Giants Trust Us.</span>
           <a href="/portfolio">
-          <Image
-            src={ovalArrow}
-            alt=""
-            class="optimization "
-            style="width:24%;  "
-          />
-        </a>
+            <Image
+              src={ovalArrow}
+              alt=""
+              class="optimization"
+              style="width:24%;  "
+            />
+          </a>
         </div>
       </div>
     </div>
@@ -369,21 +381,30 @@ animate-topSection
     <div class="onlyDesktop">
       <table>
         <tbody>
-          <tr class="hover trial" style="border-top: 1.15px solid rgb(63, 63, 63);">
+          <tr
+            class="hover trial"
+            style="border-top: 1.15px solid rgb(63, 63, 63);"
+          >
             <td class="index">01.</td>
 
-            <td class="tech ">
-              
-               Immersive Technology</td
-            >
+            <td class="tech"> Immersive Technology</td>
 
             <td>
               <ul class="">
-                <Image src={solnImg1} quality={100} class="trial2 optimization" alt="" />
+                <Image
+                  src={solnImg1}
+                  quality={100}
+                  class="trial2 optimization"
+                  alt=""
+                />
                 <li class="list">Metaverse</li>
-                <li class="list">Virtual reality</li>
+                <li class="list">
+                  <a href="solutions/virtual-reality">Virtual reality</a>
+                </li>
                 <li class="list">Augmented reality</li>
-                <li class="list">Projection mapping</li>
+                <li class="list">
+                  <a href="solutions/projection-mapping">Projection Mapping</a>
+                </li>
                 <li class="list">Holographic Technology</li>
               </ul>
             </td>
@@ -402,13 +423,15 @@ animate-topSection
           </tr>
           <tr class="hover trial">
             <td class="index">02.</td>
-            <td class="tech ">
-              
-               Experiential Marketing</td
-            >
+            <td class="tech"> Experiential Marketing</td>
             <td>
               <ul class="">
-                <Image src={solnImg2} quality={100} class="trial2 optimization" alt="" />
+                <Image
+                  src={solnImg2}
+                  quality={100}
+                  class="trial2 optimization"
+                  alt=""
+                />
                 <li class="list">Gesture Recognition</li>
                 <li class="list">Motion Capture</li>
                 <li class="list">Interactive Tech-led Campaigns</li>
@@ -434,14 +457,19 @@ animate-topSection
 
           <tr class="hover trial">
             <td class="index">03.</td>
-            <td class="tech ">
-             
-               Interactive Solution</td
-            >
+            <td class="tech"> Interactive Solution</td>
             <td>
               <ul class="">
-                <Image src={solnImg3} quality={100} class="trial2 optimization" alt="" />
-                <li class="list">Interactive Wall/Screen</li>
+                <Image
+                  src={solnImg3}
+                  quality={100}
+                  class="trial2 optimization"
+                  alt=""
+                />
+                <li class="list">
+                  <a href="solutions/interactive-wall"
+                    >Interactive Wall/Screen</a>
+                </li>
                 <li class="list">Interactive Table/Interactive Book</li>
                 <li class="list">3D Configurators</li>
                 <li class="list">Object Recognition Table</li>
@@ -461,17 +489,19 @@ animate-topSection
           </tr>
           <tr class="hover trial">
             <td class="index">04.</td>
-            <td class="tech ">
-            
-
-               Mobile & Web</td
-            >
+            <td class="tech"> Mobile & Web</td>
             <td>
               <ul class="">
-                <Image src={solnImg4} quality={100} class="trial2 optimization" alt="" />
+                <Image
+                  src={solnImg4}
+                  quality={100}
+                  class="trial2 optimization"
+                  alt=""
+                />
                 <li class="list">Web Development</li>
                 <li class="list">App Development</li>
                 <li class="list">Gaming Solutions</li>
+                <li class="list">Artificial Intelligence</li>
               </ul></td
             >
             <td>
@@ -489,13 +519,15 @@ animate-topSection
 
           <tr class="hover trial">
             <td class="index">05.</td>
-            <td class="tech ">
-             
-               Content Development</td
-            >
+            <td class="tech"> Content Development</td>
             <td>
               <ul class="">
-                <Image src={content} quality={100} class="trial2 optimization" alt="" />
+                <Image
+                  src={content}
+                  quality={100}
+                  class="trial2 optimization"
+                  alt=""
+                />
                 <li class="list">3D/2D Animations</li>
                 <li class="list">Motion Graphics</li>
                 <li class="list">Architectural Visualization</li>
@@ -508,7 +540,7 @@ animate-topSection
                 ><div class="onHover">
                   <Image
                     class="table solutionArrow optimization"
-                    src={vector} 
+                    src={vector}
                     alt=""
                   />
                 </div></a
@@ -518,13 +550,15 @@ animate-topSection
 
           <tr class="hover trial">
             <td class="index">06.</td>
-            <td class="tech ">
-           
-               Strategy & Design</td
-            >
+            <td class="tech"> Strategy & Design</td>
             <td class="">
               <ul class="">
-                <Image src={solnImg6} quality={100} class="trial2 optimization" alt="" />
+                <Image
+                  src={solnImg6}
+                  quality={100}
+                  class="trial2 optimization"
+                  alt=""
+                />
                 <li class="list">Scenario Mapping Brand Audits</li>
                 <li class="list">Brand Identity</li>
                 <li class="list">Competitor Mapping</li>
@@ -571,9 +605,11 @@ animate-topSection
           </div>
           <div class="col-7 mobList">
             <li>Metaverse</li>
-            <li>Virtual Reality</li>
+            <li><a href="solutions/virtual-reality"> Virtual Reality</a></li>
             <li>Augmented Reality</li>
-            <li>Projection Mapping</li>
+            <li>
+              <a href="solutions/projection-mapping">Projection Mapping</a>
+            </li>
             <li>Holographic Technology</li>
           </div>
         </div>
@@ -596,7 +632,7 @@ animate-topSection
           </div>
         </div>
         <div class="row">
-          <div class="col-5  d-flex align-items-center">
+          <div class="col-5 d-flex align-items-center">
             <Image class="mobImg optimization" src={solnImg2} alt="" />
           </div>
           <div class="col-7 mobList">
@@ -628,12 +664,14 @@ animate-topSection
             </a>
           </div>
         </div>
-        <div class="row  d-flex align-items-center">
+        <div class="row d-flex align-items-center">
           <div class="col-5">
             <Image class="mobImg optimization" src={solnImg3} alt="" />
           </div>
           <div class="col-7 mobList">
-            <li>Interactive Wall/Screen</li>
+            <li>
+              <a href="solutions/interactive-wall">Interactive Wall/Screen</a>
+            </li>
             <li>Interactive Table/Interactive Book</li>
             <li>3D Configurators</li>
             <li>Object Recognition Table</li>
@@ -658,7 +696,7 @@ animate-topSection
             </a>
           </div>
         </div>
-        <div class="row  d-flex align-items-center">
+        <div class="row d-flex align-items-center">
           <div class="col-5">
             <Image class="mobImg optimization" src={solnImg4} alt="" />
           </div>
@@ -666,6 +704,7 @@ animate-topSection
             <li>Web Development</li>
             <li>App Development</li>
             <li>Gaming Solutions</li>
+            <li>Artificial Intelligence</li>
           </div>
         </div>
       </div>
@@ -688,7 +727,7 @@ animate-topSection
           </div>
         </div>
         <div class="row">
-          <div class="col-5  d-flex align-items-center">
+          <div class="col-5 d-flex align-items-center">
             <Image class="mobImg optimization" src={content} alt="" />
           </div>
           <div class="col-7 mobList">
@@ -718,7 +757,7 @@ animate-topSection
             </a>
           </div>
         </div>
-        <div class="row  d-flex align-items-center">
+        <div class="row d-flex align-items-center">
           <div class="col-5">
             <Image class="mobImg optimization" src={solnImg6} alt="" />
           </div>
@@ -982,7 +1021,9 @@ animate-topSection
         <span class="solutions">TESTIMONIALS</span>
       </div>
 
-      <div class="testimText-animate col-md-5 col-lg-5 col-sm-12 d-flex align-items-center">
+      <div
+        class="testimText-animate col-md-5 col-lg-5 col-sm-12 d-flex align-items-center"
+      >
         <span class="blackPara2"
           >Carving inspiring brand success stories through transformative
           MarTech solutions</span
@@ -998,28 +1039,23 @@ animate-topSection
             testimonials.items.map((clientsTestimonials, index) => (
               <div class="swiper-slide">
                 <div class="card-parent">
-                
                   <div class="card-header" style="align-self: center;">
-                    {
-                      clientsTestimonials?.fields?.companyLogo?.fields &&
-
-                    
-                    <Image
-                      src={
-                        clientsTestimonials?.fields?.companyLogo?.fields?.file
-                          .url
-                      }
-                      width={317}
-                      height={131}
-                      style="width: 50%;"
-                      alt={
-                        clientsTestimonials?.fields?.companyLogo?.fields
-                          ?.description
-                      }
-                      class=" optimization"
-                    />
-
-                    }
+                    {clientsTestimonials?.fields?.companyLogo?.fields && (
+                      <Image
+                        src={
+                          clientsTestimonials?.fields?.companyLogo?.fields?.file
+                            .url || ""
+                        }
+                        width={317}
+                        height={131}
+                        style="width: 50%;"
+                        alt={
+                          clientsTestimonials?.fields?.companyLogo?.fields
+                            ?.description
+                        }
+                        class=" optimization"
+                      />
+                    )}
                   </div>
 
                   <div class="card">
@@ -1029,9 +1065,11 @@ animate-topSection
                         set:html={clientsTestimonials?.fields?.testimonialText}
                       />
                       <div class="d-flex cardFooter">
-                        <div style="margin:auto; margin-left:1% ;  
+                        <div
+                          style="margin:auto; margin-left:1% ;  
     position: absolute;
-    bottom: 0%;">
+    bottom: 0%;"
+                        >
                           <span
                             class="authName"
                             set:html={clientsTestimonials?.fields?.clientName}
@@ -1047,7 +1085,7 @@ animate-topSection
                 </div>
               </div>
             ))
-          }       
+          }
         </div>
         <div class="swiper-pagination"></div>
 
@@ -1222,7 +1260,7 @@ animate-topSection
     </div>
     <a href="#top">
       <!-- <div class="backToTop">Back To Top</div> -->
-      <Image src={backToTop} alt="" class="backToTop optimization"/>
+      <Image src={backToTop} alt="" class="backToTop optimization" />
     </a>
     <!-- <div class="yellowCircle"> <p class="view">VIEW ALL</p></div>  -->
   </section>
@@ -1261,11 +1299,8 @@ animate-topSection
           </video>
         </div>
       </div>
-   
     </div>
 
-
-   
     <!-- video modal ends -->
     <style>
       .optimization {
@@ -1282,7 +1317,7 @@ animate-topSection
         position: absolute;
 
         top: 65%;
-       right: 69%;
+        right: 69%;
         width: 53% !important;
         border: 2px solid white;
         box-shadow: -15px 14px 0px #e5ff53;
@@ -1290,34 +1325,32 @@ animate-topSection
         object-fit: cover;
       }
 
-      .watermark{
+      .watermark {
         font-family: "Deutschlander";
-    text-transform: uppercase;
-    color: white;
-    opacity: 3%;
-    font-size: 12.5vw;
-    line-height: 1;
-    word-spacing: 0.2rem;
-    position: absolute;
-    right: 13%;
+        text-transform: uppercase;
+        color: white;
+        opacity: 3%;
+        font-size: 12.5vw;
+        line-height: 1;
+        word-spacing: 0.2rem;
+        position: absolute;
+        right: 13%;
       }
       /* Back to top CSS */
 
-
       .backToTop {
-      position: fixed; /* Fixed/sticky position */
-      bottom: 20px; /* Place the button at the bottom of the page */
-      right: 30px; /* Place the button 30px from the right */
-      z-index: 99; /* Make sure it does not overlap */
-      cursor: pointer; /* Add a mouse pointer on hover */
-      scroll-behavior: smooth;
-      display: block;
-     
-    }
+        position: fixed; /* Fixed/sticky position */
+        bottom: 20px; /* Place the button at the bottom of the page */
+        right: 30px; /* Place the button 30px from the right */
+        z-index: 99; /* Make sure it does not overlap */
+        cursor: pointer; /* Add a mouse pointer on hover */
+        scroll-behavior: smooth;
+        display: block;
+      }
 
-    .toggle {
-      display: none !important;
-    }
+      .toggle {
+        display: none !important;
+      }
 
       /* products Icons */
 
@@ -1582,8 +1615,8 @@ animate-topSection
         width: 100%;
         margin: 1.2%;
       }
-      .giants:hover .imgs{
-        opacity:.5;
+      .giants:hover .imgs {
+        opacity: 0.5;
         transition: 0.5s ease;
       }
       .giants .imgs:hover {
@@ -1591,9 +1624,9 @@ animate-topSection
         filter: invert(1);
         scale: 1.15;
         transition: 0.5s ease;
-        opacity:1;
+        opacity: 1;
       }
-    
+
       .imgRow {
         width: 15%;
         display: inline-block;
@@ -1651,7 +1684,7 @@ animate-topSection
         width: 80%;
         color: white;
         opacity: 75%;
-     
+
         display: inline-block;
 
         /* text-align: left; */
@@ -1956,8 +1989,8 @@ animate-topSection
         /* margin-top: 10%;
         padding: 0 7% !important; */
         margin-top: 10%;
-    padding: 0 7%!important;
-    height: 26vw;
+        padding: 0 7% !important;
+        height: 26vw;
       }
 
       .card-header {
@@ -1988,11 +2021,11 @@ animate-topSection
         font-size: 1.25vw;
         word-spacing: 0.05vw; */
         font-family: "anek devanagari";
-    /* height: 25vw; */
-    height: 22vw;
-    font-size: 1.25vw;
-    word-spacing: 0.05vw;
-    overflow-y: scroll;
+        /* height: 25vw; */
+        height: 22vw;
+        font-size: 1.25vw;
+        word-spacing: 0.05vw;
+        overflow-y: scroll;
       }
 
       .authorImg {
@@ -2027,7 +2060,7 @@ animate-topSection
         .cardFooter {
           margin-top: 5%;
         }
-        .trial2{
+        .trial2 {
           left: 79.8%;
         }
       }
@@ -2085,8 +2118,8 @@ animate-topSection
           opacity:0;
         } */
 
-        .watermark{
-          display:none;
+        .watermark {
+          display: none;
         }
         .titleImgsDiv {
           padding-top: 5%;
@@ -2335,7 +2368,6 @@ animate-topSection
       } */
         .card-text {
           font-size: 2.1vw !important;
-         
         }
         .card-parent {
           width: 29rem !important;
@@ -3013,7 +3045,7 @@ animate-topSection
 
         el.addEventListener("mouseenter", (e) => {
           //@ts-ignore
-          gsap.to(image,  { autoAlpha: 1, scale: 1.3 });
+          gsap.to(image, { autoAlpha: 1, scale: 1.3 });
         });
 
         el.addEventListener("mouseleave", (e) => {
@@ -3079,7 +3111,7 @@ animate-topSection
             //   ,
             // snap: 1 / (sections.length - 0.8),
             start: "top 22%",
-            end:'bottom -50%'
+            end: "bottom -50%",
             // end: () =>
             //   "+=" + ((document.querySelector(".container") as any).offsetWidth - 40),
           },
@@ -3094,7 +3126,7 @@ animate-topSection
             start: "top 47%",
             end: "top top",
             snap: 1,
-             
+
             toggleActions: "play complete reverse reset",
           },
         });
@@ -3106,7 +3138,7 @@ animate-topSection
             trigger: ".giantHolder-animate",
             start: "top 10%",
             end: "bottom top",
-          
+
             toggleActions: "restart complete reverse reset",
           },
         });
@@ -3116,7 +3148,7 @@ animate-topSection
           ease: "ease1.out",
           scrollTrigger: {
             trigger: ".clientArray1",
-          
+
             start: "top 70%",
             end: "bottom top",
             toggleActions: "restart complete reverse reset",
@@ -3188,22 +3220,20 @@ animate-topSection
               start: "top 70%",
               end: "bottom top",
               toggleClass: "mainImg-animate",
-            
+
               // markers: true,
               scrub: true,
             },
           })
-          .from(".snapTagline",  {
+          .from(".snapTagline", {
             scrollTrigger: {
               trigger: ".snapTagline",
               start: "top 90%",
               end: "bottom 70%",
-              snap:{
-                snapTo:0.7,
+              snap: {
+                snapTo: 0.7,
                 duration: 0.9,
-              },      
-             
-           
+              },
             },
           })
 
@@ -3459,7 +3489,7 @@ animate-topSection
               scrub: true,
             },
           })
-      
+
           .from(".mainImg", 5, {
             delay: 5,
             scrollTrigger: {
@@ -3471,7 +3501,6 @@ animate-topSection
               scrub: true,
             },
           })
-     
 
           .from("#featureWork-section", 1, {
             scrollTrigger: {
@@ -3674,18 +3703,17 @@ animate-topSection
         },
       });
 
-
       let tl2 = gsap.timeline();
       tl2.from(".mainImg", 1, {
-      scrollTrigger: {
-        trigger: ".backToTop",
-        start: "top bottom",
-        end: "bottom -90%",
-        toggleClass: "toggle",
-       
-        scrub: true,
-      },
-    });
+        scrollTrigger: {
+          trigger: ".backToTop",
+          start: "top bottom",
+          end: "bottom -90%",
+          toggleClass: "toggle",
+
+          scrub: true,
+        },
+      });
     </script>
   </div>
 </section>

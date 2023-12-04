@@ -10,10 +10,8 @@ import yellowGo from "../images/yellowGo2.png";
 import blogsLeft from "../images/blogsLeft.png";
 import blogsRight from "../images/blogsRight.png";
 import readMore from "../images/readMore.png";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 //import { Image, Picture } from "@astrojs/image/components";
-
-
 
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "blogs",
@@ -33,7 +31,7 @@ const entries: any = await contentfulClient.getEntries<any>({
           <span>thinking out loud</span>
           <!-- </div> -->
           <a href="#blogsList" aria-label="blogs list" style="margin-left: 1%;">
-            <Image  class="btn blogbtn optimization" src={rotatingBlog} alt="" />
+            <Image class="btn blogbtn optimization" src={rotatingBlog} alt="" />
             <Image class="arrow optimization" src={arrow} alt="" />
           </a>
         </div>
@@ -77,6 +75,7 @@ const entries: any = await contentfulClient.getEntries<any>({
                           format="webp"
                           width={1552}
                           height={720}
+                          quality={85}
                           src={blogs.fields?.heroImage?.fields?.file.url}
                           alt=""
                         />
@@ -89,7 +88,11 @@ const entries: any = await contentfulClient.getEntries<any>({
                       >
                         <div>
                           <span> Read&nbsp; more</span>
-                          <Image class=" optimization readMoreArrow" src={readMore} alt="" />
+                          <Image
+                            class=" optimization readMoreArrow"
+                            src={readMore}
+                            alt=""
+                          />
                         </div>
                       </a>
                     </div>
@@ -115,8 +118,8 @@ const entries: any = await contentfulClient.getEntries<any>({
       <div class="col-md-6 col-lg-6 col-sm-12 picks">
         <div class="animate-img">
           <Image
-          width={2281}
-          height={1057}
+            width={2281}
+            height={1057}
             class="editorImgs optimization"
             src={"//images.ctfassets.net/i7u70o31dp49/7dyu5mQVmtZnNzMVvPlssC/421d79adb861c9f778727e1d070a8e22/Mask_group.png"}
             alt=""
@@ -258,7 +261,7 @@ const entries: any = await contentfulClient.getEntries<any>({
   }
   .arrow {
     position: relative;
-    right: 14.5%;
+    right: 15%;
     width: 2.5%;
     margin-bottom: 20%;
   }
@@ -482,7 +485,7 @@ const entries: any = await contentfulClient.getEntries<any>({
 
       font-weight: 400;
       color: white;
-       margin-left: 1%;
+      margin-left: 1%;
       opacity: 50%;
     }
     .picks {
@@ -790,8 +793,6 @@ const entries: any = await contentfulClient.getEntries<any>({
     background: #1a1a1a !important;
     position: fixed !important;
     width: 100%;
-
-
   }
 
   .list ul li a {
@@ -910,7 +911,7 @@ const entries: any = await contentfulClient.getEntries<any>({
         opacity: 0,
         scrollTrigger: {
           trigger: ".swiper-animate",
-          start: "top 30%",
+          start: "top 66%",
           end: "bottom 90%",
           scrub: true,
         },

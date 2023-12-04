@@ -6,14 +6,13 @@ import leftArrow from "../images/carousalPrev.png";
 import solndetailimg from "../images/solndetailimg.jpg";
 import redirectToWork from "../images/redirectToWork2.png";
 import { contentfulClient } from "../lib/contentful";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
 });
 
 const props = Astro.props;
-console.log(props, "solutionData");
 ---
 
 <Layout title="our solutions" seoTitle="solutions">
@@ -29,9 +28,7 @@ console.log(props, "solutionData");
             {
               (props.sliderImages as any)?.map((projects: any) => (
                 <div class="swiper-slide imgWidth">
-
-                  {projects.fields?.file &&
-                  
+                  {projects.fields?.file && (
                     <Image
                       class="resizeImg optimization"
                       src={projects.fields?.file.url}
@@ -39,165 +36,236 @@ console.log(props, "solutionData");
                       width={732}
                       height={400}
                     />
-                  }
-                  </div>
-                  ))
-                }
+                  )}
                 </div>
+              ))
+            }
           </div>
+        </div>
 
-          <!-- <div class="d-flex controls">
+        <!-- <div class="d-flex controls">
               <Image class="swiper-prev" src={blogsLeft} alt="" />
               <Image class="swiper-next" src={blogsRight} alt="" />
             </div> -->
-        </div>
       </div>
+    </div>
 
-      <div class="margins contentDiv">
-        <div class="row borders">
-          <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
-            <div class="content-box numbers col-2">
-              <span>01</span>
-            </div>
-            <div class="col-10">
-              <p set:html={props.pointer1Heading} />
-            </div>
-            {props.pointer1Img &&
-            <Image src={props.pointer1Img}   width={732}
-            height={400} class="pointerImg optimization" alt="" />}
-            <span class="pointerText" set:html={props.pointer1Text} />
+    <div class="margins contentDiv">
+      <div class="row borders">
+        <a
+          href={props.pointer1Slug}
+          class="col-lg-6 col-md-6 col-sm-12 row leftDivs"
+        >
+          <div class="content-box numbers col-2">
+            <span>01</span>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
-            <div class="content-box numbers col-2">
-              <span>02</span>
-            </div>
-            <div class="col-10">
-              <p set:html={props.pointer2Heading} />
-            </div>
-            {props.pointer2Img &&
-            <Image src={props.pointer2Img}   width={732}
-            height={400} class="pointerImg optimization" alt="" /> }
-
-            <span class="pointerText" set:html={props.pointer2Text} />
-          </div>
-        </div>
-
-        <div class="row borders">
-          <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
-            <div class="content-box numbers col-2">
-              <span>03</span>
-            </div>
-            <div class="col-10">
-              <p set:html={props.pointer3Heading} />
-            </div>
-            {props.pointer3Img &&
-            <Image src={props.pointer3Img }   width={732}
-            height={400} class="pointerImg optimization" alt="" />}
-
-            <span class="pointerText" set:html={props.pointer3Text} />
+          <div class="col-10">
+            <p set:html={props.pointer1Heading} />
           </div>
           {
-            props.pointer4Text && (
-              <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
-                <div class="content-box numbers col-2">
-                  <span>04</span>
-                </div>
-                <div class="col-10">
-                  <p set:html={props.pointer4Heading} />
-                </div>
-                {props.pointer4Img &&
-                <Image src={props.pointer4Img}   width={732}
-                      height={400} class="pointerImg optimization" alt="" />}
-
-                <span class="pointerText" set:html={props.pointer4Text} />
-              </div>
+            props.pointer1Img && (
+              <Image
+                src={props.pointer1Img}
+                width={732}
+                height={400}
+                class="pointerImg optimization"
+                alt=""
+              />
             )
           }
-        </div>
+          <span class="pointerText" set:html={props.pointer1Text} />
+        </a>
+        <a
+          href={props.pointer2Slug}
+          class="col-lg-6 col-md-6 col-sm-12 row rightDivs"
+        >
+          <div class="content-box numbers col-2">
+            <span>02</span>
+          </div>
+          <div class="col-10">
+            <p set:html={props.pointer2Heading} />
+          </div>
+          {
+            props.pointer2Img && (
+              <Image
+                src={props.pointer2Img}
+                width={732}
+                height={400}
+                class="pointerImg optimization"
+                alt=""
+              />
+            )
+          }
 
+          <span class="pointerText" set:html={props.pointer2Text} />
+        </a>
+      </div>
+
+      <div class="row borders">
+        <!-- <a href={props.pointer1Heading}>
+
+          </a> -->
+        <a
+          href={props.pointer3Slug}
+          class="col-lg-6 col-md-6 col-sm-12 row leftDivs"
+        >
+          <div class="content-box numbers col-2">
+            <span>03</span>
+          </div>
+          <div class="col-10">
+            <p set:html={props.pointer3Heading} />
+          </div>
+          {
+            props.pointer3Img && (
+              <Image
+                src={props.pointer3Img}
+                width={732}
+                height={400}
+                class="pointerImg optimization"
+                alt=""
+              />
+            )
+          }
+
+          <span class="pointerText" set:html={props.pointer3Text} />
+        </a>
         {
-          props.pointer5Text && (
-            <div class="row borders">
-              <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
+          props.pointer4Text && (
+            <a
+              href={props.pointer4Slug}
+              class="col-lg-6 col-md-6 col-sm-12 row rightDivs"
+            >
+              <div class="content-box numbers col-2">
+                <span>04</span>
+              </div>
+              <div class="col-10">
+                <p set:html={props.pointer4Heading} />
+              </div>
+              {props.pointer4Img && (
+                <Image
+                  src={props.pointer4Img}
+                  width={732}
+                  height={400}
+                  class="pointerImg optimization"
+                  alt=""
+                />
+              )}
+
+              <span class="pointerText" set:html={props.pointer4Text} />
+            </a>
+          )
+        }
+      </div>
+
+      {
+        props.pointer5Text && (
+          <div class="row borders">
+            <a
+              href={props.pointer5Slug}
+              class="col-lg-6 col-md-6 col-sm-12 row leftDivs"
+            >
+              <div class="content-box numbers col-2">
+                <span>05</span>
+              </div>
+              <div class="col-10">
+                <p set:html={props.pointer5Heading} />
+              </div>
+              {props.pointer5Img && (
+                <Image
+                  src={props.pointer5Img}
+                  width={732}
+                  height={400}
+                  class="pointerImg optimization"
+                  alt=""
+                />
+              )}
+              <span class="pointerText" set:html={props.pointer5Text} />
+            </a>
+            {props.pointer6Text && (
+              <a
+                href={props.pointer5Slug}
+                class="col-lg-6 col-md-6 col-sm-12 row rightDivs"
+              >
                 <div class="content-box numbers col-2">
                   <span>05</span>
                 </div>
                 <div class="col-10">
-                  <p set:html={props.pointer5Heading} />
+                  <p set:html={props.pointer6Heading} />
                 </div>
-                {props.pointer5Img &&
-                <Image src={props.pointer5Img}   width={732}
-                      height={400} class="pointerImg optimization" alt="" />
-                    }
-                <span class="pointerText" set:html={props.pointer5Text} />
-              </div>
-              {props.pointer6Text && (
-                <div class="col-lg-6 col-md-6 col-sm-12 row rightDivs">
-                  <div class="content-box numbers col-2">
-                    <span>05</span>
-                  </div>
-                  <div class="col-10">
-                    <p set:html={props.pointer6Heading} />
-                  </div>
-                  {props.pointer6Img &&
-                  <Image src={props.pointer6Img}   width={732}
-                      height={400} class="pointerImg optimization" alt="" />}
+                {props.pointer6Img && (
+                  <Image
+                    src={props.pointer6Img}
+                    width={732}
+                    height={400}
+                    class="pointerImg optimization"
+                    alt=""
+                  />
+                )}
 
-                  <span class="pointerText" set:html={props.pointer6Text} />
-                </div>
-              )}
-            </div>
-          )
-        }
-
-        {
-          props.pointer7Text && (
-            <div class="row borders">
-              <div class="col-lg-6 col-md-6 col-sm-12 row leftDivs">
-                <div class="content-box numbers col-2">
-                  <span>07</span>
-                </div>
-                <div class="col-10">
-                  <p set:html={props.pointer7Heading} />
-                </div>
-                {props.pointer7Img &&
-                <Image src={props.pointer7Img}   width={732}
-                      height={400}  class="pointerImg optimization" alt="" />}
-
-                <span class="pointerText" set:html={props.pointer7Text} />
-              </div>
-            </div>
-          )
-        }
-      </div>
-      {
-        props?.solutionsData?.fields?.relatedProjects && (
-          <div class="margins" style="padding-top:4%; ">
-            <div class="relatedProjectHeading">
-              <span>
-                Related <span style="color: #e5ff53">Projects</span>
-              </span>
-            </div>
+                <span class="pointerText" set:html={props.pointer6Text} />
+              </a>
+            )}
           </div>
         )
       }
+
       {
-        props?.solutionsData?.fields?.relatedProjects && (
-          <div class="overflow-hidden m-0" style="padding:0 9%;">
-            <div
-              id="stopOnHover"
-              class="d-flex workImg-section-soln borders"
-              style="width:100%; padding:7% 0 !important; overflow-x: scroll; "
+        props.pointer7Text && (
+          <div class="row borders">
+            <a
+              href={props.pointer7Slug}
+              class="col-lg-6 col-md-6 col-sm-12 row leftDivs"
             >
-              {(props?.solutionsData?.fields?.relatedProjects as any)?.map(
-                (projects: any) => (
-                  <div class="hoverImg ">
-                    <a
-                      href={"/portfolio/" + projects?.fields?.heroTitle}
-                      aria-label="case study"
-                    >
-                      <div class="work-animation">
-                        {projects?.fields?.heroBanner &&
+              <div class="content-box numbers col-2">
+                <span>07</span>
+              </div>
+              <div class="col-10">
+                <p set:html={props.pointer7Heading} />
+              </div>
+              {props.pointer7Img && (
+                <Image
+                  src={props.pointer7Img}
+                  width={732}
+                  height={400}
+                  class="pointerImg optimization"
+                  alt=""
+                />
+              )}
+
+              <span class="pointerText" set:html={props.pointer7Text} />
+            </a>
+          </div>
+        )
+      }
+    </div>
+    {
+      props?.solutionsData?.fields?.relatedProjects && (
+        <div class="margins" style="padding-top:4%; ">
+          <div class="relatedProjectHeading">
+            <span>
+              Related <span style="color: #e5ff53">Projects</span>
+            </span>
+          </div>
+        </div>
+      )
+    }
+    {
+      props?.solutionsData?.fields?.relatedProjects && (
+        <div class="overflow-hidden m-0" style="padding:0 9%;">
+          <div
+            id="stopOnHover"
+            class="d-flex workImg-section-soln borders"
+            style="width:100%; padding:7% 0 !important; overflow-x: scroll; "
+          >
+            {(props?.solutionsData?.fields?.relatedProjects as any)?.map(
+              (projects: any) => (
+                <div class="hoverImg ">
+                  <a
+                    href={"/portfolio/" + projects?.fields?.heroTitle}
+                    aria-label="case study"
+                  >
+                    <div class="work-animation">
+                      {projects?.fields?.heroBanner && (
                         <Image
                           src={projects?.fields?.heroBanner?.fields?.file.url}
                           class="movingImgs optimization  "
@@ -205,438 +273,448 @@ console.log(props, "solutionData");
                           height={240}
                           alt=""
                         />
-                      }
-                        <div class="image-overlay">
-                          <Image class="optimization" src={redirectToWork} alt="" />
-                          <span
-                            class="workName"
-                            set:html={projects?.fields?.singleClient}
-                          />
-                          <span
-                            class="workTech"
-                            set:html={projects?.fields?.whichTechnology}
-                          />
-                        </div>
+                      )}
+                      <div class="image-overlay">
+                        <Image
+                          class="optimization"
+                          src={redirectToWork}
+                          alt=""
+                        />
+                        <span
+                          class="workName"
+                          set:html={projects?.fields?.singleClient}
+                        />
+                        <span
+                          class="workTech"
+                          set:html={projects?.fields?.whichTechnology}
+                        />
                       </div>
-                    </a>
-                  </div>
-                )
-              )}
-            </div>
+                    </div>
+                  </a>
+                </div>
+              )
+            )}
           </div>
-        )
-      }
+        </div>
+      )
+    }
 
-      <div class="margins-navigations arrowDiv" style="padding-top:4%">
-        <div class="row">
-          <div class="col-6 arrows">
-            <a href={props.previousSolutionSlug}>
-              <Image class="optimization" src={leftArrow} alt="" />
-            </a>
-            <span style="margin-left:3%" set:html={props.previousSolution} />
-          </div>
-          <div class="col-6 arrows rightArrow" style="padding-left:5%">
-            <span set:html={props.nextSolution} />
-            <a href={props.nextSolutionSlug}>
-              <Image class="optimization" src={rightArrow} alt="" />
-            </a>
-          </div>
+    <div class="margins-navigations arrowDiv" style="padding-top:4%">
+      <div class="row">
+        <div class="col-6 arrows">
+          <a href={props.previousSolutionSlug}>
+            <Image class="optimization" src={leftArrow} alt="" />
+          </a>
+          <span style="margin-left:3%" set:html={props.previousSolution} />
+        </div>
+        <div class="col-6 arrows rightArrow" style="padding-left:5%">
+          <span set:html={props.nextSolution} />
+          <a href={props.nextSolutionSlug}>
+            <Image class="optimization" src={rightArrow} alt="" />
+          </a>
         </div>
       </div>
     </div>
   </section>
+</Layout>
 
-  <style>
-    /* swiper css */
+<style>
+  /* swiper css */
 
-    .optimization{
-      height:auto;
-    }
+  .optimization {
+    height: auto;
+  }
 
-    .mySwiper {
-      margin-left: auto;
-      margin-right: auto;
-      position: relative;
-      overflow: hidden;
-      list-style: none;
-      padding: 0;
-      z-index: 1;
-      display: block;
-    }
+  a {
+    text-decoration: none;
+    /* cursor: pointer; */
+  }
 
-    .imgWidth img {
-      width: 100%;
-      aspect-ratio:1440/681;
-      object-fit:cover;
-    }
-    /*  */
-    /* related projects css */
+  .mySwiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
+  }
 
-    .workImg-section-soln {
-      padding-bottom: 7.3%;
-    }
+  .imgWidth img {
+    width: 100%;
+    aspect-ratio: 1440/681;
+    object-fit: cover;
+  }
+  /*  */
+  /* related projects css */
 
-    .hoverImg:hover .image-overlay {
-      opacity: 1;
-    }
-    .hoverImg {
-      margin-right: 2%;
-    }
+  .workImg-section-soln {
+    padding-bottom: 7.3%;
+  }
 
-    .work-animation {
-      position: relative;
-      overflow: hidden;
-      border-radius: 0 4vw 4vw 4vw;
+  .hoverImg:hover .image-overlay {
+    opacity: 1;
+  }
+  .hoverImg {
+    margin-right: 2%;
+  }
+
+  .work-animation {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 4vw 4vw 4vw;
+  }
+  .work-animation:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #f6f7f0;
+    z-index: 998;
+    transition: left 1.2s ease;
+  }
+  .workAnimate-active:after {
+    left: 100%;
+  }
+  .movingImgs {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    width: 25vw;
+    border-radius: 0 4vw 4vw 4vw;
+  }
+
+  .image-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    /* backdrop-filter: blur(5px); */
+    background: rgba(0, 0, 0, 0.7);
+    padding: 7% 0 7% 9%;
+    opacity: 0;
+    border-radius: 0 0 4vw 4vw;
+  }
+  .image-overlay img {
+    width: 16%;
+    position: absolute;
+    left: 82%;
+    bottom: 70%;
+  }
+
+  .workTech {
+    font-family: "anek devanagari";
+    font-size: 1.5vw;
+    font-weight: 200;
+    display: block;
+    text-transform: capitalize;
+  }
+  .workName {
+    font-family: "anek devanagari";
+    font-size: 1.8vw;
+    font-weight: 500;
+    line-height: 1;
+    display: block;
+    text-transform: capitalize;
+    width: 79%;
+  }
+
+  .moving-text2 {
+    animation: move-text2 10s linear infinite;
+  }
+  @keyframes move-text2 {
+    0% {
+      transform: translateX(0%);
     }
-    .work-animation:after {
-      content: "";
-      position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      background: #f6f7f0;
-      z-index: 998;
-      transition: left 1.2s ease;
+    100% {
+      transform: translateX(-680%);
     }
-    .workAnimate-active:after {
-      left: 100%;
-    }
+  }
+
+  /*  */
+  @media screen and (max-width: 767px) {
     .movingImgs {
-      display: block;
-      width: 100%;
       aspect-ratio: 4/5;
-      object-fit: cover;
-      width: 25vw;
+      width: 30vw;
       border-radius: 0 4vw 4vw 4vw;
+      margin-right: 5%;
+      object-fit: cover;
     }
-
-    .image-overlay {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      color: white;
-      /* backdrop-filter: blur(5px); */
-      background: rgba(0, 0, 0, 0.7);
-      padding: 7% 0 7% 9%;
-      opacity: 0;
-      border-radius: 0 0 4vw 4vw;
-    }
-    .image-overlay img {
-      width: 16%;
-      position: absolute;
-      left: 82%;
-      bottom: 70%;
-    }
-
-    .workTech {
-      font-family: "anek devanagari";
-      font-size: 1.5vw;
-      font-weight: 200;
-      display: block;
-      text-transform: capitalize;
-    }
-    .workName {
-      font-family: "anek devanagari";
-      font-size: 1.8vw;
-      font-weight: 500;
-      line-height: 1;
-      display: block;
-      text-transform: capitalize;
-      width: 79%;
-    }
-
-    .moving-text2 {
-      animation: move-text2 10s linear infinite;
-    }
-    @keyframes move-text2 {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-680%);
-      }
-    }
-
-    /*  */
-    @media screen and (max-width: 767px) {
-      .movingImgs {
-        aspect-ratio: 4/5;
-        width: 30vw;
-        border-radius: 0 4vw 4vw 4vw;
-        margin-right: 5%;
-        object-fit: cover;
-      }
-      .col-10 p {
-        font-size: 9vw !important;
-      }
-      .pointerText {
-        font-size: 2.5vw !important;
-      }
-      .col-sm-12 {
-        margin-bottom: 6% !important;
-        margin-left: 3% !important;
-      }
-      .numbers {
-        width: 10% !important;
-        font-size: 6.5vw !important;
-      }
-      .borders {
-        border: none !important;
-        padding: 0 !important;
-      }
-      .rightDivs,
-      .leftDivs {
-        padding: 0 !important;
-      }
-      .arrows img {
-        width: 20% !important;
-      }
-      .arrows span {
-        font-size: 2.5vw !important;
-      }
-
-      .rightArrow img {
-        right: 0 !important;
-      }
-      .rightArrow span {
-        right: 25% !important;
-        top: 30% !important;
-      }
-      .arrowDiv {
-        padding: 3% !important;
-      }
-    }
-
-    @media screen and (max-width: 450px) {
-      .col-10 p {
-        font-size: 10vw !important;
-      }
-      .col-10 span {
-        font-size: 3.5vw !important;
-      }
-      .arrows span {
-        font-size: 2.7vw !important;
-      }
-    }
-    @media screen and (max-width: 380px) {
-      .arrows span {
-        font-size: 2.5vw !important;
-      }
-    }
-    #section {
-      padding-top: 9vh;
-      background-color: #1a1a1a;
-    }
-    .margins {
-      padding: 0 9% 0 9%;
-    }
-    .margins-navigations {
-      padding: 0 15% 0 15%;
-    }
-    .heading span {
-      font-family: Deutschlander;
-      text-transform: uppercase;
-      font-size: 13vw;
-      font-weight: 400;
-      font-style: normal;
-      color: #fff;
-      /* line-height: 0.85; */
-    }
-
-    .img {
-      width: 100%;
-    }
-
-    .contentDiv {
-      margin-top: 7%;
-      /* height: 100vh;
-        overflow-y: scroll; */
-      /* overflow-x: hidden; */
-    }
-    .numbers {
-      background-color: #e5ff53;
-      border-radius: 0 0.6vw 0 0.6vw;
-      width: 13%;
-      text-align: center;
-      font-family: Deutschlander;
-      font-size: 4.5vw;
-      line-height: 1.1;
-      height: fit-content;
-    }
-
-    p {
-      font-family: Deutschlander;
-      text-transform: uppercase;
-      font-size: 5vw;
-      font-weight: 400;
-      font-style: normal;
-      color: #fff;
-      line-height: 0.85;
-      margin-bottom: 1% !important;
-    }
-    .relatedProjectHeading span {
-      font-family: Deutschlander;
-      text-transform: uppercase;
-      font-size: 10vw;
-      font-weight: 400;
-      font-style: normal;
-      color: #fff;
-      line-height: 0.85;
-      margin-bottom: 1% !important;
-    }
-    .col-10 {
-      padding-left: 4%;
+    .col-10 p {
+      font-size: 9vw !important;
     }
     .pointerText {
-      font-family: "anek devanagari";
-      font-size: 1.27vw;
-      color: #fff;
-      font-weight: 300;
-      line-height: 1.6;
-      text-align: justify;
+      font-size: 2.5vw !important;
     }
-    .leftDivs {
-      padding-right: 5%;
+    .col-sm-12 {
+      margin-bottom: 6% !important;
+      margin-left: 3% !important;
     }
-    .rightDivs {
-      padding-left: 5%;
+    .numbers {
+      width: 10% !important;
+      font-size: 6.5vw !important;
     }
     .borders {
-      padding: 4% 0;
-      border-bottom: 1.1px solid rgb(99, 99, 99);
+      border: none !important;
+      padding: 0 !important;
     }
-
+    .rightDivs,
+    .leftDivs {
+      padding: 0 !important;
+    }
     .arrows img {
-      width: 15%;
+      width: 20% !important;
     }
     .arrows span {
-      font-family: "anek devanagari";
-      text-transform: uppercase;
-      font-size: 1.7vw;
-      color: #fff;
+      font-size: 2.5vw !important;
     }
-    .rightArrow {
-      position: relative;
-    }
+
     .rightArrow img {
-      position: absolute;
-      right: 0;
+      right: 0 !important;
     }
     .rightArrow span {
-      position: absolute;
-      right: 25%;
-      top: 27%;
+      right: 25% !important;
+      top: 30% !important;
     }
+    .arrowDiv {
+      padding: 3% !important;
+    }
+  }
 
-    .pointerImg {
-      width: 100%;
-      margin: 3% 0;
+  @media screen and (max-width: 450px) {
+    .col-10 p {
+      font-size: 10vw !important;
     }
-  </style>
+    .col-10 span {
+      font-size: 3.5vw !important;
+    }
+    .arrows span {
+      font-size: 2.7vw !important;
+    }
+  }
+  @media screen and (max-width: 380px) {
+    .arrows span {
+      font-size: 2.5vw !important;
+    }
+  }
+  #section {
+    padding-top: 9vh;
+    background-color: #1a1a1a;
+  }
+  .margins {
+    padding: 0 9% 0 9%;
+  }
+  .margins-navigations {
+    padding: 0 15% 0 15%;
+  }
+  .heading span {
+    font-family: Deutschlander;
+    text-transform: uppercase;
+    font-size: 13vw;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    /* line-height: 0.85; */
+  }
 
-  <style is:global>
-    .turnBlack {
-      background: transparent !important;
-      position: absolute !important;
-      width: 100% !important;
-    }
+  .img {
+    width: 100%;
+  }
 
-    .list ul li a {
-      color: white !important;
-      opacity: 50% !important;
-    }
-    path {
-      fill: white !important;
-    }
+  .contentDiv {
+    margin-top: 7%;
+    /* height: 100vh;
+        overflow-y: scroll; */
+    /* overflow-x: hidden; */
+  }
+  .numbers {
+    background-color: #e5ff53;
+    border-radius: 0 0.6vw 0 0.6vw;
+    width: 13%;
+    text-align: center;
+    font-family: Deutschlander;
+    font-size: 4.5vw;
+    line-height: 1.1;
+    height: fit-content;
+  }
 
-    .connect,
-    .circles {
-      fill: #1a1a1a !important;
-    }
-    .oval {
-      fill: white !important;
-    }
+  p {
+    font-family: Deutschlander;
+    text-transform: uppercase;
+    font-size: 5vw;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    line-height: 0.85;
+    margin-bottom: 1% !important;
+  }
+  .relatedProjectHeading span {
+    font-family: Deutschlander;
+    text-transform: uppercase;
+    font-size: 10vw;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    line-height: 0.85;
+    margin-bottom: 1% !important;
+  }
+  .col-10 {
+    padding-left: 4%;
+  }
+  .pointerText {
+    font-family: "anek devanagari";
+    font-size: 1.27vw;
+    color: #fff;
+    font-weight: 300;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  .leftDivs {
+    padding-right: 5%;
+  }
+  .rightDivs {
+    padding-left: 5%;
+  }
+  .borders {
+    padding: 4% 0;
+    border-bottom: 1.1px solid rgb(99, 99, 99);
+  }
 
-    .tele {
-      fill: white !important;
-    }
-    .menu p {
-      color: white !important;
-    }
-    .menu .s1,
-    .menu .s2 {
-      border: 1px solid white !important;
-    }
-  </style>
+  .arrows img {
+    width: 15%;
+  }
+  .arrows span {
+    font-family: "anek devanagari";
+    text-transform: uppercase;
+    font-size: 1.7vw;
+    color: #fff;
+  }
+  .rightArrow {
+    position: relative;
+  }
+  .rightArrow img {
+    position: absolute;
+    right: 0;
+  }
+  .rightArrow span {
+    position: absolute;
+    right: 25%;
+    top: 27%;
+  }
 
-  <script>
-    // swiper
-    import {
-      Swiper,
-      Navigation,
-      Pagination,
-      EffectCoverflow,
-      Autoplay,
-      EffectCreative,
-    } from "swiper";
-    let x = 3;
-    var swiper = new Swiper(".mySwiper", {
-      modules: [Navigation, EffectCreative, Autoplay],
-      //   effect: "creative",
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: 1.3,
-      // autoplay: true,
-      spaceBetween: 10,
-      speed: 2000,
-      loop: true,
-      // navigation: {
-      //   nextEl: ".swiper-next",
-      //   prevEl: ".swiper-prev",
-      // },
+  .pointerImg {
+    width: 100%;
+    margin: 3% 0;
+    object-fit: cover;
+    aspect-ratio: 493/268;
+  }
+</style>
 
-      breakpoints: {
-        767: {
-          slidesPerView: 1.28,
+<style is:global>
+  .turnBlack {
+    background: transparent !important;
+    position: absolute !important;
+    width: 100% !important;
+  }
 
-          spaceBetween: 30,
-        },
-        250: {
-          slidesPerView: 1.15,
-          spaceBetween: 20,
-        },
+  .list ul li a {
+    color: white !important;
+    opacity: 50% !important;
+  }
+  path {
+    fill: white !important;
+  }
+
+  .connect,
+  .circles {
+    fill: #1a1a1a !important;
+  }
+  .oval {
+    fill: white !important;
+  }
+
+  .tele {
+    fill: white !important;
+  }
+  .menu p {
+    color: white !important;
+  }
+  .menu .s1,
+  .menu .s2 {
+    border: 1px solid white !important;
+  }
+</style>
+
+<script>
+  // swiper
+  import {
+    Swiper,
+    Navigation,
+    Pagination,
+    EffectCoverflow,
+    Autoplay,
+    EffectCreative,
+  } from "swiper";
+  let x = 3;
+  var swiper = new Swiper(".mySwiper", {
+    modules: [Navigation, EffectCreative, Autoplay],
+    //   effect: "creative",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 1.3,
+    // autoplay: true,
+    spaceBetween: 10,
+    speed: 2000,
+    loop: true,
+    // navigation: {
+    //   nextEl: ".swiper-next",
+    //   prevEl: ".swiper-prev",
+    // },
+
+    breakpoints: {
+      767: {
+        slidesPerView: 1.28,
+
+        spaceBetween: 30,
       },
-
-      autoplay: {
-        delay: 2000,
+      250: {
+        slidesPerView: 1.15,
+        spaceBetween: 20,
       },
-    });
-    //
-    import { gsap, TimelineMax } from "gsap";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
-    gsap.registerPlugin(ScrollTrigger);
+    },
 
-    const movingImgs = document.querySelectorAll(".hoverImg");
-    gsap.from(".workImg-section-soln", 1, {
-      scrollTrigger: {
-        trigger: ".workImg-section-soln",
-        start: "top 55%",
-        end: "bottom top",
+    autoplay: {
+      delay: 2000,
+    },
+  });
+  //
+  import { gsap, TimelineMax } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
 
-        toggleClass: "move-upper-white-bg",
-        scrub: true,
-      },
-    });
-    // gsap.from(".workImg-section-soln", 1, {
-    //   scrollTrigger: {
-    //     trigger: ".workImg-section-soln",
-    //     start: "top 55%",
-    //     end: "bottom top",
+  const movingImgs = document.querySelectorAll(".hoverImg");
+  gsap.from(".workImg-section-soln", 1, {
+    scrollTrigger: {
+      trigger: ".workImg-section-soln",
+      start: "top 55%",
+      end: "bottom top",
 
-    //     toggleClass: "moving-text-parent",
-    //     scrub: true,
-    //   },
-    // });
-  </script>
-</Layout>
+      toggleClass: "move-upper-white-bg",
+      scrub: true,
+    },
+  });
+  // gsap.from(".workImg-section-soln", 1, {
+  //   scrollTrigger: {
+  //     trigger: ".workImg-section-soln",
+  //     start: "top 55%",
+  //     end: "bottom top",
+
+  //     toggleClass: "moving-text-parent",
+  //     scrub: true,
+  //   },
+  // });
+</script>

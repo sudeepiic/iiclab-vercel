@@ -1,5 +1,6 @@
 body {
   background-color: #f6f7f0;
+  cursor: url("../images/eye32.svg"), auto;
 }
 u {
   color: #e5ff53;

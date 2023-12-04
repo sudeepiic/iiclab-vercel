@@ -6,13 +6,13 @@ import newArrow from "../images/newArrow.png";
 import solutionImg1 from "../images/solutionImg1.png";
 import experimental from "../images/exp.jpg";
 import interactiveSoln from "../images/interactiveSoln.png";
-import content from "../images/contentDev.jpg"
+import content from "../images/contentDev.jpg";
 import mobileWeb from "../images/mobileWeb.png";
 import strategy from "../images/strategy.png";
 import yellowGo from "../images/yellowGo2.png";
 import knowMoreBtn from "../images/knowMoreBtn.png";
 import diamond from "../images/whiteDiamond.png";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 //import { Image, Picture } from "@astrojs/image/components";
 ---
 
@@ -23,7 +23,11 @@ import { Image } from 'astro:assets';
         <div class="title">
           <span class="animate-title">What are we good at</span>
           <a class="btnDiv" href="#soln" aria-label="know more">
-            <Image class="btn btn-animate optimization" src={solutionbtn} alt="" />
+            <Image
+              class="btn btn-animate optimization"
+              src={solutionbtn}
+              alt=""
+            />
             <Image class="arrow optimization" src={newArrow} alt="" />
           </a>
         </div>
@@ -36,12 +40,17 @@ import { Image } from 'astro:assets';
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="swiperDiv">
-            <Image class="carousalImg optimization" src={solutionImg1} alt="" loading="lazy" />
+            <Image
+              class="carousalImg optimization"
+              src={solutionImg1}
+              alt=""
+              loading="lazy"
+            />
             <!-- <div class="overlay"></div> -->
             <div class="techList">
               <ul class="a">
                 <li>metaverse</li>
-                <li>virtual Reality</li>
+                <a href="virtual-reality"><li>virtual Reality</li></a>
                 <li>Augmented Reality</li>
                 <li>Projection Mapping</li>
               </ul>
@@ -51,17 +60,18 @@ import { Image } from 'astro:assets';
               <div class="mobTechlist">
                 <ul class="a">
                   <li>metaverse</li>
-                  <li>virtual Reality</li>
+                  <a href="virtual-reality"><li>virtual Reality</li></a>
+
                   <li>Augmented Reality</li>
                   <li>Projection Mapping</li>
                   <a href="/solutions/immersive-technology">
-                  <Image
-                    class="knowMoreBtn optimization"
-                    src={knowMoreBtn}
-                    alt=""
-                    loading="lazy"
-                  />
-                </a>
+                    <Image
+                      class="knowMoreBtn optimization"
+                      src={knowMoreBtn}
+                      alt=""
+                      loading="lazy"
+                    />
+                  </a>
                 </ul>
               </div>
               <a
@@ -69,7 +79,12 @@ import { Image } from 'astro:assets';
                 aria-label="immersive technology"
                 class="desktopKnowMore"
               >
-                <Image class="optimization" src={yellowGo} alt="" loading="lazy" /></a
+                <Image
+                  class="optimization"
+                  src={yellowGo}
+                  alt=""
+                  loading="lazy"
+                /></a
               >
             </div>
             <div class="captionDiv">
@@ -104,13 +119,13 @@ import { Image } from 'astro:assets';
                   <li>Engagement Experts</li>
                   <li>Object Recognition Table</li>
                   <a href="/solutions/interactive-solution">
-                  <Image
-                    class="knowMoreBtn optimization"
-                    src={knowMoreBtn}
-                    alt=""
-                    loading="lazy"
-                  />
-                </a>
+                    <Image
+                      class="knowMoreBtn optimization"
+                      src={knowMoreBtn}
+                      alt=""
+                      loading="lazy"
+                    />
+                  </a>
                 </ul>
               </div>
               <a
@@ -118,7 +133,12 @@ import { Image } from 'astro:assets';
                 aria-label="interactive solution"
                 class="desktopKnowMore"
               >
-                <Image src={yellowGo} class="optimization" alt="" loading="lazy" /></a
+                <Image
+                  src={yellowGo}
+                  class="optimization"
+                  alt=""
+                  loading="lazy"
+                /></a
               >
             </div>
             <div class="captionDiv">
@@ -130,7 +150,12 @@ import { Image } from 'astro:assets';
 
         <div class="swiper-slide">
           <div class="swiperDiv">
-            <Image class="carousalImg optimization" src={mobileWeb} alt="" loading="lazy" />
+            <Image
+              class="carousalImg optimization"
+              src={mobileWeb}
+              alt=""
+              loading="lazy"
+            />
             <div class="techList">
               <ul class="a">
                 <li>Web Development</li>
@@ -146,17 +171,26 @@ import { Image } from 'astro:assets';
                   <li>App Development</li>
                   <li>Gaming Solutions</li>
                   <a href="/solutions/mobile-and-web">
-                  <Image
-                    class="knowMoreBtn optimization"
-                    src={knowMoreBtn}
-                    alt=""
-                    loading="lazy"
-                  />
-                </a>
+                    <Image
+                      class="knowMoreBtn optimization"
+                      src={knowMoreBtn}
+                      alt=""
+                      loading="lazy"
+                    />
+                  </a>
                 </ul>
               </div>
-              <a href="/solutions/mobile-and-web" aria-label="mobile and web" class="desktopKnowMore">
-                <Image src={yellowGo} class=" optimization" alt="" loading="lazy" /></a
+              <a
+                href="/solutions/mobile-and-web"
+                aria-label="mobile and web"
+                class="desktopKnowMore"
+              >
+                <Image
+                  src={yellowGo}
+                  class="optimization"
+                  alt=""
+                  loading="lazy"
+                /></a
               >
             </div>
             <div class="captionDiv">
@@ -167,7 +201,12 @@ import { Image } from 'astro:assets';
         </div>
         <div class="swiper-slide">
           <div class="swiperDiv">
-            <Image class="carousalImg optimization" src={content} alt="" loading="lazy" />
+            <Image
+              class="carousalImg optimization"
+              src={content}
+              alt=""
+              loading="lazy"
+            />
             <div class="techList">
               <ul class="a">
                 <li>3D/2D Animations</li>
@@ -185,13 +224,13 @@ import { Image } from 'astro:assets';
                   <li>Architectural Visualization</li>
                   <li>Expainer Videos</li>
                   <a href="/solutions/content-development">
-                  <Image
-                    class="knowMoreBtn optimization"
-                    src={knowMoreBtn}
-                    alt=""
-                    loading="lazy"
-                  />
-                </a>
+                    <Image
+                      class="knowMoreBtn optimization"
+                      src={knowMoreBtn}
+                      alt=""
+                      loading="lazy"
+                    />
+                  </a>
                 </ul>
               </div>
               <a
@@ -199,7 +238,12 @@ import { Image } from 'astro:assets';
                 aria-label="content development"
                 class="desktopKnowMore"
               >
-                <Image src={yellowGo} class=" optimization" alt="" loading="lazy" /></a
+                <Image
+                  src={yellowGo}
+                  class="optimization"
+                  alt=""
+                  loading="lazy"
+                /></a
               >
             </div>
             <div class="captionDiv">
@@ -211,7 +255,12 @@ import { Image } from 'astro:assets';
 
         <div class="swiper-slide">
           <div class="swiperDiv">
-            <Image class="carousalImg optimization" src={experimental} alt="" loading="lazy" />
+            <Image
+              class="carousalImg optimization"
+              src={experimental}
+              alt=""
+              loading="lazy"
+            />
             <div class="techList">
               <ul class="a">
                 <li>Motion Gesture</li>
@@ -229,13 +278,13 @@ import { Image } from 'astro:assets';
                   <li>Photobooth</li>
                   <li>Kiosk/Vending Machine</li>
                   <a href="/solutions/experiential-marketing">
-                  <Image
-                    class="knowMoreBtn optimization"
-                    src={knowMoreBtn}
-                    alt=""
-                    loading="lazy"
-                  />
-                </a>
+                    <Image
+                      class="knowMoreBtn optimization"
+                      src={knowMoreBtn}
+                      alt=""
+                      loading="lazy"
+                    />
+                  </a>
                 </ul>
               </div>
               <a
@@ -243,7 +292,12 @@ import { Image } from 'astro:assets';
                 aria-label="experiential marketing"
                 class="desktopKnowMore"
               >
-                <Image src={yellowGo} class=" optimization" alt="" loading="lazy" /></a
+                <Image
+                  src={yellowGo}
+                  class="optimization"
+                  alt=""
+                  loading="lazy"
+                /></a
               >
             </div>
             <div class="captionDiv">
@@ -255,7 +309,12 @@ import { Image } from 'astro:assets';
 
         <div class="swiper-slide">
           <div class="swiperDiv">
-            <Image class="carousalImg optimization" src={strategy} alt="" loading="lazy" />
+            <Image
+              class="carousalImg optimization"
+              src={strategy}
+              alt=""
+              loading="lazy"
+            />
             <div class="techList">
               <ul class="a">
                 <li>Scenario Mapping Brand Audits</li>
@@ -273,8 +332,12 @@ import { Image } from 'astro:assets';
                   <li>Competitor Mapping</li>
                   <li>Graphic Design & Prototype</li>
                   <a href="solutions/strategy-and-design">
-
-                    <Image class="knowMoreBtn optimization" src={knowMoreBtn} loading="lazy" alt="" />
+                    <Image
+                      class="knowMoreBtn optimization"
+                      src={knowMoreBtn}
+                      loading="lazy"
+                      alt=""
+                    />
                   </a>
                 </ul>
               </div>
@@ -284,7 +347,7 @@ import { Image } from 'astro:assets';
                 aria-label="strategy and design"
                 class="desktopKnowMore"
               >
-                <Image src={yellowGo} class=" optimization" alt=""/></a
+                <Image src={yellowGo} class="optimization" alt="" /></a
               >
             </div>
             <div class="captionDiv">
@@ -304,7 +367,7 @@ import { Image } from 'astro:assets';
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
           <Image
             style="width:3.5vw"
-            class=" optimization"
+            class="optimization"
             src={diamond}
             alt=""
             loading="lazy"
@@ -313,24 +376,54 @@ import { Image } from 'astro:assets';
 
         <span class="wallHonor">ui/ux Design</span>
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-          <Image style="width:3.5vw" class=" optimization" src={diamond} loading="lazy" alt="" />
+          <Image
+            style="width:3.5vw"
+            class="optimization"
+            src={diamond}
+            loading="lazy"
+            alt=""
+          />
         </div>
 
         <span class="wallHonor">Augmented Reality</span>
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-          <Image style="width:3.5vw" class=" optimization" src={diamond} loading="lazy" alt="" />
+          <Image
+            style="width:3.5vw"
+            class="optimization"
+            src={diamond}
+            loading="lazy"
+            alt=""
+          />
         </div>
         <span class="wallHonor">XR</span>
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-          <Image style="width:3.5vw" class=" optimization" src={diamond} loading="lazy" alt="" />
+          <Image
+            style="width:3.5vw"
+            class="optimization"
+            src={diamond}
+            loading="lazy"
+            alt=""
+          />
         </div>
         <span class="wallHonor">Interactive Technology</span>
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw">
-          <Image style="width:3.5vw" class=" optimization" src={diamond} loading="lazy" alt="" />
+          <Image
+            style="width:3.5vw"
+            class="optimization"
+            src={diamond}
+            loading="lazy"
+            alt=""
+          />
         </div>
         <span class="wallHonor">Experiential Marketing</span>
         <div style="text-align: center; margin:3vw 3vw 3vw 3vw; opacity:0">
-          <Image style="width:3.5vw" class=" optimization" src={diamond} loading="lazy" alt="" />
+          <Image
+            style="width:3.5vw"
+            class="optimization"
+            src={diamond}
+            loading="lazy"
+            alt=""
+          />
         </div>
       </div>
     </div>
@@ -348,6 +441,10 @@ import { Image } from 'astro:assets';
   }
   .optimization {
     height: auto;
+  }
+
+  a {
+    text-decoration: none;
   }
   .btnDiv {
     position: relative;
@@ -642,11 +739,9 @@ import { Image } from 'astro:assets';
 </style>
 
 <style is:global>
-
-
-.sticky-header{
-  position: fixed !important;
-}
+  .sticky-header {
+    position: fixed !important;
+  }
   .turnBlack {
     background: transparent !important;
     position: absolute;

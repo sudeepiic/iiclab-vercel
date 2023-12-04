@@ -30,7 +30,13 @@ export async function getStaticPaths() {
 const { blogsData } = Astro.props;
 ---
 
-<Layout title="Blogs" seoTitle={blogsData.fields.params}>
+<Layout
+  title={blogsData?.fields?.metaTitle ? blogsData?.fields?.metaTitle : "Blog"}
+  seoTitle={blogsData.fields.params}
+  description={blogsData?.fields?.description
+    ? blogsData?.fields?.description
+    : "Blog"}
+>
   <TitleComp
     blogTitle={documentToHtmlString(blogsData.fields.blogTitle)}
     genre={blogsData.fields.genreNew}
@@ -112,7 +118,6 @@ const { blogsData } = Astro.props;
     width: 100%;
     margin-bottom: 1%;
   }
-
 
   .list ul li a {
     color: white !important;

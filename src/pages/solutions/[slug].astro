@@ -13,7 +13,7 @@ export async function getStaticPaths() {
   });
   const { url } = Astro;
 
-  let pages : any = entries.items.map((item) => {
+  let pages: any = entries.items.map((item) => {
     return {
       params: { slug: item.fields.slug },
       props: {
@@ -22,29 +22,27 @@ export async function getStaticPaths() {
     };
   });
 
-
-
- let  entries2 = await contentfulClient.getEntries<any>({
+  let entries2 = await contentfulClient.getEntries<any>({
     content_type: "solutionDetails",
   });
-  let pages2 =  entries2.items.map((item) => {
+  let pages2 = entries2.items.map((item) => {
     return {
       params: { slug: item.fields.params },
       props: {
         solutionDetails: item,
       },
     };
-  }) 
- let finalPages= [...pages, ...pages2]
-console.log(pages2)
+  });
+  let finalPages = [...pages, ...pages2];
+  console.log(pages2);
 
   return finalPages;
 }
-console.log("url data: ", Astro.url)
- 
-const {solutionsData, solutionDetails} = Astro.props
+console.log("url data: ", Astro.url);
 
+const { solutionsData, solutionDetails } = Astro.props;
 ---
+
 <!-- 
 <Solution
   Title={solutionsData.fields.title}
@@ -82,87 +80,132 @@ const {solutionsData, solutionDetails} = Astro.props
   relatedProjectSlug={solutionsData?.fields?.relatedProjects?.fields?.heroTitle}
   solutionsData={solutionsData}
   sliderImages={solutionsData?.fields?.sliderImages}
-/> -->
-{
-solutionsData?.fields ? 
-<Solution
-  Title={solutionsData.fields.title}
-  pointer1Heading={solutionsData.fields.pointer1Heading}
-  pointer1Img={solutionsData?.fields?.pointer1Img?.fields?.file.url}
-  pointer1Text={solutionsData?.fields?.pointer1Text}
-  pointer2Heading={solutionsData.fields.pointer2Heading}
-  pointer2Img={solutionsData?.fields?.pointer2Img?.fields?.file.url}
-  pointer2Text={solutionsData?.fields?.pointer2Text}
-  pointer3Heading={solutionsData.fields.pointer3Heading}
-  pointer3Img={solutionsData?.fields?.pointer3Img?.fields?.file.url}
-  pointer3Text={solutionsData?.fields?.pointer3Text}
-  pointer4Heading={solutionsData.fields.pointer4Heading}
-  pointer4Img={solutionsData?.fields?.pointer4Img?.fields?.file.url}
-  pointer4Text={solutionsData?.fields?.pointer4Text}
-  pointer5Heading={solutionsData.fields.pointer5Heading}
-  pointer5Img={solutionsData?.fields?.pointer5Img?.fields?.file.url}
-  pointer5Text={solutionsData?.fields?.pointer5Text}
-  pointer6Heading={solutionsData.fields.pointer6Heading}
-  pointer6Img={solutionsData?.fields?.pointer6Img?.fields?.file.url}
-  pointer6Text={solutionsData?.fields?.pointer6Text}
-  pointer7Heading={solutionsData.fields.pointer7Heading}
-  pointer7Img={solutionsData?.fields?.pointer7Img?.fields?.file.url}
-  pointer7Text={solutionsData?.fields?.pointer7Text}
-  previousSolution={solutionsData?.fields?.previousSolutionTitle}
-  previousSolutionSlug={solutionsData?.fields?.previousSolutionSlug}
-  nextSolution={solutionsData?.fields?.nextSolutionTitle}
-  nextSolutionSlug={solutionsData?.fields?.nextSolutionSlug}
-  relatedProjectImg={solutionsData?.fields?.relatedProjects?.fields?.heroBanner
-    ?.fields?.file.url}
-  relatedProjectTitle={solutionsData?.fields?.relatedProjects?.fields
-    ?.singleClient}
-  relatedProjectSubTitle={solutionsData?.fields?.relatedProjects?.fields
-    ?.whichTechnology}
-  relatedProjectSlug={solutionsData?.fields?.relatedProjects?.fields?.heroTitle}
-  solutionsData={solutionsData}
-  sliderImages={solutionsData?.fields?.sliderImages}
-/> : <SolutionDetails
-
-  solutionName={solutionDetails.fields.solutionName}
-  title={solutionDetails.fields.title}
-  subTitle={solutionDetails.fields.subTitle}
-  videoLink ={solutionDetails?.fields?.videoLink}
-  sliderImages={solutionDetails?.fields?.sliderImages}
-  clientIcons ={solutionDetails?.fields?.clientIcons}
-  midContentTitle = {solutionDetails?.fields?.midContentTitle}
-  midContentText = {solutionDetails?.fields?.midContentText}
-  midContentImg = {solutionDetails?.fields?.midContentImg?.fields?.file.url}
-
-  pointer1Title={solutionDetails.fields.pointer1Title}
-  pointer1Text={solutionDetails?.fields?.pointer1Text}
-  pointer2Title={solutionDetails.fields.pointer2Title}
-  pointer2Text={solutionDetails?.fields?.pointer2Text}
-  pointer3Title={solutionDetails.fields.pointer3Title}
-  pointer3Text={solutionDetails?.fields?.pointer3Text}
-  pointer4Title={solutionDetails.fields.pointer4Title}
-  pointer4Text={solutionDetails?.fields?.pointer4Text}
-  pointer5Title={solutionDetails.fields.pointer5Title}
-  pointer5Text={solutionDetails?.fields?.pointer5Text}
-  pointer6Title={solutionDetails.fields.pointer6Title}
-  pointer6Text={solutionDetails?.fields?.pointer6Text}
-  pointer7Title={solutionDetails.fields.pointer7Title}
-  pointer7Text={solutionDetails?.fields?.pointer7Text}
-  pointer8Title={solutionDetails.fields.pointer8Title}
-  pointer8Text={solutionDetails?.fields?.pointer8Text}
-  pointer9Title={solutionDetails.fields.pointer9Title}
-  pointer9Text={solutionDetails?.fields?.pointer9Text}
-  relatedProjectImg={solutionDetails?.fields?.relatedProjects?.fields?.heroBanner
-    ?.fields?.file.url}
-  relatedProjectTitle={solutionDetails?.fields?.relatedProjects?.fields
-    ?.singleClient}
-  relatedProjectSubTitle={solutionDetails?.fields?.relatedProjects?.fields
-    ?.whichTechnology}
-  relatedProjectSlug={solutionDetails?.fields?.relatedProjects?.fields?.heroTitle}
-      solutionDetails = {solutionDetails}
-/>
-
+/> -->{
+  solutionsData?.fields ? (
+    <Solution
+      Title={solutionsData.fields.title}
+      pointer1Heading={solutionsData.fields.pointer1Heading}
+      pointer1Img={solutionsData?.fields?.pointer1Img?.fields?.file.url}
+      pointer1Text={solutionsData?.fields?.pointer1Text}
+      pointer1Slug={
+        solutionsData?.fields?.pointer1DetailPage
+          ? solutionsData?.fields?.pointer1DetailPage.fields.params
+          : null
+      }
+      pointer2Heading={solutionsData.fields.pointer2Heading}
+      pointer2Img={solutionsData?.fields?.pointer2Img?.fields?.file.url}
+      pointer2Text={solutionsData?.fields?.pointer2Text}
+      pointer2Slug={
+        solutionsData?.fields?.pointer2DetailPage
+          ? solutionsData?.fields?.pointer2DetailPage.fields.params
+          : null
+      }
+      pointer3Heading={solutionsData.fields.pointer3Heading}
+      pointer3Img={solutionsData?.fields?.pointer3Img?.fields?.file.url}
+      pointer3Text={solutionsData?.fields?.pointer3Text}
+      pointer3Slug={
+        solutionsData?.fields?.pointer3DetailPage
+          ? solutionsData?.fields?.pointer3DetailPage.fields.params
+          : null
+      }
+      pointer4Heading={solutionsData.fields.pointer4Heading}
+      pointer4Img={solutionsData?.fields?.pointer4Img?.fields?.file.url}
+      pointer4Text={solutionsData?.fields?.pointer4Text}
+      pointer4Slug={
+        solutionsData?.fields?.pointer4DetailPage
+          ? solutionsData?.fields?.pointer4DetailPage.fields.params
+          : null
+      }
+      pointer5Heading={solutionsData.fields.pointer5Heading}
+      pointer5Img={solutionsData?.fields?.pointer5Img?.fields?.file.url}
+      pointer5Text={solutionsData?.fields?.pointer5Text}
+      pointer5Slug={
+        solutionsData?.fields?.pointer5DetailPage
+          ? solutionsData?.fields?.pointer5DetailPage.fields.params
+          : null
+      }
+      pointer6Heading={solutionsData.fields.pointer6Heading}
+      pointer6Img={solutionsData?.fields?.pointer6Img?.fields?.file.url}
+      pointer6Text={solutionsData?.fields?.pointer6Text}
+      pointer6Slug={
+        solutionsData?.fields?.pointer6DetailPage
+          ? solutionsData?.fields?.pointer6DetailPage.fields.params
+          : null
+      }
+      pointer7Heading={solutionsData.fields.pointer7Heading}
+      pointer7Img={solutionsData?.fields?.pointer7Img?.fields?.file.url}
+      pointer7Text={solutionsData?.fields?.pointer7Text}
+      pointer7Slug={
+        solutionsData?.fields?.pointer7DetailPage
+          ? solutionsData?.fields?.pointer7DetailPage.fields.params
+          : null
+      }
+      previousSolution={solutionsData?.fields?.previousSolutionTitle}
+      previousSolutionSlug={solutionsData?.fields?.previousSolutionSlug}
+      nextSolution={solutionsData?.fields?.nextSolutionTitle}
+      nextSolutionSlug={solutionsData?.fields?.nextSolutionSlug}
+      relatedProjectImg={
+        solutionsData?.fields?.relatedProjects?.fields?.heroBanner?.fields?.file
+          .url
+      }
+      relatedProjectTitle={
+        solutionsData?.fields?.relatedProjects?.fields?.singleClient
+      }
+      relatedProjectSubTitle={
+        solutionsData?.fields?.relatedProjects?.fields?.whichTechnology
+      }
+      relatedProjectSlug={
+        solutionsData?.fields?.relatedProjects?.fields?.heroTitle
+      }
+      solutionsData={solutionsData}
+      sliderImages={solutionsData?.fields?.sliderImages}
+    />
+  ) : (
+    <SolutionDetails
+      solutionName={solutionDetails.fields.solutionName}
+      title={solutionDetails.fields.title}
+      subTitle={solutionDetails.fields.subTitle}
+      videoLink={solutionDetails?.fields?.videoLink}
+      sliderImages={solutionDetails?.fields?.sliderImages}
+      clientIcons={solutionDetails?.fields?.clientIcons}
+      midContentTitle={solutionDetails?.fields?.midContentTitle}
+      midContentText={solutionDetails?.fields?.midContentText}
+      midContentImg={solutionDetails?.fields?.midContentImg?.fields?.file.url}
+      pointer1Title={solutionDetails.fields.pointer1Title}
+      pointer1Text={solutionDetails?.fields?.pointer1Text}
+      pointer2Title={solutionDetails.fields.pointer2Title}
+      pointer2Text={solutionDetails?.fields?.pointer2Text}
+      pointer3Title={solutionDetails.fields.pointer3Title}
+      pointer3Text={solutionDetails?.fields?.pointer3Text}
+      pointer4Title={solutionDetails.fields.pointer4Title}
+      pointer4Text={solutionDetails?.fields?.pointer4Text}
+      pointer5Title={solutionDetails.fields.pointer5Title}
+      pointer5Text={solutionDetails?.fields?.pointer5Text}
+      pointer6Title={solutionDetails.fields.pointer6Title}
+      pointer6Text={solutionDetails?.fields?.pointer6Text}
+      pointer7Title={solutionDetails.fields.pointer7Title}
+      pointer7Text={solutionDetails?.fields?.pointer7Text}
+      pointer8Title={solutionDetails.fields.pointer8Title}
+      pointer8Text={solutionDetails?.fields?.pointer8Text}
+      pointer9Title={solutionDetails.fields.pointer9Title}
+      pointer9Text={solutionDetails?.fields?.pointer9Text}
+      relatedProjectImg={
+        solutionDetails?.fields?.relatedProjects?.fields?.heroBanner?.fields
+          ?.file.url
+      }
+      relatedProjectTitle={
+        solutionDetails?.fields?.relatedProjects?.fields?.singleClient
+      }
+      relatedProjectSubTitle={
+        solutionDetails?.fields?.relatedProjects?.fields?.whichTechnology
+      }
+      relatedProjectSlug={
+        solutionDetails?.fields?.relatedProjects?.fields?.heroTitle
+      }
+      solutionDetails={solutionDetails}
+    />
+  )
 }
-
 
 <style is:global>
   .turnBlack {
