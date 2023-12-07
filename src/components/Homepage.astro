@@ -64,86 +64,153 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
 console.log("Current URL is:   ", Astro.url);
 ---
 
-<section class="position-relative video-container">
-  <div>
-    <video id="autoVideo" class="bgImage" style="" autoplay loop muted>
-      <source src={showreelVideo} type="video/mp4" />
-    </video>
-    <div class=""></div>
-  </div>
-
-  <div class="title" style="top: 25%; left: 18%; width:61% ">
+<section class="" style="background-color: #1a1a1a;">
+  <div class="position-relative video-container">
     <div>
-      <span class="animate-title">Humanizing Tech</span>
+      <video id="autoVideo" class="bgImage" style="" autoplay loop muted>
+        <source src={showreelVideo} type="video/mp4" />
+      </video>
+      <div class=""></div>
     </div>
-    <div>
-      <span
-        class="animate-title d-flex justify-content-end"
-        style="color: #e5ff53">Through Design</span
-      >
-    </div>
-  </div>
 
-  <div class="titleText" style="  ">
-    <div class="titleTextDiv d-flex gap-2">
-      <div class="d-flex showreelDiv" id="main3" style="position: relative; ">
-        <a
-          href="#myModal"
-          data-bs-target="#myModal"
-          data-bs-toggle="modal"
-          data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
-          class="pause"
-          id="playButton"
-          aria-label="showreel"
-        >
-          <lottie-player
-            src="/yellowLottie.json"
-            background="transparent"
-            speed="1"
-            class="lottie"
-            loop
-            autoplay></lottie-player>
-        </a>
-        <a
-          href="#myModal"
-          data-bs-target="#myModal"
-          data-bs-toggle="modal"
-          id="playButtonText"
-          class="watch-showreel"
-          aria-label="showreel"
-        >
-          <span id="s1">Watch Showreel</span>
-          <span id="s2"></span>
-        </a>
-
-        <div id="div2">
-          <a href="#knowMore" aria-label="know more">
-            <span id="s3"
-              >Brands Spotlight &nbsp;<Image
-                src={arrow}
-                alt=""
-                quality={100}
-                style="filter: invert(1)"
-                class="optimization"
-              /></span
-            >
-          </a>
-        </div>
+    <div class="title" style=" ">
+      <div class="overflow-hidden">
+        <span class="animate-title d-block">Humanizing Tech</span>
       </div>
-
-      <div class="paragraphDiv">
-        <span class="para paragraph"
-          >IIC is a full-service MarTech Agency that helps brands design
-          scalable experiential marketing campaigns harnessing Interactive
-          Technology, Augmented Reality, Virtual Reality, Spatial Computing &
-          Content Development solutions.</span
+      <div class="overflow-hidden">
+        <span class="animate-title2 throughDesign d-flex" style="color: #e5ff53"
+          >Through &nbsp; Design</span
         >
+      </div>
+    </div>
+
+    <div class="titleText" style="overflow: hidden;  ">
+      <div class="titleTextDiv d-flex">
+        <div
+          class="d-flex showreelDiv align-items-center"
+          id="main3"
+          style="position: relative; "
+        >
+          <a
+            href="#myModal"
+            data-bs-target="#myModal"
+            data-bs-toggle="modal"
+            data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
+            class="pause"
+            id="playButton"
+            aria-label="showreel"
+          >
+            <lottie-player
+              src="/showreelBtn.json"
+              background="transparent"
+              speed="1"
+              class="lottie"
+              loop
+              autoplay></lottie-player>
+          </a>
+          <a
+            href="#myModal"
+            data-bs-target="#myModal"
+            data-bs-toggle="modal"
+            id="playButtonText"
+            class="watch-showreel"
+            aria-label="showreel"
+          >
+            <span id="s1">Watch Showreel</span>
+            <span id="s2"></span>
+          </a>
+
+          <div id="div2">
+            <a href="#knowMore" aria-label="know more">
+              <span id="s3"
+                >Brands Spotlight &nbsp;<Image
+                  src={arrow}
+                  alt=""
+                  quality={100}
+                  style="filter: invert(1)"
+                  class="optimization"
+                /></span
+              >
+            </a>
+          </div>
+        </div>
+
+        <div class="paragraphDiv">
+          <span class="para paragraph"
+            >IIC is a full-service MarTech Agency that helps brands design
+            scalable experiential marketing campaigns harnessing Interactive
+            Technology, Augmented Reality, Virtual Reality, Spatial Computing &
+            Content Development solutions.</span
+          >
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="margins animate-topSection" id="top">
+<div class="titleTextMob" style="background-color: #1a1a1a;">
+  <div class="titleTextDiv d-flex">
+    <div
+      class="d-flex showreelDiv align-items-center"
+      id="main3"
+      style="position: relative; "
+    >
+      <a
+        href="#myModal"
+        data-bs-target="#myModal"
+        data-bs-toggle="modal"
+        data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
+        class="pause"
+        id="playButton"
+        aria-label="showreel"
+      >
+        <lottie-player
+          src="/showreelBtn.json"
+          background="transparent"
+          speed="1"
+          class="lottie"
+          loop
+          autoplay></lottie-player>
+      </a>
+      <a
+        href="#myModal"
+        data-bs-target="#myModal"
+        data-bs-toggle="modal"
+        id="playButtonText"
+        class="watch-showreel"
+        aria-label="showreel"
+      >
+        <span id="s1">Watch Showreel</span>
+        <span id="s2"></span>
+      </a>
+
+      <div id="div2">
+        <a href="#knowMore" aria-label="know more">
+          <span id="s3"
+            >Brands Spotlight &nbsp;<Image
+              src={arrow}
+              alt=""
+              quality={100}
+              style="filter: invert(1)"
+              class="optimization"
+            /></span
+          >
+        </a>
+      </div>
+    </div>
+
+    <div class="paragraphDiv">
+      <span class="para paragraph"
+        >IIC is a full-service MarTech Agency that helps brands design scalable
+        experiential marketing campaigns harnessing Interactive Technology,
+        Augmented Reality, Virtual Reality, Spatial Computing & Content
+        Development solutions.</span
+      >
+    </div>
+  </div>
+</div>
+
+<!-- <section class="margins animate-topSection" id="top">
   <div class="row topDiv" style="padding-top:3.5%">
     <div class="col-lg-7 col-md-7 col-sm-12" style="overflow-x: hidden;">
       <div class="head1 animateHeading">
@@ -224,9 +291,9 @@ console.log("Current URL is:   ", Astro.url);
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
-<section class="mainImg mt-5 pt-3" style="margin-bottom
+<section class="mainImg" style="margin-bottom
 :1%;">
   <Image
     src={BannerImg}
@@ -1336,6 +1403,9 @@ console.log("Current URL is:   ", Astro.url);
         overflow: hidden;
         z-index: 2;
         position: absolute;
+        top: 25%;
+        left: 18%;
+        width: 61%;
       }
       .titleText {
         z-index: 2;
@@ -1444,9 +1514,7 @@ console.log("Current URL is:   ", Astro.url);
       .lottie {
         width: 80px;
         height: 80px;
-      }
-      .watch-showreel {
-        margin-top: 2rem;
+        filter: invert(1);
       }
 
       /* deduce engage enable animation */
@@ -1840,9 +1908,7 @@ console.log("Current URL is:   ", Astro.url);
         line-height: 11vw;
         color: #1a1a1a;
       }
-      #main3 #div2 {
-        margin-top: 2rem;
-      }
+
       #s1 {
         font-family: "Anek Devanagari";
         font-size: 1.3rem;
@@ -1851,7 +1917,7 @@ console.log("Current URL is:   ", Astro.url);
         font-weight: 500;
       }
       #s2 {
-        border-right: 1.5px solid #a29d9d;
+        border-right: 1.5px solid #ffffff2b;
         margin-left: 15px;
       }
       #main3 #div2 #s3 {
@@ -1922,6 +1988,9 @@ console.log("Current URL is:   ", Astro.url);
         height: 7.5vw;
         border-radius: 4vw;
         margin-top: 5%;
+      }
+      .throughDesign {
+        justify-content: flex-end;
       }
       @media screen and (max-width: 1400px) {
         .showreelDiv {
@@ -2123,6 +2192,14 @@ console.log("Current URL is:   ", Astro.url);
         font-size: 1.37rem;
         min-height: 5ch !important;
       }
+      .titleTextDiv {
+        gap: 0.5rem;
+      }
+      .titleTextMob {
+        color: white;
+
+        padding: 22% 7% 10% 7%;
+      }
 
       @media screen and (max-width: 1600px) {
         .authName {
@@ -2198,6 +2275,13 @@ console.log("Current URL is:   ", Astro.url);
         .bgImage {
           aspect-ratio: 3/4;
         }
+
+        .title {
+          top: 86%;
+          left: 6%;
+          width: auto;
+          font-size: 23vw;
+        }
         .titleImgsDiv {
           padding-top: 5%;
           padding-bottom: 24%;
@@ -2205,15 +2289,20 @@ console.log("Current URL is:   ", Astro.url);
         .titleText {
           position: relative;
           border-top: 0 !important;
+          display: none;
         }
         .titleTextDiv {
           flex-direction: column-reverse;
+          gap: 1.2rem;
+        }
+        .throughDesign {
+          justify-content: flex-start;
         }
         .paragraphDiv {
           width: 100%;
         }
         .paragraph {
-          font-size: 3.25vw;
+          font-size: 3.75vw;
         }
         .showreelDiv {
           width: 100%;
@@ -2345,6 +2434,9 @@ console.log("Current URL is:   ", Astro.url);
 
       /* mobile view css */
       @media screen and (min-width: 768px) {
+        .titleTextMob {
+          display: none;
+        }
         .taglineDiamond {
           text-align: center;
           margin: 12vw 3vw 0vw 3vw;
@@ -2510,14 +2602,14 @@ console.log("Current URL is:   ", Astro.url);
           text-transform: capitalize;
         }
         #s1 {
-          font-size: 3.25vw;
+          font-size: 3.25vw !important;
         }
-        #main3 #div2 #s2 {
-          margin-left: 2px;
+        #main3 #s2 {
+          margin-left: 13px !important;
         }
         #main3 #div2 #s3 {
-          font-size: 3.25vw;
-          margin-left: 7px;
+          font-size: 3.25vw !important;
+          margin-left: 12px;
         }
         /* .pause {
           width: 25px !important;
@@ -2728,12 +2820,6 @@ console.log("Current URL is:   ", Astro.url);
       }
 
       @media screen and (max-width: 500px) {
-        #s1 {
-          font-size: 0.9rem !important;
-        }
-        #main3 #div2 #s3 {
-          font-size: 0.9rem !important;
-        }
         .lottie {
           width: 40px;
           height: 40px;
@@ -2776,6 +2862,9 @@ console.log("Current URL is:   ", Astro.url);
       @media screen and (max-width: 900px) and (min-width: 767px) {
         .yellowCircle {
           padding-top: 1.7vw !important;
+        }
+        #s1 {
+          margin-left: 1% !important;
         }
       }
 
@@ -3116,6 +3205,10 @@ console.log("Current URL is:   ", Astro.url);
         animation: flip 0.8s ease 0.25s;
         /* animation-fill-mode: forwards; */
       }
+
+      .letter {
+        display: inline-block !important;
+      }
     </style>
 
     <style is:global>
@@ -3160,9 +3253,9 @@ console.log("Current URL is:   ", Astro.url);
     </style>
 
     <script>
-      document.querySelector(".head1").classList.add("head1Span-animate");
-      document.querySelector(".head2").classList.add("head1Span-animate");
-      document.querySelector(".paraDiv").classList.add("head1Span-animate");
+      // document.querySelector(".head1").classList.add("head1Span-animate");
+      // document.querySelector(".head2").classList.add("head1Span-animate");
+      // document.querySelector(".paraDiv").classList.add("head1Span-animate");
 
       // setTimeout(() => {
       //   ScrollTrigger.refresh();
@@ -3226,6 +3319,17 @@ console.log("Current URL is:   ", Astro.url);
           video.pause();
         });
       });
+
+      var textWrapper = document.querySelector(".animate-title");
+      textWrapper.innerHTML = textWrapper.textContent.replace(
+        /\S/g,
+        "<span class='letter d-inline-block' >$&</span>"
+      );
+      var textWrapper2 = document.querySelector(".animate-title2");
+      textWrapper2.innerHTML = textWrapper2.textContent.replace(
+        /\S/g,
+        "<span class='letter2 d-inline-block' >$&</span>"
+      );
 
       //
       let sections = gsap.utils.toArray(".panel");
@@ -3334,10 +3438,36 @@ console.log("Current URL is:   ", Astro.url);
         //   opacity: "0",
         //   delay: "2",
         // })
-        tl.from(".titleImgsDiv", 1, {
+
+        tl.from(".video-container", 1, {
           ease: "power2.inOut",
-          opacity: "0",
+          scale: "0",
         })
+
+          .from(" .letter", 1, {
+            y: "100%",
+            ease: "power2.inOut",
+            duration: 700,
+            stagger: 0.04,
+          })
+          .from(" .letter2", 1, {
+            y: "100%",
+            ease: "power2.inOut",
+            duration: 700,
+            stagger: 0.025,
+          })
+          .from(".titleText", 0.1, {
+            opacity: "0",
+          })
+          .from(".titleTextDiv", 1, {
+            x: "15%",
+            y: "20%",
+            opacity: "0",
+          })
+          .from(".titleImgsDiv", 1, {
+            ease: "power2.inOut",
+            opacity: "0",
+          })
 
           .to(".animate-topSection", 1, {
             opacity: "0",
