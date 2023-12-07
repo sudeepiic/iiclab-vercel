@@ -61,78 +61,88 @@ const showreel: any = await contentfulClient.getEntries<any>({
   content_type: "showreel",
 });
 const showreelVideo = showreel.items[0].fields.video.fields.file.url;
+console.log("Current URL is:   ", Astro.url);
 ---
 
-<!-- <section class="margins animate-topSection" style="overflow-x: hidden;">
-  <div class="topDiv" style="padding-top: 8%;">
-    <div id="main" class="d-flex">
-      <div class="head1 animateHeading">
-        <span class="head1Span">Humanizing Tech</span>
-      </div>
-      <div class="animateHand">
-        <Image class="optimization" src={heroHand} alt="" />
-      </div>
+<section class="position-relative video-container">
+  <div>
+    <video id="autoVideo" class="bgImage" style="" autoplay loop muted>
+      <source src={showreelVideo} type="video/mp4" />
+    </video>
+    <div class=""></div>
+  </div>
+
+  <div class="title" style="top: 25%; left: 18%; width:61% ">
+    <div>
+      <span class="animate-title">Humanizing Tech</span>
     </div>
-    <div class="d-flex" id="main2" style="margin-bottom: 0.4%;">
-      <div id="div1" class="paraDiv">
-        <span class="para para1"
+    <div>
+      <span
+        class="animate-title d-flex justify-content-end"
+        style="color: #e5ff53">Through Design</span
+      >
+    </div>
+  </div>
+
+  <div class="titleText" style="  ">
+    <div class="titleTextDiv d-flex gap-2">
+      <div class="d-flex showreelDiv" id="main3" style="position: relative; ">
+        <a
+          href="#myModal"
+          data-bs-target="#myModal"
+          data-bs-toggle="modal"
+          data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
+          class="pause"
+          id="playButton"
+          aria-label="showreel"
+        >
+          <lottie-player
+            src="/yellowLottie.json"
+            background="transparent"
+            speed="1"
+            class="lottie"
+            loop
+            autoplay></lottie-player>
+        </a>
+        <a
+          href="#myModal"
+          data-bs-target="#myModal"
+          data-bs-toggle="modal"
+          id="playButtonText"
+          class="watch-showreel"
+          aria-label="showreel"
+        >
+          <span id="s1">Watch Showreel</span>
+          <span id="s2"></span>
+        </a>
+
+        <div id="div2">
+          <a href="#knowMore" aria-label="know more">
+            <span id="s3"
+              >Brands Spotlight &nbsp;<Image
+                src={arrow}
+                alt=""
+                quality={100}
+                style="filter: invert(1)"
+                class="optimization"
+              /></span
+            >
+          </a>
+        </div>
+      </div>
+
+      <div class="paragraphDiv">
+        <span class="para paragraph"
           >IIC is a full-service MarTech Agency that helps brands design
           scalable experiential marketing campaigns harnessing Interactive
-          Technology, Augmented Reality, Virtual Reality, Metaverse & Content
-          Development solutions.</span
+          Technology, Augmented Reality, Virtual Reality, Spatial Computing &
+          Content Development solutions.</span
         >
-      </div>
-      <div class="head2 animateHeading">
-        <span>Through Design</span><br />
-        <p class="mobPara">
-          IIC is a full-service MarTech Agency that helps brands design scalable
-          experiential marketing campaigns harnessing Interactive Technology,
-          Augmented Reality, Virtual Reality, Metaverse & Content Development
-          solutions.
-        </p>
-      </div>
-    </div>
-
-    <div class="d-flex" id="main3" style="position: relative;">
-      <a
-        href="#myModal"
-        data-bs-target="#myModal"
-        data-bs-toggle="modal"
-        data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
-        class="pause"
-        id="playButton"
-        aria-label="showreel"
-      >
-        <lottie-player
-          src="/showreelBtn.json"
-          background="transparent"
-          speed="1"
-          class="lottie"
-          loop
-          autoplay></lottie-player>
-      </a>
-      <a
-        href="#myModal"
-        data-bs-target="#myModal"
-        data-bs-toggle="modal"
-        id="playButtonText"
-        class="watch-showreel"
-        aria-label="showreel"
-      >
-        <span id="s1">Watch Showreel</span>
-        <span id="s2"></span>
-      </a>
-animate-topSection
-      <div id="div2">
-        <a href="#knowMore" aria-label="know more">
-          <span id="s3"
-            >Know More <Image src={arrow} alt="" class="optimization" /></span
-          >
-        </a>
       </div>
     </div>
   </div>
-</section> -->
+</section>
+
 <section class="margins animate-topSection" id="top">
   <div class="row topDiv" style="padding-top:3.5%">
     <div class="col-lg-7 col-md-7 col-sm-12" style="overflow-x: hidden;">
@@ -148,8 +158,8 @@ animate-topSection
           <span class="para para1"
             >IIC is a full-service MarTech Agency that helps brands design
             scalable experiential marketing campaigns harnessing Interactive
-            Technology, Augmented Reality, Virtual Reality, Metaverse & Content
-            Development solutions.</span
+            Technology, Augmented Reality, Virtual Reality, Spatial Computing &
+            Content Development solutions.</span
           >
         </div>
       </div>
@@ -169,7 +179,7 @@ animate-topSection
           aria-label="showreel"
         >
           <lottie-player
-            src="/showreelBtn.json"
+            src="/yellowLottie.json"
             background="transparent"
             speed="1"
             class="lottie"
@@ -222,7 +232,7 @@ animate-topSection
     src={BannerImg}
     alt=""
     quality={100}
-    style="height:100%;width:100%; "
+    style="height:100%;width:100%; aspect-ratio: 2/1; object-fit: cover "
     class="optimization"
   />
 </section>
@@ -397,7 +407,7 @@ animate-topSection
                   class="trial2 optimization"
                   alt=""
                 />
-                <li class="list">Metaverse</li>
+                <li class="list">Spatial Computing</li>
                 <li class="list">
                   <a href="solutions/virtual-reality">Virtual reality</a>
                 </li>
@@ -468,7 +478,8 @@ animate-topSection
                 />
                 <li class="list">
                   <a href="solutions/interactive-wall"
-                    >Interactive Wall/Screen</a>
+                    >Interactive Wall/Screen</a
+                  >
                 </li>
                 <li class="list">Interactive Table/Interactive Book</li>
                 <li class="list">3D Configurators</li>
@@ -604,7 +615,7 @@ animate-topSection
             <Image class="mobImg optimization" src={solnImg1} alt="" />
           </div>
           <div class="col-7 mobList">
-            <li>Metaverse</li>
+            <li>Spatial Computing</li>
             <li><a href="solutions/virtual-reality"> Virtual Reality</a></li>
             <li>Augmented Reality</li>
             <li>
@@ -1152,7 +1163,7 @@ animate-topSection
           <tr class="product-table">
             <td style="font-family: Anek Devanagari;">2.</td>
             <td style="color:white" class="tools"
-              >V-Verse : revolutionary metaverse platform by ink in caps</td
+              >V-Verse : revolutionary spatial computing platform by ink in caps</td
             >
             <td
               style="color:#252525; text-align: end;"
@@ -1303,12 +1314,66 @@ animate-topSection
 
     <!-- video modal ends -->
     <style>
+      /* New Home title UI */
+      /* .bgImage {
+        background-image: url(""),
+          linear-gradient(rgba(243, 243, 243, 0.82), rgba(0, 0, 0, 0.2));
+      } */
+
+      .bgImage {
+        object-fit: cover;
+        width: 100%;
+        aspect-ratio: 2/1;
+      }
+      .title {
+        color: white;
+        font-family: "Deutschlander";
+        text-transform: uppercase;
+        font-size: 14vw;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 0.85;
+        overflow: hidden;
+        z-index: 2;
+        position: absolute;
+      }
+      .titleText {
+        z-index: 2;
+        color: white;
+        bottom: 7%;
+        margin: 0 7%;
+        padding-top: 2%;
+        border-top: 1.5px solid rgba(255, 255, 255, 0.109);
+        position: absolute;
+      }
+      .video-container:after {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        background-image: url(), linear-gradient(transparent, rgba(0, 0, 0, 2));
+      }
+      .showreelDiv {
+        width: 40%;
+      }
+      .paragraphDiv {
+        width: 60%;
+      }
+      .paragraph {
+        font-family: "anek devanagari";
+        font-size: 1.25vw;
+        line-height: 1.8;
+      }
+
+      /*  */
       .optimization {
         height: auto;
       }
-      . {
-        height: auto;
-      }
+
       #myVideo {
         width: 100%;
         height: 100%;
@@ -1780,7 +1845,7 @@ animate-topSection
       }
       #s1 {
         font-family: "Anek Devanagari";
-        font-size: 1.35rem;
+        font-size: 1.3rem;
         margin-left: 10px;
         text-transform: uppercase;
         font-weight: 500;
@@ -1791,7 +1856,7 @@ animate-topSection
       }
       #main3 #div2 #s3 {
         font-family: "Anek Devanagari";
-        font-size: 1.35rem;
+        font-size: 1.3rem;
         margin-left: 15px;
         text-transform: uppercase;
         font-weight: 500;
@@ -1858,6 +1923,19 @@ animate-topSection
         border-radius: 4vw;
         margin-top: 5%;
       }
+      @media screen and (max-width: 1400px) {
+        .showreelDiv {
+          width: 45%;
+        }
+        .paragraphDiv {
+          width: 55%;
+        }
+
+        #s1,
+        #s3 {
+          font-size: 1.25vw !important;
+        }
+      }
 
       @media screen and (max-width: 1300px) {
         #main2 #div1 span {
@@ -1867,10 +1945,6 @@ animate-topSection
         }
         svg {
           margin-top: 4vw;
-        }
-        #s1,
-        #s3 {
-          font-size: 1.3rem !important;
         }
       }
 
@@ -2121,9 +2195,28 @@ animate-topSection
         .watermark {
           display: none;
         }
+        .bgImage {
+          aspect-ratio: 3/4;
+        }
         .titleImgsDiv {
           padding-top: 5%;
           padding-bottom: 24%;
+        }
+        .titleText {
+          position: relative;
+          border-top: 0 !important;
+        }
+        .titleTextDiv {
+          flex-direction: column-reverse;
+        }
+        .paragraphDiv {
+          width: 100%;
+        }
+        .paragraph {
+          font-size: 3.25vw;
+        }
+        .showreelDiv {
+          width: 100%;
         }
         .overlayImage {
           top: 76%;
@@ -2417,13 +2510,13 @@ animate-topSection
           text-transform: capitalize;
         }
         #s1 {
-          font-size: 1.2rem;
+          font-size: 3.25vw;
         }
         #main3 #div2 #s2 {
           margin-left: 2px;
         }
         #main3 #div2 #s3 {
-          font-size: 1.2rem;
+          font-size: 3.25vw;
           margin-left: 7px;
         }
         /* .pause {
@@ -2440,9 +2533,9 @@ animate-topSection
         #main5 #div1 img {
           display: none !important;
         }
-        #main5 {
+        /* #main5 {
           text-align: center;
-        }
+        } */
         #main5 #div2 span {
           font-size: 17vw;
         }
@@ -3025,6 +3118,47 @@ animate-topSection
       }
     </style>
 
+    <style is:global>
+      .sticky-header {
+        position: fixed !important;
+      }
+      .turnBlack {
+        background: transparent !important;
+        position: absolute;
+        width: 100%;
+        margin-bottom: 1%;
+      }
+
+      .list ul li a {
+        color: white !important;
+        opacity: 100% !important;
+      }
+      path {
+        fill: white !important;
+      }
+
+      /* connect button css */
+
+      .connect,
+      .circles {
+        fill: #1a1a1a !important;
+      }
+      .oval {
+        fill: white !important;
+      }
+
+      .tele {
+        fill: white !important;
+      }
+      .menu p {
+        color: white !important;
+      }
+      .menu .s1,
+      .menu .s2 {
+        border: 1px solid white !important;
+      }
+    </style>
+
     <script>
       document.querySelector(".head1").classList.add("head1Span-animate");
       document.querySelector(".head2").classList.add("head1Span-animate");
@@ -3194,16 +3328,16 @@ animate-topSection
 
         let tl: any = gsap.timeline({});
 
-        tl.from("#main3", 1, {
-          x: "30%",
+        // tl.from("#main3", 1, {
+        //   x: "30%",
+        //   ease: "power2.inOut",
+        //   opacity: "0",
+        //   delay: "2",
+        // })
+        tl.from(".titleImgsDiv", 1, {
           ease: "power2.inOut",
           opacity: "0",
-          delay: "2",
         })
-          .from(".titleImgsDiv", 1, {
-            ease: "power2.inOut",
-            opacity: "0",
-          })
 
           .to(".animate-topSection", 1, {
             opacity: "0",
@@ -3384,25 +3518,28 @@ animate-topSection
         // mobile setup code here...
 
         gsap.to(sections, {
-          xPercent: -290 * (sections.length - 1.35),
+          xPercent: -300 * (sections.length - 1.35),
           ease: "none",
           scrollTrigger: {
             trigger: ".container",
             pin: true,
             scrub: 1,
-            snap: 1 / (sections.length - 0.7),
-            end: () =>
-              "+=" + (document.querySelector(".container") as any).offsetWidth,
+            //   ,
+            // snap: 1 / (sections.length - 0.8),
+            start: "top 35%",
+            end: "bottom -50%",
+            // end: () =>
+            //   "+=" + ((document.querySelector(".container") as any).offsetWidth - 40),
           },
         });
         gsap.from("#main5", {
-          x: "-70%",
+          x: "-80%",
 
           duration: 1.2,
           // repeat: -1,
           scrollTrigger: {
             trigger: "#main5",
-            start: "top 45%",
+            start: "top 55%",
             end: "top top",
             toggleActions: "play complete reverse reset",
           },
@@ -3424,7 +3561,7 @@ animate-topSection
           ease: "ease1.out",
           scrollTrigger: {
             trigger: ".clientArray1",
-            start: "top 45%",
+            start: "top 60%",
             end: "top top",
             toggleActions: "restart complete reverse reset",
           },
@@ -3435,7 +3572,7 @@ animate-topSection
           ease: "ease1.out",
           scrollTrigger: {
             trigger: ".clientArray2",
-            start: "top 55%",
+            start: "top 60%",
             end: "top top",
             toggleActions: "restart complete reverse reset",
           },
@@ -3446,7 +3583,7 @@ animate-topSection
           ease: "ease1.out",
           scrollTrigger: {
             trigger: ".clientArray3",
-            start: "top 65%",
+            start: "top 60%",
             end: "top top",
             toggleActions: "restart complete reverse reset",
           },
@@ -3457,7 +3594,7 @@ animate-topSection
           ease: "ease1.out",
           scrollTrigger: {
             trigger: ".clientArray4",
-            start: "top 75%",
+            start: "top 60%",
             end: "top top",
             toggleActions: "restart complete reverse reset",
           },
@@ -3469,16 +3606,16 @@ animate-topSection
 
         let tl: any = new TimelineMax({});
 
-        tl.from("#main3", 1, {
-          x: "30%",
+        // tl.from("#main3", 1, {
+        //   x: "30%",
+        //   ease: "power2.inOut",
+        //   opacity: "0",
+        //   delay: "2",
+        // })
+        tl.from(".titleImgsDiv", 1, {
           ease: "power2.inOut",
           opacity: "0",
-          delay: "2",
         })
-          .from(".titleImgsDiv", 1, {
-            ease: "power2.inOut",
-            opacity: "0",
-          })
 
           .to(".animate-topSection", 1, {
             opacity: "0",
@@ -3494,7 +3631,7 @@ animate-topSection
             delay: 5,
             scrollTrigger: {
               trigger: ".mainImg",
-              start: "top 50%",
+              start: "top 60%",
               end: "bottom top",
               toggleClass: "mainImg-animate",
 

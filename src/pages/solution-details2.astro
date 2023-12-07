@@ -38,35 +38,41 @@ console.log("Mid Content Img: ", props.midContentImg);
       <div class="margins mt-3">
         <span class="titleText fs-2" set:html={props.subTitle} />
       </div>
-      <div class="watchVideo margins d-flex align-items-center mt-3 gap-2">
-        <a
-          href="#myModal"
-          data-bs-target="#myModal"
-          data-bs-toggle="modal"
-          data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
-          class="pause"
-          id="playButton"
-          aria-label="showreel"
-        >
-          <lottie-player
-            src="/showreelBtn.json"
-            background="transparent"
-            speed="1"
-            class="lottie pointer"
-            loop
-            autoplay></lottie-player>
-        </a>
-        <a
-          href="#myModal"
-          data-bs-target="#myModal"
-          data-bs-toggle="modal"
-          id="playButtonText"
-          class="watch-showreel"
-          aria-label="showreel"
-        >
-          <span id="s1">Watch Video</span>
-        </a>
-      </div>
+
+      {
+        props.videoLink && (
+          <div class="watchVideo margins d-flex align-items-center mt-3 gap-2">
+            <a
+              href="#myModal"
+              data-bs-target="#myModal"
+              data-bs-toggle="modal"
+              data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
+              class="pause"
+              id="playButton"
+              aria-label="showreel"
+            >
+              <lottie-player
+                src="/showreelBtn.json"
+                background="transparent"
+                speed="1"
+                class="lottie pointer"
+                loop
+                autoplay
+              />
+            </a>
+            <a
+              href="#myModal"
+              data-bs-target="#myModal"
+              data-bs-toggle="modal"
+              id="playButtonText"
+              class="watch-showreel"
+              aria-label="showreel"
+            >
+              <span id="s1">Watch Video</span>
+            </a>
+          </div>
+        )
+      }
 
       <div class="animate-swiper">
         <div class="mySwiper" style="padding:1.5% 0 0 0 ; ">
@@ -336,41 +342,33 @@ console.log("Mid Content Img: ", props.midContentImg);
       )
     }
   </section>
-  <div id="myModal" class="modal fade">
-    <div class="modal-dialog modal-fullscreen">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button
-            type="button"
-            class="close btn"
-            data-bs-dismiss="modal"
-            aria-hidden="true"
-            aria-label="close"
-            id="videoClose"
-            ><Image class="crossImg optimization" src={close} alt="" /></button
-          >
-          <h4 class="modal-title">Showreel</h4>
-        </div>
-        <div class="modal-body">
-          <!-- <iframe
-                width="560"
-                height="315"
-                id="videoFrame"
-                
-                src="https://www.youtube.com/embed/wd0eBI7eXrI"
-                data-autoplay-src="//www.youtube.com/embed/wd0eBI7eXrI?autoplay=1"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share "
-                allowfullscreen></iframe> -->
-          <video id="myVideo" controls>
-            <source src={showreelVideo} type="video/mp4" />
-            <!-- Add additional source elements for other video formats if needed -->
-          </video>
+
+  {
+    props.videoLink && (
+      <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="close btn"
+                data-bs-dismiss="modal"
+                aria-hidden="true"
+                aria-label="close"
+                id="videoClose"
+              >
+                <Image class="crossImg optimization" src={close} alt="" />
+              </button>
+              <h4 class="modal-title">Showreel</h4>
+            </div>
+            <div class="modal-body">
+              <iframe class="video" src={props.videoLink} allowfullscreen />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    )
+  }
 </Layout>
 
 <style>
@@ -383,6 +381,11 @@ console.log("Mid Content Img: ", props.midContentImg);
     display: inline-block !important;
   }
 
+  .video {
+    width: 100%;
+    aspect-ratio: 20/9;
+    /* border-radius: 0 5vw 0 5vw; */
+  }
   .iconDiv {
     /* aspect-ratio: 26/19; */
     width: 17%;

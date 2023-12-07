@@ -14,12 +14,12 @@ import awards from "../images/headerAwards.jpg";
 import articles from "../images/headerArticles.jpg";
 import lifeAtIIC from "../images/headerLifeIic.jpg";
 import career from "../images/headerCareer.jpg";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 //import { Image, Picture } from "@astrojs/image/components";
 ---
 
-<header class="turnBlack sticky-header" >
-  <div class="d margins ">
+<header class="turnBlack sticky-header">
+  <div class="d margins">
     <nav class="main d-inline-flex">
       <div class="logo">
         <a href="/" area-label="home">
@@ -78,7 +78,6 @@ import { Image } from 'astro:assets';
       </div>
       <div class="contact-div btn">
         <a href="/contact" aria-label="contact">
-
           <!-- <button class="btn btn-dark rounded-pill"> Connect</button> -->
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -106,15 +105,14 @@ import { Image } from 'astro:assets';
               cy="32.1406"
               r="18.873"
               fill="currentColor"></circle>
-         
 
-                <circle
-                  class="circles "
-                  cx="52.6619"
-                  cy="32.1404"
-                  r="12.9587"
-                  fill="currentColor"></circle>
-              
+            <circle
+              class="circles"
+              cx="52.6619"
+              cy="32.1404"
+              r="12.9587"
+              fill="currentColor"></circle>
+
             <path
               class="tele"
               d="M55.2802 37.2513C54.507 37.2341 53.5791 36.8905 52.7142 36.3864C50.5204 35.0977 48.8422 33.3392 47.8914 30.9507C47.5935 30.1947 47.4561 29.4042 47.6336 28.5909C47.7826 27.9036 48.1835 27.4052 48.8365 27.1303C49.3348 26.9184 49.8675 27.0501 50.1882 27.4911C50.5605 27.9952 50.9214 28.5107 51.2708 29.0377C51.6259 29.5761 51.4942 30.2119 50.9729 30.6071C50.8183 30.7274 50.5319 30.8075 50.5319 30.9736C50.5376 31.1455 50.7438 31.323 50.8698 31.4834C51.6717 32.5087 52.5996 33.4137 53.6478 34.1869C53.8025 34.3015 53.8998 34.3187 53.9915 34.1297C54.0545 34.0094 54.1404 33.9063 54.2206 33.8032C54.6101 33.3049 55.2459 33.1903 55.7785 33.5454C56.2941 33.8891 56.8038 34.2442 57.3021 34.6108C57.7546 34.943 57.8806 35.47 57.6687 35.9855C57.3365 36.8103 56.5804 37.2513 55.2802 37.2513Z"
@@ -202,7 +200,12 @@ import { Image } from 'astro:assets';
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="home"
             >
-              <Image src={home} class="header-img2 optimization" alt="" loading="lazy" />
+              <Image
+                src={home}
+                class="header-img2 optimization"
+                alt=""
+                loading="lazy"
+              />
               <span class="index">01</span>
               <span class="titles">Home</span>
             </a>
@@ -212,7 +215,12 @@ import { Image } from 'astro:assets';
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="about us"
             >
-              <Image src={about} class="header-img2 optimization" alt="" loading="lazy" />
+              <Image
+                src={about}
+                class="header-img2 optimization"
+                alt=""
+                loading="lazy"
+              />
 
               <span class="index">02</span>
               <span class="titles">About us</span>
@@ -222,7 +230,12 @@ import { Image } from 'astro:assets';
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="solutions"
             >
-              <Image src={solutions} class="header-img2 optimization" alt="" loading="lazy" />
+              <Image
+                src={solutions}
+                class="header-img2 optimization"
+                alt=""
+                loading="lazy"
+              />
 
               <span class="index">03</span>
               <span class="titles">Solutions</span>
@@ -235,7 +248,12 @@ import { Image } from 'astro:assets';
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="products"
             >
-              <Image src={products} class="header-img2 optimization" alt="" loading="lazy" />
+              <Image
+                src={products}
+                class="header-img2 optimization"
+                alt=""
+                loading="lazy"
+              />
 
               <span class="index">04</span>
               <span class="titles">products</span>
@@ -245,7 +263,12 @@ import { Image } from 'astro:assets';
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="our work"
             >
-              <Image src={work} class="header-img2 optimization" alt="" loading="lazy" />
+              <Image
+                src={work}
+                class="header-img2 optimization"
+                alt=""
+                loading="lazy"
+              />
 
               <span class="index">05</span>
               <span class="titles">Our work</span>
@@ -255,7 +278,12 @@ import { Image } from 'astro:assets';
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="awards"
             >
-              <Image src={awards} class="header-img2 optimization" alt="" loading="lazy" />
+              <Image
+                src={awards}
+                class="header-img2 optimization"
+                alt=""
+                loading="lazy"
+              />
 
               <span class="index">06</span>
               <span class="titles">awards</span>
@@ -268,7 +296,12 @@ import { Image } from 'astro:assets';
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="articles"
             >
-              <Image src={articles} class="header-img2 optimization" alt="" loading="lazy" />
+              <Image
+                src={articles}
+                class="header-img2 optimization"
+                alt=""
+                loading="lazy"
+              />
 
               <span class="index">07</span>
               <span class="titles">articles</span>
@@ -278,7 +311,12 @@ import { Image } from 'astro:assets';
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="life at iic"
             >
-              <Image src={lifeAtIIC} class="header-img2 optimization" alt="" loading="lazy" />
+              <Image
+                src={lifeAtIIC}
+                class="header-img2 optimization"
+                alt=""
+                loading="lazy"
+              />
 
               <span class="index">08</span>
               <span class="titles">Life at iic</span>
@@ -288,7 +326,12 @@ import { Image } from 'astro:assets';
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="career"
             >
-              <Image src={career} class="header-img2 optimization" alt="" loading="lazy" />
+              <Image
+                src={career}
+                class="header-img2 optimization"
+                alt=""
+                loading="lazy"
+              />
 
               <span class="index">09</span>
               <span class="titles">Career</span>
@@ -336,7 +379,12 @@ import { Image } from 'astro:assets';
               aria-label="instagram"
               target="_blank"
             >
-              <Image class="icons optimization" src={instaLogo} alt="" loading="lazy" /></a
+              <Image
+                class="icons optimization"
+                src={instaLogo}
+                alt=""
+                loading="lazy"
+              /></a
             >
             <a
               class="iconbtn"
@@ -344,7 +392,12 @@ import { Image } from 'astro:assets';
               aria-label="linkedin"
               target="_blank"
             >
-              <Image class="icons optimization" src={linkedinlogo} alt="" loading="lazy" /></a
+              <Image
+                class="icons optimization"
+                src={linkedinlogo}
+                alt=""
+                loading="lazy"
+              /></a
             >
             <a
               class="iconbtn"
@@ -352,7 +405,12 @@ import { Image } from 'astro:assets';
               aria-label="twitter"
               target="_blank"
             >
-              <Image class="icons optimization" src={twitterX} alt="" loading="lazy" /></a
+              <Image
+                class="icons optimization"
+                src={twitterX}
+                alt=""
+                loading="lazy"
+              /></a
             >
             <a
               class="iconbtn"
@@ -360,7 +418,12 @@ import { Image } from 'astro:assets';
               aria-label="facebook"
               target="_blank"
             >
-              <Image class="icons optimization" src={fbLogo} alt="" loading="lazy" /></a
+              <Image
+                class="icons optimization"
+                src={fbLogo}
+                alt=""
+                loading="lazy"
+              /></a
             >
             <a
               class="iconbtn"
@@ -368,7 +431,12 @@ import { Image } from 'astro:assets';
               aria-label="whatsapp"
               target="_blank"
             >
-              <Image class="icons optimization" src={threads} alt="" loading="lazy" /></a
+              <Image
+                class="icons optimization"
+                src={threads}
+                alt=""
+                loading="lazy"
+              /></a
             >
           </div>
         </div>
@@ -382,24 +450,19 @@ import { Image } from 'astro:assets';
     height: auto;
   }
 
-
-
-
-
   /* header visible on scroll back css */
 
   .sticky-header {
-  position: sticky;
-  top: -1px; /* Initially hide the header above the viewport */
-  width: 100%;
-  transition: top 0.3s ease; /* Add a smooth transition effect */
-  z-index: 1000; /* Adjust the z-index to ensure it overlays other content */
-  background: #f6f7f0;
-}
-.sticky-header.hidden {
-  top: -120px; /* Show the header when scrolled up */
-}
-
+    position: sticky;
+    top: -1px; /* Initially hide the header above the viewport */
+    width: 100%;
+    transition: top 0.3s ease; /* Add a smooth transition effect */
+    z-index: 1000; /* Adjust the z-index to ensure it overlays other content */
+    background: #f6f7f0;
+  }
+  .sticky-header.hidden {
+    top: -120px; /* Show the header when scrolled up */
+  }
 
   /*  */
 
@@ -510,7 +573,6 @@ import { Image } from 'astro:assets';
     bottom: 3%;
     left: 15%;
     width: 73%;
-  
   }
   .icons {
     width: 2.5vw;
@@ -585,14 +647,13 @@ import { Image } from 'astro:assets';
       font-size: 18px !important;
     }
 
-    .list ul li:hover{     
-      transition: 0.35s ease;    
+    .list ul li:hover {
+      transition: 0.35s ease;
       scale: 1.15;
     }
-    .list ul li:hover a{
-      opacity:100%;
+    .list ul li:hover a {
+      opacity: 100%;
     }
-
   }
 
   @media screen and (max-width: 992px) {
@@ -660,7 +721,10 @@ import { Image } from 'astro:assets';
       display: none;
     }
     .contact-div {
-      display: none;
+      margin-right: 11%;
+    }
+    .contact-div svg {
+      width: 57%;
     }
     .menu {
       position: absolute;
@@ -710,6 +774,12 @@ import { Image } from 'astro:assets';
     .headerLogo {
       width: 7vw !important;
     }
+    .main {
+      align-items: center;
+    }
+    .main .logo {
+      margin-top: 0;
+    }
   }
 
   @media screen and (min-width: 767px) {
@@ -718,6 +788,15 @@ import { Image } from 'astro:assets';
     }
     .onlyMob {
       display: none !important;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .contact-div svg {
+      width: 48%;
+    }
+    .contact-div {
+      margin-top: 1%;
     }
   }
   a {

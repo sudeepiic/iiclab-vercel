@@ -9,7 +9,7 @@ import carousalNext from "../images/carousalNext.png";
 import carousalPrev from "../images/carousalPrev.png";
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 //import { Image, Picture } from "@astrojs/image/components";
 
 const clientsEntries = await contentfulClient.getEntries<any>({
@@ -38,7 +38,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
 <Layout title="Ink In Caps - About Us" seoTitle="about-us">
   <section>
     <div
-      style="padding-top: 3%; padding:3% 7% 3% 7%; position:sticky; top:0; background-color:#f6f7f0 ;"
+      style="padding-top: 3%; padding:3% 7% 3% 7%;  background-color:#f6f7f0 ;"
     >
       <div id="main">
         <div id="div1">
@@ -77,7 +77,12 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
       </div>
     </div>
     <div>
-      <Image src={officeImg} alt="" class="optimization" style="height:100%;width:100%;  " />
+      <Image
+        src={officeImg}
+        alt=""
+        class="optimization"
+        style="height:100%;width:100%;  "
+      />
     </div>
   </section>
 
@@ -199,7 +204,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
                   src={clients.fields?.file.url}
                   alt=""
                   loading="lazy"
-                   width={389}
+                  width={389}
                   height={282}
                 />
               </td>
@@ -215,7 +220,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
                   src={clients.fields?.file.url}
                   alt=""
                   loading="lazy"
-                   width={389}
+                  width={389}
                   height={282}
                 />
               </td>
@@ -231,7 +236,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
                   src={clients.fields?.file.url}
                   alt=""
                   loading="lazy"
-                   width={389}
+                  width={389}
                   height={282}
                 />
               </td>
@@ -244,7 +249,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
   </section>
 
   <section
-    style="border-radius: 6vw 6vw 0 0; background-color:#1a1a1a ; padding-top: 1.5%; padding-bottom: 1.5%;"
+    style="border-radius: 6vw 6vw 0 0; background-color:#1a1a1a ; padding-top: 1.5%;"
   >
     <div class="d-flex margins">
       <div class="meetDiv">
@@ -269,9 +274,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
           <span id="editors" class="dept">Editors</span>
         </div>
       </div>
-      </div>
     </div>
-
     <div style="text-align: center;">
       <div class="swiper mySwiper">
         <div class="swiper-wrapper" id="employeeDiv">
@@ -294,7 +297,6 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
                     width={640}
                     height={844}
                     format="webp"
-
                   />
                   <div class="imgCaptionDiv">
                     <span
@@ -311,17 +313,28 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
             ))
           }
         </div>
-        <Image class="swiper-prev optimization" src={carousalPrev} alt="" loading="lazy" />
+        <Image
+          class="swiper-prev optimization"
+          src={carousalPrev}
+          alt=""
+          loading="lazy"
+        />
 
-        <Image class="swiper-next optimization" src={carousalNext} alt="" loading="lazy" />
+        <Image
+          class="swiper-next optimization"
+          src={carousalNext}
+          alt=""
+          loading="lazy"
+        />
       </div>
     </div>
   </section>
 </Layout>
+
 <style>
-.optimization{
-  height: auto;
-}
+  .optimization {
+    height: auto;
+  }
 
   . {
     height: auto;
@@ -410,6 +423,9 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
     transform: translate(243%, -512%);
     z-index: 999 !important;
     position: inherit;
+  }
+  .swiper-wrapper {
+    margin-top: 2%;
   }
 
   /* mob view css */
@@ -615,7 +631,9 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
     font-style: normal;
     font-weight: 400;
     font-size: 12.5vw;
-    src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
+    src:
+      local("Deutschlander"),
+      url("/Deutschlander.woff") format("woff");
   }
   .theTeam {
     color: #e5ff53;
@@ -623,7 +641,9 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
     font-style: normal;
     font-weight: 400;
     font-size: 12.5vw;
-    src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
+    src:
+      local("Deutschlander"),
+      url("/Deutschlander.woff") format("woff");
   }
 
   .missions {
@@ -645,7 +665,6 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
 
   /* animation css */
 
-  
   .label-animate2,
   .label-animate3,
   .label-animate4 {
@@ -653,7 +672,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
     position: relative;
     top: 100%;
   }
-  .label-animate1{
+  .label-animate1 {
     display: block;
     position: relative;
     top: 100%;
@@ -695,7 +714,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
     bottom: 0;
     background: #1a1a1a;
     z-index: 998;
-    transition: left 1.2s ease;
+    transition: left 0.8s ease;
     overflow: hidden;
   }
   .content-box-animation::after {
@@ -713,14 +732,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
   gsap.registerPlugin(ScrollTrigger);
 
   //  swiper js
-  import {
-    Swiper,
-    Navigation,
-    Pagination,
-    EffectCoverflow,
-    Autoplay,
-    EffectCreative,
-  } from "swiper";
+  import { Swiper, Navigation, EffectCreative } from "swiper";
   let x = 3;
 
   var swiper = new Swiper(".mySwiper", {
@@ -847,7 +859,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
       .from("#teamInfo", 1, {
         scrollTrigger: {
           trigger: ".label-animate1",
-          start: "top 40%",
+          start: "top 70%",
           end: "bottom top",
           toggleClass: "label-animation",
           scrub: true,
@@ -856,7 +868,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
       .from("#teamInfo", 1, {
         scrollTrigger: {
           trigger: ".label-animate2",
-          start: "top 50%",
+          start: "top 80%",
           end: "bottom top",
           toggleClass: "label-animation",
           scrub: true,
@@ -865,7 +877,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
       .from("#teamInfo", 1, {
         scrollTrigger: {
           trigger: ".label-animate3",
-          start: "top 60%",
+          start: "top 90%",
           end: "bottom top",
           toggleClass: "label-animation",
           scrub: true,
@@ -875,7 +887,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
         stagger: 0.8,
         scrollTrigger: {
           trigger: ".label-animate4",
-          start: "top 70%",
+          start: "top 100%",
           end: "bottom top",
           toggleClass: "label-animation",
           scrub: true,
@@ -884,7 +896,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
       .from("#teamInfo", 0.7, {
         scrollTrigger: {
           trigger: ".content-box1",
-          start: "top 40%",
+          start: "top 60%",
           end: "bottom top",
           toggleClass: "content-box-animation",
           scrub: true,
@@ -893,7 +905,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
       .from("#teamInfo", 0.7, {
         scrollTrigger: {
           trigger: ".content-box2",
-          start: "top 50%",
+          start: "top 70%",
           end: "bottom top",
           toggleClass: "content-box-animation",
           scrub: true,
@@ -902,7 +914,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
       .from("#teamInfo", 0.7, {
         scrollTrigger: {
           trigger: ".content-box3",
-          start: "top 55%",
+          start: "top 75%",
           end: "bottom top",
           toggleClass: "content-box-animation",
           scrub: true,
@@ -913,8 +925,9 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
         opacity: "0",
         scrollTrigger: {
           trigger: ".numtext-animation",
-          start: "top 40%",
-          end: "bottom 30%",
+          start: "top 55%",
+          end: "bottom 48%",
+
           scrub: true,
         },
       })
@@ -923,8 +936,8 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
         opacity: "0",
         scrollTrigger: {
           trigger: ".numtext-animation1",
-          start: "top 40%",
-          end: "bottom 30%",
+          start: "top 60%",
+          end: "bottom 50%",
           scrub: true,
         },
       })
@@ -933,8 +946,8 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
         opacity: "0",
         scrollTrigger: {
           trigger: ".clientArray1",
-          start: "top 35%",
-          end: "bottom 20%",
+          start: "top 60%",
+          end: "bottom 42%",
           scrub: true,
         },
       })
@@ -943,8 +956,8 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
         opacity: "0",
         scrollTrigger: {
           trigger: ".clientArray2",
-          start: "top 45%",
-          end: "bottom 30%",
+          start: "top 70%",
+          end: "bottom 52%",
           scrub: true,
         },
       });
@@ -966,15 +979,6 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
       .from("#teamInfo", 1, {
         scrollTrigger: {
           trigger: ".label-animate1",
-          start: "top 55%",
-          end: "bottom top",
-          toggleClass: "label-animation",
-          scrub: true,
-        },
-      })
-      .from("#teamInfo", 1, {
-        scrollTrigger: {
-          trigger: ".label-animate2",
           start: "top 60%",
           end: "bottom top",
           toggleClass: "label-animation",
@@ -983,8 +987,17 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
       })
       .from("#teamInfo", 1, {
         scrollTrigger: {
-          trigger: ".label-animate3",
+          trigger: ".label-animate2",
           start: "top 65%",
+          end: "bottom top",
+          toggleClass: "label-animation",
+          scrub: true,
+        },
+      })
+      .from("#teamInfo", 1, {
+        scrollTrigger: {
+          trigger: ".label-animate3",
+          start: "top 70%",
           end: "bottom top",
           toggleClass: "label-animation",
           scrub: true,
@@ -994,7 +1007,7 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
         stagger: 0.8,
         scrollTrigger: {
           trigger: ".label-animate4",
-          start: "top 70%",
+          start: "top 75%",
           end: "bottom top",
           toggleClass: "label-animation",
           scrub: true,
