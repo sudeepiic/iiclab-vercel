@@ -13,18 +13,20 @@ import discussion3 from "../images/discussion3.jpg";
 import discussion4 from "../images/discussion4.jpg";
 import unoGame from "../images/unoGame.jpg";
 import fussball from "../images/fussball.jpg";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 //import { Image, Picture } from "@astrojs/image/components";
 ---
 
-<Layout title="life at iic" seoTitle="life-at-iic">
+<Layout title="Life at Ink In Caps" seoTitle="life-at-iic">
   <section style="padding-top: 3.5%; background-color: #1a1a1a;">
     <div class="margins">
       <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12" style="overflow:hidden">
           <span class="title title1">life at iic</span>
-          <span class="title title2" style="color: #e5ff53;  margin-left: 2%;">.</span>
+          <span class="title title2" style="color: #e5ff53;  margin-left: 2%;"
+            >.</span
+          >
         </div>
         <div class="col-lg-8 col-md-8 col-sm-12 animate-text">
           <span class="titleText">
@@ -40,7 +42,11 @@ import { Image } from 'astro:assets';
       <div class="mySwiper" style="padding:1.5% 0 5% 0 ; ">
         <div class="swiper-wrapper">
           <div class="swiper-slide imgWidth">
-            <Image class="resizeImg optimization" src={conferenceRoomDiscussion} alt="" />
+            <Image
+              class="resizeImg optimization"
+              src={conferenceRoomDiscussion}
+              alt=""
+            />
           </div>
 
           <div class="swiper-slide imgWidth">
@@ -72,9 +78,21 @@ import { Image } from 'astro:assets';
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div style="position: relative;">
-              <Image class="top-right-img resize3 optimization" src={VR} alt="" />
-              <Image class="main-img resize2 optimization" src={discussion4} alt="" />
-              <Image class="bottom-left-img resize3 optimization" src={discussion} alt="" />
+              <Image
+                class="top-right-img resize3 optimization"
+                src={VR}
+                alt=""
+              />
+              <Image
+                class="main-img resize2 optimization"
+                src={discussion4}
+                alt=""
+              />
+              <Image
+                class="bottom-left-img resize3 optimization"
+                src={discussion}
+                alt=""
+              />
             </div>
             <div class="imgCaption">
               <span>our values</span>
@@ -94,8 +112,16 @@ import { Image } from 'astro:assets';
                 src={conferenceRoomDiscussion}
                 alt=""
               />
-              <Image class="main-img resize2 optimization" src={discussion2} alt="" />
-              <Image class="bottom-left-img resize3 optimization" src={VR} alt="" />
+              <Image
+                class="main-img resize2 optimization"
+                src={discussion2}
+                alt=""
+              />
+              <Image
+                class="bottom-left-img resize3 optimization"
+                src={VR}
+                alt=""
+              />
             </div>
             <div class="imgCaption">
               <span>our beleives</span>
@@ -109,9 +135,21 @@ import { Image } from 'astro:assets';
           </div>
           <div class="swiper-slide">
             <div style="position: relative;">
-              <Image class="top-right-img resize3 optimization" src={unoGame} alt="" />
-              <Image class="main-img resize2 optimization" src={values} alt="" />
-              <Image class="bottom-left-img resize3 optimization" src={fussball} alt="" />
+              <Image
+                class="top-right-img resize3 optimization"
+                src={unoGame}
+                alt=""
+              />
+              <Image
+                class="main-img resize2 optimization"
+                src={values}
+                alt=""
+              />
+              <Image
+                class="bottom-left-img resize3 optimization"
+                src={fussball}
+                alt=""
+              />
             </div>
             <div class="imgCaption">
               <span>our Initiatives</span>
@@ -125,8 +163,16 @@ import { Image } from 'astro:assets';
           </div>
         </div>
 
-        <Image class="swiper-button-prev optimization" src={carousalPrev} alt="" />
-        <Image class="swiper-button-next optimization" src={carousalNext} alt="" />
+        <Image
+          class="swiper-button-prev optimization"
+          src={carousalPrev}
+          alt=""
+        />
+        <Image
+          class="swiper-button-next optimization"
+          src={carousalNext}
+          alt=""
+        />
       </div>
     </div>
   </section>
@@ -327,6 +373,12 @@ import { Image } from 'astro:assets';
 </style>
 
 <style is:global>
+  .logoWhite {
+    display: block !important;
+  }
+  .logoBlack {
+    display: none;
+  }
   .turnBlack {
     background: #1a1a1a !important;
 

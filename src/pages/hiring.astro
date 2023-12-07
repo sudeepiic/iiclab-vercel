@@ -11,7 +11,7 @@ import locIcon from "../images/locIcon.png";
 import clock from "../images/clock.png";
 import ps from "../images/ps.png";
 import conferenceRoomDiscussion from "../images/conferenceRoomDiscussion.jpg";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 // import jobProfiles from "../components/jobProfiles";
@@ -24,7 +24,11 @@ const entries: any = await contentfulClient.getEntries<any>({
 console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
 ---
 
-<Layout title="Hiring" seoTitle="hiring">
+<Layout
+  title="Build your Career with Ink In Caps"
+  seoTitle="hiring"
+  description={null}
+>
   <section>
     <div class="row sticky-div">
       <div class="col-lg-8 col-md-8 col-sm-12" style="overflow: hidden;">
@@ -43,37 +47,66 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
         </span>
       </div>
     </div>
-    <Image class="optimization" style="width:100%;" src={conferenceRoomDiscussion} alt="" />
+    <Image
+      class="optimization"
+      style="width:100%;"
+      src={conferenceRoomDiscussion}
+      alt=""
+    />
   </section>
 
   <section class="blackSec">
     <div class="row">
       <div class="col-lg-4 col-md-4 col-sm-12 blackTitle">
-        <span class="blackTitle-animate blockInMob">Benefits of being an &nbsp;</span>
+        <span class="blackTitle-animate blockInMob"
+          >Benefits of being an &nbsp;</span
+        >
 
         <span class="blackTitle-animate" style="color:#e5ff53">IIC</span>
-        <span class="blackTitle-animate" style="color:#f5ffbb; margin-left: 2%;" >IAN</span>
+        <span class="blackTitle-animate" style="color:#f5ffbb; margin-left: 2%;"
+          >IAN</span
+        >
       </div>
       <div
         class="col-lg-8 col-md-8 col-sm-12 row pointerDiv"
         style=" padding-top: 2.5%;"
       >
         <div class="col-6 pointersMob" style="padding-left: 10%;">
-          <Image src={team} class="benefitsImg optimization" alt="" loading="lazy" />
+          <Image
+            src={team}
+            class="benefitsImg optimization"
+            alt=""
+            loading="lazy"
+          />
           <p class="benefitsText" style="margin-bottom: 15%;">
             Working with a highly experienced team.
           </p>
-          <Image src={opportunity} class="benefitsImg optimization" alt="" loading="lazy" />
+          <Image
+            src={opportunity}
+            class="benefitsImg optimization"
+            alt=""
+            loading="lazy"
+          />
           <p class="benefitsText">
             Get opportunities to work with major brands.
           </p>
         </div>
         <div class="col-6 pointersMob" style="padding-left: 10%;">
-          <Image src={funLoving} class="benefitsImg optimization" alt="" loading="lazy" />
+          <Image
+            src={funLoving}
+            class="benefitsImg optimization"
+            alt=""
+            loading="lazy"
+          />
           <p class="benefitsText" style="margin-bottom: 15%;">
             A fun-loving and creative environment.
           </p>
-          <Image src={fun} class="benefitsImg optimization" alt="" loading="lazy" />
+          <Image
+            src={fun}
+            class="benefitsImg optimization"
+            alt=""
+            loading="lazy"
+          />
           <p class="benefitsText">Creative & Fun activities every week.</p>
         </div>
       </div>
@@ -90,7 +123,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
       <div class="col-lg-4 col-md-4 col-sm-12">
         <span class="inputTitle">Search for a title</span>
         <input
-        id="search"
+          id="search"
           class="inputCss"
           type="text"
           placeholder="Press enter to search"
@@ -175,13 +208,20 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
               "flip-card " +
               jobProfiles.fields.location +
               " col-4 profile-card " +
-              jobProfiles.fields.category.replaceAll(" ", "-") + " " + jobProfiles.fields.jobProfile.toLowerCase()
+              jobProfiles.fields.category.replaceAll(" ", "-") +
+              " " +
+              jobProfiles.fields.jobProfile.toLowerCase()
             }
           >
             <div class="flip-card-inner">
               <div class="card">
                 <div class="eyeDiv btn">
-                  <Image src={closeEye} class="optimization  eye" loading="lazy" alt="" />
+                  <Image
+                    src={closeEye}
+                    class="optimization  eye"
+                    loading="lazy"
+                    alt=""
+                  />
                 </div>
 
                 <div class="cardContent ">
@@ -211,7 +251,6 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
                   <span>{jobProfiles.fields.jobType}</span>
                 </div>
                 <div class="bottomDivBack row">
-                 
                   <div class="col-12 btn">
                     <a
                       href={"/hiring-application/" + jobProfiles.fields.params}
@@ -258,8 +297,8 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
       background-color: #f6f7f0;
     }
     @media screen and (max-width: 767px) {
-      .blockInMob{
-        display: block !important; 
+      .blockInMob {
+        display: block !important;
       }
       .blackTitle-animate {
         transform: translate3d(0, 0, 0) !important;
@@ -298,8 +337,8 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
         font-size: 3vw !important;
         width: 80% !important;
       }
-      .benefitsImg{
-        display:block !important;
+      .benefitsImg {
+        display: block !important;
       }
       .positionsTitle {
         font-size: 18vw !important;
@@ -356,8 +395,8 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
       }
       .bottomDivBack .col-12 {
         font-size: 6vw !important;
-        width:90% !important;
-        margin:auto !important;
+        width: 90% !important;
+        margin: auto !important;
       }
       .backContent,
       .location {
@@ -496,7 +535,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
       border: 1.25px solid rgba(26, 26, 26, 0.25);
       font-family: "anek devanagari";
       margin: 1.35%;
-      margin-left:3%;
+      margin-left: 3%;
       padding: 2.35%;
       margin-top: 0 !important;
     }
@@ -512,7 +551,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
       padding: 10%;
       align-self: end;
       border-radius: 0 0 0 6vw;
-      border-radius: ;
+      border-radius:;
     }
     .card {
       background-color: #fefff9;
@@ -563,7 +602,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
       opacity: 100%;
       color: white;
       display: block;
-      word-spacing:0.1rem;
+      word-spacing: 0.1rem;
     }
     /* card css */
 
@@ -646,7 +685,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
     .col-12 {
       background-color: #e5ff53;
       padding: 3%;
-      
+
       text-align: center;
       font-family: "Deutschlander";
       font-size: 2.3vw;
@@ -677,7 +716,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
     }
     .locIcon {
       width: 9%;
-      margin-right:3%;
+      margin-right: 3%;
     }
     .clock {
       width: 8%;
@@ -719,86 +758,83 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
 
     let mm = gsap.matchMedia();
 
- mm.add("(min-width: 768px)", () => {
-    tl.from(".title", {
-      duration: 1,
-      x: "-100%",
-      opacity: 0.5,
-      ease: "power1.out",
-    })
-      .from(".blackTitle-animate", 1, {
-        x: "-200%",
-        opacity: 0,
-       
-        scrollTrigger: {
-          trigger: ".blackTitle-animate",
-          start: "top 60%",
-          end: "bottom 60%",
-          scrub: true,
-          
-        },
+    mm.add("(min-width: 768px)", () => {
+      tl.from(".title", {
+        duration: 1,
+        x: "-100%",
+        opacity: 0.5,
+        ease: "power1.out",
       })
-      .from(".benefitsText", {
-        x: "-50%",
-        opacity: 0,
-        scrollTrigger: {
-          trigger: ".benefitsText",
-          start: "top 60%",
-          end: "bottom 50%",
-          scrub: true,
-        },
-      })
-      .from(".benefitsImg", {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: ".benefitsImg",
-          start: "top 60%",
-          end: "bottom 50%",
-          scrub: true,
-        },
-      });
-    })
+        .from(".blackTitle-animate", 1, {
+          x: "-200%",
+          opacity: 0,
 
+          scrollTrigger: {
+            trigger: ".blackTitle-animate",
+            start: "top 60%",
+            end: "bottom 60%",
+            scrub: true,
+          },
+        })
+        .from(".benefitsText", {
+          x: "-50%",
+          opacity: 0,
+          scrollTrigger: {
+            trigger: ".benefitsText",
+            start: "top 60%",
+            end: "bottom 50%",
+            scrub: true,
+          },
+        })
+        .from(".benefitsImg", {
+          opacity: 0,
+          scrollTrigger: {
+            trigger: ".benefitsImg",
+            start: "top 60%",
+            end: "bottom 50%",
+            scrub: true,
+          },
+        });
+    });
 
     mm.add("(max-width: 767px)", () => {
-    tl.from(".title", {
-      duration: 1,
-      x: "-100%",
-      opacity: 0.5,
-      ease: "power1.out",
-    })
-      .from(".blackTitle-animate", 1, {
-        x: "-200%",
-        opacity: 0,
-       
-        scrollTrigger: {
-          trigger: ".blackTitle-animate",
-          start: "top 54%",
-          end: "bottom 54%",
-          scrub: true,
-         
-        },
+      tl.from(".title", {
+        duration: 1,
+        x: "-100%",
+        opacity: 0.5,
+        ease: "power1.out",
       })
-      .from(".benefitsText", {
-        x: "-50%",
-        opacity: 0,
-        scrollTrigger: {
-          trigger: ".benefitsText",
-          start: "top 55%",
-          end: "bottom 47%",
-          scrub: true,
-        },
-      })
-      .from(".benefitsImg", {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: ".benefitsImg",
-          start: "top 55%",
-          end: "bottom 47%",
-          scrub: true,
-        },
-      });
-    })
+        .from(".blackTitle-animate", 1, {
+          x: "-200%",
+          opacity: 0,
+
+          scrollTrigger: {
+            trigger: ".blackTitle-animate",
+            start: "top 54%",
+            end: "bottom 54%",
+            scrub: true,
+          },
+        })
+        .from(".benefitsText", {
+          x: "-50%",
+          opacity: 0,
+          scrollTrigger: {
+            trigger: ".benefitsText",
+            start: "top 55%",
+            end: "bottom 47%",
+            scrub: true,
+          },
+        })
+        .from(".benefitsImg", {
+          opacity: 0,
+          scrollTrigger: {
+            trigger: ".benefitsImg",
+            start: "top 55%",
+            end: "bottom 47%",
+            scrub: true,
+          },
+        });
+    });
     // color change on location button click
     // Filter for location buttons
     const myButton = document.querySelectorAll(".exploreBtn");
@@ -888,10 +924,10 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
 
     const InputValue = document.getElementById("search");
     InputValue.addEventListener("change", function () {
-    // console.log(InputValue.value, "input value")
-    const searchString = InputValue.value;
+      // console.log(InputValue.value, "input value")
+      const searchString = InputValue.value;
 
-    document.querySelectorAll(".profile-card").forEach((profile) => {
+      document.querySelectorAll(".profile-card").forEach((profile) => {
         console.log(profile.classList);
         profile.classList.remove("d-none");
         if (InputValue === "Any") {
@@ -900,8 +936,6 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
           profile.classList.add("d-none");
         }
       });
-
-    })
-    
+    });
   </script>
 </Layout>

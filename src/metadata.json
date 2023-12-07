@@ -1,222 +1,191 @@
 {
-    "seo": {
-        "homepage": {
-          "description": "IIC is a Mumbai-based agency providing tailor-made unique user experience including Metaverse Development, Experiential Marketing, Augmented reality (AR), Virtual Reality (VR), Web Development, Projection Mapping, Mobile &amp; Web development, Motion Graphics, VFX, 3D &amp; 2D Animation, Virtual Events, and On-ground Activations and other high-end tech solutions. Contact us today to learn how we can help your brand create enticing experiences.",
-          "image": "https://iiclab.com/og-poster.jpg",
-          "ogUrl": "https://iiclab.com",
-          "ogType": "website",
-          "ogTitle":"Ink In Caps - Immersive Tech &amp; Experiential Marketing Agency in Mumbai",
-          "keywords":"virtual reality,virtual reality services, virtual reality service provider,augmented reality services"
-        },
-        "about-us": {
-          "description": "Here in Ink in caps we are a Team of Young Enthusiast and Hardworking People.Driven towards providing best Solution to Our Clients.",
-          "keywords":"virtual reality,virtual reality services, virtual reality service provider,augmented reality services"
-        },
-        "blog-gallery": {
-          "description": "We love talking about  Augmented Reality, Virtual Reality &amp; Metaverse development at Ink In Caps, Mumbai. Read our articles to get all information about the latest in technology."
-         
-        },
-        "blog-details": {
-          "description": "JUXT engineers have helped launch start-ups across finance, property, health, green-tech, and law. We work closely with start-up founders to understand the mission deeply and launch an MVP."
-         
-        },
-        "portfolio": {
-          "description": "Ink In Caps collaborates with renowned global brands, delivering high-end tech solutions in Virtual Reality, Augmented Reality, and Metaverse development. Explore our portfolio page for more information.",
-          "keywords":"virtual reality services, virtual reality service provider,Web Development cost in india"
-        },
-       
-        "hiring": {
-          "description": "We have a developer-led culture. Our developers are at the heart of our consulting and product development."
-      
-        },
-        "hiring-app": {
-            "description": "We have a developer-led culture. Our developers are at the heart of our consulting and product development." 
-          },
-      
-        "awards": {
-          "description": "A list of articles where our engineers share their knowledge and experience with the community."
-        },
-        "products": {
-          "description": "An opinionated and subjective view, based on our collective experience of building projects with Clojure."
-        },
-        "life-at-iic": {
-          "description": "Book a 30-minute free consultation with JUXT Head of Delivery to discover how JUXT can help bring your vision to market, on time and budget."
-     
-        },
-        "solutions": {
-          "description": "IIC is a Mumbai-based agency providing tailor-made unique user experience including Metaverse Development, Experiential Marketing, Augmented reality (AR), Virtual Reality (VR), Web Development, Projection Mapping, Mobile &amp; Web development, Motion Graphics, VFX, 3D &amp; 2D Animation, Virtual Events, and On-ground Activations and other high-end tech solutions. Contact us today to learn how we can help your brand create enticing experiences."
-         
-        },
-       
-        "contact": {
-            "description": "JUXT is a proud gold sponsor of Clojure/Conj 2023. Stop by our sponsor table to meet our co-founders and get your limited-edition Conj tee!"
-           
-          },
+  "seo": {
+    "homepage": {
+      "description": "IIC, a Mumbai-based martech  agency, offers VR, AR solutions, Projection mapping, including Metaverse Development, Experiential Marketing.",
+      "image": "https://iiclab.com/og-poster.jpg",
+      "ogUrl": "https://iiclab.com",
+      "ogType": "website",
+      "ogTitle": "Ink In Caps - Immersive Tech &amp; Experiential Marketing Agency in Mumbai",
+      "keywords": "virtual reality,virtual reality services, virtual reality service provider,augmented reality services"
+    },
+    "about-us": {
+      "description": "Ink in caps we are a Team of Young Enthusiastic and Hardworking People.Driven towards providing the best  Tech Solution to Our Clients.",
+      "keywords": "virtual reality,virtual reality services, virtual reality service provider,augmented reality services"
+    },
+    "blog-gallery": {
+      "description": "We love talking about Augmented Reality, Virtual Reality & Metaverse development at Ink In Caps, Mumbai. Read our articles to get all information about the latest in technology."
+    },
+    "blog-details": {
+      "description": "JUXT engineers have helped launch start-ups across finance, property, health, green-tech, and law. We work closely with start-up founders to understand the mission deeply and launch an MVP."
+    },
+    "portfolio": {
+      "description": "Ink In Caps collaborates with renowned global brands, delivering high-end tech solutions in Virtual Reality, Augmented Reality, and Metaverse development",
+      "keywords": "virtual reality services, virtual reality service provider,Web Development cost in india"
+    },
 
+    "hiring": {
+      "description": "Join our enthusiastic and creative team at Ink In Caps, Mumbai. We have career opportunities in Web Developer , 3D Artist & Generalist, Business Development, Motion Graphic Artist, Content writer. Apply Now!"
+    },
+    "hiring-app": {
+      "description": "We have a developer-led culture. Our developers are at the heart of our consulting and product development."
+    },
 
+    "awards": {
+      "description": "Explore our list of accomplishments, honors, and industry awards that show our dedication to innovative marketing technology solutions."
+    },
+    "products": {
+      "description": "Ink In Caps' SaaS solution offers a comprehensive solution for businesses, enabling seamless integration of business processes and providing necessary tools for profitable growth in the competitive market."
+    },
+    "life-at-iic": {
+      "description": " IIC is about an energetic and passionate group that loves infusing human aspects into technological design"
+    },
+    "solutions": {
+      "description": "Ink in caps offers a range of tech services, including AR VR and Projection Mapping solutions, designed to revolutionize businesses and enhance their success."
+    },
 
-          "worlds-first-press-conference-with-an-a-lister-celebrity-in-metaverse": {
-            "description": "Explore the world of Rudra in India’s first Metaverse experience brought to you by Disney+Hotstar and Ink In Caps. A live press conference in Metaverse with Ajay Devgn and media representatives, in an interactive environment with photorealistic avatars and high-fidelity audio.",
-            "keywords":"World’s First Press Conference with an A-lister Celebrity in Metaverse | Disney+Hotstar | IIC"
-         
-          },
-          "stimulating-projection-mapping":{
-            "description":"Volkswagen wanted to launch Tiguan at IBFW.Contact us if looking for same service.Complete The Contact Form for more details PHONE +91 9930677169 +91 8879690609",
-            "keywords":"projection mapping services|house projection mapping services|projection mapping india"
+    "contact": {
+      "description": "Let’s collaborate to build scalable experiential marketing campaigns that leave a lasting impression on your target audience. Get in touch!"
+    },
 
-      },
-      "ort-installation-to-experience-the-wellness":{
-        "description":"We provided Creative solution to Top Real-Estate company Shapoorji-Pallonji with Object recognition table.Complete The Contact Form for more details PHONE +91 9930677169 +91 8879690609",
-        "keywords":"Object recognition table service in mumbai|Object recognition table"
-      },
-      "the-debut-of-indian-dance-reality-show-in-metaverse":{
-        "description":"The first non-fiction Indian show in Metaverse, Dance Deewane Juniors, designed by Viacom 18 &amp; Ink In Caps. The platform, working seamlessly on both Android and iOS, included a grand stage reveal, Nora Fatehi's photorealistic avatar, and gamification for audience engagement.",
-        "keywords":"Indian Dance Reality Show Debuts in Metaverse | Nora Fatehi | Viacom 18 | IIC"
-      },
-      "experiencing-the-joy-of-water":{
-        "description":"Discover Nautica's engaging and immersive gamified user experience, inspired by the &quot;Joy of Water&quot; theme, designed by IIC. Using real-time gesture recognition technology, users could enjoy a realistic surfing experience capturing their movements in real time.",
-        "keywords":"Real-Time Gesture Recognition Solution by Ink In Caps- Experience the Joy of Water with Nautica"
-      },
-      "elevating-the-fifa-fever":{
-        "description":"IIC partnered with Event Developers to create multiple interactive user experiences during the 2022 FIFA World Cup, including Mega Zoom and broadcast-level videos for FIFA, QNB's Neymar Challenge, and Vodafone's Cheer Challenge.",
-        "keywords":"Elevating the FIFA Fever with Interactive User Experiences | Ink In Caps"
-      },
-      "interactive-virtual-shopping-experience":{
-        "description":"A virtual studio and interactive website design created to provide a unique, immersive, and personalized shopping experience to the users. Bestseller India and IIC joined hands to develop this experiential e-commerce website with a mobile-first approach, real-time inventory updates, and a detailed analytics system.",
-        "keywords":"Experience Virtual Shopping with JACK &amp; JONES UNMATCHED | Bestseller India | Ink In Caps"
-      },
-      "the-hot-and-techy-virtual-test-drive":{
-        "description":"An unparalleled virtual test drive experience was created for the launch of Maruti's latest car Brezza 2022. With 100 oculus devices synced together, the physical event space turned into India's largest event for an immersive, visually appealing, and seamless experience of the latest car features.",
-        "keywords":"India's largest Virtual Reality event for Maruti Suzuki Brezza 2022 - Ink In Caps"
-      },
-      "a-quirky-techy-car-unveil":{
-        "description":"Marvel at Maruti's latest car models Celerio &amp; Brezza with an entrancing projection mapping experience at Comic-Con. Ink In Caps' custom software offered an interactive &amp; multisensory user experience through personalized projection mapping and an immersive virtual test drive experience",
-        "keywords":"Unveiling Maruti's Ultramodern Cars with Projection Mapping &amp; VR Experience at Comic Con | IIC"
-      },
-      "one-of-its-kind-virtual-fashion-show":{
-        "description":"Immerse yourself in the world of fashion with ONLY's Spring Summer 2022 Collection Virtual Fashion Show. Discover the unique blend of traditional runway and TV-like experience in two virtual setups - Industrial Compound & New York Brooklyn Bridge, tech-enabled by IIC",
-        "keywords":"ONLY's Spring Summer 2022 Collection at the Virtual Fashion Show | Ink In Caps"
-      },
-      "the-lepanga-activation":{
-        "description":"The LePanga Activation for PKL with an innovative technology-driven offline and online experience. Star Sports and IIC join hands to create a humanizing and engaging experiential marketing activity consisting of motion capture technology",
-        "keywords":"Experiential Marketing- Pro Kabaddi League with LePanga Activation by Star Sports | Ink In Caps"
-      },
-      "ai-for-indias-evolving-digital-needs":{
-        "description":"Showcasing Google's AI initiatives for healthcare in India through the Rotoscope Wall built in collaboration with Ink In Caps, featuring the Doc Lens technology that digitizes prescriptions.",
-        "keywords":"AI for Healthcare in India Google's Doc Lens Rotoscope Wall | Google For India | IIC"
-      },
-      "an-activation-that-caused-dhamaka":{
-        "description":"On-ground activation for the 2021 thriller movie Dhamaka including experiential marketing activities in Mumbai and Delhi targeting prime locations to create hype. We replicated the key highlight, the OV Van, into interactive gesture-based games, followed by a surprise visit by Kartik Aryan",
-        "keywords":"Netflix's Dhamaka Movie Activation | Experiential Marketing by Ink In Caps"
-      },
-      "the-smart-sales-tool-you-didnt-know-you-needed":{
-        "description":"An innovative sales solution providing personalized customer experience and boosting conversions. Take a look at Kumar Properties' 360-degree showcase of project offerings and improved communication with potential customers powered by Ink In Caps' IP V-Retail.",
-        "keywords":"Virtual Assistance Sales Tool for Improved Customer Experience | SaaS Product | Kumar Properties | IIC"
-      },
-      "a-launch-brimming-with-interactions":{
-        "description":"Experiential Marketing activity for the launch of Adidas's new Stan Smith Collection. IIC created an interactive basketball court, multiple experiential zones, and a real-time box game with high engagement rates. Top influencers and celebrities showed up, including Ranveer Singh who launched the limited edition collection.",
-        "keywords":"Adidas Stan Smith Collection Launch Event with Interactive Games and Experiential Zones | Ink In Caps"
+    "worlds-first-press-conference-with-an-a-lister-celebrity-in-metaverse": {
+      "description": "Explore the world of Rudra in India’s first Metaverse experience brought to you by Disney+Hotstar and Ink In Caps. A live press conference in Metaverse with Ajay Devgn and media representatives, in an interactive environment with photorealistic avatars and high-fidelity audio.",
+      "keywords": "World’s First Press Conference with an A-lister Celebrity in Metaverse | Disney+Hotstar | IIC"
+    },
+    "stimulating-projection-mapping": {
+      "description": "Volkswagen wanted to launch Tiguan at IBFW.Contact us if looking for same service.Complete The Contact Form for more details PHONE +91 9930677169 +91 8879690609",
+      "keywords": "projection mapping services|house projection mapping services|projection mapping india"
+    },
+    "ort-installation-to-experience-the-wellness": {
+      "description": "We provided Creative solution to Top Real-Estate company Shapoorji-Pallonji with Object recognition table.Complete The Contact Form for more details PHONE +91 9930677169 +91 8879690609",
+      "keywords": "Object recognition table service in mumbai|Object recognition table"
+    },
+    "the-debut-of-indian-dance-reality-show-in-metaverse": {
+      "description": "The first non-fiction Indian show in Metaverse, Dance Deewane Juniors, designed by Viacom 18 &amp; Ink In Caps. The platform, working seamlessly on both Android and iOS, included a grand stage reveal, Nora Fatehi's photorealistic avatar, and gamification for audience engagement.",
+      "keywords": "Indian Dance Reality Show Debuts in Metaverse | Nora Fatehi | Viacom 18 | IIC"
+    },
+    "experiencing-the-joy-of-water": {
+      "description": "Discover Nautica's engaging and immersive gamified user experience, inspired by the &quot;Joy of Water&quot; theme, designed by IIC. Using real-time gesture recognition technology, users could enjoy a realistic surfing experience capturing their movements in real time.",
+      "keywords": "Real-Time Gesture Recognition Solution by Ink In Caps- Experience the Joy of Water with Nautica"
+    },
+    "elevating-the-fifa-fever": {
+      "description": "IIC partnered with Event Developers to create multiple interactive user experiences during the 2022 FIFA World Cup, including Mega Zoom and broadcast-level videos for FIFA, QNB's Neymar Challenge, and Vodafone's Cheer Challenge.",
+      "keywords": "Elevating the FIFA Fever with Interactive User Experiences | Ink In Caps"
+    },
+    "interactive-virtual-shopping-experience": {
+      "description": "A virtual studio and interactive website design created to provide a unique, immersive, and personalized shopping experience to the users. Bestseller India and IIC joined hands to develop this experiential e-commerce website with a mobile-first approach, real-time inventory updates, and a detailed analytics system.",
+      "keywords": "Experience Virtual Shopping with JACK &amp; JONES UNMATCHED | Bestseller India | Ink In Caps"
+    },
+    "the-hot-and-techy-virtual-test-drive": {
+      "description": "An unparalleled virtual test drive experience was created for the launch of Maruti's latest car Brezza 2022. With 100 oculus devices synced together, the physical event space turned into India's largest event for an immersive, visually appealing, and seamless experience of the latest car features.",
+      "keywords": "India's largest Virtual Reality event for Maruti Suzuki Brezza 2022 - Ink In Caps"
+    },
+    "a-quirky-techy-car-unveil": {
+      "description": "Marvel at Maruti's latest car models Celerio &amp; Brezza with an entrancing projection mapping experience at Comic-Con. Ink In Caps' custom software offered an interactive &amp; multisensory user experience through personalized projection mapping and an immersive virtual test drive experience",
+      "keywords": "Unveiling Maruti's Ultramodern Cars with Projection Mapping &amp; VR Experience at Comic Con | IIC"
+    },
+    "one-of-its-kind-virtual-fashion-show": {
+      "description": "Immerse yourself in the world of fashion with ONLY's Spring Summer 2022 Collection Virtual Fashion Show. Discover the unique blend of traditional runway and TV-like experience in two virtual setups - Industrial Compound & New York Brooklyn Bridge, tech-enabled by IIC",
+      "keywords": "ONLY's Spring Summer 2022 Collection at the Virtual Fashion Show | Ink In Caps"
+    },
+    "the-lepanga-activation": {
+      "description": "The LePanga Activation for PKL with an innovative technology-driven offline and online experience. Star Sports and IIC join hands to create a humanizing and engaging experiential marketing activity consisting of motion capture technology",
+      "keywords": "Experiential Marketing- Pro Kabaddi League with LePanga Activation by Star Sports | Ink In Caps"
+    },
+    "ai-for-indias-evolving-digital-needs": {
+      "description": "Showcasing Google's AI initiatives for healthcare in India through the Rotoscope Wall built in collaboration with Ink In Caps, featuring the Doc Lens technology that digitizes prescriptions.",
+      "keywords": "AI for Healthcare in India Google's Doc Lens Rotoscope Wall | Google For India | IIC"
+    },
+    "an-activation-that-caused-dhamaka": {
+      "description": "On-ground activation for the 2021 thriller movie Dhamaka including experiential marketing activities in Mumbai and Delhi targeting prime locations to create hype. We replicated the key highlight, the OV Van, into interactive gesture-based games, followed by a surprise visit by Kartik Aryan",
+      "keywords": "Netflix's Dhamaka Movie Activation | Experiential Marketing by Ink In Caps"
+    },
+    "the-smart-sales-tool-you-didnt-know-you-needed": {
+      "description": "An innovative sales solution providing personalized customer experience and boosting conversions. Take a look at Kumar Properties' 360-degree showcase of project offerings and improved communication with potential customers powered by Ink In Caps' IP V-Retail.",
+      "keywords": "Virtual Assistance Sales Tool for Improved Customer Experience | SaaS Product | Kumar Properties | IIC"
+    },
+    "a-launch-brimming-with-interactions": {
+      "description": "Experiential Marketing activity for the launch of Adidas's new Stan Smith Collection. IIC created an interactive basketball court, multiple experiential zones, and a real-time box game with high engagement rates. Top influencers and celebrities showed up, including Ranveer Singh who launched the limited edition collection.",
+      "keywords": "Adidas Stan Smith Collection Launch Event with Interactive Games and Experiential Zones | Ink In Caps"
+    },
+    "a-digital-initiative-transforming-farming": {
+      "description": "Mahindra's Krish-e initiative for Indian farmers used a gamified approach and multilingual website UI/UX development to increase engagement and accessibility. The platform featured an interactive user journey, with a focus on boosting communication with farmers across India.",
+      "keywords": "Interactive Website for Mahindra's Digital Farming Initiative | Krish-e Website UI/UX | IIC"
+    },
+    "a-virtual-event-for-the-circle": {
+      "description": "RISE, Asia's largest LGBTQ conference &amp; job fair virtually organized by Pride Circle with Ink in Caps as the Tech Enablers. The event consisted of knowledge transfer sessions, workshops, and hiring by top recruiters like JP Morgan, Netflix, and Microsoft",
+      "keywords": "RISE Asia's Biggest LGBTQ Conference &amp; Job Fair Goes Virtual | Pride Circle | IIC"
+    },
+    "an-interactive-degree-virtual-event-platform": {
+      "description": "Cipla Achiever Awards went virtual with an interactive 360-degree platform, featuring GIF Photo booths, artist performances, and strict security measures, tech enabled by Ink In Caps",
+      "keywords": "Cipla's 360-degree Virtual Event Platform | Ink In Caps | Achiever Awards"
+    },
+    "envisioning-future-of-5g": {
+      "description": "Capgemini's Experience Centers showcase their 5G capabilities in an interactive and visually enticing manner. Witness the transformation of traditional domains into smart solutions through their cutting-edge 5G infrastructure deployed in multiple domains, tech enabled by IIC",
+      "keywords": "Future of 5G with Capgemini's Cutting-Edge Experience Centers | Ink In Caps"
+    },
+    "the-prodigious-product-launch": {
+      "description": "Experience the unveiling of Oral-B's latest rechargeable toothbrushes through a compelling unboxing experience with a cutting-edge AR filter and immersive projection mapping, with IIC as the Tech Enablers.",
+      "keywords": "Oral-B Product Launch with Projection Mapping and AR Filter | Ink In Caps"
+    },
+    "trend-setting-virtual-car-showroom-experience": {
+      "description": "Capgemini's Virtual Car Showroom, an immersive and visually appealing platform including high-end car configurators and a realistic driving mode, facility to access comprehensive information on cars, and contact the Sales Zone for test drives and EMI options, powered by IIC",
+      "keywords": "The Future of Car Showroom with Capgemini's Virtual Showroom | Ink In Caps"
+    },
 
-      },
-      "a-digital-initiative-transforming-farming":{
-        "description":"Mahindra's Krish-e initiative for Indian farmers used a gamified approach and multilingual website UI/UX development to increase engagement and accessibility. The platform featured an interactive user journey, with a focus on boosting communication with farmers across India.",
-        "keywords":"Interactive Website for Mahindra's Digital Farming Initiative | Krish-e Website UI/UX | IIC"
-      },
-      "a-virtual-event-for-the-circle":{
+    "the-rise-of-vps": {
+      "description": "Discover the advantages of Visual Positioning System (VPS) and how they are transforming the  industry. Visit https://iiclab.com/ for more information",
+      "keywords": "The Rise of VPS | Exploring the Benefits of Visual Positioning System - IIC Lab"
+    },
 
-        "description":"RISE, Asia's largest LGBTQ conference &amp; job fair virtually organized by Pride Circle with Ink in Caps as the Tech Enablers. The event consisted of knowledge transfer sessions, workshops, and hiring by top recruiters like JP Morgan, Netflix, and Microsoft",
-        "keywords":"RISE Asia's Biggest LGBTQ Conference &amp; Job Fair Goes Virtual | Pride Circle | IIC"
-      },
-      "an-interactive-degree-virtual-event-platform":{
-        "description":"Cipla Achiever Awards went virtual with an interactive 360-degree platform, featuring GIF Photo booths, artist performances, and strict security measures, tech enabled by Ink In Caps",
-        "keywords":"Cipla's 360-degree Virtual Event Platform | Ink In Caps | Achiever Awards"
-      },
-      "envisioning-future-of-5g":{
-       "description":"Capgemini's Experience Centers showcase their 5G capabilities in an interactive and visually enticing manner. Witness the transformation of traditional domains into smart solutions through their cutting-edge 5G infrastructure deployed in multiple domains, tech enabled by IIC",
-       "keywords":"Future of 5G with Capgemini's Cutting-Edge Experience Centers | Ink In Caps"
-      },
-      "the-prodigious-product-launch":{
-        "description":"Experience the unveiling of Oral-B's latest rechargeable toothbrushes through a compelling unboxing experience with a cutting-edge AR filter and immersive projection mapping, with IIC as the Tech Enablers.",
-        "keywords":"Oral-B Product Launch with Projection Mapping and AR Filter | Ink In Caps"
+    "the-cycle-of-analysis-paralysis": {
+      "description": "Struggling with decision-making? Learn how to break the cycle of analysis paralysis and make confident choices. Read our blog to get an insight into overcoming indecision. Visit https://iiclab.com/ for more information",
+      "keywords": "The Cycle of Analysis Paralysis | How to Overcome Indecision - IIC Lab"
+    },
+    "i-met-ravi-shastri-live-from-my-couch": {
+      "description": "Have you experienced the Metaverse? Read about my encounter with Ravi Shastri in a virtual meet-and-greet session. Explore the possibilities of Metaverse and its impact on our lives. Visit https://iiclab.com/ for more information",
+      "keywords": "I met Ravi Shastri LIVE from my couch | My Experience in the Metaverse - IIC Lab"
+    },
+    "how-round-tables-make-things-straight": {
+      "description": "Discover the benefits of round table discussions and how they can help you motivate your employees to openly ask questions and provide feedback. Visit https://iiclab.com/ for more",
+      "keywords": "How Round Tables Make Things Straight | Fostering positive work environment - IIC Lab"
+    },
 
-      },
-      "trend-setting-virtual-car-showroom-experience":{
-        "description":"Capgemini's Virtual Car Showroom, an immersive and visually appealing platform including high-end car configurators and a realistic driving mode, facility to access comprehensive information on cars, and contact the Sales Zone for test drives and EMI options, powered by IIC",
-        "keywords":"The Future of Car Showroom with Capgemini's Virtual Showroom | Ink In Caps"
-      },
+    "most-common-mistakes-in-ui-ux-design": {
+      "description": "Are you making common UI/UX mistakes on your website? Read our blog to learn about the most common mistakes in UI/UX and how to avoid them.",
+      "keywords": "Most Common Mistakes in UI/UX Designing | How to Avoid Them - IIC Lab"
+    },
+    "how-companies-have-used-virtual-reality-to-wow-their-audiences": {
+      "description": "Are you looking for ways to engage and impress your audience? Discover how companies are using virtual reality to create memorable experiences for their customers. Visit https://iiclab.com/ for more",
+      "keywords": "How Companies Have Used Virtual Reality to create immersive user experiences - IIC Lab"
+    },
+    "4-virtual-reality-games-that-will-have-people-lining-up-to-try": {
+      "description": "Are you looking for the latest virtual reality games that will excite your customers? Check out our list of five virtual reality games that are sure to have people lining up to try them. Visit https://iiclab.com/ for more",
+      "keywords": "Four Virtual Reality Games That Will Have People Lining Up to Try - IIC Lab"
+    },
+    "is-3d-projection-mapping-the-future-or-the-present": {
+      "description": "Are you curious about the potential of 3D projection mapping? Read our blog to explore the possibilities of this innovative technology. Visit https://iiclab.com/ for more.",
+      "keywords": "Is 3D Projection Mapping the Future or the Present? | The Possibilities of 3D Projection - IIC Lab"
+    },
+    "the-purpose-of-life-is-a-life-of-purpose": {
+      "description": "We are able to unleash our true potential as soon as we figure out our purpose of life. Read our blog for insights and inspiration to help you discover your true calling. Visit https://iiclab.com/ for more",
+      "keywords": "The Purpose of Life | Finding Your True Calling - IIC Lab"
+    },
+    "how-are-people-coping-with-mind-blocking-in-the-current-situation": {
+      "description": "Learn how to overcome mind blocking in the current situation with practical tips and techniques. Read the latest blog post from IIC Lab.",
+      "keywords": "Overcoming Mind Blocking in the Current Situation - IIC Lab"
+    },
+    "your-network-will-decide-your-net-worth": {
+      "description": "Let's look at how you can leverage your network to increase your net worth. Read the latest blog post from IIC Lab",
+      "keywords": "Your Network Will Decide Your Net Worth - IIC Lab"
+    },
+    "the-paradox-of-being-a-good-boss-radical-candor": {
+      "description": "Explore the paradox of being a good boss and the challenges that come with it. Read the latest blog post from IIC Lab.",
+      "keywords": "The Paradox of Being a Good Boss | Leadership - IIC Lab"
+    },
 
-
-
-      "the-rise-of-vps":{
-        "description":"Discover the advantages of Visual Positioning System (VPS) and how they are transforming the  industry. Visit https://iiclab.com/ for more information",
-        "keywords":"The Rise of VPS | Exploring the Benefits of Visual Positioning System - IIC Lab"
-      },
-
-      "the-cycle-of-analysis-paralysis":{
-        "description":"Struggling with decision-making? Learn how to break the cycle of analysis paralysis and make confident choices. Read our blog to get an insight into overcoming indecision. Visit https://iiclab.com/ for more information",
-        "keywords":"The Cycle of Analysis Paralysis | How to Overcome Indecision - IIC Lab"
-      },
-      "i-met-ravi-shastri-live-from-my-couch":{
-        "description":"Have you experienced the Metaverse? Read about my encounter with Ravi Shastri in a virtual meet-and-greet session. Explore the possibilities of Metaverse and its impact on our lives. Visit https://iiclab.com/ for more information",
-        "keywords":"I met Ravi Shastri LIVE from my couch | My Experience in the Metaverse - IIC Lab"
-      },
-      "how-round-tables-make-things-straight":{
-        "description":"Discover the benefits of round table discussions and how they can help you motivate your employees to openly ask questions and provide feedback. Visit https://iiclab.com/ for more",
-        "keywords":"How Round Tables Make Things Straight | Fostering positive work environment - IIC Lab"
-      },
-
-      "most-common-mistakes-in-ui-ux-design":{
-        "description":"Are you making common UI/UX mistakes on your website? Read our blog to learn about the most common mistakes in UI/UX and how to avoid them.",
-        "keywords":"Most Common Mistakes in UI/UX Designing | How to Avoid Them - IIC Lab"
-      },
-      "how-companies-have-used-virtual-reality-to-wow-their-audiences":{
-        "description":"Are you looking for ways to engage and impress your audience? Discover how companies are using virtual reality to create memorable experiences for their customers. Visit https://iiclab.com/ for more",
-        "keywords":"How Companies Have Used Virtual Reality to create immersive user experiences - IIC Lab"
-      },
-      "4-virtual-reality-games-that-will-have-people-lining-up-to-try":{
-        "description":"Are you looking for the latest virtual reality games that will excite your customers? Check out our list of five virtual reality games that are sure to have people lining up to try them. Visit https://iiclab.com/ for more",
-        "keywords":"Four Virtual Reality Games That Will Have People Lining Up to Try - IIC Lab"
-      },
-      "is-3d-projection-mapping-the-future-or-the-present":{
-        "description":"Are you curious about the potential of 3D projection mapping? Read our blog to explore the possibilities of this innovative technology. Visit https://iiclab.com/ for more.",
-        "keywords":"Is 3D Projection Mapping the Future or the Present? | The Possibilities of 3D Projection - IIC Lab"
-      },
-      "the-purpose-of-life-is-a-life-of-purpose":{
-
-        "description":"We are able to unleash our true potential as soon as we figure out our purpose of life. Read our blog for insights and inspiration to help you discover your true calling. Visit https://iiclab.com/ for more",
-        "keywords":"The Purpose of Life | Finding Your True Calling - IIC Lab"
-      },
-      "how-are-people-coping-with-mind-blocking-in-the-current-situation":{
-        "description":"Learn how to overcome mind blocking in the current situation with practical tips and techniques. Read the latest blog post from IIC Lab.",
-        "keywords":"Overcoming Mind Blocking in the Current Situation - IIC Lab"
-      },
-      "your-network-will-decide-your-net-worth":{
-        "description":"Let's look at how you can leverage your network to increase your net worth. Read the latest blog post from IIC Lab",
-        "keywords":"Your Network Will Decide Your Net Worth - IIC Lab"
-      },
-      "the-paradox-of-being-a-good-boss-radical-candor":{
-        "description":"Explore the paradox of being a good boss and the challenges that come with it. Read the latest blog post from IIC Lab.",
-        "keywords":"The Paradox of Being a Good Boss | Leadership - IIC Lab"
-      },
-     
-
-
-
-      "default":{
-        "description":"sample metadata",
-        "keywords":"IIC Lab"
-      }
-
-
-    
-    
-      
+    "default": {
+      "description": "sample metadata",
+      "keywords": "IIC Lab"
     }
-
-
-
-     
-
-
-
+  }
 }

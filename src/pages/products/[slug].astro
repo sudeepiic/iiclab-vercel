@@ -30,6 +30,8 @@ console.log("brand Logos", productsData.fields.brandImages);
 <Products
   waterMark={productsData?.fields.params}
   title={documentToHtmlString(productsData?.fields?.title)}
+  metaTitle={productsData?.fields.metaTitle}
+  description={productsData?.fields.description}
   titleText={documentToHtmlString(productsData?.fields?.titleText)}
   brandLogos={productsData.fields.brandImages}
   caseStudyImg={productsData?.fields?.caseStudies &&

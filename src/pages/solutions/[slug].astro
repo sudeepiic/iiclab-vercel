@@ -84,6 +84,8 @@ const { solutionsData, solutionDetails } = Astro.props;
   solutionsData?.fields ? (
     <Solution
       Title={solutionsData.fields.title}
+      metaTitle={solutionsData.fields.metaTitle}
+      description={solutionsData.fields.description}
       pointer1Heading={solutionsData.fields.pointer1Heading}
       pointer1Img={solutionsData?.fields?.pointer1Img?.fields?.file.url}
       pointer1Text={solutionsData?.fields?.pointer1Text}
@@ -164,6 +166,8 @@ const { solutionsData, solutionDetails } = Astro.props;
     <SolutionDetails
       solutionName={solutionDetails.fields.solutionName}
       title={solutionDetails.fields.title}
+      metaTitle={solutionDetails.fields.metaTitle}
+      description={solutionDetails.fields.description}
       subTitle={solutionDetails.fields.subTitle}
       videoLink={solutionDetails?.fields?.videoLink || null}
       sliderImages={solutionDetails?.fields?.sliderImages}
@@ -208,6 +212,12 @@ const { solutionsData, solutionDetails } = Astro.props;
 }
 
 <style is:global>
+  .logoWhite {
+    display: block !important;
+  }
+  .logoBlack {
+    display: none;
+  }
   .turnBlack {
     background: transparent !important ;
     position: absolute !important;

@@ -1,5 +1,4 @@
 ---
-
 import CaseStudy1 from "../case-study1.astro";
 import { contentfulClient } from "../../lib/contentful";
 import type { CaseStudy } from "../../lib/contentful";
@@ -30,9 +29,8 @@ export async function getStaticPaths() {
       },
     };
   });
-  console.log("url searching: ", Astro.url)
+  console.log("url searching: ", Astro.url);
   return pages;
-
 }
 
 const { caseStudyData } = Astro.props;
@@ -46,17 +44,20 @@ console.log(
 );
 ---
 
-<Layout title="case study" seoTitle={data.heroTitle}>
+<Layout
+  title={data.metaTitle}
+  description={data.description}
+  seoTitle={data.heroTitle}
+>
   <Title1
     heroTitle={documentToHtmlString(data.heroTitleMain)}
     heroVideo={data?.heroVideo?.fields?.file.url}
     heroVideoAlt={data?.heroVideo && data?.heroVideo?.fields?.description}
-    videoLink ={data.videoLink}
+    videoLink={data.videoLink}
     herobanner={data?.heroBanner?.fields?.file.url}
     herobannerAlt={data?.heroBanner?.fields?.description}
     whichTechnology={data?.whichTechnology}
     whichTechnology2={data?.whichTechnology2}
-
     herobanner2={data?.heroBanner2?.fields?.file.url}
     herobanner2Alt={data?.heroBanner2?.fields?.description}
     heroContent={documentToHtmlString(data.heroContent)}
@@ -189,6 +190,12 @@ console.log(
 </Layout>
 
 <style is:global>
+  .logoWhite {
+    display: block !important;
+  }
+  .logoBlack {
+    display: none;
+  }
   .turnBlack {
     background: transparent !important;
     position: fixed !important;

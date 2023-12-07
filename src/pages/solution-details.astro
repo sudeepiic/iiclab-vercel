@@ -11,11 +11,15 @@ import { Image } from "astro:assets";
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
 });
-
 const props = Astro.props;
+// console.log("Metaaa: ", props.metaTitle, props.description);
 ---
 
-<Layout title="our solutions" seoTitle="solutions">
+<Layout
+  title={props.metaTitle}
+  description={props.description}
+  seoTitle={props.metaTitle}
+>
   <section id="section">
     <div style="margin-top: 2%;" id="immersive">
       <div class="margins heading">
@@ -615,6 +619,12 @@ const props = Astro.props;
 </style>
 
 <style is:global>
+  .logoWhite {
+    display: block !important;
+  }
+  .logoBlack {
+    display: none;
+  }
   .turnBlack {
     background: transparent !important;
     position: absolute !important;

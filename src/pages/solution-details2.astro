@@ -28,7 +28,11 @@ const showreelVideo = showreel.items[0].fields.video.fields.file.url;
 console.log("Mid Content Img: ", props.midContentImg);
 ---
 
-<Layout title="our solutions" seoTitle="solutions">
+<Layout
+  title={props.metaTitle}
+  description={props.description}
+  seoTitle={props.metaTitle}
+>
   <section id="section">
     <div style="margin-top: 5%;" id="immersive">
       <div class="margins heading">
@@ -780,6 +784,12 @@ console.log("Mid Content Img: ", props.midContentImg);
 </style>
 
 <style is:global>
+  .logoWhite {
+    display: block !important;
+  }
+  .logoBlack {
+    display: none;
+  }
   .turnBlack {
     background: transparent !important;
     position: absolute !important;

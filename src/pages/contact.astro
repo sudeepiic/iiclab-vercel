@@ -4,11 +4,11 @@ import officeImg from "../images/officeImg.png";
 import submitArrow from "../images/submitArrow.png";
 import contactHand from "../images/contactHand.png";
 import positionBtn from "../images/positionBtn.png";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 //import { Image, Picture } from "@astrojs/image/components";
 ---
 
-<Layout title="Contact Us" seoTitle="contact-us">
+<Layout title="Contact the Ink in Caps" seoTitle="contact-us">
   <section class="topSec">
     <div class="row topSecDiv">
       <div class="col-lg-5 col-md-5 col-sm-12 imgText">
@@ -38,7 +38,6 @@ import { Image } from 'astro:assets';
         <input
           type="text"
           style="margin-bottom:  1.5%; "
-         
           class="input form-control"
           id="name2"
           name="name2"
@@ -55,7 +54,6 @@ import { Image } from 'astro:assets';
         <input
           type="text"
           style="margin-bottom:  1.5%; "
-         
           class="input form-control"
           id="email2"
           name="email2"
@@ -81,7 +79,7 @@ import { Image } from 'astro:assets';
         aria-label="submit"
       >
         <Image src={submitArrow} class="optimization" loading="lazy" alt="" />
-        submit
+         submit
       </button>
     </form>
   </section>
@@ -104,7 +102,8 @@ import { Image } from 'astro:assets';
         >
           <a
             href="mailto:mumbai@inkincaps.com"
-            aria-label="mail"  style="padding-left: 0 !important;"
+            aria-label="mail"
+            style="padding-left: 0 !important;"
             target="_blank"><span>mumbai@inkincaps.com</span></a
           >
         </div>
@@ -318,7 +317,7 @@ import { Image } from 'astro:assets';
     }
   }
   @media screen and (max-width: 767px) {
-    .title2{
+    .title2 {
       margin-left: 2% !important;
     }
     .imgDiv {
@@ -634,14 +633,19 @@ import { Image } from 'astro:assets';
     /* Microsoft Edge */
     color: #e5ff53 !important;
   }
-</style>s
+</style>
 <style is:global>
+  .logoWhite {
+    display: block !important;
+  }
+  .logoBlack {
+    display: none;
+  }
   .turnBlack {
-    background: transparent !important; ;
+    background: transparent !important;
     position: fixed !important;
     width: 100%;
     margin-bottom: 1%;
-
   }
 
   .list ul li a {

@@ -32,7 +32,7 @@ Object.keys(props).length &&
             <div class="content1" id="content1">
                     { props.content1Heading &&
                     <Image   src={blackDiamond} class="bullets optimization " alt="" loading="lazy"/>
-                   <span class="contentTitle" set:html={props.content1Heading}></span>
+                   <div class="contentTitle" set:html={props.content1Heading}></div>
                     }
                 <span class="text" set:html={props.content1Text}></span>
             </div>
@@ -41,7 +41,7 @@ Object.keys(props).length &&
                 {
                     props.content2Heading  &&
                     <Image   src={blackDiamond} class="bullets optimization " alt="" loading="lazy"/>
-                  <span class="contentTitle" set:html={props.content2Heading} ></span>
+                  <div class="contentTitle" set:html={props.content2Heading} ></div>
 
                 }
                
@@ -56,7 +56,7 @@ Object.keys(props).length &&
             <div class="content2b" id="content2b">
                 {props.content2bHeading && 
                     <Image   src={blackDiamond} class="bullets optimization " alt="" loading="lazy"/>
-                   <span class="contentTitle" set:html={props.content2bHeading} ></span>
+                   <h3 class="contentTitle" set:html={props.content2bHeading} ></h3>
                 }
                
                 <span class="text" set:html={props.content2bText}></span>
@@ -70,7 +70,7 @@ Object.keys(props).length &&
                 {
                     props.content2cHeading &&
                     <Image   src={blackDiamond} class="bullets optimization " alt="" loading="lazy"/>
-                    <span class="contentTitle" set:html={props.content2cHeading}></span>
+                    <div class="contentTitle" set:html={props.content2cHeading}></div>
                 }
 
                 {
@@ -91,7 +91,7 @@ Object.keys(props).length &&
                     {
                         props.content2dHeading && 
                         <Image   src={blackDiamond} class="bullets  optimization" alt="" loading="lazy"/>
-                        <span class="contentTitle" set:html={props.content2dHeading}></span>
+                        <div class="contentTitle" set:html={props.content2dHeading}></div>
                     }
                 
 
@@ -111,7 +111,7 @@ Object.keys(props).length &&
                     {
                         props.content3Heading &&
                         <Image   src={blackDiamond} class="bullets  optimization" alt="" loading="lazy"/>
-                         <span class="contentTitle" set:html={props.content3Heading} ></span>
+                         <div class="contentTitle" set:html={props.content3Heading} ></div>
                     }
                 
 
@@ -129,7 +129,7 @@ Object.keys(props).length &&
                 {
                     props.content3bHeading &&
                     <Image   src={blackDiamond} class="bullets  optimization" alt="" loading="lazy"/>
-                    <span class="contentTitle" set:html={props.content3bHeading}></span>
+                    <div class="contentTitle" set:html={props.content3bHeading}></div>
 
                 }
                
@@ -147,7 +147,7 @@ Object.keys(props).length &&
                 props.content3cText &&
                 <div class="content3c">
                 <Image   src={blackDiamond} class="bullets optimization " alt="" loading="lazy"/>
-                <span class="contentTitle" set:html={props.content3bHeading}></span>
+                <div class="contentTitle" set:html={props.content3bHeading}></div>
                 <p class="text" set:html={props.content3cText}></p>
 
                    
@@ -233,7 +233,7 @@ Object.keys(props).length &&
  
 </section>
 }
-<style>
+<style >
 .optimization {
     height: auto;
   }
@@ -275,23 +275,10 @@ Object.keys(props).length &&
     font-family: 'anek devanagari';
     font-size: 1.2vw;
     line-height: 1.7;
-   
     margin-top: 2%;
 }
 
-.contentTitle{
-    font-family: "Deutschlander";
-        text-transform: uppercase;
-        font-size: 4.2vw;
-        font-weight: 400;
-        font-style: normal;
-        /* color: white; */
-        line-height: 0.85;
-        display: inline-block;
-        word-spacing: 0.12rem;
-    letter-spacing: 0.018rem;
 
-}
 
 .bullets{
     vertical-align: super;
@@ -426,5 +413,30 @@ a{
     
 }
 
+</style>
+
+<style is:global> 
+
+.logoWhite {
+    display: block !important;
+  }
+  .logoBlack {
+    display: none;
+  }
+    .contentTitle, .contentTitle *{
+    font-family: "Deutschlander";
+        text-transform: uppercase;
+        font-size: 4.2vw !important;
+        font-weight: 400 !important;
+        font-style: normal;
+        /* color: white; */
+        line-height: 0.85;
+        display: inline-block;
+        word-spacing: 0.12rem;
+    letter-spacing: 0.018rem;
+    margin: 0;
+}
+    
+    
 </style>
 

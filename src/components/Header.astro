@@ -14,7 +14,11 @@ import awards from "../images/headerAwards.jpg";
 import articles from "../images/headerArticles.jpg";
 import lifeAtIIC from "../images/headerLifeIic.jpg";
 import career from "../images/headerCareer.jpg";
+import logoAnime from "../images/logoAnime.gif";
+import logoAnimeWhite from "../images/logoAnimeWhite.gif";
+
 import { Image } from "astro:assets";
+
 //import { Image, Picture } from "@astrojs/image/components";
 ---
 
@@ -23,7 +27,7 @@ import { Image } from "astro:assets";
     <nav class="main d-inline-flex">
       <div class="logo">
         <a href="/" area-label="home">
-          <svg
+          <!-- <svg
             class="logoSizing"
             width="44"
             height="48"
@@ -46,7 +50,22 @@ import { Image } from "astro:assets";
               clip-rule="evenodd"
               d="M11.1365 47.4508C7.43953 47.4508 3.74258 47.4508 0 47.4508C0 37.5466 0 27.6424 0 17.7383C3.69694 17.7383 7.39389 17.7383 11.1365 17.7383C11.1365 27.6424 11.1365 37.5466 11.1365 47.4508Z"
               fill="currentColor"></path>
-          </svg>
+          </svg> -->
+
+          <Image
+            src={logoAnime}
+            width={150}
+            height={80}
+            alt=""
+            class="logoBlack optimization"
+          />
+          <Image
+            src={logoAnimeWhite}
+            width={150}
+            height={80}
+            alt=""
+            class="logoWhite optimization"
+          />
         </a>
       </div>
       <div class="list onlyDesk">
@@ -452,7 +471,9 @@ import { Image } from "astro:assets";
   .optimization {
     height: auto;
   }
-
+  .logoWhite {
+    display: none;
+  }
   /* header visible on scroll back css */
 
   .sticky-header {
@@ -617,16 +638,17 @@ import { Image } from "astro:assets";
     margin-bottom: 1%;
     /* border:1px solid black; */
   }
-  .main .logo {
+  /* .main .logo {
     margin-top: 10px;
-  }
-  .main img {
+  } */
+  /* .main img {
     height: 40px;
-  }
+  } */
   .main ul {
     list-style: none;
   }
   .list {
+    padding-top: 0.52%;
   }
   .list ul li {
     padding: 17px;

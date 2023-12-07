@@ -20,7 +20,7 @@ const entries: any = await contentfulClient.getEntries<any>({
 // const { blogsData } = Astro.props;
 ---
 
-<Layout title="Ink In Caps - Blog Gallery" seoTitle="blog-gallery">
+<Layout title="Our Blogs - Ink In Caps, Mumbai" seoTitle="blog-gallery">
   <section
     style="background-color: #1a1a1a; border-radius: 0 0 6vw 6vw; padding-bottom: 4%; padding-top: 10vh;"
   >
@@ -54,13 +54,10 @@ const entries: any = await contentfulClient.getEntries<any>({
                 <div class="card">
                   <div class="card-innerDiv">
                     <div class="card-header">
-                      <div>
-                        <span
-                          set:html={documentToHtmlString(
-                            blogs.fields.blogTitle
-                          )}
-                        />
-                      </div>
+                      <div
+                        class="headingStyle"
+                        set:html={documentToHtmlString(blogs.fields.blogTitle)}
+                      />
                     </div>
 
                     <div class="card-body">
@@ -323,7 +320,7 @@ const entries: any = await contentfulClient.getEntries<any>({
     border: 2px solid #1a1a1a;
     border-radius: 0.3vw 0.3vw 0 0;
   }
-  .card-header div span {
+  .headingStyle {
     font-family: "Deutschlander";
     text-transform: uppercase;
     font-size: 2.5vw;
@@ -789,6 +786,24 @@ const entries: any = await contentfulClient.getEntries<any>({
 </style>
 
 <style is:global>
+  .logoWhite {
+    display: block !important;
+  }
+  .logoBlack {
+    display: none;
+  }
+  .headingStyle,
+  .headingStyle * {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 2.5vw;
+    display: block;
+    min-height: 12ch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
   .turnBlack {
     background: #1a1a1a !important;
     position: fixed !important;

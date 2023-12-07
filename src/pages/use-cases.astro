@@ -12,7 +12,11 @@ const props = Astro.props;
 ---
 
 
-<Layout title="Use Cases" seoTitle="use cases">
+<Layout 
+title={props.metaTitle || "Use cases"}
+  description={props.description || null}
+  seoTitle={props.metaTitle || "use cases"}
+>
 
   <UseCasesTitle />
 

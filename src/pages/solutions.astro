@@ -16,7 +16,11 @@ import { Image } from "astro:assets";
 //import { Image, Picture } from "@astrojs/image/components";
 ---
 
-<Layout title="Solutions" seoTitle="solutions">
+<Layout
+  title="Expert Tech Solutions | IIC is offers Innovative Tech Services"
+  seoTitle="solutions"
+  description={null}
+>
   <section>
     <div class="gradient">
       <div class="bgImage">
@@ -739,6 +743,12 @@ import { Image } from "astro:assets";
 </style>
 
 <style is:global>
+  .logoWhite {
+    display: block !important;
+  }
+  .logoBlack {
+    display: none;
+  }
   .sticky-header {
     position: fixed !important;
   }
