@@ -1,374 +1,332 @@
 ---
+import { Image } from "astro:assets";
+import realEstate from "../images/realEstate.jpg";
+import government from "../images/government.jpg";
+import automobile from "../images/automobile.jpg";
+import sports from "../images/sports.jpg";
+import retail from "../images/retail.jpg";
+import awardsPrev from "../images/awardsPrev.png";
+import awardsNext from "../images/awardsNext.png";
 import Layout from "../layouts/Layout.astro";
-
-import swiper2Img from "../images/useCase-swiperImg.jpg";
-
-import UseCasesTitle from "../components/useCasesTitle.astro";
-import redirectToWork from "../images/redirectToWork2.png";
-import { Image } from 'astro:assets';
-
 
 const props = Astro.props;
 ---
 
-
-<Layout 
-title={props.metaTitle || "Use cases"}
-  description={props.description || null}
-  seoTitle={props.metaTitle || "use cases"}
+<Layout
+  title={props?.metaTitle || "Use cases"}
+  description={props?.description || null}
+  seoTitle={props?.metaTitle || "use cases"}
 >
+  <section>
+    <div class="heroSwiper position-relative">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide imgWidth position-relative">
+          <Image class="resizeImg optimization" src={automobile} alt="" />
+        </div>
 
-  <UseCasesTitle />
+        <div class="swiper-slide imgWidth">
+          <Image class="resizeImg optimization" src={realEstate} alt="" />
+        </div>
+        <div class="swiper-slide imgWidth">
+          <Image class="resizeImg optimization" src={sports} alt="" />
+        </div>
+        <div class="swiper-slide imgWidth">
+          <Image class="resizeImg optimization" src={retail} alt="" />
+        </div>
+        <div class="swiper-slide imgWidth">
+          <Image class="resizeImg optimization" src={government} alt="" />
+        </div>
+      </div>
+      <span class="position-absulote productu-content">
+        <h2 class="title-p">
+          <span class="explore">Explore</span>
+          <span class="explore" style="color: #e5ff53;">&nbsp; Industries</span>
+        </h2>
+      </span>
+      <Image
+        class="optimization swiper-button-prev"
+        src={awardsPrev}
+        loading="lazy"
+        alt=""
+      />
+      <Image
+        class="optimization swiper-button-next"
+        src={awardsNext}
+        loading="lazy"
+        alt=""
+      />
+    </div>
+  </section>
+  <style>
+    .heroSwiper {
+      overflow: hidden;
+    }
+    .title-p {
+      width: 65%%;
+      /* margin-top: 11%; */
+      margin-left: 7%;
+      bottom: 3vw;
+      position: absolute;
+    }
+    .productu-content {
+      background: linear-gradient(
+        0deg,
+        #1a1a1a -0.77%,
+        rgba(26, 26, 26, 0) 98.21%
+      );
+
+      bottom: -10px;
+      width: 100%;
+      height: 43vh;
+      color: #ffffff;
+      z-index: 2;
+    }
+    .position-relative {
+      position: relative;
+    }
+
+    .position-absulote {
+      position: absolute;
+    }
+    .swiper {
+      width: 100%;
+    }
+
+    .imgWidth img {
+      max-height: 80vh !important;
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 5/3;
+    }
+
+    .swiper-slide {
+      /* height: 100vh !important; */
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* margin-left: 1.5%; */
+    }
+
+    .swiper-button-prev {
+      width: 4%;
+      height: 9%;
+      background-color: #ffffff;
+      border-radius: 50%;
+
+      top: unset !important;
+      left: unset !important;
+      right: 17%;
+      bottom: 6vw;
+    }
+    .swiper-button-next {
+      width: 4%;
+      height: 9%;
+      background-color: #ffffff;
+      border-radius: 50%;
+
+      top: unset !important;
+      left: unset !important;
+      right: 10%;
+      bottom: 6vw;
+    }
+    .desktopSlider {
+      width: 100%;
+    }
+
+    /* hover image effect css */
+  </style>
+  <script>
+    import { Swiper, Navigation, Autoplay, EffectCreative } from "swiper";
+    let x = 3;
+    var swiper = new Swiper(".heroSwiper", {
+      modules: [Navigation, EffectCreative, Autoplay],
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 1,
+
+      spaceBetween: 0,
+      loop: true,
+      speed: 1700,
+      breakpoints: {
+        767: {
+          slidesPerView: 1,
+
+          spaceBetween: 30,
+        },
+        250: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+      },
+
+      autoplay: {
+        delay: 2000,
+      },
+
+      navigation: {
+        nextEl: ".swiper-button-prev",
+        prevEl: ".swiper-button-next",
+      },
+    });
+  </script>
 
   <section id="redirect" class="blackSection">
-    <span class="explore">Explore</span>
-    <span class="explore" style="color: #e5ff53;">&nbsp; Industries</span>
+    <!-- <span class="explore">Explore</span>
+    <span class="explore" style="color: #e5ff53;">&nbsp; Industries</span> -->
 
-    <div class="d-flex" style="margin-top: 3%;">
-
-      <a href="./automobile#redirect" class="tabs" id="automobile" > automobile</a>
-      <a href="./real-estate#redirect" class="tabs" id="real-estate" > real estate</a>
-      <a href="./sports-and-media#redirect" class="tabs" id="sports-and-media"  > sports & media</a>
-      <a href="./retail#redirect" class="tabs" id="retail"  > retail</a>
+    <div class="d-flex">
+      <a href="/use-cases/automobile#redirect" class="tabs" id="automobile">
+        automobile</a
+      >
+      <a href="/use-cases/real-estate#redirect" class="tabs" id="real-estate">
+        real estate</a
+      >
       <a
-        href="./government#redirect"
+        href="/use-cases/sports-and-media#redirect"
+        class="tabs"
+        id="sports-and-media"
+      >
+        sports & media</a
+      >
+      <a href="/use-cases/retail#redirect" class="tabs" id="retail"> retail</a>
+      <a
+        href="/use-cases/government#redirect"
         class="tabs"
         id="government"
         style=" border-right: 1px solid #8a8a8a !important"
-        
       >
         government</a
       >
     </div>
     <script>
-  
-    
-   
-     
-        if(window.location.pathname.includes("automobile")){
-          
-          document.getElementById("automobile").classList.add('clicked');
-        }
-        else  if(window.location.pathname.includes("real-estate")){
-          
-          document.getElementById("real-estate").classList.add('clicked');
-        }
-       else  if(window.location.pathname.includes("sports-and-media")){
-          
-          document.getElementById("sports-and-media").classList.add('clicked');
-        }
-        else if(window.location.pathname.includes("retail")){
-          
-          document.getElementById("retail").classList.add('clicked');
-        }
-        if(window.location.pathname.includes("government")){
-          
-          document.getElementById("government").classList.add('clicked');
-        }
-    </script>
-
-    <div class="row" style="margin-top: 6%;">
-      <div class="col-lg-6 col-md-6 col-sm-12">
-        {props.image &&
-        <Image width={996} height={688} class="swiperImg optimization" src={props.image} alt="" />
-        }
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-12">
-        <div class="imgInfo">
-          <span class="imgTitle" set:html={props.title} />
-          <br />
-          <span class="imgText" set:html={props.tagline} />
-        </div>
-      </div>
-    </div>
-
-    <div class="pointersDiv">
-      <div class="row pointerRow">
-        <div class="row col-lg-6 col-md-6 col-sm-12">
-          <div class="content-box numbers col-2">
-            <span>01</span>
-          </div>
-          <div class="col-10 pointerTextDiv">
-            <span class="pointerText" set:html={props.pointer1} />
-          </div>
-        </div>
-        <div class="row col-lg-6 col-md-6 col-sm-12 rightsidePointers">
-          <div class="content-box numbers col-2">
-            <span>02</span>
-          </div>
-          <div class="col-10 pointerTextDiv">
-            <span class="pointerText" set:html={props.pointer2} />
-          </div>
-        </div>
-      </div>
-
-      <div class="row pointerRow">
-        <div class="row col-lg-6 col-md-6 col-sm-12">
-          <div class="content-box numbers col-2">
-            <span>03</span>
-          </div>
-          <div class="col-10 pointerTextDiv">
-            <span class="pointerText" set:html={props.pointer3} />
-          </div>
-        </div>
-        <div class="row col-lg-6 col-md-6 col-sm-12 rightsidePointers">
-          { props.pointer4 && 
-          <div class="content-box numbers col-2">
-            <span>04</span>
-          </div>
-          <div class="col-10 pointerTextDiv">
-            <span class="pointerText" set:html={props.pointer4} />
-          </div>
-          
-          }
-        </div>
-      </div>
-
-      {
-        props.pointer5 && 
-        <div class="row pointerRow">
-          <div class="row col-lg-6 col-md-6 col-sm-12">
-            <div class="content-box numbers col-2">
-              <span>05</span>
-            </div>
-            <div class="col-10 pointerTextDiv">
-              <span class="pointerText" set:html={props.pointer5} />
-            </div>
-          </div>
-          <div class="row col-lg-6 col-md-6 col-sm-12 rightsidePointers">
-            { props.pointer6 && 
-            <div class="content-box numbers col-2">
-              <span>06</span>
-            </div>
-            <div class="col-10 pointerTextDiv">
-              <span class="pointerText" set:html={props.pointer6} />
-            </div>
-          }
-          </div>
-        </div>
+      if (window.location.pathname.includes("automobile")) {
+        document.getElementById("automobile").classList.add("clicked");
+      } else if (window.location.pathname.includes("real-estate")) {
+        document.getElementById("real-estate").classList.add("clicked");
+      } else if (window.location.pathname.includes("sports-and-media")) {
+        document.getElementById("sports-and-media").classList.add("clicked");
+      } else if (window.location.pathname.includes("retail")) {
+        document.getElementById("retail").classList.add("clicked");
       }
-
-{
-  props.pointer7 && 
-  <div class="row pointerRow">
-    <div class="row col-lg-6 col-md-6 col-sm-12">
-      <div class="content-box numbers col-2">
-        <span>07</span>
-      </div>
-      <div class="col-10 pointerTextDiv">
-        <span class="pointerText" set:html={props.pointer7} />
-      </div>
-    </div>
-    <div class="row col-lg-6 col-md-6 col-sm-12 rightsidePointers">
-      { props.pointer8 && 
-      <div class="content-box numbers col-2">
-        <span>08</span>
-      </div>
-      <div class="col-10 pointerTextDiv">
-        <span class="pointerText" set:html={props.pointer9} />
-      </div>
-    }
-    </div>
-  </div>
-}
-
-{
-  props.pointer9 && 
-  <div class="row pointerRow">
-    <div class="row col-lg-6 col-md-6 col-sm-12">
-      <div class="content-box numbers col-2">
-        <span>09</span>
-      </div>
-      <div class="col-10 pointerTextDiv">
-        <span class="pointerText" set:html={props.pointer9} />
-      </div>
-    </div>
-    <div class="row col-lg-6 col-md-6 col-sm-12 rightsidePointers">
-   
-    </div>
-  </div>
-}
-
-    </div>
-    
- 
-   
-
-</section>
-
-<section style="background-color: #1a1a1a;">
-
-  {
-    props?.useCasesData?.fields?.relatedProjects && (
-      <div class="margins" style="padding-top:2%; ">
-        <div class="relatedProjectHeading">
-          <span>
-            Related <span style="color: #e5ff53">Projects</span>
-          </span>
-        </div>
-      </div>
-    )
-  }
-  {
-    props?.useCasesData?.fields?.relatedProjects && (
-      <div class="overflow-hidden m-0" style="padding:0 9%;">
-        <div
-          id="stopOnHover"
-          class="d-flex workImg-section-soln borders"
-          style="width:100%; padding:4% 0 7% 0 !important;  overflow-x: scroll; "
-        >
-          {(props?.useCasesData?.fields?.relatedProjects as any)?.map(
-            (projects: any) => (
-              <div class="hoverImg ">
-                <a
-                  href={"/portfolio/" + projects?.fields?.heroTitle}
-                  aria-label="case study"
-                >
-                  <div class="work-animation">
-                    <Image
-                      src={projects?.fields?.heroBanner?.fields?.file.url}
-                      class="movingImgs optimization "
-                      alt=""
-                      width={509}
-                          height={240}
-                    />
-                    <div class="image-overlay">
-                      <Image class="optimization" src={redirectToWork} alt="" />
-                      <span
-                        class="workName"
-                        set:html={projects?.fields?.singleClient}
-                      />
-                      <span
-                        class="workTech"
-                        set:html={projects?.fields?.whichTechnology}
-                      />
-                    </div>
-                  </div>
-                </a>
-              </div>
-            )
-          )}
-        </div>
-      </div>
-    )
-  }
-</section>
+      if (window.location.pathname.includes("government")) {
+        document.getElementById("government").classList.add("clicked");
+      }
+    </script>
+  </section>
 </Layout>
 
-
 <style>
+  .optimization {
+    height: auto;
+  }
 
-.optimization{
-  height: auto;
-}
+  /* related projects css */
+  .relatedProjectHeading span {
+    font-family: Deutschlander;
+    text-transform: uppercase;
+    font-size: 10vw;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    line-height: 0.85;
+    margin-bottom: 1% !important;
+  }
 
-/* related projects css */
-.relatedProjectHeading span {
-      font-family: Deutschlander;
-      text-transform: uppercase;
-      font-size: 10vw;
-      font-weight: 400;
-      font-style: normal;
-      color: #fff;
-      line-height: 0.85;
-      margin-bottom: 1% !important;
-    }
+  .workImg-section-soln {
+    padding-bottom: 7.3%;
+  }
 
-    .workImg-section-soln {
-      padding-bottom: 7.3%;
-    }
+  .hoverImg:hover .image-overlay {
+    opacity: 1;
+  }
+  .hoverImg {
+    margin-right: 2%;
+  }
 
-    .hoverImg:hover .image-overlay {
-      opacity: 1;
-    }
-    .hoverImg {
-      margin-right: 2%;
-    }
+  .work-animation {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 4vw 4vw 4vw;
+  }
+  .work-animation:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #f6f7f0;
+    z-index: 998;
+    transition: left 1.2s ease;
+  }
+  .workAnimate-active:after {
+    left: 100%;
+  }
+  .movingImgs {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    width: 25vw;
+    border-radius: 0 4vw 4vw 4vw;
+  }
 
-    .work-animation {
-      position: relative;
-      overflow: hidden;
-      border-radius: 0 4vw 4vw 4vw;
-    }
-    .work-animation:after {
-      content: "";
-      position: absolute;
-      right: 0;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      background: #f6f7f0;
-      z-index: 998;
-      transition: left 1.2s ease;
-    }
-    .workAnimate-active:after {
-      left: 100%;
-    }
-    .movingImgs {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      width: 25vw;
-      border-radius: 0 4vw 4vw 4vw;
-    }
+  .image-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    /* backdrop-filter: blur(5px); */
+    background: rgba(0, 0, 0, 0.7);
+    padding: 7% 0 7% 9%;
+    opacity: 0;
+    border-radius: 0 0 4vw 4vw;
+  }
+  .image-overlay img {
+    width: 16%;
+    position: absolute;
+    left: 82%;
+    bottom: 70%;
+  }
 
-    .image-overlay {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      color: white;
-      /* backdrop-filter: blur(5px); */
-      background: rgba(0, 0, 0, 0.7);
-      padding: 7% 0 7% 9%;
-      opacity: 0;
-      border-radius: 0 0 4vw 4vw;
-    }
-    .image-overlay img {
-      width: 16%;
-      position: absolute;
-      left: 82%;
-      bottom: 70%;
-    }
+  .workTech {
+    font-family: "anek devanagari";
+    font-size: 1.5vw;
+    font-weight: 200;
+    display: block;
+    text-transform: capitalize;
+  }
+  .workName {
+    font-family: "anek devanagari";
+    font-size: 1.8vw;
+    font-weight: 500;
+    line-height: 1;
+    display: block;
+    text-transform: capitalize;
+    width: 79%;
+  }
 
-    .workTech {
-      font-family: "anek devanagari";
-      font-size: 1.5vw;
-      font-weight: 200;
-      display: block;
-      text-transform: capitalize;
+  .moving-text2 {
+    animation: move-text2 10s linear infinite;
+  }
+  @keyframes move-text2 {
+    0% {
+      transform: translateX(0%);
     }
-    .workName {
-      font-family: "anek devanagari";
-      font-size: 1.8vw;
-      font-weight: 500;
-      line-height: 1;
-      display: block;
-      text-transform: capitalize;
-      width: 79%;
+    100% {
+      transform: translateX(-680%);
     }
+  }
 
-    .moving-text2 {
-      animation: move-text2 10s linear infinite;
-    }
-    @keyframes move-text2 {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-680%);
-      }
-    }
-
-
-
-
-/*  */
+  /*  */
   .margins {
     margin: 0 7%;
   }
 
-  .clicked{
+  .clicked {
     background-color: #e5ff53;
     color: #1a1a1a !important;
     font-weight: 600 !important;
@@ -393,10 +351,18 @@ title={props.metaTitle || "Use cases"}
     color: #ffffff;
   }
 
+  .tabs:hover {
+    font-size: 1.6vw;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    color: #1a1a1a;
+    background-color: #e5ff53;
+    transition: 0.3s linear;
+  }
+
   .blackSection {
-    padding: 7% 7%;
+    padding: 4% 7%;
     background-color: #1a1a1a;
-    border-radius: 4vw 4vw 0 0;
     padding-bottom: 3% !important;
   }
 
@@ -535,14 +501,13 @@ title={props.metaTitle || "Use cases"}
   }
 
   @media screen and (max-width: 767px) {
-
     .movingImgs {
-        aspect-ratio: 4/5;
-        width: 30vw;
-        border-radius: 0 4vw 4vw 4vw;
-        margin-right: 5%;
-        object-fit: cover;
-      }
+      aspect-ratio: 4/5;
+      width: 30vw;
+      border-radius: 0 4vw 4vw 4vw;
+      margin-right: 5%;
+      object-fit: cover;
+    }
     .imgInfo {
       position: relative;
       top: 0;
@@ -577,15 +542,7 @@ title={props.metaTitle || "Use cases"}
 </style>
 
 <script>
- 
-import {
-    Swiper,
-    Navigation,
-    Pagination,
-    EffectCoverflow,
-    Autoplay,
-    EffectCreative,
-  } from "swiper";
+  import { Swiper, Navigation, EffectCreative } from "swiper";
 
   let y = 3;
   var swiper2 = new Swiper(".swiper", {
@@ -619,21 +576,60 @@ import {
     },
   });
 
-  import { gsap, TimelineMax  } from "gsap";
-    import { ScrollTrigger } from "gsap/ScrollTrigger";
-    gsap.registerPlugin(ScrollTrigger);
+  import { gsap, TimelineMax } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
 
-    const movingImgs = document.querySelectorAll(".hoverImg");
-    gsap.from(".workImg-section-soln", 1, {
-      scrollTrigger: {
-        trigger: ".workImg-section-soln",
-        start: "top 55%",
-        end: "bottom top",
+  const movingImgs = document.querySelectorAll(".hoverImg");
+  gsap.from(".workImg-section-soln", 1, {
+    scrollTrigger: {
+      trigger: ".workImg-section-soln",
+      start: "top 55%",
+      end: "bottom top",
 
-        toggleClass: "move-upper-white-bg",
-        scrub: true,
-      },
-    });
-  
- 
+      toggleClass: "move-upper-white-bg",
+      scrub: true,
+    },
+  });
 </script>
+
+<style is:global>
+  .sticky-header {
+    position: fixed !important;
+  }
+  .turnBlack {
+    background: transparent !important;
+    position: absolute;
+    width: 100%;
+    margin-bottom: 1%;
+  }
+
+  .list ul li a {
+    color: white !important;
+    opacity: 100% !important;
+  }
+  path {
+    fill: white !important;
+  }
+
+  /* connect button css */
+
+  .connect,
+  .circles {
+    fill: #1a1a1a !important;
+  }
+  .oval {
+    fill: white !important;
+  }
+
+  .tele {
+    fill: white !important;
+  }
+  .menu p {
+    color: white !important;
+  }
+  .menu .s1,
+  .menu .s2 {
+    border: 1px solid white !important;
+  }
+</style>

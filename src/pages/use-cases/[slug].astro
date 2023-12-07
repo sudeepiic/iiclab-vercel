@@ -1,7 +1,7 @@
 ---
 import { contentfulClient } from "../../lib/contentful";
 
-import UseCases from "../use-cases.astro";
+import UseCases from "../../components/use-cases-content.astro";
 
 export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries<any>({

@@ -1,0 +1,474 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import awardsPrev from "../images/awardsPrev.png";
+import awardsNext from "../images/awardsNext.png";
+import { Image } from 'astro:assets';
+import products1 from "../images/products1.png";
+import products2 from "../images/products2.png";
+import icon1 from "../images/icon1.png";
+import icon2 from "../images/icon2.png";
+import { contentfulClient } from "../lib/contentful";
+// import {ViewTransitions} from 'astro:transitions';
+//import { Image, Picture } from "@astrojs/image/components";
+
+const props = Astro.props;
+---
+
+
+{
+  Object.keys(props).length && (
+    
+    <Layout title="Products" seoTitle="products">
+      <section style="padding-top: 8%; position:relative; ">
+        <span class="waterMark" set:html={props.waterMark} />
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <Image class=" optimization sliderImg" width={1335} height={512} src={props.heroImg} alt="" />
+            </div>
+           
+          </div>
+         
+        </div>
+      </section>
+      <div class="d-flex">
+        <a href="./v-retail" id="v-retail" class="tabs" style="border-left: 0 !important;" aria-label="v-retail" >
+          v-retail
+        </a>
+        <a href="./v-verse"id="v-verse" class="tabs" aria-label="v-verse"  >
+          v-verse
+        </a>
+
+        <a href="./v-tour" id="v-tour" class="tabs" aria-label="v-tour" >
+          V-Tour
+        </a>
+        <a href="./v-conference" id="v-conference" class="tabs" aria-label="v-conference" >
+          v-conference
+        </a>
+        <a href="./v-stages" id="v-stages" class="tabs" aria-label="v-stages">
+          v-stages
+        </a>
+        <a href="./v-estate" id="v-estate" class="tabs" aria-label="v-estate">
+          v-estate
+        </a>
+      </div>
+
+ <script>
+  
+    
+   
+     
+  if(window.location.pathname.includes("v-retail")){
+    
+    document.getElementById("v-retail").classList.add('clicked');
+  }
+  else  if(window.location.pathname.includes("v-verse")){
+    
+    document.getElementById("v-verse").classList.add('clicked');
+  }
+ else  if(window.location.pathname.includes("v-tour")){
+    
+    document.getElementById("v-tour").classList.add('clicked');
+  }
+  else if(window.location.pathname.includes("v-conference")){
+    
+    document.getElementById("v-conference").classList.add('clicked');
+  }
+  else if(window.location.pathname.includes("v-stages")){
+    
+    document.getElementById("v-stages").classList.add('clicked');
+  }
+  if(window.location.pathname.includes("v-estate")){
+    
+    document.getElementById("v-estate").classList.add('clicked');
+  }
+</script>
+
+      <section style="background-color: #1a1a1a; padding-top: 6%;">
+        <div style="margin-left: 9%;  padding-bottom: 5%;">
+          <div style="overflow: hidden; margin-bottom:2%;">
+            <span class="title" set:html={props.title} />
+          </div>
+          <div style="overflow: hidden;">
+            <span class="text" set:html={props.titleText} />
+          </div>
+        </div>
+        <div style="margin-left: 9%;">
+          <span class="title">Top brands</span>
+          <div class="iconsDiv">
+            <div class="row">
+              {(props.brandLogos as any)?.map((logo: any) => (
+                <div class="icons">
+                  <Image class="optimization " width={180} height={60} src={logo.fields.file.url} alt="" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+       
+        {props?.productData?.fields?.caseStudies && (
+          <div style="margin-left: 9%;">
+          <span class="title">Recent projects</span>
+        </div>
+          <div style="padding:7% 0 ; " class="mySwiper">
+            <div class="swiper-wrapper">
+              {(props?.productData?.fields?.caseStudies as any)?.map(
+                (products: any) => (
+                  <div class="swiper-slide">
+                    <div>
+                      <a
+                        href={"/portfolio/" + products?.fields?.heroTitle}
+                        aria-label="work"
+                      >
+                        <Image
+                          class="swiper2Img optimization"
+                          src={products?.fields?.heroBanner?.fields?.file.url}
+                          width={1528}
+                          height={720}
+                          alt=""
+                        />
+                      </a>
+                      <div class="imgCaptionDiv">
+                        <span
+                          class="caption1"
+                          set:html={products?.fields?.singleClient}
+                        />
+                        <p
+                          class="caption2"
+                          set:html={products?.fields?.whichTechnology}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        )}
+      </section>
+
+      <section style="background-color: #1a1a1a;">
+        <div class="yellowDiv">
+          <span>
+            know more about <span set:html={props.waterMark} />
+          </span>
+        </div>
+      </section>
+    </Layout>
+  )
+}
+
+<style>
+  .optimization {
+    height: auto;
+  }
+  a {
+    text-decoration: none;
+
+  }
+  .clicked:hover{
+    color:  #e5ff53 !important;
+  }
+  .tabs {
+    width: 16.666%;
+    border: 1px solid rgb(200, 199, 199);
+    border-right: 0 !important;
+    border-bottom: 0 !important;
+
+    font-family: "anek devanagari";
+    font-weight: 600;
+    font-size: 1.3vw;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 2% 0;
+  }
+
+  .clicked{
+    background-color: #1a1a1a;
+    color: #ffffff;
+
+  }
+  .waterMark {
+    font-family: "Deutschlander";
+    font-size: 27vw;
+    text-transform: uppercase;
+    line-height: 0.85;
+    color: black;
+    opacity: 5%;
+    display: inline-block;
+    width: 100%;
+    word-spacing: 0.27rem;
+    position: absolute;
+    top: 5%;
+    text-align: center;
+  }
+
+  .title {
+    font-family: "Deutschlander";
+    font-size: 8vw;
+    text-transform: uppercase;
+    line-height: 0.85;
+    color: white;
+    display: inline-block;
+    width: 80%;
+    word-spacing: 0.27rem;
+  }
+  .text {
+    font-family: "anek devanagari";
+    font-weight: 300;
+    color: white;
+    opacity: 60%;
+    font-size: 1.7vw;
+    width: 85%;
+    display: inline-block;
+    word-spacing: 0.2rem;
+    margin-top: 1%;
+  }
+  .iconsDiv {
+    margin-right: 9%;
+    margin-top: 3%;
+    padding-bottom: 6%;
+  }
+  .icons {
+    width: 20%;
+    border: 1px solid rgb(78, 77, 77);
+    padding: 3%;
+
+    display: flex;
+  }
+  .icons img {
+    width: 65%;
+    margin: auto;
+    display: block;
+  }
+
+  .yellowDiv {
+    background-color: #e5ff53;
+    border-radius: 1.5vw;
+
+    padding: 3%;
+    margin: 0 9%;
+    text-align: center;
+  }
+  .yellowDiv span {
+    font-family: "Deutschlander";
+    font-size: 12vw;
+    text-transform: uppercase;
+    line-height: 0.85;
+  }
+  /* swiper css */
+  .swiper {
+    width: 80%;
+  }
+  /* .mySwiper {
+    width: 80%;
+  } */
+
+  .swiper-slide {
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 1.5%; */
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 6%;
+    height: 15%;
+  }
+  .sliderImg {
+    width: 100%;
+    aspect-ratio: 23.5/9;
+    object-fit: cover;
+  }
+
+  /* carousal 2 css */
+
+  .mySwiper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
+  }
+
+  .swiper-slide-active .imgCaptionDiv {
+    display: block !important;
+  }
+
+  .swiper2Img {
+    display: block;
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4/5;
+  }
+
+  .imgCaptionDiv {
+    margin-top: 5%;
+    display: none;
+  }
+
+  .caption1 {
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.8vw;
+    font-family: "anek devanagari";
+    font-weight: 500;
+    letter-spacing: 0.7px;
+  }
+  .caption2 {
+    text-transform: uppercase;
+    font-family: "anek devanagari";
+    font-size: 1.75vw;
+    opacity: 0.4;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+    color: white;
+  }
+</style>
+<style is:global>
+  .div1,
+  .div2 {
+    display: none;
+  }
+  .title p {
+    margin-bottom: -5% !important;
+  }
+
+  @media screen and (max-width:767px) {
+    .tabs{
+      font-size: 2.2vw !important;
+    }
+    .text{
+      font-size: 2.5vw !important;
+    }
+    .caption1{
+      font-size: 3.2vw !important;
+    }
+    .caption2{
+      font-size: 3vw !important;
+    }
+    .icons{
+      width: 25% !important;
+    }
+    .title{
+      word-spacing: 0.18rem !important;
+      letter-spacing: 0.03rem !important;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import Eases from "gsap";
+  gsap.registerPlugin(ScrollTrigger);
+
+  import {
+    Swiper,
+    Navigation,
+    Pagination,
+    EffectCoverflow,
+    Autoplay,
+    EffectCreative,
+  } from "swiper";
+  let x = 3;
+  var swiper = new Swiper(".swiper", {
+    modules: [Navigation, EffectCreative],
+    // effect: "creative",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    autoplay: {
+      delay: 2000,
+    },
+  });
+
+  // carousal 2 css
+
+  let y = 3;
+  var swiper = new Swiper(".mySwiper", {
+    modules: [Navigation, Autoplay, EffectCreative],
+    effect: "creative",
+    grabCursor: false,
+    centeredSlides: true,
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    creativeEffect: {
+      prev: {
+        // will set `translateZ(-400px)` on previous slides
+        rotate: [0, 0, -8],
+        translate: ["-120%", "8%", 0],
+        scale: 0.98,
+      },
+      next: {
+        // will set `translateX(100%)` on next slides
+        rotate: [0, 0, 8],
+        translate: ["120%", "8%", 0],
+        scale: 0.98,
+      },
+    },
+    breakpoints: {
+      767: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      250: {
+        slidesPerView: 1.65,
+        spaceBetween: 30,
+      },
+    },
+
+    autoplay: {
+      delay: 2000,
+    },
+
+    // pagination: {
+    //   el: ".swiper-pagination",
+    //   clickable: true,
+    // },
+  });
+
+  let tl = gsap.timeline();
+  tl.from(".title", {
+    duration: 1,
+    y: "100%",
+    opacity: 0,
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: ".title",
+      start: "top 80%",
+      end: "bottom 73%",
+
+      scrub: true,
+    },
+  }).from(".text", {
+    duration: 1,
+
+    opacity: 0,
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: ".text",
+      start: "top 70%",
+      end: "bottom 63%",
+
+      scrub: true,
+    },
+  });
+</script>

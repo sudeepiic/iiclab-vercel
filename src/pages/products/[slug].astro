@@ -3,7 +3,7 @@ import { contentfulClient } from "../../lib/contentful";
 
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
-import Products from "../products.astro";
+import Products from "../../components/products-content.astro";
 
 export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries<any>({

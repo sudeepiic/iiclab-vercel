@@ -1,6 +1,7 @@
 ---
 import arrow from "../images/arrow.png";
 import BannerImg from "../images/bannerImg.jpg";
+import SquareGroupImg from "../images/SquareGroupSlider.jpg";
 import hand2 from "../images/hand-2.png";
 import ovalArrow from "../images/ovalArrow.png";
 import vector from "../images/Vector.png";
@@ -19,13 +20,10 @@ import solnImg3 from "../images/interactiveImg.png";
 import solnImg4 from "../images/solnImg4.jpg";
 import solnImg6 from "../images/strategyImg.png";
 import fwViewAll from "../images/fwViewAll.png";
-import f1Logo from "../images/f1Logo.png";
-import testimonialImg from "../images/gyproc2.png";
 import carousalNext from "../images/carousalNext.png";
 import carousalPrev from "../images/carousalPrev.png";
 import { contentfulClient } from "../lib/contentful";
 import close from "../images/close.png";
-import heroHand from "../images/heroHand.png";
 import content from "../images/content2.png";
 import redirectToWork from "../images/redirectToWork2.png";
 import workBtnHand from "../images/workBtnHand.png";
@@ -42,6 +40,7 @@ const clientsEntries = await contentfulClient.getEntries<any>({
   content_type: "clients",
 });
 const images = clientsEntries.items[0].fields.clientIcons;
+// const clientLogoes = clientsEntries.items[0].fields.clientLogoes;
 
 const imagesPerArray = 5;
 const numArrays = Math.ceil((images as []).length / imagesPerArray);
@@ -301,14 +300,85 @@ console.log("Current URL is:   ", Astro.url);
 
 <section class="mainImg" style="margin-bottom
 :1%;">
-  <Image
+  <!-- <Image
     src={BannerImg}
     alt=""
     quality={100}
     style="height:100%;width:100%; aspect-ratio: 2/1; object-fit: cover "
     class="optimization"
-  />
+  /> -->
+
+  <div class="heroSwiper position-relative">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide imgWidth position-relative">
+        <Image
+          src={BannerImg}
+          alt=""
+          quality={100}
+          style="height:100%;width:100%; "
+          class="optimization"
+        />
+      </div>
+      <div class="swiper-slide imgWidth position-relative">
+        <Image
+          quality={100}
+          style="height:100%;width:100%; "
+          class="optimization"
+          src={SquareGroupImg}
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
 </section>
+
+<style>
+  .heroSwiper {
+    overflow: hidden;
+  }
+  .imgWidth img {
+    max-height: 100% !important;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 5/3;
+  }
+</style>
+<script>
+  import { Swiper, Navigation, Autoplay, EffectCreative } from "swiper";
+  let x = 3;
+  var swiper = new Swiper(".heroSwiper", {
+    modules: [Navigation, EffectCreative, Autoplay],
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 1,
+
+    spaceBetween: 0,
+    loop: true,
+    speed: 2700,
+    breakpoints: {
+      767: {
+        slidesPerView: 1,
+
+        spaceBetween: 30,
+      },
+      250: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+    },
+
+    on: {
+      slideChange: function () {
+        let index_currentSlide = this.realIndex;
+      },
+    },
+
+    autoplay: {
+      delay: 1000,
+      // disableOnInteraction: true,
+    },
+  });
+</script>
 
 <section style="overflow-x: hidden;">
   <div class="snapTagline">
@@ -897,7 +967,7 @@ console.log("Current URL is:   ", Astro.url);
     <div id="stopOnHover" class="d-flex workImg-section" style="width:100%;  ">
       {
         entries.items.map((caseStudy, index) => (
-          <div class="hoverImg ">
+          <div class="hoverImg position-relative  ">
             <a
               href={"/portfolio/" + caseStudy?.fields?.heroTitle}
               aria-label="case study"
@@ -924,6 +994,17 @@ console.log("Current URL is:   ", Astro.url);
                 </div>
               </div>
             </a>
+            <div class="d-flex">
+              <Image
+                src={
+                  caseStudy?.fields?.clientLogos?.fields?.file.url || solnImg1
+                }
+                width={215}
+                height={75}
+                alt=""
+                class="hover-img-sudo optimization  "
+              />
+            </div>
           </div>
         ))
       }
@@ -1628,6 +1709,17 @@ console.log("Current URL is:   ", Astro.url);
       }
       .hoverImg {
         margin-right: 2%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hover-img-sudo {
+        /* width: 7vw;
+        height: 4vw; */
+        /* border-radius: 4vw; */
+        width: 65%;
+        margin: auto;
       }
       .solutionAnchor {
         position: relative;

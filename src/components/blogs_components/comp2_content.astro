@@ -7,27 +7,23 @@ import { Image } from 'astro:assets';
 //import { Image, Picture } from "@astrojs/image/components";
 
 const props = Astro.props;
-
+Object.keys(props)
 ---
+        <section class="margins">
 
+            <div class="row" >
+                <div class="quote col-sm-12 col-md-9 col-lg-9"  >
+                    {
+                        props.quote &&
+                        <div class="innerquote" >
+                    
+                    <span set:html={props.quote}>
+                    </span> 
+                    <span class="quoter" set:html={props.quoter}></span>
+                    </div>
 
-{
-Object.keys(props).length &&
-<section class="margins">
-
-    <div class="row" >
-        <div class="quote col-sm-12 col-md-9 col-lg-9"  >
-            {
-                props.quote &&
-                <div class="innerquote" >
-              
-              <span set:html={props.quote}>
-              </span> 
-              <span class="quoter" set:html={props.quoter}></span>
-             </div>
-
-            }
-          
+                    }
+                
 
             <div class="content1" id="content1">
                     { props.content1Heading &&
@@ -43,15 +39,15 @@ Object.keys(props).length &&
                     <Image   src={blackDiamond} class="bullets optimization " alt="" loading="lazy"/>
                   <div class="contentTitle" set:html={props.content2Heading} ></div>
 
-                }
-               
+                        }
+                    
 
-                <span class="text" set:html={props.content2Text} ></span>
-                {
-                    props.content2Img &&
-                    <Image   src={props.content2Img} style="width:100%;" class="optimization " width={1050} height={600} alt={props.content2ImgAlt} loading="lazy"/>
-                }
-            </div>
+                        <span class="text" set:html={props.content2Text} ></span>
+                        {
+                            props.content2Img &&
+                            <Image   src={props.content2Img} style="width:100%;" class="optimization " width={1050} height={600} alt={props.content2ImgAlt} loading="lazy"/>
+                        }
+                    </div>
 
             <div class="content2b" id="content2b">
                 {props.content2bHeading && 
@@ -73,17 +69,17 @@ Object.keys(props).length &&
                     <div class="contentTitle" set:html={props.content2cHeading}></div>
                 }
 
-                {
-                    props.content2cText &&
-                    <span class="text" set:html={props.content2cText}></span>
-                }
-                
-                {
-                    props.content2cImg &&
-                    <Image   src={props.content2cImg}  class=" optimization" width={1050} height={600} style="width:100%;"  alt={props.content2cImgAlt}/>
-                }
-                    
-            </div>
+                        {
+                            props.content2cText &&
+                            <span class="text" set:html={props.content2cText}></span>
+                        }
+                        
+                        {
+                            props.content2cImg &&
+                            <Image   src={props.content2cImg}  class=" optimization" width={1050} height={600} style="width:100%;"  alt={props.content2cImgAlt}/>
+                        }
+                            
+                    </div>
 
             {
              props.content2dText &&
@@ -95,7 +91,7 @@ Object.keys(props).length &&
                     }
                 
 
-                    <span class="text" set:html={props.content2dText}></span>
+                            <span class="text" set:html={props.content2dText}></span>
 
                 {
                     props.content2dImg &&
@@ -115,15 +111,15 @@ Object.keys(props).length &&
                     }
                 
 
-                <span class="text" set:html={props.content3Text}></span>
+                        <span class="text" set:html={props.content3Text}></span>
 
+                            
+                    </div>
+
+                    }
                     
-            </div>
-
-            }
-            
-            {
-                props.content3bText &&
+                    {
+                        props.content3bText &&
 
                 <div class="content3b">
                 {
@@ -131,15 +127,15 @@ Object.keys(props).length &&
                     <Image   src={blackDiamond} class="bullets  optimization" alt="" loading="lazy"/>
                     <div class="contentTitle" set:html={props.content3bHeading}></div>
 
-                }
-               
-                <span class="text" set:html={props.content3bText}></span>
-                {
-                    props.content3bImg &&
-                    <Image   src={props.content3bImg}  style="width:100%;" width={1050} height={600} class=" optimization" alt={props.content3bImgAlt} loading="lazy"/>
-                }
-                
-                </div>
+                        }
+                    
+                        <span class="text" set:html={props.content3bText}></span>
+                        {
+                            props.content3bImg &&
+                            <Image   src={props.content3bImg}  style="width:100%;" width={1050} height={600} class=" optimization" alt={props.content3bImgAlt} loading="lazy"/>
+                        }
+                        
+                        </div>
 
             }
            
@@ -150,90 +146,194 @@ Object.keys(props).length &&
                 <div class="contentTitle" set:html={props.content3bHeading}></div>
                 <p class="text" set:html={props.content3cText}></p>
 
-                   
-                </div>
+                        
+                        </div>
 
-            }
-            
-           
-         </div>
-
-
-        <div class="col-3">
-
-            {
-                (props.index1 || props.index2 || props.index3 || props.index3|| props.index5)
-                &&  <div class="contents">
-                <p class="tableHead"> Table of contents</p>
-                <span><a  href="#content1" aria-label="content1" set:html={props.index1}></a></span>
-                <span><a href="#content2" aria-label="content2" set:html={props.index2}></a> </span>
-                <span><a href="#content2b" aria-label="content2b" set:html={props.index3}> </a></span>
-                <span><a href="#content2c" aria-label="content2c"  set:html={props.index4}></a> </span>
-                <span><a href="#content2d" aria-label="content2d" set:html={props.index5}> </a></span>
-               </div>
-
-            }
-           
-            <div class="author">
-                <p class="about"> About the Author</p>
-                <div class="d-flex justify-content-start align-items-center gap-3">
-                    <Image   class="img optimization d-none" src={authorImg} alt="" loading="lazy"/>
-                    <div >
-                        <span class="authName" set:html={props.aboutAuthorName}></span><br>
-                     <span class="authDesign" set:html={props.aboutAuthorDsgn}></span>
-                    </div>
-                </div>
-                          
-
-            </div>
-            
-            <div class="newsletter">
-                <p class="about">Subscribe to Newsletter</p>
-                <input class="inputCss" type="text" style="margin-bottom: 4%;" placeholder="Enter your Name...">
+                    }
+                    
                 
-                <input class="inputCss" type="email" placeholder="Enter your Email...">
-                <Image   src={submitBtn} class="btn  optimization"  alt="" loading="lazy"/>
+                </div>
+
+
+                <div class="col-3">
+
+                    {
+                        (props.index1 || props.index2 || props.index3 || props.index3|| props.index5)
+                        &&  <div class="contents">
+                        <p class="tableHead"> Table of contents</p>
+                        <span><a  href="#content1" aria-label="content1" set:html={props.index1}></a></span>
+                        <span><a href="#content2" aria-label="content2" set:html={props.index2}></a> </span>
+                        <span><a href="#content2b" aria-label="content2b" set:html={props.index3}> </a></span>
+                        <span><a href="#content2c" aria-label="content2c"  set:html={props.index4}></a> </span>
+                        <span><a href="#content2d" aria-label="content2d" set:html={props.index5}> </a></span>
+                    </div>
+
+                    }
+                
+                    <div class="author">
+                        <p class="about"> About the Author</p>
+                        <div class="d-flex justify-content-start align-items-center gap-3">
+                            <Image   class="img optimization d-none" src={authorImg} alt="" loading="lazy"/>
+                            <div >
+                                <span class="authName" set:html={props.aboutAuthorName}></span><br>
+                            <span class="authDesign" set:html={props.aboutAuthorDsgn}></span>
+                            </div>
+                        </div>
+                                
+
+                    </div>
+
+                
+                    
+                    <div class="newsletter">
+                        <p class="about">Subscribe to Newsletter</p>
+                        <form action="" id="subscribeFormNews">
+                            <input class="inputCss" name="name" type="text" style="margin-bottom: 4%;" placeholder="Enter your Name...">
+                            <input class="inputCss" name="email" type="email" placeholder="Enter your Email...">
+                            <button class="btn" type="submit" aria-label="subscribe to newsletter now">
+                                <Image   src={submitBtn} class="  optimization"  alt="" loading="lazy"/>
+                            </button>
+                        </form>
+                    </div>
+                    
+
+                </div>
+
+
             </div>
+
+            <div class="tags d-flex">
+                <span>Tags:</span>
+                <div class="tagsBtn">
+                    virtual reality
+                </div>
+                <div class="tagsBtn">
+                    Productivity
+                </div>
+                <div class="tagsBtn">
+                    Minimalist
+                </div>
+                <div class="tagsBtn">
+                    Quality
+                </div>
+                <div class="tagsBtn">
+                    conference
+                </div>
+                <div class="tagsBtn">
+                    Growth
+                </div>
+                <div class="tagsBtn">
+                    Security Token
+                </div>
+                <div class="tagsBtn">
+                    virtual reality
+                </div>
             
+            </div>
+        
+        
+        </section>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    import Swal from "sweetalert2";
+    document
+    .getElementById("subscribeFormNews")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
 
-        </div>
+      var formData = new FormData(event.target as HTMLFormElement);
+
+      var name = formData.get("name");
+      var email = formData.get("email");
+
+      const connectFormData = `
+    <style>
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #customers td,
+    #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #customers tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #customers tr:hover {
+        background-color: #ddd;
+    }
+
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+
+<body>
+    <table id="customers">
+
+        <tr>
+            <td style="font-weight:bold;">Name</td>
+            <td >${name}</td>
+        </tr>
+        <tr>
+          <td style="font-weight:bold;">Email</td>
+          <td >${email}</td>
+        </tr>
+        <tr>
+      </tr>
+    </table>
+</body>
+    `;
+
+      const formData2 = new FormData();
+      formData2.append("type", "subscribe-newsletter");
+      formData2.append("body", connectFormData);
+
+      fetch("https://iiclab-backend.vtour.tech/subscribe", {
+        method: "POST",
+        body: formData2,
+        redirect: "follow",
+      })
+        .then(function (response) {
+          if (response.ok) {
+            return response.text();
+          }
+          throw new Error("ERROR:" + response.status);
+        })
+        .then(function (data) {
+          Swal.fire({
+            title: "Welcome to the tribe!",
+            icon: "success",
+            text: `Your details have landed safely in our creative hub, so keep an eye on your inbox for a newsletter of all things MarTech!`,
+
+            confirmButtonText: "CLOSE",
+            customClass: {
+              confirmButton: "sweet-close-btn",
+              icon: "sweet-icon",
+              popup: "sweet-container",
+              title: "sweet-title",
+            },
+          });
+        })
+        .catch(function (error) {
+          console.error("error:", error);
+        });
+      (event.target as HTMLFormElement).reset();
+    });
+</script>
 
 
-    </div>
 
-    <div class="tags d-flex">
-        <span>Tags:</span>
-        <div class="tagsBtn">
-            virtual reality
-        </div>
-        <div class="tagsBtn">
-            Productivity
-        </div>
-        <div class="tagsBtn">
-            Minimalist
-        </div>
-        <div class="tagsBtn">
-            Quality
-        </div>
-        <div class="tagsBtn">
-            conference
-        </div>
-        <div class="tagsBtn">
-            Growth
-        </div>
-        <div class="tagsBtn">
-            Security Token
-        </div>
-        <div class="tagsBtn">
-            virtual reality
-        </div>
-      
-    </div>
-  
- 
-</section>
-}
-<style >
+<style>
 .optimization {
     height: auto;
   }
@@ -415,28 +515,51 @@ a{
 
 </style>
 
-<style is:global> 
+<style is:global>
+  .swal2-html-container {
+    font-family: "Anek Devanagari" !important;
+    font-size: 1.2vw !important;
+    font-weight: 500 !important;
+    line-height: 1 !important;
+    letter-spacing: 0em !important;
+    opacity: 50%;
+  }
+  .swal2-success-line-tip,
+  .swal2-success-line-long {
+    background: #1a1a1a !important;
+  }
 
-.logoWhite {
-    display: block !important;
+  .sweet-container {
+    border: 2px solid #1a1a1a !important;
   }
-  .logoBlack {
-    display: none;
+  .swal2-success-ring {
+    border: 6.64px solid #f7fecb !important;
   }
-    .contentTitle, .contentTitle *{
-    font-family: "Deutschlander";
-        text-transform: uppercase;
-        font-size: 4.2vw !important;
-        font-weight: 400 !important;
-        font-style: normal;
-        /* color: white; */
-        line-height: 0.85;
-        display: inline-block;
-        word-spacing: 0.12rem;
-    letter-spacing: 0.018rem;
-    margin: 0;
-}
-    
-    
+
+  .sweet-title {
+    font-family: Deutschlander !important;
+    font-size: 5vw !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    letter-spacing: 0px !important;
+    text-transform: uppercase !important;
+    color: #1a1a1a !important;
+  }
+  .sweet-close-btn {
+    color: #e5ff53 !important;
+    background: #1a1a1a !important;
+    width: 34vw !important;
+    font-family: Deutschlander !important;
+    font-size: 3.5vw !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    letter-spacing: 0px !important;
+    padding-top: 2% !important;
+    padding-bottom: 2% !important;
+    border-radius: 0px 0px 8px 8px !important;
+    margin-bottom: 0vw;
+  }
 </style>
+
+
 

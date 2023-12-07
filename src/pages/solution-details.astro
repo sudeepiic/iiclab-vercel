@@ -244,7 +244,7 @@ const props = Astro.props;
     </div>
     {
       props?.solutionsData?.fields?.relatedProjects && (
-        <div class="margins" style="padding-top:4%; ">
+        <div class="margins" style="padding-top:4%;  ">
           <div class="relatedProjectHeading">
             <span>
               Related <span style="color: #e5ff53">Projects</span>
@@ -255,7 +255,10 @@ const props = Astro.props;
     }
     {
       props?.solutionsData?.fields?.relatedProjects && (
-        <div class="overflow-hidden m-0" style="padding:0 9%;">
+        <div
+          class="overflow-hidden m-0"
+          style="padding:0 9%; border-bottom: 1.1px solid rgb(99,99,99);"
+        >
           <div
             id="stopOnHover"
             class="d-flex workImg-section-soln borders"
@@ -303,7 +306,7 @@ const props = Astro.props;
       )
     }
 
-    <div class="margins-navigations arrowDiv" style="padding-top:4%">
+    <div class="margins-navigations arrowDiv" style="padding-top:4%; ">
       <div class="row">
         <div class="col-6 arrows">
           <a href={props.previousSolutionSlug}>

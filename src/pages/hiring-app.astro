@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import applyNow from "../images/applyNow.png";
 import ps from "../images/ps.png";
 import submitArrow from "../images/submitArrow.png";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 //import { Image, Picture } from "@astrojs/image/components";
 
 const props = Astro.props;
@@ -81,7 +81,6 @@ console.log(props.jobProfile);
                 <input
                   type="text"
                   style="margin-bottom: 2.5%;"
-                
                   class="input form-control"
                   id="name"
                   name="name"
@@ -99,7 +98,6 @@ console.log(props.jobProfile);
                 <input
                   type="email"
                   style="margin-bottom: 2.5%;"
-                 
                   class="input form-control"
                   id="email"
                   name="email"
@@ -117,7 +115,6 @@ console.log(props.jobProfile);
                 <input
                   type="tel"
                   style="margin-bottom: 2.5%;"
-               
                   class="input form-control"
                   id="phoneNumber"
                   name="phoneNumber"
@@ -138,7 +135,6 @@ console.log(props.jobProfile);
                 <input
                   type="file"
                   style="margin-bottom: 2.5%; padding-top: 4.5%;"
-                
                   class="input form-control"
                   id="resume"
                   name="resume"
@@ -158,7 +154,6 @@ console.log(props.jobProfile);
                 <input
                   type="text"
                   style="margin-bottom: 2.5%;"
-                 
                   class="input form-control"
                   id="portfolioLink"
                   name="portfolioLink"
@@ -178,7 +173,6 @@ console.log(props.jobProfile);
                 <input
                   type="text"
                   style="margin-bottom: 2.5%;"
-               
                   class="input form-control"
                   id="linkedinUsername"
                   name="linkedinUsername"
@@ -197,7 +191,6 @@ console.log(props.jobProfile);
                 <input
                   type="text"
                   style="margin-bottom: 2.5%;"
-                
                   class="input form-control"
                   id="currentJobRole"
                   name="currentJobRole"
@@ -217,7 +210,6 @@ console.log(props.jobProfile);
                 <input
                   type="text"
                   style="margin-bottom: 2.5%;"
-                 
                   class="input form-control"
                   id="experience"
                   name="experience"
@@ -237,7 +229,6 @@ console.log(props.jobProfile);
                 <input
                   type="text"
                   style="margin-bottom: 2.5%;"
-             
                   class="input form-control"
                   id="noticePeriod"
                   name="noticePeriod"
@@ -255,7 +246,6 @@ console.log(props.jobProfile);
                 <input
                   type="text"
                   style="margin-bottom: 2.5%;"
-                  
                   class="input form-control"
                   id="expectedCTC"
                   name="expectedCTC"
@@ -269,7 +259,8 @@ console.log(props.jobProfile);
                 id="submit"
                 aria-label="submit"
               >
-                <Image src={submitArrow} class=" optimization" alt="" /> submit application
+                <Image src={submitArrow} class=" optimization" alt="" /> submit
+                application
               </button>
             </form>
           </div>
@@ -278,8 +269,11 @@ console.log(props.jobProfile);
     </Layout>
   )
 }
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
-  import swal from "sweetalert";
+  import Swal from "sweetalert2";
+
   document
     .getElementById("application")
     .addEventListener("submit", function (event) {
@@ -401,10 +395,23 @@ console.log(props.jobProfile);
           throw new Error("ERROR:" + response.status);
         })
         .then(function (data) {
-          console.log(data);
-          swal({
-            title: "Thank You!",
+          // swal({
+          //   title: "Thank Youpppp!",
+          //   icon: "success",
+          // });
+
+          Swal.fire({
+            title: "Thank you for applying",
             icon: "success",
+            text: `Your application has been successfully submitted. The team will review it and get back to you soon!`,
+
+            confirmButtonText: "CLOSE",
+            customClass: {
+              confirmButton: "sweet-close-btn",
+              icon: "sweet-icon",
+              popup: "sweet-container",
+              title: "sweet-title",
+            },
           });
         })
         .catch(function (error) {
@@ -577,5 +584,50 @@ console.log(props.jobProfile);
   input::-ms-input-placeholder {
     /* Microsoft Edge */
     color: #e5ff53 !important;
+  }
+</style>
+<style is:global>
+  .swal2-html-container {
+    font-family: "Anek Devanagari" !important;
+    font-size: 1.2vw !important;
+    font-weight: 500 !important;
+    line-height: 1 !important;
+    letter-spacing: 0em !important;
+    opacity: 50%;
+  }
+  .swal2-success-line-tip,
+  .swal2-success-line-long {
+    background: #1a1a1a !important;
+  }
+
+  .sweet-container {
+    border: 2px solid #1a1a1a !important;
+  }
+  .swal2-success-ring {
+    border: 6.64px solid #f7fecb !important;
+  }
+
+  .sweet-title {
+    font-family: Deutschlander !important;
+    font-size: 5vw !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    letter-spacing: 0px !important;
+    text-transform: uppercase !important;
+    color: #1a1a1a !important;
+  }
+  .sweet-close-btn {
+    color: #e5ff53 !important;
+    background: #1a1a1a !important;
+    width: 34vw !important;
+    font-family: Deutschlander !important;
+    font-size: 3.5vw !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    letter-spacing: 0px !important;
+    padding-top: 2% !important;
+    padding-bottom: 2% !important;
+    border-radius: 0px 0px 8px 8px !important;
+    margin-bottom: 0vw;
   }
 </style>

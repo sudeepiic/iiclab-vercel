@@ -195,8 +195,9 @@ import { Image } from "astro:assets";
   </section>
 </Layout>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-  import swal from "sweetalert";
+  import Swal from "sweetalert2";
   document
     .getElementById("connect")
     .addEventListener("submit", function (event) {
@@ -274,11 +275,18 @@ import { Image } from "astro:assets";
           throw new Error("ERROR:" + response.status);
         })
         .then(function (data) {
-          // console.log(data);
-          swal({
-            title: "Thank You!",
+          Swal.fire({
+            title: "thanks for contacting us",
             icon: "success",
-            // text: "Thank you for showing interest, We will get back to you shortly.",
+            text: `Our team will get back to you in the next 24-48 hours!`,
+
+            confirmButtonText: "CLOSE",
+            customClass: {
+              confirmButton: "sweet-close-btn",
+              icon: "sweet-icon",
+              popup: "sweet-container",
+              title: "sweet-title",
+            },
           });
         })
         .catch(function (error) {
@@ -640,6 +648,49 @@ import { Image } from "astro:assets";
   }
   .logoBlack {
     display: none;
+  }
+  .swal2-html-container {
+    font-family: "Anek Devanagari" !important;
+    font-size: 1.2vw !important;
+    font-weight: 500 !important;
+    line-height: 1 !important;
+    letter-spacing: 0em !important;
+    opacity: 50%;
+  }
+  .swal2-success-line-tip,
+  .swal2-success-line-long {
+    background: #1a1a1a !important;
+  }
+
+  .sweet-container {
+    border: 2px solid #1a1a1a !important;
+  }
+  .swal2-success-ring {
+    border: 6.64px solid #f7fecb !important;
+  }
+
+  .sweet-title {
+    font-family: Deutschlander !important;
+    font-size: 5vw !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    letter-spacing: 0px !important;
+    text-transform: uppercase !important;
+    color: #1a1a1a !important;
+  }
+  .sweet-close-btn {
+    color: #e5ff53 !important;
+    background: #1a1a1a !important;
+    width: 34vw !important;
+    font-family: Deutschlander !important;
+    font-size: 3.5vw !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    letter-spacing: 0px !important;
+    padding-top: 2% !important;
+    padding-bottom: 2% !important;
+    border-radius: 0px 0px 8px 8px !important;
+    margin-bottom: 0vw;
   }
   .turnBlack {
     background: transparent !important;

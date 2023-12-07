@@ -424,8 +424,10 @@ import { Image } from "astro:assets";
     <span class="bottomDiv"> &nbsp; Ink In Caps</span>
   </div>
 </section>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+  import Swal from "sweetalert2";
+
   document.getElementById("copyright").innerHTML =
     "&copy Copyright " + new Date().getFullYear();
   import { gsap } from "gsap";
@@ -510,6 +512,19 @@ import { Image } from "astro:assets";
         })
         .then(function (data) {
           console.log(data);
+          Swal.fire({
+            title: "Welcome to the tribe!",
+            icon: "success",
+            text: `Your details have landed safely in our creative hub, so keep an eye on your inbox for a newsletter of all things MarTech!`,
+
+            confirmButtonText: "CLOSE",
+            customClass: {
+              confirmButton: "sweet-close-btn",
+              icon: "sweet-icon",
+              popup: "sweet-container",
+              title: "sweet-title",
+            },
+          });
         })
         .catch(function (error) {
           console.error("error:", error);
@@ -793,6 +808,7 @@ import { Image } from "astro:assets";
     color: rgba(255, 255, 255, 1);
     font-size: calc(7px + 0.390625vw);
     padding-left: 1.5%;
+    width: 37%;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1060px) {
@@ -869,5 +885,51 @@ import { Image } from "astro:assets";
       padding: 0.1rem;
       margin-top: 0 !important;
     }
+  }
+</style>
+
+<style is:global>
+  .swal2-html-container {
+    font-family: "Anek Devanagari" !important;
+    font-size: 1.2vw !important;
+    font-weight: 500 !important;
+    line-height: 1 !important;
+    letter-spacing: 0em !important;
+    opacity: 50%;
+  }
+  .swal2-success-line-tip,
+  .swal2-success-line-long {
+    background: #1a1a1a !important;
+  }
+
+  .sweet-container {
+    border: 2px solid #1a1a1a !important;
+  }
+  .swal2-success-ring {
+    border: 6.64px solid #f7fecb !important;
+  }
+
+  .sweet-title {
+    font-family: Deutschlander !important;
+    font-size: 5vw !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    letter-spacing: 0px !important;
+    text-transform: uppercase !important;
+    color: #1a1a1a !important;
+  }
+  .sweet-close-btn {
+    color: #e5ff53 !important;
+    background: #1a1a1a !important;
+    width: 34vw !important;
+    font-family: Deutschlander !important;
+    font-size: 3.5vw !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    letter-spacing: 0px !important;
+    padding-top: 2% !important;
+    padding-bottom: 2% !important;
+    border-radius: 0px 0px 8px 8px !important;
+    margin-bottom: 0vw;
   }
 </style>
