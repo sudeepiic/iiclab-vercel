@@ -54,13 +54,13 @@ import vestate from "../images/vestate4-min.png";
       </div>
       <Image
         class="optimization swiper-button-prev"
-        src={awardsPrev}
+        src={awardsNext}
         loading="lazy"
         alt=""
       />
       <Image
         class="optimization swiper-button-next"
-        src={awardsNext}
+        src={awardsPrev}
         loading="lazy"
         alt=""
       />
@@ -137,7 +137,7 @@ import vestate from "../images/vestate4-min.png";
 
       top: unset !important;
       left: unset !important;
-      right: 17%;
+      right: 10%;
       bottom: 6vw;
     }
     .swiper-button-next {
@@ -148,7 +148,7 @@ import vestate from "../images/vestate4-min.png";
 
       top: unset !important;
       left: unset !important;
-      right: 10%;
+      right: 17%;
       bottom: 6vw;
     }
     .desktopSlider {
@@ -160,42 +160,42 @@ import vestate from "../images/vestate4-min.png";
   <script>
     import { Swiper, Navigation, Autoplay, EffectCreative } from "swiper";
     let x = 3;
-    // var swiper = new Swiper(".heroSwiper", {
-    //   modules: [Navigation, EffectCreative, Autoplay],
-    //   grabCursor: true,
-    //   centeredSlides: true,
-    //   slidesPerView: 1,
+    var swiper = new Swiper(".heroSwiper", {
+      modules: [Navigation, EffectCreative, Autoplay],
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 1,
 
-    //   spaceBetween: 30,
-    //   loop: true,
-    //   speed: 1700,
-    //   breakpoints: {
-    //     767: {
-    //       slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      speed: 1700,
+      breakpoints: {
+        767: {
+          slidesPerView: 1,
 
-    //       spaceBetween: 100,
-    //     },
-    //     250: {
-    //       slidesPerView: 1,
-    //       spaceBetween: 30,
-    //     },
-    //   },
+          spaceBetween: 30,
+        },
+        250: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+        },
+      },
 
-    //   autoplay: {
-    //     delay: 2000,
-    //   },
+      autoplay: {
+        delay: 2000,
+      },
 
-    //   navigation: {
-    //     nextEl: ".swiper-button-prev",
-    //     prevEl: ".swiper-button-next",
-    //   },
-    // });
+      navigation: {
+        nextEl: ".swiper-button-prev",
+        prevEl: ".swiper-button-next",
+      },
+    });
   </script>
 
   <section>
     <div class="d-flex">
       <a
-        href="products/v-retail"
+        href="/products/v-retail"
         id="v-retail"
         class="tabs"
         style="border-left: 0 !important;"
@@ -203,15 +203,20 @@ import vestate from "../images/vestate4-min.png";
       >
         v-retail
       </a>
-      <a href="products/v-verse" id="v-verse" class="tabs" aria-label="v-verse">
+      <a
+        href="/products/v-verse"
+        id="v-verse"
+        class="tabs"
+        aria-label="v-verse"
+      >
         v-verse
       </a>
 
-      <a href="products/v-tour" id="v-tour" class="tabs" aria-label="v-tour">
+      <a href="/products/v-tour" id="v-tour" class="tabs" aria-label="v-tour">
         V-Tour
       </a>
       <a
-        href="products/v-conference"
+        href="/products/v-conference"
         id="v-conference"
         class="tabs"
         aria-label="v-conference"
@@ -219,7 +224,7 @@ import vestate from "../images/vestate4-min.png";
         v-conference
       </a>
       <a
-        href="products/v-stages"
+        href="/products/v-stages"
         id="v-stages"
         class="tabs"
         aria-label="v-stages"
@@ -227,7 +232,7 @@ import vestate from "../images/vestate4-min.png";
         v-stages
       </a>
       <a
-        href="products/v-estate"
+        href="/products/v-estate"
         id="v-estate"
         class="tabs"
         aria-label="v-estate"

@@ -1,12 +1,12 @@
 ---
 import arrow from "../images/arrow.png";
-import BannerImg from "../images/bannerImg.jpg";
-import SquareGroupImg from "../images/SquareGroupSlider.jpg";
+import BannerImg from "../images/mumbai.jpg";
+import SquareGroupImg from "../images/lucknow.jpg";
 import hand2 from "../images/hand-2.png";
 import ovalArrow from "../images/ovalArrow.png";
 import vector from "../images/Vector.png";
 import diamond from "../images/diamond.png";
-import awardsNew from "../images/awardsNew.jpg";
+import allAward from "../images/Award-images-bannaer-2.png";
 import viewAllAwards from "../images/viewAllAwards.png";
 import vVerse from "../images/vVerse.png";
 import vTour from "../images/vTour.png";
@@ -315,14 +315,14 @@ console.log("Current URL is:   ", Astro.url);
           src={BannerImg}
           alt=""
           quality={100}
-          style="height:100%;width:100%; "
+          style="height:100%;width:100%;  "
           class="optimization"
         />
       </div>
       <div class="swiper-slide imgWidth position-relative">
         <Image
           quality={100}
-          style="height:100%;width:100%; "
+          style="height:100%;width:100%;  "
           class="optimization"
           src={SquareGroupImg}
           alt=""
@@ -335,12 +335,13 @@ console.log("Current URL is:   ", Astro.url);
 <style>
   .heroSwiper {
     overflow: hidden;
+    background-color: #1a1a1a;
   }
   .imgWidth img {
     max-height: 100% !important;
     width: 100%;
     object-fit: cover;
-    aspect-ratio: 5/3;
+    /* aspect-ratio: 5/3; */
   }
 </style>
 <script>
@@ -359,7 +360,7 @@ console.log("Current URL is:   ", Astro.url);
       767: {
         slidesPerView: 1,
 
-        spaceBetween: 30,
+        spaceBetween: 25,
       },
       250: {
         slidesPerView: 1,
@@ -997,7 +998,7 @@ console.log("Current URL is:   ", Astro.url);
                 </div>
               </div>
             </a>
-            <div class="d-flex">
+            <div class="d-flex m-auto ">
               <Image
                 src={
                   caseStudy?.fields?.clientLogos?.fields?.file.url || solnImg1
@@ -1044,7 +1045,7 @@ console.log("Current URL is:   ", Astro.url);
 
   <section style="margin-top:4%;">
     <Image
-      src={awardsNew}
+      src={allAward}
       alt=""
       class="optimization"
       style="height:100%;width:100%; "
@@ -1767,8 +1768,9 @@ console.log("Current URL is:   ", Astro.url);
     /* width: 7vw;
         height: 4vw; */
     /* border-radius: 4vw; */
-    width: 65%;
+    width: 60%;
     margin: auto;
+    padding-top: 4%;
   }
   .solutionAnchor {
     position: relative;

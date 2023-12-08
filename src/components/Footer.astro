@@ -181,13 +181,21 @@ import { Image } from "astro:assets";
   <div class="div3 row">
     <div class="col-md-3 footerContact">
       <p class="headings">Location</p>
-      <p class="address">
-        Lotus Corporate Park, E-Wing 802 Ram Mandir Lane, Jay Coach Junction,
-        off Western Express Highway Goregaon, Mumbai, 400063
-      </p>
-      <a href="tel:+91-83033 85888">+91-83033 85888</a><br />
+      <a
+        class=""
+        href="https://www.google.com/maps/place/Ink+In+Caps+IIC/@19.1452727,72.8534323,15z/data=!4m6!3m5!1s0x3be7b6f12d81c5a5:0xa441e0453e9b6c63!8m2!3d19.1452727!4d72.8534323!16s%2Fg%2F11cm_46d_f?entry=ttu"
+        target="_blank"
+      >
+        <p class="address yello-hover">
+          Lotus Corporate Park, E-Wing 802 Ram Mandir Lane, Jay Coach Junction,
+          off Western Express Highway Goregaon, Mumbai, 400063
+        </p>
+      </a>
+      <a class="yello-hover" href="tel:022-6849-3302" target="_blank"
+        >022-6849-3302</a
+      ><br />
 
-      <a href="mailto:mumbai@inkincaps.com" target="_blank"
+      <a class="yello-hover" href="mailto:mumbai@inkincaps.com" target="_blank"
         >mumbai@inkincaps.com</a
       >
     </div>
@@ -218,23 +226,24 @@ import { Image } from "astro:assets";
         Our IPs
       </p>
       <div class="spacings">
+        <a href="/products/v-estate" aria-label="v-estate">
+          <p style="color:grey">V-Estate</p></a
+        >
+        <a href="/products/v-retail" aria-label="v-retail"
+          ><p style="color:grey">V-Retail</p></a
+        >
         <a href="/products/v-verse" aria-label="v-verse">
           <p style="color:grey">V-Verse</p></a
         >
         <a href="/products/v-tour" aria-label="v-tour"
           ><p style="color:grey">V-Tour</p></a
         >
-        <a href="/products/v-retail" aria-label="v-retail"
-          ><p style="color:grey">V-Retail</p></a
-        >
+
         <a href="/products/v-stages" aria-label="v-stages"
           ><p style="color:grey">V-Stages</p></a
         >
         <a href="/products/v-conference" aria-label="v-conference">
           <p style="color:grey">V-Conference</p></a
-        >
-        <a href="/products/v-estate" aria-label="v-estate">
-          <p style="color:grey">V-Estate</p></a
         >
       </div>
     </div>
@@ -339,6 +348,12 @@ import { Image } from "astro:assets";
           ><Image class="icons optimization" src={whatsappLogo} alt="" /></a
         >
       </div>
+      <a
+        href="https://www.designrush.com/agency/profile/ink-in-caps"
+        target="_blank"
+      >
+        <p class="address yello-hover mt-2">Review INK IN CAPS on DesignRush</p>
+      </a>
     </div>
   </div>
 </section>
@@ -667,6 +682,10 @@ import { Image } from "astro:assets";
     min-width: 160px;
     font-family: anek devanagari;
   }
+  .yello-hover:hover {
+    /* color: #e5ff53 !important; */
+    text-decoration: underline;
+  }
   .footerHand img {
     width: 85%;
   }
@@ -917,6 +936,9 @@ import { Image } from "astro:assets";
     letter-spacing: 0px !important;
     text-transform: uppercase !important;
     color: #1a1a1a !important;
+  }
+  .swal2-actions {
+    width: 100% !important;
   }
   .sweet-close-btn {
     color: #e5ff53 !important;

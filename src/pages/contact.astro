@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import officeImg from "../images/officeImg.png";
+import officeImg from "../images/Work-at-IIC.png";
 import submitArrow from "../images/submitArrow.png";
 import contactHand from "../images/contactHand.png";
 import positionBtn from "../images/positionBtn.png";
@@ -60,17 +60,20 @@ import { Image } from "astro:assets";
           required
         />
       </div>
-      <span class="mobTitles">Message :</span>
+      <span class="text-white input-group" style="margin-left: 4%;"
+        >Message :</span
+      >
+      <span class="mobTitles">Message:</span>
 
       <textarea
-        class="textArea"
+        class="textArea mt-2"
         rows="7"
         cols="50"
         id="message"
         name="message"
+        placeholder="Your message..."
         required
       >
-        Message : &nbsp;
       </textarea>
       <button
         class="submitBtn btn"
@@ -87,9 +90,16 @@ import { Image } from "astro:assets";
   <section style="margin-top: 3%; margin-bottom: 3%;">
     <div class="row table margins">
       <div class="col-lg-2 col-md-2 col-sm-12 col1">ADDRESS</div>
+
       <div class="col-lg-10 col-md-10 col-sm-12 col2">
-        Lotus corporate park, E 802, Western Express Hwy, Geetanjali Railway
-        Colony, Laxmi Nagar, Goregaon, Mumbai, Maharashtra 400063
+        <a
+          class="address"
+          href="https://www.google.com/maps/place/Ink+In+Caps+IIC/@19.1452727,72.8534323,15z/data=!4m6!3m5!1s0x3be7b6f12d81c5a5:0xa441e0453e9b6c63!8m2!3d19.1452727!4d72.8534323!16s%2Fg%2F11cm_46d_f?entry=ttu"
+          target="_blank"
+        >
+          Lotus corporate park, E 802, Western Express Hwy, Geetanjali Railway
+          Colony, Laxmi Nagar, Goregaon, Mumbai, Maharashtra 400063
+        </a>
       </div>
     </div>
 
@@ -100,6 +110,12 @@ import { Image } from "astro:assets";
           class="innerDivs"
           style="border-right: 1.2px solid rgb(202, 199, 199)"
         >
+          <a href="tel:022-6849-3302" aria-label="phone">
+            <span>022-6849-3302</span>
+          </a>
+        </div>
+
+        <div style="padding-left: 1.5%;">
           <a
             href="mailto:mumbai@inkincaps.com"
             aria-label="mail"
@@ -107,21 +123,15 @@ import { Image } from "astro:assets";
             target="_blank"><span>mumbai@inkincaps.com</span></a
           >
         </div>
-
-        <div style="padding-left: 1.5%;">
-          <a href="tel:+91-83033 85888" aria-label="phone">
-            <span>+91-83033 85888</span>
-          </a>
-        </div>
       </div>
     </div>
 
-    <div class="row table margins">
+    <!-- <div class="row table margins">
       <div class="col-lg-2 col-md-2 col-sm-12 col1">TIMING</div>
       <div class="col-lg-10 col-md-10 col-sm-12 col2">
         Mon-Sat : 10:30 - 19:30 IST
       </div>
-    </div>
+    </div> -->
 
     <div class="row table margins" style="border-bottom: 0;">
       <div class="col-lg-2 col-md-2 col-sm-12 col1">SOCIAL</div>
@@ -157,12 +167,19 @@ import { Image } from "astro:assets";
             target="_blank"><span>Twitter</span></a
           >
         </div>
-
-        <div style="padding-left: 1.5%;">
+        <div class="innerDivs">
           <a
             href="https://www.facebook.com/inkincaps/"
             aria-label="facebook"
             target="_blank"><span>Facebook</span></a
+          >
+        </div>
+
+        <div style="padding-left: 1.5%;">
+          <a
+            href="https://www.threads.net/@inkincaps/"
+            aria-label="threads"
+            target="_blank"><span>Threads</span></a
           >
         </div>
       </div>
@@ -677,6 +694,10 @@ import { Image } from "astro:assets";
     letter-spacing: 0px !important;
     text-transform: uppercase !important;
     color: #1a1a1a !important;
+  }
+
+  .swal2-actions {
+    width: 100% !important;
   }
   .sweet-close-btn {
     color: #e5ff53 !important;

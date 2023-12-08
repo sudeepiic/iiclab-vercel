@@ -43,15 +43,16 @@ const props = Astro.props;
           <span class="explore" style="color: #e5ff53;">&nbsp; Industries</span>
         </h2>
       </span>
+
       <Image
         class="optimization swiper-button-prev"
-        src={awardsPrev}
+        src={awardsNext}
         loading="lazy"
         alt=""
       />
       <Image
         class="optimization swiper-button-next"
-        src={awardsNext}
+        src={awardsPrev}
         loading="lazy"
         alt=""
       />
@@ -118,7 +119,7 @@ const props = Astro.props;
 
       top: unset !important;
       left: unset !important;
-      right: 17%;
+      right: 10%;
       bottom: 6vw;
     }
     .swiper-button-next {
@@ -129,7 +130,7 @@ const props = Astro.props;
 
       top: unset !important;
       left: unset !important;
-      right: 10%;
+      right: 17%;
       bottom: 6vw;
     }
     .desktopSlider {
