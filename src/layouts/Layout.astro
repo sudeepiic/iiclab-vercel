@@ -22,6 +22,42 @@ console.log(description, "THE");
     <!--  -->
 
     <!--  -->
+
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRFEBYSZRP"
+    ></script>
+    <script>
+      //@ts-ignore
+      window.dataLayer = window.dataLayer || [];
+      //@ts-ignore
+      function gtag() {
+        //@ts-ignore
+        dataLayer.push(arguments);
+      }
+      //@ts-ignore
+      gtag("js", new Date());
+      //@ts-ignore
+      gtag("config", "G-SRFEBYSZRP");
+    </script>
+
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          //@ts-ignore
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        //@ts-ignore
+
+        j.async = true;
+        //@ts-ignore
+
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-NCBRF88V");
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width" />
@@ -131,6 +167,16 @@ console.log(description, "THE");
     <slot />
 
     <Footer />
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NCBRF88V"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
   </body>
 
   <script>
