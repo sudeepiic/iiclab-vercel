@@ -6,14 +6,14 @@ import twitterX from "../images/twitterX.png";
 import fbLogo from "../images/fbLogo.png";
 import threads from "../images/threads.png";
 import home from "../images/headerHome.jpg";
-import about from "../images/headerAbout.jpg";
-import solutions from "../images/headerSolutions.jpg";
+import about from "../images/about-us.png";
+import solutions from "../images/solution_1.png";
 import products from "../images/headerProducts.jpg";
-import work from "../images/headerWork.jpg";
-import awards from "../images/headerAwards.jpg";
-import articles from "../images/headerArticles.jpg";
-import lifeAtIIC from "../images/headerLifeIic.jpg";
-import career from "../images/headerCareer.jpg";
+import work from "../images/Our work_1.png";
+import awards from "../images/Award.png";
+import articles from "../images/headerArticles (1).jpg";
+import lifeAtIIC from "../images/Life-at-IIC.png";
+import career from "../images/cureer.jpg";
 import logoAnime from "../images/logoAnime.gif";
 import logoAnimeWhite from "../images/logoAnimeWhite.gif";
 
@@ -369,25 +369,39 @@ import { Image } from "astro:assets";
         <div class="row footer">
           <div class="col-4" style="text-align: left;">
             <p class="btmHeading">address</p>
-            <span
-              class="btmContent"
-              style="width: 80%; display:inline-block; line-height:2"
-              >Lotus Corporate Park, E-Wing 802 Ram Mandir Lane, Jay Coach
-              Junction, off Western Express Highway Goregaon, Mumbai, 400063</span
+            <a
+              class="address"
+              href="https://www.google.com/maps/place/Ink+In+Caps+IIC/@19.1452727,72.8534323,15z/data=!4m6!3m5!1s0x3be7b6f12d81c5a5:0xa441e0453e9b6c63!8m2!3d19.1452727!4d72.8534323!16s%2Fg%2F11cm_46d_f?entry=ttu"
+              target="_blank"
             >
+              <span
+                class="btmContent yello-hover"
+                style="width: 80%; display:inline-block; line-height:2"
+                >Lotus Corporate Park, E-Wing 802 Ram Mandir Lane, Jay Coach
+                Junction, off Western Express Highway Goregaon, Mumbai, 400063</span
+              >
+            </a>
           </div>
           <div class="col-4" style="text-align: left; padding-left: 7%;">
             <p class="btmHeading">contact</p>
             <p class="btmContent">
-              <a href="tel:+91-83033 85888" aria-label="contact number">
-                +91-83033 85888</a
+              <a
+                href="tel:022-6849-3302"
+                aria-label=" "
+                target="_blank"
+                class="yello-hover"
+              >
+                022-6849-3302</a
               >
             </p>
-            <p class="btmContent">
-              <a href="mailto:help@iiclab.com" aria-label="mail"
-                >help@iiclab.com</a
-              >
-            </p>
+            <a
+              href="mailto:mumbai@inkincaps.com"
+              aria-label="mail"
+              target="_blank"
+              class="yello-hover"
+            >
+              <p class="btmContent">mumbai@inkincaps.com</p>
+            </a>
           </div>
           <div
             class="col-4"
@@ -468,6 +482,11 @@ import { Image } from "astro:assets";
   </div>
 </div>
 <style>
+  .yello-hover:hover {
+    color: white !important;
+    opacity: 60%;
+    text-decoration: underline !important;
+  }
   .optimization {
     height: auto;
   }

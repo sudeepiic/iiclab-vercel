@@ -2,13 +2,13 @@
 import portfolio1 from "../images/portfolio1.jpg";
 import discussion from "../images/discussion.jpg";
 import unoGame from "../images/unoGame.jpg";
-import automobile from "../images/automobile.jpg"
-import retail from "../images/retail.jpg"
-import sports from "../images/sports.jpg"
-import realEstate from "../images/realEstate.jpg"
-import government from "../images/government.jpg"
+import automobile from "../images/automobile.jpg";
+import retail from "../images/retail.jpg";
+import sports from "../images/sports-2.jpeg";
+import realEstate from "../images/realEstate.jpg";
+import government from "../images/government.jpg";
 import conferenceRoomDiscussion from "../images/conferenceRoomDiscussion.jpg";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 ---
 
 <section class="margins titleSection">
@@ -52,7 +52,7 @@ import { Image } from 'astro:assets';
 </section>
 
 <style>
-  .optimization{
+  .optimization {
     height: auto;
   }
   .titleSection {
@@ -94,6 +94,9 @@ import { Image } from 'astro:assets';
   }
   .imgWidth img {
     width: 100%;
+    height: 100%;
+    object-fit: fill;
+    aspect-ratio: 4/2;
   }
 
   .animate-swiper {
@@ -117,7 +120,7 @@ import { Image } from 'astro:assets';
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1.2,
-    
+
     spaceBetween: 10,
     loop: true,
     speed: 1700,
