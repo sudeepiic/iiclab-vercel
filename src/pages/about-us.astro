@@ -32,7 +32,6 @@ for (let i = 0; i < numArrays; i++) {
   const splitArray = (images as []).slice(startIndex, endIndex);
   splitArrays.push(splitArray);
 }
-console.log(employeesDetails.items.fields, "yeahhhhh");
 ---
 
 <Layout title="About Us - Ink in Caps" seoTitle="about-us" description={null}>
@@ -798,8 +797,6 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
     employeeDataArray.push(element);
   });
 
-  console.log(employeeDataArray, "dataaaaaaaaa");
-
   const updatedEmployeeData = [];
 
   // filter for employees based on departments
@@ -810,14 +807,13 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
     myButton[i].addEventListener("click", function () {
       employeeDiv.innerText = "";
       const selectedDept = myButton[i].id.replaceAll(" ", "-").toLowerCase();
-      console.log(selectedDept, "deptttttttttt");
       employeeDataArray.forEach((employeeInfo) => {
         if (selectedDept == "all") {
           employeeDiv.appendChild(employeeInfo);
         } else if (employeeInfo.classList.contains(selectedDept))
           employeeDiv.appendChild(employeeInfo);
       });
-      console.log(updatedEmployeeData, "updated data");
+
       for (let j = 0; j < myButton.length; j++) {
         if (i === j) {
           myButton[j].classList.add("clicked");
@@ -825,7 +821,6 @@ console.log(employeesDetails.items.fields, "yeahhhhh");
           myButton[j].classList.remove("clicked");
         }
       }
-      console.log("update slides ", swiper);
 
       swiper.update();
       swiper.updateSlides();

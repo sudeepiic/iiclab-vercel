@@ -24,7 +24,7 @@ export interface CaseStudy {
   yellowCompTitle: Document;
   yellowCompText: Document;
 }
-// console.log(import.meta.env);
+
 export const contentfulClient = contentful.createClient({
   space: import.meta.env.PUBLIC_CONTENTFUL_SPACE_ID,
   accessToken: import.meta.env.DEV

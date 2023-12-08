@@ -459,9 +459,6 @@ import { Image } from "astro:assets";
       var name = formData.get("name");
       var email = formData.get("email");
 
-      console.log("Name", name);
-      console.log("email", email);
-
       const connectFormData = `
     <style>
     #customers {
@@ -526,7 +523,6 @@ import { Image } from "astro:assets";
           throw new Error("ERROR:" + response.status);
         })
         .then(function (data) {
-          console.log(data);
           Swal.fire({
             title: "Welcome to the tribe!",
             icon: "success",

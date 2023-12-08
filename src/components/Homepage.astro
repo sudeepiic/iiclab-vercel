@@ -54,7 +54,7 @@ for (let i = 0; i < numArrays; i++) {
   const splitArray = (images as []).slice(startIndex, endIndex);
   splitArrays.push(splitArray);
 }
-// console.log(splitArrays);
+
 const testimonials: any = await contentfulClient.getEntries<any>({
   content_type: "clientsTestimonials",
 });
@@ -66,7 +66,6 @@ const showreelVideo: any = await contentfulClient.getEntries<any>({
 });
 const bgVideo = bgVideoReel.items[0].fields.video.fields.file.url;
 const showreel = showreelVideo.items[0].fields.video.fields.file.url;
-console.log("Current URL is:   ", Astro.url);
 ---
 
 <section id="clickScreen" style="background-color: #1a1a1a;">
@@ -3421,7 +3420,7 @@ console.log("Current URL is:   ", Astro.url);
   import { gsap, TimelineMax } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
-  // console.log("i m here", gsap.context());
+
   const items = document.querySelectorAll(".trial");
 
   items.forEach((el) => {
@@ -3457,7 +3456,6 @@ console.log("Current URL is:   ", Astro.url);
     document
       .querySelector("#clickScreen")
       .addEventListener("click", function (ev: any) {
-        console.log("te", ev);
         if (!ev.srcElement.classList.contains("fullVideo")) {
           modal.show();
           if (bgVideoInstance.paused || bgVideoInstance.ended) {
@@ -3471,7 +3469,6 @@ console.log("Current URL is:   ", Astro.url);
           }
         }
       });
-    console.log("bgvideoclose", bgVideoClose);
     bgVideoClose.addEventListener("click", function () {
       bgVideoInstance.pause();
     });

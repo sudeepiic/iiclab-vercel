@@ -9,6 +9,8 @@ import { Image } from 'astro:assets';
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
 });
+         
+
 ---
 
 <Layout title="Our Portfolio | Abstract of work at Ink In Caps Mumbai" seoTitle="portfolio" description={null}>
@@ -46,7 +48,7 @@ const entries: any = await contentfulClient.getEntries<any>({
     <div style="padding:7% 0 ; " class="swiper mySwiper">
       <div class="swiper-wrapper">
         {
-          entries.items.map((caseStudy, index) => (
+          entries.items.sort((a, b) => a.fields.orderNumber - b.fields.orderNumber).map((caseStudy, index) => (
             <div class="swiper-slide">
               <div>
                 <a
@@ -76,6 +78,8 @@ const entries: any = await contentfulClient.getEntries<any>({
               </div>
             </div>
           ))
+
+
         }
       </div>
     </div>

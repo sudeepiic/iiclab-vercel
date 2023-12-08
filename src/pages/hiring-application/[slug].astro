@@ -8,9 +8,8 @@ export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries<any>({
     content_type: "jobProfiles",
   });
-  console.log(entries);
+
   const pages = entries.items.map((item) => {
-    console.log(item.fields.params, "profilesssssssss");
     const newSlug = (item.fields.params as string).replace(/\n/g, "");
 
     return {
