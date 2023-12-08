@@ -182,6 +182,13 @@ import { Image } from "astro:assets";
     line-height: 0.85;
     margin: 0;
   }
+
+  @media screen and (max-width: 767px) {
+    .blogHeadline,
+    .blogHeadline * {
+      font-size: 11vw;
+    }
+  }
   .turnBlack {
     background: transparent;
     position: fixed !important;

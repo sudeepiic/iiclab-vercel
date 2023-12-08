@@ -224,7 +224,7 @@ const entries: any = await contentfulClient.getEntries<any>({
                 <div class="col-9">
                   <span class="listGenre" set:html={blogs.fields.genreNew} />
                   <br />
-                  <span
+                  <div
                     class="listText"
                     set:html={documentToHtmlString(blogs.fields.blogTitle)}
                   />
@@ -721,6 +721,7 @@ const entries: any = await contentfulClient.getEntries<any>({
     font-weight: 600;
     font-size: 1.2vw;
     text-transform: capitalize;
+    margin-top:;
   }
 
   .blogImg {
@@ -792,6 +793,17 @@ const entries: any = await contentfulClient.getEntries<any>({
   .logoBlack {
     display: none;
   }
+
+  .listText,
+  .listText * {
+    /* width: 75%; */
+    font-family: "anek devanagari";
+    font-weight: 600;
+    font-size: 1.2vw;
+    text-transform: capitalize;
+    margin: 0;
+  }
+
   .headingStyle,
   .headingStyle * {
     font-family: "Deutschlander";
@@ -803,6 +815,17 @@ const entries: any = await contentfulClient.getEntries<any>({
     justify-content: center;
     align-items: center;
     margin: 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    .listText * {
+      font-size: 3.3vw !important;
+    }
+
+    .headingStyle,
+    .headingStyle * {
+      font-size: 5.7vw !important;
+    }
   }
   .turnBlack {
     background: #1a1a1a !important;

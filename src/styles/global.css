@@ -1,10 +1,23 @@
 body {
   background-color: #f6f7f0;
-  cursor: url("../images/eyeCursor.png"), auto;
+  cursor:
+    url("../images/eyeCursor.png") 25 35,
+    auto;
 }
+
 u {
   color: #e5ff53;
   text-decoration: none;
+}
+a:hover {
+  cursor:
+    url("../images/eyeCursor2.png") 25 35,
+    auto;
+}
+.btn:hover {
+  cursor:
+    url("../images/eyeCursor2.png") 25 35,
+    auto;
 }
 
 ::-webkit-scrollbar {
@@ -15,7 +28,9 @@ u {
   font-family: "Deutschlander";
   font-style: normal;
   font-weight: 400;
-  src: local("Deutschlander"), url("/Deutschlander.woff") format("woff");
+  src:
+    local("Deutschlander"),
+    url("/Deutschlander.woff") format("woff");
 }
 
 /* swiper misc css */

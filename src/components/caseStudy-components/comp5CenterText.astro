@@ -3,7 +3,6 @@ import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import type { Document } from "@contentful/rich-text-types";
 
-
 const props = Astro.props;
 ---
 
@@ -117,16 +116,31 @@ const props = Astro.props;
   }
 </style>
 
+<style is:global>
+  .middleHead-animate * {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 6.8vw;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 0.85;
+  }
+
+  @media screen and (max-width: 767px) {
+    .middleHead-animate * {
+      font-size: 12vw;
+    }
+  }
+</style>
+
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import Eases from "gsap";
   gsap.registerPlugin(ScrollTrigger);
-  (window as any).ScrollTrigger = ScrollTrigger
+  (window as any).ScrollTrigger = ScrollTrigger;
   setTimeout(() => {
-    
     ScrollTrigger.refresh();
-
   }, 2000);
 
   let tl = gsap.timeline();

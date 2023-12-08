@@ -4,7 +4,7 @@ import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import type { Document } from "@contentful/rich-text-types";
 //import { Image, Picture } from "@astrojs/image/components";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 const props = Astro.props;
 ---
@@ -21,7 +21,8 @@ const props = Astro.props;
             style="width: 7%; margin-right:1.2%"
             alt=""
           />
-          <span
+          <div
+            class="comp4Title"
             style="display: inline-block;"
             set:html={props.tiltImagesTitle}
           />
@@ -33,44 +34,46 @@ const props = Astro.props;
         />
       </div>
 
-      {props.tiltImage1 && 
-      <div class="margins images" style="margin-top: 2%; text-align: center;"> 
-        <Image
-          src={props.tiltImage1}
-          class="img1 img-animate optimization "
-           alt={"" + props.tiltImage1Alt}
-          width={1010} height={1150}
-        />
+      {props.tiltImage1 && (
+        <div class="margins images" style="margin-top: 2%; text-align: center;">
+          <Image
+            src={props.tiltImage1}
+            class="img1 img-animate optimization "
+            alt={"" + props.tiltImage1Alt}
+            width={1010}
+            height={1150}
+          />
 
-        
-        {props.tiltImage2.includes('mp4')? 
-      
-        <video id="myVideo"  class="img2 img2-animate optimization " style="aspect-ratio: 101/115;" width={1010} height={1150}   controls>
-            <source src={props.tiltImage2}     type="video/mp4" />
-           
-          </video>
-
-          :
+          {props.tiltImage2.includes("mp4") ? (
+            <video
+              id="myVideo"
+              class="img2 img2-animate optimization "
+              style="aspect-ratio: 101/115;"
+              width={1010}
+              height={1150}
+              controls
+            >
+              <source src={props.tiltImage2} type="video/mp4" />
+            </video>
+          ) : (
+            <Image
+              src={props.tiltImage2}
+              class="img2 img2-animate optimization "
+              alt={"" + props.tiltImage2Alt}
+              width={1010}
+              height={1150}
+            />
+          )}
 
           <Image
-          src={props.tiltImage2}
-          class="img2 img2-animate optimization "
-           alt={"" + props.tiltImage2Alt}
-          width={1010} height={1150}
-        />
-      
-      }
-
-      
-
-        <Image
-          src={props.tiltImage3}
-          class="img3 img-animate optimization "
-           alt={"" + props.tiltImage3Alt}
-          width={1010} height={1150}
-        />
+            src={props.tiltImage3}
+            class="img3 img-animate optimization "
+            alt={"" + props.tiltImage3Alt}
+            width={1010}
+            height={1150}
+          />
         </div>
-      }
+      )}
     </section>
   )
 }
@@ -151,16 +154,31 @@ const props = Astro.props;
   }
 </style>
 
+<style is:global>
+  .comp4Title * {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 6.8vw;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 0.85;
+  }
+
+  @media screen and (max-width: 767px) {
+    .comp4Title * {
+      font-size: 12vw;
+    }
+  }
+</style>
+
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import Eases from "gsap";
   gsap.registerPlugin(ScrollTrigger);
-  (window as any).ScrollTrigger = ScrollTrigger
+  (window as any).ScrollTrigger = ScrollTrigger;
   setTimeout(() => {
-    
     ScrollTrigger.refresh();
-
   }, 2000);
 
   let tl = gsap.timeline();

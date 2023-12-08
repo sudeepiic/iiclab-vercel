@@ -108,7 +108,7 @@ const entries: any = await contentfulClient.getEntries<any>({
           </div>
           <div class="row info">
             <div class="csName col-lg-6 col-md-6 col-sm-12">
-              <span
+              <div class="csNameGlobal"
                 set:html={documentToHtmlString(caseStudy.fields.heroTitleMain)}
               />
             </div>
@@ -345,6 +345,22 @@ const entries: any = await contentfulClient.getEntries<any>({
       opacity: 0.4;
       font-weight: 500;
       letter-spacing: 0.7px;
+    }
+  </style>
+
+  <style is:global>
+    .csName *{
+      font-family: "anek devanagari";
+      
+      font-size: 1.5vw;
+    }
+
+    @media screen and (max-width:767px) {
+      .csName *{
+     
+      
+      font-size: 3vw;
+    }
     }
   </style>
 

@@ -10,7 +10,7 @@ import converse from "../images/ac_1-min.png";
 import vestate from "../images/vestate4-min.png";
 ---
 
-<Layout title="Products" seoTitle="products">
+<Layout title="Products" seoTitle="products" description={null}>
   <section class="pb-align">
     <div class="heroSwiper position-relative">
       <div class="swiper-wrapper">
@@ -115,6 +115,7 @@ import vestate from "../images/vestate4-min.png";
       width: 100%;
       object-fit: cover;
       aspect-ratio: 5/3;
+      padding-top: 5%;
     }
 
     .swiper-slide {
@@ -130,7 +131,7 @@ import vestate from "../images/vestate4-min.png";
 
     .swiper-button-prev {
       width: 4%;
-      height: 9%;
+
       background-color: #ffffff;
       border-radius: 50%;
 
@@ -141,7 +142,7 @@ import vestate from "../images/vestate4-min.png";
     }
     .swiper-button-next {
       width: 4%;
-      height: 9%;
+
       background-color: #ffffff;
       border-radius: 50%;
 
@@ -378,7 +379,7 @@ import vestate from "../images/vestate4-min.png";
   .swiper-button-next,
   .sliderImg {
     width: 100%;
-    aspect-ratio: 23.5/9;
+    /* aspect-ratio: 23.5/9; */
     object-fit: cover;
   }
 
@@ -435,7 +436,7 @@ import vestate from "../images/vestate4-min.png";
   .sticky-header {
     position: fixed !important;
   }
-  .turnBlack {
+  /* .turnBlack {
     background: transparent !important;
     position: absolute;
     width: 100%;
@@ -452,12 +453,12 @@ import vestate from "../images/vestate4-min.png";
 
   /* connect button css */
 
-  .connect,
+  /* .connect,
   .circles {
     fill: #1a1a1a !important;
   }
   .oval {
-    fill: white !important;
+    fill: white !important;  
   }
 
   .tele {
@@ -469,5 +470,5 @@ import vestate from "../images/vestate4-min.png";
   .menu .s1,
   .menu .s2 {
     border: 1px solid white !important;
-  }
+  } */
 </style>

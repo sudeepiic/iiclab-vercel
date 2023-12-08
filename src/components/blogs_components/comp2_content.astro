@@ -516,6 +516,27 @@ a{
 </style>
 
 <style is:global>
+
+.contentTitle, .contentTitle *{
+    font-family: "Deutschlander";
+        text-transform: uppercase;
+        font-size: 4.2vw ;
+        font-weight: 400 !important;
+        font-style: normal;
+        /* color: white; */
+        line-height: 0.85;
+        display: inline-block;
+        word-spacing: 0.12rem;
+    letter-spacing: 0.018rem;
+  
+}
+
+@media screen and (max-width:767px) {
+    .contentTitle, .contentTitle *{
+        font-size: 8vw;
+        margin: 0 !important;
+    }
+}
   .swal2-html-container {
     font-family: "Anek Devanagari" !important;
     font-size: 1.2vw !important;

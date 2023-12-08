@@ -51,7 +51,7 @@ console.log(
 >
   <Title1
     heroTitle={documentToHtmlString(data.heroTitleMain)}
-    heroVideo={data?.heroVideo?.fields?.file.url}
+    heroVideo={data?.heroVideo?.fields?.file?.url}
     heroVideoAlt={data?.heroVideo && data?.heroVideo?.fields?.description}
     videoLink={data.videoLink}
     herobanner={data?.heroBanner?.fields?.file.url}
@@ -71,20 +71,24 @@ console.log(
     solutionInfo={documentToHtmlString(data.solutionInfo)}
     brandLogo1={data?.brandLogos && data?.brandLogos[0]?.fields?.file?.url}
     brandLogo1Alt={data?.brandLogos && data?.brandLogos[0]?.fields?.description}
-    brandLogo2={data?.brandLogos && data?.brandLogos[1]?.fields?.file?.url}
-    brandLogo2Alt={data?.brandLogos && data?.brandLogos[1]?.fields?.description}
+    brandLogo2={data?.brandLogos
+      ? data?.brandLogos[1]?.fields?.file?.url
+      : null}
+    brandLogo2Alt={data?.brandLogos
+      ? data?.brandLogos[1]?.fields?.description
+      : null}
     carousalImage1={data.carousalImages &&
-      data.carousalImages[0]?.fields?.file.url}
+      data.carousalImages[0]?.fields?.file?.url}
     carousalImage2={data.carousalImages &&
-      data.carousalImages[1]?.fields?.file.url}
+      data.carousalImages[1]?.fields?.file?.url}
     carousalImage3={data.carousalImages &&
-      data.carousalImages[2]?.fields?.file.url}
+      data.carousalImages[2]?.fields?.file?.url}
     carousalImage4={data.carousalImages &&
-      data.carousalImages[3]?.fields?.file.url}
+      data.carousalImages[3]?.fields?.file?.url}
     carousalImage5={data.carousalImages &&
-      data.carousalImages[4]?.fields?.file.url}
+      data.carousalImages[4]?.fields?.file?.url}
     carousalImage6={data.carousalImages &&
-      data.carousalImages[5]?.fields?.file.url}
+      data.carousalImages[5]?.fields?.file?.url}
     carousalImage1Alt={data.carousalImages &&
       data.carousalImages[0]?.fields?.description}
     carousalImage2Alt={data.carousalImages &&
