@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 
   const pages = entries.items.map((item) => {
     const newSlug = (item.fields.params as string).replace(/\n/g, "");
-    console.log(newSlug, "oooooooooooooooooooooooooooo");
+
     return {
       params: { slug: newSlug },
       props: {

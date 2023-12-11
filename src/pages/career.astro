@@ -843,8 +843,6 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
             profile.classList.add("d-block");
           } else if (!profile.classList.contains(myButton[i].id)) {
             profile.classList.add("d-none");
-
-            console.log(profile.classList.contains(myButton[i].id));
           }
         });
         for (let j = 0; j < myButton.length; j++) {
@@ -862,10 +860,8 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
 
     category.addEventListener("change", function () {
       const selectedOption = category.value?.replaceAll(" ", "-").toLowerCase();
-      // console.log("Selected option:", selectedOption);
 
       document.querySelectorAll(".profile-card").forEach((profile) => {
-        console.log(profile.classList);
         profile.classList.remove("d-none");
         if (selectedOption === "any") {
           profile.classList.add("d-block");
@@ -883,10 +879,8 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
       const selectedOption = categoryMob.value
         .replaceAll(" ", "-")
         .toLowerCase();
-      // console.log("Selected option:", selectedOption);
 
       document.querySelectorAll(".profile-card").forEach((profile) => {
-        console.log(profile.classList);
         profile.classList.remove("d-none");
         if (selectedOption === "any") {
           profile.classList.add("d-block");
@@ -903,10 +897,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
     locationMob.addEventListener("change", function () {
       const selectedOption = locationMob.value;
 
-      // console.log("Selected option:", selectedOption);
-
       document.querySelectorAll(".profile-card").forEach((profile) => {
-        console.log(profile.classList);
         profile.classList.remove("d-none");
         if (selectedOption === "Any") {
           profile.classList.add("d-block");
@@ -920,11 +911,9 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\nn\n", entries);
 
     const InputValue = document.getElementById("search");
     InputValue.addEventListener("change", function () {
-      // console.log(InputValue.value, "input value")
       const searchString = InputValue.value;
 
       document.querySelectorAll(".profile-card").forEach((profile) => {
-        console.log(profile.classList);
         profile.classList.remove("d-none");
         if (InputValue === "Any") {
           profile.classList.add("d-block");

@@ -1049,7 +1049,6 @@ const entries: any = await contentfulClient.getEntries<any>({
   const myButton = document.querySelectorAll(".exploreBtn");
 
   for (let i = 0; i < myButton.length; i++) {
-    console.log(myButton.length, "lennnngth");
     myButton[i].addEventListener("click", function () {
       const selectedGenre = myButton[i].id.replaceAll(" ", "-").toLowerCase();
       document.querySelectorAll(".list").forEach((blog) => {
@@ -1058,8 +1057,6 @@ const entries: any = await contentfulClient.getEntries<any>({
           blog.classList.add("d-inline-block;");
         } else if (!blog.classList.contains(selectedGenre)) {
           blog.classList.add("d-none");
-
-          console.log(blog.classList.contains(selectedGenre));
         }
       });
       for (let j = 0; j < myButton.length; j++) {
