@@ -36,8 +36,8 @@ console.log("Mid Content Img: ", props.midContentImg);
   <section id="section">
     <div style="margin-top: 5%;" id="immersive">
       <div class="margins heading">
-        <span set:html={props.title} />
-        <span style="color: #e5ff53;">.</span>
+        <h1 set:html={props.title} />
+        <h1 style="color: #e5ff53;">.</h1>
       </div>
       <div class="margins mt-3">
         <span class="titleText fs-2" set:html={props.subTitle} />
@@ -120,7 +120,7 @@ console.log("Mid Content Img: ", props.midContentImg);
       <div class="clientIconsDiv" style="margin-top:6%;">
         <span
           >Trusted by clients for <span
-            style="color: #e5ff53"
+            style="color: #e5ff53;"
             set:html={props.solutionName}
           /> services.</span
         >
@@ -557,7 +557,7 @@ console.log("Mid Content Img: ", props.midContentImg);
   .margins-navigations {
     padding: 0 15% 0 15%;
   }
-  .heading span {
+  .heading h1 {
     font-family: Deutschlander;
     text-transform: uppercase;
     font-size: 14.5vw;
@@ -565,6 +565,7 @@ console.log("Mid Content Img: ", props.midContentImg);
     font-style: normal;
     color: #fff;
     line-height: 0.8;
+    display: inline;
     /* line-height: 0.85; */
   }
 
@@ -620,6 +621,7 @@ console.log("Mid Content Img: ", props.midContentImg);
     color: #fff;
     line-height: 0.87;
     margin-bottom: 1% !important;
+    word-spacing: 0.2rem;
   }
   .relatedProjectHeading span {
     font-family: Deutschlander;
@@ -629,6 +631,7 @@ console.log("Mid Content Img: ", props.midContentImg);
     font-style: normal;
     color: #fff;
     line-height: 0.85;
+
     margin-bottom: 1% !important;
   }
   /* .col-10 {
@@ -743,7 +746,7 @@ console.log("Mid Content Img: ", props.midContentImg);
     #s1 {
       font-size: 3.3vw;
     }
-    .heading span {
+    .heading h1 {
       font-size: 17.5vw;
       line-height: 0.85;
     }

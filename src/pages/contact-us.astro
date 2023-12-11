@@ -8,14 +8,18 @@ import { Image } from "astro:assets";
 //import { Image, Picture } from "@astrojs/image/components";
 ---
 
-<Layout title="Contact the Ink in Caps" seoTitle="contact-us">
+<Layout
+  title="Contact the Ink in Caps"
+  seoTitle="contact-us"
+  description={null}
+>
   <section class="topSec">
     <div class="row topSecDiv">
       <div class="col-lg-5 col-md-5 col-sm-12 imgText">
         <div class="contact-animate">
-          <span class="title title1"> Ready for a</span>
+          <h1 class="title title1">Ready for a</h1>
 
-          <span class="title title2">Head Start?</span>
+          <h1 class="title title2">Head Start?</h1>
         </div>
         <div class="text-animate">
           <span class="text"
@@ -60,8 +64,9 @@ import { Image } from "astro:assets";
           required
         />
       </div>
-      <span class="text-white input-group" style="margin-left: 4%;"
-        >Message :</span
+      <span
+        class="text-white input-group"
+        style="margin-left: 4%; font-family: 'anek devanagari';">Message :</span
       >
       <span class="mobTitles">Message:</span>
 
@@ -484,9 +489,9 @@ import { Image } from "astro:assets";
     margin-right: 8%;
   }
   .title {
-    font-family: "Deutschlander";
+    font-family: "Deutschlander" !important;
     color: white;
-    font-size: 14.5vw;
+    font-size: 14.5vw !important;
     text-transform: uppercase;
     line-height: 0.85;
   }

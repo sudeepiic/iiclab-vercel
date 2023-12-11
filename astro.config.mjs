@@ -13,6 +13,7 @@ export default defineConfig({
     //     domains: ["images.ctfassets.net"],
     // }
     redirects: {
+        // '/about/': '/about-us/',
         '/blogs/Paradox-of-Being-a-Good-Boss': '/blogs/the-paradox-of-being-a-good-boss-radical-candor',
         '/blogs/network-will-decide-your-net-worth': '/blogs/your-network-will-decide-your-net-worth',
         '/blogs/mind-blocking-in-current-situation': '/blogs/how-are-people-coping-with-mind-blocking-in-the-current-situation',
@@ -22,7 +23,6 @@ export default defineConfig({
         '/blogs/I-met-Ravi-Shastri-LIVE-rom-my-couch': '/blogs/i-met-ravi-shastri-live-from-my-couch-the-incredible-new-wave-of-sports-consumption',
         '/blogs/The-Rise-of-VPS': '/blogs/the-rise-of-vps',
         '/blogs/most-common-mistakes-in-ui': '/blogs/most-common-mistakes-in-ui-ux-design',
-        '/blogs/is-3d-projection-mapping-the-future-or-the-present': '/blogs/is-3d-projection-mapping-the-future-or-the-present',
         '/blogs/interactive-wall': '/blogs/get-everyones-attention-with-these-amazing-experiences',
         '/blogs/five-virtual-reality-games-that-will-have-people-lining-up-to-try': '/blogs/four-virtual-reality-games-that-will-have-people-lining-up-to-try',
         '/blogs/how-companies-have-used-virtual-reality-to-wow-their-audiences': '/blogs/how-companies-have-used-virtual-reality-to-wow-their-audiences',

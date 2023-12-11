@@ -33,8 +33,9 @@ import ourProdImg from "../images/ourProdImg.jpg";
 import titleImg from "../images/airtelBannerImg.jpg";
 import titleImg2 from "../images/ajayBannerImg2.jpg";
 import backToTop from "../images/bttBtn.svg";
-
+import Footer from "./Footer.astro";
 import { Image } from "astro:assets";
+
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
 });
@@ -1513,6 +1514,8 @@ console.log("Current URL is:   ", Astro.url);
     </div>
   </div>
 </section>
+
+<!-- <HomeFooter /> -->
 
 <!-- video modal ends -->
 <style>

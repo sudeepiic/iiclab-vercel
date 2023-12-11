@@ -23,8 +23,8 @@ const props = Astro.props;
   <section id="section">
     <div style="margin-top: 2%;" id="immersive">
       <div class="margins heading">
-        <span set:html={props.Title} />
-        <span style="color: #e5ff53;">.</span>
+        <h1 set:html={props.Title} />
+        <h1 style="color: #e5ff53;">.</h1>
       </div>
       <div class="margin sanimate-swiper">
         <div class="mySwiper" style="padding:1.5% 0 0 0 ; ">
@@ -64,7 +64,7 @@ const props = Astro.props;
             <span>01</span>
           </div>
           <div class="col-10">
-            <p set:html={props.pointer1Heading} />
+            <h3 set:html={props.pointer1Heading} />
           </div>
           {
             props.pointer1Img && (
@@ -87,7 +87,7 @@ const props = Astro.props;
             <span>02</span>
           </div>
           <div class="col-10">
-            <p set:html={props.pointer2Heading} />
+            <h3 set:html={props.pointer2Heading} />
           </div>
           {
             props.pointer2Img && (
@@ -117,7 +117,7 @@ const props = Astro.props;
             <span>03</span>
           </div>
           <div class="col-10">
-            <p set:html={props.pointer3Heading} />
+            <h3 set:html={props.pointer3Heading} />
           </div>
           {
             props.pointer3Img && (
@@ -143,7 +143,7 @@ const props = Astro.props;
                 <span>04</span>
               </div>
               <div class="col-10">
-                <p set:html={props.pointer4Heading} />
+                <h3 set:html={props.pointer4Heading} />
               </div>
               {props.pointer4Img && (
                 <Image
@@ -172,7 +172,7 @@ const props = Astro.props;
                 <span>05</span>
               </div>
               <div class="col-10">
-                <p set:html={props.pointer5Heading} />
+                <h3 set:html={props.pointer5Heading} />
               </div>
               {props.pointer5Img && (
                 <Image
@@ -194,7 +194,7 @@ const props = Astro.props;
                   <span>05</span>
                 </div>
                 <div class="col-10">
-                  <p set:html={props.pointer6Heading} />
+                  <h3 set:html={props.pointer6Heading} />
                 </div>
                 {props.pointer6Img && (
                   <Image
@@ -224,7 +224,7 @@ const props = Astro.props;
                 <span>07</span>
               </div>
               <div class="col-10">
-                <p set:html={props.pointer7Heading} />
+                <h3 set:html={props.pointer7Heading} />
               </div>
               {props.pointer7Img && (
                 <Image
@@ -451,8 +451,9 @@ const props = Astro.props;
       margin-right: 5%;
       object-fit: cover;
     }
-    .col-10 p {
+    .col-10 h3 {
       font-size: 9vw !important;
+      margin: 0 !important;
     }
     .pointerText {
       font-size: 2.5vw !important;
@@ -493,8 +494,9 @@ const props = Astro.props;
   }
 
   @media screen and (max-width: 450px) {
-    .col-10 p {
+    .col-10 h3 {
       font-size: 10vw !important;
+      margin: 0 !important;
     }
     .col-10 span {
       font-size: 3.5vw !important;
@@ -518,13 +520,14 @@ const props = Astro.props;
   .margins-navigations {
     padding: 0 15% 0 15%;
   }
-  .heading span {
+  .heading h1 {
     font-family: Deutschlander;
     text-transform: uppercase;
     font-size: 13vw;
     font-weight: 400;
     font-style: normal;
     color: #fff;
+    display: inline-block;
     /* line-height: 0.85; */
   }
 
@@ -549,7 +552,7 @@ const props = Astro.props;
     height: fit-content;
   }
 
-  p {
+  h3 {
     font-family: Deutschlander;
     text-transform: uppercase;
     font-size: 5vw;

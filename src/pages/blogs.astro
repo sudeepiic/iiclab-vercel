@@ -20,7 +20,11 @@ const entries: any = await contentfulClient.getEntries<any>({
 // const { blogsData } = Astro.props;
 ---
 
-<Layout title="Our Blogs - Ink In Caps, Mumbai" seoTitle="blog-gallery">
+<Layout
+  title="Our Blogs - Ink In Caps, Mumbai"
+  seoTitle="blog-gallery"
+  description={null}
+>
   <section
     style="background-color: #1a1a1a; border-radius: 0 0 6vw 6vw; padding-bottom: 4%; padding-top: 10vh;"
   >
