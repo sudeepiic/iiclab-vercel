@@ -19,7 +19,6 @@ const entries: any = await contentfulClient.getEntries<any>({
 });
 
 const props = Astro.props;
-console.log(props, "virtual Reality Data");
 
 const showreel: any = await contentfulClient.getEntries<any>({
   content_type: "showreel",
