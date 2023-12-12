@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^2.2.1",
+    "@astrojs/sitemap": "^3.0.3",
     "@contentful/rich-text-html-renderer": "^16.0.3",
     "astro": "^3.0.12",
     "astro-seo-metadata": "^0.6.0",
