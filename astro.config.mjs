@@ -9,6 +9,7 @@ export default defineConfig({
   // }
   redirects: {
     // '/about/': '/about-us/',
+
     "/about-us/": "/about/",
     "/contact": "/contact-us/",
     "/hiring/": "/career/",
@@ -72,5 +73,16 @@ export default defineConfig({
     "/portfolio/PKL": "/portfolio/star-sports-pkl-experiential-marketing",
     "/portfolio/defence-Expo":
       "/portfolio/government-of-india-defence-expo-2021-virtual-event",
+    "/solutions": "/services",
+    "/solutions/virtual-reality": "/services/virtual-reality",
+    "/solutions/projection-mapping": "/services/projection-mapping",
+    "/solutions/interactive-wall": "/services/interactive-wall",
+    "/solutions/immersive-technology": "/services/immersive-technology",
+    "/solutions/interactive-solution": "/services/interactive-solution",
+    "/solutions/mobile-and-web": "/services/mobile-and-web",
+    "/solutions/content-development": "/services/content-development",
+    "/solutions/experiential-marketing": "/services/experiential-marketing",
+    "/solutions/strategy-and-design": "/services/strategy-and-design",
+
   },
 });

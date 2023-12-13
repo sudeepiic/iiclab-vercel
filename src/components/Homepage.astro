@@ -72,7 +72,15 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
 <section id="clickScreen" style="background-color: #1a1a1a;">
   <div class="position-relative video-container">
     <div>
-      <video id="autoVideo" class="bgImage" style="" autoplay loop muted>
+      <video
+        id="autoVideo"
+        class="bgImage"
+        style=""
+        autoplay
+        playsinline
+        loop
+        muted
+      >
         <source src={bgVideo} type="video/mp4" />
       </video>
       <div class=""></div>
@@ -352,10 +360,11 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1,
-
+    initialSlide: 1,
     spaceBetween: 0,
     loop: true,
     speed: 2700,
+    delay: 2000,
     breakpoints: {
       767: {
         slidesPerView: 1,
@@ -381,7 +390,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
   });
 </script>
 
-<section style="overflow-x: hidden;">
+<section style=" position: relative">
   <div class="snapTagline">
     <div class="container">
       <div
@@ -440,7 +449,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
   </section>
 
   <section class="wrapper">
-    <div class="giants" style="margin-left: 12%; overflow:hidden">
+    <div class="giants" style="margin-left: 12%; overflow-y:'scroll'">
       <tr>
         {
           (splitArrays[0] as any).map((clients, index) => (
@@ -2086,8 +2095,11 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
     line-height: 1;
     color: #1a1a1a;
   }
+
   #main5 {
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: inline-flex;
   }
   #main5 #div1 img {
@@ -2424,6 +2436,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
     }
     .bgImage {
       aspect-ratio: 3/4;
+      object-fit: unset;
     }
 
     .title {
@@ -3375,7 +3388,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
     position: fixed !important;
   }
   .turnBlack {
-    background: transparent !important;
+    background: rgb(0 0 0 / 20%) !important;
     position: absolute;
     width: 100%;
     margin-bottom: 1%;
