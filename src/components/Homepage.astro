@@ -390,7 +390,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
   });
 </script>
 
-<section style=" position: relative">
+<section style=" position: relative; overflow-x: hidden;">
   <div class="snapTagline">
     <div class="container">
       <div
@@ -440,7 +440,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
               src={ovalArrow}
               alt=""
               class="optimization"
-              style="width:24%;  "
+              style="width:24%; "
             />
           </a>
         </div>
@@ -449,7 +449,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
   </section>
 
   <section class="wrapper">
-    <div class="giants" style="margin-left: 12%; overflow-y:'scroll'">
+    <div class="giants" style="margin-left: 12%; overflow:hidden;">
       <tr>
         {
           (splitArrays[0] as any).map((clients, index) => (
@@ -2097,10 +2097,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
   }
 
   #main5 {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: inline-flex;
+    position: relative;
   }
   #main5 #div1 img {
     height: 11vw;
