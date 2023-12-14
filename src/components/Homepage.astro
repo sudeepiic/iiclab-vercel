@@ -426,28 +426,28 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
       </div>
     </div>
   </div>
-
-  <section id="knowMore">
-    <div id="main5" class="d-flex">
-      <div class="giantHolder-animate" id="div1">
-        <Image class="optimization" src={hand2} alt="" />
-      </div>
-      <div id="div2">
-        <div class="d-flex align-items-center gap-3">
-          <span class="text-nowrap">Giants Trust Us.</span>
-          <a href="/portfolio">
-            <Image
-              src={ovalArrow}
-              alt=""
-              class="optimization"
-              style="width:24%; "
-            />
-          </a>
+  <div class="giants-wrapper">
+    <section id="knowMore">
+      <div id="main5" class="d-flex">
+        <div class="giantHolder-animate" id="div1">
+          <Image class="optimization" src={hand2} alt="" />
+        </div>
+        <div id="div2">
+          <div class="d-flex align-items-center gap-3">
+            <span class="text-nowrap">Giants Trust Us.</span>
+            <a href="/portfolio">
+              <Image
+                src={ovalArrow}
+                alt=""
+                class="optimization"
+                style="width:24%; "
+              />
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
+    </section>
+  </div>
   <section class="wrapper">
     <div class="giants" style="margin-left: 12%; overflow:hidden;">
       <tr>
@@ -2099,6 +2099,9 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
   #main5 {
     position: relative;
   }
+  .giants-wrapper {
+    z-index: 1;
+  }
   #main5 #div1 img {
     height: 11vw;
     width: auto;
@@ -2300,7 +2303,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
     width: 75%;
     text-align: center;
     position: relative;
-    margin-left: 10%;
+    margin: auto;
     padding: 4% 0%;
     aspect-ratio: 5/1;
     display: flex;
@@ -3361,9 +3364,14 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
       transform: scaleX(1);
     }
   }
+  .flipOnHover {
+    perspective: 1000px; /* Add perspective to create a 3D effect */
+    transform-style: preserve-3d; /* Ensure that child elements maintain their 3D position */
+    transition: transform 0.6s ease 0.2s;
+  }
+
   .flipOnHover:hover {
-    animation: flip 0.8s ease 0.25s;
-    /* animation-fill-mode: forwards; */
+    transform: rotateY(360deg);
   }
 
   .letter {
@@ -3559,7 +3567,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
         end: "top top",
         snap: 1,
 
-        toggleActions: "play complete reverse reset",
+        toggleActions: "play complete none reset",
       },
     });
     gsap.to(".giantHolder-animate", {
@@ -3571,7 +3579,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
         start: "top 10%",
         end: "bottom top",
 
-        toggleActions: "restart complete reverse reset",
+        toggleActions: "restart complete none reset",
       },
     });
     gsap.from(".clientArray1", 1, {
@@ -3583,7 +3591,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
 
         start: "top 70%",
         end: "bottom top",
-        toggleActions: "restart complete reverse reset",
+        toggleActions: "restart complete none reset",
       },
     });
     gsap.from(".clientArray2", 1, {
@@ -3594,7 +3602,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
         trigger: ".clientArray2",
         start: "top 80%",
         end: "bottom top",
-        toggleActions: "restart complete reverse reset",
+        toggleActions: "restart complete none reset",
       },
     });
     gsap.from(".clientArray3", 1, {
@@ -3605,7 +3613,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
         trigger: ".clientArray3",
         start: "top 90%",
         end: "bottom top",
-        toggleActions: "restart complete reverse reset",
+        toggleActions: "restart complete none reset",
       },
     });
     gsap.from(".clientArray4", 1, {
@@ -3616,7 +3624,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
         trigger: ".clientArray4",
         start: "top 100%",
         end: "bottom top",
-        toggleActions: "restart complete reverse reset",
+        toggleActions: "restart complete none reset",
       },
     });
 
@@ -3836,6 +3844,25 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
         toggleActions: "restart complete reverse reset",
       },
     });
+    if (window.innerWidth > 992) {
+      gsap.from(".giants-wrapper", {
+        scrollTrigger: {
+          trigger: ".giants-wrapper",
+          start: "top -10%",
+          end: "bottom -70%",
+          pin: true,
+          pinSpacing: false,
+          onEnter: () => {
+            document.getElementById("main5").style.background = "#f6f7f0";
+            document.getElementById("main5").style.height = "28vh";
+          },
+          onLeaveBack: () => {
+            document.getElementById("main5").style.background = "none";
+            document.getElementById("main5").style.height = "auto";
+          },
+        },
+      });
+    }
   });
 
   mm.add("(max-width: 767px)", () => {
@@ -3865,7 +3892,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
         trigger: "#main5",
         start: "top 55%",
         end: "top top",
-        toggleActions: "play complete reverse reset",
+        toggleActions: "play complete none reset",
       },
     });
     gsap.to(".giantHolder-animate", {
@@ -3876,7 +3903,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
         trigger: ".giantHolder-animate",
         start: "top 10%",
         end: "bottom top",
-        toggleActions: "restart complete reverse reset",
+        toggleActions: "restart complete none reset",
       },
     });
     gsap.from(".clientArray1", 1, {
@@ -3887,7 +3914,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
         trigger: ".clientArray1",
         start: "top 60%",
         end: "top top",
-        toggleActions: "restart complete reverse reset",
+        toggleActions: "restart complete none reset",
       },
     });
     gsap.from(".clientArray2", 1, {
@@ -3898,7 +3925,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
         trigger: ".clientArray2",
         start: "top 60%",
         end: "top top",
-        toggleActions: "restart complete reverse reset",
+        toggleActions: "restart complete none reset",
       },
     });
     gsap.from(".clientArray3", 1, {
@@ -3909,7 +3936,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
         trigger: ".clientArray3",
         start: "top 60%",
         end: "top top",
-        toggleActions: "restart complete reverse reset",
+        toggleActions: "restart complete none reset",
       },
     });
     gsap.from(".clientArray4", 1, {
@@ -3920,7 +3947,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
         trigger: ".clientArray4",
         start: "top 60%",
         end: "top top",
-        toggleActions: "restart complete reverse reset",
+        toggleActions: "restart complete none reset",
       },
     });
 
