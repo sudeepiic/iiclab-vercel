@@ -83,6 +83,7 @@ export default defineConfig({
     "/solutions/content-development": "/services/content-development",
     "/solutions/experiential-marketing": "/services/experiential-marketing",
     "/solutions/strategy-and-design": "/services/strategy-and-design",
-
+    "/blogs/4-virtual-reality-games-that-will-have-people-lining-up-to-try":
+      "/blogs/four-virtual-reality-games-that-will-have-people-lining-up-to-try",
   },
 });
