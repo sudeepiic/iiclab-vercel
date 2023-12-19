@@ -803,14 +803,9 @@ import { Image } from "astro:assets";
   import Eases from "gsap";
   gsap.registerPlugin(ScrollTrigger);
 
-  import {
-    Swiper,
-    Navigation,
-    Pagination,
-    EffectCoverflow,
-    Autoplay,
-    EffectCreative,
-  } from "swiper";
+  import { Swiper } from "swiper";
+  //@ts-ignore it should fix later when swiper fixes its types
+  import { Navigation, Autoplay, EffectCreative } from "swiper/modules";
   let x = 3;
   var swiper = new Swiper(".mySwiper", {
     modules: [Navigation, EffectCreative, Autoplay],
@@ -823,7 +818,7 @@ import { Image } from "astro:assets";
 
     autoplay: {
       delay: 3000,
-      duration: 2,
+     
     },
     breakpoints: {
       767: {

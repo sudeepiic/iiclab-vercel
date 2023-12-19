@@ -130,6 +130,18 @@ const entries: any = await contentfulClient.getEntries<any>({
                 class="capitalize"
                 set:html={caseStudy.fields?.whichTechnology2}
               />
+                 
+
+              }
+              {
+                caseStudy.fields?.activationType && 
+
+                <span>, &nbsp;</span>
+              <div
+                class="capitalize"
+                set:html={caseStudy.fields?.activationType}
+              />
+                 
 
               }
              
@@ -374,13 +386,10 @@ const entries: any = await contentfulClient.getEntries<any>({
     import Eases from "gsap";
     gsap.registerPlugin(ScrollTrigger);
     import {
-      Swiper,
-      Navigation,
-      Pagination,
-      EffectCoverflow,
-      Autoplay,
-      EffectCreative,
+      Swiper
     } from "swiper";
+      //@ts-ignore it should fix later when swiper fixes its types
+   import { Navigation,Autoplay,EffectCreative,} from "swiper/modules";
     let x = 3;
     var swiper = new Swiper(".mySwiper", {
       modules: [Navigation, Autoplay, EffectCreative],

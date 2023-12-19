@@ -861,14 +861,9 @@ console.log("Mid Content Img: ", props.midContentImg);
     });
   });
   // swiper
-  import {
-    Swiper,
-    Navigation,
-    Pagination,
-    EffectCoverflow,
-    Autoplay,
-    EffectCreative,
-  } from "swiper";
+  import { Swiper } from "swiper";
+  //@ts-ignore it should fix later when swiper fixes its types
+  import { Navigation, Autoplay, EffectCreative } from "swiper/modules";
   let x = 3;
   var swiper = new Swiper(".mySwiper", {
     modules: [Navigation, EffectCreative, Autoplay],

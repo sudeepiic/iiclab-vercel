@@ -734,7 +734,9 @@ for (let i = 0; i < numArrays; i++) {
   gsap.registerPlugin(ScrollTrigger);
 
   //  swiper js
-  import { Swiper, Navigation, EffectCreative } from "swiper";
+  import Swiper from 'swiper';
+  //@ts-ignore it should fix later when swiper fixes its types
+import { Navigation, EffectCreative } from 'swiper/modules';
   let x = 3;
 
   var swiper = new Swiper(".mySwiper", {
@@ -743,9 +745,10 @@ for (let i = 0; i < numArrays; i++) {
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 3,
+    initialSlide: 0,
     spaceBetween: 20,
     loop: true,
-    loopedSlides: 2,
+    loopAdditionalSlides: 2,
     navigation: {
       nextEl: ".swiper-next",
       prevEl: ".swiper-prev",

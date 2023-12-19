@@ -30,7 +30,7 @@ import { gsap } from "gsap";
 
 ---
 
-<Layout title="Ink In Caps: Celebrating Our Awards in MarTech" seoTitle="awards">
+<Layout title="Ink In Caps: Celebrating Our Awards in MarTech" seoTitle="awards" description={null}>
   <section style="padding-top: 3.5%;">
     <div class="row mob stickyDiv">
       <div class="col-lg-8 col-md-8 col-sm-12" style="overflow: hidden;">
@@ -1464,13 +1464,10 @@ import { gsap } from "gsap";
     });
 
     import {
-      Swiper,
-      Navigation,
-      Pagination,
-      EffectCoverflow,
-      Autoplay,
-      EffectCreative,
+      Swiper
     } from "swiper";
+      //@ts-ignore it should fix later when swiper fixes its types
+   import { Navigation,EffectCreative,} from "swiper/modules";
     let x = 3;
     var swiper = new Swiper(".swiper", {
       modules: [Navigation, EffectCreative],

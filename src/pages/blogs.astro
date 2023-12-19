@@ -877,12 +877,9 @@ const entries: any = await contentfulClient.getEntries<any>({
 
   import {
     Swiper,
-    Navigation,
-    Pagination,
-    EffectCoverflow,
-    Autoplay,
-    EffectCreative,
   } from "swiper";
+    //@ts-ignore it should fix later when swiper fixes its types
+    import { Navigation,EffectCreative,} from "swiper/modules";
   let x = 3;
   var swiper = new Swiper(".mySwiper", {
     modules: [Navigation, EffectCreative],

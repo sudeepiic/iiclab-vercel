@@ -619,14 +619,10 @@ const props = Astro.props;
 
 <script> 
 import {
-    Swiper,
-    Navigation,
-    Pagination,
-    EffectCoverflow,
-    Autoplay,
-    EffectCreative,
+    Swiper
   } from "swiper";
-
+   //@ts-ignore it should fix later when swiper fixes its types
+   import { Navigation,Pagination,EffectCoverflow,Autoplay,EffectCreative,} from "swiper/modules";
   let y = 3;
   var swiper2 = new Swiper(".swiper", {
     modules: [Navigation, EffectCreative],

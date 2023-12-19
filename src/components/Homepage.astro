@@ -353,18 +353,19 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
   }
 </style>
 <script>
-  import { Swiper, Navigation, Autoplay, EffectCreative } from "swiper";
+  import { Swiper } from "swiper";
+    //@ts-ignore it should fix later when swiper fixes its types
+  import {Navigation, Autoplay, EffectCreative } from "swiper/modules";
   let x = 3;
   var swiper = new Swiper(".heroSwiper", {
     modules: [Navigation, EffectCreative, Autoplay],
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1,
-    initialSlide: 1,
+    initialSlide: 0,
     spaceBetween: 0,
     loop: true,
-    speed: 2700,
-    delay: 2000,
+    speed: 2000,
     breakpoints: {
       767: {
         slidesPerView: 1,
@@ -384,7 +385,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
     },
 
     autoplay: {
-      delay: 1000,
+      delay: 4000,
       // disableOnInteraction: true,
     },
   });
@@ -3352,27 +3353,25 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
   /* flip animation css */
 
   @keyframes flip {
-    0% {
-      transform: scaleX(0);
-    }
-
-    50% {
-      transform: scaleX(-1);
-    }
-
-    100% {
-      transform: scaleX(1);
-    }
-  }
-  .flipOnHover {
-    perspective: 1000px; /* Add perspective to create a 3D effect */
-    transform-style: preserve-3d; /* Ensure that child elements maintain their 3D position */
-    transition: transform 0.6s ease 0.2s;
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
   }
 
-  .flipOnHover:hover {
-    transform: rotateY(360deg);
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
   }
+}
+
+.flipOnHover {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease 0.2s;
+}
+
+.flipOnHover:hover {
+  animation: flip 0.6s ease 0.2s forwards;
+}
+
 
   .letter {
     display: inline-block !important;
@@ -4135,13 +4134,10 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
   });
 
   import {
-    Swiper,
-    Navigation,
-    Pagination,
-    EffectCoverflow,
-    Autoplay,
-    EffectCreative,
+    Swiper
   } from "swiper";
+  //@ts-ignore it should fix later when swiper fixes its types
+  import { Navigation,Pagination,EffectCoverflow,Autoplay,EffectCreative,} from "swiper/modules";
   let x = 3;
   var swiper = new Swiper(".mySwiper", {
     modules: [Navigation, EffectCreative, Pagination],
