@@ -8,10 +8,11 @@ export interface Props {
   title: string;
   seoTitle: string;
   description: string;
+  schema:any;
 }
 const siteMetadata: any = await Astro.glob("../metadata.json");
 
-const { title, seoTitle, description } = Astro.props;
+const { title, seoTitle, description,schema } = Astro.props;
 ---
 
 <!doctype html>
@@ -38,7 +39,9 @@ const { title, seoTitle, description } = Astro.props;
       //@ts-ignore
       gtag("config", "G-SRFEBYSZRP");
     </script>
-
+<script type="application/ld+json" set:html={schema}>
+   
+  </script>
     <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];

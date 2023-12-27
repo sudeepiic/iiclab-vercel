@@ -33,6 +33,7 @@ const { blogsData } = Astro.props;
 <Layout
   title={blogsData?.fields?.metaTitle ? blogsData?.fields?.metaTitle : "Blog"}
   seoTitle={blogsData.fields.params}
+  schema={blogsData.fields.schema}
   description={blogsData?.fields?.description
     ? blogsData?.fields?.description
     : "Blog"}
