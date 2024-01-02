@@ -8,7 +8,7 @@ export interface Props {
   title: string;
   seoTitle: string;
   description: string;
-  schema:any;
+  schema?:any;
 }
 const siteMetadata: any = await Astro.glob("../metadata.json");
 
