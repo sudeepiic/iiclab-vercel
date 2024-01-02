@@ -39,7 +39,7 @@ const { title, seoTitle, description,schema } = Astro.props;
       //@ts-ignore
       gtag("config", "G-SRFEBYSZRP");
     </script>
-<script type="application/ld+json" set:html={schema}>
+<script type="application/ld+json" set:html={JSON.stringify(schema)}>
    
   </script>
     <script>
