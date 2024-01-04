@@ -74,12 +74,12 @@ import { Image } from "astro:assets";
             <a class="navTabs" href="/" aria-label="home">Home</a>
           </li>
           <li class="paddingsLi">
-            <a class="navTabs" href="/portfolio/" aria-label="our work"
+            <a class="navTabs" href="/portfolio" aria-label="our work"
               >Our Work</a
             >
           </li>
           <li>
-            <a class="navTabs" href="/services/" aria-label="solutions"
+            <a class="navTabs" href="/services" aria-label="solutions"
               >Solutions</a
             >
           </li>
@@ -228,7 +228,7 @@ import { Image } from "astro:assets";
             </a>
 
             <a
-              href="/about/"
+              href="/about"
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="about us"
             >
@@ -243,7 +243,7 @@ import { Image } from "astro:assets";
               <span class="titles">About us</span>
             </a>
             <a
-              href="/services/"
+              href="/services"
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="solutions"
             >
@@ -276,7 +276,7 @@ import { Image } from "astro:assets";
               <span class="titles">products</span>
             </a>
             <a
-              href="/portfolio/"
+              href="/portfolio"
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="our work"
             >
@@ -291,7 +291,7 @@ import { Image } from "astro:assets";
               <span class="titles">Our work</span>
             </a>
             <a
-              href="/awards/"
+              href="/awards"
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="awards"
             >
@@ -309,7 +309,7 @@ import { Image } from "astro:assets";
 
           <div class="row header-animate3">
             <a
-              href="/blogs/"
+              href="/blogs"
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="articles"
             >
@@ -324,7 +324,7 @@ import { Image } from "astro:assets";
               <span class="titles">articles</span>
             </a>
             <a
-              href="/life-at-iic/"
+              href="/life-at-iic"
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="life at iic"
             >
@@ -339,7 +339,7 @@ import { Image } from "astro:assets";
               <span class="titles">Life at iic</span>
             </a>
             <a
-              href="/career/"
+              href="/career"
               class="col-lg-4 col-md-4 col-sm-12 mobView header-img"
               aria-label="career"
             >
@@ -354,7 +354,7 @@ import { Image } from "astro:assets";
               <span class="titles">Career</span>
             </a>
             <a
-              href="/use-cases/"
+              href="/use-cases"
               class="mobView onlyMob"
               style="border-bottom: 0 "
               aria-label="use cases"
@@ -389,7 +389,7 @@ import { Image } from "astro:assets";
                 target="_blank"
                 class="yello-hover"
               >
-              022-6849-3501</a
+                022-6849-3501</a
               >
             </p>
             <a
@@ -892,21 +892,21 @@ import { Image } from "astro:assets";
     top: 100%;
   }
   @keyframes pulsate {
-  0% {
-    transform: scale(0.6, 0.6);
-    opacity: 0;
+    0% {
+      transform: scale(0.6, 0.6);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1, 1);
+      opacity: 0;
+    }
   }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1, 1);
-    opacity: 0;
-  }
-}
 
   .circles {
-    animation: pulsate 2s infinite; 
+    animation: pulsate 2s infinite;
     transform-origin: center;
     transform-box: fill-box;
   }

@@ -10,9 +10,9 @@ export default defineConfig({
   redirects: {
     // '/about/': '/about-us/',
 
-    "/about-us/": "/about/",
-    "/contact": "/contact-us/",
-    "/hiring/": "/career/",
+    "/about-us/": "/about",
+    "/contact": "/contact-us",
+    "/hiring/": "/career",
     "/blogs/Paradox-of-Being-a-Good-Boss":
       "/blogs/the-paradox-of-being-a-good-boss-radical-candor",
     "/blogs/network-will-decide-your-net-worth":
