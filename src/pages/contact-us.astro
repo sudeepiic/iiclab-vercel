@@ -66,7 +66,8 @@ import { Image } from "astro:assets";
       </div>
       <span
         class="text-white input-group"
-        style="margin-left: 3%; font-family: 'anek devanagari';font-size:1.3vw">Message :</span
+        style="margin-left: 3%; font-family: 'anek devanagari';font-size:1.3vw"
+        >Message :</span
       >
       <span class="mobTitles">Message:</span>
 
@@ -87,7 +88,7 @@ import { Image } from "astro:assets";
         aria-label="submit"
       >
         <Image src={submitArrow} class="optimization" loading="lazy" alt="" />
-         submit
+        submit
       </button>
     </form>
   </section>
@@ -285,7 +286,7 @@ import { Image } from "astro:assets";
       formData2.append("type", "contact-us");
       formData2.append("body", connectFormData);
 
-      fetch("https://iiclab-backend.vtour.tech/mail", {
+      fetch("https://backend.iiclab.com/mail", {
         method: "POST",
         body: formData2,
         redirect: "follow",

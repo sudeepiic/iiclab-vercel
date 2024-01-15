@@ -298,7 +298,7 @@ Object.keys(props)
       formData2.append("type", "subscribe-newsletter");
       formData2.append("body", connectFormData);
 
-      fetch("https://iiclab-backend.vtour.tech/subscribe", {
+      fetch('https://backend.iiclab.com/mail', {
         method: "POST",
         body: formData2,
         redirect: "follow",
