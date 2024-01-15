@@ -20,7 +20,11 @@ console.log(props.jobProfile);
           <div class="bgImage">
             <div class="title">
               <>
-                <span set:html={props.jobProfile} />
+                <span
+                  id="jobProfile"
+                  class={props.jobProfile?.replaceAll(" ", "-").toLowerCase()}
+                  set:html={props?.jobProfile}
+                />
                 <br />
               </>
               <a href="#apply">
@@ -273,7 +277,10 @@ console.log(props.jobProfile);
 
 <script>
   import Swal from "sweetalert2";
-
+  const jobProfileName = document
+    .getElementById("jobProfile")
+    .className.replaceAll("-", " ");
+  // console.log("Job Profile: ", jobProfile);
   document
     .getElementById("application")
     .addEventListener("submit", function (event) {
@@ -327,7 +334,7 @@ console.log(props.jobProfile);
     <table id="customers">
       <tr>
             <td style="font-weight:bold;">For Job Profile</td>
-            <td set:html={props.jobProfile}></td>
+            <td >${jobProfileName}</td>
         </tr>
 
         <tr>
@@ -344,17 +351,17 @@ console.log(props.jobProfile);
       </tr>
 
       <tr>
-      <td style="font-weight:bold;">Phone</td>
+      <td style="font-weight:bold;">Portfolio</td>
       <td >${portfolioLink}</td>
     </tr>
 
     <tr>
-    <td style="font-weight:bold;">Education</td>
-    <td ><a href='${linkedinUsername}'></a></td>
+    <td style="font-weight:bold;">LinkedIn</td>
+    <td ><a href='${linkedinUsername}'>${linkedinUsername}</a></td>
   </tr>
 
         <tr>
-        <td style="font-weight:bold;">Designation</td>
+        <td style="font-weight:bold;">Current Job Role: </td>
         <td > ${currentJobRole}</td>
       </tr>
      
@@ -363,13 +370,13 @@ console.log(props.jobProfile);
     <td >${experience}</td>
   </tr>
     <tr>
-    <td style="font-weight:bold;">Education</td>
-    <td ><a href='${noticePeriod}'></a></td>
+    <td style="font-weight:bold;">Notice Period</td>
+    <td >${noticePeriod}</td>
   </tr>
 
   <tr>
-    <td style="font-weight:bold;">Education</td>
-    <td ><a href='${expectedCTC}'></a></td>
+    <td style="font-weight:bold;">Expected CTC</td>
+    <td >${expectedCTC}</td>
   </tr>
 
  
@@ -415,6 +422,19 @@ console.log(props.jobProfile);
         })
         .catch(function (error) {
           console.error("error:", error);
+          Swal.fire({
+            title: "Something went wrong",
+            icon: "error",
+            text: `Please try again`,
+
+            confirmButtonText: "CLOSE",
+            customClass: {
+              confirmButton: "sweet-close-btn",
+              icon: "sweet-icon",
+              popup: "sweet-container",
+              title: "sweet-title",
+            },
+          });
         });
       (event.target as HTMLFormElement).reset();
     });
