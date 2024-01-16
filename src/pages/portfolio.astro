@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import portfolio1 from "../images/portfolio1.jpg";
-import featuredWorksbtn from "../images/featuredWorksbtn.jpg";
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 //import { Image, Picture } from "@astrojs/image/components";
@@ -427,11 +426,6 @@ const entries: any = await contentfulClient.getEntries<any>({
       autoplay: {
         delay: 2000,
       },
-
-      // pagination: {
-      //   el: ".swiper-pagination",
-      //   clickable: true,
-      // },
     });
 
     let tl = gsap.timeline();

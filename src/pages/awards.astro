@@ -16,9 +16,9 @@ import edcaGold from "../images/edcaGold.png";
 import digies2 from "../images/digies2.png";
 import wowImage2 from "../images/wowImage2.png";
 import { contentfulClient } from "../lib/contentful";
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+
 import { Image } from 'astro:assets';
-//import { Image, Picture } from "@astrojs/image/components";
+
 
 const awardsData: any = await contentfulClient.getEntries<any>({
   content_type: "awards",

@@ -7,13 +7,10 @@ import opportunity from "../images/opportunity.png";
 import closeEye from "../images/closeEye.png";
 import locIcon from "../images/locIcon.png";
 import clock from "../images/clock.png";
-import ps from "../images/ps.png";
 import conferenceRoomDiscussion from "../images/conferenceRoomDiscussion.jpg";
 import { Image } from "astro:assets";
 import { contentfulClient } from "../lib/contentful";
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-// import jobProfiles from "../components/jobProfiles";
-//import { Image, Picture } from "@astrojs/image/components";
+
 
 import viewOpenPositions from "../images/ViewOpenPosition.png";
 const entries: any = await contentfulClient.getEntries<any>({
