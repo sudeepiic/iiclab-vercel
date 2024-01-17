@@ -16,9 +16,7 @@ import { Image } from "astro:assets";
 //import { Image, Picture } from "@astrojs/image/components";
 ---
 
-<section
-  style="background-color: #1a1a1a;  padding-left: 9%; padding-top: 3%; overflow: hidden"
->
+<section class="footer-wrapper1">
   <div class="div1 footerReady">
     <Image
       class="diamond optimization"
@@ -685,7 +683,12 @@ import { Image } from "astro:assets";
   .footerHand img {
     width: 85%;
   }
-
+  .footer-wrapper1 {
+    background-color: #1a1a1a;
+    padding-left: 9%;
+    padding-top: 3%;
+    overflow: hidden;
+  }
   @media only screen and (max-width: 767px) {
     .footerHand img {
       width: 100%;

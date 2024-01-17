@@ -936,7 +936,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
       lass="yellowCircle"> <p class="view">VIEW ALL</p></div>  -->
     </div>
 
-    <div id="stopOnHover" class="d-flex workImg-section" style="width:100%;  ">
+    <div id="stopOnHover" class="workImg-section">
       {
         entries.items.map((caseStudy, index) => (
           <div class="hoverImg position-relative  ">
@@ -1846,7 +1846,10 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
     z-index: -1;
     transition: transform 0.6s;
   }
-
+  .workImg-section {
+    display: flex;
+    width: 100%;
+  }
   table .hover:hover::after {
     transform: scaleY(1);
   }
@@ -3390,7 +3393,6 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
 </style>
 
 <script>
-  
   const movingImgs = document.querySelectorAll(".hoverImg");
   import { gsap, TimelineMax } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -3409,10 +3411,8 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
     el.addEventListener("mouseleave", (e) => {
       gsap.to(image, { autoAlpha: 0, scale: 0 });
     });
-
   });
 
- 
   declare var bootstrap: any;
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -3973,7 +3973,6 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
           scrub: true,
         },
       })
-     
 
       .from(".testimAnime-section", 1, {
         scrollTrigger: {
