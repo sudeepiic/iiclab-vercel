@@ -25,9 +25,14 @@ const props = Astro.props;
   <div class="blankDiv">
     <div class="midDiv">
       <div class="border-box"><span>Technology</span></div>
-      <div class="border-box" style="margin-left: 1%;">
-        <span set:html={props.whichTechnology} />
-      </div>
+
+      {
+        props.whichTechnology && (
+          <div class="border-box" style="margin-left: 1%;">
+            <span set:html={props.whichTechnology} />
+          </div>
+        )
+      }
       {
         props.whichTechnology2 && (
           <div class="border-box" style="margin-left: 1%;">
@@ -421,11 +426,13 @@ const props = Astro.props;
   .bannerImg {
     width: 100%;
     border-radius: 14vw 0 0 0;
+    aspect-ratio: 3/4;
+    object-fit: cover;
   }
   .brandsDiv {
     display: flex;
     justify-content: center;
-
+    align-items: center;
     margin-top: 3%;
   }
   .img img {

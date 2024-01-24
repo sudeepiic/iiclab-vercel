@@ -14,7 +14,7 @@ const props = Astro.props;
   Object.keys(props).length && (
     <section style="padding-top: 3%; background-color: #1a1a1a;">
       <div class="margins imgs">
-        {props.parallelImg1 &&
+        {props.parallelImg1 && props.parallelImg2 &&
         <Image
           class="img1  optimization"
           src={props.parallelImg1}

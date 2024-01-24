@@ -31,6 +31,18 @@ const props = Astro.props;
           <div class="caption-animate">
             <span class="caption" set:html={props.midImgCaption} />
           </div>
+          {props.midContentImg2 && (
+            <div class="midcontent-img2">
+              <Image
+                src={props.midContentImg2}
+                alt={"" + props.midContentImgAlt2}
+                loading="lazy"
+                width={1200}
+                height={700}
+                class="optimization"
+              />
+            </div>
+          )}
         </div>
 
         <div
@@ -136,6 +148,10 @@ const props = Astro.props;
     position: relative;
   }
 
+  .midcontent-img2 {
+    position: relative;
+  }
+
   .midcontent-img::before {
     content: "";
     position: absolute;
@@ -150,6 +166,23 @@ const props = Astro.props;
     overflow: hidden;
   }
   .midcontent-imgAnimation:before {
+    left: 100%;
+  }
+
+  .midcontent-img2::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #1a1a1a;
+    z-index: 998;
+    transition: left 1s ease;
+
+    overflow: hidden;
+  }
+  .midcontent-imgAnimation2:before {
     left: 100%;
   }
 
@@ -215,6 +248,15 @@ const props = Astro.props;
         start: "top 70%",
         end: "bottom top",
         toggleClass: "midcontent-imgAnimation",
+        scrub: true,
+      },
+    })
+    .from(".midcontent-img2", {
+      scrollTrigger: {
+        trigger: ".midcontent-img2",
+        start: "top 80%",
+        end: "bottom top",
+        toggleClass: "midcontent-imgAnimation2",
         scrub: true,
       },
     })

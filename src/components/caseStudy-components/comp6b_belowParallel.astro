@@ -1,30 +1,133 @@
 ---
 import yellowDiamond from "../../images/yellowDiamond.png";
 //import { Image, Picture } from "@astrojs/image/components";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 const props = Astro.props;
 ---
 
 <section style="padding-top: 4%; background-color: #1a1a1a;">
   <div class="margins row">
-    <div class="col-5 heading">
-      <Image
-        alt="pointer"
-        class="optimization"
-        src={yellowDiamond}
-        loading="lazy"
-        style="width: 7%; padding-bottom:2%;"
-      />
-      <span
-        style="display: inline-block;"
-        set:html={props.belowParallelImgTitle}
-      />
+    <div class="col-lg-5 col-md-5 col-sm-12 heading">
+      <div class="d-flex mainHeading">
+        <Image
+          alt="pointer"
+          class="optimization"
+          src={yellowDiamond}
+          loading="lazy"
+          style="width: 7%; padding-bottom:2%;"
+        />
+        <div
+          class="headingTitle"
+          style=" display: inline-block;"
+          set:html={props.belowParallelImgTitle}
+        />
+      </div>
+      {
+        props.belowParallel1img && (
+          <div class="midcontent-img">
+            <Image
+              src={props.belowParallel1img}
+              alt={""}
+              loading="lazy"
+              width={1200}
+              height={700}
+              class="optimization"
+            />
+          </div>
+        )
+      }
     </div>
 
-    <div class="col-6 para" set:html={props.belowParallelImgText} />
+    <div
+      class="col-lg-6 col-md-6 col-sm-12 para"
+      set:html={props.belowParallelImgText}
+    />
   </div>
 </section>
+
+{
+  (props.belowParallelImgTitle2 || props.belowParallelImgTitle2) && (
+    <section style="padding-top: 4%; background-color: #1a1a1a;">
+      <div class="margins row">
+        <div class="col-lg-5 col-md-5 col-sm-12 heading">
+          <Image
+            alt="pointer"
+            class="optimization"
+            src={yellowDiamond}
+            loading="lazy"
+            style="width: 7%; padding-bottom:2%;"
+          />
+          <div
+            class="headingTitle"
+            style="display: inline-block;"
+            set:html={props.belowParallelImgTitle2}
+          />
+          {props.belowParallel2img && (
+            <div class="midcontent-img">
+              <Image
+                src={props.belowParallel2img}
+                alt={""}
+                loading="lazy"
+                width={1200}
+                height={700}
+                class="optimization"
+              />
+            </div>
+          )}
+        </div>
+
+        <div
+          class="col-lg-6 col-md-6 col-sm-12 para"
+          set:html={props.belowParallelImgText2}
+        />
+      </div>
+    </section>
+  )
+}
+
+{
+  (props.lastSectionTitle || props.lastSectionText) && (
+    <section style="padding-top: 4%; background-color: #1a1a1a;">
+      <div class="margins row">
+        <div class="col-lg-5 col-md-5 col-sm-12 heading">
+          <div
+            class="headingTitle"
+            style="display: inline-block;"
+            set:html={props.lastSectionTitle}
+          />
+
+          <div class="midcontent-img">
+            <Image
+              src={props.lastSectionImg1}
+              alt={""}
+              loading="lazy"
+              width={1200}
+              height={700}
+              class="optimization"
+            />
+          </div>
+
+          <div class="midcontent-img">
+            <Image
+              src={props.lastSectionImg2}
+              alt={""}
+              loading="lazy"
+              width={1200}
+              height={700}
+              class="optimization"
+            />
+          </div>
+        </div>
+
+        <div
+          class="col-lg-6 col-md-6 col-sm-12 para"
+          set:html={props.lastSectionText}
+        />
+      </div>
+    </section>
+  )
+}
 
 <style>
   .optimization {
@@ -43,8 +146,8 @@ const props = Astro.props;
     font-style: normal;
     line-height: 0.85;
     color: white;
-    display: flex;
-    align-items: baseline;
+    /* display: flex;
+    align-items: baseline; */
     gap: 1rem;
   }
 
@@ -55,6 +158,7 @@ const props = Astro.props;
     font-family: "anek devanagari";
     font-size: 1.2vw;
     word-spacing: 0.6ch;
+    margin: auto;
   }
 
   .para u,
@@ -62,4 +166,102 @@ const props = Astro.props;
     color: #e5ff53;
     text-decoration: underline;
   }
+  .midcontent-img {
+    position: relative;
+  }
+  .midcontent-img img {
+    width: 70%;
+    border-radius: 3vw 0 3vw 0;
+    object-fit: cover;
+    height: 13.3vw;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border: 1.3px solid white;
+  }
+  .mainHeading {
+    align-items: baseline;
+    gap: 2%;
+  }
+
+  /* .midcontent-img::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #1a1a1a;
+    z-index: 998;
+    transition: left 1s ease;
+
+    overflow: hidden;
+  }
+  .midcontent-imgAnimation:before {
+    left: 100%;
+  } */
+
+  @media screen and (max-width: 767px) {
+    .para {
+      font-size: 2.7vw;
+      margin-left: 0 !important;
+      margin-top: 3% !important;
+    }
+    .headingTitle {
+      font-size: 12vw !important ;
+    }
+    /* .heading {
+      align-items: center;
+    } */
+    .heading img {
+      width: 5% !important;
+    }
+    .midcontent-img img {
+      width: 100% !important;
+      height: auto;
+      border-radius: 9vw 0 9vw 0;
+    }
+    .mainHeading {
+      align-items: center;
+      gap: 2%;
+    }
+  }
 </style>
+
+<style is:global>
+  .headingTitle * {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 6.8vw;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 0.85;
+
+    gap: 1rem;
+  }
+  @media screen and (max-width: 767px) {
+    .headingTitle * {
+      font-size: 12vw !important ;
+    }
+  }
+</style>
+
+<!-- <script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import Eases from "gsap";
+  gsap.registerPlugin(ScrollTrigger);
+  (window as any).ScrollTrigger = ScrollTrigger;
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 2000);
+  let tl = gsap.timeline();
+  tl.from(".midcontent-img", {
+    scrollTrigger: {
+      trigger: ".midcontent-img",
+      start: "top 70%",
+      end: "bottom top",
+      toggleClass: "midcontent-imgAnimation",
+      scrub: true,
+    },
+  });
+</script> -->

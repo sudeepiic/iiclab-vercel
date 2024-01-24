@@ -37,10 +37,10 @@ const { caseStudyData } = Astro.props;
 const data = caseStudyData.fields;
 
 console.log(
-  "\n\n\n\n\n\n\n\n\n\n\n\nn\n",
+  "123456789",
   // data?.heroVideo?.fields?.file.url,
   // data?.heroVideo?.fields?.file.url,
-  data.videoLink
+  data.belowParallel1img
 );
 ---
 
@@ -58,7 +58,7 @@ console.log(
     herobannerAlt={data?.heroBanner?.fields?.description}
     whichTechnology={data?.whichTechnology}
     whichTechnology2={data?.whichTechnology2}
-    activationType ={data?.activationType}
+    activationType={data?.activationType}
     herobanner2={data?.heroBanner2?.fields?.file.url}
     herobanner2Alt={data?.heroBanner2?.fields?.description}
     heroContent={documentToHtmlString(data.heroContent)}
@@ -125,6 +125,12 @@ console.log(
         midContentImgAlt={
           data.midContentImg && data.midContentImg[0]?.fields?.description
         }
+        midContentImg2={
+          data.midContentImg[1] && data.midContentImg[1]?.fields?.file.url
+        }
+        midContentImg2Alt={
+          data.midContentImg[1] && data.midContentImg[1]?.fields?.description
+        }
         midImgCaption={documentToHtmlString(data.midImgCaption)}
         midContentText={documentToHtmlString(data.midContentText)}
       />
@@ -180,6 +186,24 @@ console.log(
       <Comp6b_belowParallel
         belowParallelImgTitle={documentToHtmlString(data.belowParallelImgTitle)}
         belowParallelImgText={documentToHtmlString(data.belowParallelImgText)}
+        belowParallel1img={
+          data.belowParallel1img && data.belowParallel1img?.fields?.file.url
+        }
+        belowParallelImgTitle2={documentToHtmlString(
+          data.belowParallelImgTitle2
+        )}
+        belowParallelImgText2={documentToHtmlString(data.belowParallelImgText2)}
+        belowParallel2img={
+          data.belowParallel2img && data.belowParallel2img?.fields?.file.url
+        }
+        lastSectionTitle={documentToHtmlString(data.lastSectionTitle)}
+        lastSectionText={documentToHtmlString(data.lastSectionText)}
+        lastSectionImg1={
+          data.lastSectionImgs && data.lastSectionImgs[0]?.fields?.file?.url
+        }
+        lastSectionImg2={
+          data.lastSectionImgs && data.lastSectionImgs[1]?.fields?.file?.url
+        }
       />
     )
   }
