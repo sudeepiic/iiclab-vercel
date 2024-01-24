@@ -16,9 +16,7 @@ import { Image } from "astro:assets";
 //import { Image, Picture } from "@astrojs/image/components";
 ---
 
-<section
-  style="background-color: #1a1a1a;  padding-left: 9%; padding-top: 3%; overflow: hidden"
->
+<section class="footer-wrapper1">
   <div class="div1 footerReady">
     <Image
       class="diamond optimization"
@@ -439,7 +437,7 @@ import { Image } from "astro:assets";
     <span class="bottomDiv"> &nbsp; Ink In Caps</span>
   </div>
 </section>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
   import Swal from "sweetalert2";
 
@@ -511,7 +509,7 @@ import { Image } from "astro:assets";
       formData2.append("type", "subscribe-newsletter");
       formData2.append("body", connectFormData);
 
-      fetch("https://iiclab-backend.vtour.tech/subscribe", {
+      fetch("https://backend.iiclab.com/mail", {
         method: "POST",
         body: formData2,
         redirect: "follow",
@@ -674,7 +672,7 @@ import { Image } from "astro:assets";
     color: grey;
     width: 70%;
     line-height: 200%;
-    font-size: calc(11px + 0.390625vw);
+    font-size: calc(13px + 0.390625vw);
     min-width: 160px;
     font-family: anek devanagari;
   }
@@ -685,7 +683,12 @@ import { Image } from "astro:assets";
   .footerHand img {
     width: 85%;
   }
-
+  .footer-wrapper1 {
+    background-color: #1a1a1a;
+    padding-left: 9%;
+    padding-top: 3%;
+    overflow: hidden;
+  }
   @media only screen and (max-width: 767px) {
     .footerHand img {
       width: 100%;
@@ -757,7 +760,7 @@ import { Image } from "astro:assets";
       color: grey;
       width: 70%;
       line-height: 200%;
-      font-size: calc(11px + 0.390625vw) !important;
+      font-size: calc(14px + 0.390625vw) !important;
       min-width: 160px;
     }
     .headings {
@@ -767,7 +770,7 @@ import { Image } from "astro:assets";
       font-size: calc(11px + 0.390625vw) !important;
     }
     a {
-      font-size: calc(11px + 0.390625vw) !important;
+      font-size: calc(14px + 0.390625vw) !important;
     }
     .button {
       margin-right: 6%;

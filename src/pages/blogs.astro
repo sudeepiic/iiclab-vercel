@@ -1,11 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import blogButton from "../images/blogButton.png";
 import rotatingBlog from "../images/rotatingBlog.png";
 import arrow from "../images/arrow.png";
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import type { Document } from "@contentful/rich-text-types";
 import yellowGo from "../images/yellowGo2.png";
 import blogsLeft from "../images/blogsLeft.png";
 import blogsRight from "../images/blogsRight.png";
@@ -875,11 +873,9 @@ const entries: any = await contentfulClient.getEntries<any>({
 
   // swiper carousal script
 
-  import {
-    Swiper,
-  } from "swiper";
-    //@ts-ignore it should fix later when swiper fixes its types
-    import { Navigation,EffectCreative,} from "swiper/modules";
+  import { Swiper } from "swiper";
+  //@ts-ignore it should fix later when swiper fixes its types
+  import { Navigation, EffectCreative } from "swiper/modules";
   let x = 3;
   var swiper = new Swiper(".mySwiper", {
     modules: [Navigation, EffectCreative],

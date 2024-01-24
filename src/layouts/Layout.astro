@@ -39,7 +39,7 @@ const { title, seoTitle, description,schema } = Astro.props;
       //@ts-ignore
       gtag("config", "G-SRFEBYSZRP");
     </script>
-<script type="application/ld+json" set:html={schema || ""}>
+<script type="application/ld+json" set:html={JSON.stringify(schema) || ""}>
    
   </script>
     <script>
@@ -127,9 +127,9 @@ const { title, seoTitle, description,schema } = Astro.props;
       rel="stylesheet"
     />
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
 
     <!-- stylesheets -->
     <link
@@ -179,7 +179,7 @@ const { title, seoTitle, description,schema } = Astro.props;
     >
     <!-- End Google Tag Manager (noscript) -->
   </body>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     const header = document.querySelector(".sticky-header");
     let lastScrollY = 0;

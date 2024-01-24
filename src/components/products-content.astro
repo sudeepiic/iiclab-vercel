@@ -1,16 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import awardsPrev from "../images/awardsPrev.png";
-import awardsNext from "../images/awardsNext.png";
+
 import { Image } from 'astro:assets';
-import products1 from "../images/products1.png";
-import products2 from "../images/products2.png";
-import icon1 from "../images/icon1.png";
-import icon2 from "../images/icon2.png";
-import { contentfulClient } from "../lib/contentful";
-// import {ViewTransitions} from 'astro:transitions';
-//import { Image, Picture } from "@astrojs/image/components";
 
 const props = Astro.props;
 ---
@@ -369,7 +361,6 @@ const props = Astro.props;
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import Eases from "gsap";
   gsap.registerPlugin(ScrollTrigger);
 
   import {
@@ -435,11 +426,6 @@ const props = Astro.props;
     autoplay: {
       delay: 2000,
     },
-
-    // pagination: {
-    //   el: ".swiper-pagination",
-    //   clickable: true,
-    // },
   });
 
   let tl = gsap.timeline();

@@ -2,15 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 import downArrow from "../images/downArrow.png";
 import officeImg from "../images/aboutUsOfficeImg.jpg";
-import strip from "../images/strip.png";
 
-import Header from "../components/Header.astro";
 import carousalNext from "../images/carousalNext.png";
 import carousalPrev from "../images/carousalPrev.png";
 import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { Image } from "astro:assets";
-//import { Image, Picture } from "@astrojs/image/components";
+
 
 const clientsEntries = await contentfulClient.getEntries<any>({
   content_type: "clients",
@@ -729,7 +727,6 @@ for (let i = 0; i < numArrays; i++) {
 
 <script>
   import { gsap, TimelineMax } from "gsap";
-  import Eases from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
 

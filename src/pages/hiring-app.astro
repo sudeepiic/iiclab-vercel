@@ -2,14 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 
 import applyNow from "../images/applyNow.png";
-import ps from "../images/ps.png";
+
 import submitArrow from "../images/submitArrow.png";
 import { Image } from "astro:assets";
 //import { Image, Picture } from "@astrojs/image/components";
 
 const props = Astro.props;
-
-console.log(props.jobProfile);
 ---
 
 {
@@ -389,7 +387,7 @@ console.log(props.jobProfile);
       formData2.append("body", careerFormData);
       formData2.append("file", resume);
 
-      fetch("https://iiclab-backend.vtour.tech/mail", {
+      fetch("https://backend.iiclab.com/mail", {
         method: "POST",
         body: formData2,
         redirect: "follow",
