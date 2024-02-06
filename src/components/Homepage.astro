@@ -354,8 +354,8 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
 </style>
 <script>
   import { Swiper } from "swiper";
-    //@ts-ignore it should fix later when swiper fixes its types
-  import {Navigation, Autoplay, EffectCreative } from "swiper/modules";
+  //@ts-ignore it should fix later when swiper fixes its types
+  import { Navigation, Autoplay, EffectCreative } from "swiper/modules";
   let x = 3;
   var swiper = new Swiper(".heroSwiper", {
     modules: [Navigation, EffectCreative, Autoplay],
@@ -983,9 +983,9 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
               aria-label="case study"
             >
               <div class="work-animation">
-                {caseStudy?.fields?.heroBanner && (
+                {caseStudy?.fields?.heroBannerv?.fields?.file?.url && (
                   <Image
-                    src={caseStudy?.fields?.heroBanner?.fields?.file.url}
+                    src={caseStudy?.fields?.heroBanner?.fields?.file?.url}
                     class="movingImgs  optimization"
                     width={509}
                     height={240}
@@ -1010,7 +1010,7 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
             <div class="d-flex m-auto ">
               <Image
                 src={
-                  caseStudy?.fields?.clientLogos?.fields?.file.url || solnImg1
+                  caseStudy?.fields?.clientLogos?.fields?.file?.url || solnImg1
                 }
                 width={215}
                 height={75}
@@ -3353,25 +3353,24 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
   /* flip animation css */
 
   @keyframes flip {
-  0% {
-    transform: perspective(1000px) rotateY(0deg);
+    0% {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+
+    100% {
+      transform: perspective(1000px) rotateY(360deg);
+    }
   }
 
-  100% {
-    transform: perspective(1000px) rotateY(360deg);
+  .flipOnHover {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease 0.2s;
   }
-}
 
-.flipOnHover {
-  perspective: 1000px;
-  transform-style: preserve-3d;
-  transition: transform 0.6s ease 0.2s;
-}
-
-.flipOnHover:hover {
-  animation: flip 0.6s ease 0.2s forwards;
-}
-
+  .flipOnHover:hover {
+    animation: flip 0.6s ease 0.2s forwards;
+  }
 
   .letter {
     display: inline-block !important;
@@ -4133,11 +4132,15 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
     });
   });
 
-  import {
-    Swiper
-  } from "swiper";
+  import { Swiper } from "swiper";
   //@ts-ignore it should fix later when swiper fixes its types
-  import { Navigation,Pagination,EffectCoverflow,Autoplay,EffectCreative,} from "swiper/modules";
+  import {
+    Navigation,
+    Pagination,
+    EffectCoverflow,
+    Autoplay,
+    EffectCreative,
+  } from "swiper/modules";
   let x = 3;
   var swiper = new Swiper(".mySwiper", {
     modules: [Navigation, EffectCreative, Pagination],
