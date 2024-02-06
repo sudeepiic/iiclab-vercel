@@ -55,6 +55,7 @@ export default defineConfig({
     "/portfolio/myntra-nautica":
       "/portfolio/nautica-gesture-recognition-experiential-marketing",
     "/portfolio/fifa": "/portfolio/fifa-2022-experiential-marketing",
+    "/portfolio/fifa-2022-experiential-marketing": "/",
     "/portfolio/Mahindra": "/portfolio/mahindra-krish-e-interactive-website",
     "/portfolio/Kumar-Properties":
       "/portfolio/kumar-properties-virtual-sales-assistance-tool",
