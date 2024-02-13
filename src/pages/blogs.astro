@@ -16,6 +16,11 @@ import { Image } from "astro:assets";
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "blogs",
 });
+entries.items.sort((a, b) => {
+  const dateA: any = new Date(a.sys?.updatedAt);
+  const dateB: any = new Date(b.sys?.updatedAt);
+  return dateB - dateA;
+});
 
 // const { blogsData } = Astro.props;
 ---
@@ -49,7 +54,7 @@ const entries: any = await contentfulClient.getEntries<any>({
       </div>
     </div>
 
-    <div class="swiper-animate" style="text-align: center;padding:2% 0 0% 0;">
+    <div class="swiper-animate" style="text-align: center;padding:2% 0 0% 0; ">
       <div class="swiper mySwiper" style="padding:1.5% 0 5% 0 ;">
         <div class="swiper-wrapper">
           {
@@ -875,11 +880,9 @@ const entries: any = await contentfulClient.getEntries<any>({
 
   // swiper carousal script
 
-  import {
-    Swiper,
-  } from "swiper";
-    //@ts-ignore it should fix later when swiper fixes its types
-    import { Navigation,EffectCreative,} from "swiper/modules";
+  import { Swiper } from "swiper";
+  //@ts-ignore it should fix later when swiper fixes its types
+  import { Navigation, EffectCreative } from "swiper/modules";
   let x = 3;
   var swiper = new Swiper(".mySwiper", {
     modules: [Navigation, EffectCreative],
