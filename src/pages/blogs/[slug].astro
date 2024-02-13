@@ -26,6 +26,18 @@ export async function getStaticPaths() {
   });
   return pages;
 }
+const formatDate = (date) => {
+  const inputDate = new Date(date);
+  const dateFormatter = new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+
+  const formattedDate = dateFormatter.format(inputDate);
+
+  return formattedDate;
+};
 
 const { blogsData } = Astro.props;
 ---
@@ -45,6 +57,7 @@ const { blogsData } = Astro.props;
     readTime={documentToHtmlString(blogsData.fields.readTime)}
     heroImage={blogsData.fields?.heroImage?.fields?.file.url}
     heroImageAlt={blogsData.fields?.heroImage?.fields?.description}
+    updatedAt={formatDate(blogsData.sys?.updatedAt)}
   />
 
   <Comp2Content
