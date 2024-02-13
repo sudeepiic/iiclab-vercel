@@ -23,6 +23,8 @@ import { Image } from "astro:assets";
         <span class="authorName" set:html={props.author} />
         <span class="dot" />
         <span class="readTime" set:html={props.readTime} />
+        <span class="dot" />
+        <span class="readTime" set:html={props.updatedAt} />
       </div>
       {props.heroImage && (
         <div class="image-animate">
