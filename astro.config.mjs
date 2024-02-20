@@ -13,7 +13,6 @@ export default defineConfig({
     "/about-us/": "/about/",
     "/contact": "/contact-us/",
     "/hiring/": "/career/",
-    "/research/": "/research/",
     "/blogs/Paradox-of-Being-a-Good-Boss":
       "/blogs/the-paradox-of-being-a-good-boss-radical-candor",
     "/blogs/network-will-decide-your-net-worth":
