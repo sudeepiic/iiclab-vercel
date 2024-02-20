@@ -30,10 +30,7 @@ import content from "../images/content2.png";
 import redirectToWork from "../images/redirectToWork2.png";
 import workBtnHand from "../images/workBtnHand.png";
 import ourProdImg from "../images/ourProdImg.jpg";
-import titleImg from "../images/airtelBannerImg.jpg";
-import titleImg2 from "../images/ajayBannerImg2.jpg";
 import backToTop from "../images/bttBtn.svg";
-import Footer from "./Footer.astro";
 import { Image } from "astro:assets";
 
 const entries: any = await contentfulClient.getEntries<any>({
@@ -72,18 +69,9 @@ const showreel = showreelVideo.items[0].fields.video.fields.file.url;
 <section id="clickScreen" style="background-color: #1a1a1a;">
   <div class="position-relative video-container">
     <div>
-      <video
-        id="autoVideo"
-        class="bgImage"
-        style=""
-        autoplay
-        playsinline
-        loop
-        muted
-      >
+      <video id="autoVideo" class="bgImage" autoplay playsinline loop muted>
         <source src={bgVideo} type="video/mp4" />
       </video>
-      <div class=""></div>
     </div>
 
     <div class="title" style=" ">

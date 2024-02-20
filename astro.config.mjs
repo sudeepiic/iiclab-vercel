@@ -4,15 +4,16 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   integrations: [sitemap({ customPaths: ["public/sitemap.xml"] })],
-  // image: {
-  //     domains: ["images.ctfassets.net"],
-  // }
+  image: {
+    domains: ["images.ctfassets.net"],
+  },
   redirects: {
     // '/about/': '/about-us/',
 
-    "/about-us/": "/about",
-    "/contact": "/contact-us",
-    "/hiring/": "/career",
+    "/about-us/": "/about/",
+    "/contact": "/contact-us/",
+    "/hiring/": "/career/",
+    "/research/": "/research/",
     "/blogs/Paradox-of-Being-a-Good-Boss":
       "/blogs/the-paradox-of-being-a-good-boss-radical-candor",
     "/blogs/network-will-decide-your-net-worth":
