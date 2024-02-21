@@ -1,10 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import logoAnimeWhite from "../images/logoAnimeWhite.gif";
-import fashion from "../images/fashion.png";
-import AiIn from "../images/ai-in.png";
-import directorImg from "../images/director-img.png";
-import directorIcon from "../images/director-icon.png";
 import todayStore from "../images/today-store.png";
 import aiFashionImg from "../images/ai-fashion-img.png";
 import gettingToKnowAi from "../images/getting-to-know-ai.png";
@@ -37,13 +33,15 @@ import aiInFashion from "../images/ai-in-fashion.png";
 ---
 
 <section class="bg-dark p-5">
-  <Image
-    src={logoAnimeWhite}
-    width={150}
-    height={80}
-    alt=""
-    class="logoWhite optimization"
-  />
+  <a href="/">
+    <Image
+      src={logoAnimeWhite}
+      width={150}
+      height={80}
+      alt=""
+      class="logoWhite optimization"
+    />
+  </a>
 </section>
 
 <section
@@ -55,27 +53,26 @@ import aiInFashion from "../images/ai-in-fashion.png";
     alt="Ai In Fashion"
     class="object-fit-contain ai-birth-modal"
   />
-  <div>
+  <span class="d-block">
     <Image
       src={aiFashionImg}
       alt="Ai In Fashion"
       class="object-fit-contain col-6 position-absolute ai-fashion-model-img"
     />
-  </div>
+  </span>
 </section>
 
-<section
-  class="bg-white position-relative"
-  style="padding-top: 12rem; margin-bottom: 18%"
->
+<section class="bg-white position-relative" style="padding-top: 12rem; ">
   <div class="mx-auto fit-content px-5">
     <Image src={todayStore} alt="Today store" class="ai-birth-modal" />
   </div>
-  <!-- <Image
-    src={gettingToKnowAi}
-    alt="Getting to know ai"
-    class="getting-to-know-ai"
-  /> -->
+  <span class="d-block">
+    <Image
+      src={gettingToKnowAi}
+      alt="Getting to know ai"
+      class="getting-toknow-ai-started"
+    />
+  </span>
 </section>
 <section
   class="px-5 pb-5 position-relative bg-dark"
@@ -211,11 +208,6 @@ import aiInFashion from "../images/ai-in-fashion.png";
       class="object-fit-contain px-4 ai-birth-modal"
     />
   </span>
-  <!-- <Image
-    src={gettingToKnowAi}
-    alt="Getting to know ai"
-    class="getting-to-know-ai-development"
-  /> -->
 </section>
 <section class="insights-bg position-relative">
   <span class="d-block px-5 pb-5">
@@ -285,11 +277,13 @@ import aiInFashion from "../images/ai-in-fashion.png";
       />
     </span>
   </span>
-  <Image src={aiTheEnd} alt="ai" class="getting-to-know-ai-development" />
+  <span class="d-block">
+    <Image src={aiTheEnd} alt="ai" class="getting-to-know-ai-development" />
+  </span>
 </section>
 <section
   class="insights-bg px-5 pb-5 position-relative"
-  style="padding-top: 8rem;"
+  style="padding-top: 4rem;"
 >
   <Image
     src={predictionEstimate}
@@ -335,13 +329,22 @@ import aiInFashion from "../images/ai-in-fashion.png";
     display: none;
   }
 
+  .getting-toknow-ai-started {
+    width: 100%;
+    height: auto;
+
+    position: relative;
+    z-index: 2;
+    margin-bottom: -10rem;
+  }
   .ai-fashion-model-img {
     left: 0;
     right: 0;
     margin: auto;
     /* bottom: -100%; */
-    width: 60%;
+    /* width: 60%; */
     height: auto;
+    margin-top: 4rem;
   }
 
   .bg-dark {
@@ -432,9 +435,9 @@ import aiInFashion from "../images/ai-in-fashion.png";
   .getting-to-know-ai-development {
     width: 100%;
     height: auto;
-    position: absolute;
-    bottom: -6rem;
+    position: relative;
     z-index: 2;
+    margin-top: -13rem;
   }
 
   .position-relative {
