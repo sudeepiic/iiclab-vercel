@@ -297,94 +297,22 @@ const props = Astro.props;
       var noticePeriod = formData.get("noticePeriod");
       var expectedCTC = formData.get("expectedCTC");
 
-      const careerFormData = `
-    <style>
-    #customers {
-        font-family: Arial, Helvetica, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    #customers td,
-    #customers th {
-        border: 1px solid #ddd;
-        padding: 8px;
-    }
-
-    #customers tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-
-    #customers tr:hover {
-        background-color: #ddd;
-    }
-
-    #customers th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #04AA6D;
-        color: white;
-    }
-</style>
-
-<body>
-    <table id="customers">
-      <tr>
-            <td style="font-weight:bold;">For Job Profile</td>
-            <td >${jobProfileName}</td>
-        </tr>
-
-        <tr>
-            <td style="font-weight:bold;">Name</td>
-            <td>${name}</td>
-        </tr>
-        <tr>
-          <td style="font-weight:bold;">Email</td>
-          <td >${email}</td>
-        </tr>
-        <tr>
-      <td style="font-weight:bold;">Phone</td>
-      <td >${phoneNumber}</td>
-      </tr>
-
-      <tr>
-      <td style="font-weight:bold;">Portfolio</td>
-      <td >${portfolioLink}</td>
-    </tr>
-
-    <tr>
-    <td style="font-weight:bold;">LinkedIn</td>
-    <td ><a href='${linkedinUsername}'>${linkedinUsername}</a></td>
-  </tr>
-
-        <tr>
-        <td style="font-weight:bold;">Current Job Role: </td>
-        <td > ${currentJobRole}</td>
-      </tr>
-     
-    <tr>
-    <td style="font-weight:bold;">Experience</td>
-    <td >${experience}</td>
-  </tr>
-    <tr>
-    <td style="font-weight:bold;">Notice Period</td>
-    <td >${noticePeriod}</td>
-  </tr>
-
-  <tr>
-    <td style="font-weight:bold;">Expected CTC</td>
-    <td >${expectedCTC}</td>
-  </tr>
-
- 
-    </table>
-</body>
-    `;
+      const careerFormData = {
+        jobTitle: jobProfileName,
+        name: name,
+        email: email,
+        phoneNumber: phoneNumber,
+        portfolioLink: portfolioLink,
+        linkedinUsername: linkedinUsername,
+        currentJobRole: currentJobRole,
+        experience: experience,
+        noticePeriod: noticePeriod,
+        expectedCTC: expectedCTC,
+      };
 
       const formData2 = new FormData();
       formData2.append("type", "career");
-      formData2.append("body", careerFormData);
+      formData2.append("body", JSON.stringify(careerFormData));
       formData2.append("file", resume);
 
       fetch("https://backend.iiclab.com/mail", {
