@@ -168,9 +168,7 @@ const props = Astro.props;
                 class="input-group mb-3 input-group-lg"
               >
                 <div class="input-group-prepend" style="margin-bottom: 2.5%;">
-                  <span class="inp-title input-group-text">
-                    Linkedin (optional) :
-                  </span>
+                  <span class="inp-title input-group-text">Linkedin :</span>
                 </div>
                 <input
                   type="text"
@@ -178,6 +176,7 @@ const props = Astro.props;
                   class="input form-control"
                   id="linkedinUsername"
                   name="linkedinUsername"
+                  required
                 />
               </div>
 
@@ -255,6 +254,23 @@ const props = Astro.props;
                 />
               </div>
 
+              <div
+                style="margin-bottom: 3%;"
+                class="input-group mb-3 input-group-lg"
+              >
+                <div class="input-group-prepend" style="margin-bottom: 2.5%;">
+                  <span class="inp-title input-group-text">Current CTC :</span>
+                </div>
+                <input
+                  type="text"
+                  style="margin-bottom: 2.5%;"
+                  class="input form-control"
+                  id="currentCTC"
+                  name="currentCTC"
+                  required
+                />
+              </div>
+
               <button
                 class="submitBtn btn"
                 type="submit"
@@ -296,6 +312,7 @@ const props = Astro.props;
       var experience = formData.get("experience");
       var noticePeriod = formData.get("noticePeriod");
       var expectedCTC = formData.get("expectedCTC");
+      var currentCTC = formData.get("currentCTC");
 
       const careerFormData = {
         jobTitle: jobProfileName,
@@ -308,6 +325,8 @@ const props = Astro.props;
         experience: experience,
         noticePeriod: noticePeriod,
         expectedCTC: expectedCTC,
+        currentCTC: currentCTC,
+        date: new Date().toISOString().slice(0, 10),
       };
 
       const formData2 = new FormData();
