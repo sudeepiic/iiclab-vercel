@@ -65,12 +65,6 @@ const { title, seoTitle, description,schema } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="theme-color" content="#f6f7f0" />
 
-    <!--
-      vretail-app
-      <link
-      rel="stylesheet"
-      href="https://collab-staging.core.vretail.space/style.css"
-    /> -->
     <meta
       name="description"
       content={(siteMetadata[0]?.seo[seoTitle] &&
@@ -152,20 +146,9 @@ const { title, seoTitle, description,schema } = Astro.props;
     ></script><meta name="generator" content={Astro.generator} /><title>
       {title}
     </title>
-      <link rel="stylesheet" href="https://collab-staging.core.vretail.space/style.css"/>
 
     </head
   >
-  <div
-    id="vretail-app"
-    data-vretail-project-id="PR-JoxXAvDHODgxbpSw42lAa8AoY"
-  >
-  </div>
-  <script src="https://collab-staging.core.vretail.space/vretail-collab.umd.js"
-  ></script>
-  <!-- jquery -->
-
-  <!--  -->
 
   <body style="overflow: hidden;">
     <Header />
@@ -199,7 +182,4 @@ const { title, seoTitle, description,schema } = Astro.props;
       lastScrollY = currentScrollY;
     });
   </script>
-
-      <!-- <div id="vretail-app" data-vretail-project-id="PR-JoxXAvDHODgxbpSw42lAa8AoY"></div>
-    <script src="https://collab-staging.core.vretail.space/vretail-collab.umd.js"></script> -->
 </html>
