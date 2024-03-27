@@ -8,6 +8,12 @@ import { Image } from 'astro:assets';
 const entries: any = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
 });
+
+// const blogs: any = await contentfulClient.getEntries<any>({
+//   content_type: "blogs",
+// });
+
+// console.log({blogs: blogs.items[0].fields.tags});
          
 
 ---

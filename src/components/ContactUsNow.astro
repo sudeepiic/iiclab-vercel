@@ -1,0 +1,53 @@
+---
+import whatsAppImg from "../images/whatsapplog-2.png";
+import contactImg from "../images/contactLog-2.png";
+import { Image } from "astro:assets";
+---
+
+<section class="py-4 contact-border bg-prime-dark">
+  <span class="d-flex justify-content-center align-items-center gap-3">
+    <p class="text-uppercase m-0 text-white imgText">Contact Us Now:</p>
+    <a href="https://wa.me/2268493501" target="_blank">
+      <Image
+        src={whatsAppImg}
+        alt="WhatsUp"
+        class="optimization resizeImage"
+        width={52}
+        height={52}
+      />
+    </a>
+    <a href="tel:022-6849-3501" target="_blank">
+      <Image
+        src={contactImg}
+        alt="Contact"
+        class="optimization resizeImage"
+        width={52}
+        height={52}
+      />
+    </a>
+  </span>
+
+  <style>
+    .contact-border {
+      border-top: 1px solid rgba(255, 255, 255, 0.35);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    }
+    .bg-prime-dark {
+      background-color: #1a1a1a;
+    }
+    .imgText {
+      font-family: "Deutschlander";
+      text-transform: uppercase;
+      font-size: 3.7vw;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 0.85;
+      letter-spacing: 0.8px;
+    }
+    @media screen and (max-width: 767px) {
+      .imgText {
+        font-size: 10vw;
+      }
+    }
+  </style>
+</section>

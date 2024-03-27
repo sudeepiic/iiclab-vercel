@@ -4,6 +4,7 @@ import { contentfulClient } from "../../lib/contentful";
 import TitleComp from "../../components/blogs_components/titleComp.astro";
 import Comp2Content from "../../components/blogs_components/comp2_content.astro";
 import Comp3Black from "../../components/blogs_components/comp3_black.astro";
+import ContactUsNow from "../../components/ContactUsNow.astro";
 
 import Layout from "../../layouts/Layout.astro";
 
@@ -39,90 +40,95 @@ const formatDate = (date) => {
   return formattedDate;
 };
 
-const { blogsData } = Astro.props;
+const entries: any = await contentfulClient.getEntries<any>({
+  content_type: "caseStudy",
+});
+const { blogsData } = Astro.props as any;
 ---
 
 <Layout
-  title={blogsData?.fields?.metaTitle ? blogsData?.fields?.metaTitle : "Blog"}
-  seoTitle={blogsData.fields.params}
+  title={blogsData?.fields?.metaTitle
+    ? (blogsData?.fields?.metaTitle as string)
+    : "Blog"}
+  seoTitle={blogsData.fields.params as string}
   schema={blogsData.fields.schema}
   description={blogsData?.fields?.description
-    ? blogsData?.fields?.description
+    ? (blogsData?.fields?.description as string)
     : "Blog"}
 >
   <TitleComp
-    blogTitle={documentToHtmlString(blogsData.fields.blogTitle)}
+    blogTitle={documentToHtmlString(blogsData.fields.blogTitle as any)}
     genre={blogsData.fields.genreNew}
-    author={documentToHtmlString(blogsData.fields.author)}
-    readTime={documentToHtmlString(blogsData.fields.readTime)}
+    author={documentToHtmlString(blogsData.fields.author as any)}
+    readTime={documentToHtmlString(blogsData.fields.readTime as any)}
     heroImage={blogsData.fields?.heroImage?.fields?.file.url}
     heroImageAlt={blogsData.fields?.heroImage?.fields?.description}
-    updatedAt={formatDate(blogsData.sys?.updatedAt)}
+    updatedAt={formatDate(blogsData.sys?.updatedAt as any)}
   />
 
   <Comp2Content
-    quote={documentToHtmlString(blogsData.fields.quote)}
-    quoter={documentToHtmlString(blogsData.fields.quoter)}
+    quote={documentToHtmlString(blogsData.fields.quote as any)}
+    quoter={documentToHtmlString(blogsData.fields.quoter as any)}
     content1Heading={blogsData.fields.content1heading &&
-      documentToHtmlString(blogsData.fields.content1heading)}
-    content1Text={documentToHtmlString(blogsData.fields.content1text)}
-    content2Heading={documentToHtmlString(blogsData.fields.content2heading)}
-    content2Text={documentToHtmlString(blogsData.fields.content2text)}
+      documentToHtmlString(blogsData.fields.content1heading as any)}
+    content1Text={documentToHtmlString(blogsData.fields.content1text as any)}
+    content2Heading={documentToHtmlString(
+      blogsData.fields.content2heading as any
+    )}
+    content2Text={documentToHtmlString(blogsData.fields.content2text as any)}
     content2Img={blogsData.fields?.content2img &&
       blogsData.fields?.content2img?.fields?.file.url}
     content2ImgAlt={blogsData.fields?.content2img &&
       blogsData.fields?.content2img?.fields?.description}
     content2bHeading={blogsData.fields.content2bHeading}
-    content2bText={documentToHtmlString(blogsData.fields.content2bText)}
+    content2bText={documentToHtmlString(blogsData.fields.content2bText as any)}
     content2bImg={blogsData.fields?.content2bImage &&
       blogsData.fields?.content2bImage?.fields?.file.url}
     content2bImgAlt={blogsData.fields?.content2bImage &&
       blogsData.fields?.content2bImage?.fields?.description}
-    content2cHeading={documentToHtmlString(blogsData.fields.content2cHeading)}
-    content2cText={documentToHtmlString(blogsData.fields.content2cText)}
+    content2cHeading={documentToHtmlString(
+      blogsData.fields.content2cHeading as any
+    )}
+    content2cText={documentToHtmlString(blogsData.fields.content2cText as any)}
     content2cImg={blogsData.fields?.content2cImg &&
       blogsData.fields?.content2cImg?.fields?.file.url}
     content2cImgAlt={blogsData.fields?.content2cImg &&
       blogsData.fields?.content2cImg?.fields?.description}
-    content2dHeading={documentToHtmlString(blogsData.fields.content2dHeading)}
-    content2dText={documentToHtmlString(blogsData.fields.content2dText)}
+    content2dHeading={documentToHtmlString(
+      blogsData.fields.content2dHeading as any
+    )}
+    content2dText={documentToHtmlString(blogsData.fields.content2dText as any)}
     content2dImg={blogsData.fields?.content2dImg &&
       blogsData.fields?.content2dImg?.fields?.file.url}
     content2dImgAlt={blogsData.fields?.content2dImg &&
       blogsData.fields?.content2dImg?.fields?.description}
-    content3Heading={documentToHtmlString(blogsData.fields.content3heading)}
-    content3Text={documentToHtmlString(blogsData.fields.content3text)}
-    content3bHeading={documentToHtmlString(blogsData.fields.content3bHeading)}
-    content3bText={documentToHtmlString(blogsData.fields.content3bText)}
+    content3Heading={documentToHtmlString(
+      blogsData.fields.content3heading as any
+    )}
+    content3Text={documentToHtmlString(blogsData.fields.content3text as any)}
+    content3bHeading={documentToHtmlString(
+      blogsData.fields.content3bHeading as any
+    )}
+    content3bText={documentToHtmlString(blogsData.fields.content3bText as any)}
     content3bImg={blogsData.fields?.content3bImg &&
       blogsData.fields?.content3bImg?.fields?.file.url}
     content3bImgAlt={blogsData.fields?.content3bImg &&
       blogsData.fields?.content3bImg?.fields?.description}
-    content3cHeading={documentToHtmlString(blogsData.fields.content3cHeading)}
-    content3cText={documentToHtmlString(blogsData.fields.content3cText)}
-    index1={documentToHtmlString(blogsData.fields.index1)}
-    index2={documentToHtmlString(blogsData.fields.index2)}
-    index3={documentToHtmlString(blogsData.fields.index3)}
-    index4={documentToHtmlString(blogsData.fields.index4)}
-    index5={documentToHtmlString(blogsData.fields.index5)}
+    content3cHeading={documentToHtmlString(
+      blogsData.fields.content3cHeading as any
+    )}
+    content3cText={documentToHtmlString(blogsData.fields.content3cText as any)}
+    index1={documentToHtmlString(blogsData.fields.index1 as any)}
+    index2={documentToHtmlString(blogsData.fields.index2 as any)}
+    index3={documentToHtmlString(blogsData.fields.index3 as any)}
+    index4={documentToHtmlString(blogsData.fields.index4 as any)}
+    index5={documentToHtmlString(blogsData.fields.index5 as any)}
     aboutAuthorName={blogsData.fields.aboutAuthorName}
     aboutAuthorDsgn={blogsData.fields.aboutAuthorDsgn}
   />
 
-  <Comp3Black
-    creative1Img={blogsData.fields?.creative1Img &&
-      blogsData.fields?.creative1Img?.fields?.file.url}
-    creative1Title={documentToHtmlString(blogsData.fields.creative1Title)}
-    creative1Genre={documentToHtmlString(blogsData.fields.creative1Genre)}
-    creative1Author={documentToHtmlString(blogsData.fields.creative1Author)}
-    creative1Time={documentToHtmlString(blogsData.fields.creative1Time)}
-    creative2Img={blogsData.fields?.creative2Img &&
-      blogsData.fields?.creative2Img?.fields?.file.url}
-    creative2Title={documentToHtmlString(blogsData.fields.creative2Title)}
-    creative2Genre={documentToHtmlString(blogsData.fields.creative2Genre)}
-    creative2Author={documentToHtmlString(blogsData.fields.creative2Author)}
-    creative2Time={documentToHtmlString(blogsData.fields.creative2Time)}
-  />
+  <Comp3Black caseStudies={entries.items} />
+  <ContactUsNow />
 </Layout>
 
 <style is:global>

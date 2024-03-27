@@ -1,5 +1,8 @@
 ---
 import authorImg from "../../images/authorImg.jpg";
+import creative1 from "../../images/creative1.png";
+import blackGo from "../../images/blackGo2.png";
+import creative2 from "../../images/creative2.png";
 import submitBtn from "../../images/submitBtn.jpg";
 import blackDiamond from "../../images/blackDiamond.png";
 import { Image } from 'astro:assets';
@@ -194,6 +197,68 @@ Object.keys(props)
                             </button>
                         </form>
                     </div>
+
+                    
+                     <div class="row mt-4 pt-4 border-1">
+                       <p class="col-12 px-0 pb-2">
+                        MORE FROM OUR CREATIVE MIND
+
+                       </p>
+                         <div class="col-12 p-0">
+                                    <Image
+                                        class="creative1 optimization"
+                                        src={creative1}
+                                        style="width: 100%; margin-bottom: 5%;"
+                                        alt=""
+                                        loading="lazy"
+                                    />
+
+                                    <span class="imgText"
+                                        >Get Everyone's Attention With These Amazing Experiences</span
+                                    >
+
+                                    <a
+                                        href="get-everyones-attention-with-these-amazing-experiences"
+                                        aria-label="open"
+                                    >
+                                        <Image class="btn goBtn optimization" src={blackGo} alt="" /></a
+                                    >
+                                    <div style="margin-top: 3.4%;">
+                                        <div class="border-box"><span>Design & Technology</span></div>
+                                        <span class="authorName">By Snigdha Singh</span>
+                                        <span class="dot"></span>
+                                        <span class="readTime">5 min read</span>
+                                    </div>
+                                    </div>
+
+                                     <div class="col-12 pt-4 px-0  ">
+                                        <Image
+                                            class="creative2 optimization"
+                                            src={creative2}
+                                            style="width: 100%; margin-bottom: 5%;"
+                                            loading="lazy"
+                                            alt=""
+                                        />
+
+                                        <span class="imgText"
+                                            >Is 3D Projection Mapping The Future Or The Present?</span
+                                        >
+
+                                        <a
+                                            href="is-3d-projection-mapping-the-future-or-the-present"
+                                            aria-label="open"
+                                        >
+                                            <Image class="btn goBtn optimization" src={blackGo} alt="" /></a
+                                        >
+                                        <div style="margin-top: 3.4%;">
+                                            <div class="border-box"><span>Design & Technology</span></div>
+                                            <span class="authorName">By Pallavi.Jain</span>
+                                            <span class="dot"></span>
+                                            <span class="readTime">5 min read</span>
+                                        </div>
+                                        </div>
+                     </div>
+
                     
 
                 </div>
@@ -298,7 +363,7 @@ Object.keys(props)
   }
   .quote{
     padding-right: 11%;
-    max-height:100vh;
+    max-height:205vh;
      overflow:scroll
   }
 
@@ -330,6 +395,11 @@ Object.keys(props)
     font-size: 1.2vw;
     line-height: 1.7;
     margin-top: 2%;
+}
+
+.border-1 {
+
+    border-top: 1.5px solid rgb(200, 200, 197);
 }
 
 
@@ -448,6 +518,70 @@ a{
     font-size: 0.82vw;
 }
 
+ .imgText {
+    font-family: "Deutschlander";
+    text-transform: uppercase;
+    font-size: 3.7vw;
+    font-weight: 400;
+    font-style: normal;
+    color: #000;
+    line-height: 0.85;
+    letter-spacing: 0.8px;
+  }
+
+  .goBtn {
+    width: 24%;
+    vertical-align: top;
+  }
+
+
+   .border-box {
+    /* background-color: #e5ff53; */
+    text-align: center;
+    padding: 0.18vw;
+    width: 8vw;
+    border-radius: 1.5px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.65;
+    border: 1px solid #d1d2cc
+  }
+  .border-box span {
+    font-family: "anek devanagari";
+    font-size: 0.7vw;
+
+    font-weight: 500;
+
+    vertical-align: middle;
+  }
+
+  .authorName {
+    font-family: "anek devanagari";
+    font-size: 0.7vw;
+
+    font-weight: 400;
+    color: #000
+    margin-left: 2%;
+  }
+  .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #000;
+    display: inline-block;
+    margin-bottom: 0.2%;
+    margin-left: 1.5%;
+  }
+  .readTime {
+    font-family: "anek devanagari";
+    font-size: 0.7vw;
+
+    font-weight: 400;
+    color: #000;
+    margin-left: 1.5%;
+
+    opacity: 50%;
+  }
 @media screen and (max-width:767px){
     .col-3{
         display: none;
@@ -463,6 +597,22 @@ a{
     }
     .bullets{
         width: 2.5vw;
+    }
+    .creative1,
+    .creative2 {
+      width: 100% !important;
+      margin-top: 4%;
+    }
+    .imgText {
+      font-size: 10vw;
+    }
+     .border-box {
+      width: 20vw;
+    }
+    .border-box span,
+    .authorName,
+    .readTime {
+      font-size: 2vw;
     }
     
 }
