@@ -141,8 +141,8 @@ const props = Astro.props;
   </style>
   <script>
     import { Swiper } from "swiper";
-      //@ts-ignore it should fix later when swiper fixes its types
-   import { Navigation,Autoplay,EffectCreative,} from "swiper/modules";
+    //@ts-ignore it should fix later when swiper fixes its types
+    import { Navigation, Autoplay, EffectCreative } from "swiper/modules";
     let x = 3;
     var swiper = new Swiper(".heroSwiper", {
       modules: [Navigation, EffectCreative, Autoplay],
@@ -548,10 +548,9 @@ const props = Astro.props;
 </style>
 
 <script>
-
   import { Swiper } from "swiper";
-      //@ts-ignore it should fix later when swiper fixes its types
-   import { Navigation,EffectCreative,} from "swiper/modules";
+  //@ts-ignore it should fix later when swiper fixes its types
+  import { Navigation, EffectCreative } from "swiper/modules";
   let y = 3;
   var swiper2 = new Swiper(".swiper", {
     modules: [Navigation, EffectCreative],

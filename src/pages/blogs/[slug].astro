@@ -44,6 +44,7 @@ const entries: any = await contentfulClient.getEntries<any>({
   content_type: "caseStudy",
 });
 const { blogsData } = Astro.props as any;
+const caseStudies = blogsData?.fields?.relatedCaseStudies;
 ---
 
 <Layout
@@ -73,7 +74,7 @@ const { blogsData } = Astro.props as any;
       documentToHtmlString(blogsData.fields.content1heading as any)}
     content1Text={documentToHtmlString(blogsData.fields.content1text as any)}
     content2Heading={documentToHtmlString(
-      blogsData.fields.content2heading as any
+      blogsData.fields.content2heading as any,
     )}
     content2Text={documentToHtmlString(blogsData.fields.content2text as any)}
     content2Img={blogsData.fields?.content2img &&
@@ -87,7 +88,7 @@ const { blogsData } = Astro.props as any;
     content2bImgAlt={blogsData.fields?.content2bImage &&
       blogsData.fields?.content2bImage?.fields?.description}
     content2cHeading={documentToHtmlString(
-      blogsData.fields.content2cHeading as any
+      blogsData.fields.content2cHeading as any,
     )}
     content2cText={documentToHtmlString(blogsData.fields.content2cText as any)}
     content2cImg={blogsData.fields?.content2cImg &&
@@ -95,7 +96,7 @@ const { blogsData } = Astro.props as any;
     content2cImgAlt={blogsData.fields?.content2cImg &&
       blogsData.fields?.content2cImg?.fields?.description}
     content2dHeading={documentToHtmlString(
-      blogsData.fields.content2dHeading as any
+      blogsData.fields.content2dHeading as any,
     )}
     content2dText={documentToHtmlString(blogsData.fields.content2dText as any)}
     content2dImg={blogsData.fields?.content2dImg &&
@@ -103,11 +104,11 @@ const { blogsData } = Astro.props as any;
     content2dImgAlt={blogsData.fields?.content2dImg &&
       blogsData.fields?.content2dImg?.fields?.description}
     content3Heading={documentToHtmlString(
-      blogsData.fields.content3heading as any
+      blogsData.fields.content3heading as any,
     )}
     content3Text={documentToHtmlString(blogsData.fields.content3text as any)}
     content3bHeading={documentToHtmlString(
-      blogsData.fields.content3bHeading as any
+      blogsData.fields.content3bHeading as any,
     )}
     content3bText={documentToHtmlString(blogsData.fields.content3bText as any)}
     content3bImg={blogsData.fields?.content3bImg &&
@@ -115,7 +116,7 @@ const { blogsData } = Astro.props as any;
     content3bImgAlt={blogsData.fields?.content3bImg &&
       blogsData.fields?.content3bImg?.fields?.description}
     content3cHeading={documentToHtmlString(
-      blogsData.fields.content3cHeading as any
+      blogsData.fields.content3cHeading as any,
     )}
     content3cText={documentToHtmlString(blogsData.fields.content3cText as any)}
     index1={documentToHtmlString(blogsData.fields.index1 as any)}
@@ -127,7 +128,9 @@ const { blogsData } = Astro.props as any;
     aboutAuthorDsgn={blogsData.fields.aboutAuthorDsgn}
   />
 
-  <Comp3Black caseStudies={entries.items} />
+  {caseStudies && 
+  <Comp3Black caseStudies={caseStudies} />
+  }
   <ContactUsNow />
 </Layout>
 

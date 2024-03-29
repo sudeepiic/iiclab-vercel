@@ -7,6 +7,7 @@ Object.keys(props);
 const caseStudies = props.caseStudies;
 ---
 
+
 <section
   style="background-color: #1a1a1a; padding: 5% 9% 2% 9%; border-radius: 3.8vw 3.8vw 0 0 ;"
 >
@@ -22,7 +23,7 @@ const caseStudies = props.caseStudies;
     <div class="col-md-4 col-lg-4 col-sm-12">
       <Image
         class="creative1 optimization"
-        src={caseStudies[2]?.fields?.heroBanner?.fields?.file.url}
+        src={caseStudies[0]?.fields?.heroBanner?.fields?.file.url}
         width="941"
         height="828"
         style="width: 95%; height: 63%; object-fit: cover; margin-bottom: 5%;"
@@ -32,12 +33,12 @@ const caseStudies = props.caseStudies;
 
       <span class="imgText"
         >{
-          caseStudies[2]?.fields?.heroTitleMain?.content[0]?.content[0].value
+          caseStudies[0]?.fields?.heroTitleMain?.content[0]?.content[0].value
         }</span
       >
 
       <a
-        href=`portfolio/${caseStudies[2]?.fields?.heroTitle}`
+        href=` /portfolio/${caseStudies[0]?.fields?.heroTitle}`
         aria-label="open"
       >
         <Image class="btn goBtn optimization" src={yellowGo} alt="" /></a
@@ -68,7 +69,7 @@ const caseStudies = props.caseStudies;
       >
 
       <a
-        href=`portfolio/${caseStudies[1]?.fields?.heroTitle}`
+        href=`/portfolio/${caseStudies[1]?.fields?.heroTitle}`
         aria-label="open"
       >
         <Image class="btn goBtn optimization" src={yellowGo} alt="" /></a

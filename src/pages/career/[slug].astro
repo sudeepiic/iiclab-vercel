@@ -34,7 +34,7 @@ const { jobProfilesData } = Astro.props;
   jobType={jobProfilesData.fields.jobType}
   aboutJob={jobProfilesData.fields.aboutJob}
   responsibilities={documentToHtmlString(
-    jobProfilesData.fields.reponsibilities
+    jobProfilesData.fields.reponsibilities,
   )}
   jobRequirements={documentToHtmlString(jobProfilesData.fields.jobRequirements)}
   qualifications={documentToHtmlString(jobProfilesData.fields.qualifications)}

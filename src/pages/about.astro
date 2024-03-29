@@ -9,7 +9,6 @@ import { contentfulClient } from "../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { Image } from "astro:assets";
 
-
 const clientsEntries = await contentfulClient.getEntries<any>({
   content_type: "clients",
 });
@@ -731,9 +730,9 @@ for (let i = 0; i < numArrays; i++) {
   gsap.registerPlugin(ScrollTrigger);
 
   //  swiper js
-  import Swiper from 'swiper';
+  import Swiper from "swiper";
   //@ts-ignore it should fix later when swiper fixes its types
-import { Navigation, EffectCreative } from 'swiper/modules';
+  import { Navigation, EffectCreative } from "swiper/modules";
   let x = 3;
 
   var swiper = new Swiper(".mySwiper", {
@@ -835,7 +834,7 @@ import { Navigation, EffectCreative } from 'swiper/modules';
   var textWrapper = document.querySelector("#div1");
   textWrapper.innerHTML = textWrapper.textContent.replace(
     /\S/g,
-    "<span class='letter'>$&</span>"
+    "<span class='letter'>$&</span>",
   );
 
   let tl = new TimelineMax({});

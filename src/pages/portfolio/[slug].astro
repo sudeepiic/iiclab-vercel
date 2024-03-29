@@ -35,13 +35,6 @@ export async function getStaticPaths() {
 
 const { caseStudyData } = Astro.props;
 const data = caseStudyData.fields;
-
-console.log(
-  "123456789",
-  // data?.heroVideo?.fields?.file.url,
-  // data?.heroVideo?.fields?.file.url,
-  data.belowParallel1img
-);
 ---
 
 <Layout
@@ -190,7 +183,7 @@ console.log(
           data.belowParallel1img && data.belowParallel1img?.fields?.file.url
         }
         belowParallelImgTitle2={documentToHtmlString(
-          data.belowParallelImgTitle2
+          data.belowParallelImgTitle2,
         )}
         belowParallelImgText2={documentToHtmlString(data.belowParallelImgText2)}
         belowParallel2img={

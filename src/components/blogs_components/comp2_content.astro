@@ -5,302 +5,529 @@ import blackGo from "../../images/blackGo2.png";
 import creative2 from "../../images/creative2.png";
 import submitBtn from "../../images/submitBtn.jpg";
 import blackDiamond from "../../images/blackDiamond.png";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 //import { Image, Picture } from "@astrojs/image/components";
 
 const props = Astro.props;
-Object.keys(props)
+Object.keys(props);
 ---
-        <section class="margins">
 
-            <div class="row" >
-                <div class="quote col-sm-12 col-md-9 col-lg-9"  >
-                    {
-                        props.quote &&
-                        <div class="innerquote" >
-                    
-                    <span set:html={props.quote}>
-                    </span> 
-                    <span class="quoter" set:html={props.quoter}></span>
-                    </div>
+<section class="margins">
+  <div class="row">
+    <div class="quote col-sm-12 col-md-9 col-lg-9">
+      {
+        props.quote && (
+          <div class="innerquote">
+            <span set:html={props.quote} />
+            <span class="quoter" set:html={props.quoter} />
+          </div>
+        )
+      }
 
-                    }
-                
+      <div class="content1" id="content1">
+        {
+          props.content1Heading && (
+            <>
+              <Image
+                src={blackDiamond}
+                class="bullets optimization "
+                alt=""
+                loading="lazy"
+              />
+              <div class="contentTitle" set:html={props.content1Heading} />
+            </>
+          )
+        }
+        <span class="text" set:html={props.content1Text} />
+      </div>
 
-            <div class="content1" id="content1">
-                    { props.content1Heading &&
-                    <Image   src={blackDiamond} class="bullets optimization " alt="" loading="lazy"/>
-                   <div class="contentTitle" set:html={props.content1Heading}></div>
-                    }
-                <span class="text" set:html={props.content1Text}></span>
-            </div>
+      <div class="content2" id="content2">
+        {
+          props.content2Heading && (
+            <>
+              <Image
+                src={blackDiamond}
+                class="bullets optimization "
+                alt=""
+                loading="lazy"
+              />
+              <div class="contentTitle" set:html={props.content2Heading} />
+            </>
+          )
+        }
 
-            <div class="content2" id="content2">
-                {
-                    props.content2Heading  &&
-                    <Image   src={blackDiamond} class="bullets optimization " alt="" loading="lazy"/>
-                  <div class="contentTitle" set:html={props.content2Heading} ></div>
+        <span class="text" set:html={props.content2Text} />
+        {
+          props.content2Img && (
+            <Image
+              src={props.content2Img}
+              style="width:100%;"
+              class="optimization "
+              width={1050}
+              height={600}
+              alt={props.content2ImgAlt}
+              loading="lazy"
+            />
+          )
+        }
+      </div>
 
-                        }
-                    
+      <div class="content2b" id="content2b">
+        {
+          props.content2bHeading && (
+            <>
+              <Image
+                src={blackDiamond}
+                class="bullets optimization "
+                alt=""
+                loading="lazy"
+              />
+              <h3 class="contentTitle" set:html={props.content2bHeading} />
+            </>
+          )
+        }
 
-                        <span class="text" set:html={props.content2Text} ></span>
-                        {
-                            props.content2Img &&
-                            <Image   src={props.content2Img} style="width:100%;" class="optimization " width={1050} height={600} alt={props.content2ImgAlt} loading="lazy"/>
-                        }
-                    </div>
+        <span class="text" set:html={props.content2bText} />
+        {
+          props.content2bImg && (
+            <Image
+              src={props.content2bImg}
+              style="width:100%;"
+              width={1050}
+              height={600}
+              class="optimization "
+              alt={props.content2bImgAlt}
+              loading="lazy"
+            />
+          )
+        }
+      </div>
+      <div class="content2c" id="content2c">
+        {
+          props.content2cHeading && (
+            <>
+              <Image
+                src={blackDiamond}
+                class="bullets optimization "
+                alt=""
+                loading="lazy"
+              />
+              <div class="contentTitle" set:html={props.content2cHeading} />
+            </>
+          )
+        }
 
-            <div class="content2b" id="content2b">
-                {props.content2bHeading && 
-                    <Image   src={blackDiamond} class="bullets optimization " alt="" loading="lazy"/>
-                   <h3 class="contentTitle" set:html={props.content2bHeading} ></h3>
-                }
-               
-                <span class="text" set:html={props.content2bText}></span>
-                {
-                    props.content2bImg &&
-                    <Image src={props.content2bImg} style="width:100%;" width={1050} height={600} class="optimization "  alt={props.content2bImgAlt} loading="lazy"/>
-                }
-                    
-            </div>
-            <div class="content2c" id="content2c">
-                {
-                    props.content2cHeading &&
-                    <Image   src={blackDiamond} class="bullets optimization " alt="" loading="lazy"/>
-                    <div class="contentTitle" set:html={props.content2cHeading}></div>
-                }
+        {
+          props.content2cText && (
+            <span class="text" set:html={props.content2cText} />
+          )
+        }
 
-                        {
-                            props.content2cText &&
-                            <span class="text" set:html={props.content2cText}></span>
-                        }
-                        
-                        {
-                            props.content2cImg &&
-                            <Image   src={props.content2cImg}  class=" optimization" width={1050} height={600} style="width:100%;"  alt={props.content2cImgAlt}/>
-                        }
-                            
-                    </div>
+        {
+          props.content2cImg && (
+            <Image
+              src={props.content2cImg}
+              class=" optimization"
+              width={1050}
+              height={600}
+              style="width:100%;"
+              alt={props.content2cImgAlt}
+            />
+          )
+        }
+      </div>
 
-            {
-             props.content2dText &&
-                <div class="content2d" id="content2d">
-                    {
-                        props.content2dHeading && 
-                        <Image   src={blackDiamond} class="bullets  optimization" alt="" loading="lazy"/>
-                        <div class="contentTitle" set:html={props.content2dHeading}></div>
-                    }
-                
+      {
+        props.content2dText && (
+          <div class="content2d" id="content2d">
+            {props.content2dHeading && (
+              <>
+                <Image
+                  src={blackDiamond}
+                  class="bullets  optimization"
+                  alt=""
+                  loading="lazy"
+                />
+                <div class="contentTitle" set:html={props.content2dHeading} />
+              </>
+            )}
 
-                            <span class="text" set:html={props.content2dText}></span>
+            <span class="text" set:html={props.content2dText} />
 
-                {
-                    props.content2dImg &&
-                    <Image   src={props.content2dImg}  style="width:100%;"  width={1050} height={600} class="optimization " alt={props.content2dImgAlt} loading="lazy"/>
-                }
-                   
-                </div>
-            }
-           
-            {
-                props.content3Text &&
-                <div class="content3">
-                    {
-                        props.content3Heading &&
-                        <Image   src={blackDiamond} class="bullets  optimization" alt="" loading="lazy"/>
-                         <div class="contentTitle" set:html={props.content3Heading} ></div>
-                    }
-                
+            {props.content2dImg && (
+              <Image
+                src={props.content2dImg}
+                style="width:100%;"
+                width={1050}
+                height={600}
+                class="optimization "
+                alt={props.content2dImgAlt}
+                loading="lazy"
+              />
+            )}
+          </div>
+        )
+      }
 
-                        <span class="text" set:html={props.content3Text}></span>
+      {
+        props.content3Text && (
+          <div class="content3">
+            {props.content3Heading && (
+              <>
+                <Image
+                  src={blackDiamond}
+                  class="bullets  optimization"
+                  alt=""
+                  loading="lazy"
+                />
+                <div class="contentTitle" set:html={props.content3Heading} />
+              </>
+            )}
 
-                            
-                    </div>
+            <span class="text" set:html={props.content3Text} />
+          </div>
+        )
+      }
 
-                    }
-                    
-                    {
-                        props.content3bText &&
+      {
+        props.content3bText && (
+          <div class="content3b">
+            {props.content3bHeading && (
+              <>
+                <Image
+                  src={blackDiamond}
+                  class="bullets  optimization"
+                  alt=""
+                  loading="lazy"
+                />
+                <div class="contentTitle" set:html={props.content3bHeading} />
+              </>
+            )}
 
-                <div class="content3b">
-                {
-                    props.content3bHeading &&
-                    <Image   src={blackDiamond} class="bullets  optimization" alt="" loading="lazy"/>
-                    <div class="contentTitle" set:html={props.content3bHeading}></div>
+            <span class="text" set:html={props.content3bText} />
+            {props.content3bImg && (
+              <Image
+                src={props.content3bImg}
+                style="width:100%;"
+                width={1050}
+                height={600}
+                class=" optimization"
+                alt={props.content3bImgAlt}
+                loading="lazy"
+              />
+            )}
+          </div>
+        )
+      }
 
-                        }
-                    
-                        <span class="text" set:html={props.content3bText}></span>
-                        {
-                            props.content3bImg &&
-                            <Image   src={props.content3bImg}  style="width:100%;" width={1050} height={600} class=" optimization" alt={props.content3bImgAlt} loading="lazy"/>
-                        }
-                        
-                        </div>
+      {
+        props.content3cText && (
+          <div class="content3c">
+            <Image
+              src={blackDiamond}
+              class="bullets optimization "
+              alt=""
+              loading="lazy"
+            />
+            <div class="contentTitle" set:html={props.content3bHeading} />
+            <p class="text" set:html={props.content3cText} />
+          </div>
+        )
+      }
+    </div>
 
-            }
-           
-            {
-                props.content3cText &&
-                <div class="content3c">
-                <Image   src={blackDiamond} class="bullets optimization " alt="" loading="lazy"/>
-                <div class="contentTitle" set:html={props.content3bHeading}></div>
-                <p class="text" set:html={props.content3cText}></p>
+    <div class="col-3 d-md-block d-none">
+      {
+        (props.index1 ||
+          props.index2 ||
+          props.index3 ||
+          props.index3 ||
+          props.index5) && (
+          <div class="contents">
+            <p class="tableHead"> Table of contents</p>
+            <span>
+              <a
+                href="#content1"
+                aria-label="content1"
+                set:html={props.index1}
+              />
+            </span>
+            <span>
+              <a
+                href="#content2"
+                aria-label="content2"
+                set:html={props.index2}
+              />{" "}
+            </span>
+            <span>
+              <a
+                href="#content2b"
+                aria-label="content2b"
+                set:html={props.index3}
+              >
+                {" "}
+              </a>
+            </span>
+            <span>
+              <a
+                href="#content2c"
+                aria-label="content2c"
+                set:html={props.index4}
+              />{" "}
+            </span>
+            <span>
+              <a
+                href="#content2d"
+                aria-label="content2d"
+                set:html={props.index5}
+              >
+                {" "}
+              </a>
+            </span>
+          </div>
+        )
+      }
 
-                        
-                        </div>
+      <div class="author">
+        <p class="about">About the Author</p>
+        <div class="d-flex justify-content-start align-items-center gap-3">
+          <Image
+            class="img optimization d-none"
+            src={authorImg}
+            alt=""
+            loading="lazy"
+          />
+          <div>
+            <span class="authName" set:html={props.aboutAuthorName} /><br />
+            <span class="authDesign" set:html={props.aboutAuthorDsgn} />
+          </div>
+        </div>
+      </div>
 
-                    }
-                    
-                
-                </div>
+      <div class="newsletter">
+        <p class="about">Subscribe to Newsletter</p>
+        <form action="" id="subscribeFormNews">
+          <input
+            class="inputCss"
+            name="name"
+            type="text"
+            style="margin-bottom: 4%;"
+            placeholder="Enter your Name..."
+          />
+          <input
+            class="inputCss"
+            name="email"
+            type="email"
+            placeholder="Enter your Email..."
+          />
+          <button
+            class="btn"
+            type="submit"
+            aria-label="subscribe to newsletter now"
+          >
+            <Image src={submitBtn} class="optimization" alt="" loading="lazy" />
+          </button>
+        </form>
+      </div>
 
+      <div class="mt-4 py-4 border-1">
+        <p class="px-0 pb-2">MORE FROM OUR CREATIVE MIND</p>
+        <div class="p-0">
+          <Image
+            class="creative1 optimization"
+            src={creative1}
+            style="width: 100%; height: 34%; object-fit: cover; margin-bottom: 5%; aspect-ratio: 4/2"
+            alt=""
+            loading="lazy"
+          />
 
-                <div class="col-3">
+          <span class="imgText"
+            >Get Everyone's Attention With These Amazing Experiences</span
+          >
 
-                    {
-                        (props.index1 || props.index2 || props.index3 || props.index3|| props.index5)
-                        &&  <div class="contents">
-                        <p class="tableHead"> Table of contents</p>
-                        <span><a  href="#content1" aria-label="content1" set:html={props.index1}></a></span>
-                        <span><a href="#content2" aria-label="content2" set:html={props.index2}></a> </span>
-                        <span><a href="#content2b" aria-label="content2b" set:html={props.index3}> </a></span>
-                        <span><a href="#content2c" aria-label="content2c"  set:html={props.index4}></a> </span>
-                        <span><a href="#content2d" aria-label="content2d" set:html={props.index5}> </a></span>
-                    </div>
+          <a
+            href="get-everyones-attention-with-these-amazing-experiences"
+            aria-label="open"
+          >
+            <Image class="btn goBtn optimization" src={blackGo} alt="" /></a
+          >
+          <div style="margin-top: 3.4%;">
+            <div class="border-box"><span>Design & Technology</span></div>
+            <span class="authorName">By Snigdha Singh</span>
+            <span class="dot"></span>
+            <span class="readTime">5 min read</span>
+          </div>
+        </div>
 
-                    }
-                
-                    <div class="author">
-                        <p class="about"> About the Author</p>
-                        <div class="d-flex justify-content-start align-items-center gap-3">
-                            <Image   class="img optimization d-none" src={authorImg} alt="" loading="lazy"/>
-                            <div >
-                                <span class="authName" set:html={props.aboutAuthorName}></span><br>
-                            <span class="authDesign" set:html={props.aboutAuthorDsgn}></span>
-                            </div>
-                        </div>
-                                
+        <div class="pt-4 px-0">
+          <Image
+            class="creative2 optimization"
+            src={creative2}
+            style="width: 100%; height: 34%; object-fit: cover; margin-bottom: 5%; aspect-ratio: 4/2"
+            loading="lazy"
+            alt=""
+          />
 
-                    </div>
+          <span class="imgText"
+            >Is 3D Projection Mapping The Future Or The Present?</span
+          >
 
-                
-                    
-                    <div class="newsletter">
-                        <p class="about">Subscribe to Newsletter</p>
-                        <form action="" id="subscribeFormNews">
-                            <input class="inputCss" name="name" type="text" style="margin-bottom: 4%;" placeholder="Enter your Name...">
-                            <input class="inputCss" name="email" type="email" placeholder="Enter your Email...">
-                            <button class="btn" type="submit" aria-label="subscribe to newsletter now">
-                                <Image   src={submitBtn} class="  optimization"  alt="" loading="lazy"/>
-                            </button>
-                        </form>
-                    </div>
+          <a
+            href="is-3d-projection-mapping-the-future-or-the-present"
+            aria-label="open"
+          >
+            <Image class="btn goBtn optimization" src={blackGo} alt="" /></a
+          >
+          <div style="margin-top: 3.4%;">
+            <div class="border-box"><span>Design & Technology</span></div>
+            <span class="authorName">By Pallavi.Jain</span>
+            <span class="dot"></span>
+            <span class="readTime">5 min read</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-                    
-                     <div class=" mt-4 pt-4 border-1">
-                       <p class="  px-0 pb-2">
-                        MORE FROM OUR CREATIVE MIND
+  <div class="tags d-md-flex align-items-center d-none">
+    <span>Tags:</span>
+    <div class="tagsBtn">virtual reality</div>
+    <div class="tagsBtn">Productivity</div>
+    <div class="tagsBtn">Minimalist</div>
+    <div class="tagsBtn">Quality</div>
+    <div class="tagsBtn">conference</div>
+    <div class="tagsBtn">Growth</div>
+    <div class="tagsBtn">Security Token</div>
+    <div class="tagsBtn">virtual reality</div>
+  </div>
+  <div class="d-md-none d-block" style=" ">
+    <span class="tags" style="display: -webkit-box; margin-left: -10%">
+      <ul class="d-flex align-items-center marquee1 m-0">
+        <div class="tagsBtn">virtual reality</div>
 
-                       </p>
-                         <div class="  p-0">
-                                    <Image
-                                        class="creative1 optimization"
-                                        src={creative1}
-                                        style="width: 100%; height: 34%; object-fit: cover; margin-bottom: 5%; aspect-ratio: 4/2"
-                                        alt=""
-                                        loading="lazy"
-                                    />
+        <div class="tagsBtn">Productivity</div>
 
-                                    <span class="imgText"
-                                        >Get Everyone's Attention With These Amazing Experiences</span
-                                    >
+        <div class="tagsBtn">Minimalist</div>
 
-                                    <a
-                                        href="get-everyones-attention-with-these-amazing-experiences"
-                                        aria-label="open"
-                                    >
-                                        <Image class="btn goBtn optimization" src={blackGo} alt="" /></a
-                                    >
-                                    <div style="margin-top: 3.4%;">
-                                        <div class="border-box"><span>Design & Technology</span></div>
-                                        <span class="authorName">By Snigdha Singh</span>
-                                        <span class="dot"></span>
-                                        <span class="readTime">5 min read</span>
-                                    </div>
-                                    </div>
+        <div class="tagsBtn">Quality</div>
 
-                                     <div class=" pt-4 px-0  ">
-                                        <Image
-                                            class="creative2 optimization"
-                                            src={creative2}
-                                             style="width: 100%; height: 34%; object-fit: cover; margin-bottom: 5%; aspect-ratio: 4/2"
+        <div class="tagsBtn">conference</div>
 
-                                            loading="lazy"
-                                            alt=""
-                                        />
+        <div class="tagsBtn">Growth</div>
 
-                                        <span class="imgText"
-                                            >Is 3D Projection Mapping The Future Or The Present?</span
-                                        >
+        <div class="tagsBtn">Security Token</div>
 
-                                        <a
-                                            href="is-3d-projection-mapping-the-future-or-the-present"
-                                            aria-label="open"
-                                        >
-                                            <Image class="btn goBtn optimization" src={blackGo} alt="" /></a
-                                        >
-                                        <div style="margin-top: 3.4%;">
-                                            <div class="border-box"><span>Design & Technology</span></div>
-                                            <span class="authorName">By Pallavi.Jain</span>
-                                            <span class="dot"></span>
-                                            <span class="readTime">5 min read</span>
-                                        </div>
-                                        </div>
-                     </div>
+        <div class="tagsBtn">virtual reality</div>
+      </ul>
+    </span>
 
-                    
+  
+  </div>
 
-                </div>
+  <div class="d-md-none d-block">
+    <div class="author">
+      <p class="about">About the Author</p>
+      <div class="d-flex justify-content-start align-items-center gap-3">
+        <Image
+          class="img optimization d-none"
+          src={authorImg}
+          alt=""
+          loading="lazy"
+        />
+        <div>
+          <span class="authName" set:html={props.aboutAuthorName} /><br />
+          <span class="authDesign" set:html={props.aboutAuthorDsgn} />
+        </div>
+      </div>
+    </div>
+    <div class="newsletter">
+      <p class="about">Subscribe to Newsletter</p>
+      <form action="" id="subscribeFormNews">
+        <input
+          class="inputCss"
+          name="name"
+          type="text"
+          style="margin-bottom: 4%;"
+          placeholder="Enter your Name..."
+        />
+        <input
+          class="inputCss"
+          name="email"
+          type="email"
+          placeholder="Enter your Email..."
+        />
+        <button
+          class="btn"
+          type="submit"
+          aria-label="subscribe to newsletter now"
+        >
+          <Image src={submitBtn} class="optimization" alt="" loading="lazy" />
+        </button>
+      </form>
+    </div>
 
+    <div class="mt-4 py-4 border-1">
+      <p class="px-0 pb-2">MORE FROM OUR CREATIVE MIND</p>
+      <div class="p-0">
+        <Image
+          class="creative1 optimization"
+          src={creative1}
+          style="width: 100%; height: 34%; object-fit: cover; margin-bottom: 5%; aspect-ratio: 4/2"
+          alt=""
+          loading="lazy"
+        />
 
-            </div>
+        <span class="imgText"
+          >Get Everyone's Attention With These Amazing Experiences</span
+        >
 
-            <div class="tags d-flex">
-                <span>Tags:</span>
-                <div class="tagsBtn">
-                    virtual reality
-                </div>
-                <div class="tagsBtn">
-                    Productivity
-                </div>
-                <div class="tagsBtn">
-                    Minimalist
-                </div>
-                <div class="tagsBtn">
-                    Quality
-                </div>
-                <div class="tagsBtn">
-                    conference
-                </div>
-                <div class="tagsBtn">
-                    Growth
-                </div>
-                <div class="tagsBtn">
-                    Security Token
-                </div>
-                <div class="tagsBtn">
-                    virtual reality
-                </div>
-            
-            </div>
-        
-        
-        </section>
+        <a
+          href="get-everyones-attention-with-these-amazing-experiences"
+          aria-label="open"
+        >
+          <Image class="btn goBtn optimization" src={blackGo} alt="" /></a
+        >
+        <div style="margin-top: 3.4%;">
+          <div class="border-box"><span>Design & Technology</span></div>
+          <span class="authorName">By Snigdha Singh</span>
+          <span class="dot"></span>
+          <span class="readTime">5 min read</span>
+        </div>
+      </div>
+
+      <div class="pt-4 px-0">
+        <Image
+          class="creative2 optimization"
+          src={creative2}
+          style="width: 100%; height: 34%; object-fit: cover; margin-bottom: 5%; aspect-ratio: 4/2"
+          loading="lazy"
+          alt=""
+        />
+
+        <span class="imgText"
+          >Is 3D Projection Mapping The Future Or The Present?</span
+        >
+
+        <a
+          href="is-3d-projection-mapping-the-future-or-the-present"
+          aria-label="open"
+        >
+          <Image class="btn goBtn optimization" src={blackGo} alt="" /></a
+        >
+        <div style="margin-top: 3.4%;">
+          <div class="border-box"><span>Design & Technology</span></div>
+          <span class="authorName">By Pallavi.Jain</span>
+          <span class="dot"></span>
+          <span class="readTime">5 min read</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <script>
-    import Swal from "sweetalert2";
-    document
+  import Swal from "sweetalert2";
+  document
     .getElementById("subscribeFormNews")
     .addEventListener("submit", function (event) {
       event.preventDefault();
@@ -310,15 +537,16 @@ Object.keys(props)
       var name = formData.get("name");
       var email = formData.get("email");
 
-      const connectFormData ={
-        name: name, email: email
+      const connectFormData = {
+        name: name,
+        email: email,
       };
 
       const formData2 = new FormData();
       formData2.append("type", "subscribe-newsletter");
       formData2.append("body", JSON.stringify(connectFormData));
 
-      fetch('https://backend.iiclab.com/mail', {
+      fetch("https://backend.iiclab.com/mail", {
         method: "POST",
         body: formData2,
         redirect: "follow",
@@ -351,130 +579,124 @@ Object.keys(props)
     });
 </script>
 
-
-
 <style>
-.optimization {
+  .optimization {
     height: auto;
   }
-.margins {
+  .margins {
     margin-left: 7.5%;
     margin-right: 7%;
     padding-top: 2%;
   }
-  .quote{
+  .quote {
     padding-right: 11%;
-    max-height:160vh;
-     overflow:scroll
+    max-height: 160vh;
+    overflow: scroll;
   }
 
-  .innerquote{
+  .innerquote {
     border-left: 4px solid black;
-   
   }
 
-.innerquote span{
+  .innerquote span {
     padding: 1%;
-    
+
     padding-left: 3%;
     display: inline-block;
-    font-family: 'anek devanagari';
+    font-family: "anek devanagari";
     font-size: 1.35vw;
     line-height: 1.9;
-    font-weight:500 ;
-}
-.quoter{
+    font-weight: 500;
+  }
+  .quoter {
     opacity: 50%;
-}
+  }
 
-.content1, .content2, .content2b, .content2c, .content2d, .content3, .content3b, .content3c{
+  .content1,
+  .content2,
+  .content2b,
+  .content2c,
+  .content2d,
+  .content3,
+  .content3b,
+  .content3c {
     margin-top: 4%;
-}
+  }
 
-.text{
-    font-family: 'anek devanagari';
+  .text {
+    font-family: "anek devanagari";
     font-size: 1.2vw;
     line-height: 1.7;
     margin-top: 2%;
-}
+  }
 
-.border-1 {
-
+  .border-1 {
     border-top: 1.5px solid rgb(200, 200, 197);
-}
+  }
 
-
-
-.bullets{
+  .bullets {
     vertical-align: super;
     margin-right: 1%;
     width: 1.3vw;
-}
-.col-3{
+  }
+  .col-3 {
     padding-top: 1%;
-}
+  }
 
-.contents{
+  .contents {
     border-bottom: 1.5px solid rgb(200, 200, 197);
-}
-.contents span{
-    font-family: 'anek devanagari';
+  }
+  .contents span {
+    font-family: "anek devanagari";
     font-size: 1.1vw;
-    
-}
-a{
+  }
+  a {
     text-decoration: none;
-}
+  }
 
-.contents p{
-    font-family: 'anek devanagari';
-}
+  .contents p {
+    font-family: "anek devanagari";
+  }
 
-
-
-
-.tableHead{
+  .tableHead {
     font-weight: 600;
     font-size: 1.2vw !important;
+  }
 
-}
-
-.about{
+  .about {
     font-weight: 600;
-    font-family: 'anek devanagari';
+    font-family: "anek devanagari";
     font-size: 1.2vw;
-    
+  }
 
-}
-
-.author{
+  .author {
     padding-top: 10%;
     padding-bottom: 10%;
     border-bottom: 1.5px solid rgb(200, 200, 197);
-}
-.img{
+  }
+  .img {
     width: 20%;
     height: 20%;
     border-radius: 50%;
-}
+  }
 
-.authName, .authDesign{
-    font-family: 'anek devanagari';
-}
-.authName{
+  .authName,
+  .authDesign {
+    font-family: "anek devanagari";
+  }
+  .authName {
     font-size: 1.1vw;
     font-weight: 500;
-}
-.authDesign{
+  }
+  .authDesign {
     opacity: 50%;
     font-size: 1vw;
+  }
+  .newsletter {
+    padding-top: 10%;
+  }
 
-}
-.newsletter{
-    padding-top:10%
-}
-
-.inputCss{
+  .inputCss {
     /* background-color: #1a1a1a; */
     height: 3.2vw;
     border-radius: 0 15px 0 15px;
@@ -483,43 +705,42 @@ a{
     font-size: calc(7px + 0.390625vw);
     border: 1px solid rgb(147, 147, 146);
     padding-left: 5%;
-}
+  }
 
-.newsletter img{
+  .newsletter img {
     margin-top: 5%;
     padding: 0;
     width: 55%;
-}
+  }
 
-.tags{
-    border-top:1.5px solid rgb(200, 200, 197) ;
+  .tags {
+    border-top: 1.5px solid rgb(200, 200, 197);
     border-bottom: 1.5px solid rgb(200, 200, 197);
     padding-top: 2%;
     padding-bottom: 2%;
     margin-top: 3%;
     margin-bottom: 4%;
-    font-family: 'anek devanagari';
-}
+    font-family: "anek devanagari";
+  }
 
-.tags span{
+  .tags span {
     margin-top: 0.5%;
     font-weight: 500;
     font-size: 0.9vw;
+  }
 
-}
-
-.tagsBtn{
-    border:1.5px solid rgb(200, 200, 197) ;
-    font-family: 'anek devanagari';
+  .tagsBtn {
+    border: 1.5px solid rgb(200, 200, 197);
+    font-family: "anek devanagari";
     border-radius: 5rem;
     width: fit-content;
     padding: 0.7%;
-    margin-left:2.5%;
+    margin-left: 2.5%;
     font-weight: 500;
     font-size: 0.82vw;
-}
+  }
 
- .imgText {
+  .imgText {
     font-family: "Deutschlander";
     text-transform: uppercase;
     font-size: 3.7vw;
@@ -535,8 +756,7 @@ a{
     vertical-align: top;
   }
 
-
-   .border-box {
+  .border-box {
     /* background-color: #e5ff53; */
     text-align: center;
     padding: 0.18vw;
@@ -545,7 +765,7 @@ a{
     display: inline-block;
     vertical-align: middle;
     line-height: 1.65;
-    border: 1px solid #d1d2cc
+    border: 1px solid #d1d2cc;
   }
   .border-box span {
     font-family: "anek devanagari";
@@ -561,7 +781,7 @@ a{
     font-size: 0.7vw;
 
     font-weight: 400;
-    color: #000
+    color: #000;
     margin-left: 2%;
   }
   .dot {
@@ -583,21 +803,76 @@ a{
 
     opacity: 50%;
   }
-@media screen and (max-width:767px){
-    .col-3{
-        display: none;
+
+  .marquee1 {
+    white-space: nowrap;
+    /* overflow: hidden; */
+    box-sizing: border-box;
+    animation: marquee-slide 18s linear infinite;
+  }
+  @keyframes marquee-slide {
+    0% {
+      transform: translateX(0);
     }
-    .text{
-        font-size: 2.8vw;
+
+    100% {
+      transform: translateX(-100%);
     }
-    .contentTitle{
-        font-size: 8vw;
+  }
+  @media (max-width: 767px) {
+    .inputCss {
+      font-size: calc(7px + 2.390625vw);
     }
-    .innerquote span{
-        font-size: 3vw;
+    .tags {
+      margin-top: 0;
     }
-    .bullets{
-        width: 2.5vw;
+    .tags span {
+      font-size: 3vw;
+    }
+    .tagsBtn {
+      white-space: nowrap;
+      font-size: 3.6vw;
+      padding: 2% 1.7% 1% 1.7%;
+    }
+
+    .authorName {
+      padding-top: 5%;
+      padding-bottom: 5%;
+      font-size: 3.1vw;
+    }
+    .authName {
+      font-size: 5vw;
+    }
+    .inputCss {
+      height: 11.2vw;
+    }
+    .about {
+      font-size: 6vw;
+      padding-top: 0%;
+      margin-bottom: 0;
+    }
+
+    .author {
+      padding-top: 5%;
+      padding-bottom: 5%;
+    }
+    .authDesign {
+      font-size: 4vw;
+    }
+    .col-3 {
+      display: none;
+    }
+    .text {
+      font-size: 2.8vw;
+    }
+    .contentTitle {
+      font-size: 8vw;
+    }
+    .innerquote span {
+      font-size: 3vw;
+    }
+    .bullets {
+      width: 2.5vw;
     }
     .creative1,
     .creative2 {
@@ -607,7 +882,7 @@ a{
     .imgText {
       font-size: 10vw;
     }
-     .border-box {
+    .border-box {
       width: 20vw;
     }
     .border-box span,
@@ -615,33 +890,31 @@ a{
     .readTime {
       font-size: 2vw;
     }
-    
-}
-
+  }
 </style>
 
 <style is:global>
-
-.contentTitle, .contentTitle *{
+  .contentTitle,
+  .contentTitle * {
     font-family: "Deutschlander";
-        text-transform: uppercase;
-        font-size: 4.2vw ;
-        font-weight: 400 !important;
-        font-style: normal;
-        /* color: white; */
-        line-height: 0.85;
-        display: inline-block;
-        word-spacing: 0.12rem;
+    text-transform: uppercase;
+    font-size: 4.2vw;
+    font-weight: 400 !important;
+    font-style: normal;
+    /* color: white; */
+    line-height: 0.85;
+    display: inline-block;
+    word-spacing: 0.12rem;
     letter-spacing: 0.018rem;
-  
-}
+  }
 
-@media screen and (max-width:767px) {
-    .contentTitle, .contentTitle *{
-        font-size: 8vw;
-        margin: 0 !important;
+  @media screen and (max-width: 767px) {
+    .contentTitle,
+    .contentTitle * {
+      font-size: 8vw;
+      margin: 0 !important;
     }
-}
+  }
   .swal2-html-container {
     font-family: "Anek Devanagari" !important;
     font-size: 1.2vw !important;
@@ -690,6 +963,3 @@ a{
     margin-bottom: 0vw;
   }
 </style>
-
-
-
