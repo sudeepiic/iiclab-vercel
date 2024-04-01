@@ -4,9 +4,8 @@ import { Image } from "astro:assets";
 const props = Astro.props;
 Object.keys(props);
 
-const caseStudies = props.caseStudies;
+const caseStudies = props?.caseStudies;
 ---
-
 
 <section
   style="background-color: #1a1a1a; padding: 5% 9% 2% 9%; border-radius: 3.8vw 3.8vw 0 0 ;"
