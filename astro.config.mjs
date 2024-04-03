@@ -1,9 +1,28 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
+import partytown from "@astrojs/partytown";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [sitemap({ customPaths: ["public/sitemap.xml"] })],
+  integrations: [
+    sitemap({
+      customPaths: ["public/sitemap.xml"],
+    }),
+    partytown({
+      config: {
+        forward: ["dataLayer.push", "__tag_assistant_forwarder"],
+        // resolveUrl: function (url, location, type) {
+        //   if (type === "script") {
+        //     var proxyUrl = new URL("https://my-reverse-proxy.com/");
+        //     proxyUrl.searchParams.append("url", url.href);
+        //     return proxyUrl;
+        //   }
+        //   return url;
+        // },
+      },
+    }),
+  ],
   image: {
     domains: ["images.ctfassets.net"],
   },

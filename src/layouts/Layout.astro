@@ -23,10 +23,13 @@ const { title, seoTitle, description,schema } = Astro.props;
 
     <!--  -->
     <link rel="sitemap" href="/sitemap.xml" />
+
+     <link rel="preload" href="/assets/Pacifico-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
     <!-- Google Tag Manager -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRFEBYSZRP"
+    <script type="text/partytown"  src="https://www.googletagmanager.com/gtag/js?id=G-SRFEBYSZRP?no_partytown=1 "
     ></script>
-    <script>
+    <script type="text/partytown">
       //@ts-ignore
       window.dataLayer = window.dataLayer || [];
       //@ts-ignore
@@ -38,12 +41,8 @@ const { title, seoTitle, description,schema } = Astro.props;
       gtag("js", new Date());
       //@ts-ignore
       gtag("config", "G-SRFEBYSZRP");
-    </script>
-<script type="application/ld+json" set:html={JSON.stringify(schema) || ""}>
-   
-  </script>
-    <script>
-      (function (w, d, s, l, i) {
+
+          (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
         var f = d.getElementsByTagName(s)[0],
@@ -59,6 +58,10 @@ const { title, seoTitle, description,schema } = Astro.props;
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-NCBRF88V");
     </script>
+<script type="application/ld+json" set:html={JSON.stringify(schema) || ""}>
+   
+  </script>
+ 
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
 
@@ -136,8 +139,7 @@ const { title, seoTitle, description,schema } = Astro.props;
     <!--  -->
 
     <!-- gsap cdn -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    ></script><script
+   <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"></script>
@@ -150,16 +152,7 @@ const { title, seoTitle, description,schema } = Astro.props;
 
     </head
   >
-  <!-- <div
-    id="vretail-app"
-    data-vretail-project-id="PR-JoxXAvDHODgxbpSw42lAa8AoY"
-  >
-  </div> -->
-  <!-- <script src="https://collab-staging.core.vretail.space/vretail-collab.umd.js"
-  ></script> -->
-  <!-- jquery -->
-
-  <!--  -->
+ 
 
     </head
   >
